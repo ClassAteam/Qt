@@ -32,3 +32,27 @@ QPushButton* Calculator::createButton(const QString& str)
     connect(pcmd, SIGNAL(clicked()), SLOT(slotButtonClicked()));
     return pcmd;
 }
+
+void Calculator::calculate()
+{
+    qreal fOperand2 	= m_stk.pop().toFloat();
+    QString strOperation= m_stk.pop();
+    qreal fOperand1 	= m_stk.pop().toFloat();
+    qreal fResult		= 0;
+
+    if(strOperation == "+") {
+        fResult = fOperand1 + fOperand2;
+    }
+
+    if(strOperation == "-") {
+        fResult = fOperand1 - fOperand2;
+    }
+    
+    if(strOperation == "/") {
+        fResult = fOperand1 / fOperand2;
+    }
+    if(strOperation == "*") {
+        fResult = fOperand1 * fOperand2;
+    }
+    m_plcd->display(fResult);
+}

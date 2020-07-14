@@ -2,8 +2,6 @@
 
 #include <QWidget>
 #include <QStack>
-#include <QLCDNumber>
-#include<QGridLayout>
 
 class QLCDNumber;
 class QPushButton;
@@ -17,6 +15,7 @@ private:
     QString 		m_strDisplay;
 public:
     Calculator(QWidget* pwgt = 0);
+
     QPushButton* createButton(const QString& str);
     void 			calculate(Calculator		);
 

@@ -35,9 +35,9 @@ QPushButton* Calculator::createButton(const QString& str)
 
 void Calculator::calculate()
 {
-    qreal fOpernad2 	= m_stk.pop().toFloat();
+    qreal fOperand2 	= m_stk.pop().toFloat();
     QString strOperation= m_stk.pop();
-    qreal fOpernad1 	= m_stk.pop().toFloat();
+    qreal fOperand1 	= m_stk.pop().toFloat();
     qreal fResult		= 0;
 
     if(strOperation == "+") {
@@ -47,4 +47,12 @@ void Calculator::calculate()
     if(strOperation == "-") {
         fResult = fOperand1 - fOperand2;
     }
+
+    if(strOperation == "/") {
+        fResult = fOperand1 / fOperand2;
+    }
+    if(strOperation == "*") {
+        fResult = fOperand1 * fOperand2;
+    }
+    m_plcd->display(fResult);
 }

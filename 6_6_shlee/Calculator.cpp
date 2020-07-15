@@ -1,5 +1,5 @@
-#include "Calculator.h"
 #include <QtWidgets>
+#include "Calculator.h"
 
 Calculator::Calculator(QWidget* pwgt/*= 0*/) : QWidget(pwgt)
 {
@@ -55,4 +55,40 @@ void Calculator::calculate()
         fResult = fOperand1 * fOperand2;
     }
     m_plcd->display(fResult);
+}
+
+void Calculator::slotButtonClicked()
+{
+    QString str = ((QPushButton*)sender())->text();
+
+    if (str == "CE") {
+        m_stk.clear();
+        m_strDisplay = "";
+        m_plcd->display("0");
+        return;
+    }
+    if (str.contains(QRegExp("[0-9]"))) {
+        m_strDisplay += str;
+        m_plcd->display(m_strDisplay.toDouble());
+    }
+    else if (str == ".") {
+        m_strDisplay += str;
+        m_plcd->display(m_strDisplay);
+    }
+    else {
+        if (m_stk.count() >= 2) {
+            m_stk.push(QString().setNum(m_plcd->value()));
+            calculate();
+            m_stk.clear();
+            m_stk.push(QString().setNum(m_plcd->value()));
+            if (str != "=") {
+                m_stk.push(str);
+            }
+        }
+        else {
+            m_stk.push(QString().setNum(m_plcd->value()));
+            m_stk.push(str);
+            m_strDisplay = "";
+        }
+    }
 }

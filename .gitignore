@@ -1,0 +1,9 @@
+*Debug*
+*.user
+*/build*
+/build*
+*.o
+*pro.user
+*.o
+*.user
+*.user

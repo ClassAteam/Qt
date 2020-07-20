@@ -28,7 +28,7 @@ Progress::Progress(QWidget* pwgt/*= 0*/)
     QObject::connect(pcmdReset, SIGNAL(clicked()), SLOT(slotReset()));
 
     //Layout setup
-    QHBoxLayout* phbxLayout = new QHBoxLayout;
+    QVBoxLayout* phbxLayout = new QVBoxLayout;
     phbxLayout->addWidget(m_pprb);
     phbxLayout->addWidget(pcmdStep);
     phbxLayout->addWidget(pcmdReset);

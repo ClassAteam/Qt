@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Antifirelogic logic_1;
-    QTimer::singleShot(100, &logic_1, SLOT(logic()));
+    QTimer *timer = new QTimer;
+
     return a.exec();
 }

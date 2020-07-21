@@ -1,11 +1,19 @@
-#include "AntiFireSystemLogic.h"
+#include "AntiFireLogic.h"
 #include "QtWidgets"
 bool K15, K16, K19, K20, K23, K24, K25, K26, K27, K28, K50, K53, K51, K54, K57,
 K58, K60, K61, F25, F35, F45, F55, F65, F72, F82, F132, F142;
 double UbusL, UbusR, Uacc;
 int F7, F8, S3, S4, S5, S6, S7, S8, S9;
 
-int logic()
+
+Antifirelogic::Antifirelogic(QWidget* pwgt)
+    : QWidget(pwgt)
+{
+   QPushButton* firebutton = new QPushButton;
+
+   S4 = 1;
+}
+int Antifirelogic::logic()
 {
 
     if (S9)
@@ -289,10 +297,14 @@ int logic()
             F72 = false;
         }
 
-        S4 = 1;
-        S4 ++;
 
     }
+    S4 ++;
+    QLabel* m_plbl = new QLabel ;
+    m_plbl->setMinimumWidth(200);
+    m_plbl->setMinimumHeight(50);
+    m_plbl->setText("S4 = " + QString::number(S4));
+    m_plbl->show();
 }
 // assign variable values to similar Qobjects
 

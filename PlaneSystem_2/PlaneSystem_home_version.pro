@@ -16,11 +16,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    AntiFireSystemLogic.cpp \
+    AntiFireLogic.cpp \
     main.cpp
 
 HEADERS += \
-    AntiFireSystemLogic.h \
+    AntiFireLogic.h \
     main.h
 
 # Default rules for deployment.

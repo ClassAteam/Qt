@@ -9,9 +9,13 @@ int F7, F8, S3, S4, S5, S6, S7, S8, S9;
 Antifirelogic::Antifirelogic(QWidget* pwgt)
     : QWidget(pwgt)
 {
-   QPushButton* firebutton = new QPushButton;
+    S4 = 1;
+    sign = new QLabel;
+    sign->setMinimumWidth(300);
+    sign->setMinimumHeight(300);
+    sign->setText("S4 = " + QString::number(S4));
+    sign->show();
 
-   S4 = 1;
 }
 int Antifirelogic::logic()
 {
@@ -300,11 +304,8 @@ int Antifirelogic::logic()
 
     }
     S4 ++;
-    QLabel* m_plbl = new QLabel ;
-    m_plbl->setMinimumWidth(200);
-    m_plbl->setMinimumHeight(50);
-    m_plbl->setText("S4 = " + QString::number(S4));
-    m_plbl->show();
+    sign->update();
+    sign->show();
 }
 // assign variable values to similar Qobjects
 

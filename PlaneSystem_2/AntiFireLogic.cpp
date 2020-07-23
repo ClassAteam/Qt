@@ -116,6 +116,7 @@ int Antifirelogic::logic()
             K25 = false;
         }
 
+
         // Motogandol's rele flag 4th engine
         if (K60 == F82 == true || K61 == F72 == true)
         {
@@ -304,8 +305,10 @@ int Antifirelogic::logic()
 
     }
     S4 ++;
-    sign->update();
+    sign->setText("S4 = " + QString::number(S4));
     sign->show();
+
+
 }
 // assign variable values to similar Qobjects
 

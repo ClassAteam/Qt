@@ -3,12 +3,12 @@
 #include <QObject>
 #include <QLabel>
 
-class Antifirelogic : public QWidget
+class Antifirelogic_valves : public QWidget
 {
     Q_OBJECT
 
 public:
-    Antifirelogic(QWidget* pwgt = 0);
+    Antifirelogic_valves(QWidget* pwgt = 0);
     QWidget wgt;
      QLabel* K15_label;
      QLabel* K16_label;
@@ -49,6 +49,7 @@ public:
      QLabel* S7_label;
      QLabel* S8_label;
      QLabel* S9_label;
+     QLabel* Counter_label;
 
 
 public slots:

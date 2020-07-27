@@ -133,7 +133,7 @@ Antifirelogic_valves::Antifirelogic_valves(QWidget* pwgt)
 
 
 }
-int Antifirelogic_valves::logic()
+int Antifirelogic_valves::logic_valves()
 {
     Counter_valves++;
 
@@ -457,7 +457,8 @@ int Antifirelogic_valves::logic()
     F8_label->setText("F8 = " + QString::number(F8_2610));
     S3_label->setText("S3 = " + QString::number(S3_2610));
     S4_label->setText("S4 = " + QString::number(S4_2610));
-    S5_label->setText("S6 = " + QString::number(S6_2610));
+    S5_label->setText("S5 = " + QString::number(S5_2610));
+    S6_label->setText("S6 = " + QString::number(S6_2610));
     S7_label->setText("S7 = " + QString::number(S7_2610));
     S8_label->setText("S8 = " + QString::number(S8_2610));
     S9_label->setText("S9 = " + QString::number(S9_2610));
@@ -506,6 +507,8 @@ int Antifirelogic_valves::logic()
     layout->addWidget(S9_label);
     layout->addWidget(Counter_label);
     wgt.setLayout(layout);
+    wgt.setWindowTitle("Antifire_system_valves");
+    wgt.setMinimumWidth(300);
     wgt.show();
 //    K15_label->show();
 //    K16_label->show();

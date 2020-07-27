@@ -118,7 +118,9 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     F12_2610  = 0;
     S1_2610   = 0;
     Counter_EXB = 0;
+
    //Labels
+    P2OBLOP_label = new QLabel;
     K1_2610_label = new QLabel;
     K3_2610_label = new QLabel;
     K6_2610_label = new QLabel;
@@ -159,6 +161,36 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     F12_2610_label = new QLabel;
     S1_2610_label = new QLabel;
     Counter_EXB_label = new QLabel;
+
+    //Buttons_connections
+     azs_on_button = new QPushButton("AZS are ON", this);
+     QObject::connect (azs_on_button, SIGNAL(clicked()), this, SLOT(enable_AZS()));
+
+     azs_are_off_button = new QPushButton("AZS are OFF", this);
+     QObject::connect (azs_are_off_button, SIGNAL(clicked()), this, SLOT(disable_AZS()));
+
+     p2oblop_on_button = new QPushButton("P2OBLOP ON", this);
+     QObject::connect (p2oblop_on_button, SIGNAL(clicked()), this, SLOT(p2oblop_on()));
+
+     F10_2610_button = new QPushButton("F10_2610", this);
+     F18_2610_button = new QPushButton("F18_2610", this);
+     F11_2610_button = new QPushButton("F11_2610", this);
+     F12_2610_button = new QPushButton("F12_2610", this);
+     S2_2610_button = new QPushButton("S2_2610", this);
+     PNU_button = new QPushButton("PNU", this);
+     otkaz_avtomatiki_SPZ_button =
+             new QPushButton("Otkaza avtomatiki SPZ", this);
+     pozhar_1_dv_button = new QPushButton("pozhar_1dv", this);
+     pozhar_2_dv_button = new QPushButton("pozhar_2dv", this);
+     pozhar_3_dv_button = new QPushButton("pozhar_3dv", this);
+     pozhar_4_dv_button = new QPushButton("pozahr_4dv", this);
+     peregrev_1_dv_button = new QPushButton("peregrev_1dv", this);
+     peregrev_2_dv_button = new QPushButton("peregrev_2dv", this);
+     peregrev_3_dv_button = new QPushButton("peregrev_3dv", this);
+     peregrev_4_dv_button = new QPushButton("peregrev_4dv", this);
+
+
+    //Pushbuttons
 
 }
 int Antifirelogic_EXB::logic_EXB()
@@ -1037,6 +1069,7 @@ else
     }
 }
     //showing values
+    P2OBLOP_label->setText("P2OBLOP = " + QString::number(P2OBLOP));
     K1_2610_label->setText("K1 = " + QString::number(K1_2610));
     K3_2610_label->setText("K3 = " + QString::number(K3_2610));
     K6_2610_label->setText("K6 = " + QString::number(K6_2610));
@@ -1079,95 +1112,107 @@ else
     Counter_EXB_label->setText("Counter_EXB = " + QString::number(Counter_EXB));
 
 //    layout setting
-    QVBoxLayout *layout_EXB = new QVBoxLayout;
-    layout_EXB->addWidget(K1_2610_label);
-    layout_EXB->addWidget(K3_2610_label);
-    layout_EXB->addWidget(K6_2610_label);
-    layout_EXB->addWidget(K9_2610_label);
-    layout_EXB->addWidget(K12_2610_label);
-    layout_EXB->addWidget(K31_2610_label);
-    layout_EXB->addWidget(K32_2610_label);
-    layout_EXB->addWidget(K33_2610_label);
-    layout_EXB->addWidget(K34_2610_label);
-    layout_EXB->addWidget(K35_2610_label);
-    layout_EXB->addWidget(K42_2610_label);
-    layout_EXB->addWidget(K49_2610_label);
-    layout_EXB->addWidget(K50_2610_label);
-    layout_EXB->addWidget(K51_2610_label);
-    layout_EXB->addWidget(K53_2610_label);
-    layout_EXB->addWidget(K54_2610_label);
-    layout_EXB->addWidget(K67_2610_label);
-    layout_EXB->addWidget(PAPDvx6_label);
-    layout_EXB->addWidget(F92_2610_label);
-    layout_EXB->addWidget(F91_2610_label);
-    layout_EXB->addWidget(F101_2610_label);
-    layout_EXB->addWidget(F111_2610_label);
-    layout_EXB->addWidget(F121_2610_label);
-    layout_EXB->addWidget(F181_2610_label);
-    layout_EXB->addWidget(F911_2610_label);
-    layout_EXB->addWidget(F912_2610_label);
-    layout_EXB->addWidget(F913_2610_label);
-    layout_EXB->addWidget(F914_2610_label);
-    layout_EXB->addWidget(F915_2610_label);
-    layout_EXB->addWidget(F916_2610_label);
-    layout_EXB->addWidget(F917_2610_label);
-    layout_EXB->addWidget(Ush2dpl_label);
-    layout_EXB->addWidget(Ush2dpp_label);
-    layout_EXB->addWidget(F9_2610_label);
-    layout_EXB->addWidget(F10_2610_label);
-    layout_EXB->addWidget(F18_2610_label);
-    layout_EXB->addWidget(F11_2610_label);
-    layout_EXB->addWidget(F12_2610_label);
-    layout_EXB->addWidget(S1_2610_label);
-    layout_EXB->addWidget(Counter_EXB_label);
-    wgt_EXB.setLayout(layout_EXB);
+    QVBoxLayout *layout_EXB_labels = new QVBoxLayout;
+    QVBoxLayout *layout_EXB_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_EXB_main = new QHBoxLayout;
+
+    layout_EXB_labels->addWidget(P2OBLOP_label);
+    layout_EXB_labels->addWidget(K1_2610_label);
+    layout_EXB_labels->addWidget(K3_2610_label);
+    layout_EXB_labels->addWidget(K6_2610_label);
+    layout_EXB_labels->addWidget(K9_2610_label);
+    layout_EXB_labels->addWidget(K12_2610_label);
+    layout_EXB_labels->addWidget(K31_2610_label);
+    layout_EXB_labels->addWidget(K32_2610_label);
+    layout_EXB_labels->addWidget(K33_2610_label);
+    layout_EXB_labels->addWidget(K34_2610_label);
+    layout_EXB_labels->addWidget(K35_2610_label);
+    layout_EXB_labels->addWidget(K42_2610_label);
+    layout_EXB_labels->addWidget(K49_2610_label);
+    layout_EXB_labels->addWidget(K50_2610_label);
+    layout_EXB_labels->addWidget(K51_2610_label);
+    layout_EXB_labels->addWidget(K53_2610_label);
+    layout_EXB_labels->addWidget(K54_2610_label);
+    layout_EXB_labels->addWidget(K67_2610_label);
+    layout_EXB_labels->addWidget(PAPDvx6_label);
+    layout_EXB_labels->addWidget(F92_2610_label);
+    layout_EXB_labels->addWidget(F91_2610_label);
+    layout_EXB_labels->addWidget(F101_2610_label);
+    layout_EXB_labels->addWidget(F111_2610_label);
+    layout_EXB_labels->addWidget(F121_2610_label);
+    layout_EXB_labels->addWidget(F181_2610_label);
+    layout_EXB_labels->addWidget(F911_2610_label);
+    layout_EXB_labels->addWidget(F912_2610_label);
+    layout_EXB_labels->addWidget(F913_2610_label);
+    layout_EXB_labels->addWidget(F914_2610_label);
+    layout_EXB_labels->addWidget(F915_2610_label);
+    layout_EXB_labels->addWidget(F916_2610_label);
+    layout_EXB_labels->addWidget(F917_2610_label);
+    layout_EXB_labels->addWidget(Ush2dpl_label);
+    layout_EXB_labels->addWidget(Ush2dpp_label);
+    layout_EXB_labels->addWidget(F9_2610_label);
+    layout_EXB_labels->addWidget(F10_2610_label);
+    layout_EXB_labels->addWidget(F18_2610_label);
+    layout_EXB_labels->addWidget(F11_2610_label);
+    layout_EXB_labels->addWidget(F12_2610_label);
+    layout_EXB_labels->addWidget(S1_2610_label);
+    layout_EXB_labels->addWidget(Counter_EXB_label);
+
+    layout_EXB_buttons->addWidget(azs_on_button);
+    layout_EXB_buttons->addWidget(azs_are_off_button);
+    layout_EXB_buttons->addWidget(p2oblop_on_button);
+    layout_EXB_buttons->addWidget(F10_2610_button);
+    layout_EXB_buttons->addWidget(F18_2610_button);
+    layout_EXB_buttons->addWidget(F11_2610_button);
+    layout_EXB_buttons->addWidget(F12_2610_button);
+    layout_EXB_buttons->addWidget(S2_2610_button);
+    layout_EXB_buttons->addWidget(PNU_button);
+    layout_EXB_buttons->addWidget(otkaz_avtomatiki_SPZ_button);
+    layout_EXB_buttons->addWidget(pozhar_1_dv_button);
+    layout_EXB_buttons->addWidget(pozhar_2_dv_button);
+    layout_EXB_buttons->addWidget(pozhar_3_dv_button);
+    layout_EXB_buttons->addWidget(pozhar_4_dv_button);
+    layout_EXB_buttons->addWidget(peregrev_1_dv_button);
+    layout_EXB_buttons->addWidget(peregrev_2_dv_button);
+    layout_EXB_buttons->addWidget(peregrev_3_dv_button);
+    layout_EXB_buttons->addWidget(peregrev_4_dv_button);
+
+    layout_EXB_main->addLayout(layout_EXB_buttons);
+    layout_EXB_main->addLayout(layout_EXB_labels);
+    wgt_EXB.setLayout(layout_EXB_main);
+    wgt_EXB.setWindowTitle("Antifire_system_execution_block");
+    wgt_EXB.setMinimumWidth(300);
     wgt_EXB.show();
 }
 
-//    K15_label->show();
-//    K16_label->show();
-//    K19_label->show();
-//    K20_label->show();
-//    K23_label->show();
-//    K24_label->show();
-//    K25_label->show();
-//    K26_label->show();
-//    K27_label->show();
-//    K28_label->show();
-//    K50_label->show();
-//    K53_label->show();
-//    K51_label->show();
-//    K54_label->show();
-//    K57_label->show();
-//    K58_label->show();
-//    K60_label->show();
-//    K61_label->show();
-//    F25_label->show();
-//    F35_label->show();
-//    F45_label->show();
-//    F55_label->show();
-//    F65_label->show();
-//    F72_label->show();
-//    F82_label->show();
-//    F132_label->show();
-//    F142_label->show();
-//    UbusL_label->show();
-//    UbusR_label->show();
-//    Uacc_label->show();
-//    F7_label->show();
-//    F8_label->show();
-//    S3_label->show();
-//    S4_label->show();
-//    S5_label->show();
-//    S7_label->show();
-//    S8_label->show();
-//    S9_label->show();
+int Antifirelogic_EXB::enable_AZS()
+{
+    F9_2610 = 1;
+    F10_2610 = 1;
+    F18_2610 = 1;
+    F11_2610 = 1;
+    F12_2610 = 1;
+    S1_2610 = 1;
+}
 
+int Antifirelogic_EXB::disable_AZS()
+{
+    F9_2610 = 0;
+    F10_2610 = 0;
+    F18_2610 = 0;
+    F11_2610 = 0;
+    F12_2610 = 0;
+    S1_2610 = 0;
+}
+int Antifirelogic_EXB::p2oblop_on()
+{
+    P2OBLOP = true;
+}
+int Antifirelogic_EXB::p2oblop_off()
+{
+    P2OBLOP = false;
+}
 
-
-
-
-// assign variable values to similar Qobjects
 
 
 

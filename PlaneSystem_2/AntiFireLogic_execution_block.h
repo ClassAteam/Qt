@@ -2,6 +2,7 @@
 #include <QWidget>
 #include <QObject>
 #include <QLabel>
+#include <QPushButton>
 
 extern bool
 K24_2610,
@@ -35,6 +36,7 @@ class Antifirelogic_EXB : public QWidget
 public:
     Antifirelogic_EXB(QWidget* pwgt = 0);
     QWidget wgt_EXB;
+     QLabel* P2OBLOP_label;
      QLabel* K1_2610_label;
      QLabel* K3_2610_label;
      QLabel* K6_2610_label;
@@ -78,6 +80,29 @@ public:
      QLabel* S1_2610_label;
      QLabel* Counter_EXB_label;
 
+     QPushButton* azs_on_button;
+     QPushButton* azs_are_off_button;
+     QPushButton* p2oblop_on_button;
+     QPushButton* F10_2610_button;
+     QPushButton* F18_2610_button;
+     QPushButton* F11_2610_button;
+     QPushButton* F12_2610_button;
+     QPushButton* S2_2610_button;
+     QPushButton* PNU_button;
+     QPushButton* otkaz_avtomatiki_SPZ_button;
+     QPushButton* pozhar_1_dv_button;
+     QPushButton* pozhar_2_dv_button;
+     QPushButton* pozhar_3_dv_button;
+     QPushButton* pozhar_4_dv_button;
+     QPushButton* peregrev_1_dv_button;
+     QPushButton* peregrev_2_dv_button;
+     QPushButton* peregrev_3_dv_button;
+     QPushButton* peregrev_4_dv_button;
+
 public slots:
     int logic_EXB();
+    int enable_AZS();
+    int disable_AZS();
+    int p2oblop_on();
+    int p2oblop_off();
 };

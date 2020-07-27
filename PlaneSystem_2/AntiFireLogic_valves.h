@@ -53,5 +53,5 @@ public:
 
 
 public slots:
-    int logic();
+    int logic_valves();
 };

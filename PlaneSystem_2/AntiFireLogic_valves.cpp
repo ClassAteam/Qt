@@ -28,8 +28,8 @@ F82_2610,
 F132_2610,
 F142_2610;
 double
-UbusL,
-UbusR,
+Ush1dpl,
+Ush1dpp,
 Uacc;
 int
 F7_2610,
@@ -76,8 +76,8 @@ Antifirelogic_valves::Antifirelogic_valves(QWidget* pwgt)
     F82_2610 = 0;
     F132_2610 = 0;
     F142_2610 = 0;
-    UbusL = 19;
-    UbusR = 19;
+    Ush1dpl = 19;
+    Ush1dpp = 19;
     Uacc = 19;
     F7_2610 = 0;
     F8_2610 = 0;
@@ -117,8 +117,8 @@ Antifirelogic_valves::Antifirelogic_valves(QWidget* pwgt)
     F82_label = new QLabel;
     F132_label = new QLabel;
     F142_label = new QLabel;
-    UbusL_label = new QLabel;
-    UbusR_label = new QLabel;
+    Ush1dpl_label = new QLabel;
+    Ush1dpp_label = new QLabel;
     Uacc_label = new QLabel;
     F7_label = new QLabel;
     F8_label = new QLabel;
@@ -140,7 +140,7 @@ int Antifirelogic_valves::logic()
     if (S9_2610 == 1)
     {
         // Voltage check
-        if ((UbusL >= 16.0) && (F8_2610 == 1))
+        if ((Ush1dpl >= 16.0) && (F8_2610 == 1))
         {
             F82_2610 = true;
         }
@@ -149,7 +149,7 @@ int Antifirelogic_valves::logic()
             F82_2610 = false;
         }
 
-        if ((UbusR >= 16.0) && (F7_2610 == true))
+        if ((Ush1dpp >= 16.0) && (F7_2610 == true))
         {
             F72_2610 = true;
         }
@@ -450,8 +450,8 @@ int Antifirelogic_valves::logic()
     F82_label->setText("F82 = " + QString::number(F82_2610));
     F132_label->setText("F132 = " + QString::number(F132_2610));
     F142_label->setText("F142 = " + QString::number(F142_2610));
-    UbusL_label->setText("K15 = " + QString::number(K15_2610));
-    UbusR_label->setText("UbusR = " + QString::number(UbusR));
+    Ush1dpl_label->setText("Ush1dpl = " + QString::number(Ush1dpl));
+    Ush1dpp_label->setText("Ush1dpp = " + QString::number(Ush1dpp));
     Uacc_label->setText("Uacc = " + QString::number(Uacc));
     F7_label->setText("F7 = " + QString::number(F7_2610));
     F8_label->setText("F8 = " + QString::number(F8_2610));
@@ -492,8 +492,8 @@ int Antifirelogic_valves::logic()
     layout->addWidget(F82_label);
     layout->addWidget(F132_label);
     layout->addWidget(F142_label);
-    layout->addWidget(UbusL_label);
-    layout->addWidget(UbusR_label);
+    layout->addWidget(Ush1dpl_label);
+    layout->addWidget(Ush1dpp_label);
     layout->addWidget(Uacc_label);
     layout->addWidget(F7_label);
     layout->addWidget(F8_label);

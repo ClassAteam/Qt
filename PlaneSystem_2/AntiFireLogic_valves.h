@@ -37,8 +37,8 @@ public:
      QLabel* F82_label;
      QLabel* F132_label;
      QLabel* F142_label;
-     QLabel* UbusL_label;
-     QLabel* UbusR_label;
+     QLabel* Ush1dpl_label;
+     QLabel* Ush1dpp_label;
      QLabel* Uacc_label;
      QLabel* F7_label;
      QLabel* F8_label;

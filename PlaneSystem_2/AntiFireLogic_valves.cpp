@@ -510,44 +510,7 @@ int Antifirelogic_valves::logic_valves()
     wgt.setWindowTitle("Antifire_system_valves");
     wgt.setMinimumWidth(300);
     wgt.show();
-//    K15_label->show();
-//    K16_label->show();
-//    K19_label->show();
-//    K20_label->show();
-//    K23_label->show();
-//    K24_label->show();
-//    K25_label->show();
-//    K26_label->show();
-//    K27_label->show();
-//    K28_label->show();
-//    K50_label->show();
-//    K53_label->show();
-//    K51_label->show();
-//    K54_label->show();
-//    K57_label->show();
-//    K58_label->show();
-//    K60_label->show();
-//    K61_label->show();
-//    F25_label->show();
-//    F35_label->show();
-//    F45_label->show();
-//    F55_label->show();
-//    F65_label->show();
-//    F72_label->show();
-//    F82_label->show();
-//    F132_label->show();
-//    F142_label->show();
-//    UbusL_label->show();
-//    UbusR_label->show();
-//    Uacc_label->show();
-//    F7_label->show();
-//    F8_label->show();
-//    S3_label->show();
-//    S4_label->show();
-//    S5_label->show();
-//    S7_label->show();
-//    S8_label->show();
-//    S9_label->show();
+
 
 
 

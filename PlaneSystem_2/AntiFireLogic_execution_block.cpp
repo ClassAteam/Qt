@@ -19,7 +19,6 @@ K35_2610,
 K42_2610,
 K49_2610,
 K67_2610,
-PAPDvx6,
 F92_2610,
 F91_2610,
 F101_2610,
@@ -95,7 +94,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     K53_2610  = 0;
     K54_2610  = 0;
     K67_2610  = 0;
-    PAPDvx6   = 0;
+    PAPDvh6   = 0;
     F92_2610  = 0;
     F91_2610  = 0;
     F101_2610 = 0;
@@ -117,6 +116,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     F11_2610  = 0;
     F12_2610  = 0;
     S1_2610   = 0;
+    otkaz_avtomatiki_SPZ = false;
     Counter_EXB = 0;
 
    //Labels
@@ -138,7 +138,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     K53_2610_label = new QLabel;
     K54_2610_label = new QLabel;
     K67_2610_label = new QLabel;
-    PAPDvx6_label = new QLabel;
+    PAPDvh6_label = new QLabel;
     F92_2610_label = new QLabel;
     F91_2610_label = new QLabel;
     F101_2610_label = new QLabel;
@@ -160,34 +160,164 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     F11_2610_label = new QLabel;
     F12_2610_label = new QLabel;
     S1_2610_label = new QLabel;
+    otkaz_avtomatiki_SPZ_label = new QLabel;
+    pozhar_1_dv_label = new QLabel;
+    pozhar_2_dv_label = new QLabel;
+    pozhar_3_dv_label = new QLabel;
+    pozhar_4_dv_label = new QLabel;
+    peregrev_1_dv_label = new QLabel;
+    peregrev_2_dv_label = new QLabel;
+    peregrev_3_dv_label = new QLabel;
+    peregrev_4_dv_label = new QLabel;
     Counter_EXB_label = new QLabel;
 
     //Buttons_connections
      azs_on_button = new QPushButton("AZS are ON", this);
-     QObject::connect (azs_on_button, SIGNAL(clicked()), this, SLOT(enable_AZS()));
+     QObject::connect
+             (azs_on_button, SIGNAL(clicked()), this, SLOT(enable_AZS()));
 
      azs_are_off_button = new QPushButton("AZS are OFF", this);
-     QObject::connect (azs_are_off_button, SIGNAL(clicked()), this, SLOT(disable_AZS()));
+     QObject::connect
+             (azs_are_off_button, SIGNAL(clicked()), this, SLOT(disable_AZS()));
 
      p2oblop_on_button = new QPushButton("P2OBLOP ON", this);
-     QObject::connect (p2oblop_on_button, SIGNAL(clicked()), this, SLOT(p2oblop_on()));
+     QObject::connect
+             (p2oblop_on_button, SIGNAL(clicked()), this, SLOT(p2oblop_on()));
 
-     F10_2610_button = new QPushButton("F10_2610", this);
-     F18_2610_button = new QPushButton("F18_2610", this);
-     F11_2610_button = new QPushButton("F11_2610", this);
-     F12_2610_button = new QPushButton("F12_2610", this);
-     S2_2610_button = new QPushButton("S2_2610", this);
-     PNU_button = new QPushButton("PNU", this);
-     otkaz_avtomatiki_SPZ_button =
+     p2oblop_off_button = new QPushButton("P2OBLOP OFF", this);
+     QObject::connect
+             (p2oblop_off_button, SIGNAL(clicked()), this, SLOT(p2oblop_off()));
+
+     PAPDvh6_on_button = new QPushButton("PAPDvh6 ON", this);
+     QObject::connect
+             (PAPDvh6_on_button, SIGNAL(clicked()), this, SLOT(PAPDvh6_on()));
+
+     PAPDvh6_off_button = new QPushButton("PAPDvh6 OFF", this);
+     QObject::connect
+             (PAPDvh6_off_button, SIGNAL(clicked()), this, SLOT(PAPDvh6_off()));
+
+     Ush1dpl_on_button = new QPushButton("Ush1dpl ON", this);
+     QObject::connect
+             (Ush1dpl_on_button, SIGNAL(clicked()), this, SLOT(Ush1dpl_on()));
+
+     Ush1dpl_off_button = new QPushButton("Ush1dpl OFF", this);
+     QObject::connect
+             (Ush1dpl_off_button, SIGNAL(clicked()), this, SLOT(Ush1dpl_off()));
+
+     Ush1dpp_on_button = new QPushButton("Ush1dpp ON", this);
+     QObject::connect
+             (Ush1dpp_on_button, SIGNAL(clicked()), this, SLOT(Ush1dpp_on()));
+
+     Ush1dpp_off_button = new QPushButton("Ush1dpp OFF", this);
+     QObject::connect
+             (Ush1dpp_off_button, SIGNAL(clicked()), this, SLOT(Ush1dpp_off()));
+
+     Ush2dpl_on_button = new QPushButton("Ush2dpl ON", this);
+     QObject::connect
+             (Ush1dpp_on_button, SIGNAL(clicked()), this, SLOT(Ush2dpl_on()));
+
+     Ush2dpl_off_button = new QPushButton("Ush2dpl OFF", this);
+     QObject::connect
+             (Ush2dpl_off_button, SIGNAL(clicked()), this, SLOT(Ush2dpl_off()));
+
+     Ush2dpp_on_button = new QPushButton("Ush2dpp ON", this);
+     QObject::connect
+             (Ush2dpp_on_button, SIGNAL(clicked()), this, SLOT(Ush2dpp_on()));
+
+     Ush2dpp_off_button = new QPushButton("Ush2dpp OFF", this);
+     QObject::connect
+             (Ush2dpp_off_button, SIGNAL(clicked()), this, SLOT(Ush2dpp_off()));
+
+     otkaz_avtomatiki_SPZ_on_button =
              new QPushButton("Otkaza avtomatiki SPZ", this);
-     pozhar_1_dv_button = new QPushButton("pozhar_1dv", this);
-     pozhar_2_dv_button = new QPushButton("pozhar_2dv", this);
-     pozhar_3_dv_button = new QPushButton("pozhar_3dv", this);
-     pozhar_4_dv_button = new QPushButton("pozahr_4dv", this);
-     peregrev_1_dv_button = new QPushButton("peregrev_1dv", this);
-     peregrev_2_dv_button = new QPushButton("peregrev_2dv", this);
-     peregrev_3_dv_button = new QPushButton("peregrev_3dv", this);
-     peregrev_4_dv_button = new QPushButton("peregrev_4dv", this);
+     QObject::connect
+             (otkaz_avtomatiki_SPZ_on_button, SIGNAL(clicked()),
+              this, SLOT(otkaz_avtomatiki_SPZ_on()));
+
+     otkaz_avtomatiki_SPZ_off_button =
+             new QPushButton("Otkaza avtomatiki SPZ", this);
+     QObject::connect
+             (otkaz_avtomatiki_SPZ_off_button, SIGNAL(clicked()),
+              this, SLOT(otkaz_avtomatiki_SPZ_off()));
+
+     pozhar_1_dv_on_button = new QPushButton("pozhar_1dv ON", this);
+     QObject::connect
+             (pozhar_1_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_1_dv_on()));
+
+     pozhar_1_dv_off_button = new QPushButton("pozhar_1dv OFF", this);
+     QObject::connect
+             (pozhar_1_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_1_dv_off()));
+
+     pozhar_2_dv_on_button = new QPushButton("pozhar_2dv ON", this);
+     QObject::connect
+             (pozhar_2_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_2_dv_on()));
+
+     pozhar_2_dv_off_button = new QPushButton("pozhar_2dv OFF", this);
+     QObject::connect
+             (pozhar_2_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_2_dv_off()));
+
+     pozhar_3_dv_on_button = new QPushButton("pozhar_3dv ON", this);
+     QObject::connect
+             (pozhar_3_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_3_dv_on()));
+
+     pozhar_3_dv_off_button = new QPushButton("pozhar_3dv OFF", this);
+     QObject::connect
+             (pozhar_3_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_3_dv_off()));
+
+     pozhar_4_dv_on_button = new QPushButton("pozahr_4dv ON", this);
+     QObject::connect
+             (pozhar_4_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_4_dv_on()));
+     pozhar_4_dv_off_button = new QPushButton("pozahr_4dv OFF", this);
+     QObject::connect
+             (pozhar_4_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_4_dv_off()));
+
+     peregrev_1_dv_on_button = new QPushButton("peregrev_1dv ON", this);
+     QObject::connect
+             (peregrev_1_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_1_dv_on()));
+
+     peregrev_1_dv_off_button = new QPushButton("peregrev_1dv OFF", this);
+     QObject::connect
+             (peregrev_1_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_1_dv_off()));
+
+     peregrev_2_dv_on_button = new QPushButton("peregrev_2dv ON", this);
+     QObject::connect
+             (peregrev_2_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_2_dv_on()));
+
+     peregrev_2_dv_off_button = new QPushButton("peregrev_2dv OFF", this);
+     QObject::connect
+             (peregrev_2_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_2_dv_off()));
+
+     peregrev_3_dv_on_button = new QPushButton("peregrev_3dv ON", this);
+     QObject::connect
+             (peregrev_3_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_3_dv_on()));
+
+     peregrev_3_dv_off_button = new QPushButton("peregrev_3dv OFF", this);
+     QObject::connect
+             (peregrev_3_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_3_dv_off()));
+
+     peregrev_4_dv_on_button = new QPushButton("peregrev_4dv ON", this);
+     QObject::connect
+             (peregrev_4_dv_on_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_4_dv_on()));
+
+     peregrev_4_dv_off_button = new QPushButton("peregrev_4dv OFF", this);
+     QObject::connect
+             (peregrev_4_dv_off_button, SIGNAL(clicked()),
+              this, SLOT(peregrev_4_dv_off()));
 
 
     //Pushbuttons
@@ -1087,7 +1217,7 @@ else
     K53_2610_label->setText("K53 = " + QString::number(K53_2610));
     K54_2610_label->setText("K54 = " + QString::number(K54_2610));
     K67_2610_label->setText("K67 = " + QString::number(K67_2610));
-    PAPDvx6_label->setText("PAPDvx6 = " + QString::number(PAPDvx6));
+    PAPDvh6_label->setText("PAPDvh6 = " + QString::number(PAPDvh6));
     F92_2610_label->setText("F92 = " + QString::number(F92_2610));
     F91_2610_label->setText("F91 = " + QString::number(F91_2610));
     F101_2610_label->setText("F101 = " + QString::number(F101_2610));
@@ -1109,6 +1239,25 @@ else
     F11_2610_label->setText("F11 = " + QString::number(F11_2610));
     F12_2610_label->setText("F12 = " + QString::number(F12_2610));
     S1_2610_label->setText("S1 = " + QString::number(S1_2610));
+    otkaz_avtomatiki_SPZ_label->setText
+            ("otkaz avtomatiki = " + QString::number(otkaz_avtomatiki_SPZ));
+    pozhar_1_dv_label->setText
+            ("pozhar 1 dvig = " + QString::number(pozhar_1_dv));
+    pozhar_2_dv_label->setText
+            ("pozhar 2 dvig = " + QString::number(pozhar_2_dv));
+    pozhar_3_dv_label->setText
+            ("pozhar 3 dvig = " + QString::number(pozhar_3_dv));
+    pozhar_4_dv_label->setText
+            ("pozhar 4 dvig = " + QString::number(pozhar_4_dv));
+    peregrev_1_dv_label->setText
+            ("peregrev 1 dvig = " + QString::number(peregrev_1_dv));
+    peregrev_2_dv_label->setText
+            ("peregrev 2 dvig = " + QString::number(peregrev_2_dv));
+    peregrev_3_dv_label->setText
+            ("peregrev 3 dvig = " + QString::number(peregrev_3_dv));
+    peregrev_4_dv_label->setText
+            ("peregrev 4 dvig = " + QString::number(peregrev_4_dv));
+
     Counter_EXB_label->setText("Counter_EXB = " + QString::number(Counter_EXB));
 
 //    layout setting
@@ -1134,7 +1283,7 @@ else
     layout_EXB_labels->addWidget(K53_2610_label);
     layout_EXB_labels->addWidget(K54_2610_label);
     layout_EXB_labels->addWidget(K67_2610_label);
-    layout_EXB_labels->addWidget(PAPDvx6_label);
+    layout_EXB_labels->addWidget(PAPDvh6_label);
     layout_EXB_labels->addWidget(F92_2610_label);
     layout_EXB_labels->addWidget(F91_2610_label);
     layout_EXB_labels->addWidget(F101_2610_label);
@@ -1156,26 +1305,50 @@ else
     layout_EXB_labels->addWidget(F11_2610_label);
     layout_EXB_labels->addWidget(F12_2610_label);
     layout_EXB_labels->addWidget(S1_2610_label);
+    layout_EXB_labels->addWidget(otkaz_avtomatiki_SPZ_label);
+    layout_EXB_labels->addWidget(pozhar_1_dv_label);
+    layout_EXB_labels->addWidget(pozhar_2_dv_label);
+    layout_EXB_labels->addWidget(pozhar_3_dv_label);
+    layout_EXB_labels->addWidget(pozhar_4_dv_label);
+    layout_EXB_labels->addWidget(peregrev_1_dv_label);
+    layout_EXB_labels->addWidget(peregrev_2_dv_label);
+    layout_EXB_labels->addWidget(peregrev_3_dv_label);
+    layout_EXB_labels->addWidget(peregrev_4_dv_label);
     layout_EXB_labels->addWidget(Counter_EXB_label);
 
+    //Buttons
     layout_EXB_buttons->addWidget(azs_on_button);
     layout_EXB_buttons->addWidget(azs_are_off_button);
     layout_EXB_buttons->addWidget(p2oblop_on_button);
-    layout_EXB_buttons->addWidget(F10_2610_button);
-    layout_EXB_buttons->addWidget(F18_2610_button);
-    layout_EXB_buttons->addWidget(F11_2610_button);
-    layout_EXB_buttons->addWidget(F12_2610_button);
-    layout_EXB_buttons->addWidget(S2_2610_button);
-    layout_EXB_buttons->addWidget(PNU_button);
-    layout_EXB_buttons->addWidget(otkaz_avtomatiki_SPZ_button);
-    layout_EXB_buttons->addWidget(pozhar_1_dv_button);
-    layout_EXB_buttons->addWidget(pozhar_2_dv_button);
-    layout_EXB_buttons->addWidget(pozhar_3_dv_button);
-    layout_EXB_buttons->addWidget(pozhar_4_dv_button);
-    layout_EXB_buttons->addWidget(peregrev_1_dv_button);
-    layout_EXB_buttons->addWidget(peregrev_2_dv_button);
-    layout_EXB_buttons->addWidget(peregrev_3_dv_button);
-    layout_EXB_buttons->addWidget(peregrev_4_dv_button);
+    layout_EXB_buttons->addWidget(p2oblop_off_button);
+    layout_EXB_buttons->addWidget(PAPDvh6_on_button);
+    layout_EXB_buttons->addWidget(PAPDvh6_off_button);
+    layout_EXB_buttons->addWidget(Ush1dpl_on_button);
+    layout_EXB_buttons->addWidget(Ush1dpl_off_button);
+    layout_EXB_buttons->addWidget(Ush1dpp_on_button);
+    layout_EXB_buttons->addWidget(Ush1dpp_off_button);
+    layout_EXB_buttons->addWidget(Ush2dpl_on_button);
+    layout_EXB_buttons->addWidget(Ush2dpl_off_button);
+    layout_EXB_buttons->addWidget(Ush2dpp_on_button);
+    layout_EXB_buttons->addWidget(Ush2dpp_off_button);
+    layout_EXB_buttons->addWidget(otkaz_avtomatiki_SPZ_on_button);
+    layout_EXB_buttons->addWidget(otkaz_avtomatiki_SPZ_off_button);
+    layout_EXB_buttons->addWidget(pozhar_1_dv_on_button);
+    layout_EXB_buttons->addWidget(pozhar_1_dv_off_button);
+    layout_EXB_buttons->addWidget(pozhar_2_dv_on_button);
+    layout_EXB_buttons->addWidget(pozhar_2_dv_off_button);
+    layout_EXB_buttons->addWidget(pozhar_3_dv_on_button);
+    layout_EXB_buttons->addWidget(pozhar_3_dv_off_button);
+    layout_EXB_buttons->addWidget(pozhar_4_dv_on_button);
+    layout_EXB_buttons->addWidget(pozhar_4_dv_off_button);
+    layout_EXB_buttons->addWidget(peregrev_1_dv_on_button);
+    layout_EXB_buttons->addWidget(peregrev_1_dv_off_button);
+    layout_EXB_buttons->addWidget(peregrev_2_dv_on_button);
+    layout_EXB_buttons->addWidget(peregrev_2_dv_off_button);
+    layout_EXB_buttons->addWidget(peregrev_3_dv_on_button);
+    layout_EXB_buttons->addWidget(peregrev_3_dv_off_button);
+    layout_EXB_buttons->addWidget(peregrev_4_dv_on_button);
+    layout_EXB_buttons->addWidget(peregrev_4_dv_off_button);
 
     layout_EXB_main->addLayout(layout_EXB_buttons);
     layout_EXB_main->addLayout(layout_EXB_labels);
@@ -1211,6 +1384,202 @@ int Antifirelogic_EXB::p2oblop_on()
 int Antifirelogic_EXB::p2oblop_off()
 {
     P2OBLOP = false;
+}
+int Antifirelogic_EXB::PAPDvh6_on()
+{
+    PAPDvh6 = true;
+}
+int Antifirelogic_EXB::PAPDvh6_off()
+{
+    PAPDvh6 = false;
+}
+int Antifirelogic_EXB::Ush1dpl_on()
+{
+    Ush1dpl = 21.0;
+}
+int Antifirelogic_EXB::Ush1dpl_off()
+{
+    Ush1dpl = 0.0;
+}
+int Antifirelogic_EXB::Ush1dpp_on()
+{
+    Ush1dpp = 21.0;
+}
+int Antifirelogic_EXB::Ush1dpp_off()
+{
+    Ush1dpp = 0.0;
+}
+int Antifirelogic_EXB::Ush2dpl_on()
+{
+    Ush2dpl = 21.0;
+}
+int Antifirelogic_EXB::Ush2dpl_off()
+{
+    Ush2dpl = 0.0;
+}
+int Antifirelogic_EXB::Ush2dpp_on()
+{
+    Ush2dpp = 21.0;
+}
+int Antifirelogic_EXB::Ush2dpp_off()
+{
+    Ush2dpp = 0.0;
+}
+int Antifirelogic_EXB::S1_2610_CW()
+{
+    if(S1_2610 <= 6)
+    {
+        S1_2610++;
+    }
+}
+int Antifirelogic_EXB::S1_2610_ACW()
+{
+    if(S1_2610 > 0)
+    {
+        S1_2610--;
+    }
+}
+int Antifirelogic_EXB::S2_2610_CW()
+{
+    if(S2_2610 <= 8)
+    {
+        S1_2610++;
+    }
+}
+int Antifirelogic_EXB::S2_2610_ACW()
+{
+    if(S2_2610 > 0)
+    {
+        S1_2610--;
+    }
+}
+int Antifirelogic_EXB::S11_2610_on()
+{
+    if(S11_2610 == 0)
+    {
+        S11_2610++;
+    }
+}
+int Antifirelogic_EXB::S11_2610_off()
+{
+    if(S11_2610 == 1)
+    {
+        S11_2610--;
+    }
+}
+int Antifirelogic_EXB::S13_2610_on()
+{
+    if(S13_2610 == 0)
+    {
+        S13_2610++;
+    }
+}
+int Antifirelogic_EXB::S13_2610_off()
+{
+    if(S13_2610 == 1)
+    {
+        S13_2610--;
+    }
+}
+int Antifirelogic_EXB::S14_2610_on()
+{
+    if(S14_2610 == 0)
+    {
+        S14_2610++;
+    }
+}
+int Antifirelogic_EXB::S14_2610_off()
+{
+    if(S14_2610 == 1)
+    {
+        S14_2610--;
+    }
+}
+int Antifirelogic_EXB::S15_2610_on()
+{
+    if(S15_2610 == 0)
+    {
+        S15_2610++;
+    }
+}
+int Antifirelogic_EXB::S15_2610_off()
+{
+    if(S15_2610 == 1)
+    {
+        S15_2610--;
+    }
+}
+int Antifirelogic_EXB::pozhar_1_dv_on()
+{
+    pozhar_1_dv = true;
+}
+int Antifirelogic_EXB::pozhar_1_dv_off()
+{
+    pozhar_1_dv = false;
+}
+int Antifirelogic_EXB::pozhar_2_dv_on()
+{
+    pozhar_2_dv = true;
+}
+int Antifirelogic_EXB::pozhar_2_dv_off()
+{
+    pozhar_2_dv = false;
+}
+int Antifirelogic_EXB::pozhar_3_dv_on()
+{
+    pozhar_3_dv = true;
+}
+int Antifirelogic_EXB::pozhar_3_dv_off()
+{
+    pozhar_3_dv = false;
+}
+int Antifirelogic_EXB::pozhar_4_dv_on()
+{
+    pozhar_4_dv = true;
+}
+int Antifirelogic_EXB::pozhar_4_dv_off()
+{
+    pozhar_4_dv = false;
+}
+int Antifirelogic_EXB::peregrev_1_dv_on()
+{
+    peregrev_1_dv = true;
+}
+int Antifirelogic_EXB::peregrev_1_dv_off()
+{
+    peregrev_1_dv = false;
+}
+int Antifirelogic_EXB::peregrev_2_dv_on()
+{
+    peregrev_2_dv = true;
+}
+int Antifirelogic_EXB::peregrev_2_dv_off()
+{
+    peregrev_2_dv = false;
+}
+int Antifirelogic_EXB::peregrev_3_dv_on()
+{
+    peregrev_3_dv = true;
+}
+int Antifirelogic_EXB::peregrev_3_dv_off()
+{
+    peregrev_3_dv = false;
+}
+int Antifirelogic_EXB::peregrev_4_dv_on()
+{
+    peregrev_4_dv = true;
+}
+int Antifirelogic_EXB::peregrev_4_dv_off()
+{
+    peregrev_4_dv = false;
+}
+int Antifirelogic_EXB::otkaz_avtomatiki_SPZ_on()
+{
+    otkaz_avtomatiki_SPZ = true;
+}
+int Antifirelogic_EXB::otkaz_avtomatiki_SPZ_off()
+{
+    otkaz_avtomatiki_SPZ = false;
 }
 
 

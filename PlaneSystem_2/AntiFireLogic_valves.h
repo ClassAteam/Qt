@@ -2,6 +2,7 @@
 #include <QWidget>
 #include <QObject>
 #include <QLabel>
+#include <QPushButton>
 
 class Antifirelogic_valves : public QWidget
 {
@@ -51,7 +52,35 @@ public:
      QLabel* S9_label;
      QLabel* Counter_label;
 
+     QPushButton* S3_2610_on_button;
+     QPushButton* S3_2610_off_button;
+     QPushButton* S4_2610_on_button;
+     QPushButton* S4_2610_off_button;
+     QPushButton* S5_2610_on_button;
+     QPushButton* S5_2610_off_button;
+     QPushButton* S6_2610_on_button;
+     QPushButton* S6_2610_off_button;
+     QPushButton* S7_2610_on_button;
+     QPushButton* S7_2610_off_button;
+     QPushButton* S8_2610_on_button;
+     QPushButton* S8_2610_off_button;
+     QPushButton* S9_2610_on_button;
+     QPushButton* S9_2610_off_button;
 
 public slots:
     int logic_valves();
+    int S3_2610_on();
+    int S3_2610_off();
+    int S4_2610_on();
+    int S4_2610_off();
+    int S5_2610_on();
+    int S5_2610_off();
+    int S6_2610_on();
+    int S6_2610_off();
+    int S7_2610_on();
+    int S7_2610_off();
+    int S8_2610_on();
+    int S8_2610_off();
+    int S9_2610_on();
+    int S9_2610_off();
 };

@@ -255,7 +255,8 @@ int Antifirelogic_valves::logic_valves()
     }
 
     // Motogandol's rele flag 2nd engine
-    if (K53_2610 == F82_2610 == true || K54_2610 == F72_2610 == true)
+    if (((K53_2610 == true) && (F82_2610 == true))
+            || ((K54_2610 == true) && (F72_2610 == true)))
     {
         K20_2610 = true;
     }
@@ -265,7 +266,8 @@ int Antifirelogic_valves::logic_valves()
     }
 
     // Motogandol's rele flag 3nd engine
-    if (K57_2610 == F82_2610 == true || K58_2610 == F72_2610 == true)
+    if (((K57_2610 == true) && (F82_2610 == true))
+            || ((K58_2610 == true) && (F72_2610 == true)))
     {
         K26_2610 = true;
     }
@@ -276,7 +278,8 @@ int Antifirelogic_valves::logic_valves()
 
 
     // Motogandol's rele flag 4nd engine
-    if (K60_2610 == F82_2610 == true || K61_2610 == F72_2610 == true)
+    if (((K60_2610 == true) && (F82_2610 == true))
+            || ((K61_2610 == true) && (F72_2610 == true)))
     {
         K28_2610 = true;
     }

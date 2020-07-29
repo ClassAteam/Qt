@@ -29,7 +29,7 @@ F142_2610;
 double
 Ush1dpl,
 Ush1dpp,
-Uacc;
+Ushal;
 int
 F7_2610,
 F8_2610,
@@ -78,7 +78,7 @@ Antifirelogic_valves::Antifirelogic_valves(QWidget* pwgt)
     F142_2610 = 0;
     Ush1dpl = 19;
     Ush1dpp = 19;
-    Uacc = 19;
+    Ushal = 19;
     F7_2610 = 0;
     F8_2610 = 0;
     S3_2610 = 0;
@@ -215,266 +215,319 @@ int Antifirelogic_valves::logic_valves()
             F72_2610 = false;
         }
 
-        if (F82_2610 == F72_2610 == true)					//009
+    }
+    else
+    {
+        F72_2610 = false;
+        F82_2610 = false;
+    }
+
+    if ((F82_2610 == 1) || (F72_2610 == 1))					//009
+    {
+
+        if (Ushal >= 16.0)
         {
-
-            if (Uacc >= 16.0)
-            {
-                F132_2610 = true;
-                F142_2610 = true;
-            }
-            else
-            {
-                F132_2610 = false;
-                F142_2610 = false;
-            }
-
-        }
-
-        // Motogandol's rele flag 1st engine
-        if (K50_2610 == F82_2610 == true || K51_2610 == F72_2610 == true)
-        {
-            K16_2610 = true;
-
-            if (S3_2610 == 1 && K15_2610 == true)		//a scheme issue
-            {
-                K15_2610 = true;
-            }
-            else
-            {
-                K15_2610 = false;
-            }
-
+            F132_2610 = true;
+            F142_2610 = true;
         }
         else
         {
-            K16_2610 = false;
-        }
-
-        // Motogandol's rele flag 2nd engine
-        if (K53_2610 == F82_2610 == true || K54_2610 == F72_2610 == true)
-        {
-            K20_2610 = true;
-
-            if (S4_2610 == 1 && K19_2610 == true)		//a scheme issue
-            {
-                K19_2610 = true;
-            }
-            else
-            {
-                K19_2610 = false;
-            }
-
-        }
-        else
-        {
-            K20_2610 = false;
-        }
-
-        // Motogandol's rele flag 3rd engine
-        if (K57_2610 == F82_2610 == true || K58_2610 == F82_2610 == true)
-        {
-            K26_2610 = true;
-
-            if (S7_2610 == 1 && K25_2610 == true)		//a scheme issue
-            {
-                K25_2610 = true;
-            }
-            else
-            {
-                K25_2610 = false;
-            }
-        }
-        else
-        {
-            K25_2610 = false;
-        }
-
-
-        // Motogandol's rele flag 4th engine
-        if (K60_2610 == F82_2610 == true || K61_2610 == F72_2610 == true)
-        {
-            K28_2610 = true;
-            if (S8_2610 == 1 && K27_2610 == true)		//a scheme issue
-            {
-                K27_2610 = true;
-            }
-            else
-            {
-                K27_2610 = false;
-            }
-        }
-        else
-        {
-            K16_2610 = false;
-        }
-
-        // Check a manual switch of VSU's motogandol
-        if ((S5_2610 || S6_2610 || K23_2610 == true )&& (F72_2610 == true))
-        {
-            K23_2610 = true;
-        }
-        else
-        {
-            K23_2610 = false;
-        }
-
-        // remaining voltage check
-        //F2-5 contact
-        if (F132_2610 == true)
-        {
-
-            if (K16_2610 || K15_2610 == true)
-            {
-                F25_2610 = true;
-            }
-            else
-            {
-
-                if (F142_2610 == true)
-                {
-
-                    if (K15_2610 == true)
-                    {
-                        F25_2610 = true;
-                    }
-                    else
-                    {
-                        F25_2610 = false;
-                    }
-
-                }
-                else
-                {
-                    F25_2610 = false;
-                }
-
-            }
-            //F3-5 contact
-            if (F132_2610 == true)
-            {
-                if (K20_2610 || K19_2610 == true)
-                {
-                    F35_2610 = true;
-                }
-            }
-            else
-            {
-                if (F142_2610 == true)
-                {
-                    if (K19_2610 == true)
-                    {
-                        F35_2610 = true;
-                    }
-                    else
-                    {
-                        F35_2610 = false;
-                    }
-
-                }
-                else
-                {
-                    F35_2610 = false;
-                }
-
-            }
-            //F4-5 contact
-            if (F132_2610 == true)
-            {
-                if (K24_2610 || K23_2610 == true)
-                {
-                    F45_2610 = true;
-                }
-
-            }
-            else
-            {
-                if (F142_2610 == true)
-                {
-
-                    if (K23_2610 == true)
-                    {
-                        F45_2610 = true;
-                    }
-                    else
-                    {
-                        F45_2610 = false;
-                    }
-
-                }
-                else
-                {
-                    F45_2610 = false;
-                }
-
-            }
-            //F5-5 contact
-            if (F142_2610 == true)
-            {
-
-                if (K26_2610 || K25_2610 == true)
-                {
-                    F55_2610 = true;
-                }
-
-            }
-            else
-            {
-                if (F132_2610 == true)
-                {
-
-                    if (K25_2610 == true)
-                    {
-                        F55_2610 = true;
-                    }
-                    else
-                    {
-                        F55_2610 = false;
-                    }
-
-                }
-                else
-                {
-                    F55_2610 = false;
-                }
-
-            }
-            //F6-5 contact
-            if (F142_2610 == true)
-            {
-
-                if (K28_2610 || K27_2610 == true)
-                {
-                    F65_2610 = true;
-                }
-            }
-            else
-            {
-                if (F132_2610 == true)
-                {
-                    if (K27_2610 == true)
-                    {
-
-                        F65_2610 = true;
-                    }
-                    else
-                    {
-                        F65_2610 = false;
-                    }
-                }
-                else
-                {
-                    F65_2610 = false;
-                }
-
-            }
+            F132_2610 = false;
+            F142_2610 = false;
         }
 
     }
     else
     {
-        F82_2610 = 0;
-        F72_2610 = 0;
+        F132_2610 = false;
+        F142_2610 = false;
+    }
+
+    // Motogandol's rele flag 1nd engine
+    if (((K50_2610 == true) && (F82_2610 == true))
+            || ((K51_2610 == true) && (F72_2610 == true)))
+    {
+        K16_2610 = true;
+    }
+    else
+    {
+        K16_2610 = false;
+    }
+
+    // Motogandol's rele flag 2nd engine
+    if (K53_2610 == F82_2610 == true || K54_2610 == F72_2610 == true)
+    {
+        K20_2610 = true;
+    }
+    else
+    {
+        K20_2610 = false;
+    }
+
+    // Motogandol's rele flag 3nd engine
+    if (K57_2610 == F82_2610 == true || K58_2610 == F72_2610 == true)
+    {
+        K26_2610 = true;
+    }
+    else
+    {
+        K26_2610 = false;
+    }
+
+
+    // Motogandol's rele flag 4nd engine
+    if (K60_2610 == F82_2610 == true || K61_2610 == F72_2610 == true)
+    {
+        K28_2610 = true;
+    }
+    else
+    {
+        K28_2610 = false;
+    }
+
+    // motogandol's manual switching 1
+    if (F72_2610 == 1)
+    {
+
+        if ((S3_2610 == 0) && (K15_2610 == 0))
+        {
+            K15_2610 = 0;
+        }
+        else
+        {
+            K15_2610 = 1;
+        }
+
+    }
+    else
+    {
+        K15_2610 = 0;
+    }
+
+    // motogandol's manual switching 2
+    if (F72_2610 == 1)
+    {
+
+        if ((S4_2610 == 0) && (K19_2610 == 0))
+        {
+            K19_2610 = 0;
+        }
+        else
+        {
+            K19_2610 = 1;
+        }
+
+    }
+    else
+    {
+        K19_2610 = 0;
+    }
+
+    // motogandol's manual switching 3
+    if (F82_2610 == 1)
+    {
+
+        if ((S7_2610 == 0) && (K25_2610 == 0))
+        {
+            K25_2610 = 0;
+        }
+        else
+        {
+            K25_2610 = 1;
+        }
+
+    }
+    else
+    {
+        K25_2610 = 0;
+    }
+
+    // motogandol's manual switching 4
+    if (F82_2610 == 1)
+    {
+
+        if ((S8_2610 == 0) && (K27_2610 == 0))
+        {
+            K27_2610 = 0;
+        }
+        else
+        {
+            K27_2610 = 1;
+        }
+
+    }
+    else
+    {
+        K27_2610 = 0;
+    }
+
+
+        // Check a manual switch of VSU's motogandol
+    if(F72_2610 == true)
+    {
+
+        if ((S5_2610 || S6_2610 || K23_2610 == true ))
+        {
+            K23_2610 = true;
+        }
+
+    }
+    else
+    {
+        K23_2610 = false;
+    }
+
+    // remaining voltage check
+    //F2-5 contact
+    if (F132_2610 == true)
+    {
+
+        if (K16_2610 || K15_2610 == true)
+        {
+        F25_2610 = true;
+        }
+        else
+        {
+
+        if (F142_2610 == true)
+        {
+
+            if (K15_2610 == true)
+            {
+            F25_2610 = true;
+            }
+            else
+            {
+            F25_2610 = false;
+            }
+
+        }
+        else
+        {
+            F25_2610 = false;
+        }
+
+        }
+    }
+    //F3-5 contact
+    if (F132_2610 == true)
+    {
+    if (K20_2610 || K19_2610 == true)
+    {
+        F35_2610 = true;
+    }
+    }
+    else
+    {
+    if (F142_2610 == true)
+    {
+        if (K19_2610 == true)
+        {
+        F35_2610 = true;
+        }
+        else
+        {
+        F35_2610 = false;
+        }
+
+    }
+    else
+    {
+        F35_2610 = false;
+    }
+
+    }
+
+    //F4-5 contact
+    if (F132_2610 == true)
+    {
+    if (K24_2610 || K23_2610 == true)
+    {
+        F45_2610 = true;
+    }
+
+    }
+    else
+    {
+    if (F142_2610 == true)
+    {
+
+        if (K23_2610 == true)
+        {
+        F45_2610 = true;
+        }
+        else
+        {
+        F45_2610 = false;
+        }
+
+    }
+    else
+    {
+        F45_2610 = false;
+    }
+
+    }
+
+    //F5-5 contact
+    if (F142_2610 == true)
+    {
+
+    if (K26_2610 || K25_2610 == true)
+    {
+        F55_2610 = true;
+    }
+
+    }
+    else
+    {
+    if (F132_2610 == true)
+    {
+
+        if (K25_2610 == true)
+        {
+        F55_2610 = true;
+        }
+        else
+        {
+        F55_2610 = false;
+        }
+
+    }
+    else
+    {
+        F55_2610 = false;
+    }
+
+    }
+
+    //F6-5 contact
+    if (F142_2610 == true)
+    {
+
+    if (K28_2610 || K27_2610 == true)
+    {
+        F65_2610 = true;
+    }
+    }
+    else
+    {
+    if (F132_2610 == true)
+    {
+        if (K27_2610 == true)
+        {
+
+        F65_2610 = true;
+        }
+        else
+        {
+        F65_2610 = false;
+        }
+    }
+    else
+    {
+        F65_2610 = false;
+    }
     }
 
     //showing values
@@ -507,7 +560,7 @@ int Antifirelogic_valves::logic_valves()
     F142_label->setText("F142 = " + QString::number(F142_2610));
     Ush1dpl_label->setText("Ush1dpl = " + QString::number(Ush1dpl));
     Ush1dpp_label->setText("Ush1dpp = " + QString::number(Ush1dpp));
-    Uacc_label->setText("Uacc = " + QString::number(Uacc));
+    Uacc_label->setText("Uacc = " + QString::number(Ushal));
     F7_label->setText("F7 = " + QString::number(F7_2610));
     F8_label->setText("F8 = " + QString::number(F8_2610));
     S3_label->setText("S3 = " + QString::number(S3_2610));

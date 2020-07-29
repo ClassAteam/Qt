@@ -26,6 +26,9 @@ K50_2610,
 K51_2610,
 K53_2610,
 K54_2610;
+extern int
+F7_2610,
+F8_2610;
 extern double
 Ush1dpl,
 Ush1dpp;
@@ -78,6 +81,16 @@ public:
      QLabel* F11_2610_label;
      QLabel* F12_2610_label;
      QLabel* S1_2610_label;
+     QLabel* S2_2610_label;
+     QLabel* S11_2610_label;
+     QLabel* S13_2610_label;
+     QLabel* S14_2610_label;
+     QLabel* S15_2610_label;
+     QLabel* PNU_label;
+     QLabel* PW_1_och_l_label;
+     QLabel* PW_1_och_o_label;
+     QLabel* PW_2_och_label;
+     QLabel* PW_3_och_label;
      QLabel* otkaz_avtomatiki_SPZ_label;
      QLabel* pozhar_1_dv_label;
      QLabel* pozhar_2_dv_label;
@@ -87,6 +100,7 @@ public:
      QLabel* peregrev_2_dv_label;
      QLabel* peregrev_3_dv_label;
      QLabel* peregrev_4_dv_label;
+     QLabel* pozhar_vsu_label;
      QLabel* Counter_EXB_label;
 
      QPushButton* azs_on_button;
@@ -103,6 +117,20 @@ public:
      QPushButton* Ush2dpl_off_button;
      QPushButton* Ush2dpp_on_button;
      QPushButton* Ush2dpp_off_button;
+     QPushButton* S1_2610_CW_button;
+     QPushButton* S1_2610_ACW_button;
+     QPushButton* S2_2610_CW_button;
+     QPushButton* S2_2610_ACW_button;
+     QPushButton* S11_2610_on_button;
+     QPushButton* S11_2610_off_button;
+     QPushButton* S13_2610_on_button;
+     QPushButton* S13_2610_off_button;
+     QPushButton* S14_2610_on_button;
+     QPushButton* S14_2610_off_button;
+     QPushButton* S15_2610_on_button;
+     QPushButton* S15_2610_off_button;
+     QPushButton* PNU_on_button;
+     QPushButton* PNU_off_button;
      QPushButton* otkaz_avtomatiki_SPZ_on_button;
      QPushButton* otkaz_avtomatiki_SPZ_off_button;
      QPushButton* pozhar_1_dv_on_button;
@@ -121,6 +149,8 @@ public:
      QPushButton* peregrev_3_dv_off_button;
      QPushButton* peregrev_4_dv_on_button;
      QPushButton* peregrev_4_dv_off_button;
+     QPushButton* pozhar_vsu_on_button;
+     QPushButton* pozhar_vsu_off_button;
 
 public slots:
     int logic_EXB();
@@ -138,6 +168,8 @@ public slots:
     int Ush2dpl_off();
     int Ush2dpp_on();
     int Ush2dpp_off();
+    int PNU_on();
+    int PNU_off();
     int S1_2610_CW();
     int S1_2610_ACW();
     int S2_2610_CW();
@@ -168,4 +200,6 @@ public slots:
     int peregrev_4_dv_off();
     int otkaz_avtomatiki_SPZ_on();
     int otkaz_avtomatiki_SPZ_off();
+    int pozhar_vsu_on();
+    int pozhar_vsu_off();
 };

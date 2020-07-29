@@ -24,7 +24,6 @@ F45_2610,
 F55_2610,
 F65_2610,
 F72_2610,
-F82_2610,
 F132_2610,
 F142_2610;
 double
@@ -34,6 +33,7 @@ Uacc;
 int
 F7_2610,
 F8_2610,
+F82_2610,
 S3_2610,
 S4_2610,
 S5_2610,
@@ -199,11 +199,11 @@ int Antifirelogic_valves::logic_valves()
         // Voltage check
         if ((Ush1dpl >= 16.0) && (F8_2610 == 1))
         {
-            F82_2610 = true;
+            F82_2610 = 1;
         }
         else
         {
-            F82_2610 = false;
+            F82_2610 = 0;
         }
 
         if ((Ush1dpp >= 16.0) && (F7_2610 == true))
@@ -469,14 +469,12 @@ int Antifirelogic_valves::logic_valves()
 
             }
         }
-        else
-        {
 
-            F82_2610 = false;
-            F72_2610 = false;
-        }
-
-
+    }
+    else
+    {
+        F82_2610 = 0;
+        F72_2610 = 0;
     }
 
     //showing values

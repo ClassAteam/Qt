@@ -108,14 +108,20 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     F915_2610 = 0;
     F916_2610 = 0;
     F917_2610 = 0;
-    Ush2dpl   = 0;
-    Ush2dpp   = 0;
+    Ush2dpl   = 21;
+    Ush2dpp   = 21;
     F9_2610   = 0;
     F10_2610  = 1;
     F18_2610  = 0;
     F11_2610  = 0;
     F12_2610  = 0;
     S1_2610   = 0;
+    S2_2610   = 0;
+    S11_2610   = 0;
+    S13_2610   = 0;
+    S14_2610   = 0;
+    S15_2610   = 0;
+    PNU   	  = false;
     otkaz_avtomatiki_SPZ = false;
     Counter_EXB = 0;
 
@@ -160,6 +166,16 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     F11_2610_label = new QLabel;
     F12_2610_label = new QLabel;
     S1_2610_label = new QLabel;
+    S2_2610_label = new QLabel;
+    S11_2610_label = new QLabel;
+    S13_2610_label = new QLabel;
+    S14_2610_label = new QLabel;
+    S15_2610_label = new QLabel;
+    PNU_label = new QLabel;
+    PW_1_och_l_label = new QLabel;
+    PW_1_och_o_label = new QLabel;
+    PW_2_och_label = new QLabel;
+    PW_3_och_label = new QLabel;
     otkaz_avtomatiki_SPZ_label = new QLabel;
     pozhar_1_dv_label = new QLabel;
     pozhar_2_dv_label = new QLabel;
@@ -169,6 +185,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     peregrev_2_dv_label = new QLabel;
     peregrev_3_dv_label = new QLabel;
     peregrev_4_dv_label = new QLabel;
+    pozhar_vsu_label = new QLabel;
     Counter_EXB_label = new QLabel;
 
     //Buttons_connections
@@ -214,7 +231,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
 
      Ush2dpl_on_button = new QPushButton("Ush2dpl ON", this);
      QObject::connect
-             (Ush1dpp_on_button, SIGNAL(clicked()), this, SLOT(Ush2dpl_on()));
+             (Ush2dpl_on_button, SIGNAL(clicked()), this, SLOT(Ush2dpl_on()));
 
      Ush2dpl_off_button = new QPushButton("Ush2dpl OFF", this);
      QObject::connect
@@ -227,6 +244,62 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
      Ush2dpp_off_button = new QPushButton("Ush2dpp OFF", this);
      QObject::connect
              (Ush2dpp_off_button, SIGNAL(clicked()), this, SLOT(Ush2dpp_off()));
+
+     S1_2610_CW_button = new QPushButton("S1_2610 CW", this);
+     QObject::connect
+             (S1_2610_CW_button, SIGNAL(clicked()), this, SLOT(S1_2610_CW()));
+
+     S1_2610_ACW_button = new QPushButton("S1_2610 ACW", this);
+     QObject::connect
+             (S1_2610_ACW_button, SIGNAL(clicked()), this, SLOT(S1_2610_ACW()));
+
+     S2_2610_CW_button = new QPushButton("S2_2610 CW", this);
+     QObject::connect
+             (S2_2610_CW_button, SIGNAL(clicked()), this, SLOT(S2_2610_CW()));
+
+     S2_2610_ACW_button = new QPushButton("S2_2610 ACW", this);
+     QObject::connect
+             (S2_2610_ACW_button, SIGNAL(clicked()), this, SLOT(S2_2610_ACW()));
+
+     S11_2610_on_button = new QPushButton("S11_2610 ON", this);
+     QObject::connect
+             (S11_2610_on_button, SIGNAL(clicked()), this, SLOT(S11_2610_on()));
+
+     S11_2610_off_button = new QPushButton("S11_2610 OFF", this);
+     QObject::connect
+             (S11_2610_off_button, SIGNAL(clicked()), this, SLOT(S11_2610_off()));
+
+     S13_2610_on_button = new QPushButton("S13_2610 ON", this);
+     QObject::connect
+             (S13_2610_on_button, SIGNAL(clicked()), this, SLOT(S13_2610_on()));
+
+     S13_2610_off_button = new QPushButton("S13_2610 OFF", this);
+     QObject::connect
+             (S13_2610_off_button, SIGNAL(clicked()), this, SLOT(S13_2610_off()));
+
+     S14_2610_on_button = new QPushButton("S14_2610 ON", this);
+     QObject::connect
+             (S14_2610_on_button, SIGNAL(clicked()), this, SLOT(S14_2610_on()));
+
+     S14_2610_off_button = new QPushButton("S14_2610 OFF", this);
+     QObject::connect
+             (S14_2610_off_button, SIGNAL(clicked()), this, SLOT(S14_2610_off()));
+
+     S15_2610_on_button = new QPushButton("S15_2610 ON", this);
+     QObject::connect
+             (S15_2610_on_button, SIGNAL(clicked()), this, SLOT(S15_2610_on()));
+
+     S15_2610_off_button = new QPushButton("S15_2610 OFF", this);
+     QObject::connect
+             (S15_2610_off_button, SIGNAL(clicked()), this, SLOT(S15_2610_off()));
+
+     PNU_on_button = new QPushButton("PNU ON", this);
+     QObject::connect
+             (PNU_on_button, SIGNAL(clicked()), this, SLOT(PNU_on()));
+
+     PNU_off_button = new QPushButton("PNU OFF", this);
+     QObject::connect
+             (PNU_off_button, SIGNAL(clicked()), this, SLOT(PNU_off()));
 
      otkaz_avtomatiki_SPZ_on_button =
              new QPushButton("Otkaza avtomatiki SPZ", this);
@@ -319,8 +392,16 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
              (peregrev_4_dv_off_button, SIGNAL(clicked()),
               this, SLOT(peregrev_4_dv_off()));
 
+     pozhar_vsu_on_button = new QPushButton("pozhar vsu ON", this);
+     QObject::connect
+             (pozhar_vsu_on_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_vsu_on()));
 
-    //Pushbuttons
+     pozhar_vsu_off_button = new QPushButton("pozhar vsu OFF", this);
+     QObject::connect
+             (pozhar_vsu_off_button, SIGNAL(clicked()),
+              this, SLOT(pozhar_vsu_off()));
+
 
 }
 int Antifirelogic_EXB::logic_EXB()
@@ -1166,7 +1247,7 @@ else
 
 }
 //					PW toggles
-if (PNU = true)
+if (PNU == true)
 {
     PW_1_och_l = true;
     PW_1_och_o = true;
@@ -1233,12 +1314,22 @@ else
     F917_2610_label->setText("F917 = " + QString::number(F917_2610));
     Ush2dpl_label->setText("Ush2dpl = " + QString::number(Ush2dpl));
     Ush2dpp_label->setText("Ush2dpp = " + QString::number(Ush2dpp));
+    S1_2610_label->setText("S1 = " + QString::number(S1_2610));
+    S2_2610_label->setText("S2 = " + QString::number(S2_2610));
+    S11_2610_label->setText("S11 = " + QString::number(S11_2610));
+    S13_2610_label->setText("S13 = " + QString::number(S13_2610));
+    S14_2610_label->setText("S14 = " + QString::number(S14_2610));
+    S15_2610_label->setText("S15 = " + QString::number(S15_2610));
+    PNU_label->setText("PNU = " + QString::number(PNU));
+    PW_1_och_l_label->setText("PW 1 och L = " + QString::number(PW_1_och_l));
+    PW_1_och_o_label->setText("PW 1 och O = " + QString::number(PW_1_och_o));
+    PW_2_och_label->setText("PW 2 och = " + QString::number(PW_2_och));
+    PW_3_och_label->setText("PW 3 och = " + QString::number(PW_3_och));
     F9_2610_label->setText("F9 = " + QString::number(F9_2610));
     F10_2610_label->setText("F10 = " + QString::number(F10_2610));
     F18_2610_label->setText("F18 = " + QString::number(F18_2610));
     F11_2610_label->setText("F11 = " + QString::number(F11_2610));
     F12_2610_label->setText("F12 = " + QString::number(F12_2610));
-    S1_2610_label->setText("S1 = " + QString::number(S1_2610));
     otkaz_avtomatiki_SPZ_label->setText
             ("otkaz avtomatiki = " + QString::number(otkaz_avtomatiki_SPZ));
     pozhar_1_dv_label->setText
@@ -1257,12 +1348,16 @@ else
             ("peregrev 3 dvig = " + QString::number(peregrev_3_dv));
     peregrev_4_dv_label->setText
             ("peregrev 4 dvig = " + QString::number(peregrev_4_dv));
+    pozhar_vsu_label->setText
+            ("pozhar vsu = " + QString::number(pozhar_vsu));
 
     Counter_EXB_label->setText("Counter_EXB = " + QString::number(Counter_EXB));
 
 //    layout setting
     QVBoxLayout *layout_EXB_labels = new QVBoxLayout;
+    QVBoxLayout *layout_EXB_labels_2 = new QVBoxLayout;
     QVBoxLayout *layout_EXB_buttons = new QVBoxLayout;
+    QVBoxLayout *layout_EXB_buttons_2 = new QVBoxLayout;
     QHBoxLayout *layout_EXB_main = new QHBoxLayout;
 
     layout_EXB_labels->addWidget(P2OBLOP_label);
@@ -1299,22 +1394,33 @@ else
     layout_EXB_labels->addWidget(F917_2610_label);
     layout_EXB_labels->addWidget(Ush2dpl_label);
     layout_EXB_labels->addWidget(Ush2dpp_label);
-    layout_EXB_labels->addWidget(F9_2610_label);
-    layout_EXB_labels->addWidget(F10_2610_label);
-    layout_EXB_labels->addWidget(F18_2610_label);
-    layout_EXB_labels->addWidget(F11_2610_label);
-    layout_EXB_labels->addWidget(F12_2610_label);
-    layout_EXB_labels->addWidget(S1_2610_label);
-    layout_EXB_labels->addWidget(otkaz_avtomatiki_SPZ_label);
-    layout_EXB_labels->addWidget(pozhar_1_dv_label);
-    layout_EXB_labels->addWidget(pozhar_2_dv_label);
-    layout_EXB_labels->addWidget(pozhar_3_dv_label);
-    layout_EXB_labels->addWidget(pozhar_4_dv_label);
-    layout_EXB_labels->addWidget(peregrev_1_dv_label);
-    layout_EXB_labels->addWidget(peregrev_2_dv_label);
-    layout_EXB_labels->addWidget(peregrev_3_dv_label);
-    layout_EXB_labels->addWidget(peregrev_4_dv_label);
-    layout_EXB_labels->addWidget(Counter_EXB_label);
+    layout_EXB_labels_2->addWidget(F9_2610_label);
+    layout_EXB_labels_2->addWidget(F10_2610_label);
+    layout_EXB_labels_2->addWidget(F18_2610_label);
+    layout_EXB_labels_2->addWidget(F11_2610_label);
+    layout_EXB_labels_2->addWidget(F12_2610_label);
+    layout_EXB_labels_2->addWidget(S1_2610_label);
+    layout_EXB_labels_2->addWidget(S2_2610_label);
+    layout_EXB_labels_2->addWidget(S11_2610_label);
+    layout_EXB_labels_2->addWidget(S13_2610_label);
+    layout_EXB_labels_2->addWidget(S14_2610_label);
+    layout_EXB_labels_2->addWidget(S15_2610_label);
+    layout_EXB_labels_2->addWidget(PNU_label);
+    layout_EXB_labels_2->addWidget(PW_1_och_l_label);
+    layout_EXB_labels_2->addWidget(PW_1_och_o_label);
+    layout_EXB_labels_2->addWidget(PW_2_och_label);
+    layout_EXB_labels_2->addWidget(PW_3_och_label);
+    layout_EXB_labels_2->addWidget(otkaz_avtomatiki_SPZ_label);
+    layout_EXB_labels_2->addWidget(pozhar_1_dv_label);
+    layout_EXB_labels_2->addWidget(pozhar_2_dv_label);
+    layout_EXB_labels_2->addWidget(pozhar_3_dv_label);
+    layout_EXB_labels_2->addWidget(pozhar_4_dv_label);
+    layout_EXB_labels_2->addWidget(peregrev_1_dv_label);
+    layout_EXB_labels_2->addWidget(peregrev_2_dv_label);
+    layout_EXB_labels_2->addWidget(peregrev_3_dv_label);
+    layout_EXB_labels_2->addWidget(peregrev_4_dv_label);
+    layout_EXB_labels_2->addWidget(pozhar_vsu_label);
+    layout_EXB_labels_2->addWidget(Counter_EXB_label);
 
     //Buttons
     layout_EXB_buttons->addWidget(azs_on_button);
@@ -1331,27 +1437,45 @@ else
     layout_EXB_buttons->addWidget(Ush2dpl_off_button);
     layout_EXB_buttons->addWidget(Ush2dpp_on_button);
     layout_EXB_buttons->addWidget(Ush2dpp_off_button);
-    layout_EXB_buttons->addWidget(otkaz_avtomatiki_SPZ_on_button);
-    layout_EXB_buttons->addWidget(otkaz_avtomatiki_SPZ_off_button);
-    layout_EXB_buttons->addWidget(pozhar_1_dv_on_button);
-    layout_EXB_buttons->addWidget(pozhar_1_dv_off_button);
-    layout_EXB_buttons->addWidget(pozhar_2_dv_on_button);
-    layout_EXB_buttons->addWidget(pozhar_2_dv_off_button);
-    layout_EXB_buttons->addWidget(pozhar_3_dv_on_button);
-    layout_EXB_buttons->addWidget(pozhar_3_dv_off_button);
-    layout_EXB_buttons->addWidget(pozhar_4_dv_on_button);
-    layout_EXB_buttons->addWidget(pozhar_4_dv_off_button);
-    layout_EXB_buttons->addWidget(peregrev_1_dv_on_button);
-    layout_EXB_buttons->addWidget(peregrev_1_dv_off_button);
-    layout_EXB_buttons->addWidget(peregrev_2_dv_on_button);
-    layout_EXB_buttons->addWidget(peregrev_2_dv_off_button);
-    layout_EXB_buttons->addWidget(peregrev_3_dv_on_button);
-    layout_EXB_buttons->addWidget(peregrev_3_dv_off_button);
-    layout_EXB_buttons->addWidget(peregrev_4_dv_on_button);
-    layout_EXB_buttons->addWidget(peregrev_4_dv_off_button);
+    layout_EXB_buttons_2->addWidget(S1_2610_CW_button);
+    layout_EXB_buttons_2->addWidget(S1_2610_ACW_button);
+    layout_EXB_buttons_2->addWidget(S2_2610_CW_button);
+    layout_EXB_buttons_2->addWidget(S2_2610_ACW_button);
+    layout_EXB_buttons_2->addWidget(S11_2610_on_button);
+    layout_EXB_buttons_2->addWidget(S11_2610_off_button);
+    layout_EXB_buttons_2->addWidget(S13_2610_on_button);
+    layout_EXB_buttons_2->addWidget(S13_2610_off_button);
+    layout_EXB_buttons_2->addWidget(S14_2610_on_button);
+    layout_EXB_buttons_2->addWidget(S14_2610_off_button);
+    layout_EXB_buttons_2->addWidget(S15_2610_on_button);
+    layout_EXB_buttons_2->addWidget(S15_2610_off_button);
+    layout_EXB_buttons_2->addWidget(PNU_on_button);
+    layout_EXB_buttons_2->addWidget(PNU_off_button);
+    layout_EXB_buttons_2->addWidget(pozhar_vsu_on_button);
+    layout_EXB_buttons_2->addWidget(pozhar_vsu_off_button);
+    layout_EXB_buttons_2->addWidget(otkaz_avtomatiki_SPZ_on_button);
+    layout_EXB_buttons_2->addWidget(otkaz_avtomatiki_SPZ_off_button);
+    layout_EXB_buttons_2->addWidget(pozhar_1_dv_on_button);
+    layout_EXB_buttons_2->addWidget(pozhar_1_dv_off_button);
+    layout_EXB_buttons_2->addWidget(pozhar_2_dv_on_button);
+    layout_EXB_buttons_2->addWidget(pozhar_2_dv_off_button);
+    layout_EXB_buttons_2->addWidget(pozhar_3_dv_on_button);
+    layout_EXB_buttons_2->addWidget(pozhar_3_dv_off_button);
+    layout_EXB_buttons_2->addWidget(pozhar_4_dv_on_button);
+    layout_EXB_buttons_2->addWidget(pozhar_4_dv_off_button);
+    layout_EXB_buttons_2->addWidget(peregrev_1_dv_on_button);
+    layout_EXB_buttons_2->addWidget(peregrev_1_dv_off_button);
+    layout_EXB_buttons_2->addWidget(peregrev_2_dv_on_button);
+    layout_EXB_buttons_2->addWidget(peregrev_2_dv_off_button);
+    layout_EXB_buttons_2->addWidget(peregrev_3_dv_on_button);
+    layout_EXB_buttons_2->addWidget(peregrev_3_dv_off_button);
+    layout_EXB_buttons_2->addWidget(peregrev_4_dv_on_button);
+    layout_EXB_buttons_2->addWidget(peregrev_4_dv_off_button);
 
     layout_EXB_main->addLayout(layout_EXB_buttons);
+    layout_EXB_main->addLayout(layout_EXB_buttons_2);
     layout_EXB_main->addLayout(layout_EXB_labels);
+    layout_EXB_main->addLayout(layout_EXB_labels_2);
     wgt_EXB.setLayout(layout_EXB_main);
     wgt_EXB.setWindowTitle("Antifire_system_execution_block");
     wgt_EXB.setMinimumWidth(300);
@@ -1360,6 +1484,8 @@ else
 
 int Antifirelogic_EXB::enable_AZS()
 {
+    F7_2610 = 1;
+    F8_2610 = 1;
     F9_2610 = 1;
     F10_2610 = 1;
     F18_2610 = 1;
@@ -1370,6 +1496,8 @@ int Antifirelogic_EXB::enable_AZS()
 
 int Antifirelogic_EXB::disable_AZS()
 {
+    F7_2610 = 0;
+    F8_2610 = 0;
     F9_2610 = 0;
     F10_2610 = 0;
     F18_2610 = 0;
@@ -1580,6 +1708,22 @@ int Antifirelogic_EXB::otkaz_avtomatiki_SPZ_on()
 int Antifirelogic_EXB::otkaz_avtomatiki_SPZ_off()
 {
     otkaz_avtomatiki_SPZ = false;
+}
+int Antifirelogic_EXB::PNU_on()
+{
+    PNU = true;
+}
+int Antifirelogic_EXB::PNU_off()
+{
+    PNU = false;
+}
+int Antifirelogic_EXB::pozhar_vsu_on()
+{
+    pozhar_vsu = true;
+}
+int Antifirelogic_EXB::pozhar_vsu_off()
+{
+    pozhar_vsu = false;
 }
 
 

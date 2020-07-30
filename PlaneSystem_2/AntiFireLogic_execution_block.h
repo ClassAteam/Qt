@@ -39,8 +39,10 @@ class Antifirelogic_EXB : public QWidget
 public:
     Antifirelogic_EXB(QWidget* pwgt = 0);
     QWidget wgt_EXB;
+     QLabel* PPBI_label;
      QLabel* P2OBLOP_label;
      QLabel* K1_2610_label;
+     QLabel* K2_2610_label;
      QLabel* K3_2610_label;
      QLabel* K6_2610_label;
      QLabel* K9_2610_label;
@@ -101,6 +103,10 @@ public:
      QLabel* peregrev_3_dv_label;
      QLabel* peregrev_4_dv_label;
      QLabel* pozhar_vsu_label;
+     QLabel* F135_2805_label;
+     QLabel* F145_2805_label;
+     QLabel* F155_2805_label;
+     QLabel* F165_2805_label;
      QLabel* Counter_EXB_label;
 
      QPushButton* azs_on_button;
@@ -151,6 +157,14 @@ public:
      QPushButton* peregrev_4_dv_off_button;
      QPushButton* pozhar_vsu_on_button;
      QPushButton* pozhar_vsu_off_button;
+     QPushButton* F135_2805_on_button;
+     QPushButton* F135_2805_off_button;
+     QPushButton* F145_2805_on_button;
+     QPushButton* F145_2805_off_button;
+     QPushButton* F155_2805_on_button;
+     QPushButton* F155_2805_off_button;
+     QPushButton* F165_2805_on_button;
+     QPushButton* F165_2805_off_button;
 
 public slots:
     int logic_EXB();
@@ -202,4 +216,12 @@ public slots:
     int otkaz_avtomatiki_SPZ_off();
     int pozhar_vsu_on();
     int pozhar_vsu_off();
+    int F135_2805_on();
+    int F135_2805_off();
+    int F145_2805_on();
+    int F145_2805_off();
+    int F155_2805_on();
+    int F155_2805_off();
+    int F165_2805_on();
+    int F165_2805_off();
 };

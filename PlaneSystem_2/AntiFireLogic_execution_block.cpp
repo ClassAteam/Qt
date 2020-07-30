@@ -24,9 +24,10 @@ F91_2610,
 F101_2610,
 F111_2610,
 F121_2610,
-F135_2610,
-F155_2610,
-F165_2610,
+F135_2805,
+F145_2805,
+F155_2805,
+F165_2805,
 F181_2610,
 F911_2610,
 F912_2610,
@@ -48,11 +49,7 @@ peregrev_1_dv,
 peregrev_2_dv,
 peregrev_3_dv,
 peregrev_4_dv,
-pozhar_vsu,
-F135_2805,
-F145_2805,
-F155_2805,
-F165_2805;
+pozhar_vsu;
 double
 Ush2dpl,
 Ush2dpp;
@@ -78,6 +75,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     QWidget wgt;
     //initialization
     K1_2610   = 0;
+    K2_2610   = 0;
     K3_2610   = 0;
     K6_2610   = 0;
     K9_2610   = 0;
@@ -123,11 +121,17 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     S15_2610   = 0;
     PNU   	  = false;
     otkaz_avtomatiki_SPZ = false;
+    pozhar_1_dv = 0;
+    pozhar_2_dv = 0;
+    pozhar_3_dv = 0;
+    pozhar_4_dv = 0;
     Counter_EXB = 0;
 
    //Labels
+    PPBI_label = new QLabel;
     P2OBLOP_label = new QLabel;
     K1_2610_label = new QLabel;
+    K2_2610_label = new QLabel;
     K3_2610_label = new QLabel;
     K6_2610_label = new QLabel;
     K9_2610_label = new QLabel;
@@ -186,6 +190,10 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     peregrev_3_dv_label = new QLabel;
     peregrev_4_dv_label = new QLabel;
     pozhar_vsu_label = new QLabel;
+    F135_2805_label = new QLabel;
+    F145_2805_label = new QLabel;
+    F155_2805_label = new QLabel;
+    F165_2805_label = new QLabel;
     Counter_EXB_label = new QLabel;
 
     //Buttons_connections
@@ -402,6 +410,45 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
              (pozhar_vsu_off_button, SIGNAL(clicked()),
               this, SLOT(pozhar_vsu_off()));
 
+     F135_2805_on_button = new QPushButton("F135_2805 ON", this);
+     QObject::connect
+             (F135_2805_on_button, SIGNAL(clicked()),
+              this, SLOT(F135_2805_on()));
+
+     F135_2805_off_button = new QPushButton("F135_2805 OFF", this);
+     QObject::connect
+             (F135_2805_off_button, SIGNAL(clicked()),
+              this, SLOT(F135_2805_off()));
+
+     F145_2805_on_button = new QPushButton("F145_2805 ON", this);
+     QObject::connect
+             (F145_2805_on_button, SIGNAL(clicked()),
+              this, SLOT(F145_2805_on()));
+
+     F145_2805_off_button = new QPushButton("F145_2805 OFF", this);
+     QObject::connect
+             (F145_2805_off_button, SIGNAL(clicked()),
+              this, SLOT(F145_2805_off()));
+
+     F155_2805_on_button = new QPushButton("F155_2805 ON", this);
+     QObject::connect
+             (F155_2805_on_button, SIGNAL(clicked()),
+              this, SLOT(F155_2805_on()));
+
+     F155_2805_off_button = new QPushButton("F155_2805 OFF", this);
+     QObject::connect
+             (F155_2805_off_button, SIGNAL(clicked()),
+              this, SLOT(F155_2805_off()));
+
+     F165_2805_on_button = new QPushButton("F165_2805 ON", this);
+     QObject::connect
+             (F165_2805_on_button, SIGNAL(clicked()),
+              this, SLOT(F165_2805_on()));
+
+     F165_2805_off_button = new QPushButton("F165_2805 OFF", this);
+     QObject::connect
+             (F165_2805_off_button, SIGNAL(clicked()),
+              this, SLOT(F165_2805_off()));
 
 }
 int Antifirelogic_EXB::logic_EXB()
@@ -602,11 +649,11 @@ if (F82_2610 == true)
 {
     if (F45_2610 == true || P2OBLOP == true || PAPDvh6 == true)
     {
-    PPBI = true;
+        PPBI = true;
     }
     else
     {
-    PPBI = false;
+        PPBI = false;
     }
 }
 else
@@ -621,63 +668,29 @@ if (PPBI == true)
     if (K1_2610 == true)
     {
 
-    if (F911_2610 == true)
-    {
-        K2_2610 = true;
+        if(F911_2610 == true ||
+                F912_2610 == true ||
+                F913_2610 == true ||
+                F917_2610 == true ||
+                pozhar_vsu == true
+                )
+        {
+            K2_2610 = true;
+        }
+
     }
     else
     {
-
-        if (F912_2610 == true)
-        {
-        K2_2610 = true;
-        }
-        else
-        {
-
-        if (F913_2610 == true)
+        if (pozhar_vsu == true)
         {
             K2_2610 = true;
         }
         else
         {
-
-            if (F917_2610 == true)
-            {
-            K2_2610 = true;
-            }
-            else
-            {
-
-            if (pozhar_vsu == true)
-            {
-                K2_2610 = true;
-            }
-            else
-            {
-                K2_2610 = false;
-            }
-
-            }
-
+            K2_2610 = false;
         }
-
-        }
-
     }
 
-    }
-    else
-    {
-    if (pozhar_vsu == true)
-    {
-        K2_2610 = true;
-    }
-    else
-    {
-        K2_2610 = false;
-    }
-    }
 }
 else
 {
@@ -735,7 +748,7 @@ if (F25_2610 == true)
 {
     if (K67_2610 != true)
     {
-    if (F135_2610 == true)
+    if (F135_2805 == true)
     {
         if (otkaz_avtomatiki_SPZ == true)
         {
@@ -818,7 +831,7 @@ if (F55_2610 == true)
 {
     if (K67_2610 != true)
     {
-    if (F155_2610 == true)
+    if (F155_2805 == true)
     {
         if (otkaz_avtomatiki_SPZ == true)
         {
@@ -848,7 +861,7 @@ if (F65_2610 == true)
 {
     if (K67_2610 != true)
     {
-    if (F165_2610 == true)
+    if (F165_2805 == true)
     {
         if (otkaz_avtomatiki_SPZ == true)
         {
@@ -1003,13 +1016,13 @@ if (F82_2610 == true)
     }
     else
     {
-    if (pozhar_1_dv == true)
+    if (pozhar_2_dv == true)
     {
-        K50_2610 = true;
+        K53_2610 = true;
     }
     else
     {
-        K50_2610 = false;
+        K53_2610 = false;
     }
     }
 }
@@ -1280,8 +1293,10 @@ else
     }
 }
     //showing values
+    PPBI_label->setText("PPBI = " + QString::number(PPBI));
     P2OBLOP_label->setText("P2OBLOP = " + QString::number(P2OBLOP));
     K1_2610_label->setText("K1 = " + QString::number(K1_2610));
+    K2_2610_label->setText("K2 = " + QString::number(K2_2610));
     K3_2610_label->setText("K3 = " + QString::number(K3_2610));
     K6_2610_label->setText("K6 = " + QString::number(K6_2610));
     K9_2610_label->setText("K9 = " + QString::number(K9_2610));
@@ -1350,7 +1365,14 @@ else
             ("peregrev 4 dvig = " + QString::number(peregrev_4_dv));
     pozhar_vsu_label->setText
             ("pozhar vsu = " + QString::number(pozhar_vsu));
-
+    F135_2805_label->setText
+            ("F135_2805 = " + QString::number(F135_2805));
+    F145_2805_label->setText
+            ("F145_2805 = " + QString::number(F145_2805));
+    F155_2805_label->setText
+            ("F155_2805 = " + QString::number(F155_2805));
+    F165_2805_label->setText
+            ("F165_2805 = " + QString::number(F165_2805));
     Counter_EXB_label->setText("Counter_EXB = " + QString::number(Counter_EXB));
 
 //    layout setting
@@ -1360,8 +1382,10 @@ else
     QVBoxLayout *layout_EXB_buttons_2 = new QVBoxLayout;
     QHBoxLayout *layout_EXB_main = new QHBoxLayout;
 
+    layout_EXB_labels->addWidget(PPBI_label);
     layout_EXB_labels->addWidget(P2OBLOP_label);
     layout_EXB_labels->addWidget(K1_2610_label);
+    layout_EXB_labels->addWidget(K2_2610_label);
     layout_EXB_labels->addWidget(K3_2610_label);
     layout_EXB_labels->addWidget(K6_2610_label);
     layout_EXB_labels->addWidget(K9_2610_label);
@@ -1420,6 +1444,10 @@ else
     layout_EXB_labels_2->addWidget(peregrev_3_dv_label);
     layout_EXB_labels_2->addWidget(peregrev_4_dv_label);
     layout_EXB_labels_2->addWidget(pozhar_vsu_label);
+    layout_EXB_labels_2->addWidget(F135_2805_label);
+    layout_EXB_labels_2->addWidget(F145_2805_label);
+    layout_EXB_labels_2->addWidget(F155_2805_label);
+    layout_EXB_labels_2->addWidget(F165_2805_label);
     layout_EXB_labels_2->addWidget(Counter_EXB_label);
 
     //Buttons
@@ -1437,6 +1465,14 @@ else
     layout_EXB_buttons->addWidget(Ush2dpl_off_button);
     layout_EXB_buttons->addWidget(Ush2dpp_on_button);
     layout_EXB_buttons->addWidget(Ush2dpp_off_button);
+    layout_EXB_buttons->addWidget(F135_2805_on_button);
+    layout_EXB_buttons->addWidget(F135_2805_off_button);
+    layout_EXB_buttons->addWidget(F145_2805_on_button);
+    layout_EXB_buttons->addWidget(F145_2805_off_button);
+    layout_EXB_buttons->addWidget(F155_2805_on_button);
+    layout_EXB_buttons->addWidget(F155_2805_off_button);
+    layout_EXB_buttons->addWidget(F165_2805_on_button);
+    layout_EXB_buttons->addWidget(F165_2805_off_button);
     layout_EXB_buttons_2->addWidget(S1_2610_CW_button);
     layout_EXB_buttons_2->addWidget(S1_2610_ACW_button);
     layout_EXB_buttons_2->addWidget(S2_2610_CW_button);
@@ -1724,6 +1760,38 @@ int Antifirelogic_EXB::pozhar_vsu_on()
 int Antifirelogic_EXB::pozhar_vsu_off()
 {
     pozhar_vsu = false;
+}
+int Antifirelogic_EXB::F135_2805_on()
+{
+    F135_2805 = true;
+}
+int Antifirelogic_EXB::F135_2805_off()
+{
+    F135_2805 = false;
+}
+int Antifirelogic_EXB::F145_2805_on()
+{
+    F145_2805 = true;
+}
+int Antifirelogic_EXB::F145_2805_off()
+{
+    F145_2805 = false;
+}
+int Antifirelogic_EXB::F155_2805_on()
+{
+    F155_2805 = true;
+}
+int Antifirelogic_EXB::F155_2805_off()
+{
+    F155_2805 = false;
+}
+int Antifirelogic_EXB::F165_2805_on()
+{
+    F165_2805 = true;
+}
+int Antifirelogic_EXB::F165_2805_off()
+{
+    F165_2805 = false;
 }
 
 

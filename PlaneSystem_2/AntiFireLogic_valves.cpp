@@ -415,29 +415,50 @@ int Antifirelogic_valves::logic_valves()
     //F3-5 contact
     if (F132_2610 == true)
     {
-    if (K20_2610 || K19_2610 == true)
-    {
-        F35_2610 = true;
-    }
-    }
-    else
-    {
-    if (F142_2610 == true)
-    {
-        if (K19_2610 == true)
+
+        if (K20_2610 == true || K19_2610 == true)
         {
-        F35_2610 = true;
+            F35_2610 = true;
         }
         else
         {
-        F35_2610 = false;
+            if (F142_2610 == true)
+            {
+
+                if (K19_2610 == true)
+                {
+                    F35_2610 = true;
+                }
+                else
+                {
+                    F35_2610 = false;
+                }
+
+            }
+
         }
 
     }
     else
     {
-        F35_2610 = false;
-    }
+
+        if (F142_2610 == true)
+        {
+
+            if (K19_2610 == true)
+            {
+                F35_2610 = true;
+            }
+            else
+            {
+                F35_2610 = false;
+            }
+
+        }
+        else
+        {
+            F35_2610 = false;
+        }
 
     }
 

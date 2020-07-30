@@ -6,7 +6,6 @@ PPBI,
 PNU,
 P2OBLOP,
 K1_2610,
-K2_2610,
 K3_2610,
 K6_2610,
 K9_2610,
@@ -75,7 +74,6 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     QWidget wgt;
     //initialization
     K1_2610   = 0;
-    K2_2610   = 0;
     K3_2610   = 0;
     K6_2610   = 0;
     K9_2610   = 0;
@@ -131,7 +129,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     PPBI_label = new QLabel;
     P2OBLOP_label = new QLabel;
     K1_2610_label = new QLabel;
-    K2_2610_label = new QLabel;
+    K24_2610_label = new QLabel;
     K3_2610_label = new QLabel;
     K6_2610_label = new QLabel;
     K9_2610_label = new QLabel;
@@ -675,7 +673,7 @@ if (PPBI == true)
                 pozhar_vsu == true
                 )
         {
-            K2_2610 = true;
+            K24_2610 = true;
         }
 
     }
@@ -683,49 +681,70 @@ if (PPBI == true)
     {
         if (pozhar_vsu == true)
         {
-            K2_2610 = true;
+            K24_2610 = true;
         }
         else
         {
-            K2_2610 = false;
+            K24_2610 = false;
         }
     }
 
 }
 else
 {
-    K2_2610 = false;
+    K24_2610 = false;
 }
 //						K42, K49toggle
-if (F25_2610 || F35_2610 || F45_2610 || F55_2610 || F65_2610 == true)
+if (F25_2610 == false &&
+        F35_2610 == false &&
+        F45_2610 == false &&
+        F55_2610 == false &&
+        F65_2610 == false)
 {
-    if (F121_2610 == true)
-    {
-    if (S13_2610 == 1)			//!!! non-defined switch, mb need enum type
-    {
-        K49_2610 = true;
-    }
-    else
-    {
-        if (S14_2610 == 1)
-        {
-        K49_2610 = true;
-        }
-        else
-        {
-        K49_2610 = false;
-        }
-    }
-    }
-    else
-    {
+
     K49_2610 = false;
-    }
+    K42_2610 = false;
 }
 else
 {
-    K49_2610 = false;
-    K42_2610 = false;
+    if (F121_2610 == true)
+    {
+        if (S13_2610 == 1)			//!!! non-defined switch, mb need enum type
+        {
+            K49_2610 = true;
+        }
+        else
+        {
+            if (S14_2610 == 1)
+            {
+                K49_2610 = true;
+            }
+            else
+            {
+            K49_2610 = false;
+            }
+        }
+
+        if (S11_2610 == 0)			//!!! non-defined switch, mb need enum type
+        {
+            K42_2610 = false;
+        }
+        else
+        {
+            if (F111_2610 == 0)
+            {
+                K42_2610 = false;
+            }
+            else
+            {
+                K42_2610 = true;
+            }
+        }
+    }
+    else
+    {
+        K49_2610 = false;
+    }
 }
 //					K67 toggle
 if (F101_2610 == true)
@@ -1285,18 +1304,16 @@ if (F111_2610 == true && K42_2610 == true)
 {
     PW_2_och = false;
 }
-else
+
+if (F121_2610 == true && K49_2610 == true)
 {
-    if (F121_2610 == true && K49_2610 == true)
-    {
     PW_3_och = false;
-    }
 }
     //showing values
     PPBI_label->setText("PPBI = " + QString::number(PPBI));
     P2OBLOP_label->setText("P2OBLOP = " + QString::number(P2OBLOP));
     K1_2610_label->setText("K1 = " + QString::number(K1_2610));
-    K2_2610_label->setText("K2 = " + QString::number(K2_2610));
+    K24_2610_label->setText("K24 = " + QString::number(K24_2610));
     K3_2610_label->setText("K3 = " + QString::number(K3_2610));
     K6_2610_label->setText("K6 = " + QString::number(K6_2610));
     K9_2610_label->setText("K9 = " + QString::number(K9_2610));
@@ -1385,7 +1402,7 @@ else
     layout_EXB_labels->addWidget(PPBI_label);
     layout_EXB_labels->addWidget(P2OBLOP_label);
     layout_EXB_labels->addWidget(K1_2610_label);
-    layout_EXB_labels->addWidget(K2_2610_label);
+    layout_EXB_labels->addWidget(K24_2610_label);
     layout_EXB_labels->addWidget(K3_2610_label);
     layout_EXB_labels->addWidget(K6_2610_label);
     layout_EXB_labels->addWidget(K9_2610_label);

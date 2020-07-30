@@ -42,7 +42,7 @@ public:
      QLabel* PPBI_label;
      QLabel* P2OBLOP_label;
      QLabel* K1_2610_label;
-     QLabel* K2_2610_label;
+     QLabel* K24_2610_label;
      QLabel* K3_2610_label;
      QLabel* K6_2610_label;
      QLabel* K9_2610_label;

@@ -700,8 +700,6 @@ int Antifirelogic_valves::logic_valves()
     layout_valves_main->addLayout(layout_valves_labels);
     wgt.setLayout(layout_valves_main);
     wgt.setWindowTitle("Antifire_system_valves");
-    wgt.setMinimumWidth(300);
-    wgt.show();
 
 }
 // assign variable values to similar Qobjects

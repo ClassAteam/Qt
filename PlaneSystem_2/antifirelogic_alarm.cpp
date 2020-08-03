@@ -726,8 +726,6 @@ else
     layout_alarm_main->addLayout(layout_alarm_labels);
     wgt_alarm.setLayout(layout_alarm_main);
     wgt_alarm.setWindowTitle("Antifire alarm system");
-    wgt_alarm.setMinimumWidth(300);
-    wgt_alarm.show();
 
 }
 

@@ -1538,8 +1538,6 @@ if (F121_2610 == true && K49_2610 == true)
     layout_EXB_main->addLayout(layout_EXB_labels_2);
     wgt_EXB.setLayout(layout_EXB_main);
     wgt_EXB.setWindowTitle("Antifire_system_execution_block");
-    wgt_EXB.setMinimumWidth(300);
-    wgt_EXB.show();
 }
 
 int Antifirelogic_EXB::enable_AZS()

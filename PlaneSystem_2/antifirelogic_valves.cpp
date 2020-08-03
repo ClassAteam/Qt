@@ -1,4 +1,4 @@
-#include "AntiFireLogic_valves.h"
+#include "antifirelogic_valves.h"
 #include "QtWidgets"
 bool K15_2610,
 K16_2610,
@@ -44,7 +44,7 @@ S9_2610,
 Counter_valves;
 
 
-Antifirelogic_valves::Antifirelogic_valves(QWidget* pwgt)
+antifirelogic_valves::antifirelogic_valves(QWidget* pwgt)
     : QWidget(pwgt)
 {
     QWidget wgt;
@@ -190,7 +190,7 @@ Antifirelogic_valves::Antifirelogic_valves(QWidget* pwgt)
 
 
 }
-int Antifirelogic_valves::logic_valves()
+int antifirelogic_valves::logic_valves()
 {
     Counter_valves++;
 
@@ -704,59 +704,59 @@ int Antifirelogic_valves::logic_valves()
 }
 // assign variable values to similar Qobjects
 
-int Antifirelogic_valves::S3_2610_on()
+int antifirelogic_valves::S3_2610_on()
 {
     S3_2610 = 1;
 }
-int Antifirelogic_valves::S3_2610_off()
+int antifirelogic_valves::S3_2610_off()
 {
     S3_2610 = 0;
 }
-int Antifirelogic_valves::S4_2610_on()
+int antifirelogic_valves::S4_2610_on()
 {
     S4_2610 = 1;
 }
-int Antifirelogic_valves::S4_2610_off()
+int antifirelogic_valves::S4_2610_off()
 {
     S4_2610 = 0;
 }
-int Antifirelogic_valves::S5_2610_on()
+int antifirelogic_valves::S5_2610_on()
 {
     S5_2610 = 1;
 }
-int Antifirelogic_valves::S5_2610_off()
+int antifirelogic_valves::S5_2610_off()
 {
     S5_2610 = 0;
 }
-int Antifirelogic_valves::S6_2610_on()
+int antifirelogic_valves::S6_2610_on()
 {
     S6_2610 = 1;
 }
-int Antifirelogic_valves::S6_2610_off()
+int antifirelogic_valves::S6_2610_off()
 {
     S6_2610 = 0;
 }
-int Antifirelogic_valves::S7_2610_on()
+int antifirelogic_valves::S7_2610_on()
 {
     S7_2610 = 1;
 }
-int Antifirelogic_valves::S7_2610_off()
+int antifirelogic_valves::S7_2610_off()
 {
     S7_2610 = 0;
 }
-int Antifirelogic_valves::S8_2610_on()
+int antifirelogic_valves::S8_2610_on()
 {
     S8_2610 = 1;
 }
-int Antifirelogic_valves::S8_2610_off()
+int antifirelogic_valves::S8_2610_off()
 {
     S8_2610 = 0;
 }
-int Antifirelogic_valves::S9_2610_on()
+int antifirelogic_valves::S9_2610_on()
 {
     S9_2610 = 1;
 }
-int Antifirelogic_valves::S9_2610_off()
+int antifirelogic_valves::S9_2610_off()
 {
     S9_2610 = 0;
 }

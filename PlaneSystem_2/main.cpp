@@ -1,16 +1,16 @@
 #include "main.h"
 #include <QApplication>
 #include <QtWidgets>
-#include <AntiFireLogic_valves.h>
-#include <AntiFireLogic_execution_block.h>
+#include <antifirelogic_valves.h>
+#include <antifirelogic_execution_block.h>
 #include <antifirelogic_alarm.h>
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Antifirelogic_valves logic_valve;
-    Antifirelogic_EXB logic_EXB;
+    antifirelogic_valves logic_valve;
+    antifirelogic_exb logic_EXB;
     antifirelogic_alarm logic_alarm;
     QTimer *timer = new QTimer;
 

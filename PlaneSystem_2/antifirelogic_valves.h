@@ -4,12 +4,12 @@
 #include <QLabel>
 #include <QPushButton>
 
-class Antifirelogic_valves : public QWidget
+class antifirelogic_valves : public QWidget
 {
     Q_OBJECT
 
 public:
-    Antifirelogic_valves(QWidget* pwgt = 0);
+    antifirelogic_valves(QWidget* pwgt = 0);
     QWidget wgt;
      QLabel* K15_label;
      QLabel* K16_label;

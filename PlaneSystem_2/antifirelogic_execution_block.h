@@ -32,12 +32,12 @@ F8_2610;
 extern double
 Ush1dpl,
 Ush1dpp;
-class Antifirelogic_EXB : public QWidget
+class antifirelogic_exb : public QWidget
 {
     Q_OBJECT
 
 public:
-    Antifirelogic_EXB(QWidget* pwgt = 0);
+    antifirelogic_exb(QWidget* pwgt = 0);
     QWidget wgt_EXB;
      QLabel* PPBI_label;
      QLabel* P2OBLOP_label;

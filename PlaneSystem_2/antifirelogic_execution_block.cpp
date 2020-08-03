@@ -1,4 +1,4 @@
-#include "AntiFireLogic_execution_block.h"
+#include "antifirelogic_execution_block.h"
 #include "QtWidgets"
 bool
 PAPDvh6,
@@ -68,7 +68,7 @@ S15_2610,
 Counter_EXB;
 
 
-Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
+antifirelogic_exb::antifirelogic_exb(QWidget* pwgt)
     : QWidget(pwgt)
 {
     QWidget wgt;
@@ -449,7 +449,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
               this, SLOT(F165_2805_off()));
 
 }
-int Antifirelogic_EXB::logic_EXB()
+int antifirelogic_exb::logic_EXB()
 {
 Counter_EXB++;
 
@@ -1540,7 +1540,7 @@ if (F121_2610 == true && K49_2610 == true)
     wgt_EXB.setWindowTitle("Antifire_system_execution_block");
 }
 
-int Antifirelogic_EXB::enable_AZS()
+int antifirelogic_exb::enable_AZS()
 {
     F7_2610 = 1;
     F8_2610 = 1;
@@ -1552,7 +1552,7 @@ int Antifirelogic_EXB::enable_AZS()
     S1_2610 = 1;
 }
 
-int Antifirelogic_EXB::disable_AZS()
+int antifirelogic_exb::disable_AZS()
 {
     F7_2610 = 0;
     F8_2610 = 0;
@@ -1563,255 +1563,255 @@ int Antifirelogic_EXB::disable_AZS()
     F12_2610 = 0;
     S1_2610 = 0;
 }
-int Antifirelogic_EXB::p2oblop_on()
+int antifirelogic_exb::p2oblop_on()
 {
     P2OBLOP = true;
 }
-int Antifirelogic_EXB::p2oblop_off()
+int antifirelogic_exb::p2oblop_off()
 {
     P2OBLOP = false;
 }
-int Antifirelogic_EXB::PAPDvh6_on()
+int antifirelogic_exb::PAPDvh6_on()
 {
     PAPDvh6 = true;
 }
-int Antifirelogic_EXB::PAPDvh6_off()
+int antifirelogic_exb::PAPDvh6_off()
 {
     PAPDvh6 = false;
 }
-int Antifirelogic_EXB::Ush1dpl_on()
+int antifirelogic_exb::Ush1dpl_on()
 {
     Ush1dpl = 21.0;
 }
-int Antifirelogic_EXB::Ush1dpl_off()
+int antifirelogic_exb::Ush1dpl_off()
 {
     Ush1dpl = 0.0;
 }
-int Antifirelogic_EXB::Ush1dpp_on()
+int antifirelogic_exb::Ush1dpp_on()
 {
     Ush1dpp = 21.0;
 }
-int Antifirelogic_EXB::Ush1dpp_off()
+int antifirelogic_exb::Ush1dpp_off()
 {
     Ush1dpp = 0.0;
 }
-int Antifirelogic_EXB::Ush2dpl_on()
+int antifirelogic_exb::Ush2dpl_on()
 {
     Ush2dpl = 21.0;
 }
-int Antifirelogic_EXB::Ush2dpl_off()
+int antifirelogic_exb::Ush2dpl_off()
 {
     Ush2dpl = 0.0;
 }
-int Antifirelogic_EXB::Ush2dpp_on()
+int antifirelogic_exb::Ush2dpp_on()
 {
     Ush2dpp = 21.0;
 }
-int Antifirelogic_EXB::Ush2dpp_off()
+int antifirelogic_exb::Ush2dpp_off()
 {
     Ush2dpp = 0.0;
 }
-int Antifirelogic_EXB::S1_2610_CW()
+int antifirelogic_exb::S1_2610_CW()
 {
     if(S1_2610 <= 6)
     {
         S1_2610++;
     }
 }
-int Antifirelogic_EXB::S1_2610_ACW()
+int antifirelogic_exb::S1_2610_ACW()
 {
     if(S1_2610 > 0)
     {
         S1_2610--;
     }
 }
-int Antifirelogic_EXB::S2_2610_CW()
+int antifirelogic_exb::S2_2610_CW()
 {
     if(S2_2610 <= 8)
     {
         S1_2610++;
     }
 }
-int Antifirelogic_EXB::S2_2610_ACW()
+int antifirelogic_exb::S2_2610_ACW()
 {
     if(S2_2610 > 0)
     {
         S1_2610--;
     }
 }
-int Antifirelogic_EXB::S11_2610_on()
+int antifirelogic_exb::S11_2610_on()
 {
     if(S11_2610 == 0)
     {
         S11_2610++;
     }
 }
-int Antifirelogic_EXB::S11_2610_off()
+int antifirelogic_exb::S11_2610_off()
 {
     if(S11_2610 == 1)
     {
         S11_2610--;
     }
 }
-int Antifirelogic_EXB::S13_2610_on()
+int antifirelogic_exb::S13_2610_on()
 {
     if(S13_2610 == 0)
     {
         S13_2610++;
     }
 }
-int Antifirelogic_EXB::S13_2610_off()
+int antifirelogic_exb::S13_2610_off()
 {
     if(S13_2610 == 1)
     {
         S13_2610--;
     }
 }
-int Antifirelogic_EXB::S14_2610_on()
+int antifirelogic_exb::S14_2610_on()
 {
     if(S14_2610 == 0)
     {
         S14_2610++;
     }
 }
-int Antifirelogic_EXB::S14_2610_off()
+int antifirelogic_exb::S14_2610_off()
 {
     if(S14_2610 == 1)
     {
         S14_2610--;
     }
 }
-int Antifirelogic_EXB::S15_2610_on()
+int antifirelogic_exb::S15_2610_on()
 {
     if(S15_2610 == 0)
     {
         S15_2610++;
     }
 }
-int Antifirelogic_EXB::S15_2610_off()
+int antifirelogic_exb::S15_2610_off()
 {
     if(S15_2610 == 1)
     {
         S15_2610--;
     }
 }
-int Antifirelogic_EXB::pozhar_1_dv_on()
+int antifirelogic_exb::pozhar_1_dv_on()
 {
     pozhar_1_dv = true;
 }
-int Antifirelogic_EXB::pozhar_1_dv_off()
+int antifirelogic_exb::pozhar_1_dv_off()
 {
     pozhar_1_dv = false;
 }
-int Antifirelogic_EXB::pozhar_2_dv_on()
+int antifirelogic_exb::pozhar_2_dv_on()
 {
     pozhar_2_dv = true;
 }
-int Antifirelogic_EXB::pozhar_2_dv_off()
+int antifirelogic_exb::pozhar_2_dv_off()
 {
     pozhar_2_dv = false;
 }
-int Antifirelogic_EXB::pozhar_3_dv_on()
+int antifirelogic_exb::pozhar_3_dv_on()
 {
     pozhar_3_dv = true;
 }
-int Antifirelogic_EXB::pozhar_3_dv_off()
+int antifirelogic_exb::pozhar_3_dv_off()
 {
     pozhar_3_dv = false;
 }
-int Antifirelogic_EXB::pozhar_4_dv_on()
+int antifirelogic_exb::pozhar_4_dv_on()
 {
     pozhar_4_dv = true;
 }
-int Antifirelogic_EXB::pozhar_4_dv_off()
+int antifirelogic_exb::pozhar_4_dv_off()
 {
     pozhar_4_dv = false;
 }
-int Antifirelogic_EXB::peregrev_1_dv_on()
+int antifirelogic_exb::peregrev_1_dv_on()
 {
     peregrev_1_dv = true;
 }
-int Antifirelogic_EXB::peregrev_1_dv_off()
+int antifirelogic_exb::peregrev_1_dv_off()
 {
     peregrev_1_dv = false;
 }
-int Antifirelogic_EXB::peregrev_2_dv_on()
+int antifirelogic_exb::peregrev_2_dv_on()
 {
     peregrev_2_dv = true;
 }
-int Antifirelogic_EXB::peregrev_2_dv_off()
+int antifirelogic_exb::peregrev_2_dv_off()
 {
     peregrev_2_dv = false;
 }
-int Antifirelogic_EXB::peregrev_3_dv_on()
+int antifirelogic_exb::peregrev_3_dv_on()
 {
     peregrev_3_dv = true;
 }
-int Antifirelogic_EXB::peregrev_3_dv_off()
+int antifirelogic_exb::peregrev_3_dv_off()
 {
     peregrev_3_dv = false;
 }
-int Antifirelogic_EXB::peregrev_4_dv_on()
+int antifirelogic_exb::peregrev_4_dv_on()
 {
     peregrev_4_dv = true;
 }
-int Antifirelogic_EXB::peregrev_4_dv_off()
+int antifirelogic_exb::peregrev_4_dv_off()
 {
     peregrev_4_dv = false;
 }
-int Antifirelogic_EXB::otkaz_avtomatiki_SPZ_on()
+int antifirelogic_exb::otkaz_avtomatiki_SPZ_on()
 {
     otkaz_avtomatiki_SPZ = true;
 }
-int Antifirelogic_EXB::otkaz_avtomatiki_SPZ_off()
+int antifirelogic_exb::otkaz_avtomatiki_SPZ_off()
 {
     otkaz_avtomatiki_SPZ = false;
 }
-int Antifirelogic_EXB::PNU_on()
+int antifirelogic_exb::PNU_on()
 {
     PNU = true;
 }
-int Antifirelogic_EXB::PNU_off()
+int antifirelogic_exb::PNU_off()
 {
     PNU = false;
 }
-int Antifirelogic_EXB::pozhar_vsu_on()
+int antifirelogic_exb::pozhar_vsu_on()
 {
     pozhar_vsu = true;
 }
-int Antifirelogic_EXB::pozhar_vsu_off()
+int antifirelogic_exb::pozhar_vsu_off()
 {
     pozhar_vsu = false;
 }
-int Antifirelogic_EXB::F135_2805_on()
+int antifirelogic_exb::F135_2805_on()
 {
     F135_2805 = true;
 }
-int Antifirelogic_EXB::F135_2805_off()
+int antifirelogic_exb::F135_2805_off()
 {
     F135_2805 = false;
 }
-int Antifirelogic_EXB::F145_2805_on()
+int antifirelogic_exb::F145_2805_on()
 {
     F145_2805 = true;
 }
-int Antifirelogic_EXB::F145_2805_off()
+int antifirelogic_exb::F145_2805_off()
 {
     F145_2805 = false;
 }
-int Antifirelogic_EXB::F155_2805_on()
+int antifirelogic_exb::F155_2805_on()
 {
     F155_2805 = true;
 }
-int Antifirelogic_EXB::F155_2805_off()
+int antifirelogic_exb::F155_2805_off()
 {
     F155_2805 = false;
 }
-int Antifirelogic_EXB::F165_2805_on()
+int antifirelogic_exb::F165_2805_on()
 {
     F165_2805 = true;
 }
-int Antifirelogic_EXB::F165_2805_off()
+int antifirelogic_exb::F165_2805_off()
 {
     F165_2805 = false;
 }

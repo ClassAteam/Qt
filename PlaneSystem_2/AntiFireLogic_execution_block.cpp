@@ -194,7 +194,7 @@ Antifirelogic_EXB::Antifirelogic_EXB(QWidget* pwgt)
     F165_2805_label = new QLabel;
     Counter_EXB_label = new QLabel;
 
-    //Buttons_connections
+    //Buttons and connections
      azs_on_button = new QPushButton("AZS are ON", this);
      QObject::connect
              (azs_on_button, SIGNAL(clicked()), this, SLOT(enable_AZS()));
@@ -522,16 +522,23 @@ if (F91_2610 == true)
 {
     if (F101_2610 == true)
     {
-    F92_2610 = false;
+        F92_2610 = false;
     }
-    if (F181_2610 == true)
+    else
     {
-    F92_2610 = false;
+        if (F181_2610 == true)
+        {
+            F92_2610 = false;
+        }
+        else
+        {
+            F92_2610 = true;
+        }
     }
 }
 else
 {
-    F92_2610 = true;
+    F92_2610 = false;
 }
 //					K1 toggle
 if (F92_2610 == true && S1_2610 == 1)

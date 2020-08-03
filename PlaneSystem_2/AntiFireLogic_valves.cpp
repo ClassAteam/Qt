@@ -497,61 +497,100 @@ int Antifirelogic_valves::logic_valves()
     if (F142_2610 == true)
     {
 
-    if (K26_2610 || K25_2610 == true)
-    {
-        F55_2610 = true;
-    }
-
-    }
-    else
-    {
-    if (F132_2610 == true)
-    {
-
-        if (K25_2610 == true)
+        if (K26_2610 == true || K25_2610 == true)
         {
-        F55_2610 = true;
+            F55_2610 = true;
         }
         else
         {
-        F55_2610 = false;
+            if(F132_2610 == true)
+            {
+
+                if(K25_2610 == true)
+                {
+                    F55_2610 = true;
+                }
+                else
+                {
+                    F55_2610 = false;
+                }
+
+            }
+            else
+            {
+                F55_2610 = false;
+            }
+
         }
 
     }
     else
     {
-        F55_2610 = false;
-    }
-
+        if (F132_2610 == true)
+        {
+            if (K25_2610 == true)
+            {
+                F55_2610 = true;
+            }
+            else
+            {
+                F55_2610 = false;
+            }
+        }
+        else
+        {
+            F55_2610 = false;
+        }
     }
 
     //F6-5 contact
     if (F142_2610 == true)
     {
 
-    if (K28_2610 || K27_2610 == true)
-    {
-        F65_2610 = true;
-    }
-    }
-    else
-    {
-    if (F132_2610 == true)
-    {
-        if (K27_2610 == true)
+        if (K28_2610 == true || K27_2610 == true)
         {
-
-        F65_2610 = true;
+            F65_2610 = true;
         }
         else
         {
-        F65_2610 = false;
+            if(F132_2610 == true)
+            {
+
+                if(K27_2610 == true)
+                {
+                    F65_2610 = true;
+                }
+                else
+                {
+                    F65_2610 = false;
+                }
+
+            }
+            else
+            {
+                F65_2610 = false;
+            }
+
         }
+
     }
     else
     {
-        F65_2610 = false;
-    }
+        if (F132_2610 == true)
+        {
+            if (K27_2610 == true)
+            {
+                F65_2610 = true;
+            }
+            else
+            {
+                F65_2610 = false;
+            }
+        }
+        else
+        {
+            F65_2610 = false;
+        }
     }
 
     //showing values

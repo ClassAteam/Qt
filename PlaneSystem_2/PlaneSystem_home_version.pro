@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     AntiFireLogic_execution_block.cpp \
     AntiFireLogic_valves.cpp \
+    antifirelogic_alarm.cpp \
     main.cpp
 
 HEADERS += \
     AntiFireLogic_execution_block.h \
     AntiFireLogic_valves.h \
+    antifirelogic_alarm.h \
     main.h
 
 # Default rules for deployment.

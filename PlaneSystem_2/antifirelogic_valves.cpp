@@ -637,6 +637,7 @@ int antifirelogic_valves::logic_valves()
 
 //    layout setting
     QVBoxLayout *layout_valves_labels = new QVBoxLayout;
+    QVBoxLayout *layout_valves_labels_2 = new QVBoxLayout;
     QVBoxLayout *layout_valves_buttons = new QVBoxLayout;
     QHBoxLayout *layout_valves_main = new QHBoxLayout;
 
@@ -698,6 +699,7 @@ int antifirelogic_valves::logic_valves()
 
     layout_valves_main->addLayout(layout_valves_buttons);
     layout_valves_main->addLayout(layout_valves_labels);
+    layout_valves_main->addLayout(layout_valves_labels_2);
     wgt.setLayout(layout_valves_main);
     wgt.setWindowTitle("Antifire_system_valves");
 

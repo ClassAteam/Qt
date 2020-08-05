@@ -61,6 +61,7 @@ F12_2610,
 S1_2610,
 S2_2610,
 S11_2610,
+S12_2610,
 S13_2610,
 S14_2610,
 S15_2610,
@@ -114,6 +115,7 @@ antifirelogic_exb::antifirelogic_exb(QWidget* pwgt)
     S1_2610   = 0;
     S2_2610   = 0;
     S11_2610   = 0;
+    S12_2610   = 0;
     S13_2610   = 0;
     S14_2610   = 0;
     S15_2610   = 0;
@@ -170,6 +172,7 @@ antifirelogic_exb::antifirelogic_exb(QWidget* pwgt)
     S1_2610_label = new QLabel;
     S2_2610_label = new QLabel;
     S11_2610_label = new QLabel;
+    S12_2610_label = new QLabel;
     S13_2610_label = new QLabel;
     S14_2610_label = new QLabel;
     S15_2610_label = new QLabel;
@@ -274,6 +277,14 @@ antifirelogic_exb::antifirelogic_exb(QWidget* pwgt)
      S11_2610_off_button = new QPushButton("S11_2610 OFF", this);
      QObject::connect
              (S11_2610_off_button, SIGNAL(clicked()), this, SLOT(S11_2610_off()));
+
+     S12_2610_on_button = new QPushButton("S12_2610 ON", this);
+     QObject::connect
+             (S12_2610_on_button, SIGNAL(clicked()), this, SLOT(S12_2610_on()));
+
+     S12_2610_off_button = new QPushButton("S12_2610 OFF", this);
+     QObject::connect
+             (S12_2610_off_button, SIGNAL(clicked()), this, SLOT(S12_2610_off()));
 
      S13_2610_on_button = new QPushButton("S13_2610 ON", this);
      QObject::connect
@@ -732,21 +743,23 @@ else
             }
         }
 
-        if (S11_2610 == 0)			//!!! non-defined switch, mb need enum type
+        if (S11_2610 == 1)			//!!! non-defined switch, mb need enum type
         {
-            K42_2610 = false;
+            K42_2610 = true;
         }
         else
         {
-            if (F111_2610 == 0)
-            {
-                K42_2610 = false;
-            }
-            else
+            if (S12_2610 == 1)
             {
                 K42_2610 = true;
             }
+            else
+            {
+                K42_2610 = false;
+            }
+
         }
+
     }
     else
     {
@@ -1356,6 +1369,7 @@ if (F121_2610 == true && K49_2610 == true)
     S1_2610_label->setText("S1 = " + QString::number(S1_2610));
     S2_2610_label->setText("S2 = " + QString::number(S2_2610));
     S11_2610_label->setText("S11 = " + QString::number(S11_2610));
+    S12_2610_label->setText("S12 = " + QString::number(S12_2610));
     S13_2610_label->setText("S13 = " + QString::number(S13_2610));
     S14_2610_label->setText("S14 = " + QString::number(S14_2610));
     S15_2610_label->setText("S15 = " + QString::number(S15_2610));
@@ -1450,6 +1464,7 @@ if (F121_2610 == true && K49_2610 == true)
     layout_EXB_labels_2->addWidget(S1_2610_label);
     layout_EXB_labels_2->addWidget(S2_2610_label);
     layout_EXB_labels_2->addWidget(S11_2610_label);
+    layout_EXB_labels_2->addWidget(S12_2610_label);
     layout_EXB_labels_2->addWidget(S13_2610_label);
     layout_EXB_labels_2->addWidget(S14_2610_label);
     layout_EXB_labels_2->addWidget(S15_2610_label);
@@ -1503,6 +1518,8 @@ if (F121_2610 == true && K49_2610 == true)
     layout_EXB_buttons_2->addWidget(S2_2610_ACW_button);
     layout_EXB_buttons_2->addWidget(S11_2610_on_button);
     layout_EXB_buttons_2->addWidget(S11_2610_off_button);
+    layout_EXB_buttons_2->addWidget(S12_2610_on_button);
+    layout_EXB_buttons_2->addWidget(S12_2610_off_button);
     layout_EXB_buttons_2->addWidget(S13_2610_on_button);
     layout_EXB_buttons_2->addWidget(S13_2610_off_button);
     layout_EXB_buttons_2->addWidget(S14_2610_on_button);
@@ -1651,6 +1668,20 @@ int antifirelogic_exb::S11_2610_off()
     if(S11_2610 == 1)
     {
         S11_2610--;
+    }
+}
+int antifirelogic_exb::S12_2610_on()
+{
+    if(S12_2610 == 0)
+    {
+        S12_2610++;
+    }
+}
+int antifirelogic_exb::S12_2610_off()
+{
+    if(S12_2610 == 1)
+    {
+        S12_2610--;
     }
 }
 int antifirelogic_exb::S13_2610_on()

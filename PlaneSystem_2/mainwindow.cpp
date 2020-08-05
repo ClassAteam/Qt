@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-mainwindow::mainwindow()
+MainWindow::MainWindow()
 {
 
 }

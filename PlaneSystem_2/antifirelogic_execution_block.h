@@ -85,6 +85,7 @@ public:
      QLabel* S1_2610_label;
      QLabel* S2_2610_label;
      QLabel* S11_2610_label;
+     QLabel* S12_2610_label;
      QLabel* S13_2610_label;
      QLabel* S14_2610_label;
      QLabel* S15_2610_label;
@@ -129,6 +130,8 @@ public:
      QPushButton* S2_2610_ACW_button;
      QPushButton* S11_2610_on_button;
      QPushButton* S11_2610_off_button;
+     QPushButton* S12_2610_on_button;
+     QPushButton* S12_2610_off_button;
      QPushButton* S13_2610_on_button;
      QPushButton* S13_2610_off_button;
      QPushButton* S14_2610_on_button;
@@ -190,6 +193,8 @@ public slots:
     int S2_2610_ACW();
     int S11_2610_on();
     int S11_2610_off();
+    int S12_2610_on();
+    int S12_2610_off();
     int S13_2610_on();
     int S13_2610_off();
     int S14_2610_on();

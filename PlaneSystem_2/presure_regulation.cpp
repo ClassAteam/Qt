@@ -1,6 +1,7 @@
 #include "algorithms.h"
 #include "presure_regulation.h"
 #include "QtWidgets"
+#include "math.h"
 
 bool
 K1_2131,
@@ -22,17 +23,16 @@ otkaz_perenadduv;
 double
 H,
 Ph,
-Phmsa,
 Ph_msa,
 Ph_,
 Pkab,
 Pkab_delta,
 Pkab_ind_delta,
-Nkab,
-Nkab_ind,
+Hkab,
+Hkab_ind,
 Vkab,
 Pkab_zad,
-Pkab_zad_buf; // tc is 0 untill it's resolved (time for iteration cycle). ????????if or global external ???????????
+Pkab_zad_buf;
 int
 S1_2131,
 S2_2131,
@@ -62,18 +62,16 @@ presure_regulation::presure_regulation(QWidget* pwgt)
     lyukizagermetizirovany = 0;
     otkaz_perenadduv = 0;
     H = 0;
-    Ph = 0;
-    Phmsa = 0;
+    Ph = 760;
     Ph_msa = 0;
-    Ph_ = 0;
-    Pkab = 0;
+    Ph_ = 1.0032;
+    Pkab = 1.0032;
     Pkab_delta = 0;
     Pkab_ind_delta = 0;
-    Nkab = 0;
-    Nkab_ind = 0;
+    Hkab = 0;
+    Hkab_ind = 0;
     Vkab = 0.0;
     Pkab_zad = 0.0;
-    Pkab_zad_buf = 0.0;
     S1_2131 = 0;
     S2_2131 = 0;
     Counter_PRESURE = 0;
@@ -93,22 +91,27 @@ presure_regulation::presure_regulation(QWidget* pwgt)
     SKD_D300_label = new QLabel;
     SKD_D301_label = new QLabel;
     otkaz_razgermetizatsiya_label = new QLabel;
-    lyukirazgermetizirovany_label = new QLabel;
+    lyukizagermetizirovany_label = new QLabel;
     otkaz_perenadduv_label = new QLabel;
     H_label = new QLabel;
     Ph_msa_label = new QLabel;
     Ph_label = new QLabel;
+    Ph_current_label = new QLabel;
     Pkab_label = new QLabel;
     Pkab_delta_label = new QLabel;
     Pkab_ind_delta_label = new QLabel;
-    Nkab_label = new QLabel;
-    Nkab_ind_label = new QLabel;
+    Hkab_label = new QLabel;
+    Hkab_ind_label = new QLabel;
     Vkab_label = new QLabel;
     Pkab_zad_label = new QLabel;
-    Pkab_zad_buf_label = new QLabel;
     S1_2131_label = new QLabel;
     S2_2131_label = new QLabel;
     Counter_PRESURE_label = new QLabel;
+
+    //LineEdit
+    Ph_edit = new QLineEdit;
+    H_edit = new QLineEdit;
+
     //Buttons and connections
 
      otkaz_razgermetizatsiya_on_button = new QPushButton
@@ -142,13 +145,13 @@ presure_regulation::presure_regulation(QWidget* pwgt)
               this, SLOT(m_otkaz_perenadduv_off()));
 
      lyuki_zagermetizirovani_on_button = new QPushButton
-             ("Lyuki zagermetizirovani", this);
+             ("Lyuki zagermetizirovani ON", this);
      QObject::connect
              (lyuki_zagermetizirovani_on_button, SIGNAL(clicked()),
               this, SLOT(m_lyuki_zagermetizirovani_on()));
 
      lyuki_zagermetizirovani_off_button = new QPushButton
-             ("Lyuki razgermetizirovani", this);
+             ("Lyuki zagermetizirovani OFF", this);
      QObject::connect
              (lyuki_zagermetizirovani_off_button, SIGNAL(clicked()),
               this, SLOT(m_lyuki_zagermetizirovani_off()));
@@ -176,6 +179,24 @@ presure_regulation::presure_regulation(QWidget* pwgt)
      QObject::connect
              (S2_2131_off_button, SIGNAL(clicked()),
               this, SLOT(S2_2131_off()));
+
+     H_change_button = new QPushButton
+             ("Change H ", this);
+     QObject::connect
+             (H_change_button, SIGNAL(clicked()),
+              this, SLOT(m_H_change()));
+
+     PRTHU1_on_button = new QPushButton
+             ("PRTHU1 ON ", this);
+     QObject::connect
+             (PRTHU1_on_button, SIGNAL(clicked()),
+              this, SLOT(PRTHU1_on()));
+
+     PRTHU1_off_button = new QPushButton
+             ("PRTHU1 OFF ", this);
+     QObject::connect
+             (PRTHU1_off_button, SIGNAL(clicked()),
+              this, SLOT(PRTHU1_off()));
 }
 int presure_regulation::logic_presure()
 {
@@ -187,7 +208,9 @@ int presure_regulation::logic_presure()
      K1_2131 = false;
      K2_2131 = false;
      K4_2131 = false;
+     Ph_ = (Ph * 0.00136);
      Ph_msa = presure_from_altitude(H);
+
 
 
     if (Ush2dpl >= 18.0)
@@ -201,14 +224,14 @@ int presure_regulation::logic_presure()
             K1_2131 = false;
         }
 
-        if (S1_2131 == 2)
+        if (S1_2131 == 1)
         {
             PPP = true;
         }
         else
         {
 
-            if (S1_2131 == 3)
+            if (S1_2131 == 2)
             {
                 PAVARR = true;
                 K4_2131 = true;
@@ -218,7 +241,7 @@ int presure_regulation::logic_presure()
 
     }
 
-    if (H < 8000.0 && S2_2131 == 0)
+    if (H < 8000.0 && S2_2131 == 1)
     {
         PGK = true;
     }
@@ -272,7 +295,7 @@ int presure_regulation::logic_presure()
         BSS838X5MM = false;
     }
 
-    if (otkaz_razgermetizatsiya == true
+    if (otkaz_razgermetizatsiya == false
             && PRTHU1 == 1
             && lyukizagermetizirovany == true
             && otkaz_perenadduv == false)
@@ -296,7 +319,7 @@ int presure_regulation::logic_presure()
 
                     if ((H >= -500) && (H <= 3700))
                     {
-                        Pkab_zad = Phmsa + 0.12;
+                        Pkab_zad = Ph_msa + 0.12;
                     }
                     else
                     {
@@ -312,7 +335,7 @@ int presure_regulation::logic_presure()
                             }
                             else
                             {
-                                Pkab_zad = (Phmsa + 0.36);
+                                Pkab_zad = (Ph_msa + 0.36);
                             }
                         }
                     }
@@ -337,7 +360,7 @@ int presure_regulation::logic_presure()
                             }
                             else
                             {
-                                Pkab_zad = (Phmsa + 0.36);
+                                Pkab_zad = (Ph_msa + 0.36);
                             }
                         }
                     }
@@ -345,17 +368,14 @@ int presure_regulation::logic_presure()
             }
         }
     }
-
-    if (Pkab_zad >= Pkab_zad_buf)
-    {
-        Vkab = (0.0068 / 5);
-    }
     else
     {
-        Vkab = (0.0136 / 10);
+        Pkab_zad = Ph_;
+        Vkab = 0.68;
     }
 
-    if ((Pkab_zad - Pkab) >= 0.01)
+
+    if ((fabs(Pkab_zad - Pkab)) >= 0.005)
     {
         if (Pkab < Pkab_zad)
         {
@@ -369,20 +389,20 @@ int presure_regulation::logic_presure()
 
     Pkab_delta = Pkab - Ph_;
 
-    if (Nkab > 2000)
+    if (Hkab > 20000)
     {
-        Nkab_ind = 2000;
+        Hkab_ind = 2000;
     }
     else
     {
 
-        if (Nkab < 0.0)
+        if (Hkab < 0.0)
         {
-            Nkab_ind = 0.0;
+            Hkab_ind = 0.0;
         }
         else
         {
-            Nkab_ind = (Nkab / 1000);
+            Hkab_ind = (Hkab / 1000);
         }
 
     }
@@ -408,11 +428,11 @@ int presure_regulation::logic_presure()
 ///////////////////////////end logic()
 
     //showing values
-    K1_2131_label->setText("Ushap = " + QString::number(K1_2131));
-    K2_2131_label->setText("Ushap = " + QString::number(K2_2131));
-    K4_2131_label->setText("Ushap = " + QString::number(K4_2131));
-    PAVARR_label->setText("Ushap = " + QString::number(PAVARR));
-    PRTHU1_label->setText("Ushap = " + QString::number(PRTHU1));
+    K1_2131_label->setText("K1_2131 = " + QString::number(K1_2131));
+    K2_2131_label->setText("K2_2131 = " + QString::number(K2_2131));
+    K4_2131_label->setText("K4_2131 = " + QString::number(K4_2131));
+    PAVARR_label->setText("PAVARR = " + QString::number(PAVARR));
+    PRTHU1_label->setText("PRTHU1 = " + QString::number(PRTHU1));
     PPP_label->setText("PPP = " + QString::number(PPP));
     PGK_label->setText("PGK = " + QString::number(PGK));
     BSS838X5MM_label->setText("BSS838X5MM = " + QString::number(BSS838X5MM));
@@ -423,23 +443,24 @@ int presure_regulation::logic_presure()
     SKD_D301_label->setText("SKD_D301 = " + QString::number(SKD_D301));
     otkaz_razgermetizatsiya_label->setText
             ("otkaz razgermet = " + QString::number(otkaz_razgermetizatsiya));
-    lyukirazgermetizirovany_label->setText
-            ("lyuki razgermet = " + QString::number(lyukizagermetizirovany));
+    lyukizagermetizirovany_label->setText
+            ("lyuki zagermet = " + QString::number(lyukizagermetizirovany));
     otkaz_perenadduv_label->setText
-            ("otkaz perenadduv razgermet"
+            ("otkaz perenadduv "
              " = " + QString::number(otkaz_perenadduv));
 
     H_label->setText("H = " + QString::number(H));
     Ph_label->setText("Ph =  " + QString::number(Ph));
+    Ph_current_label->setText("Ph_ =  " + QString::number(Ph_));
     Ph_msa_label->setText("Ph_msa =  " + QString::number(Ph_msa));
     Pkab_label->setText("Pkab =  " + QString::number(Pkab));
     Pkab_delta_label->setText("Pkab_delta =  " + QString::number(Pkab_delta));
-    Nkab_label->setText("Nkab =  " + QString::number(Nkab));
-    Nkab_ind_label->setText("Nkab_ind =  " + QString::number(Nkab_ind));
+    Hkab_label->setText("Nkab =  " + QString::number(Hkab));
+    Hkab_ind_label->setText("Nkab_ind =  " + QString::number(Hkab_ind));
     Vkab_label->setText("Vkab =  " + QString::number(Vkab));
     Pkab_zad_label->setText("Pkab_zad =  " + QString::number(Pkab_zad));
-    Pkab_zad_buf_label->setText("Pkab_zad_buf =  "
-                                + QString::number(Pkab_zad_buf));
+    Pkab_ind_delta_label->setText("Pkab ind delta =  "
+                                + QString::number(Pkab_ind_delta));
     S1_2131_label->setText("S1_2131 = " + QString::number(S1_2131));
     S2_2131_label->setText("S2_2131 = " + QString::number(S2_2131));
     Counter_PRESURE_label->setText("Counter_PRESURE = "
@@ -465,18 +486,19 @@ int presure_regulation::logic_presure()
     layout_presure_labels->addWidget(SKD_D300_label);
     layout_presure_labels->addWidget(SKD_D301_label);
     layout_presure_labels->addWidget(otkaz_razgermetizatsiya_label);
-    layout_presure_labels->addWidget(lyukirazgermetizirovany_label);
+    layout_presure_labels->addWidget(lyukizagermetizirovany_label);
     layout_presure_labels->addWidget(otkaz_perenadduv_label);
     layout_presure_labels->addWidget(H_label);
     layout_presure_labels->addWidget(Ph_label);
+    layout_presure_labels->addWidget(Ph_current_label);
     layout_presure_labels->addWidget(Ph_msa_label);
     layout_presure_labels->addWidget(Pkab_label);
     layout_presure_labels->addWidget(Pkab_delta_label);
-    layout_presure_labels->addWidget(Nkab_label);
-    layout_presure_labels->addWidget(Nkab_ind_label);
+    layout_presure_labels->addWidget(Hkab_label);
+    layout_presure_labels->addWidget(Hkab_ind_label);
     layout_presure_labels->addWidget(Vkab_label);
     layout_presure_labels->addWidget(Pkab_zad_label);
-    layout_presure_labels->addWidget(Pkab_zad_buf_label);
+    layout_presure_labels->addWidget(Pkab_ind_delta_label);
     layout_presure_labels->addWidget(S1_2131_label);
     layout_presure_labels->addWidget(S2_2131_label);
     layout_presure_labels->addWidget(Counter_PRESURE_label);
@@ -493,6 +515,11 @@ int presure_regulation::logic_presure()
     layout_presure_buttons->addWidget(S1_2131_ACW_button);
     layout_presure_buttons->addWidget(S2_2131_on_button);
     layout_presure_buttons->addWidget(S2_2131_off_button);
+    layout_presure_buttons->addWidget(Ph_edit);
+    layout_presure_buttons->addWidget(H_change_button);
+    layout_presure_buttons->addWidget(H_edit);
+    layout_presure_buttons->addWidget(PRTHU1_on_button);
+    layout_presure_buttons->addWidget(PRTHU1_off_button);
 
     layout_presure_main->addLayout(layout_presure_buttons);
     layout_presure_main->addLayout(layout_presure_labels);
@@ -512,9 +539,10 @@ int presure_regulation::m_otkaz_razgermetizatsiya_off()
 }
 int presure_regulation::m_PNU_presure_on()
 {
-    Pkab = Ph_;
-    Nkab = 0;
+    Hkab = H;
     Pkab_delta = 0;
+    Ph = Ph_edit->text().toDouble();
+    Pkab = Ph_;
     Pkab_zad = Ph_;
 }
 int presure_regulation::m_otkaz_perenadduv_on()
@@ -554,6 +582,18 @@ int presure_regulation::S2_2131_on()
 int presure_regulation::S2_2131_off()
 {
     S2_2131 = 0;
+}
+int presure_regulation::m_H_change()
+{
+    H = H_edit->text().toDouble();
+}
+int presure_regulation::PRTHU1_on()
+{
+    PRTHU1 = true;
+}
+int presure_regulation::PRTHU1_off()
+{
+    PRTHU1 = false;
 }
 
 

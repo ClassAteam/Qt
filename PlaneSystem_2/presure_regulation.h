@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QLabel>
 #include <QPushButton>
+#include <QLineEdit>
 
 
 
@@ -30,19 +31,20 @@ public:
     QLabel* SKD_D300_label;
     QLabel* SKD_D301_label;
     QLabel* otkaz_razgermetizatsiya_label;
-    QLabel* lyukirazgermetizirovany_label;
+    QLabel* lyukizagermetizirovany_label;
     QLabel* otkaz_perenadduv_label;
     QLabel* H_label;
     QLabel* Ph_label;
+    QLabel* Ph_current_label;
     QLabel* Ph_msa_label;
     QLabel* Pkab_label;
     QLabel* Pkab_delta_label;
     QLabel* Pkab_ind_delta_label;
-    QLabel* Nkab_label;
-    QLabel* Nkab_ind_label;
+    QLabel* Hkab_label;
+    QLabel* Hkab_ind_label;
     QLabel* Vkab_label;
     QLabel* Pkab_zad_label;
-    QLabel* Pkab_zad_buf_label;
+    QLabel* Pkab_ind_label;
     QLabel* S1_2131_label;
     QLabel* S2_2131_label;
     QLabel* Counter_PRESURE_label;
@@ -58,6 +60,12 @@ public:
     QPushButton* S1_2131_ACW_button;
     QPushButton* S2_2131_on_button;
     QPushButton* S2_2131_off_button;
+    QPushButton* H_change_button;
+    QPushButton* PRTHU1_on_button;
+    QPushButton* PRTHU1_off_button;
+
+    QLineEdit* Ph_edit;
+    QLineEdit* H_edit;
 
 public slots:
     int logic_presure();
@@ -72,5 +80,8 @@ public slots:
     int S1_2131_ACW();
     int S2_2131_on();
     int S2_2131_off();
+    int m_H_change();
+    int PRTHU1_on();
+    int PRTHU1_off();
 
 };

@@ -12,6 +12,7 @@ double two_points_to_Y(double insert, double x1, double x2, double y1, double y2
 double presure_from_altitude(double altitude)
 {
     double result;
+    altitude = (altitude / 1000);
     result = 1.0 * (pow ((1 -((6.5 * altitude) / 288)), 4.255));
     return result;
 

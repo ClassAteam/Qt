@@ -13,7 +13,9 @@ double presure_from_altitude(double altitude)
 {
     double result;
     altitude = (altitude / 1000);
-    result = 1.0 * (pow ((1 -((6.5 * altitude) / 288)), 4.255));
+    result = 101.3 * (pow ((1 -((6.5 * altitude) / 288)), 5.255));
+    result = (result / 100);
+
     return result;
 
 }

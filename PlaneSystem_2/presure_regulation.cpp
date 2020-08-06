@@ -31,8 +31,7 @@ Pkab_ind_delta,
 Hkab,
 Hkab_ind,
 Vkab,
-Pkab_zad,
-Pkab_zad_buf;
+Pkab_zad;
 int
 S1_2131,
 S2_2131,
@@ -200,7 +199,7 @@ presure_regulation::presure_regulation(QWidget* pwgt)
 }
 int presure_regulation::logic_presure()
 {
-    Counter_PRESURE++;//			initialization values
+    Counter_PRESURE++;
     blink_tick ++;
      PAVARR = false;
      PPP = false;
@@ -215,7 +214,7 @@ int presure_regulation::logic_presure()
 
     if (Ush2dpl >= 18.0)
     {
-        if (Ph_msa - Pkab >= 0.7)
+        if ((Pkab - Ph_msa) >= 0.7)
         {
             K1_2131 = true;
         }
@@ -262,7 +261,7 @@ int presure_regulation::logic_presure()
     }
 
     //BSS838X7A blinking
-    if (K1_2131 == true && blink_tick == 3)
+    if (K1_2131 == true && blink_tick > 3)
     {
         BSS838X7A = true;
         blink_tick = 0;
@@ -283,7 +282,7 @@ int presure_regulation::logic_presure()
     }
 
     //BSS838X5MM, BSS824X1G, BSS824X1J blinking
-    if (K2_2131 == true && blink_tick == 3)
+    if (K2_2131 == true && blink_tick > 3)
     {
         BSS838X5MM = true;
         BSS824X1G = true;
@@ -298,15 +297,27 @@ int presure_regulation::logic_presure()
     if (otkaz_razgermetizatsiya == false
             && PRTHU1 == 1
             && lyukizagermetizirovany == true
-            && otkaz_perenadduv == false)
+            && otkaz_perenadduv == false )
     {
+
 
         if (PAVARR == true)
         {
             Pkab_zad = Ph_;
+
+            if(Pkab_zad >= Pkab)
+            {
+                Vkab = 0.0068;
+            }
+            else
+            {
+                Vkab = 0.00136;
+            }
+
         }
         else
         {
+
             if (PPP == true && H >= 7300)
             {
                 Pkab_zad = Ph_msa + 0.36;
@@ -356,7 +367,7 @@ int presure_regulation::logic_presure()
                         {
                             if ((H > 11500) && (H < 15000))
                             {
-                                Pkab_zad = (0.77 + (0.33 * (11.5 - H)));
+                                Pkab_zad = (0.77 + (0.33 * (11.5 - (H / 1000))));
                             }
                             else
                             {
@@ -366,12 +377,31 @@ int presure_regulation::logic_presure()
                     }
                 }
             }
+
+            if(Pkab_zad >= Pkab)
+            {
+                Vkab = 0.0068;
+            }
+            else
+            {
+                Vkab = 0.00136;
+            }
+
         }
     }
     else
     {
         Pkab_zad = Ph_;
-        Vkab = 0.68;
+        Vkab = 0.0068;
+    }
+
+    if (otkaz_razgermetizatsiya == false
+            && PRTHU1 == 1
+            && lyukizagermetizirovany == true
+            && otkaz_perenadduv == true)
+    {
+        Pkab_zad = Ph_msa + 0.8;
+        Vkab = 0.0068;
     }
 
 
@@ -379,11 +409,11 @@ int presure_regulation::logic_presure()
     {
         if (Pkab < Pkab_zad)
         {
-            Pkab = (Pkab + (Vkab / TICK));
+            Pkab = (Pkab + (Vkab * (TICK / 1000)));
         }
         else
         {
-            Pkab = (Pkab - (Vkab / TICK));
+            Pkab = (Pkab - (Vkab * (TICK / 1000)));
         }
     }
 

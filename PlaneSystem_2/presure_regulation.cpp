@@ -22,9 +22,11 @@ lyukizagermetizirovany,
 otkaz_perenadduv;
 double
 H,
+H_k,
 Ph,
 Ph_msa,
 Ph_,
+Pk_h,
 Pkab,
 Pkab_delta,
 Pkab_ind_delta,
@@ -208,7 +210,8 @@ int presure_regulation::logic_presure()
      K2_2131 = false;
      K4_2131 = false;
      Ph_ = (Ph * 0.00136);
-     Ph_msa = presure_from_altitude(H);
+     Ph_msa = yx_d(&a1, &b1, 12, H_k);
+     Ph_msa = (Ph_msa * 0.00136);
 
 
 
@@ -417,11 +420,14 @@ int presure_regulation::logic_presure()
         }
     }
 
+
+    Pk_h = (Pkab / 0.00136);
+    Hkab = yx_d(&b2, &a2, 12, Pk_h);
     Pkab_delta = Pkab - Ph_;
 
-    if (Hkab > 20000)
+    if (Hkab > 20)
     {
-        Hkab_ind = 2000;
+        Hkab_ind = 20;
     }
     else
     {
@@ -432,7 +438,7 @@ int presure_regulation::logic_presure()
         }
         else
         {
-            Hkab_ind = (Hkab / 1000);
+            Hkab_ind = (Hkab);
         }
 
     }
@@ -485,8 +491,8 @@ int presure_regulation::logic_presure()
     Ph_msa_label->setText("Ph_msa =  " + QString::number(Ph_msa));
     Pkab_label->setText("Pkab =  " + QString::number(Pkab));
     Pkab_delta_label->setText("Pkab_delta =  " + QString::number(Pkab_delta));
-    Hkab_label->setText("Nkab =  " + QString::number(Hkab));
-    Hkab_ind_label->setText("Nkab_ind =  " + QString::number(Hkab_ind));
+    Hkab_label->setText("Hkab =  " + QString::number(Hkab));
+    Hkab_ind_label->setText("Hkab_ind =  " + QString::number(Hkab_ind));
     Vkab_label->setText("Vkab =  " + QString::number(Vkab));
     Pkab_zad_label->setText("Pkab_zad =  " + QString::number(Pkab_zad));
     Pkab_ind_delta_label->setText("Pkab ind delta =  "
@@ -615,7 +621,8 @@ int presure_regulation::S2_2131_off()
 }
 int presure_regulation::m_H_change()
 {
-    H = H_edit->text().toDouble();
+    H_k = H_edit->text().toDouble();
+    H = (H_k * 1000);
 }
 int presure_regulation::PRTHU1_on()
 {

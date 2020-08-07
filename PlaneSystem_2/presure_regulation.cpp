@@ -13,7 +13,7 @@ PPP,
 PGK,
 BSS838X5MM,
 BSS824X1G,
-BSS824X1J,
+BSS811X1E,
 BSS838X7A,
 SKD_D300,
 SKD_D301,
@@ -55,7 +55,7 @@ presure_regulation::presure_regulation(QWidget* pwgt)
     PGK = 0;
     BSS838X5MM = 0;
     BSS824X1G = 0;
-    BSS824X1J = 0;
+    BSS811X1E = 0;
     BSS838X7A = 0;
     SKD_D300 = 0;
     SKD_D301 = 0;
@@ -87,7 +87,7 @@ presure_regulation::presure_regulation(QWidget* pwgt)
     PGK_label = new QLabel;
     BSS838X5MM_label = new QLabel;
     BSS824X1G_label = new QLabel;
-    BSS824X1J_label = new QLabel;
+    BSS811X1E_label = new QLabel;
     BSS838X7A_label = new QLabel;
     SKD_D300_label = new QLabel;
     SKD_D301_label = new QLabel;
@@ -289,12 +289,14 @@ int presure_regulation::logic_presure()
     {
         BSS838X5MM = true;
         BSS824X1G = true;
-        BSS824X1J = true;
+        BSS811X1E = true;
         blink_tick = 0;
     }
     else
     {
         BSS838X5MM = false;
+        BSS824X1G = false;
+        BSS811X1E = false;
     }
 
     if (otkaz_razgermetizatsiya == false
@@ -473,7 +475,7 @@ int presure_regulation::logic_presure()
     PGK_label->setText("PGK = " + QString::number(PGK));
     BSS838X5MM_label->setText("BSS838X5MM = " + QString::number(BSS838X5MM));
     BSS824X1G_label->setText("BSS824X1G = " + QString::number(BSS824X1G));
-    BSS824X1J_label->setText("BSS824X1J = " + QString::number(BSS824X1J));
+    BSS811X1E_label->setText("BSS824X1E = " + QString::number(BSS811X1E));
     BSS838X7A_label->setText("BSS838X7A = " + QString::number(BSS838X7A));
     SKD_D300_label->setText("SKD_D300 = " + QString::number(SKD_D300));
     SKD_D301_label->setText("SKD_D301 = " + QString::number(SKD_D301));
@@ -517,7 +519,7 @@ int presure_regulation::logic_presure()
     layout_presure_labels->addWidget(PGK_label);
     layout_presure_labels->addWidget(BSS838X5MM_label);
     layout_presure_labels->addWidget(BSS824X1G_label);
-    layout_presure_labels->addWidget(BSS824X1J_label);
+    layout_presure_labels->addWidget(BSS811X1E_label);
     layout_presure_labels->addWidget(BSS838X7A_label);
     layout_presure_labels->addWidget(SKD_D300_label);
     layout_presure_labels->addWidget(SKD_D301_label);

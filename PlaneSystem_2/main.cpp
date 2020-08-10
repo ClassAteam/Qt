@@ -5,8 +5,9 @@
 #include <antifirelogic_execution_block.h>
 #include <antifirelogic_alarm.h>
 #include <presure_regulation.h>
+#include <antiicing_mkam.h>
 
-double TICK = 200;
+const double TICK = 200;
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
     antifirelogic_exb logic_EXB;
     antifirelogic_alarm logic_alarm;
     presure_regulation presure;
+    antiicing_mkam mkam;
     QTimer *timer = new QTimer;
 
     QWidget window_antifire ;
@@ -35,6 +37,14 @@ int main(int argc, char *argv[])
     window_presure.setWindowState(Qt::WindowFullScreen);
     window_presure.show();
 
+    QWidget window_antiicing ;
+    QHBoxLayout layout_antiicing;
+    layout_antiicing.addWidget(&mkam.wgt_mkam);
+    window_antiicing.setLayout(&layout_antiicing);
+    window_antiicing.setWindowTitle("Antiicing System");
+    window_antiicing.setWindowState(Qt::WindowFullScreen);
+    window_antiicing.show();
+
     QObject::connect(timer, SIGNAL(timeout()),
                      &logic_valve , SLOT(logic_valves()));
     QObject::connect(timer, SIGNAL(timeout()),
@@ -43,6 +53,8 @@ int main(int argc, char *argv[])
                      &logic_alarm , SLOT(logic_alarm()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &presure , SLOT(logic_presure()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &mkam , SLOT(logic_mkam()));
 
     timer->start(TICK);
     return a.exec();

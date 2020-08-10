@@ -20,6 +20,8 @@ SOURCES += \
     antifirelogic_alarm.cpp \
     antifirelogic_execution_block.cpp \
     antifirelogic_valves.cpp \
+    antiicing_airintake.cpp \
+    antiicing_mkam.cpp \
     main.cpp \
     mainwindow.cpp \
     presure_regulation.cpp
@@ -29,6 +31,8 @@ HEADERS += \
     antifirelogic_alarm.h \
     antifirelogic_execution_block.h \
     antifirelogic_valves.h \
+    antiicing_airintake.h \
+    antiicing_mkam.h \
     main.h \
     mainwindow.h \
     presure_regulation.h

@@ -7,6 +7,8 @@
 
 
 
+extern const double
+TICK;
 extern double
 a1;
 extern double
@@ -16,7 +18,6 @@ a2;
 extern double
 b2;
 extern double
-TICK,
 Ush2dpl;
 
 class presure_regulation : public QWidget

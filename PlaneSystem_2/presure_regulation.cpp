@@ -475,7 +475,7 @@ int presure_regulation::logic_presure()
     PGK_label->setText("PGK = " + QString::number(PGK));
     BSS838X5MM_label->setText("BSS838X5MM = " + QString::number(BSS838X5MM));
     BSS824X1G_label->setText("BSS824X1G = " + QString::number(BSS824X1G));
-    BSS811X1E_label->setText("BSS824X1E = " + QString::number(BSS811X1E));
+    BSS811X1E_label->setText("BSS811X1E = " + QString::number(BSS811X1E));
     BSS838X7A_label->setText("BSS838X7A = " + QString::number(BSS838X7A));
     SKD_D300_label->setText("SKD_D300 = " + QString::number(SKD_D300));
     SKD_D301_label->setText("SKD_D301 = " + QString::number(SKD_D301));

@@ -34,6 +34,7 @@ F353_3020,
 F320_3020,
 F330_3020,
 F340_3020,
+S2_3020,
 S3_3020,
 S4_3020,
 S5_3020;
@@ -52,6 +53,10 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
 {
     QWidget wgt;
     K52_3020 = 0;
+    OTKAZ_vtsepiob_pos1dv = 0;
+    OTKAZ_vtsepiob_pos2dv = 0;
+    OTKAZ_vtsepiob_pos3dv = 0;
+    OTKAZ_vtsepiob_pos4dv = 0;
     K53_3020 = 0;
     K54_3020 = 0;
     K55_3020 = 0;
@@ -78,6 +83,7 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     F320_3020 = 0;
     F330_3020 = 0;
     F340_3020 = 0;
+    S2_3020 = 0;
     S3_3020 = 0;
     S4_3020 = 0;
     S5_3020 = 0;
@@ -113,6 +119,7 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     F320_3020_label = new QLabel;
     F330_3020_label = new QLabel;
     F340_3020_label = new QLabel;
+    S2_3020_label = new QLabel;
     S3_3020_label = new QLabel;
     S4_3020_label = new QLabel;
     S5_3020_label = new QLabel;
@@ -201,6 +208,55 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
      QObject::connect
              (Ushpp_off_button, SIGNAL(clicked()),
               this, SLOT(m_Ushpp_off()));
+
+     OTKAZ_vtsepiob_pos1dv_on_button = new QPushButton
+             ("OTKAZ_OB_1_DV ON", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos1dv_on_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos1dv_on()));
+
+     OTKAZ_vtsepiob_pos1dv_off_button = new QPushButton
+             ("OTKAZ_OB_1_DV Off", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos1dv_off_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos1dv_off()));
+
+     OTKAZ_vtsepiob_pos2dv_on_button = new QPushButton
+             ("OTKZA_OB_2_DV ON", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos2dv_on_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos2dv_on()));
+
+     OTKAZ_vtsepiob_pos2dv_off_button = new QPushButton
+             ("OTKZA_OB_2_DV Off", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos2dv_off_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos2dv_off()));
+
+     OTKAZ_vtsepiob_pos3dv_on_button = new QPushButton
+             ("OTKZA_OB_3_DV ON", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos3dv_on_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos3dv_on()));
+
+     OTKAZ_vtsepiob_pos3dv_off_button = new QPushButton
+             ("OTKZA_OB_3_DV Off", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos3dv_off_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos3dv_off()));
+
+     OTKAZ_vtsepiob_pos4dv_on_button = new QPushButton
+             ("OTKZA_OB_4_DV ON", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos4dv_on_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos4dv_on()));
+
+     OTKAZ_vtsepiob_pos4dv_off_button = new QPushButton
+             ("OTKZA_OB_4_DV Off", this);
+     QObject::connect
+             (OTKAZ_vtsepiob_pos4dv_off_button, SIGNAL(clicked()),
+              this, SLOT(m_OTKAZ_vtsepiob_pos4dv_off()));
+
 }
 int antiicing_airintake::logic_airintake()
 {
@@ -208,10 +264,13 @@ int antiicing_airintake::logic_airintake()
     F32_3020 = false;
 
     //F32 toggle
-    if (Usho1p < 18.0 && F19_3020 == true && F110_3020 == true)
+    if (Usho1p > 18.0)
     {
 
-        if(F134_3020 == false)
+        if( F19_3020 == false &&
+                F110_3020 == false &&
+                F125_3020 == false &&
+                F134_3020 == false)
         {
             F32_3020 = false;
         }
@@ -225,6 +284,7 @@ int antiicing_airintake::logic_airintake()
     {
         F32_3020 = false;
     }
+
 
     F319_3020 = F353_3020 = F356_3020 = F32_3020;
     //K52, K54, K55 toggle
@@ -240,11 +300,11 @@ int antiicing_airintake::logic_airintake()
     //2
     if (Usho1p >= 18.0 && S3_3020 == true)
     {
-        K52_3020 = true;
+        K53_3020 = true;
     }
     else
     {
-        K52_3020 = false;
+        K53_3020 = false;
     }
     //3
     if (Usho1p >= 18.0 && S4_3020 == true)
@@ -535,6 +595,7 @@ int antiicing_airintake::logic_airintake()
     F320_3020_label->setText("F320_3020 = "  + QString::number(F320_3020));
     F330_3020_label->setText("F330_3020 = "  + QString::number(F330_3020));
     F340_3020_label->setText("F340_3020 = "  + QString::number(F340_3020));
+    S2_3020_label->setText("S2_3020 = "  + QString::number(S2_3020));
     S3_3020_label->setText("S3_3020 = "  + QString::number(S3_3020));
     S4_3020_label->setText("S4_3020 = "  + QString::number(S4_3020));
     S5_3020_label->setText("S5_3020 = "  + QString::number(S5_3020));
@@ -578,6 +639,7 @@ int antiicing_airintake::logic_airintake()
     layout_airintake_labels->addWidget(F320_3020_label);
     layout_airintake_labels->addWidget(F330_3020_label);
     layout_airintake_labels->addWidget(F340_3020_label);
+    layout_airintake_labels->addWidget(S2_3020_label);
     layout_airintake_labels->addWidget(S3_3020_label);
     layout_airintake_labels->addWidget(S4_3020_label);
     layout_airintake_labels->addWidget(S5_3020_label);
@@ -600,6 +662,14 @@ int antiicing_airintake::logic_airintake()
     layout_airintake_buttons->addWidget(Ushpl_off_button);
     layout_airintake_buttons->addWidget(Ushpp_on_button);
     layout_airintake_buttons->addWidget(Ushpp_off_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos1dv_on_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos1dv_off_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos2dv_on_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos2dv_off_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos3dv_on_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos3dv_off_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos4dv_on_button);
+    layout_airintake_buttons->addWidget(OTKAZ_vtsepiob_pos4dv_off_button);
 
     layout_airintake_main->addLayout(layout_airintake_buttons);
     layout_airintake_main->addLayout(layout_airintake_labels);
@@ -658,7 +728,7 @@ int antiicing_airintake::m_Usho1p_off()
 
 int antiicing_airintake::m_Ushpl_on()
 {
-    Ushpl = 21.0;
+    Ushpl = 115.0;
 }
 int antiicing_airintake::m_Ushpl_off()
 {
@@ -666,10 +736,42 @@ int antiicing_airintake::m_Ushpl_off()
 }
 int antiicing_airintake::m_Ushpp_on()
 {
-    Ushpp = 21.0;
+    Ushpp = 115.0;
 }
 int antiicing_airintake::m_Ushpp_off()
 {
     Ushpp = 0.0;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos1dv_on()
+{
+    OTKAZ_vtsepiob_pos1dv = true;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos1dv_off()
+{
+    OTKAZ_vtsepiob_pos1dv = false;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos2dv_on()
+{
+    OTKAZ_vtsepiob_pos2dv = true;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos2dv_off()
+{
+    OTKAZ_vtsepiob_pos2dv = false;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos3dv_on()
+{
+    OTKAZ_vtsepiob_pos3dv = true;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos3dv_off()
+{
+    OTKAZ_vtsepiob_pos3dv = false;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos4dv_on()
+{
+    OTKAZ_vtsepiob_pos4dv = true;
+}
+int antiicing_airintake::m_OTKAZ_vtsepiob_pos4dv_off()
+{
+    OTKAZ_vtsepiob_pos4dv = false;
 }
 

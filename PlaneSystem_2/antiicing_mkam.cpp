@@ -17,7 +17,6 @@ otkaz_vozduhozabor;
 int
 S1_3020,
 S6_3020,
-S2_3020,
 PZ1_tick,
 PZ2_tick,
 PZ3_tick,

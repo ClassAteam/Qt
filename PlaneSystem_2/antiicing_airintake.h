@@ -50,6 +50,7 @@ public:
     QLabel* F320_3020_label;
     QLabel* F330_3020_label;
     QLabel* F340_3020_label;
+    QLabel* S2_3020_label;
     QLabel* S3_3020_label;
     QLabel* S4_3020_label;
     QLabel* S5_3020_label;
@@ -72,6 +73,15 @@ public:
     QPushButton* Ushpl_off_button;
     QPushButton* Ushpp_on_button;
     QPushButton* Ushpp_off_button;
+    QPushButton* OTKAZ_vtsepiob_pos1dv_on_button;
+    QPushButton* OTKAZ_vtsepiob_pos1dv_off_button;
+    QPushButton* OTKAZ_vtsepiob_pos2dv_on_button;
+    QPushButton* OTKAZ_vtsepiob_pos2dv_off_button;
+    QPushButton* OTKAZ_vtsepiob_pos3dv_on_button;
+    QPushButton* OTKAZ_vtsepiob_pos3dv_off_button;
+    QPushButton* OTKAZ_vtsepiob_pos4dv_on_button;
+    QPushButton* OTKAZ_vtsepiob_pos4dv_off_button;
+
 
 public slots:
     int logic_airintake();
@@ -89,6 +99,14 @@ public slots:
     int m_Ushpl_off();
     int m_Ushpp_on();
     int m_Ushpp_off();
+    int m_OTKAZ_vtsepiob_pos1dv_on();
+    int m_OTKAZ_vtsepiob_pos1dv_off();
+    int m_OTKAZ_vtsepiob_pos2dv_on();
+    int m_OTKAZ_vtsepiob_pos2dv_off();
+    int m_OTKAZ_vtsepiob_pos3dv_on();
+    int m_OTKAZ_vtsepiob_pos3dv_off();
+    int m_OTKAZ_vtsepiob_pos4dv_on();
+    int m_OTKAZ_vtsepiob_pos4dv_off();
 
 };
 

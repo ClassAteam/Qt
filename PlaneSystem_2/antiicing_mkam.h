@@ -77,7 +77,6 @@ public:
     QLabel* otkaz_vozduhozabor_label;
     QLabel* S1_3020_label;
     QLabel* S6_3020_label;
-    QLabel* S2_3020_label;
     QLabel* S3_3020_label;
     QLabel* S4_3020_label;
     QLabel* S5_3020_label;

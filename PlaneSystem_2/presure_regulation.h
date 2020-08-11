@@ -35,7 +35,7 @@ public:
     QLabel* PGK_label;
     QLabel* BSS838X5MM_label;
     QLabel* BSS824X1G_label;
-    QLabel* BSS811X1E_label;
+    QLabel* BSS824X1J_label;
     QLabel* BSS838X7A_label;
     QLabel* SKD_D300_label;
     QLabel* SKD_D301_label;

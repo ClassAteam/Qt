@@ -1,0 +1,7 @@
+#include "aniticing_mkam.h"
+#include "QtWidgets"
+
+aniticing_mkam::aniticing_mkam()
+{
+
+}

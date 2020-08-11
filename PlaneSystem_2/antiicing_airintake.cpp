@@ -50,8 +50,6 @@ Ushpp;
 antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     : QWidget(pwgt)
 {
-
-    QWidget wgt_airintake;
     K52_3020 = 0;
     K53_3020 = 0;
     K54_3020 = 0;

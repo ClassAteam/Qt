@@ -29,10 +29,7 @@ double b2[12] = {41.5, 90.8, 145.5, 198.8, 267.4, 405.4, 596.3, 674.1, 751,
 double yx_d(double *x1,double *y1,int n,double x)
 {
 double f1;
-f1 = 0.0;
 int i,i2;
-i = 0;
-i2 = 0;
     if(x<=x1[0])
        f1=y1[0];
     else

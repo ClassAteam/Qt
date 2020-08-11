@@ -33,6 +33,7 @@ M;
 antiicing_mkam::antiicing_mkam(QWidget* pwgt)
     : QWidget(pwgt)
 {
+    QWidget wgt1;
     PZ1 = 0;
     PZ2 = 0;
     PZ3 = 0;
@@ -425,7 +426,7 @@ int antiicing_mkam::logic_mkam()
         PZ3_sec = 0;
         PZ3_tick = 0;
     }
-    /////////////////////////////end logic()
+
     //showing values
     M_label->setText("M = " + QString::number(M));
     otkaz_vozduhozabor_label->setText("otkaz vozduhzb = "
@@ -496,8 +497,8 @@ int antiicing_mkam::logic_mkam()
     layout_mkam_buttons->addWidget(S6_3020_on_button);
     layout_mkam_buttons->addWidget(S6_3020_off_button);
 
-    layout_mkam_main->addLayout(layout_mkam_buttons);
     layout_mkam_main->addLayout(layout_mkam_labels);
+    layout_mkam_main->addLayout(layout_mkam_buttons);
     wgt_mkam.setLayout(layout_mkam_main);
     wgt_mkam.setWindowTitle("Antiicing system");
 

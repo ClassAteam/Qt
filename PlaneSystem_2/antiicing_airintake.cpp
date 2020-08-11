@@ -50,6 +50,7 @@ Ushpp;
 antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     : QWidget(pwgt)
 {
+    QWidget wgt;
     K52_3020 = 0;
     K53_3020 = 0;
     K54_3020 = 0;
@@ -81,8 +82,8 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     S4_3020 = 0;
     S5_3020 = 0;
     Counter_airintake = 0;
-    Ushpl = 0.0;
-    Ushpp = 0.0;
+    Ushpl = 21.0;
+    Ushpp = 21.0;
 
     //Labels
     K52_3020_label = new QLabel;
@@ -116,6 +117,7 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     S4_3020_label = new QLabel;
     S5_3020_label = new QLabel;
     Counter_airintake_label = new QLabel;
+    Usho1p_label = new QLabel;
     Ushpl_label = new QLabel;
     Ushpp_label = new QLabel;
 
@@ -506,40 +508,41 @@ int antiicing_airintake::logic_airintake()
     }
 
     //showing values
-    K52_3020_label->setText("K52_3020" + QString::number(K52_3020));
-    K53_3020_label->setText("K53_3020"  + QString::number(K53_3020));
-    K54_3020_label->setText("K54_3020"  + QString::number(K54_3020));
-    K55_3020_label->setText("K55_3020"  + QString::number(K55_3020));
-    K14_3020_label->setText("K14_3020"  + QString::number(K14_3020));
-    K21_3020_label->setText("K21_3020"  + QString::number(K21_3020));
-    K30_3020_label->setText("K30_3020"  + QString::number(K30_3020));
-    K37_3020_label->setText("K37_3020"  + QString::number(K37_3020));
-    K16_3020_label->setText("K16_3020"  + QString::number(K16_3020));
-    K23_3020_label->setText("K23_3020"  + QString::number(K23_3020));
-    K32_3020_label->setText("K32_3020"  + QString::number(K32_3020));
-    K39_3020_label->setText("K39_3020"  + QString::number(K39_3020));
-    K19_3020_label->setText("K19_3020"  + QString::number(K19_3020));
-    K25_3020_label->setText("K25_3020"  + QString::number(K25_3020));
-    K35_3020_label->setText("K35_3020"  + QString::number(K35_3020));
-    K41_3020_label->setText("K41_3020"  + QString::number(K41_3020));
-    K20_3020_label->setText("K20_3020"  + QString::number(K20_3020));
-    K28_3020_label->setText("K28_3020"  + QString::number(K28_3020));
-    K36_3020_label->setText("K36_3020"  + QString::number(K36_3020));
-    K44_3020_label->setText("K44_3020"  + QString::number(K44_3020));
-    F32_3020_label->setText("F32_3020"  + QString::number(F32_3020));
-    F319_3020_label->setText("F319_3020"  + QString::number(F319_3020));
-    F356_3020_label->setText("F356_3020"  + QString::number(F356_3020));
-    F353_3020_label->setText("F353_3020"  + QString::number(F353_3020));
-    F320_3020_label->setText("F320_3020"  + QString::number(F320_3020));
-    F330_3020_label->setText("F330_3020"  + QString::number(F330_3020));
-    F340_3020_label->setText("F340_3020"  + QString::number(F340_3020));
-    S3_3020_label->setText("S3_3020"  + QString::number(S3_3020));
-    S4_3020_label->setText("S4_3020"  + QString::number(S4_3020));
-    S5_3020_label->setText("S5_3020"  + QString::number(S5_3020));
-    Counter_airintake_label->setText("Counter_airintake"
+    K52_3020_label->setText("K52_3020 = " + QString::number(K52_3020));
+    K53_3020_label->setText("K53_3020 = "  + QString::number(K53_3020));
+    K54_3020_label->setText("K54_3020 = "  + QString::number(K54_3020));
+    K55_3020_label->setText("K55_3020 = "  + QString::number(K55_3020));
+    K14_3020_label->setText("K14_3020 = "  + QString::number(K14_3020));
+    K21_3020_label->setText("K21_3020 = "  + QString::number(K21_3020));
+    K30_3020_label->setText("K30_3020 = "  + QString::number(K30_3020));
+    K37_3020_label->setText("K37_3020 = "  + QString::number(K37_3020));
+    K16_3020_label->setText("K16_3020 = "  + QString::number(K16_3020));
+    K23_3020_label->setText("K23_3020 = "  + QString::number(K23_3020));
+    K32_3020_label->setText("K32_3020 = "  + QString::number(K32_3020));
+    K39_3020_label->setText("K39_3020 = "  + QString::number(K39_3020));
+    K19_3020_label->setText("K19_3020 = "  + QString::number(K19_3020));
+    K25_3020_label->setText("K25_3020 = "  + QString::number(K25_3020));
+    K35_3020_label->setText("K35_3020 = "  + QString::number(K35_3020));
+    K41_3020_label->setText("K41_3020 = "  + QString::number(K41_3020));
+    K20_3020_label->setText("K20_3020 = "  + QString::number(K20_3020));
+    K28_3020_label->setText("K28_3020 = "  + QString::number(K28_3020));
+    K36_3020_label->setText("K36_3020 = "  + QString::number(K36_3020));
+    K44_3020_label->setText("K44_3020 = "  + QString::number(K44_3020));
+    F32_3020_label->setText("F32_3020 = "  + QString::number(F32_3020));
+    F319_3020_label->setText("F319_3020 = "  + QString::number(F319_3020));
+    F356_3020_label->setText("F356_3020 = "  + QString::number(F356_3020));
+    F353_3020_label->setText("F353_3020 = "  + QString::number(F353_3020));
+    F320_3020_label->setText("F320_3020 = "  + QString::number(F320_3020));
+    F330_3020_label->setText("F330_3020 = "  + QString::number(F330_3020));
+    F340_3020_label->setText("F340_3020 = "  + QString::number(F340_3020));
+    S3_3020_label->setText("S3_3020 = "  + QString::number(S3_3020));
+    S4_3020_label->setText("S4_3020 = "  + QString::number(S4_3020));
+    S5_3020_label->setText("S5_3020 = "  + QString::number(S5_3020));
+    Usho1p_label->setText("Usho1p = "  + QString::number(Usho1p));
+    Ushpl_label->setText("Ushpl = "  + QString::number(Ushpl));
+    Ushpp_label->setText("Ushpp = "  + QString::number(Ushpp));
+    Counter_airintake_label->setText("Counter_airintake = "
                                      + QString::number(Counter_airintake));
-    Ushpl_label->setText("Ushpl"  + QString::number(Ushpl));
-    Ushpp_label->setText("Ushpp"  + QString::number(Ushpp));
 
     //layout setting
 
@@ -579,6 +582,7 @@ int antiicing_airintake::logic_airintake()
     layout_airintake_labels->addWidget(S4_3020_label);
     layout_airintake_labels->addWidget(S5_3020_label);
     layout_airintake_labels->addWidget(Counter_airintake_label);
+    layout_airintake_labels->addWidget(Usho1p_label);
     layout_airintake_labels->addWidget(Ushpl_label);
     layout_airintake_labels->addWidget(Ushpp_label);
 

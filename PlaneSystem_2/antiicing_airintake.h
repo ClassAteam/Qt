@@ -54,6 +54,7 @@ public:
     QLabel* S4_3020_label;
     QLabel* S5_3020_label;
     QLabel* Counter_airintake_label;
+    QLabel* Usho1p_label;
     QLabel* Ushpl_label;
     QLabel* Ushpp_label;
 

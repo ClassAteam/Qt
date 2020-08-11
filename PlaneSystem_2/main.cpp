@@ -17,11 +17,11 @@ int main(int argc, char *argv[])
     antifirelogic_exb logic_EXB;
     antifirelogic_alarm logic_alarm;
     presure_regulation presure;
-    antiicing_mkam logic_mkam;
-    antiicing_airintake logic_airintake;
+    antiicing_mkam mkam;
+    antiicing_airintake airintake;
     QTimer *timer = new QTimer;
 
-    QWidget window_antifire ;
+    QWidget window_antifire;
     QHBoxLayout layout_alarm;
     layout_alarm.addWidget(&logic_valve.wgt);
     layout_alarm.addWidget(&logic_EXB.wgt_EXB);
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     window_antifire.setWindowState(Qt::WindowFullScreen);
     window_antifire.show();
 
-    QWidget window_presure ;
+    QWidget window_presure;
     QHBoxLayout layout_presure;
     layout_presure.addWidget(&presure.wgt_presureregulatoin);
     window_presure.setLayout(&layout_presure);
@@ -39,10 +39,10 @@ int main(int argc, char *argv[])
     window_presure.setWindowState(Qt::WindowFullScreen);
     window_presure.show();
 
-    QWidget window_antiicing ;
+    QWidget window_antiicing;
     QHBoxLayout layout_antiicing;
-    layout_antiicing.addWidget(&logic_mkam.wgt_mkam);
-    layout_antiicing.addWidget(&logic_airintake.wgt_airintake);
+    layout_antiicing.addWidget(&airintake.wgt_airintake);
+    layout_antiicing.addWidget(&mkam.wgt_mkam);
     window_antiicing.setLayout(&layout_antiicing);
     window_antiicing.setWindowTitle("Antiicing System");
     window_antiicing.setWindowState(Qt::WindowFullScreen);
@@ -57,9 +57,9 @@ int main(int argc, char *argv[])
     QObject::connect(timer, SIGNAL(timeout()),
                      &presure , SLOT(logic_presure()));
     QObject::connect(timer, SIGNAL(timeout()),
-                     &logic_mkam , SLOT(logic_mkam()));
+                     &mkam , SLOT(logic_mkam()));
     QObject::connect(timer, SIGNAL(timeout()),
-                     &logic_airintake , SLOT(logic_airintake()));
+                     &airintake , SLOT(logic_airintake()));
 
     timer->start(TICK);
     return a.exec();

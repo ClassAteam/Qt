@@ -674,6 +674,7 @@ int antiicing_airintake::logic_airintake()
     layout_airintake_main->addLayout(layout_airintake_buttons);
     layout_airintake_main->addLayout(layout_airintake_labels);
     wgt_airintake.setLayout(layout_airintake_main);
+    wgt_airintake.setFixedWidth(300);
     wgt_airintake.setWindowTitle("antiicing system airintake");
 
 }

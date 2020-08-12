@@ -21,6 +21,7 @@ SOURCES += \
     antifirelogic_execution_block.cpp \
     antifirelogic_valves.cpp \
     antiicing_airintake.cpp \
+    antiicing_airintake_warmup.cpp \
     antiicing_mkam.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     antifirelogic_execution_block.h \
     antifirelogic_valves.h \
     antiicing_airintake.h \
+    antiicing_airintake_warmup.h \
     antiicing_mkam.h \
     main.h \
     mainwindow.h \

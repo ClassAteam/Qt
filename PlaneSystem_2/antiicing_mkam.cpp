@@ -134,7 +134,7 @@ antiicing_mkam::antiicing_mkam(QWidget* pwgt)
               this, SLOT(m_S1_3020_3()));
 
      S6_3020_on_button = new QPushButton
-             ("S6_3020 ON", this);
+             ("S6_3020 are ON", this);
      QObject::connect
              (S6_3020_on_button, SIGNAL(clicked()),
               this, SLOT(m_S6_3020_on()));
@@ -499,6 +499,7 @@ int antiicing_mkam::logic_mkam()
     layout_mkam_main->addLayout(layout_mkam_labels);
     layout_mkam_main->addLayout(layout_mkam_buttons);
     wgt_mkam.setLayout(layout_mkam_main);
+    wgt_mkam.setFixedWidth(300);
     wgt_mkam.setWindowTitle("Antiicing system");
 
 }

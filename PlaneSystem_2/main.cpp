@@ -7,6 +7,7 @@
 #include <presure_regulation.h>
 #include <antiicing_mkam.h>
 #include <antiicing_airintake.h>
+#include <antiicing_airintake_warmup.h>
 
 const double TICK = 200;
 
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
     presure_regulation presure;
     antiicing_mkam mkam;
     antiicing_airintake airintake;
+    antiicing_airintake_warmup warmup;
     QTimer *timer = new QTimer;
 
     QWidget window_antifire;
@@ -43,6 +45,7 @@ int main(int argc, char *argv[])
     QHBoxLayout layout_antiicing;
     layout_antiicing.addWidget(&airintake.wgt_airintake);
     layout_antiicing.addWidget(&mkam.wgt_mkam);
+    layout_antiicing.addWidget(&warmup.wgt_warmup);
     window_antiicing.setLayout(&layout_antiicing);
     window_antiicing.setWindowTitle("Antiicing System");
     window_antiicing.setWindowState(Qt::WindowFullScreen);
@@ -57,9 +60,11 @@ int main(int argc, char *argv[])
     QObject::connect(timer, SIGNAL(timeout()),
                      &presure , SLOT(logic_presure()));
     QObject::connect(timer, SIGNAL(timeout()),
-                     &mkam , SLOT(logic_mkam()));
-    QObject::connect(timer, SIGNAL(timeout()),
                      &airintake , SLOT(logic_airintake()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &warmup , SLOT(logic_warmup()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &mkam , SLOT(logic_mkam()));
 
     timer->start(TICK);
     return a.exec();

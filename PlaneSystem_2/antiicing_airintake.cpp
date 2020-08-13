@@ -88,8 +88,8 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     S4_3020 = 0;
     S5_3020 = 0;
     Counter_airintake = 0;
-    Ushpl = 21.0;
-    Ushpp = 21.0;
+    Ushpl = 115.0;
+    Ushpp = 115.0;
 
     //Labels
     K52_3020_label = new QLabel;
@@ -457,7 +457,7 @@ int antiicing_airintake::logic_airintake()
 
     //K19, K25, K35, K41 toggle
     //1
-    if (F125_3020 == false
+    if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
             && F34_3020 == true)
@@ -471,7 +471,7 @@ int antiicing_airintake::logic_airintake()
 
     //K19, K25, K35, K41 toggle
     //2
-    if (F125_3020 == false
+    if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
             && F320_3020 == true)
@@ -484,7 +484,7 @@ int antiicing_airintake::logic_airintake()
     }
 
     //3
-    if (F125_3020 == false
+    if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
             && F330_3020 == true)
@@ -497,7 +497,7 @@ int antiicing_airintake::logic_airintake()
     }
 
     //4
-    if (F125_3020 == false
+    if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
             && F340_3020 == true)
@@ -687,7 +687,6 @@ int antiicing_airintake::m_S2_3020_on()
 int antiicing_airintake::m_S2_3020_off()
 {
     S2_3020 = false;
-
 }
 
 int antiicing_airintake::m_S3_3020_on()

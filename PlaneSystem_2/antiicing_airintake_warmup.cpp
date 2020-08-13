@@ -37,7 +37,10 @@ BSS824X1FF,
 BSS825PR ;
 
 int
-Counter_warmup,
+Counter_warmup_k22,
+Counter_warmup_k29,
+Counter_warmup_k40,
+Counter_warmup_k46,
 POV3dv1,
 POV3dv2,
 POV3dv3,
@@ -90,7 +93,10 @@ antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
     BSS824X1DD = 0;
     BSS824X1FF = 0;
     BSS825PR = 0;
-    Counter_warmup = 0;
+    Counter_warmup_k22 = 0;
+    Counter_warmup_k29 = 0;
+    Counter_warmup_k40 = 0;
+    Counter_warmup_k46 = 0;
     POV3dv1 = 0;
     POV3dv2 = 0;
     POV3dv3 = 0;
@@ -99,10 +105,10 @@ antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
     S4_3080 = 0;
     S5_3080 = 0;
     S6_3080 = 0;
-    Ush1l = 0.0;
-    Ush2l = 0.0;
-    Ush1p = 0.0;
-    Ush2p = 0.0;
+    Ush1l = 19.0;
+    Ush2l = 19.0;
+    Ush1p = 19.0;
+    Ush2p = 19.0;
 
     //Labels
     K22_3020_label = new QLabel;
@@ -138,7 +144,7 @@ antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
     BSS824X1DD_label = new QLabel;
     BSS824X1FF_label = new QLabel;
     BSS825PR_label = new QLabel;;
-    Counter_warmup_label = new QLabel;
+//    Counter_warmup_label = new QLabel;
     POV3dv1_label = new QLabel;
     POV3dv2_label = new QLabel;
     POV3dv3_label = new QLabel;
@@ -151,10 +157,56 @@ antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
     Ush2l_label = new QLabel;
     Ush1p_label = new QLabel;
     Ush2p_label = new QLabel;
+
+    //Buttons and connections
+     S3_3080_on_button = new QPushButton
+             ("S3_3080 ON", this);
+     QObject::connect
+             (S3_3080_on_button, SIGNAL(clicked()),
+              this, SLOT(m_S3_3080_on()));
+     S3_3080_off_button = new QPushButton
+             ("S3_3080 OFF", this);
+     QObject::connect
+             (S3_3080_off_button, SIGNAL(clicked()),
+              this, SLOT(m_S3_3080_off()));
+
+     S4_3080_on_button = new QPushButton
+             ("S4_3080 ON", this);
+     QObject::connect
+             (S4_3080_on_button, SIGNAL(clicked()),
+              this, SLOT(m_S4_3080_on()));
+     S4_3080_off_button = new QPushButton
+             ("S4_3080 OFF", this);
+     QObject::connect
+             (S4_3080_off_button, SIGNAL(clicked()),
+              this, SLOT(m_S4_3080_off()));
+
+     S5_3080_on_button = new QPushButton
+             ("S5_3080 ON", this);
+     QObject::connect
+             (S5_3080_on_button, SIGNAL(clicked()),
+              this, SLOT(m_S5_3080_on()));
+     S5_3080_off_button = new QPushButton
+             ("S5_3080 OFF", this);
+     QObject::connect
+             (S5_3080_off_button, SIGNAL(clicked()),
+              this, SLOT(m_S5_3080_off()));
+
+     S6_3080_on_button = new QPushButton
+             ("S6_3080 ON", this);
+     QObject::connect
+             (S6_3080_on_button, SIGNAL(clicked()),
+              this, SLOT(m_S6_3080_on()));
+     S6_3080_off_button = new QPushButton
+             ("S6_3080 OFF", this);
+     QObject::connect
+             (S6_3080_off_button, SIGNAL(clicked()),
+              this, SLOT(m_S6_3080_off()));
+
 }
 int antiicing_airintake_warmup::logic_warmup()
 {
-    // K56 toggle
+    //1 K56 toggle
     if (F34_3020 == true)
     {
 
@@ -178,7 +230,7 @@ int antiicing_airintake_warmup::logic_warmup()
 
     K22_3020 = false;
 
-    // K57 toggle
+    //2 K57 toggle
     if (F320_3020 == true)
     {
 
@@ -202,7 +254,7 @@ int antiicing_airintake_warmup::logic_warmup()
 
     K29_3020 = false;
 
-    // K58 toggle
+    //3 K58 toggle
     if (F330_3020 == true)
     {
 
@@ -226,7 +278,7 @@ int antiicing_airintake_warmup::logic_warmup()
 
     K40_3020 = false;
 
-    // K59 toggle
+    //4 K59 toggle
     if (F340_3020 == true)
     {
 
@@ -253,84 +305,73 @@ int antiicing_airintake_warmup::logic_warmup()
     //K22 delaying
     if (F32_3020 == true && K56_3020 == false)
     {
-        Counter_warmup++;
+        Counter_warmup_k22++;
 
-        if(TICK * Counter_warmup > 1000)
+        if(TICK * Counter_warmup_k22 > 1000)
         {
             K22_3020 = true;
-            Counter_warmup = 0;
         }
-        else
-        {
-            K22_3020 = false;
-        }
+
 
     }
     else
     {
-        Counter_warmup = 0;
+        Counter_warmup_k22 = 0;
+        K22_3020 = false;
     }
 
     //K29 delaying
     if (F319_3020 == true && K57_3020 == false)
     {
-        Counter_warmup++;
+        Counter_warmup_k29++;
 
-        if(TICK * Counter_warmup > 1000)
+        if(TICK * Counter_warmup_k29 > 1000)
         {
             K29_3020 = true;
-            Counter_warmup = 0;
         }
-        else
-        {
-            K29_3020 = false;
-        }
+
 
     }
     else
     {
-        Counter_warmup = 0;
+        Counter_warmup_k29 = 0;
+        K29_3020 = false;
     }
 
     //K40 delaying
     if (F356_3020 == true && K58_3020 == false)
     {
-        Counter_warmup++;
+        Counter_warmup_k40++;
 
-        if(TICK * Counter_warmup > 1000)
+        if(TICK * Counter_warmup_k40 > 1000)
         {
             K40_3020 = true;
-            Counter_warmup = 0;
         }
-        else
-        {
-            K40_3020 = false;
-        }
+
 
     }
     else
     {
-        Counter_warmup = 0;
+        Counter_warmup_k40 = 0;
+        K40_3020 = false;
     }
 
     //K46 delaying
     if (F353_3020 == true && K59_3020 == false)
     {
-        Counter_warmup++;
+        Counter_warmup_k46++;
 
-        if(TICK * Counter_warmup > 1000)
+        if(TICK * Counter_warmup_k46 > 1000)
         {
             K46_3020 = true;
         }
-        else
-        {
-            K46_3020 = false;
-        }
+
 
     }
     else
     {
-        Counter_warmup = 0;
+        Counter_warmup_k46 = 0;
+        K46_3020 = false;
     }
 
     //BSS824X1z toggle
@@ -338,26 +379,42 @@ int antiicing_airintake_warmup::logic_warmup()
     {
         BSS824X1z = true;
     }
+    else
+    {
+        BSS824X1z = false;
+    }
     //BSS824X1BB toggle
     if (Usho1p >= 18.0 && K29_3020 == true)
     {
         BSS824X1BB = true;
+    }
+    else
+    {
+        BSS824X1BB = false;
     }
     //BSS824X1DD toggle
     if (Usho1p >= 18.0 && K40_3020 == true)
     {
         BSS824X1DD = true;
     }
+    else
+    {
+        BSS824X1DD = false;
+    }
     //BSS824X1FF toggle
     if (Usho1p >= 18.0 && K46_3020 == true)
     {
         BSS824X1FF = true;
     }
+    else
+    {
+        BSS824X1FF = false;
+    }
 
     //PONdv1, POB1dv1, POB2dv1, POB3dv1 toggle
     if (Ushpl >= 106.0)
     {
-        if (K14_3020)
+        if (K14_3020 == true)
         {
             PONdv1 = true;
         }
@@ -366,7 +423,7 @@ int antiicing_airintake_warmup::logic_warmup()
             PONdv1 = false;
         }
 
-        if (K16_3020)
+        if (K16_3020 == true)
         {
             POB1dv1 = true;
         }
@@ -375,7 +432,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB1dv1 = false;
         }
 
-        if (K19_3020)
+        if (K19_3020 == true)
         {
             POB2dv1 = true;
         }
@@ -384,7 +441,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB2dv1 = false;
         }
 
-        if (K20_3020)
+        if (K20_3020 == true)
         {
             POB3dv1 = true;
         }
@@ -397,21 +454,13 @@ int antiicing_airintake_warmup::logic_warmup()
     {
         PONdv1 = false;
         POB1dv1 = false;
-        POB2dv1 = true;
-        POB3dv1 = true;
-        if (Ush1l >= 18.0 && S3_3080)
-        {
-            PVOVNA1 = true;
-        }
-        else
-        {
-            PVOVNA1 = false;
-        }
+        POB2dv1 = false;
+        POB3dv1 = false;
     }
-    //PONdv2, POB1dv2, POB2dv2, POB3dv2 toggle
+    //2 PONdv2, POB1dv2, POB2dv2, POB3dv2 toggle
     if (Ushpl >= 106.0)
     {
-        if (K21_3020)
+        if (K21_3020 == true)
         {
             PONdv2 = true;
         }
@@ -420,7 +469,7 @@ int antiicing_airintake_warmup::logic_warmup()
             PONdv2 = false;
         }
 
-        if (K32_3020)
+        if (K23_3020 == true)
         {
             POB1dv2 = true;
         }
@@ -429,7 +478,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB1dv2 = false;
         }
 
-        if (K35_3020)
+        if (K25_3020 == true)
         {
             POB2dv2 = true;
         }
@@ -438,7 +487,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB2dv2 = false;
         }
 
-        if (K36_3020)
+        if (K28_3020)
         {
             POB3dv2 = true;
         }
@@ -451,21 +500,13 @@ int antiicing_airintake_warmup::logic_warmup()
     {
         PONdv2 = false;
         POB1dv2 = false;
-        POB2dv2 = true;
-        POB3dv2 = true;
-        if (Ush1p >= 18.0 && S4_3080)
-        {
-            PVOVNA2 = true;
-        }
-        else
-        {
-            PVOVNA2 = false;
-        }
+        POB2dv2 = false;
+        POB3dv2 = false;
     }
-    //PONdv3, POB1dv3, POB2dv3, POB3dv3 toggle
+    //3 PONdv3, POB1dv3, POB2dv3, POB3dv3 toggle
     if (Ushpp >= 106.0)
     {
-        if (K30_3020)
+        if (K30_3020 == true)
         {
             PONdv3 = true;
         }
@@ -474,7 +515,7 @@ int antiicing_airintake_warmup::logic_warmup()
             PONdv3 = false;
         }
 
-        if (K23_3020)
+        if (K32_3020 == true)
         {
             POB1dv3 = true;
         }
@@ -483,7 +524,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB1dv3 = false;
         }
 
-        if (K25_3020)
+        if (K35_3020 == true)
         {
             POB2dv3 = true;
         }
@@ -492,7 +533,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB2dv3 = false;
         }
 
-        if (K28_3020)
+        if (K36_3020 == true)
         {
             POB3dv3 = true;
         }
@@ -505,21 +546,13 @@ int antiicing_airintake_warmup::logic_warmup()
     {
         PONdv3 = false;
         POB1dv3 = false;
-        POB2dv3 = true;
-        POB3dv3 = true;
-        if (Ush1p >= 18.0 && S5_3080)
-        {
-            PVOVNA3 = true;
-        }
-        else
-        {
-            PVOVNA3 = false;
-        }
+        POB2dv3 = false;
+        POB3dv3 = false;
     }
-    //PONdv4, POB1dv4, POB2dv4, POB3dv4 toggle
+    //4 PONdv4, POB1dv4, POB2dv4, POB3dv4 toggle
     if (Ushpp >= 106.0)
     {
-        if (K37_3020)
+        if (K37_3020 == true)
         {
             PONdv4 = true;
         }
@@ -528,7 +561,7 @@ int antiicing_airintake_warmup::logic_warmup()
             PONdv4 = false;
         }
 
-        if (K39_3020)
+        if (K39_3020 == true)
         {
             POB1dv4 = true;
         }
@@ -537,7 +570,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB1dv4 = false;
         }
 
-        if (K41_3020)
+        if (K41_3020 == true)
         {
             POB2dv4 = true;
         }
@@ -546,7 +579,7 @@ int antiicing_airintake_warmup::logic_warmup()
             POB2dv4 = false;
         }
 
-        if (K44_3020)
+        if (K44_3020 == true)
         {
             POB3dv4 = true;
         }
@@ -559,16 +592,42 @@ int antiicing_airintake_warmup::logic_warmup()
     {
         PONdv4 = false;
         POB1dv4 = false;
-        POB2dv4 = true;
-        POB3dv4 = true;
-        if (Ush2p >= 18.0 && S5_3080)
-        {
-            PVOVNA4 = true;
-        }
-        else
-        {
-            PVOVNA4 = false;
-        }
+        POB2dv4 = false;
+        POB3dv4 = false;
+
+    }
+    if (Ush1p >= 18.0 && S5_3080 == true)
+    {
+        PVOVNA3 = true;
+    }
+    else
+    {
+        PVOVNA3 = false;
+    }
+    if (Ush2l >= 18.0 && S4_3080 == true)
+    {
+        PVOVNA2 = true;
+    }
+    else
+    {
+        PVOVNA2 = false;
+    }
+    if (Ush1l >= 18.0 && S3_3080 == true)
+    {
+        PVOVNA1 = true;
+    }
+    else
+    {
+        PVOVNA1 = false;
+    }
+
+    if (Ush2p >= 18.0 && S6_3080 == true)
+    {
+        PVOVNA4 = true;
+    }
+    else
+    {
+        PVOVNA4 = false;
     }
 
     if (Usho1p >= 18.0 && F110_3020 == true)
@@ -596,7 +655,7 @@ int antiicing_airintake_warmup::logic_warmup()
 
     K22_3020_label->setText("K22_3020 = " + QString::number(K22_3020));
     K29_3020_label->setText("K29_3020 = " + QString::number(K29_3020));
-    K40_3020_label->setText("K40_3020" + QString::number(K40_3020));
+    K40_3020_label->setText("K40_3020 = " + QString::number(K40_3020));
     K46_3020_label->setText("K46_3020" + QString::number(K46_3020));
     K56_3020_label->setText("K56_3020 = " + QString::number(K56_3020));
     K57_3020_label->setText("K57_3020 = " + QString::number(K57_3020));
@@ -627,7 +686,7 @@ int antiicing_airintake_warmup::logic_warmup()
     BSS824X1DD_label->setText("BSS824X1DD = " + QString::number(BSS824X1DD));
     BSS824X1FF_label->setText("BSS824X1FF = " + QString::number(BSS824X1FF));
     BSS825PR_label->setText("BSS825PR = " + QString::number(BSS825PR));;
-    Counter_warmup_label->setText("Counter_warmup = " + QString::number(Counter_warmup));
+//    Counter_warmup_label->setText("Counter_warmup = " + QString::number(Counter_warmup));
     POV3dv1_label->setText("POV3dv1 = " + QString::number(POV3dv1));
     POV3dv2_label->setText("POV3dv2 = " + QString::number(POV3dv2));
     POV3dv3_label->setText("POV3dv3 = " + QString::number(POV3dv3));
@@ -644,6 +703,7 @@ int antiicing_airintake_warmup::logic_warmup()
     //layout setting
 
     QVBoxLayout *layout_airintake_warmup_labels = new QVBoxLayout;
+    QVBoxLayout *layout_airintake_warmup_buttons = new QVBoxLayout;
     QHBoxLayout *layout_airintake_warmup_main = new QHBoxLayout;
 
     layout_airintake_warmup_labels->addWidget(K22_3020_label);
@@ -679,7 +739,7 @@ int antiicing_airintake_warmup::logic_warmup()
     layout_airintake_warmup_labels->addWidget(BSS824X1DD_label);
     layout_airintake_warmup_labels->addWidget(BSS824X1FF_label);
     layout_airintake_warmup_labels->addWidget(BSS825PR_label);;
-    layout_airintake_warmup_labels->addWidget(Counter_warmup_label);
+//    layout_airintake_warmup_labels->addWidget(Counter_warmup_label);
     layout_airintake_warmup_labels->addWidget(POV3dv1_label);
     layout_airintake_warmup_labels->addWidget(POV3dv2_label);
     layout_airintake_warmup_labels->addWidget(POV3dv3_label);
@@ -693,8 +753,59 @@ int antiicing_airintake_warmup::logic_warmup()
     layout_airintake_warmup_labels->addWidget(Ush1p_label);
     layout_airintake_warmup_labels->addWidget(Ush2p_label);
 
+    layout_airintake_warmup_buttons->addWidget(S3_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S3_3080_off_button);
+    layout_airintake_warmup_buttons->addWidget(S4_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S4_3080_off_button);
+    layout_airintake_warmup_buttons->addWidget(S5_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S5_3080_off_button);
+    layout_airintake_warmup_buttons->addWidget(S6_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S6_3080_off_button);
+
+    layout_airintake_warmup_main->addLayout(layout_airintake_warmup_buttons);
     layout_airintake_warmup_main->addLayout(layout_airintake_warmup_labels);
     wgt_warmup.setLayout(layout_airintake_warmup_main);
+    wgt_warmup.setFixedWidth(300);
     wgt_warmup.setWindowTitle("antiicing system warmup");
 
+}
+
+int antiicing_airintake_warmup::m_S3_3080_on()
+{
+    S3_3080 = true;
+}
+
+int antiicing_airintake_warmup::m_S3_3080_off()
+{
+    S3_3080 = false;
+}
+
+int antiicing_airintake_warmup::m_S4_3080_on()
+{
+    S4_3080 = true;
+}
+
+int antiicing_airintake_warmup::m_S4_3080_off()
+{
+    S4_3080 = false;
+}
+
+int antiicing_airintake_warmup::m_S5_3080_on()
+{
+    S5_3080 = true;
+}
+
+int antiicing_airintake_warmup::m_S5_3080_off()
+{
+    S5_3080 = false;
+}
+
+int antiicing_airintake_warmup::m_S6_3080_on()
+{
+    S6_3080 = true;
+}
+
+int antiicing_airintake_warmup::m_S6_3080_off()
+{
+    S6_3080 = false;
 }

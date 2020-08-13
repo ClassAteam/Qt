@@ -378,7 +378,7 @@ int antiicing_mkam::logic_mkam()
 
         //F19 toggling
         if ((((PZ3_sec) >= 120) &&
-                ((PZ3_sec) < 140)) ||
+                ((PZ3_sec) < 180)) ||
                 (((PZ3_sec) >= 360) &&
                 ((PZ3_sec) < 420)))
         {

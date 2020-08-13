@@ -93,7 +93,7 @@ public:
     QLabel* BSS824X1DD_label;
     QLabel* BSS824X1FF_label;
     QLabel* BSS825PR_label;;
-    QLabel* Counter_warmup_label;
+//    QLabel* Counter_warmup_label;
     QLabel* POV3dv1_label;
     QLabel* POV3dv2_label;
     QLabel* POV3dv3_label;
@@ -107,7 +107,24 @@ public:
     QLabel* Ush1p_label;
     QLabel* Ush2p_label;
 
+    QPushButton* S3_3080_on_button;
+    QPushButton* S3_3080_off_button;
+    QPushButton* S4_3080_on_button;
+    QPushButton* S4_3080_off_button;
+    QPushButton* S5_3080_on_button;
+    QPushButton* S5_3080_off_button;
+    QPushButton* S6_3080_on_button;
+    QPushButton* S6_3080_off_button;
+
 public slots:
     int logic_warmup();
+    int m_S3_3080_on();
+    int m_S3_3080_off();
+    int m_S4_3080_on();
+    int m_S4_3080_off();
+    int m_S5_3080_on();
+    int m_S5_3080_off();
+    int m_S6_3080_on();
+    int m_S6_3080_off();
 };
 

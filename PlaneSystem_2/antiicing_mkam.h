@@ -8,6 +8,10 @@
 extern const double
 TICK;
 
+extern bool
+K24_3230,
+K25_3230,
+K26_3230;
 extern double
 Ushap;
 class antiicing_mkam : public QWidget
@@ -41,6 +45,7 @@ public:
     QLabel* K39_3020_label;
     QLabel* K19_3020_label;
     QLabel* K25_3020_label;
+    QLabel* K26_3230_label;
     QLabel* K27_3230_label;
     QLabel* K35_3020_label;
     QLabel* K41_3020_label;
@@ -91,6 +96,8 @@ public:
 
     QPushButton* otkaz_pos_vozduhzab_on_button;
     QPushButton* otkaz_pos_vozduhzab_off_button;
+    QPushButton* K26_3230_on_button;
+    QPushButton* K26_3230_off_button;
     QPushButton* K27_3230_on_button;
     QPushButton* K27_3230_off_button;
     QPushButton* S1_3020_0_button;
@@ -109,6 +116,8 @@ public slots:
     int m_otkaz_pos_vozduhzab_off();
     int m_K27_3230_on();
     int m_K27_3230_off();
+    int m_K26_3230_on();
+    int m_K26_3230_off();
     int m_S1_3020_0();
     int m_S1_3020_1();
     int m_S1_3020_2();

@@ -12,6 +12,7 @@ F110_3020,
 F19_3020,
 F125_3020,
 F134_3020,
+K26_3230,
 K27_3230,
 otkaz_vozduhozabor;
 int
@@ -43,6 +44,7 @@ antiicing_mkam::antiicing_mkam(QWidget* pwgt)
     F19_3020 = 0;
     F125_3020 = 0;
     F134_3020 = 0;
+    K26_3230 = 0;
     K27_3230 = 0;
     otkaz_vozduhozabor =0;
     S1_3020 = 0;
@@ -62,6 +64,7 @@ antiicing_mkam::antiicing_mkam(QWidget* pwgt)
     PZ3_label = new QLabel;
     K2_3020_label = new QLabel;
     K27_3230_label = new QLabel;
+    K26_3230_label = new QLabel;
     K51_3020_label = new QLabel;
     F12_3020_label = new QLabel;
     F110_3020_label = new QLabel;
@@ -82,8 +85,7 @@ antiicing_mkam::antiicing_mkam(QWidget* pwgt)
 
     //Buttons and connections
 
-     M_change_button = new QPushButton
-             ("M change", this);
+     M_change_button = new QPushButton ("M change", this);
      QObject::connect
              (M_change_button, SIGNAL(clicked()),
               this, SLOT(m_M_change()));
@@ -100,6 +102,17 @@ antiicing_mkam::antiicing_mkam(QWidget* pwgt)
              (otkaz_pos_vozduhzab_off_button, SIGNAL(clicked()),
               this, SLOT(m_otkaz_pos_vozduhzab_off()));
 
+     K26_3230_on_button = new QPushButton
+             ("K26_3230 ON", this);
+     QObject::connect
+             (K26_3230_on_button, SIGNAL(clicked()),
+              this, SLOT(m_K26_3230_on()));
+
+     K26_3230_off_button = new QPushButton
+             ("K26_3230 OFF", this);
+     QObject::connect
+             (K26_3230_off_button, SIGNAL(clicked()),
+              this, SLOT(m_K26_3230_off()));
      K27_3230_on_button = new QPushButton
              ("K27_3230 ON", this);
      QObject::connect
@@ -434,6 +447,7 @@ int antiicing_mkam::logic_mkam()
     PZ2_label->setText("PZ2 = " + QString::number(PZ2));
     PZ3_label->setText("PZ3 = " + QString::number(PZ3));
     K2_3020_label->setText("K2_3020 = " + QString::number(K2_3020));
+    K26_3230_label->setText("K26_3230 = " + QString::number(K26_3230));
     K27_3230_label->setText("K27_3230 = " + QString::number(K27_3230));
     K51_3020_label->setText("K51_3020 = " + QString::number(K51_3020));
     F12_3020_label->setText("F12_3020 = " + QString::number(F12_3020));
@@ -466,6 +480,7 @@ int antiicing_mkam::logic_mkam()
     layout_mkam_labels->addWidget(PZ2_label);
     layout_mkam_labels->addWidget(PZ3_label);
     layout_mkam_labels->addWidget(K2_3020_label);
+    layout_mkam_labels->addWidget(K26_3230_label);
     layout_mkam_labels->addWidget(K27_3230_label);
     layout_mkam_labels->addWidget(K51_3020_label);
     layout_mkam_labels->addWidget(F12_3020_label);
@@ -487,6 +502,8 @@ int antiicing_mkam::logic_mkam()
     layout_mkam_buttons->addWidget(M_edit);
     layout_mkam_buttons->addWidget(otkaz_pos_vozduhzab_on_button);
     layout_mkam_buttons->addWidget(otkaz_pos_vozduhzab_off_button);
+    layout_mkam_buttons->addWidget(K26_3230_on_button);
+    layout_mkam_buttons->addWidget(K26_3230_off_button);
     layout_mkam_buttons->addWidget(K27_3230_on_button);
     layout_mkam_buttons->addWidget(K27_3230_off_button);
     layout_mkam_buttons->addWidget(S1_3020_0_button);
@@ -515,10 +532,24 @@ int antiicing_mkam::m_otkaz_pos_vozduhzab_off()
 int antiicing_mkam::m_K27_3230_on()
 {
     K27_3230 = true;
+    K24_3230 = true;
+
 }
 int antiicing_mkam::m_K27_3230_off()
 {
     K27_3230 = false;
+    K24_3230 = false;
+}
+int antiicing_mkam::m_K26_3230_on()
+{
+    K26_3230 = true;
+    K25_3230 = true;
+
+}
+int antiicing_mkam::m_K26_3230_off()
+{
+    K26_3230 = false;
+    K25_3230 = false;
 }
 int antiicing_mkam::m_S1_3020_0()
 {

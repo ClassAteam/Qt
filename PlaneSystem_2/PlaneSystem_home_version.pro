@@ -24,6 +24,7 @@ SOURCES += \
     antiicing_airintake_warmup.cpp \
     antiicing_mkam.cpp \
     antiicing_ppd.cpp \
+    antiicing_windshields.cpp \
     main.cpp \
     mainwindow.cpp \
     presure_regulation.cpp
@@ -37,6 +38,7 @@ HEADERS += \
     antiicing_airintake_warmup.h \
     antiicing_mkam.h \
     antiicing_ppd.h \
+    antiicing_windshields.h \
     main.h \
     mainwindow.h \
     presure_regulation.h

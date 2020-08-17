@@ -9,6 +9,7 @@
 #include <antiicing_airintake.h>
 #include <antiicing_airintake_warmup.h>
 #include <antiicing_ppd.h>
+#include <antiicing_windshields.h>
 
 const double TICK = 200;
 
@@ -23,6 +24,7 @@ int main(int argc, char *argv[])
     antiicing_airintake airintake;
     antiicing_airintake_warmup warmup;
     antiicing_ppd ppd;
+    antiicing_windshields windshields;
     QTimer *timer = new QTimer;
 
     QWidget window_antifire;
@@ -49,6 +51,7 @@ int main(int argc, char *argv[])
     layout_antiicing.addWidget(&mkam.wgt_mkam);
     layout_antiicing.addWidget(&warmup.wgt_warmup);
     layout_antiicing.addWidget(&ppd.wgt_ppd);
+    layout_antiicing.addWidget(&windshields.wgt_windshields);
     window_antiicing.setLayout(&layout_antiicing);
     window_antiicing.setWindowTitle("Antiicing System");
     window_antiicing.setWindowState(Qt::WindowFullScreen);
@@ -70,6 +73,8 @@ int main(int argc, char *argv[])
                      &mkam , SLOT(logic_mkam()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &ppd , SLOT(logic_ppd()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &windshields , SLOT(logic_windshields()));
 
     timer->start(TICK);
     return a.exec();

@@ -22,6 +22,7 @@ SOURCES += \
     antifirelogic_valves.cpp \
     antiicing_airintake.cpp \
     antiicing_airintake_warmup.cpp \
+    antiicing_lights.cpp \
     antiicing_mkam.cpp \
     antiicing_ppd.cpp \
     antiicing_windshields.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     antifirelogic_valves.h \
     antiicing_airintake.h \
     antiicing_airintake_warmup.h \
+    antiicing_lights.h \
     antiicing_mkam.h \
     antiicing_ppd.h \
     antiicing_windshields.h \

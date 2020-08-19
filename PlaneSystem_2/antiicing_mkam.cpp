@@ -544,13 +544,13 @@ int antiicing_mkam::m_K26_3230_on()
 {
     K26_3230 = true;
     K25_3230 = true;
-    // P1OBLOP
-
+    P2OBLOP = true;
 }
 int antiicing_mkam::m_K26_3230_off()
 {
     K26_3230 = false;
     K25_3230 = false;
+    P2OBLOP = false;
 }
 int antiicing_mkam::m_S1_3020_0()
 {

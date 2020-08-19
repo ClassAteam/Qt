@@ -34,7 +34,6 @@ PSOBLP_tick;
 antiicing_lights::antiicing_lights(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt;
 
 
     obled_svs = 0;

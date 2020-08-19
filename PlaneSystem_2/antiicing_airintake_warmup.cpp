@@ -59,7 +59,6 @@ Ush2p;
 antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt;
     K22_3020 = 0;
     K29_3020 = 0;
     K40_3020 = 0;

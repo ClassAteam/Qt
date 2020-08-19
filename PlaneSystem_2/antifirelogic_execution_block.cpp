@@ -72,7 +72,6 @@ Counter_EXB;
 antifirelogic_exb::antifirelogic_exb(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt;
     //initialization
     K1_2610   = 0;
     K3_2610   = 0;

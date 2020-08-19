@@ -47,7 +47,6 @@ Counter_valves;
 antifirelogic_valves::antifirelogic_valves(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt;
     //intialization
     K15_2610 = 0;
     K16_2610 = 0;

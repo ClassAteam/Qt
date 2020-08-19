@@ -44,7 +44,6 @@ Counter_PRESURE;
 presure_regulation::presure_regulation(QWidget* pwgt)
     : QWidget(pwgt)
 {
-
     blink_tick = 0;
     K1_2131 = 0;
     K2_2131 = 0;

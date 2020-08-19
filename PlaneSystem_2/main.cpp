@@ -11,6 +11,7 @@
 #include <antiicing_ppd.h>
 #include <antiicing_windshields.h>
 #include <antiicing_lights.h>
+#include <cabinlighting_navi.h>
 
 const double TICK = 200;
 
@@ -27,6 +28,7 @@ int main(int argc, char *argv[])
     antiicing_ppd ppd;
     antiicing_windshields windshields;
     antiicing_lights lights;
+    cabinlighting_navi navi;
     QTimer *timer = new QTimer;
 
     QWidget window_antifire;
@@ -60,6 +62,14 @@ int main(int argc, char *argv[])
     window_antiicing.setWindowState(Qt::WindowFullScreen);
     window_antiicing.show();
 
+    QWidget window_cabinlighting;
+    QHBoxLayout layout_cabinlighting;
+    layout_cabinlighting.addWidget(&navi.wgt_navi);
+    window_cabinlighting.setLayout(&layout_cabinlighting);
+    window_cabinlighting.setWindowTitle("Cabin Lighting");
+    window_cabinlighting.setWindowState(Qt::WindowFullScreen);
+    window_cabinlighting.show();
+
     QObject::connect(timer, SIGNAL(timeout()),
                      &logic_valve , SLOT(logic_valves()));
     QObject::connect(timer, SIGNAL(timeout()),
@@ -80,6 +90,8 @@ int main(int argc, char *argv[])
                      &windshields , SLOT(logic_windshields()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &lights , SLOT(logic_lights()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &navi , SLOT(logic_navi()));
 
     timer->start(TICK);
     return a.exec();

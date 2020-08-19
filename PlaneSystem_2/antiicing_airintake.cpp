@@ -51,7 +51,6 @@ Ushpp;
 antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt;
     K52_3020 = 0;
     OTKAZ_vtsepiob_pos1dv = 0;
     OTKAZ_vtsepiob_pos2dv = 0;

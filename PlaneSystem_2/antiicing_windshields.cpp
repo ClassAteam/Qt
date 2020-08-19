@@ -33,7 +33,6 @@ Ushg4;
 antiicing_windshields::antiicing_windshields(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt;
 
     POLST = 0;
     POLOBST = 0;

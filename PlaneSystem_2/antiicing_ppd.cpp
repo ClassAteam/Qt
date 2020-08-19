@@ -32,7 +32,6 @@ alpha_rud_4dv;
 antiicing_ppd::antiicing_ppd(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt;
 
     obogrev_ppd1_ispr = 0;
     obogrev_ppd2_ispr = 0;

@@ -33,7 +33,6 @@ M;
 antiicing_mkam::antiicing_mkam(QWidget* pwgt)
     : QWidget(pwgt)
 {
-    QWidget wgt1;
     PZ1 = 0;
     PZ2 = 0;
     PZ3 = 0;
@@ -533,6 +532,7 @@ int antiicing_mkam::m_K27_3230_on()
 {
     K27_3230 = true;
     K24_3230 = true;
+    // P1OBPOP
 
 }
 int antiicing_mkam::m_K27_3230_off()
@@ -544,6 +544,7 @@ int antiicing_mkam::m_K26_3230_on()
 {
     K26_3230 = true;
     K25_3230 = true;
+    // P1OBLOP
 
 }
 int antiicing_mkam::m_K26_3230_off()

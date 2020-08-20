@@ -13,6 +13,7 @@
 #include <antiicing_lights.h>
 #include <cabinlighting_navi.h>
 #include <cabinlighting_beacons.h>
+#include <cabinlighting_outside.h>
 
 const double TICK = 200;
 
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
     antiicing_lights lights;
     cabinlighting_navi navi;
     cabinlighting_beacons beacons;
+    cabinlighting_outside outside;
     QTimer *timer = new QTimer;
 
     QWidget window_antifire;
@@ -68,6 +70,7 @@ int main(int argc, char *argv[])
     QHBoxLayout layout_cabinlighting;
     layout_cabinlighting.addWidget(&navi.wgt_navi);
     layout_cabinlighting.addWidget(&beacons.wgt_beacons);
+    layout_cabinlighting.addWidget(&outside.wgt_outside);
     window_cabinlighting.setLayout(&layout_cabinlighting);
     window_cabinlighting.setWindowTitle("Cabin Lighting");
     window_cabinlighting.setWindowState(Qt::WindowFullScreen);
@@ -97,6 +100,8 @@ int main(int argc, char *argv[])
                      &navi , SLOT(logic_navi()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &beacons , SLOT(logic_beacons()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &outside , SLOT(logic_outside()));
 
     timer->start(TICK);
     return a.exec();

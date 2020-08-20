@@ -28,6 +28,7 @@ SOURCES += \
     antiicing_windshields.cpp \
     cabinlighting_beacons.cpp \
     cabinlighting_navi.cpp \
+    cabinlighting_outside.cpp \
     cabinlighting_solid.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     antiicing_windshields.h \
     cabinlighting_beacons.h \
     cabinlighting_navi.h \
+    cabinlighting_outside.h \
     cabinlighting_solid.h \
     main.h \
     mainwindow.h \

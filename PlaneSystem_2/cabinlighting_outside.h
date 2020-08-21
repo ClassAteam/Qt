@@ -19,6 +19,7 @@ class cabinlighting_outside : public QWidget
 public:
     cabinlighting_outside(QWidget* pwgt = 0);
     QWidget wgt_outside;
+    QLabel* S1_2860_label;
     QLabel* PVFL_label;
     QLabel* PVFP_label;
     QLabel* PFPRLR_label;
@@ -42,8 +43,8 @@ public:
     QLabel* K12_3340_label;
     QLabel* K14_3340_label;
     QLabel* K15_3340_label;
-    QLabel* K_3230_label;
-    QLabel* K_3430_label;
+    QLabel* K32_3230_label;
+    QLabel* K34_3230_label;
     QLabel* F1_3340_label;
     QLabel* F2_3340_label;
     QLabel* F4_3340_label;
@@ -79,15 +80,25 @@ public:
     QPushButton* S1_3340_off_button;
     QPushButton* S2_3340_on_button;
     QPushButton* S2_3340_off_button;
-    QPushButton* S3_3340_on_button;
-    QPushButton* S3_3340_off_button;
-    QPushButton* S4_3340_on_button;
-    QPushButton* S4_3340_off_button;
+    QPushButton* S3_3340_0_button;
+    QPushButton* S3_3340_1_button;
+    QPushButton* S3_3340_2_button;
+    QPushButton* S4_3340_0_button;
+    QPushButton* S4_3340_1_button;
+    QPushButton* S4_3340_2_button;
     QPushButton* S5_3340_on_button;
     QPushButton* S5_3340_off_button;
     QPushButton* S6_3340_0_button;
     QPushButton* S6_3340_1_button;
     QPushButton* S6_3340_2_button;
+    QPushButton* S1_2860_on_button;
+    QPushButton* S1_2860_off_button;
+    QPushButton* K15_3340_on_button;
+    QPushButton* K15_3340_off_button;
+    QPushButton* K32_3230_on_button;
+    QPushButton* K32_3230_off_button;
+    QPushButton* K34_3230_on_button;
+    QPushButton* K34_3230_off_button;
     QPushButton* V_change_button;
 
     QLineEdit* Vpr_edit;
@@ -98,15 +109,23 @@ public slots:
     int m_S1_3340_off();
     int m_S2_3340_on();
     int m_S2_3340_off();
-    int m_S3_3340_on();
-    int m_S3_3340_off();
-    int m_S4_3340_on();
-    int m_S4_3340_off();
+    int m_S3_3340_0();
+    int m_S3_3340_1();
+    int m_S3_3340_2();
+    int m_S4_3340_0();
+    int m_S4_3340_1();
+    int m_S4_3340_2();
     int m_S5_3340_on();
     int m_S5_3340_off();
     int m_S6_3340_0();
     int m_S6_3340_1();
     int m_S6_3340_2();
     int m_V_change();
+    int m_S1_2860_on();
+    int m_S1_2860_off();
+    int m_K32_3230_on();
+    int m_K32_3230_off();
+    int m_K34_3230_on();
+    int m_K34_3230_off();
 };
 

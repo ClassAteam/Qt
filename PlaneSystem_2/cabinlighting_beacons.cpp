@@ -146,8 +146,6 @@ int cabinlighting_beacons::logic_beacons()
 
     layout_beacons_main->addLayout(layout_beacons_labels);
     layout_beacons_main->addLayout(layout_beacons_buttons);
-    layout_beacons_main->setSpacing(0);
-    layout_beacons_main->setContentsMargins(0,0,0,0);
     wgt_beacons.setLayout(layout_beacons_main);
     wgt_beacons.setFixedWidth(300);
 }

@@ -1,6 +1,8 @@
 #include "cabinlighting_outside.h"
 #include "QtWidgets"
+
 bool
+S1_2860,
 PVFL,
 PVFP,
 PFPRLR,
@@ -24,8 +26,8 @@ K10_3340,
 K12_3340,
 K14_3340,
 K15_3340,
-K_3230,
-K_3430,
+K32_3230,
+K34_3230,
 F1_3340,
 F2_3340,
 F4_3340,
@@ -39,6 +41,7 @@ BSS824X1E,
 BSS824X1A;
 
 double
+Ush2op,
 Usha1,
 Usha2,
 alpha_fsv_ol,
@@ -65,6 +68,7 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
     : QWidget(pwgt)
 {
 
+    S1_2860 = 0;
     PVFL = 0;
     PVFP = 0;
     PFPRLR = 0;
@@ -88,8 +92,8 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
     K12_3340 = 0;
     K14_3340 = 0;
     K15_3340 = 0;
-    K_3230 = 0;
-    K_3430 = 0;
+    K32_3230 = 0;
+    K34_3230 = 0;
     F1_3340 = 1;
     F2_3340 = 1;
     F4_3340 = 1;
@@ -101,8 +105,9 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
     BSS825X5V = 0;
     BSS824X1E = 0;
     BSS824X1A = 0;
-    Usha1 = 0;
-    Usha2 = 0;
+    Ush2op = 21;
+    Usha1 = 21;
+    Usha2 = 21;
     alpha_fsv_ol = 0;
     alpha_fsv_op = 0;
     Vpr = 0;
@@ -122,6 +127,7 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
     S6_3340 = 0;
 
     //Labels
+    S1_2860_label = new QLabel;
     PVFL_label = new QLabel;
     PVFP_label = new QLabel;
     PFPRLR_label = new QLabel;
@@ -145,8 +151,8 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
     K12_3340_label = new QLabel;
     K14_3340_label = new QLabel;
     K15_3340_label = new QLabel;
-    K_3230_label = new QLabel;
-    K_3430_label = new QLabel;
+    K32_3230_label = new QLabel;
+    K34_3230_label = new QLabel;
     F1_3340_label = new QLabel;
     F2_3340_label = new QLabel;
     F4_3340_label = new QLabel;
@@ -180,22 +186,30 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
 
     //LineEdit
     Vpr_edit = new QLineEdit;
-    //Buttons
 
+    //Buttons
     S1_3340_on_button = new QPushButton("S1_3340_on",this);
     S1_3340_off_button = new QPushButton("S1_3340_off",this);
     S2_3340_on_button = new QPushButton("S2_3340_on",this);
     S2_3340_off_button = new QPushButton("S2_3340_off",this);
-    S3_3340_on_button = new QPushButton("S3_3340_on",this);
-    S3_3340_off_button = new QPushButton("S3_3340_off",this);
-    S4_3340_on_button = new QPushButton("S4_3340_on",this);
-    S4_3340_off_button = new QPushButton("S4_3340_off",this);
+    S3_3340_0_button = new QPushButton("S3_3340_0",this);
+    S3_3340_1_button = new QPushButton("S3_3340_1",this);
+    S3_3340_2_button = new QPushButton("S3_3340_2",this);
+    S4_3340_0_button = new QPushButton("S4_3340_0",this);
+    S4_3340_1_button = new QPushButton("S4_3340_1",this);
+    S4_3340_2_button = new QPushButton("S4_3340_2",this);
     S5_3340_on_button = new QPushButton("S5_3340_on",this);
     S5_3340_off_button = new QPushButton("S5_3340_off",this);
     S6_3340_0_button = new QPushButton("S6_3340_0",this);
     S6_3340_1_button = new QPushButton("S6_3340_1",this);
     S6_3340_2_button = new QPushButton("S6_3340_2",this);
     V_change_button = new QPushButton("V change",this);
+    S1_2860_on_button = new QPushButton("S1_2860 ON",this);
+    S1_2860_off_button = new QPushButton("S1_2860 OFF",this);
+    K32_3230_on_button = new QPushButton("K32_3230 ON",this);
+    K32_3230_off_button = new QPushButton("K32_3230 OFF",this);
+    K34_3230_on_button = new QPushButton("K34_3230 ON",this);
+    K34_3230_off_button = new QPushButton("K34_3230 OFF",this);
 
 
 
@@ -208,13 +222,17 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
     QObject::connect
 (S2_3340_off_button, SIGNAL(clicked()), this, SLOT(m_S2_3340_off()));
     QObject::connect
-(S3_3340_on_button, SIGNAL(clicked()), this, SLOT(m_S3_3340_on()));
+(S3_3340_0_button, SIGNAL(clicked()), this, SLOT(m_S3_3340_0()));
     QObject::connect
-(S3_3340_off_button, SIGNAL(clicked()), this, SLOT(m_S3_3340_off()));
+(S3_3340_1_button, SIGNAL(clicked()), this, SLOT(m_S3_3340_1()));
     QObject::connect
-(S4_3340_on_button, SIGNAL(clicked()), this, SLOT(m_S4_3340_on()));
+(S3_3340_2_button, SIGNAL(clicked()), this, SLOT(m_S3_3340_2()));
     QObject::connect
-(S4_3340_off_button, SIGNAL(clicked()), this, SLOT(m_S4_3340_off()));
+(S4_3340_0_button, SIGNAL(clicked()), this, SLOT(m_S4_3340_0()));
+    QObject::connect
+(S4_3340_1_button, SIGNAL(clicked()), this, SLOT(m_S4_3340_1()));
+    QObject::connect
+(S4_3340_2_button, SIGNAL(clicked()), this, SLOT(m_S4_3340_2()));
     QObject::connect
 (S5_3340_on_button, SIGNAL(clicked()), this, SLOT(m_S5_3340_on()));
     QObject::connect
@@ -227,31 +245,49 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
 (S6_3340_2_button, SIGNAL(clicked()), this, SLOT(m_S6_3340_2()));
     QObject::connect
 (V_change_button, SIGNAL(clicked()), this, SLOT(m_V_change()));
+    QObject::connect
+(S1_2860_on_button, SIGNAL(clicked()), this, SLOT(m_S1_2860_on()));
+    QObject::connect
+(S1_2860_off_button, SIGNAL(clicked()), this, SLOT(m_S1_2860_off()));
+    QObject::connect
+(K32_3230_on_button, SIGNAL(clicked()), this, SLOT(m_K32_3230_on()));
+    QObject::connect
+(K32_3230_off_button, SIGNAL(clicked()), this, SLOT(m_K32_3230_off()));
+    QObject::connect
+(K34_3230_on_button, SIGNAL(clicked()), this, SLOT(m_K34_3230_on()));
+    QObject::connect
+(K34_3230_off_button, SIGNAL(clicked()), this, SLOT(m_K34_3230_off()));
 
 }
 int cabinlighting_outside::logic_outside()
 {
+    PFPRLR = false;
+    PFPRLP = false;
     // A left side toggling
     if (Ush1l >= 18.0 && F1_3340 == true)
     {
 
-        if (F4_3340 == false)
+        if (F4_3340 == true)
         {
 
             if (K1_3340 == true)
             {
                 PFPRLP = true;
             }
-
-            if (K2_3340 == true)
+            else
             {
-                PFPRLR = true;
+                if (K2_3340 == true)
+                {
+                    PFPRLR = true;
+                }
             }
 
-            if (S1_3340 == 2)
+            if (S1_3340 == 1)
             {
                 PVFL = true;
-                K1_3340 = K2_3340 = K2_3340 = false;
+                K1_3340 = false;
+                K2_3340 = false;
+                K13_3340 = false;
             }
             else
             {
@@ -265,10 +301,12 @@ int cabinlighting_outside::logic_outside()
                 {
                     K13_3340 = true;
                 }
-
-                if (K3_3340 == false)
+                else
                 {
-                    K1_3340 = true;
+                    if(K3_3340 == false)
+                    {
+                        K1_3340 = true;
+                    }
                 }
 
             }
@@ -285,12 +323,12 @@ int cabinlighting_outside::logic_outside()
 
             K9_3340 = K11_3340 = false;
 
-            if (S6_3340 == 3)
+            if (S6_3340 == 2)
             {
                 K9_3340 = true;
             }
 
-            if (S6_3340 == 4)
+            if (S6_3340 == 1)
             {
                 K11_3340 = true;
             }
@@ -305,6 +343,7 @@ int cabinlighting_outside::logic_outside()
 
         PFSV_01LR = PFSV_01LP = false;
 
+        //alpha_fsv_OL input / insert
         if (F2_3340 == true)
         {
             if (Vpr <= 115.0 &&
@@ -312,49 +351,59 @@ int cabinlighting_outside::logic_outside()
                     alpha_fsv_ol < 1)
 
             {
-                L_counter++;
 
-                alpha_fsv_ol = (L_counter / TICK);
+                alpha_fsv_ol = alpha_fsv_ol + 0.01;
 
-                if(L_counter * TICK > 10000)
+                if(alpha_fsv_ol >= 1)
                 {
-                    alpha_fsv_ol = 1;
-                    PVFL = false;
-
+                    alpha_fsv_ol = 1.0;
                 }
+
             }
-            else
+            if (Vpr <= 115.0 &&
+                    PVFL == false &&
+                    alpha_fsv_ol > 0)
+
             {
-                if(L_counter > 0)
+
+                alpha_fsv_ol = alpha_fsv_ol - 0.01;
+
+                if(alpha_fsv_ol <= 0)
                 {
-                    L_counter--;
+                    alpha_fsv_ol = 0;
+                }
 
-                    alpha_fsv_ol = (L_counter / TICK);
+            }
+            //emergency insert
+            if (Vpr > 115.0 &&
+                    PVFL == true &&
+                    alpha_fsv_ol > 0)
 
-                    if(L_counter * TICK <= 0)
-                    {
-                        L_counter = 0;
-                        alpha_fsv_ol = 0;
-                        PVFL = false;
+            {
 
-                    }
+                alpha_fsv_ol = alpha_fsv_ol - 0.01;
+
+                if(alpha_fsv_ol <= 0)
+                {
+                    alpha_fsv_ol = 0;
                 }
 
             }
         }
 
             // PFSV_01 toggle
-            if (K14_3340 == true && alpha_fsv_ol >= 1.0)
+            if (K13_3340 == true && alpha_fsv_ol >= 1.0)
             {
-                PFSV_01PR = true;
+                PFSV_01LR = true;
             }
 
-            if (K10_3340 == false && K12_3340 == true)
+            if (K9_3340 == false && K11_3340 == true)
             {
-                PFSV_01PP = true;
+                PFSV_01LP = true;
             }
 
-            K3_3340 = K8_3340 = false;
+            PFPRPR = false;
+            PFPRPP = false;
 
     }
     else
@@ -370,17 +419,19 @@ int cabinlighting_outside::logic_outside()
     if (Ush1p >= 18.0 && F14_3340 == true)
     {
 
-        if (F12_3340 == false)
+        if (F12_3340 == true)
         {
 
             if (K6_3340 == true)
             {
                 PFPRPP = true;
             }
-
-            if (K7_3340)
+            else
             {
-                PFPRPR = true;
+                if (K7_3340 == true)
+                {
+                    PFPRPR = true;
+                }
             }
 
             if (S1_3340 == 1)
@@ -389,8 +440,6 @@ int cabinlighting_outside::logic_outside()
                 K6_3340 = false;
                 K7_3340 = false;
                 K14_3340 = false;
-                K10_3340 = false;
-                K12_3340 = false;
             }
             else
             {
@@ -404,10 +453,12 @@ int cabinlighting_outside::logic_outside()
                 {
                     K14_3340 = true;
                 }
-
-                if (K8_3340 == false)
+                else
                 {
-                    K6_3340 = true;
+                    if(K8_3340 == false)
+                    {
+                        K6_3340 = true;
+                    }
                 }
 
             }
@@ -424,12 +475,12 @@ int cabinlighting_outside::logic_outside()
 
             K10_3340 = K12_3340 = false;
 
-            if (S6_3340 == 1)
+            if (S6_3340 == 2)
             {
                 K10_3340 = true;
             }
 
-            if (S6_3340 == 2)
+            if (S6_3340 == 1)
             {
                 K12_3340 = true;
             }
@@ -447,36 +498,49 @@ int cabinlighting_outside::logic_outside()
 
         PFSV_01PR = PFSV_01PP = false;
 
+        //alpha_fsv_OL input / insert
         if (F13_3340 == true)
         {
             if (Vpr <= 115.0 &&
-                    PVFP == true)
+                    PVFP == true &&
+                    alpha_fsv_op < 1)
+
             {
-                P_counter++;
 
-                alpha_fsv_op = (P_counter / TICK);
+                alpha_fsv_op = alpha_fsv_op + 0.01;
 
-                if(P_counter * TICK > 10000)
+                if(alpha_fsv_op >= 1)
                 {
-                    alpha_fsv_op = 1;
-                    PVFP = false;
-
+                    alpha_fsv_op = 1.0;
                 }
+
             }
-            else
+            if (Vpr <= 115.0 &&
+                    PVFP == false &&
+                    alpha_fsv_op > 0)
+
             {
-                if(P_counter > 0)
+
+                alpha_fsv_op = alpha_fsv_op - 0.01;
+
+                if(alpha_fsv_op <= 0)
                 {
-                    P_counter--;
+                    alpha_fsv_op = 0;
+                }
 
-                    alpha_fsv_op = (P_counter / TICK);
+            }
+            //emergency insert
+            if (Vpr > 115.0 &&
+                    PVFP == true &&
+                    alpha_fsv_op > 0)
 
-                    if(P_counter * TICK <= 0)
-                    {
-                        alpha_fsv_op = 0;
-                        PVFP = false;
+            {
 
-                    }
+                alpha_fsv_op = alpha_fsv_op - 0.01;
+
+                if(alpha_fsv_op <= 0)
+                {
+                    alpha_fsv_op = 0;
                 }
 
             }
@@ -491,13 +555,26 @@ int cabinlighting_outside::logic_outside()
         K14_3340 = false;
     }
 
+    // PFSV_01 toggle
+    if (K14_3340 == true && alpha_fsv_op >= 1.0)
+    {
+        PFSV_01PR = true;
+    }
+
+    if (K10_3340 == false && K12_3340 == true)
+    {
+        PFSV_01PP = true;
+    }
+
+    K3_3340 = K8_3340 = false;
     // K3, K8 toggle
-    if (Usha1 >= 18.0 && K_3230)
+
+    if (Usha1 >= 18.0 && K32_3230 == true)
     {
         K3_3340 = true;
     }
 
-    if (Usha2 >= 18.0 && K_3430)
+    if (Usha2 >= 18.0 && K34_3230 == true)
     {
         K8_3340 = true;
     }
@@ -505,47 +582,63 @@ int cabinlighting_outside::logic_outside()
     ///////////////////////////////////////////////////////////////////////////
     BSS825X5V = false;
 
+    if(Ush2op >= 18.0 && S1_2860 == true)
+    {
+        K15_3340 = true;
+    }
+    else
+    {
+        K15_3340 = false;
+    }
     // C
     if (Usho1p >= 18.0)
     {
 
-        // alpha_fazl insert 1
-        if (S3_3340 == 1 && K15_3340 == false && alpha_fazl > 0)
+        //default insert left
+        if(K15_3340 == false && alpha_fazl > 0)
         {
 
             fazl_counter++;
 
-            if((fazl_counter * TICK) > 1000)
-            {
-                alpha_fazl = alpha_fazl - 12.5;
-                fazl_counter = 0;
-            }
+            alpha_fazl = (alpha_fazl - 2);
+
             if(alpha_fazl <= 0)
             {
                 alpha_fazl = 0;
                 fazl_counter = 0;
             }
 
+        }
+
+        // alpha_fazl insert 1
+        if (S3_3340 == 1 && alpha_fazl > 0)
+        {
+
+            fazl_counter++;
+
+            alpha_fazl = (alpha_fazl - 2);
+
+            if(alpha_fazl <= 0)
+            {
+                alpha_fazl = 0;
+                fazl_counter = 0;
+            }
 
         }
+
         // alpha_fazl release 2
         if (S3_3340 == 2 && K15_3340 == true && alpha_fazl < 125)
         {
 
             fazl_counter++;
 
-            if((fazl_counter * TICK) > 1000)
-            {
-                alpha_fazl = alpha_fazl +12.5;
-                fazl_counter = 0;
-            }
+            alpha_fazl = (alpha_fazl + 2);
 
-            if(alpha_fazl >= 125.0)
+            if(alpha_fazl >= 125)
             {
                 alpha_fazl = 125;
                 fazl_counter = 0;
             }
-
 
         }
         //PFSV_02 toggle
@@ -559,7 +652,7 @@ int cabinlighting_outside::logic_outside()
         }
 
         // BSS825X5V toggle
-        if(alpha_fazl == 0.0)
+        if(alpha_fazl == 125.0)
         {
             BSS825X5V = true;
         }
@@ -578,68 +671,72 @@ int cabinlighting_outside::logic_outside()
     if (Usho2p >= 18.0)
     {
 
-        // alpha_fazp insert 1
-        if (S3_3340 == 1 && K15_3340 == false && alpha_fazp > 0)
+        //default insert right
+        if(K15_3340 == false && alpha_fazp > 0)
         {
 
             fazp_counter++;
 
-            if((fazp_counter * TICK) > 1000)
-            {
-                alpha_fazp = alpha_fazp - 12.5;
-                fazp_counter = 0;
-            }
+            alpha_fazp = (alpha_fazp - 2);
+
             if(alpha_fazp <= 0)
             {
                 alpha_fazp = 0;
                 fazp_counter = 0;
             }
 
-
         }
-        // alpha_fazp release 2
-        if (S3_3340 == 2 && K15_3340 == true && alpha_fazp < 125)
+
+        // alpha_fazp insert 1
+        if (S4_3340 == 1 && alpha_fazp > 0)
         {
 
             fazp_counter++;
 
-            if((fazp_counter * TICK) > 1000)
+            alpha_fazp = (alpha_fazp - 2);
+
+            if(alpha_fazp <= 0)
             {
-                alpha_fazp = alpha_fazp +12.5;
+                alpha_fazp = 0;
                 fazp_counter = 0;
             }
 
-            if(alpha_fazp >= 125.0)
+        }
+
+        // alpha_fazp release 2
+        if (S4_3340 == 2 && K15_3340 == true && alpha_fazp < 125)
+        {
+
+            fazp_counter++;
+
+            alpha_fazp = (alpha_fazp + 2);
+
+            if(alpha_fazp >= 125)
             {
                 alpha_fazp = 125;
                 fazp_counter = 0;
             }
-        }
 
-        //PFSV_02 toggle
-        if (K15_3340 == true && S5_3340 == 3)
-        {
-            PFSV_02P = true;
         }
-        else
-        {
-            PFSV_02P = false;
-        }
+    }
 
-        // BSS825X5V toggle
-        if(alpha_fazp == 0.0)
-        {
-            BSS825X5V = true;
-        }
-        else
-        {
-            BSS825X5V = false;
-        }
-
+    //PFSV_02 toggle
+    if (K15_3340 == true && S5_3340 == true)
+    {
+        PFSV_02P = true;
     }
     else
     {
         PFSV_02P = false;
+    }
+    // BSS825X5V toggle
+    if(alpha_fazp == 125.0)
+    {
+        BSS825X5V = true;
+    }
+    else
+    {
+        BSS825X5V = false;
     }
 
     // E1
@@ -666,44 +763,57 @@ int cabinlighting_outside::logic_outside()
 
     // F1
     // BSS824X1A toggle 1
-    if (Ush1l >= 18.0)
+    if(Ush1l >= 18.0)
     {
-        if (PFPRLP == true && PFSV_01LP == true)
+        if(PFPRLP == true)
         {
             BSS824X1A = true;
         }
         else
         {
-            BSS824X1A = false;
+            if(Ush1p >= 18.0)
+            {
+                if(PFPRPP == true)
+                {
+                    BSS824X1A = true;
+                }
+                else
+                {
+                    if(PFSV_01PP == true)
+                    {
+                        BSS824X1A = true;
+                    }
+                    else
+                    {
+                        BSS824X1A = false;
+                    }
+                }
+            }
+            if(PFSV_01LP == true)
+            {
+                BSS824X1A = true;
+            }
         }
+    }
+
+
+
+    if((Usho1p >= 18.0 && alpha_fazl == 125.0)
+            ||
+            (Usho2p >= 18.0 && alpha_fazp == 125.0))
+    {
+        BSS825X5V = true;
     }
     else
     {
-        BSS824X1A = false;
+        BSS825X5V = false;
     }
-
-    // F2
-    // BSS824X1A toggle 2
-    if (Ush1p >= 18.0)
-    {
-        if (PFPRPP == true && PFSV_01PP == true)
-        {
-            BSS824X1A = true;
-        }
-        else
-        {
-            BSS824X1A = false;
-        }
-    }
-    else
-    {
-        BSS824X1A = false;
-    }
-
     //logic ends
+
 
     //showing values
 
+    S1_2860_label->setText("S1_2860 = " + QString::number(S1_2860));
     PVFL_label->setText("PVFL = " + QString::number(PVFL));
     PVFP_label->setText("PVFP = " + QString::number(PVFP));
     PFPRLR_label->setText("PFPRLR = " + QString::number(PFPRLR));
@@ -727,8 +837,8 @@ int cabinlighting_outside::logic_outside()
     K12_3340_label->setText("K12_3340 = " + QString::number(K12_3340));
     K14_3340_label->setText("K14_3340 = " + QString::number(K14_3340));
     K15_3340_label->setText("K15_3340 = " + QString::number(K15_3340));
-    K_3230_label->setText("K_3230 = " + QString::number(K_3230));
-    K_3430_label->setText("K_3430 = " + QString::number(K_3430));
+    K32_3230_label->setText("K32_3230 = " + QString::number(K32_3230));
+    K34_3230_label->setText("K34_3430 = " + QString::number(K34_3230));
     F1_3340_label->setText("F1_3340 = " + QString::number(F1_3340));
     F2_3340_label->setText("F2_3340 = " + QString::number(F2_3340));
     F4_3340_label->setText("F4_3340 = " + QString::number(F4_3340));
@@ -766,7 +876,9 @@ int cabinlighting_outside::logic_outside()
     QHBoxLayout *layout_outside_main = new QHBoxLayout;
 
     //labels
+    alpha_fsv_ol_label->setFixedWidth(200);
 
+    layout_outside_labels->addWidget(S1_2860_label);
     layout_outside_labels->addWidget(PVFL_label);
     layout_outside_labels->addWidget(PVFP_label);
     layout_outside_labels->addWidget(PFPRLR_label);
@@ -790,8 +902,8 @@ int cabinlighting_outside::logic_outside()
     layout_outside_labels->addWidget(K12_3340_label);
     layout_outside_labels->addWidget(K14_3340_label);
     layout_outside_labels->addWidget(K15_3340_label);
-    layout_outside_labels->addWidget(K_3230_label);
-    layout_outside_labels->addWidget(K_3430_label);
+    layout_outside_labels->addWidget(K32_3230_label);
+    layout_outside_labels->addWidget(K34_3230_label);
     layout_outside_labels->addWidget(F1_3340_label);
     layout_outside_labels->addWidget(F2_3340_label);
     layout_outside_labels->addWidget(F4_3340_label);
@@ -830,15 +942,23 @@ int cabinlighting_outside::logic_outside()
     layout_outside_buttons->addWidget(S1_3340_off_button);
     layout_outside_buttons->addWidget(S2_3340_on_button);
     layout_outside_buttons->addWidget(S2_3340_off_button);
-    layout_outside_buttons->addWidget(S3_3340_on_button);
-    layout_outside_buttons->addWidget(S3_3340_off_button);
-    layout_outside_buttons->addWidget(S4_3340_on_button);
-    layout_outside_buttons->addWidget(S4_3340_off_button);
+    layout_outside_buttons->addWidget(S3_3340_0_button);
+    layout_outside_buttons->addWidget(S3_3340_1_button);
+    layout_outside_buttons->addWidget(S3_3340_2_button);
+    layout_outside_buttons->addWidget(S4_3340_0_button);
+    layout_outside_buttons->addWidget(S4_3340_1_button);
+    layout_outside_buttons->addWidget(S4_3340_2_button);
     layout_outside_buttons->addWidget(S5_3340_on_button);
     layout_outside_buttons->addWidget(S5_3340_off_button);
     layout_outside_buttons->addWidget(S6_3340_0_button);
     layout_outside_buttons->addWidget(S6_3340_1_button);
     layout_outside_buttons->addWidget(S6_3340_2_button);
+    layout_outside_buttons->addWidget(S1_2860_on_button);
+    layout_outside_buttons->addWidget(S1_2860_off_button);
+    layout_outside_buttons->addWidget(K32_3230_on_button);
+    layout_outside_buttons->addWidget(K32_3230_off_button);
+    layout_outside_buttons->addWidget(K34_3230_on_button);
+    layout_outside_buttons->addWidget(K34_3230_off_button);
 
     layout_outside_main->addLayout(layout_outside_labels);
     layout_outside_main->addLayout(layout_outside_buttons);
@@ -865,22 +985,30 @@ int cabinlighting_outside::m_S2_3340_off()
     S2_3340 = false;
 }
 
-int cabinlighting_outside::m_S3_3340_on()
+int cabinlighting_outside::m_S3_3340_0()
 {
-    S3_3340 = true;
+    S3_3340 = 0;
 }
-int cabinlighting_outside::m_S3_3340_off()
+int cabinlighting_outside::m_S3_3340_1()
 {
-    S3_3340 = false;
+    S3_3340 = 1;
+}
+int cabinlighting_outside::m_S3_3340_2()
+{
+    S3_3340 = 2;
 }
 
-int cabinlighting_outside::m_S4_3340_on()
+int cabinlighting_outside::m_S4_3340_0()
 {
-    S4_3340 = true;
+    S4_3340 = 0;
 }
-int cabinlighting_outside::m_S4_3340_off()
+int cabinlighting_outside::m_S4_3340_1()
 {
-    S4_3340 = false;
+    S4_3340 = 1;
+}
+int cabinlighting_outside::m_S4_3340_2()
+{
+    S4_3340 = 2;
 }
 
 int cabinlighting_outside::m_S5_3340_on()
@@ -906,4 +1034,29 @@ int cabinlighting_outside::m_S6_3340_2()
 int cabinlighting_outside::m_V_change()
 {
     Vpr = Vpr_edit->text().toDouble();
+}
+
+int cabinlighting_outside::m_S1_2860_on()
+{
+    S1_2860 = true;
+}
+int cabinlighting_outside::m_S1_2860_off()
+{
+    S1_2860 = false;
+}
+int cabinlighting_outside::m_K32_3230_on()
+{
+    K32_3230 = true;
+}
+int cabinlighting_outside::m_K32_3230_off()
+{
+    K32_3230 = false;
+}
+int cabinlighting_outside::m_K34_3230_on()
+{
+    K34_3230 = true;
+}
+int cabinlighting_outside::m_K34_3230_off()
+{
+    K34_3230 = false;
 }

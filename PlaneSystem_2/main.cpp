@@ -15,6 +15,7 @@
 #include <cabinlighting_beacons.h>
 #include <cabinlighting_outside.h>
 #include <cabinlighting_inner.h>
+#include <cabinlighting_solid.h>
 
 const double TICK = 200;
 
@@ -35,6 +36,7 @@ int main(int argc, char *argv[])
     cabinlighting_beacons beacons;
     cabinlighting_outside outside;
     cabinlighting_inner inner;
+    cabinlighting_solid solid;
     QTimer *timer = new QTimer;
 
     QWidget window_antifire;
@@ -74,6 +76,7 @@ int main(int argc, char *argv[])
     layout_cabinlighting.addWidget(&beacons.wgt_beacons);
     layout_cabinlighting.addWidget(&outside.wgt_outside);
     layout_cabinlighting.addWidget(&inner.wgt_inner);
+    layout_cabinlighting.addWidget(&solid.wgt_solid);
     window_cabinlighting.setLayout(&layout_cabinlighting);
     window_cabinlighting.setWindowTitle("Cabin Lighting");
     window_cabinlighting.setWindowState(Qt::WindowFullScreen);
@@ -107,6 +110,8 @@ int main(int argc, char *argv[])
                      &outside , SLOT(logic_outside()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &inner , SLOT(logic_inner()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &solid , SLOT(logic_solid()));
 
     timer->start(TICK);
     return a.exec();

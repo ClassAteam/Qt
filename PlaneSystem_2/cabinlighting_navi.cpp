@@ -145,6 +145,7 @@ int cabinlighting_navi::logic_navi()
     layout_navi_main->addLayout(layout_navi_buttons);
     wgt_navi.setLayout(layout_navi_main);
     wgt_navi.setFixedWidth(300);
+    wgt_navi.setFixedHeight(300);
 
 }
 

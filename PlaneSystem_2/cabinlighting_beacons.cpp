@@ -148,6 +148,7 @@ int cabinlighting_beacons::logic_beacons()
     layout_beacons_main->addLayout(layout_beacons_buttons);
     wgt_beacons.setLayout(layout_beacons_main);
     wgt_beacons.setFixedWidth(300);
+    wgt_beacons.setFixedHeight(300);
 }
 
 int cabinlighting_beacons::m_S2_3341_0()

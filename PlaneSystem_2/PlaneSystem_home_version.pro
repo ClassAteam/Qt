@@ -31,6 +31,8 @@ SOURCES += \
     cabinlighting_navi.cpp \
     cabinlighting_outside.cpp \
     cabinlighting_solid.cpp \
+    emergencyalarm_leftpilot.cpp \
+    emergencyalarm_steersman.cpp \
     main.cpp \
     mainwindow.cpp \
     presure_regulation.cpp
@@ -51,6 +53,8 @@ HEADERS += \
     cabinlighting_navi.h \
     cabinlighting_outside.h \
     cabinlighting_solid.h \
+    emergencyalarm_leftpilot.h \
+    emergencyalarm_steersman.h \
     main.h \
     mainwindow.h \
     presure_regulation.h

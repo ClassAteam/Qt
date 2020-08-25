@@ -876,7 +876,6 @@ int cabinlighting_outside::logic_outside()
     QHBoxLayout *layout_outside_main = new QHBoxLayout;
 
     //labels
-    alpha_fsv_ol_label->setFixedWidth(200);
 
     layout_outside_labels->addWidget(S1_2860_label);
     layout_outside_labels->addWidget(PVFL_label);

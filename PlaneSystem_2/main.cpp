@@ -17,6 +17,7 @@
 #include <cabinlighting_inner.h>
 #include <cabinlighting_solid.h>
 #include <emergencyalarm_steersman.h>
+#include <emergencyalarm_leftpilot.h>
 
 const double TICK = 200;
 
@@ -39,6 +40,7 @@ int main(int argc, char *argv[])
     cabinlighting_inner inner;
     cabinlighting_solid solid;
     emergencyalarm_steersman steersman;
+    emergencyalarm_leftpilot leftpilot;
     QTimer *timer = new QTimer;
 
     QWidget window_antifire;
@@ -87,6 +89,7 @@ int main(int argc, char *argv[])
     QWidget window_emergencyalarm;
     QHBoxLayout layout_emergencyalarm;
     layout_emergencyalarm.addWidget(&steersman.wgt_steersman);
+    layout_emergencyalarm.addWidget(&leftpilot.wgt_leftpilot);
     window_emergencyalarm.setLayout(&layout_emergencyalarm);
     window_emergencyalarm.setWindowTitle("Emergency Alarm");
     window_emergencyalarm.setWindowState(Qt::WindowFullScreen);
@@ -123,6 +126,8 @@ int main(int argc, char *argv[])
                      &solid , SLOT(logic_solid()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &steersman , SLOT(logic_steersman()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &leftpilot , SLOT(logic_leftpilot()));
 
     timer->start(TICK);
     return a.exec();

@@ -6,6 +6,8 @@
 #include <QLineEdit>
 
 
+extern const double
+TICK;
 extern double
 Ush1dpl,
 Ush2dpl,

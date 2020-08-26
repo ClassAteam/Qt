@@ -61,6 +61,8 @@ BSS926x1,
 BSS926x2,
 BSS926y1,
 BSS926y2;
+int
+X1N_tick;
 double
 USASSHN,
 alpha_rra7shn;
@@ -266,21 +268,22 @@ int emergencyalarm_steersman::logic_steersman()
         if (BSS939X1B == true)
         {
             BSS939X2A = true;
+            if(PZH939_X1B_b == true)
+            {
+                PZH939_X1B = false;
+            }
+            else
+            {
+                PZH939_X1B = true;
+            }
         }
         else
         {
             BSS939X2A = false;
             PZH939_X1B_b = false;
-        }
-
-        if(PZH939_X1B_b == true)
-        {
             PZH939_X1B = false;
         }
-        else
-        {
-            PZH939_X1B = true;
-        }
+
 
         if(S4_3364 == true)
         {
@@ -292,29 +295,27 @@ int emergencyalarm_steersman::logic_steersman()
         if (BSS939X1D == true)
         {
             BSS939X2B = true;
+            if(PZH939_X1D_b == true)
+            {
+                PZH939_X1D = false;
+            }
+            else
+            {
+                PZH939_X1D = true;
+            }
         }
         else
         {
             BSS939X2B = false;
             PZH939_X1D_b = false;
-        }
-
-        if(PZH939_X1D_b == true)
-        {
-            PZH939_X1D = true;
-        }
-        else
-        {
             PZH939_X1D = false;
         }
+
+
 
         if(S4_3364 == true)
         {
             PZH939_X1D_b = true;
-        }
-        else
-        {
-            PZH939_X1D_b = false;
         }
 
         ///////////////Yellow lights
@@ -322,29 +323,26 @@ int emergencyalarm_steersman::logic_steersman()
         if (BSS939X1E == true)
         {
             BSS939X2C = true;
+            if(PZH939_X1E_b == true)
+            {
+                PZH939_X1E = false;
+            }
+            else
+            {
+                PZH939_X1E = true;
+            }
         }
         else
         {
             BSS939X2C = false;
             PZH939_X1E_b = false;
-        }
-
-        if(PZH939_X1E_b == true)
-        {
-            PZH939_X1E = true;
-        }
-        else
-        {
             PZH939_X1E = false;
         }
+
 
         if(S4_3364 == true)
         {
             PZH939_X1E_b = true;
-        }
-        else
-        {
-            PZH939_X1E_b = false;
         }
 
         ///////////////Yellow lights
@@ -352,29 +350,26 @@ int emergencyalarm_steersman::logic_steersman()
         if (BSS926X1J == true)
         {
             BSS939X2E = true;
+            if(PZH926_X1J_b == true)
+            {
+                PZH926_X1J = false;
+            }
+            else
+            {
+                PZH926_X1J = true;
+            }
         }
         else
         {
             BSS939X2E = false;
             PZH926_X1J_b = false;
-        }
-
-        if(PZH926_X1J_b == true)
-        {
-            PZH926_X1J = true;
-        }
-        else
-        {
             PZH926_X1J = false;
         }
+
 
         if(S4_3364 == true)
         {
             PZH926_X1J_b = true;
-        }
-        else
-        {
-            PZH926_X1J_b = false;
         }
 
         ///////////////Yellow lights
@@ -382,29 +377,26 @@ int emergencyalarm_steersman::logic_steersman()
         if (BSS926X1L == true)
         {
             BSS939X2F = true;
+            if(PZH926_X1L_b == true)
+            {
+                PZH926_X1L = false;
+            }
+            else
+            {
+                PZH926_X1L = true;
+            }
         }
         else
         {
             BSS939X2F = false;
             PZH926_X1L_b = false;
-        }
-
-        if(PZH926_X1L_b == true)
-        {
-            PZH926_X1L = true;
-        }
-        else
-        {
             PZH926_X1L = false;
         }
+
 
         if(S4_3364 == true)
         {
             PZH926_X1L_b = true;
-        }
-        else
-        {
-            PZH926_X1L_b = false;
         }
 
         ///////////////Yellow lights
@@ -412,27 +404,24 @@ int emergencyalarm_steersman::logic_steersman()
         if (svs_otkaz == true)
         {
             BSS939X2H = true;
+            if(PZH_svs_otkaz_b == true)
+            {
+                PZH_svs_otkaz = false;
+            }
+            else
+            {
+                PZH_svs_otkaz = true;
+            }
         }
         else
         {
             BSS939X2H = false;
             PZH_svs_otkaz_b = false;
-        }
-
-        if(PZH_svs_otkaz_b == true)
-        {
-            PZH_svs_otkaz = true;
-        }
-        else
-        {
             PZH_svs_otkaz = false;
         }
 
+
         if(S4_3364 == true)
-        {
-            PZH_svs_otkaz_b = true;
-        }
-        else
         {
             PZH_svs_otkaz_b = true;
         }
@@ -443,29 +432,26 @@ int emergencyalarm_steersman::logic_steersman()
         if (svs_net_rezerva == true)
         {
             BSS939X2J = true;
+            if(PZH_svs_net_rezerva_b == true)
+            {
+                PZH_svs_net_rezerva = false;
+            }
+            else
+            {
+                PZH_svs_net_rezerva = true;
+            }
         }
         else
         {
             BSS939X2J = false;
             PZH_svs_net_rezerva_b = false;
-        }
-
-        if(PZH_svs_net_rezerva_b == true)
-        {
-            PZH_svs_net_rezerva = true;
-        }
-        else
-        {
             PZH_svs_net_rezerva = false;
         }
+
 
         if(S4_3364 == true)
         {
             PZH_svs_net_rezerva_b = true;
-        }
-        else
-        {
-            PZH_svs_net_rezerva_b = false;
         }
 
         ///////////////Yellow lights
@@ -473,29 +459,26 @@ int emergencyalarm_steersman::logic_steersman()
         if (ins_otkaz == true)
         {
             BSS939X2K = true;
+            if(PZH_ins_otkaz_b == true)
+            {
+                PZH_ins_otkaz = false;
+            }
+            else
+            {
+                PZH_ins_otkaz = true;
+            }
         }
         else
         {
             BSS939X2K = false;
             PZH_ins_otkaz_b = false;
-        }
-
-        if(PZH_ins_otkaz_b == true)
-        {
-            PZH_ins_otkaz = true;
-        }
-        else
-        {
             PZH_ins_otkaz = false;
         }
+
 
         if(S4_3364 == true)
         {
             PZH_ins_otkaz_b = true;
-        }
-        else
-        {
-            PZH_ins_otkaz_b = false;
         }
 
         ///////////////Yellow lights
@@ -503,29 +486,26 @@ int emergencyalarm_steersman::logic_steersman()
         if (ins_net_rezerva == true)
         {
             BSS939X2L = true;
+            if(PZH_ins_net_rezerva_b == true)
+            {
+                PZH_ins_net_rezerva = false;
+            }
+            else
+            {
+                PZH_ins_net_rezerva = true;
+            }
         }
         else
         {
             BSS939X2L = false;
             PZH_ins_net_rezerva_b = false;
-        }
-
-        if(PZH_ins_net_rezerva_b == true)
-        {
-            PZH_ins_net_rezerva = true;
-        }
-        else
-        {
             PZH_ins_net_rezerva = false;
         }
+
 
         if(S4_3364 == true)
         {
             PZH_ins_net_rezerva_b = true;
-        }
-        else
-        {
-            PZH_ins_net_rezerva_b = false;
         }
 
         if( PZH939_X1B == true ||
@@ -549,60 +529,65 @@ int emergencyalarm_steersman::logic_steersman()
         if (BSS939X1G == true)
         {
             BSS939X2D = true;
+            if(PK939_X1G_b == true)
+            {
+                PK939_X1G = false;
+            }
+            else
+            {
+                PK939_X1G = true;
+            }
         }
         else
         {
             BSS939X2D = false;
             PK939_X1G_b = false;
-        }
-
-        if(PK939_X1G_b == true)
-        {
-            PK939_X1G = true;
-        }
-        else
-        {
             PK939_X1G = false;
         }
+
 
         if(S4_3364 == true)
         {
             PK939_X1G_b = true;
-        }
-        else
-        {
-            PK939_X1G_b = false;
         }
 
         ///////////////Red lights_1
         //////////////2
         if (BSS939X1N == true)
         {
-            BSS939X2G = true;
+            X1N_tick++;
+            if(TICK * X1N_tick >= 380 )
+            {
+                BSS939X2G = true;
+                X1N_tick = 0;
+            }
+            else
+            {
+                BSS939X2G = false;
+            }
+
+            if(PK939_X1N_b == true)
+            {
+                PK939_X1N = false;
+            }
+            else
+            {
+                PK939_X1N = true;
+            }
         }
         else
         {
             BSS939X2G = false;
             PK939_X1N_b = false;
-        }
-
-        if(PK939_X1N_b == true)
-        {
-            PK939_X1N = true;
-        }
-        else
-        {
             PK939_X1N = false;
         }
+
 
         if(S4_3364 == true)
         {
             PK939_X1N_b = true;
         }
-        else
-        {
-            PK939_X1N_b = false;
-        }
+
         if(  PK939_X1N == true ||
              PK939_X1G == true)
         {
@@ -615,6 +600,8 @@ int emergencyalarm_steersman::logic_steersman()
 
         if (PKLSHN == true)
         {
+            PCSOZHSHN = true;
+            PCSOKSHN = true;
             BSS939X2A = true;
             BSS939X2B = true;
             BSS939X2C = true;

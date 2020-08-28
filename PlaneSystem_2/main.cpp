@@ -18,6 +18,7 @@
 #include <cabinlighting_solid.h>
 #include <emergencyalarm_steersman.h>
 #include <emergencyalarm_leftpilot.h>
+#include <emergencyalarm_leftpilot_1.h>
 
 const double TICK = 200;
 
@@ -41,25 +42,26 @@ int main(int argc, char *argv[])
     cabinlighting_solid solid;
     emergencyalarm_steersman steersman;
     emergencyalarm_leftpilot leftpilot;
+    emergencyalarm_leftpilot_1 leftpilot_1;
     QTimer *timer = new QTimer;
 
-    QWidget window_antifire;
-    QHBoxLayout layout_alarm;
-    layout_alarm.addWidget(&logic_valve.wgt);
-    layout_alarm.addWidget(&logic_EXB.wgt_EXB);
-    layout_alarm.addWidget(&logic_alarm.wgt_alarm);
-    window_antifire.setLayout(&layout_alarm);
-    window_antifire.setWindowTitle("Antifire System");
-    window_antifire.setWindowState(Qt::WindowFullScreen);
-    window_antifire.show();
+//    QWidget window_antifire;
+//    QHBoxLayout layout_alarm;
+//    layout_alarm.addWidget(&logic_valve.wgt);
+//    layout_alarm.addWidget(&logic_EXB.wgt_EXB);
+//    layout_alarm.addWidget(&logic_alarm.wgt_alarm);
+//    window_antifire.setLayout(&layout_alarm);
+//    window_antifire.setWindowTitle("Antifire System");
+//    window_antifire.setWindowState(Qt::WindowFullScreen);
+//    window_antifire.show();
 
-    QWidget window_presure;
-    QHBoxLayout layout_presure;
-    layout_presure.addWidget(&presure.wgt_presureregulatoin);
-    window_presure.setLayout(&layout_presure);
-    window_presure.setWindowTitle("Prsure Regulation System");
-    window_presure.setWindowState(Qt::WindowFullScreen);
-    window_presure.show();
+//    QWidget window_presure;
+//    QHBoxLayout layout_presure;
+//    layout_presure.addWidget(&presure.wgt_presureregulatoin);
+//    window_presure.setLayout(&layout_presure);
+//    window_presure.setWindowTitle("Prsure Regulation System");
+//    window_presure.setWindowState(Qt::WindowFullScreen);
+//    window_presure.show();
 
     QWidget window_antiicing;
     QHBoxLayout layout_antiicing;
@@ -90,26 +92,27 @@ int main(int argc, char *argv[])
     QHBoxLayout layout_emergencyalarm;
     layout_emergencyalarm.addWidget(&steersman.wgt_steersman);
     layout_emergencyalarm.addWidget(&leftpilot.wgt_leftpilot);
+    layout_emergencyalarm.addWidget(&leftpilot_1.wgt_leftpilot_1);
     window_emergencyalarm.setLayout(&layout_emergencyalarm);
     window_emergencyalarm.setWindowTitle("Emergency Alarm");
     window_emergencyalarm.setWindowState(Qt::WindowFullScreen);
     window_emergencyalarm.show();
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &logic_valve , SLOT(logic_valves()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &logic_EXB , SLOT(logic_EXB()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &logic_alarm , SLOT(logic_alarm()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &presure , SLOT(logic_presure()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &logic_valve , SLOT(logic_valves()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &logic_EXB , SLOT(logic_EXB()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &logic_alarm , SLOT(logic_alarm()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &presure , SLOT(logic_presure()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &airintake , SLOT(logic_airintake()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &warmup , SLOT(logic_warmup()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &mkam , SLOT(logic_mkam()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &ppd , SLOT(logic_ppd()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &ppd , SLOT(logic_ppd()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &windshields , SLOT(logic_windshields()));
     QObject::connect(timer, SIGNAL(timeout()),
@@ -128,6 +131,8 @@ int main(int argc, char *argv[])
                      &steersman , SLOT(logic_steersman()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &leftpilot , SLOT(logic_leftpilot()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &leftpilot_1 , SLOT(logic_leftpilot_1()));
 
     timer->start(TICK);
     return a.exec();

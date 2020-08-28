@@ -6,8 +6,8 @@ bool
 PRBSS_811,
 PRBSS_812,
 PRBSS_913,
-PCSOZHLL,
-PCSOKLL,
+PCSOZHLL_1,
+PCSOKLL_1,
 PKLLL,
 S1_3364,
 S5_3364,
@@ -193,8 +193,8 @@ emergencyalarm_leftpilot::emergencyalarm_leftpilot(QWidget* pwgt)
     PRBSS_811 = 0;
     PRBSS_812 = 0;
     PRBSS_913 = 0;
-    PCSOZHLL = 0;
-    PCSOKLL = 0;
+    PCSOZHLL_1 = 0;
+    PCSOKLL_1 = 0;
     PKLLL = 0;
     S1_3364 = 0;
     S5_3364 = 0;
@@ -710,7 +710,7 @@ int emergencyalarm_leftpilot::logic_leftpilot()
         PRBSS_812 = false;
     }
 
-    if ((Ush2dpl >= 18.0) && (Ush2dpp >= 18.0) && (S5_3364 == 3))
+    if ((Ush2dpl >= 18.0) && (Ush2dpp >= 18.0) && (S5_3364 == true))
     {
         PKLLL = true;
     }
@@ -1379,12 +1379,12 @@ int emergencyalarm_leftpilot::logic_leftpilot()
         PZH_sur_gs4_otkl == true)
         {
 
-            PCSOZHLL = true;
+            PCSOZHLL_1 = true;
         }
         else
         {
 
-            PCSOZHLL = false;
+            PCSOZHLL_1 = false;
         }
 
         ///////////////Red lights_1
@@ -1576,6 +1576,8 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PK811_X1BB_b = true;
         }
 
+        // PCSOKLL toggle
+
         if( PK811_X1E == true ||
                 PK811_X1G == true ||
                 PK811_X1J == true ||
@@ -1584,11 +1586,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
                 PK811_X1r == true ||
                 PK811_X1BB == true)
         {
-            PCSOKLL = true;
+            PCSOKLL_1 = true;
         }
         else
         {
-            PCSOKLL = false;
+            PCSOKLL_1 = false;
         }
 
         ///////////////White lights_1
@@ -1662,8 +1664,8 @@ int emergencyalarm_leftpilot::logic_leftpilot()
 
         if(PKLLL == true)
         {
-            PCSOKLL = true;
-            PCSOZHLL = true;
+            PCSOKLL_1 = true;
+            PCSOZHLL_1 = true;
             BSS811X2A = true;
             BSS811X2B = true;
             BSS811X2G = true;
@@ -1860,9 +1862,9 @@ int emergencyalarm_leftpilot::logic_leftpilot()
     PRBSS_913_label->setText
 ("PRBSS_913 = " + QString::number(PRBSS_913));
     PCSOZHLL_label->setText
-("PCSOZHLL = " + QString::number(PCSOZHLL));
+("PCSOZHLL = " + QString::number(PCSOZHLL_1));
     PCSOKLL_label->setText
-("PCSOKLL = " + QString::number(PCSOKLL));
+("PCSOKLL = " + QString::number(PCSOKLL_1));
     PKLLL_label->setText
 ("PKLLL = " + QString::number(PKLLL));
     S1_3364_label->setText
@@ -2217,7 +2219,7 @@ int emergencyalarm_leftpilot::logic_leftpilot()
     layout_leftpilot_main->addLayout(layout_leftpilot_buttons_1);
     wgt_leftpilot.setLayout(layout_leftpilot_main);
     wgt_leftpilot.setFixedWidth(500);
-    wgt_leftpilot.setFixedHeight(1100);
+    wgt_leftpilot.setFixedHeight(1000);
 }
 
 int emergencyalarm_leftpilot::m_S1_3364_on()

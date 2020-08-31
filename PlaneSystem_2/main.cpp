@@ -19,6 +19,7 @@
 #include <emergencyalarm_steersman.h>
 #include <emergencyalarm_leftpilot.h>
 #include <emergencyalarm_leftpilot_1.h>
+#include <emergencyalarm_leftpilot_2.h>
 
 const double TICK = 200;
 
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
     emergencyalarm_steersman steersman;
     emergencyalarm_leftpilot leftpilot;
     emergencyalarm_leftpilot_1 leftpilot_1;
+    emergencyalarm_leftpilot_2 leftpilot_2;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -93,10 +95,14 @@ int main(int argc, char *argv[])
     layout_emergencyalarm.addWidget(&steersman.wgt_steersman);
     layout_emergencyalarm.addWidget(&leftpilot.wgt_leftpilot);
     layout_emergencyalarm.addWidget(&leftpilot_1.wgt_leftpilot_1);
+    layout_emergencyalarm.addWidget(&leftpilot_2.wgt_leftpilot_2);
     window_emergencyalarm.setLayout(&layout_emergencyalarm);
     window_emergencyalarm.setWindowTitle("Emergency Alarm");
     window_emergencyalarm.setWindowState(Qt::WindowFullScreen);
-    window_emergencyalarm.show();
+    scrollArea = new QScrollArea;
+    scrollArea->setWidget(&window_emergencyalarm);
+    scrollArea->show();
+//    window_emergencyalarm.show();
 //    QObject::connect(timer, SIGNAL(timeout()),
 //                     &logic_valve , SLOT(logic_valves()));
 //    QObject::connect(timer, SIGNAL(timeout()),
@@ -133,6 +139,8 @@ int main(int argc, char *argv[])
                      &leftpilot , SLOT(logic_leftpilot()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &leftpilot_1 , SLOT(logic_leftpilot_1()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &leftpilot_2 , SLOT(logic_leftpilot_2()));
 
     timer->start(TICK);
     return a.exec();

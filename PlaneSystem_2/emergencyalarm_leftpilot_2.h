@@ -1,0 +1,245 @@
+#pragma once
+#include <QWidget>
+#include <QObject>
+#include <QLabel>
+#include <QPushButton>
+#include <QLineEdit>
+
+extern bool
+PCSOZHLL_1,
+PCSOZHLL_2,
+PCSOKLL_1,
+PCSOKLL_2,
+PKLLL,
+S1_3364,
+BSS913X3E,
+BSS913X3G,
+BSS913X3J,
+BSS913X3L,
+BSS913X3N;
+
+class emergencyalarm_leftpilot_2 : public QWidget
+{
+    Q_OBJECT
+public:
+    emergencyalarm_leftpilot_2(QWidget* pwgt = 0);
+    QWidget wgt_leftpilot_2;
+    QLabel*	PRBSS913_label;
+    QLabel*	PCSOZHLL_label;
+    QLabel*	PCSOKLL_label;
+    QLabel*	PCSOZHLL_3_label;
+    QLabel*	PCSOKLL_3_label;
+    QLabel*	BSS913X1C_label;
+    QLabel*	BSS913X1E_label;
+    QLabel*	BSS913X1G_label;
+    QLabel*	BSS913X1J_label;
+    QLabel*	BSS913X1L_label;
+    QLabel*	BSS913X1N_label;
+    QLabel*	BSS913X1T_label;
+    QLabel*	BSS913X1V_label;
+    QLabel*	BSS913X1X_label;
+    QLabel*	BSS913X1Z_label;
+    QLabel*	BSS913X1b_label;
+    QLabel*	BSS913X1d_label;
+    QLabel*	BSS913X1h_label;
+    QLabel*	BSS913X1j_label;
+    QLabel*	BSS913X1n_label;
+    QLabel*	BSS913X1p_label;
+    QLabel*	BSS913X1r_label;
+    QLabel*	BSS913X1t_label;
+    QLabel*	BSS913X1x_label;
+    QLabel*	BSS913X1z_label;
+    QLabel*	BSS913X1BB_label;
+    QLabel*	BSS913X1DD_label;
+    QLabel*	BSS913X1FF_label;
+    QLabel*	BSS913X1HH_label;
+    QLabel*	BSS913X3E_label;
+    QLabel*	BSS913X3G_label;
+    QLabel*	BSS913X2B_label;
+    QLabel*	BSS913X2C_label;
+    QLabel*	BSS913X2D_label;
+    QLabel*	BSS913X2E_label;
+    QLabel*	BSS913X2F_label;
+    QLabel*	BSS913X2G_label;
+    QLabel*	BSS913X2J_label;
+    QLabel*	BSS913X2K_label;
+    QLabel*	BSS913X2L_label;
+    QLabel*	BSS913X2M_label;
+    QLabel*	BSS913X2N_label;
+    QLabel*	BSS913X2P_label;
+    QLabel*	BSS913X2S_label;
+    QLabel*	BSS913X2T_label;
+    QLabel*	BSS913X2U_label;
+    QLabel*	BSS913X2V_label;
+    QLabel*	BSS913X2W_label;
+    QLabel*	BSS913X2X_label;
+    QLabel*	BSS913X2Z_label;
+    QLabel*	BSS913X2a_label;
+    QLabel*	BSS913X2b_label;
+    QLabel*	BSS913X2c_label;
+    QLabel*	BSS913X2d_label;
+    QLabel*	BSS913X2e_label;
+    QLabel*	BSS913X2j_label;
+    QLabel*	BSS913X2k_label;
+    QLabel*	BSS913X1A_label;
+    QLabel*	BSS913X1R_label;
+    QLabel*	BSS913X1f_label;
+    QLabel*	BSS913X1v_label;
+    QLabel*	BSS913X2A_label;
+    QLabel*	BSS913X2H_label;
+    QLabel*	BSS913X2R_label;
+    QLabel*	BSS913X2Y_label;
+    QLabel*	BSS913X3A_label;
+    QLabel*	BSS913X3C_label;
+    QLabel*	BSS913X2h_label;
+    QLabel*	BSS913X2i_label;
+    QLabel*	BSS913X2m_label;
+    QLabel*	BSS913X2n_label;
+    QLabel*	BSS913X2p_label;
+
+    QPushButton* BSS913X3A_on_button;
+    QPushButton* BSS913X3A_off_button;
+    QPushButton* BSS913X1C_on_button;
+    QPushButton* BSS913X1C_off_button;
+    QPushButton* BSS913X1E_on_button;
+    QPushButton* BSS913X1E_off_button;
+    QPushButton* BSS913X1G_on_button;
+    QPushButton* BSS913X1G_off_button;
+    QPushButton* BSS913X1J_on_button;
+    QPushButton* BSS913X1J_off_button;
+    QPushButton* BSS913X1L_on_button;
+    QPushButton* BSS913X1L_off_button;
+    QPushButton* BSS913X1N_on_button;
+    QPushButton* BSS913X1N_off_button;
+    QPushButton* BSS913X1T_on_button;
+    QPushButton* BSS913X1T_off_button;
+    QPushButton* BSS913X1V_on_button;
+    QPushButton* BSS913X1V_off_button;
+    QPushButton* BSS913X1X_on_button;
+    QPushButton* BSS913X1X_off_button;
+    QPushButton* BSS913X1Z_on_button;
+    QPushButton* BSS913X1Z_off_button;
+    QPushButton* BSS913X1b_on_button;
+    QPushButton* BSS913X1b_off_button;
+    QPushButton* BSS913X1d_on_button;
+    QPushButton* BSS913X1d_off_button;
+    QPushButton* BSS913X1h_on_button;
+    QPushButton* BSS913X1h_off_button;
+    QPushButton* BSS913X1j_on_button;
+    QPushButton* BSS913X1j_off_button;
+    QPushButton* BSS913X1n_on_button;
+    QPushButton* BSS913X1n_off_button;
+    QPushButton* BSS913X1p_on_button;
+    QPushButton* BSS913X1p_off_button;
+    QPushButton* BSS913X1r_on_button;
+    QPushButton* BSS913X1r_off_button;
+    QPushButton* BSS913X1t_on_button;
+    QPushButton* BSS913X1t_off_button;
+    QPushButton* BSS913X1x_on_button;
+    QPushButton* BSS913X1x_off_button;
+    QPushButton* BSS913X1z_on_button;
+    QPushButton* BSS913X1z_off_button;
+    QPushButton* BSS913X1BB_on_button;
+    QPushButton* BSS913X1BB_off_button;
+    QPushButton* BSS913X1DD_on_button;
+    QPushButton* BSS913X1DD_off_button;
+    QPushButton* BSS913X1FF_on_button;
+    QPushButton* BSS913X1FF_off_button;
+    QPushButton* BSS913X1HH_on_button;
+    QPushButton* BSS913X1HH_off_button;
+    QPushButton* BSS913X3E_on_button;
+    QPushButton* BSS913X3E_off_button;
+    QPushButton* BSS913X3G_on_button;
+    QPushButton* BSS913X3G_off_button;
+    QPushButton* BSS913X1A_on_button;
+    QPushButton* BSS913X1A_off_button;
+    QPushButton* BSS913X1R_on_button;
+    QPushButton* BSS913X1R_off_button;
+    QPushButton* BSS913X1f_on_button;
+    QPushButton* BSS913X1f_off_button;
+    QPushButton* BSS913X1v_on_button;
+    QPushButton* BSS913X1v_off_button;
+    QPushButton* BSS913X3C_on_button;
+    QPushButton* BSS913X3C_off_button;
+    QPushButton* BSS913X3J_on_button;
+    QPushButton* BSS913X3J_off_button;
+    QPushButton* BSS913X3L_on_button;
+    QPushButton* BSS913X3L_off_button;
+    QPushButton* BSS913X3N_on_button;
+    QPushButton* BSS913X3N_off_button;
+
+
+public slots:
+    int logic_leftpilot_2();
+    int m_BSS913X3A_on();
+    int m_BSS913X3A_off();
+    int m_BSS913X1C_on();
+    int m_BSS913X1C_off();
+    int m_BSS913X1E_on();
+    int m_BSS913X1E_off();
+    int m_BSS913X1G_on();
+    int m_BSS913X1G_off();
+    int m_BSS913X1J_on();
+    int m_BSS913X1J_off();
+    int m_BSS913X1L_on();
+    int m_BSS913X1L_off();
+    int m_BSS913X1N_on();
+    int m_BSS913X1N_off();
+    int m_BSS913X1T_on();
+    int m_BSS913X1T_off();
+    int m_BSS913X1V_on();
+    int m_BSS913X1V_off();
+    int m_BSS913X1X_on();
+    int m_BSS913X1X_off();
+    int m_BSS913X1Z_on();
+    int m_BSS913X1Z_off();
+    int m_BSS913X1b_on();
+    int m_BSS913X1b_off();
+    int m_BSS913X1d_on();
+    int m_BSS913X1d_off();
+    int m_BSS913X1h_on();
+    int m_BSS913X1h_off();
+    int m_BSS913X1j_on();
+    int m_BSS913X1j_off();
+    int m_BSS913X1n_on();
+    int m_BSS913X1n_off();
+    int m_BSS913X1p_on();
+    int m_BSS913X1p_off();
+    int m_BSS913X1r_on();
+    int m_BSS913X1r_off();
+    int m_BSS913X1t_on();
+    int m_BSS913X1t_off();
+    int m_BSS913X1x_on();
+    int m_BSS913X1x_off();
+    int m_BSS913X1z_on();
+    int m_BSS913X1z_off();
+    int m_BSS913X1BB_on();
+    int m_BSS913X1BB_off();
+    int m_BSS913X1DD_on();
+    int m_BSS913X1DD_off();
+    int m_BSS913X1FF_on();
+    int m_BSS913X1FF_off();
+    int m_BSS913X1HH_on();
+    int m_BSS913X1HH_off();
+    int m_BSS913X3E_on();
+    int m_BSS913X3E_off();
+    int m_BSS913X3G_on();
+    int m_BSS913X3G_off();
+    int m_BSS913X1A_on();
+    int m_BSS913X1A_off();
+    int m_BSS913X1R_on();
+    int m_BSS913X1R_off();
+    int m_BSS913X1f_on();
+    int m_BSS913X1f_off();
+    int m_BSS913X1v_on();
+    int m_BSS913X1v_off();
+    int m_BSS913X3C_on();
+    int m_BSS913X3C_off();
+    int m_BSS913X3J_on();
+    int m_BSS913X3J_off();
+    int m_BSS913X3L_on();
+    int m_BSS913X3L_off();
+    int m_BSS913X3N_on();
+    int m_BSS913X3N_off();
+};
+

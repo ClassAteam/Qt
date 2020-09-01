@@ -785,7 +785,7 @@ int emergencyalarm_leftpilot::logic_leftpilot()
 
         if(S1_3364 == true)
         {
-            PZH811_X1B_b = true;
+            PZH811_X1D_b = true;
         }
         ///////////////Yellow lights
         //////////////3
@@ -1024,6 +1024,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH811_X1DD = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH811_X1DD_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////12
         if (upor_dz_tang_lev_l == true)
@@ -1075,7 +1080,7 @@ int emergencyalarm_leftpilot::logic_leftpilot()
 
         if(S1_3364 == true)
         {
-            PZH_upor_dz_tang_lev_l_b = true;
+            PZH_zakrilk_pariruy_b = true;
         }
 
         ///////////////Yellow lights
@@ -1099,6 +1104,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH811_X1Y = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH811_X1Y_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////15
         if (dz_otkl == true)
@@ -1118,6 +1128,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             BSS811X2r = false;
             PZH_dz_otkl_b = false;
             PZH_dz_otkl = false;
+        }
+
+        if(S1_3364 == true)
+        {
+            PZH_dz_otkl_b = true;
         }
 
         ///////////////Yellow lights
@@ -1141,6 +1156,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH811_X1h = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH811_X1h_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////17
         if (BSS811X1j == true)
@@ -1160,6 +1180,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             BSS811X2T = false;
             PZH811_X1j_b = false;
             PZH811_X1j = false;
+        }
+
+        if(S1_3364 == true)
+        {
+            PZH811_X1j_b = true;
         }
 
         ///////////////Yellow lights
@@ -1183,6 +1208,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH811_X1p = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH811_X1p_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////19
         if (BSS811X1t == true)
@@ -1202,6 +1232,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             BSS811X2X = false;
             PZH811_X1t_b = false;
             PZH811_X1t = false;
+        }
+
+        if(S1_3364 == true)
+        {
+            PZH811_X1t_b = true;
         }
 
         ///////////////Yellow lights
@@ -1225,6 +1260,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH811_X1v = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH811_X1v_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////21
         if (BSS811X1x == true)
@@ -1244,6 +1284,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             BSS811X2Z = false;
             PZH811_X1x_b = false;
             PZH811_X1x = false;
+        }
+
+        if(S1_3364 == true)
+        {
+            PZH811_X1x_b = true;
         }
 
         ///////////////Yellow lights
@@ -1267,6 +1312,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH811_X1z = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH811_X1z_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////23
         if (sur_gs1_otkl == true)
@@ -1286,6 +1336,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             BSS811X2d = false;
             PZH_sur_gs1_otkl_b = false;
             PZH_sur_gs1_otkl = false;
+        }
+
+        if(S1_3364 == true)
+        {
+            PZH_sur_gs1_otkl_b = true;
         }
 
         ///////////////Yellow lights
@@ -1309,6 +1364,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH_sur_gs2_otkl = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH_sur_gs2_otkl_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////25
         if (sur_gs3_otkl == true)
@@ -1330,6 +1390,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             PZH_sur_gs3_otkl = false;
         }
 
+        if(S1_3364 == true)
+        {
+            PZH_sur_gs3_otkl_b = true;
+        }
+
         ///////////////Yellow lights
         //////////////26
         if (sur_gs4_otkl == true)
@@ -1349,6 +1414,11 @@ int emergencyalarm_leftpilot::logic_leftpilot()
             BSS811X2g = false;
             PZH_sur_gs4_otkl_b = false;
             PZH_sur_gs4_otkl = false;
+        }
+
+        if(S1_3364 == true)
+        {
+            PZH_sur_gs4_otkl_b = true;
         }
 
         if(PZH811_X1B == true ||

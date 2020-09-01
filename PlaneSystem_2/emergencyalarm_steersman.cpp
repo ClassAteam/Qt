@@ -881,7 +881,7 @@ int emergencyalarm_steersman::logic_steersman()
     layout_steersman_main->addLayout(layout_steersman_labels_1);
     layout_steersman_main->addLayout(layout_steersman_buttons);
     wgt_steersman.setLayout(layout_steersman_main);
-    wgt_steersman.setFixedWidth(500);
+    wgt_steersman.setFixedWidth(400);
     wgt_steersman.setFixedHeight(1000);
 
 }

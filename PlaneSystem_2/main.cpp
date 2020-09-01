@@ -101,6 +101,7 @@ int main(int argc, char *argv[])
     window_emergencyalarm.setWindowState(Qt::WindowFullScreen);
     scrollArea = new QScrollArea;
     scrollArea->setWidget(&window_emergencyalarm);
+    scrollArea->setWindowState(Qt::WindowFullScreen);
     scrollArea->show();
 //    window_emergencyalarm.show();
 //    QObject::connect(timer, SIGNAL(timeout()),

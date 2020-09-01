@@ -635,13 +635,13 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
         if (BSS812X5j == true)
         {
             BSS812X6T = true;
-            if(PZH812_X5HH_b == true)
+            if(PZH812_X5j_b == true)
             {
-                PZH812_X5HH = false;
+                PZH812_X5j = false;
             }
             else
             {
-                PZH812_X5HH = true;
+                PZH812_X5j = true;
             }
         }
         else
@@ -680,7 +680,7 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
 
         if(S1_3364 == true)
         {
-            PZH812_X5HH_b = true;
+            PZH812_X5p_b = true;
         }
 
         ///////////////Yellow lights
@@ -726,8 +726,8 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
         else
         {
             BSS812X6j = false;
-            PZH_nazhmi_rzv_tormz_b = false;
-            PZH_nazhmi_rzv_tormz = false;
+            PZH_kren_velik_b = false;
+            PZH_kren_velik = false;
         }
 
 
@@ -850,38 +850,7 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
                 PZH812_X5HH == true ||
                 PZH_kren_velik == true ||
                 PZH_alpha_fi_ogrnich == true ||
-                PZH_nazhmi_rzv_tormz == true ||
-                PK812_X5h == true ||
-                PK812_X5n == true ||
-                PK_V_velika == true ||
-                PK_V_mala == true ||
-                PK_alpha_py_predel == true ||
-                PB812_X5B == true ||
-                PB812_X5D == true ||
-                PB812_X5E == true ||
-                PB812_X5G == true ||
-                PB812_X5J == true ||
-                PB812_X5L == true ||
-                PB812_X5N == true ||
-                PB812_X5R == true ||
-                PB812_X5T == true ||
-                PB812_X5V == true ||
-                PB812_X5X == true ||
-                PB812_X5Z == true ||
-                PB812_X5b == true ||
-                PB812_X5d == true ||
-                PB812_X5f == true ||
-                PB812_X5t == true ||
-                PB812_X5r == true ||
-                PB812_X5v == true ||
-                PB812_X5x == true ||
-                PB812_X5z == true ||
-                PB812_X5BB == true ||
-                PB812_X5DD == true ||
-                PB812_X5FF == true ||
-                PB_vkl_rezerv_torm == true ||
-                PB_vkl_forsir_torm == true ||
-                PB812_X5KK == true)
+                PZH_nazhmi_rzv_tormz == true)
         {
 
             PCSOZHLL_2 = true;
@@ -924,26 +893,26 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
         if (BSS812X5n == true)
         {
             BSS812X6U = true;
-            if(PK812_X5h_b == true)
+            if(PK812_X5n_b == true)
             {
-                PK812_X5h = false;
+                PK812_X5n = false;
             }
             else
             {
-                PK812_X5h = true;
+                PK812_X5n = true;
             }
         }
         else
         {
             BSS812X6U = false;
-            PK812_X5h_b = false;
-            PK812_X5h = false;
+            PK812_X5n_b = false;
+            PK812_X5n = false;
         }
 
 
         if(S1_3364 == true)
         {
-            PK_V_velika_b = true;
+            PK812_X5n_b = true;
         }
         ///////////////Red lights_1
         //////////////3
@@ -996,7 +965,7 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
 
         if(S1_3364 == true)
         {
-            PK_V_mala_b = false;
+            PK_V_mala_b = true;
         }
 
         ///////////////Red lights_1
@@ -1023,7 +992,7 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
 
         if(S1_3364 == true)
         {
-            PK_alpha_py_predel_b = false;
+            PK_alpha_py_predel_b = true;
         }
 
         // PCSOKLL toggle

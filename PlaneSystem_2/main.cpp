@@ -20,6 +20,7 @@
 #include <emergencyalarm_leftpilot.h>
 #include <emergencyalarm_leftpilot_1.h>
 #include <emergencyalarm_leftpilot_2.h>
+#include <emergencyalarm_rightpilot.h>
 
 const double TICK = 200;
 
@@ -45,6 +46,7 @@ int main(int argc, char *argv[])
     emergencyalarm_leftpilot leftpilot;
     emergencyalarm_leftpilot_1 leftpilot_1;
     emergencyalarm_leftpilot_2 leftpilot_2;
+    emergencyalarm_rightpilot rightpilot;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -65,18 +67,18 @@ int main(int argc, char *argv[])
 //    window_presure.setWindowState(Qt::WindowFullScreen);
 //    window_presure.show();
 
-    QWidget window_antiicing;
-    QHBoxLayout layout_antiicing;
-    layout_antiicing.addWidget(&airintake.wgt_airintake);
-    layout_antiicing.addWidget(&mkam.wgt_mkam);
-    layout_antiicing.addWidget(&warmup.wgt_warmup);
-    layout_antiicing.addWidget(&ppd.wgt_ppd);
-    layout_antiicing.addWidget(&windshields.wgt_windshields);
-    layout_antiicing.addWidget(&lights.wgt_lights);
-    window_antiicing.setLayout(&layout_antiicing);
-    window_antiicing.setWindowTitle("Antiicing System");
-    window_antiicing.setWindowState(Qt::WindowFullScreen);
-    window_antiicing.show();
+//    QWidget window_antiicing;
+//    QHBoxLayout layout_antiicing;
+//    layout_antiicing.addWidget(&airintake.wgt_airintake);
+//    layout_antiicing.addWidget(&mkam.wgt_mkam);
+//    layout_antiicing.addWidget(&warmup.wgt_warmup);
+//    layout_antiicing.addWidget(&ppd.wgt_ppd);
+//    layout_antiicing.addWidget(&windshields.wgt_windshields);
+//    layout_antiicing.addWidget(&lights.wgt_lights);
+//    window_antiicing.setLayout(&layout_antiicing);
+//    window_antiicing.setWindowTitle("Antiicing System");
+//    window_antiicing.setWindowState(Qt::WindowFullScreen);
+//    window_antiicing.show();
 
     QWidget window_cabinlighting;
     QHBoxLayout layout_cabinlighting;
@@ -99,11 +101,21 @@ int main(int argc, char *argv[])
     window_emergencyalarm.setLayout(&layout_emergencyalarm);
     window_emergencyalarm.setWindowTitle("Emergency Alarm");
     window_emergencyalarm.setWindowState(Qt::WindowFullScreen);
-    scrollArea = new QScrollArea;
-    scrollArea->setWidget(&window_emergencyalarm);
-    scrollArea->setWindowState(Qt::WindowFullScreen);
-    scrollArea->show();
+    scrollArea_1 = new QScrollArea;
+    scrollArea_1->setLayout(&layout_emergencyalarm);
+    scrollArea_1->setWindowState(Qt::WindowFullScreen);
+
+    scrollArea_1->show();
 //    window_emergencyalarm.show();
+
+    QWidget window_emergencyalarm_1;
+    QHBoxLayout layout_emergencyalarm_1;
+    layout_emergencyalarm_1.addWidget(&rightpilot.wgt_rightpilot);
+    window_emergencyalarm_1.setLayout(&layout_emergencyalarm_1);
+    window_emergencyalarm_1.setWindowTitle("Emergency Alarm_2");
+    window_emergencyalarm_1.setWindowState(Qt::WindowFullScreen);
+    window_emergencyalarm_1.show();
+
 //    QObject::connect(timer, SIGNAL(timeout()),
 //                     &logic_valve , SLOT(logic_valves()));
 //    QObject::connect(timer, SIGNAL(timeout()),
@@ -112,28 +124,28 @@ int main(int argc, char *argv[])
 //                     &logic_alarm , SLOT(logic_alarm()));
 //    QObject::connect(timer, SIGNAL(timeout()),
 //                     &presure , SLOT(logic_presure()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &airintake , SLOT(logic_airintake()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &warmup , SLOT(logic_warmup()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &mkam , SLOT(logic_mkam()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &airintake , SLOT(logic_airintake()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &warmup , SLOT(logic_warmup()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &mkam , SLOT(logic_mkam()));
 //    QObject::connect(timer, SIGNAL(timeout()),
 //                     &ppd , SLOT(logic_ppd()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &windshields , SLOT(logic_windshields()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &lights , SLOT(logic_lights()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &navi , SLOT(logic_navi()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &beacons , SLOT(logic_beacons()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &outside , SLOT(logic_outside()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &inner , SLOT(logic_inner()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &solid , SLOT(logic_solid()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &windshields , SLOT(logic_windshields()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &lights , SLOT(logic_lights()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &navi , SLOT(logic_navi()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &beacons , SLOT(logic_beacons()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &outside , SLOT(logic_outside()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &inner , SLOT(logic_inner()));
+//    QObject::connect(timer, SIGNAL(timeout()),
+//                     &solid , SLOT(logic_solid()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &steersman , SLOT(logic_steersman()));
     QObject::connect(timer, SIGNAL(timeout()),
@@ -142,6 +154,8 @@ int main(int argc, char *argv[])
                      &leftpilot_1 , SLOT(logic_leftpilot_1()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &leftpilot_2 , SLOT(logic_leftpilot_2()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &rightpilot , SLOT(logic_rightpilot()));
 
     timer->start(TICK);
     return a.exec();

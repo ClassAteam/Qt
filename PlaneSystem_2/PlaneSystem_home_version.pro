@@ -34,6 +34,7 @@ SOURCES += \
     emergencyalarm_leftpilot.cpp \
     emergencyalarm_leftpilot_1.cpp \
     emergencyalarm_leftpilot_2.cpp \
+    emergencyalarm_rightpilot.cpp \
     emergencyalarm_steersman.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -58,6 +59,7 @@ HEADERS += \
     emergencyalarm_leftpilot.h \
     emergencyalarm_leftpilot_1.h \
     emergencyalarm_leftpilot_2.h \
+    emergencyalarm_rightpilot.h \
     emergencyalarm_steersman.h \
     main.h \
     mainwindow.h \

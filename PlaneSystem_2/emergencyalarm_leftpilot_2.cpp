@@ -170,6 +170,7 @@ PB913_X3N_b;
 emergencyalarm_leftpilot_2::emergencyalarm_leftpilot_2(QWidget* pwgt)
     : QWidget(pwgt)
 {
+    QFont underlined("Arial", 10, QFont::Bold);
     PRBSS913 = 1;
     PCSOZHLL_3 = 0;
     PCSOKLL_3 = 0;
@@ -332,6 +333,7 @@ emergencyalarm_leftpilot_2::emergencyalarm_leftpilot_2(QWidget* pwgt)
     BSS913X1n_label = new QLabel;
     BSS913X1p_label = new QLabel;
     BSS913X1r_label = new QLabel;
+    BSS913X1r_label->setFont(underlined);
     BSS913X1t_label = new QLabel;
     BSS913X1x_label = new QLabel;
     BSS913X1z_label = new QLabel;
@@ -418,6 +420,7 @@ BSS913X1n_off_button = new QPushButton("BSS913X1n_off",this);
 BSS913X1p_on_button = new QPushButton("BSS913X1p_on",this);
 BSS913X1p_off_button = new QPushButton("BSS913X1p_off",this);
 BSS913X1r_on_button = new QPushButton("BSS913X1r_on",this);
+BSS913X1r_on_button->setFont(underlined);
 BSS913X1r_off_button = new QPushButton("BSS913X1r_off",this);
 BSS913X1t_on_button = new QPushButton("BSS913X1t_on",this);
 BSS913X1t_off_button = new QPushButton("BSS913X1t_off",this);
@@ -2141,7 +2144,18 @@ int emergencyalarm_leftpilot_2::m_BSS913X1p_off()
 }
 int emergencyalarm_leftpilot_2::m_BSS913X1r_on()
 {
-    BSS913X1r = true;
+    bool pushed;
+    pushed = BSS913X1r;
+    if(pushed == false)
+    {
+        BSS913X1r = true;
+        BSS913X1r_on_button->setStyleSheet("background-color: red");
+    }
+    if(pushed == true)
+    {
+        BSS913X1r = false;
+        BSS913X1r_on_button->setStyleSheet("");
+    }
 }
 int emergencyalarm_leftpilot_2::m_BSS913X1r_off()
 {
@@ -2277,7 +2291,18 @@ int emergencyalarm_leftpilot_2::m_BSS913X3L_off()
 }
 int emergencyalarm_leftpilot_2::m_BSS913X3N_on()
 {
-    BSS913X3N = true;
+    bool pushed;
+    pushed = BSS913X3N;
+    if(pushed == false)
+    {
+        BSS913X3N = true;
+        BSS913X3N_on_button->setStyleSheet("background-color: red");
+    }
+    if(pushed == true)
+    {
+        BSS913X3N = false;
+        BSS913X3N_on_button->setStyleSheet("background-color: green");
+    }
 }
 int emergencyalarm_leftpilot_2::m_BSS913X3N_off()
 {

@@ -369,6 +369,7 @@ emergencyalarm_rightpilot::emergencyalarm_rightpilot(QWidget* pwgt)
     BSS824X1J_label = new QLabel;
     BSS824X1M_label = new QLabel;
     BSS824X1N_label = new QLabel;
+    BSS824X1V_label = new QLabel;
     BSS824X1T_label = new QLabel;
     BSS824X1b_label = new QLabel;
     BSS824X1f_label = new QLabel;
@@ -440,6 +441,8 @@ emergencyalarm_rightpilot::emergencyalarm_rightpilot(QWidget* pwgt)
     BSS824X2q_label = new QLabel;
     BSS824X2i_label = new QLabel;
 
+S2_3364_on_button = new QPushButton("&S2_3364_on",this);
+S6_3364_on_button = new QPushButton("S&6_3364_on",this);
 BSS824X1D_on_button = new QPushButton("BSS824X1D_on",this);
 BSS824X1J_on_button = new QPushButton("BSS824X1J_on",this);
 BSS824X1M_on_button = new QPushButton("BSS824X1M_on",this);
@@ -481,6 +484,10 @@ BSS824X3N_on_button = new QPushButton("BSS824X3N_on",this);
 BSS824X3R_on_button = new QPushButton("BSS824X3R_on",this);
 BSS824X3E_on_button = new QPushButton("BSS824X3E_on",this);
 
+    QObject::connect
+(S2_3364_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(S6_3364_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
     QObject::connect
 (BSS824X1D_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
     QObject::connect
@@ -1754,6 +1761,8 @@ BSS824X1M_label->setText
 ("BSS824X1M = " + QString::number(BSS824X1M));
 BSS824X1N_label->setText
 ("BSS824X1N = " + QString::number(BSS824X1N));
+BSS824X1V_label->setText
+("BSS824X1V = " + QString::number(BSS824X1V));
 BSS824X1T_label->setText
 ("BSS824X1T = " + QString::number(BSS824X1T));
 BSS824X1b_label->setText
@@ -1917,6 +1926,7 @@ BSS824X2i_label->setText
     layout_rightpilot_labels->addWidget(BSS824X1J_label);
     layout_rightpilot_labels->addWidget(BSS824X1M_label);
     layout_rightpilot_labels->addWidget(BSS824X1N_label);
+    layout_rightpilot_labels->addWidget(BSS824X1V_label);
     layout_rightpilot_labels->addWidget(BSS824X1T_label);
     layout_rightpilot_labels->addWidget(BSS824X1b_label);
     layout_rightpilot_labels->addWidget(BSS824X1f_label);
@@ -1990,6 +2000,8 @@ BSS824X2i_label->setText
     layout_rightpilot_labels->addWidget(BSS824X2i_label);
 
     //yellow input
+    layout_rightpilot_buttons->addWidget(S2_3364_on_button);
+    layout_rightpilot_buttons->addWidget(S6_3364_on_button);
     layout_rightpilot_buttons->addWidget(BSS824X1D_on_button);
     layout_rightpilot_buttons->addWidget(BSS824X1J_on_button);
     layout_rightpilot_buttons->addWidget(BSS824X1M_on_button);
@@ -2194,6 +2206,14 @@ void emergencyalarm_rightpilot::m_togglebutton_R()
     if(obj == BSS824X3E_on_button)
     {
         m_RedButton(BSS824X3E_on_button, &BSS824X3E);
+    }
+    if(obj == S2_3364_on_button)
+    {
+        m_RedButton(S2_3364_on_button, &S2_3364);
+    }
+    if(obj == S6_3364_on_button)
+    {
+        m_RedButton(S6_3364_on_button, &S6_3364);
     }
 
 }

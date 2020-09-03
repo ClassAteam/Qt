@@ -47,6 +47,7 @@ public:
     QLabel*	BSS824X1J_label;
     QLabel*	BSS824X1M_label;
     QLabel*	BSS824X1N_label;
+    QLabel*	BSS824X1V_label;
     QLabel*	BSS824X1T_label;
     QLabel*	BSS824X1b_label;
     QLabel*	BSS824X1f_label;
@@ -118,6 +119,8 @@ public:
     QLabel*	BSS824X2q_label;
     QLabel*	BSS824X2i_label;
 
+    QPushButton* S2_3364_on_button;
+    QPushButton* S6_3364_on_button;
     //yellow input
     QPushButton* BSS824X1D_on_button;
     QPushButton* BSS824X1J_on_button;

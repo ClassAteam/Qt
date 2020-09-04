@@ -1224,6 +1224,7 @@ void emergencyalarm_rightpilot::logic_rightpilot()
         {
             PZH824_X3T_b = true;
         }
+        
         if(
             PZH824_X1D == true ||
             PZH824_X1J == true ||

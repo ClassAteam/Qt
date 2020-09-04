@@ -22,6 +22,7 @@
 #include <emergencyalarm_leftpilot_2.h>
 #include <emergencyalarm_rightpilot.h>
 #include <emergencyalarm_rightpilot_1.h>
+#include <emergencyalarm_navigator.h>
 
 const double TICK = 200;
 
@@ -49,6 +50,7 @@ int main(int argc, char *argv[])
     emergencyalarm_leftpilot_2 leftpilot_2;
     emergencyalarm_rightpilot rightpilot;
     emergencyalarm_rightpilot_1 rightpilot_1;
+    emergencyalarm_navigator navigator;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -114,6 +116,7 @@ int main(int argc, char *argv[])
     QHBoxLayout layout_emergencyalarm_1;
     layout_emergencyalarm_1.addWidget(&rightpilot.wgt_rightpilot);
     layout_emergencyalarm_1.addWidget(&rightpilot_1.wgt_rightpilot_1);
+    layout_emergencyalarm_1.addWidget(&navigator.wgt_navigator);
     window_emergencyalarm_1.setLayout(&layout_emergencyalarm_1);
     window_emergencyalarm_1.setWindowTitle("Emergency Alarm_2");
     window_emergencyalarm_1.setWindowState(Qt::WindowFullScreen);
@@ -161,6 +164,8 @@ int main(int argc, char *argv[])
                      &rightpilot , SLOT(logic_rightpilot()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &rightpilot_1 , SLOT(logic_rightpilot_1()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &navigator , SLOT(logic_navigator()));
 
     timer->start(TICK);
     return a.exec();

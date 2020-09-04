@@ -28,8 +28,8 @@ PZH_ins_net_rezerva_b,
 BSS939X1B,
 BSS939X1D,
 BSS939X1E,
-BSS926X1J,
-BSS926X1L,
+BSS939X1J,
+BSS939X1L,
 svs_otkaz,
 svs_net_rezerva,
 ins_otkaz,
@@ -347,7 +347,7 @@ int emergencyalarm_steersman::logic_steersman()
 
         ///////////////Yellow lights
         //////////////4
-        if (BSS926X1J == true)
+        if (BSS939X1J == true)
         {
             BSS939X2E = true;
             if(PZH926_X1J_b == true)
@@ -374,7 +374,7 @@ int emergencyalarm_steersman::logic_steersman()
 
         ///////////////Yellow lights
         //////////////5
-        if (BSS926X1L == true)
+        if (BSS939X1L == true)
         {
             BSS939X2F = true;
             if(PZH926_X1L_b == true)
@@ -708,9 +708,9 @@ int emergencyalarm_steersman::logic_steersman()
     BSS939X1E_label->setText
 ("BSS939X1E = " + QString::number(BSS939X1E));
     BSS926X1J_label->setText
-("BSS926X1J = " + QString::number(BSS926X1J));
+("BSS926X1J = " + QString::number(BSS939X1J));
     BSS926X1L_label->setText
-("BSS926X1L = " + QString::number(BSS926X1L));
+("BSS926X1L = " + QString::number(BSS939X1L));
     svs_otkaz_label->setText
 ("svs_otkaz = " + QString::number(svs_otkaz));
     svs_net_rezerva_label->setText
@@ -927,19 +927,19 @@ int emergencyalarm_steersman::m_BSS939X1E_off()
 }
 int emergencyalarm_steersman::m_BSS926X1J_on()
 {
-    BSS926X1J = true;
+    BSS939X1J = true;
 }
 int emergencyalarm_steersman::m_BSS926X1J_off()
 {
-    BSS926X1J = false;
+    BSS939X1J = false;
 }
 int emergencyalarm_steersman::m_BSS926X1L_on()
 {
-    BSS926X1L = true;
+    BSS939X1L = true;
 }
 int emergencyalarm_steersman::m_BSS926X1L_off()
 {
-    BSS926X1L = false;
+    BSS939X1L = false;
 }
 int emergencyalarm_steersman::m_svs_otkaz_on()
 {

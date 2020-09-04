@@ -35,6 +35,7 @@ SOURCES += \
     emergencyalarm_leftpilot_1.cpp \
     emergencyalarm_leftpilot_2.cpp \
     emergencyalarm_navigator.cpp \
+    emergencyalarm_navigator_1.cpp \
     emergencyalarm_rightpilot.cpp \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     emergencyalarm_leftpilot_1.h \
     emergencyalarm_leftpilot_2.h \
     emergencyalarm_navigator.h \
+    emergencyalarm_navigator_1.h \
     emergencyalarm_rightpilot.h \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \

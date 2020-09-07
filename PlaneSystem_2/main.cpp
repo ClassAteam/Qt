@@ -23,6 +23,8 @@
 #include <emergencyalarm_rightpilot.h>
 #include <emergencyalarm_rightpilot_1.h>
 #include <emergencyalarm_navigator.h>
+#include <emergencyalarm_navigator_1.h>
+#include <emergencyalarm_navigator_2.h>
 
 const double TICK = 200;
 
@@ -51,6 +53,8 @@ int main(int argc, char *argv[])
     emergencyalarm_rightpilot rightpilot;
     emergencyalarm_rightpilot_1 rightpilot_1;
     emergencyalarm_navigator navigator;
+    emergencyalarm_navigator_1 navigator_1;
+    emergencyalarm_navigator_2 navigator_2;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -84,17 +88,17 @@ int main(int argc, char *argv[])
 //    window_antiicing.setWindowState(Qt::WindowFullScreen);
 //    window_antiicing.show();
 
-    QWidget window_cabinlighting;
-    QHBoxLayout layout_cabinlighting;
-    layout_cabinlighting.addWidget(&navi.wgt_navi);
-    layout_cabinlighting.addWidget(&beacons.wgt_beacons);
-    layout_cabinlighting.addWidget(&outside.wgt_outside);
-    layout_cabinlighting.addWidget(&inner.wgt_inner);
-    layout_cabinlighting.addWidget(&solid.wgt_solid);
-    window_cabinlighting.setLayout(&layout_cabinlighting);
-    window_cabinlighting.setWindowTitle("Cabin Lighting");
-    window_cabinlighting.setWindowState(Qt::WindowFullScreen);
-    window_cabinlighting.show();
+//    QWidget window_cabinlighting;
+//    QHBoxLayout layout_cabinlighting;
+//    layout_cabinlighting.addWidget(&navi.wgt_navi);
+//    layout_cabinlighting.addWidget(&beacons.wgt_beacons);
+//    layout_cabinlighting.addWidget(&outside.wgt_outside);
+//    layout_cabinlighting.addWidget(&inner.wgt_inner);
+//    layout_cabinlighting.addWidget(&solid.wgt_solid);
+//    window_cabinlighting.setLayout(&layout_cabinlighting);
+//    window_cabinlighting.setWindowTitle("Cabin Lighting");
+//    window_cabinlighting.setWindowState(Qt::WindowFullScreen);
+//    window_cabinlighting.show();
 
     QWidget window_emergencyalarm;
     QHBoxLayout layout_emergencyalarm;
@@ -109,7 +113,7 @@ int main(int argc, char *argv[])
     scrollArea_1->setLayout(&layout_emergencyalarm);
     scrollArea_1->setWindowState(Qt::WindowFullScreen);
 
-    scrollArea_1->show();
+//    scrollArea_1->show();
 //    window_emergencyalarm.show();
 
     QWidget window_emergencyalarm_1;
@@ -117,6 +121,8 @@ int main(int argc, char *argv[])
     layout_emergencyalarm_1.addWidget(&rightpilot.wgt_rightpilot);
     layout_emergencyalarm_1.addWidget(&rightpilot_1.wgt_rightpilot_1);
     layout_emergencyalarm_1.addWidget(&navigator.wgt_navigator);
+    layout_emergencyalarm_1.addWidget(&navigator_1.wgt_navigator_1);
+    layout_emergencyalarm_1.addWidget(&navigator_2.wgt_navigator_2);
     window_emergencyalarm_1.setLayout(&layout_emergencyalarm_1);
     window_emergencyalarm_1.setWindowTitle("Emergency Alarm_2");
     window_emergencyalarm_1.setWindowState(Qt::WindowFullScreen);
@@ -166,6 +172,10 @@ int main(int argc, char *argv[])
                      &rightpilot_1 , SLOT(logic_rightpilot_1()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &navigator , SLOT(logic_navigator()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &navigator_1 , SLOT(logic_navigator_1()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &navigator_2 , SLOT(logic_navigator_2()));
 
     timer->start(TICK);
     return a.exec();

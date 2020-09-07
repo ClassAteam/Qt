@@ -306,10 +306,351 @@ emergencyalarm_navigator_1::emergencyalarm_navigator_1(QWidget* pwgt)
     PK837_X3C_b = 0;
     PK837_X3N_b = 0;
 
+    PRBSS838_label = new QLabel;
+    PCSOZHSHO_label = new QLabel;
+    PCSOKSHO_label = new QLabel;
+    PCSOZHSHO_2_label = new QLabel;
+    PCSOKSHO_2_label = new QLabel;
+    BSS837X1A_label = new QLabel;
+    BSS837X1C_label = new QLabel;
+    BSS837X1E_label = new QLabel;
+    BSS837X1G_label = new QLabel;
+    BSS837X1J_label = new QLabel;
+    BSS837X1N_label = new QLabel;
+    BSS837X1R_label = new QLabel;
+    BSS837X1V_label = new QLabel;
+    BSS837X1L_label = new QLabel;
+    BSS837X1X_label = new QLabel;
+    BSS837X1Z_label = new QLabel;
+    BSS837X1b_label = new QLabel;
+    BSS837X1d_label = new QLabel;
+    BSS837X1f_label = new QLabel;
+    BSS837X1h_label = new QLabel;
+    BSS837X1j_label = new QLabel;
+    BSS837X1r_label = new QLabel;
+    BSS837X1t_label = new QLabel;
+    BSS837X1x_label = new QLabel;
+    BSS837X1BB_label = new QLabel;
+    BSS837X1DD_label = new QLabel;
+    BSS837X1KK_label = new QLabel;
+    BSS837X1MM_label = new QLabel;
+    BSS837X3G_label = new QLabel;
+    BSS837X3J_label = new QLabel;
+    BSS837X2A_label = new QLabel;
+    BSS837X2B_label = new QLabel;
+    BSS837X2C_label = new QLabel;
+    BSS837X2D_label = new QLabel;
+    BSS837X2E_label = new QLabel;
+    BSS837X2G_label = new QLabel;
+    BSS837X2H_label = new QLabel;
+    BSS837X2K_label = new QLabel;
+    BSS837X2F_label = new QLabel;
+    BSS837X2L_label = new QLabel;
+    BSS837X2M_label = new QLabel;
+    BSS837X2N_label = new QLabel;
+    BSS837X2P_label = new QLabel;
+    BSS837X2R_label = new QLabel;
+    BSS837X2S_label = new QLabel;
+    BSS837X2T_label = new QLabel;
+    BSS837X2W_label = new QLabel;
+    BSS837X2X_label = new QLabel;
+    BSS837X2Z_label = new QLabel;
+    BSS837X2b_label = new QLabel;
+    BSS837X2c_label = new QLabel;
+    BSS837X2f_label = new QLabel;
+    BSS837X2g_label = new QLabel;
+    BSS837X2k_label = new QLabel;
+    BSS837X2m_label = new QLabel;
+    BSS837X1p_label = new QLabel;
+    BSS837X3C_label = new QLabel;
+    BSS837X3N_label = new QLabel;
+    BSS837X2V_label = new QLabel;
+    BSS837X2i_label = new QLabel;
+    BSS837X2p_label = new QLabel;
+    BSS837X1T_label = new QLabel;
+    BSS837X1n_label = new QLabel;
+    BSS837X1v_label = new QLabel;
+    BSS837X1z_label = new QLabel;
+    BSS837X1FF_label = new QLabel;
+    BSS837X1HH_label = new QLabel;
+    BSS837X3A_label = new QLabel;
+    BSS837X3E_label = new QLabel;
+    BSS837X3L_label = new QLabel;
+    BSS837X3R_label = new QLabel;
+    BSS837X3T_label = new QLabel;
+    BSS837X2J_label = new QLabel;
+    BSS837X2U_label = new QLabel;
+    BSS837X2Y_label = new QLabel;
+    BSS837X2a_label = new QLabel;
+    BSS837X2d_label = new QLabel;
+    BSS837X2e_label = new QLabel;
+    BSS837X2h_label = new QLabel;
+    BSS837X2j_label = new QLabel;
+    BSS837X2n_label = new QLabel;
+    BSS837X2q_label = new QLabel;
+    BSS837X2r_label = new QLabel;
+
+    BSS837X1A_on_button = new QPushButton("BSS837X1A", this);
+    BSS837X1C_on_button = new QPushButton("BSS837X1C", this);
+    BSS837X1E_on_button = new QPushButton("BSS837X1E", this);
+    BSS837X1G_on_button = new QPushButton("BSS837X1G", this);
+    BSS837X1J_on_button = new QPushButton("BSS837X1J", this);
+    BSS837X1N_on_button = new QPushButton("BSS837X1N", this);
+    BSS837X1R_on_button = new QPushButton("BSS837X1R", this);
+    BSS837X1V_on_button = new QPushButton("BSS837X1V", this);
+    BSS837X1L_on_button = new QPushButton("BSS837X1L", this);
+    BSS837X1X_on_button = new QPushButton("BSS837X1X", this);
+    BSS837X1Z_on_button = new QPushButton("BSS837X1Z", this);
+    BSS837X1b_on_button = new QPushButton("BSS837X1b", this);
+    BSS837X1d_on_button = new QPushButton("BSS837X1d", this);
+    BSS837X1f_on_button = new QPushButton("BSS837X1f", this);
+    BSS837X1h_on_button = new QPushButton("BSS837X1h", this);
+    BSS837X1j_on_button = new QPushButton("BSS837X1j", this);
+    BSS837X1r_on_button = new QPushButton("BSS837X1r", this);
+    BSS837X1t_on_button = new QPushButton("BSS837X1t", this);
+    BSS837X1x_on_button = new QPushButton("BSS837X1x", this);
+    BSS837X1BB_on_button = new QPushButton("BSS837X1BB", this);
+    BSS837X1DD_on_button = new QPushButton("BSS837X1DD", this);
+    BSS837X1KK_on_button = new QPushButton("BSS837X1KK", this);
+    BSS837X1MM_on_button = new QPushButton("BSS837X1MM", this);
+    BSS837X3G_on_button = new QPushButton("BSS837X3G", this);
+    BSS837X3J_on_button = new QPushButton("BSS837X3J", this);
+    BSS837X1p_on_button = new QPushButton("BSS837X1p", this);
+    BSS837X3C_on_button = new QPushButton("BSS837X3C", this);
+    BSS837X3N_on_button = new QPushButton("BSS837X3N", this);
+    BSS837X1T_on_button = new QPushButton("BSS837X1T", this);
+    BSS837X1n_on_button = new QPushButton("BSS837X1n", this);
+    BSS837X1v_on_button = new QPushButton("BSS837X1v", this);
+    BSS837X1z_on_button = new QPushButton("BSS837X1z", this);
+    BSS837X1FF_on_button = new QPushButton("BSS837X1FF", this);
+    BSS837X1HH_on_button = new QPushButton("BSS837X1HH", this);
+    BSS837X3A_on_button = new QPushButton("BSS837X3A", this);
+    BSS837X3E_on_button = new QPushButton("BSS837X3E", this);
+    BSS837X3L_on_button = new QPushButton("BSS837X3L", this);
+    BSS837X3R_on_button = new QPushButton("BSS837X3R", this);
+    BSS837X3T_on_button = new QPushButton("BSS837X3T", this);
+
+    QObject::connect
+(BSS837X1A_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1C_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1E_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1G_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1J_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1N_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1R_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1V_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1L_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1X_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1Z_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1b_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1d_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1f_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1h_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1j_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1r_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1t_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1x_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1BB_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1DD_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1KK_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1MM_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3G_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3J_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1p_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3C_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3N_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1T_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1n_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1v_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1z_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1FF_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X1HH_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3A_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3E_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3L_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3R_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS837X3T_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+
+    //layout setting
+    QVBoxLayout *layout_navigator_1_labels = new QVBoxLayout;
+    QVBoxLayout *layout_navigator_1_labels_1 = new QVBoxLayout;
+    QVBoxLayout *layout_navigator_1_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_navigator_1_main = new QHBoxLayout;
+
+    layout_navigator_1_labels_1->addWidget(PRBSS838_label);
+    layout_navigator_1_labels_1->addWidget(PCSOZHSHO_label);
+    layout_navigator_1_labels_1->addWidget(PCSOKSHO_label);
+    layout_navigator_1_labels_1->addWidget(PCSOZHSHO_2_label);
+    layout_navigator_1_labels_1->addWidget(PCSOKSHO_2_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1A_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1C_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1E_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1G_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1J_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1N_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1R_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1V_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1L_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1X_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1Z_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1b_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1d_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1f_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1h_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1j_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1r_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1t_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1x_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1BB_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1DD_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1KK_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X1MM_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X3G_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X3J_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2A_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2B_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2C_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2D_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2E_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2G_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2H_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2K_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2F_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2L_label);
+    layout_navigator_1_labels_1->addWidget(BSS837X2M_label);
+    layout_navigator_1_labels->addWidget(BSS837X2N_label);
+    layout_navigator_1_labels->addWidget(BSS837X2P_label);
+    layout_navigator_1_labels->addWidget(BSS837X2R_label);
+    layout_navigator_1_labels->addWidget(BSS837X2S_label);
+    layout_navigator_1_labels->addWidget(BSS837X2T_label);
+    layout_navigator_1_labels->addWidget(BSS837X2W_label);
+    layout_navigator_1_labels->addWidget(BSS837X2X_label);
+    layout_navigator_1_labels->addWidget(BSS837X2Z_label);
+    layout_navigator_1_labels->addWidget(BSS837X2b_label);
+    layout_navigator_1_labels->addWidget(BSS837X2c_label);
+    layout_navigator_1_labels->addWidget(BSS837X2f_label);
+    layout_navigator_1_labels->addWidget(BSS837X2g_label);
+    layout_navigator_1_labels->addWidget(BSS837X2k_label);
+    layout_navigator_1_labels->addWidget(BSS837X2m_label);
+    layout_navigator_1_labels->addWidget(BSS837X1p_label);
+    layout_navigator_1_labels->addWidget(BSS837X3C_label);
+    layout_navigator_1_labels->addWidget(BSS837X3N_label);
+    layout_navigator_1_labels->addWidget(BSS837X2V_label);
+    layout_navigator_1_labels->addWidget(BSS837X2i_label);
+    layout_navigator_1_labels->addWidget(BSS837X2p_label);
+    layout_navigator_1_labels->addWidget(BSS837X1T_label);
+    layout_navigator_1_labels->addWidget(BSS837X1n_label);
+    layout_navigator_1_labels->addWidget(BSS837X1v_label);
+    layout_navigator_1_labels->addWidget(BSS837X1z_label);
+    layout_navigator_1_labels->addWidget(BSS837X1FF_label);
+    layout_navigator_1_labels->addWidget(BSS837X1HH_label);
+    layout_navigator_1_labels->addWidget(BSS837X3A_label);
+    layout_navigator_1_labels->addWidget(BSS837X3E_label);
+    layout_navigator_1_labels->addWidget(BSS837X3L_label);
+    layout_navigator_1_labels->addWidget(BSS837X3R_label);
+    layout_navigator_1_labels->addWidget(BSS837X3T_label);
+    layout_navigator_1_labels->addWidget(BSS837X2J_label);
+    layout_navigator_1_labels->addWidget(BSS837X2U_label);
+    layout_navigator_1_labels->addWidget(BSS837X2Y_label);
+    layout_navigator_1_labels->addWidget(BSS837X2a_label);
+    layout_navigator_1_labels->addWidget(BSS837X2d_label);
+    layout_navigator_1_labels->addWidget(BSS837X2e_label);
+    layout_navigator_1_labels->addWidget(BSS837X2h_label);
+    layout_navigator_1_labels->addWidget(BSS837X2j_label);
+    layout_navigator_1_labels->addWidget(BSS837X2n_label);
+    layout_navigator_1_labels->addWidget(BSS837X2q_label);
+    layout_navigator_1_labels->addWidget(BSS837X2r_label);
+
+    layout_navigator_1_buttons->addWidget(BSS837X1A_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1C_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1E_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1G_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1J_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1N_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1R_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1V_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1L_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1X_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1Z_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1b_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1d_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1f_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1h_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1j_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1r_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1t_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1x_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1BB_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1DD_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1KK_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1MM_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3G_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3J_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1p_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3C_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3N_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1T_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1n_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1v_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1z_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1FF_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X1HH_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3A_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3E_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3L_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3R_on_button);
+    layout_navigator_1_buttons->addWidget(BSS837X3T_on_button);
+
+    layout_navigator_1_main->addLayout(layout_navigator_1_labels);
+    layout_navigator_1_main->addLayout(layout_navigator_1_labels_1);
+    layout_navigator_1_main->addLayout(layout_navigator_1_buttons);
+    wgt_navigator_1.setLayout(layout_navigator_1_main);
+//    wgt_navigator_1.setFixedWidth(500);
+    wgt_navigator_1.setFixedHeight(1000);
+
+
 }
 void emergencyalarm_navigator_1::logic_navigator_1()
 {
-    if(PRBSS838 == true)
+    if(PRBSS837 == true)
     {
         ///////////////Yellow lights
         //////////////1
@@ -1408,4 +1749,352 @@ void emergencyalarm_navigator_1::logic_navigator_1()
     //end logic
 
     //showing values
+
+PRBSS838_label->setText
+("PRBSS838 = " + QString::number(PRBSS838));
+PCSOZHSHO_label->setText
+("PCSOZHSHO = " + QString::number(PCSOZHSHO));
+PCSOKSHO_label->setText
+("PCSOKSHO = " + QString::number(PCSOKSHO));
+PCSOZHSHO_2_label->setText
+("PCSOZHSHO_2 = " + QString::number(PCSOZHSHO_2));
+PCSOKSHO_2_label->setText
+("PCSOKSHO_2 = " + QString::number(PCSOKSHO_2));
+BSS837X1A_label->setText
+("BSS837X1A = " + QString::number(BSS837X1A));
+BSS837X1C_label->setText
+("BSS837X1C = " + QString::number(BSS837X1C));
+BSS837X1E_label->setText
+("BSS837X1E = " + QString::number(BSS837X1E));
+BSS837X1G_label->setText
+("BSS837X1G = " + QString::number(BSS837X1G));
+BSS837X1J_label->setText
+("BSS837X1J = " + QString::number(BSS837X1J));
+BSS837X1N_label->setText
+("BSS837X1N = " + QString::number(BSS837X1N));
+BSS837X1R_label->setText
+("BSS837X1R = " + QString::number(BSS837X1R));
+BSS837X1V_label->setText
+("BSS837X1V = " + QString::number(BSS837X1V));
+BSS837X1L_label->setText
+("BSS837X1L = " + QString::number(BSS837X1L));
+BSS837X1X_label->setText
+("BSS837X1X = " + QString::number(BSS837X1X));
+BSS837X1Z_label->setText
+("BSS837X1Z = " + QString::number(BSS837X1Z));
+BSS837X1b_label->setText
+("BSS837X1b = " + QString::number(BSS837X1b));
+BSS837X1d_label->setText
+("BSS837X1d = " + QString::number(BSS837X1d));
+BSS837X1f_label->setText
+("BSS837X1f = " + QString::number(BSS837X1f));
+BSS837X1h_label->setText
+("BSS837X1h = " + QString::number(BSS837X1h));
+BSS837X1j_label->setText
+("BSS837X1j = " + QString::number(BSS837X1j));
+BSS837X1r_label->setText
+("BSS837X1r = " + QString::number(BSS837X1r));
+BSS837X1t_label->setText
+("BSS837X1t = " + QString::number(BSS837X1t));
+BSS837X1x_label->setText
+("BSS837X1x = " + QString::number(BSS837X1x));
+BSS837X1BB_label->setText
+("BSS837X1BB = " + QString::number(BSS837X1BB));
+BSS837X1DD_label->setText
+("BSS837X1DD = " + QString::number(BSS837X1DD));
+BSS837X1KK_label->setText
+("BSS837X1KK = " + QString::number(BSS837X1KK));
+BSS837X1MM_label->setText
+("BSS837X1MM = " + QString::number(BSS837X1MM));
+BSS837X3G_label->setText
+("BSS837X3G = " + QString::number(BSS837X3G));
+BSS837X3J_label->setText
+("BSS837X3J = " + QString::number(BSS837X3J));
+BSS837X2A_label->setText
+("BSS837X2A = " + QString::number(BSS837X2A));
+BSS837X2B_label->setText
+("BSS837X2B = " + QString::number(BSS837X2B));
+BSS837X2C_label->setText
+("BSS837X2C = " + QString::number(BSS837X2C));
+BSS837X2D_label->setText
+("BSS837X2D = " + QString::number(BSS837X2D));
+BSS837X2E_label->setText
+("BSS837X2E = " + QString::number(BSS837X2E));
+BSS837X2G_label->setText
+("BSS837X2G = " + QString::number(BSS837X2G));
+BSS837X2H_label->setText
+("BSS837X2H = " + QString::number(BSS837X2H));
+BSS837X2K_label->setText
+("BSS837X2K = " + QString::number(BSS837X2K));
+BSS837X2F_label->setText
+("BSS837X2F = " + QString::number(BSS837X2F));
+BSS837X2L_label->setText
+("BSS837X2L = " + QString::number(BSS837X2L));
+BSS837X2M_label->setText
+("BSS837X2M = " + QString::number(BSS837X2M));
+BSS837X2N_label->setText
+("BSS837X2N = " + QString::number(BSS837X2N));
+BSS837X2P_label->setText
+("BSS837X2P = " + QString::number(BSS837X2P));
+BSS837X2R_label->setText
+("BSS837X2R = " + QString::number(BSS837X2R));
+BSS837X2S_label->setText
+("BSS837X2S = " + QString::number(BSS837X2S));
+BSS837X2T_label->setText
+("BSS837X2T = " + QString::number(BSS837X2T));
+BSS837X2W_label->setText
+("BSS837X2W = " + QString::number(BSS837X2W));
+BSS837X2X_label->setText
+("BSS837X2X = " + QString::number(BSS837X2X));
+BSS837X2Z_label->setText
+("BSS837X2Z = " + QString::number(BSS837X2Z));
+BSS837X2b_label->setText
+("BSS837X2b = " + QString::number(BSS837X2b));
+BSS837X2c_label->setText
+("BSS837X2c = " + QString::number(BSS837X2c));
+BSS837X2f_label->setText
+("BSS837X2f = " + QString::number(BSS837X2f));
+BSS837X2g_label->setText
+("BSS837X2g = " + QString::number(BSS837X2g));
+BSS837X2k_label->setText
+("BSS837X2k = " + QString::number(BSS837X2k));
+BSS837X2m_label->setText
+("BSS837X2m = " + QString::number(BSS837X2m));
+BSS837X1p_label->setText
+("BSS837X1p = " + QString::number(BSS837X1p));
+BSS837X3C_label->setText
+("BSS837X3C = " + QString::number(BSS837X3C));
+BSS837X3N_label->setText
+("BSS837X3N = " + QString::number(BSS837X3N));
+BSS837X2V_label->setText
+("BSS837X2V = " + QString::number(BSS837X2V));
+BSS837X2i_label->setText
+("BSS837X2i = " + QString::number(BSS837X2i));
+BSS837X2p_label->setText
+("BSS837X2p = " + QString::number(BSS837X2p));
+BSS837X1T_label->setText
+("BSS837X1T = " + QString::number(BSS837X1T));
+BSS837X1n_label->setText
+("BSS837X1n = " + QString::number(BSS837X1n));
+BSS837X1v_label->setText
+("BSS837X1v = " + QString::number(BSS837X1v));
+BSS837X1z_label->setText
+("BSS837X1z = " + QString::number(BSS837X1z));
+BSS837X1FF_label->setText
+("BSS837X1FF = " + QString::number(BSS837X1FF));
+BSS837X1HH_label->setText
+("BSS837X1HH = " + QString::number(BSS837X1HH));
+BSS837X3A_label->setText
+("BSS837X3A = " + QString::number(BSS837X3A));
+BSS837X3E_label->setText
+("BSS837X3E = " + QString::number(BSS837X3E));
+BSS837X3L_label->setText
+("BSS837X3L = " + QString::number(BSS837X3L));
+BSS837X3R_label->setText
+("BSS837X3R = " + QString::number(BSS837X3R));
+BSS837X3T_label->setText
+("BSS837X3T = " + QString::number(BSS837X3T));
+BSS837X2J_label->setText
+("BSS837X2J = " + QString::number(BSS837X2J));
+BSS837X2U_label->setText
+("BSS837X2U = " + QString::number(BSS837X2U));
+BSS837X2Y_label->setText
+("BSS837X2Y = " + QString::number(BSS837X2Y));
+BSS837X2a_label->setText
+("BSS837X2a = " + QString::number(BSS837X2a));
+BSS837X2d_label->setText
+("BSS837X2d = " + QString::number(BSS837X2d));
+BSS837X2e_label->setText
+("BSS837X2e = " + QString::number(BSS837X2e));
+BSS837X2h_label->setText
+("BSS837X2h = " + QString::number(BSS837X2h));
+BSS837X2j_label->setText
+("BSS837X2j = " + QString::number(BSS837X2j));
+BSS837X2n_label->setText
+("BSS837X2n = " + QString::number(BSS837X2n));
+BSS837X2q_label->setText
+("BSS837X2q = " + QString::number(BSS837X2q));
+BSS837X2r_label->setText
+("BSS837X2r = " + QString::number(BSS837X2r));
+
+}
+
+void emergencyalarm_navigator_1::m_togglebutton_R()
+{
+    QObject* obj;
+    obj = QObject::sender();
+    if(obj == BSS837X1A_on_button)
+    {
+        m_RedButton(BSS837X1A_on_button, &BSS837X1A);
+    }
+    if(obj == BSS837X1C_on_button)
+    {
+    m_RedButton(BSS837X1C_on_button, &BSS837X1C);
+    }
+    if(obj == BSS837X1E_on_button)
+    {
+    m_RedButton(BSS837X1E_on_button, &BSS837X1E);
+    }
+    if(obj == BSS837X1G_on_button)
+    {
+    m_RedButton(BSS837X1G_on_button, &BSS837X1G);
+    }
+    if(obj == BSS837X1J_on_button)
+    {
+    m_RedButton(BSS837X1J_on_button, &BSS837X1J);
+    }
+    if(obj == BSS837X1N_on_button)
+    {
+    m_RedButton(BSS837X1N_on_button, &BSS837X1N);
+    }
+    if(obj == BSS837X1R_on_button)
+    {
+    m_RedButton(BSS837X1R_on_button, &BSS837X1R);
+    }
+    if(obj == BSS837X1V_on_button)
+    {
+    m_RedButton(BSS837X1V_on_button, &BSS837X1V);
+    }
+    if(obj == BSS837X1L_on_button)
+    {
+    m_RedButton(BSS837X1L_on_button, &BSS837X1L);
+    }
+    if(obj == BSS837X1X_on_button)
+    {
+    m_RedButton(BSS837X1X_on_button, &BSS837X1X);
+    }
+    if(obj == BSS837X1Z_on_button)
+    {
+    m_RedButton(BSS837X1Z_on_button, &BSS837X1Z);
+    }
+    if(obj == BSS837X1b_on_button)
+    {
+    m_RedButton(BSS837X1b_on_button, &BSS837X1b);
+    }
+    if(obj == BSS837X1d_on_button)
+    {
+    m_RedButton(BSS837X1d_on_button, &BSS837X1d);
+    }
+    if(obj == BSS837X1f_on_button)
+    {
+    m_RedButton(BSS837X1f_on_button, &BSS837X1f);
+    }
+    if(obj == BSS837X1h_on_button)
+    {
+    m_RedButton(BSS837X1h_on_button, &BSS837X1h);
+    }
+    if(obj == BSS837X1j_on_button)
+    {
+    m_RedButton(BSS837X1j_on_button, &BSS837X1j);
+    }
+    if(obj == BSS837X1r_on_button)
+    {
+    m_RedButton(BSS837X1r_on_button, &BSS837X1r);
+    }
+    if(obj == BSS837X1t_on_button)
+    {
+    m_RedButton(BSS837X1t_on_button, &BSS837X1t);
+    }
+    if(obj == BSS837X1x_on_button)
+    {
+    m_RedButton(BSS837X1x_on_button, &BSS837X1x);
+    }
+    if(obj == BSS837X1BB_on_button)
+    {
+    m_RedButton(BSS837X1BB_on_button, &BSS837X1BB);
+    }
+    if(obj == BSS837X1DD_on_button)
+    {
+    m_RedButton(BSS837X1DD_on_button, &BSS837X1DD);
+    }
+    if(obj == BSS837X1KK_on_button)
+    {
+    m_RedButton(BSS837X1KK_on_button, &BSS837X1KK);
+    }
+    if(obj == BSS837X1MM_on_button)
+    {
+    m_RedButton(BSS837X1MM_on_button, &BSS837X1MM);
+    }
+    if(obj == BSS837X3G_on_button)
+    {
+    m_RedButton(BSS837X3G_on_button, &BSS837X3G);
+    }
+    if(obj == BSS837X3J_on_button)
+    {
+    m_RedButton(BSS837X3J_on_button, &BSS837X3J);
+    }
+    if(obj == BSS837X1p_on_button)
+    {
+    m_RedButton(BSS837X1p_on_button, &BSS837X1p);
+    }
+    if(obj == BSS837X3C_on_button)
+    {
+    m_RedButton(BSS837X3C_on_button, &BSS837X3C);
+    }
+    if(obj == BSS837X3N_on_button)
+    {
+    m_RedButton(BSS837X3N_on_button, &BSS837X3N);
+    }
+    if(obj == BSS837X1T_on_button)
+    {
+    m_RedButton(BSS837X1T_on_button, &BSS837X1T);
+    }
+    if(obj == BSS837X1n_on_button)
+    {
+    m_RedButton(BSS837X1n_on_button, &BSS837X1n);
+    }
+    if(obj == BSS837X1v_on_button)
+    {
+    m_RedButton(BSS837X1v_on_button, &BSS837X1v);
+    }
+    if(obj == BSS837X1z_on_button)
+    {
+    m_RedButton(BSS837X1z_on_button, &BSS837X1z);
+    }
+    if(obj == BSS837X1FF_on_button)
+    {
+    m_RedButton(BSS837X1FF_on_button, &BSS837X1FF);
+    }
+    if(obj == BSS837X1HH_on_button)
+    {
+    m_RedButton(BSS837X1HH_on_button, &BSS837X1HH);
+    }
+    if(obj == BSS837X3A_on_button)
+    {
+    m_RedButton(BSS837X3A_on_button, &BSS837X3A);
+    }
+    if(obj == BSS837X3E_on_button)
+    {
+    m_RedButton(BSS837X3E_on_button, &BSS837X3E);
+    }
+    if(obj == BSS837X3L_on_button)
+    {
+    m_RedButton(BSS837X3L_on_button, &BSS837X3L);
+    }
+    if(obj == BSS837X3R_on_button)
+    {
+    m_RedButton(BSS837X3R_on_button, &BSS837X3R);
+    }
+    if(obj == BSS837X3T_on_button)
+    {
+    m_RedButton(BSS837X3T_on_button, &BSS837X3T);
+    }
+
+
+}
+void emergencyalarm_navigator_1::m_RedButton(QPushButton* button, bool* clue)
+{
+    bool pressed;
+    pressed = *clue;
+    if(pressed == false)
+    {
+        *clue = true;
+        button->setStyleSheet("background-color: red");
+    }
+    if(pressed == true)
+    {
+        *clue = false;
+        button->setStyleSheet("");
+    }
+
 }

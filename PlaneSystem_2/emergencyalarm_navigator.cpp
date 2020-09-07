@@ -540,7 +540,7 @@ BSS926X3T_on_button = new QPushButton("BSS926X3T",this);
     layout_navigator_main->addLayout(layout_navigator_labels_1);
     layout_navigator_main->addLayout(layout_navigator_buttons);
     wgt_navigator.setLayout(layout_navigator_main);
-    wgt_navigator.setFixedWidth(500);
+//    wgt_navigator.setFixedWidth(500);
     wgt_navigator.setFixedHeight(1000);
 
 }

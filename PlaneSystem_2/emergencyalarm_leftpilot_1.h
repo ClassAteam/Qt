@@ -6,6 +6,8 @@
 #include <QLineEdit>
 
 extern bool
+PCSOZHLL,
+PCSOKLL,
 PKLLL,
 PRBSS_812,
 S1_3364,

@@ -1172,24 +1172,24 @@ void emergencyalarm_navigator_1::logic_navigator_1()
             BSS837X2b = true;
             if(PZH837_X1BB_b == true)
             {
-                PZH837_X1x = false;
+                PZH837_X1BB = false;
             }
             else
             {
-                PZH837_X1x = true;
+                PZH837_X1BB = true;
             }
         }
         else
         {
             BSS837X2b = false;
-            PZH837_X1x_b = false;
-            PZH837_X1x = false;
+            PZH837_X1BB_b = false;
+            PZH837_X1BB = false;
         }
 
 
         if(S3_3364 == true)
         {
-            PZH837_X1x_b = true;
+            PZH837_X1BB_b = true;
         }
 
         ///////////////Yellow lights
@@ -1235,15 +1235,15 @@ void emergencyalarm_navigator_1::logic_navigator_1()
         }
         else
         {
-            BSS837X2c = false;
-            PZH837_X1DD_b = false;
-            PZH837_X1DD = false;
+            BSS837X2f = false;
+            PZH837_X1KK_b = false;
+            PZH837_X1KK = false;
         }
 
 
         if(S3_3364 == true)
         {
-            PZH837_X1DD_b = true;
+            PZH837_X1KK_b = true;
         }
         ///////////////Yellow lights
         //////////////23
@@ -1261,7 +1261,7 @@ void emergencyalarm_navigator_1::logic_navigator_1()
         }
         else
         {
-            BSS837X2c = false;
+            BSS837X2g = false;
             PZH837_X1MM_b = false;
             PZH837_X1MM = false;
         }
@@ -1580,8 +1580,8 @@ void emergencyalarm_navigator_1::logic_navigator_1()
 
         if(PKLSHO == true)
         {
-            PCSOZHSHO_2 = true;
-            PCSOKSHO_2 = true;
+            PCSOZHSHO = true;
+            PCSOKSHO = true;
             BSS837X2A = true;
             BSS837X2B = true;
             BSS837X2C = true;
@@ -1623,27 +1623,7 @@ void emergencyalarm_navigator_1::logic_navigator_1()
             BSS837X2r = true;
         }
 
-        if(
-                PCSOZHSHO_1 == true ||
-                PCSOZHSHO_2 == true)
-        {
-            PCSOZHSHO = true;
-        }
-        else
-        {
-            PCSOZHSHO = false;
-        }
-
-        if(
-                PCSOKPL_1 == true)
-        {
-            PCSOKSHO = true;
-        }
-        else
-        {
-            PCSOKSHO = false;
-        }
-    }
+   }
     else
     {
         PCSOZHSHO = false;

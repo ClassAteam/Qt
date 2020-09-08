@@ -316,6 +316,10 @@ emergencyalarm_navigator_2::emergencyalarm_navigator_2(QWidget* pwgt)
     BSS838X6r_label = new QLabel;
     BSS838X5E_label = new QLabel;
     BSS838X5N_label = new QLabel;
+    BSS838X5MM_label = new QLabel;
+    BSS838X7A_label = new QLabel;
+    BSS838X7C_label = new QLabel;
+    BSS838X7G_label = new QLabel;
     BSS838X7L_label = new QLabel;
     BSS838X7N_label = new QLabel;
     BSS838X6C_label = new QLabel;
@@ -372,6 +376,10 @@ emergencyalarm_navigator_2::emergencyalarm_navigator_2(QWidget* pwgt)
     BSS838X7T_on_button = new QPushButton("BSS838X7T", this);
     BSS838X5E_on_button = new QPushButton("BSS838X5E", this);
     BSS838X5N_on_button = new QPushButton("BSS838X5N", this);
+    BSS838X5MM_on_button = new QPushButton("BSS838X5MM", this);
+    BSS838X7A_on_button = new QPushButton("BSS838X7A", this);
+    BSS838X7C_on_button = new QPushButton("BSS838X7C", this);
+    BSS838X7G_on_button = new QPushButton("BSS838X7G", this);
     BSS838X7L_on_button = new QPushButton("BSS838X7L", this);
     BSS838X7N_on_button = new QPushButton("BSS838X7N", this);
     BSS838X5C_on_button = new QPushButton("BSS838X5C", this);
@@ -426,6 +434,14 @@ emergencyalarm_navigator_2::emergencyalarm_navigator_2(QWidget* pwgt)
 (BSS838X5E_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
     QObject::connect
 (BSS838X5N_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS838X5MM_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS838X7A_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS838X7C_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
+    QObject::connect
+(BSS838X7G_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
     QObject::connect
 (BSS838X7L_on_button, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
     QObject::connect
@@ -501,6 +517,10 @@ emergencyalarm_navigator_2::emergencyalarm_navigator_2(QWidget* pwgt)
     layout_navigator_2_labels->addWidget(BSS838X6r_label);
     layout_navigator_2_labels->addWidget(BSS838X5E_label);
     layout_navigator_2_labels_1->addWidget(BSS838X5N_label);
+    layout_navigator_2_labels_1->addWidget(BSS838X5MM_label);
+    layout_navigator_2_labels_1->addWidget(BSS838X7A_label);
+    layout_navigator_2_labels_1->addWidget(BSS838X7C_label);
+    layout_navigator_2_labels_1->addWidget(BSS838X7G_label);
     layout_navigator_2_labels_1->addWidget(BSS838X7L_label);
     layout_navigator_2_labels_1->addWidget(BSS838X7N_label);
     layout_navigator_2_labels_1->addWidget(BSS838X6C_label);
@@ -557,6 +577,10 @@ emergencyalarm_navigator_2::emergencyalarm_navigator_2(QWidget* pwgt)
     layout_navigator_2_buttons->addWidget(BSS838X7T_on_button);
     layout_navigator_2_buttons->addWidget(BSS838X5E_on_button);
     layout_navigator_2_buttons->addWidget(BSS838X5N_on_button);
+    layout_navigator_2_buttons->addWidget(BSS838X5MM_on_button);
+    layout_navigator_2_buttons->addWidget(BSS838X7A_on_button);
+    layout_navigator_2_buttons->addWidget(BSS838X7C_on_button);
+    layout_navigator_2_buttons->addWidget(BSS838X7G_on_button);
     layout_navigator_2_buttons->addWidget(BSS838X7L_on_button);
     layout_navigator_2_buttons->addWidget(BSS838X7N_on_button);
     layout_navigator_2_buttons->addWidget(BSS838X5C_on_button);
@@ -615,13 +639,13 @@ void emergencyalarm_navigator_2::logic_navigator_2()
         //////////////13
         yellow(&BSS838X5HH, &BSS838X6e, &PZH838_X5HH, &PZH838_X5HH_b, &S3_3364);
         //////////////14
-        yellow(&BSS838X7E, &BSS838X6j, &PZH838_X7E, &PZH838_X7E, &S3_3364);
+        yellow(&BSS838X7E, &BSS838X6j, &PZH838_X7E, &PZH838_X7E_b, &S3_3364);
         //////////////15
-        yellow(&BSS838X7J, &BSS838X6m, &PZH838_X7J, &PZH838_X7J, &S3_3364);
+        yellow(&BSS838X7J, &BSS838X6m, &PZH838_X7J, &PZH838_X7J_b, &S3_3364);
         //////////////16
-        yellow(&BSS838X7R, &BSS838X6q, &PZH838_X7R, &PZH838_X7R, &S3_3364);
+        yellow(&BSS838X7R, &BSS838X6q, &PZH838_X7R, &PZH838_X7R_b, &S3_3364);
         //////////////17
-        yellow(&BSS838X7T, &BSS838X6r, &PZH838_X7T, &PZH838_X7T, &S3_3364);
+        yellow(&BSS838X7T, &BSS838X6r, &PZH838_X7T, &PZH838_X7T_b, &S3_3364);
 
         //PCSOZHSHO toggle
         if(  PZH838_X5A == true  ||
@@ -640,24 +664,7 @@ void emergencyalarm_navigator_2::logic_navigator_2()
             PZH838_X7E == true ||
             PZH838_X7J == true ||
             PZH838_X7R == true ||
-            PZH838_X7T == true ||
-            PZH838_X5A_b == true ||
-            PZH838_X5J_b == true ||
-            PZH838_X5T_b == true ||
-            PZH838_X5V_b == true ||
-            PZH838_X5Z_b == true ||
-            PZH838_X5d_b == true ||
-            PZH838_X5h_b == true ||
-            PZH838_X5n_b == true ||
-            PZH838_X5p_b == true ||
-            PZH838_X5v_b == true ||
-            PZH838_X5z_b == true ||
-            PZH838_X5DD_b == true ||
-            PZH838_X5HH_b == true ||
-            PZH838_X7E_b == true ||
-            PZH838_X7J_b == true ||
-            PZH838_X7R_b == true ||
-            PZH838_X7T_b == true)
+            PZH838_X7T == true)
         {
 
             PCSOZHSHO_3 = true;
@@ -687,46 +694,21 @@ void emergencyalarm_navigator_2::logic_navigator_2()
         yellow(&BSS838X7N, &BSS838X6p, &PK838_X7N, &PK838_X7N_b, &S3_3364);
 
         //PCSOZHSHO toggle
-        if(  PZH838_X5A == true  ||
-    PZH838_X5J == true ||
-    PZH838_X5T == true ||
-    PZH838_X5V == true ||
-    PZH838_X5Z == true ||
-    PZH838_X5d == true ||
-    PZH838_X5h == true ||
-    PZH838_X5n == true ||
-    PZH838_X5p == true ||
-    PZH838_X5v == true ||
-    PZH838_X5z == true ||
-    PZH838_X5DD == true ||
-    PZH838_X5HH == true ||
-    PZH838_X7E == true ||
-    PZH838_X7J == true ||
-    PZH838_X7R == true ||
-    PZH838_X7T == true ||
-    PZH838_X5A_b == true ||
-    PZH838_X5J_b == true ||
-    PZH838_X5T_b == true ||
-    PZH838_X5V_b == true ||
-    PZH838_X5Z_b == true ||
-    PZH838_X5d_b == true ||
-    PZH838_X5h_b == true ||
-    PZH838_X5n_b == true ||
-    PZH838_X5p_b == true ||
-    PZH838_X5v_b == true ||
-    PZH838_X5z_b == true ||
-    PZH838_X5DD_b == true ||
-    PZH838_X5HH_b == true ||
-    PZH838_X7E_b == true ||
-    PZH838_X7J_b == true ||
-    PZH838_X7R_b == true ||
-    PZH838_X7T_b == true)
+        if(
+        PK838_X5E == true ||
+        PK838_X5N == true ||
+        PK838_X5MM == true ||
+        PK838_X7A == true ||
+        PK838_X7C == true ||
+        PK838_X7G == true ||
+        PK838_X7L == true ||
+        PK838_X7N == true)
         {
-            PCSOZHSHO_3 = true;
+            PCSOKSHO_3 = true;
         }
         else
         {
-            PCSOZHSHO_3 = false;
+            PCSOKSHO_3 = false;
         }
 
       //////////////White lights_1
@@ -761,8 +743,8 @@ void emergencyalarm_navigator_2::logic_navigator_2()
 
         if(PKLSHO == true)
         {
-            PCSOZHSHO_3 = true;
-            PCSOKSHO_3 = true;
+        PCSOZHSHO = true;
+        PCSOKSHO = true;
         BSS838X6A = true;
         BSS838X6E = true;
         BSS838X6J = true;
@@ -1001,6 +983,14 @@ BSS838X5E_label->setText
 ("BSS838X5E = " + QString::number(BSS838X5E));
 BSS838X5N_label->setText
 ("BSS838X5N = " + QString::number(BSS838X5N));
+BSS838X5MM_label->setText
+("BSS838X5MM = " + QString::number(BSS838X5MM));
+BSS838X7A_label->setText
+("BSS838X7A = " + QString::number(BSS838X7A));
+BSS838X7C_label->setText
+("BSS838X7C = " + QString::number(BSS838X7C));
+BSS838X7G_label->setText
+("BSS838X7G = " + QString::number(BSS838X7G));
 BSS838X7L_label->setText
 ("BSS838X7L = " + QString::number(BSS838X7L));
 BSS838X7N_label->setText
@@ -1196,6 +1186,22 @@ void emergencyalarm_navigator_2::m_togglebutton_R()
     if(obj == BSS838X5N_on_button)
     {
     m_RedButton(BSS838X5N_on_button, &BSS838X5N);
+    }
+    if(obj == BSS838X5MM_on_button)
+    {
+    m_RedButton(BSS838X5MM_on_button, &BSS838X5MM);
+    }
+    if(obj == BSS838X7A_on_button)
+    {
+    m_RedButton(BSS838X7A_on_button, &BSS838X7A);
+    }
+    if(obj == BSS838X7C_on_button)
+    {
+    m_RedButton(BSS838X7C_on_button, &BSS838X7C);
+    }
+    if(obj == BSS838X7G_on_button)
+    {
+    m_RedButton(BSS838X7G_on_button, &BSS838X7G);
     }
     if(obj == BSS838X7L_on_button)
     {

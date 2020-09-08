@@ -64,6 +64,10 @@ public:
     QLabel* BSS838X6r_label;
     QLabel* BSS838X5E_label;
     QLabel* BSS838X5N_label;
+    QLabel* BSS838X5MM_label;
+    QLabel* BSS838X7A_label;
+    QLabel* BSS838X7C_label;
+    QLabel* BSS838X7G_label;
     QLabel* BSS838X7L_label;
     QLabel* BSS838X7N_label;
     QLabel* BSS838X6C_label;
@@ -120,6 +124,10 @@ public:
     QPushButton* BSS838X7T_on_button;
     QPushButton* BSS838X5E_on_button;
     QPushButton* BSS838X5N_on_button;
+    QPushButton* BSS838X5MM_on_button;
+    QPushButton* BSS838X7A_on_button;
+    QPushButton* BSS838X7C_on_button;
+    QPushButton* BSS838X7G_on_button;
     QPushButton* BSS838X7L_on_button;
     QPushButton* BSS838X7N_on_button;
     QPushButton* BSS838X5C_on_button;

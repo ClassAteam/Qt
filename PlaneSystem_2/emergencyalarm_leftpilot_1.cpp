@@ -1264,8 +1264,8 @@ int emergencyalarm_leftpilot_1::logic_leftpilot_1()
 
         if(PKLLL == true)
         {
-            PCSOZHLL_2 = true;
-            PCSOKLL_2 = true;
+            PCSOZHLL = true;
+            PCSOKLL = true;
         BSS812X6T = true;
         BSS812X6V = true;
         BSS812X6e = true;

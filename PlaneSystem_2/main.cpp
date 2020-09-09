@@ -25,6 +25,7 @@
 #include <emergencyalarm_navigator.h>
 #include <emergencyalarm_navigator_1.h>
 #include <emergencyalarm_navigator_2.h>
+#include <landinggear_sashes.h>
 
 const double TICK = 200;
 
@@ -55,6 +56,7 @@ int main(int argc, char *argv[])
     emergencyalarm_navigator navigator;
     emergencyalarm_navigator_1 navigator_1;
     emergencyalarm_navigator_2 navigator_2;
+    landinggear_sashes sashes;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -128,6 +130,14 @@ int main(int argc, char *argv[])
     window_emergencyalarm_1.setWindowState(Qt::WindowFullScreen);
     window_emergencyalarm_1.show();
 
+    QWidget window_landinggear;
+    QHBoxLayout layout_landinggear;
+    layout_landinggear.addWidget(&sashes.wgt_sashes);
+    window_landinggear.setLayout(&layout_landinggear);
+    window_landinggear.setWindowTitle("Landing Gear");
+    window_landinggear.setWindowState(Qt::WindowFullScreen);
+    window_landinggear.show();
+
 //    QObject::connect(timer, SIGNAL(timeout()),
 //                     &logic_valve , SLOT(logic_valves()));
 //    QObject::connect(timer, SIGNAL(timeout()),
@@ -176,6 +186,8 @@ int main(int argc, char *argv[])
                      &navigator_1 , SLOT(logic_navigator_1()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &navigator_2 , SLOT(logic_navigator_2()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &sashes , SLOT(logic_sashes()));
 
     timer->start(TICK);
     return a.exec();

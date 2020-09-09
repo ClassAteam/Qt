@@ -40,6 +40,7 @@ SOURCES += \
     emergencyalarm_rightpilot.cpp \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
+    landinggear_carts.cpp \
     landinggear_sashes.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -70,6 +71,7 @@ HEADERS += \
     emergencyalarm_rightpilot.h \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \
+    landinggear_carts.h \
     landinggear_sashes.h \
     main.h \
     mainwindow.h \

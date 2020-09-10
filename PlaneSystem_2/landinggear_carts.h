@@ -15,6 +15,8 @@ GK_ush;
 
 extern double
 Pgs2,
+delta_racks_l,
+delta_racks_p,
 delta_sh_l,
 delta_sh_p,
 delta_stv_l,

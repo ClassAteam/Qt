@@ -27,6 +27,8 @@
 #include <emergencyalarm_navigator_2.h>
 #include <landinggear_sashes.h>
 #include <landinggear_carts.h>
+#include <landinggear_racks.h>
+#include <landinggear_racks_rel.h>
 
 const double TICK = 200;
 
@@ -59,6 +61,8 @@ int main(int argc, char *argv[])
     emergencyalarm_navigator_2 navigator_2;
     landinggear_sashes sashes;
     landinggear_carts carts;
+    landinggear_racks racks;
+    landinggear_racks_rel racks_rel;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -136,6 +140,8 @@ int main(int argc, char *argv[])
     QHBoxLayout layout_landinggear;
     layout_landinggear.addWidget(&sashes.wgt_sashes);
     layout_landinggear.addWidget(&carts.wgt_carts);
+    layout_landinggear.addWidget(&racks.wgt_racks);
+    layout_landinggear.addWidget(&racks_rel.wgt_racks_rel);
     window_landinggear.setLayout(&layout_landinggear);
     window_landinggear.setWindowTitle("Landing Gear");
     window_landinggear.setWindowState(Qt::WindowFullScreen);
@@ -193,6 +199,10 @@ int main(int argc, char *argv[])
                      &sashes , SLOT(logic_sashes()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &carts , SLOT(logic_carts()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &racks , SLOT(logic_racks()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &racks_rel , SLOT(logic_racks_rel()));
 
     timer->start(TICK);
     return a.exec();

@@ -81,33 +81,37 @@ landinggear_carts::landinggear_carts(QWidget* pwgt)
 
     layout_carts_main->addLayout(layout_carts_labels);
     wgt_carts.setLayout(layout_carts_main);
-    wgt_carts.setFixedWidth(400);
     wgt_carts.setFixedHeight(1000);
 
 }
 void landinggear_carts::logic_carts()
 {
+    //Ddelta_stv toggling
+    if (Pgs2 >= 130.0 && Pgs2 < 280.0)
+    {
+        Ddelta_tel = two_points_to_Y(Pgs2, 130.0, 280.0, 0.0, 0.25);
+    }
+    if (Pgs2 >= 280.0)
+    {
+        Ddelta_tel = 0.25;
+    }
+
         if (GK_oovsh == false)
         {
 
-            //Ddelta_stv toggling
-            if (Pgs2 >= 130.0 && Pgs2 < 280.0)
-            {
-                Ddelta_tel = two_points_to_Y(Pgs2, 130.0, 280.0, 0.0, 0.25);
-            }
-            if (Pgs2 >= 280.0)
-            {
-                Ddelta_tel = 0.25;
-            }
 
             // release loop
             if (GK_vsh == true && GK_ush == false)
             {
-                if(delta_tel_l != 1)
+                if(delta_tel_l != 1 &&
+                        delta_stv_l == 90 &&
+                        delta_sh_l > 0.4)
                 {
                     carts_left_tick++;
                 }
-                if(delta_tel_p != 1)
+                if(delta_tel_p != 1 &&
+                        delta_stv_p == 90 &&
+                        delta_sh_p > 0.4)
                 {
                     carts_right_tick++;
                 }
@@ -124,11 +128,11 @@ void landinggear_carts::logic_carts()
             // intake loop
             if (GK_ush == true && GK_vsh == false)
             {
-                if(delta_tel_l != 0 && fi_sh_l == 1)
+                if(delta_tel_l != 0 && delta_racks_l == 0)
                 {
                     carts_left_tick++;
                 }
-                if(delta_tel_p != 0 && fi_sh_p == 1)
+                if(delta_tel_p != 0 && delta_racks_p == 0)
                 {
                     carts_right_tick++;
                 }

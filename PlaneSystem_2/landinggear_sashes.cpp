@@ -199,7 +199,6 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     layout_sashes_main->addLayout(layout_sashes_labels);
     layout_sashes_main->addLayout(layout_sashes_buttons);
     wgt_sashes.setLayout(layout_sashes_main);
-    wgt_sashes.setFixedWidth(400);
     wgt_sashes.setFixedHeight(1000);
 }
 void landinggear_sashes::logic_sashes()

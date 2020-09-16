@@ -2289,7 +2289,7 @@ int emergencyalarm_leftpilot::logic_leftpilot()
     layout_leftpilot_main->addLayout(layout_leftpilot_buttons_1);
     wgt_leftpilot.setLayout(layout_leftpilot_main);
     wgt_leftpilot.setFixedWidth(500);
-    wgt_leftpilot.setFixedHeight(1000);
+    wgt_leftpilot.setFixedHeight(1400);
 }
 
 int emergencyalarm_leftpilot::m_S1_3364_on()

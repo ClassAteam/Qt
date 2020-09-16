@@ -104,7 +104,7 @@ landinggear_racks_rel::landinggear_racks_rel(QWidget* pwgt)
 
     layout_racks_rel_main->addLayout(layout_racks_rel_labels);
     wgt_racks_rel.setLayout(layout_racks_rel_main);
-    wgt_racks_rel.setFixedHeight(1000);
+    wgt_racks_rel.setFixedHeight(1400);
 
 
 
@@ -218,26 +218,29 @@ void landinggear_racks_rel::logic_racks_rel()
                if(delta_sh_l != 1  && GK_avl == true)
                 {
                     racks_rel_left_tick++;
+                    emit presure_retake(&P_bal_l);
                 }
                if(delta_sh_p != 1  && GK_avp == true)
                 {
                     racks_rel_right_tick++;
+                    emit presure_retake(&P_bal_p);
                 }
                if(delta_sh_n != 1  && GK_avn == true)
                 {
                     racks_rel_nose_tick++;
+                    emit presure_retake(&P_bal_per);
                 }
 
                 //releasing left
-               releasing_loop(&delta_sh_l, &Ddelta_racks_rel,
+               releasing_loop(&delta_sh_l, &Ddelta_racks_rel_l,
                               &racks_rel_left_tick, &racks_rel_left_tick_sec);
 
                //releasing right
-               releasing_loop(&delta_sh_p, &Ddelta_racks_rel,
+               releasing_loop(&delta_sh_p, &Ddelta_racks_rel_p,
                               &racks_rel_right_tick, &racks_rel_right_tick_sec);
 
                //releasing nose
-               releasing_loop(&delta_sh_n, &Ddelta_racks_rel,
+               releasing_loop(&delta_sh_n, &Ddelta_racks_rel_n,
                               &racks_rel_nose_tick, &racks_rel_nose_tick_sec);
         }
         if(GK_oovsh == false && GK_vsh == false && GK_ush == false)
@@ -297,19 +300,19 @@ void landinggear_racks_rel::releasing_loop(double* delta, double* D_delta,
     {
         if(((*tick) * TICK) >= 1000)
         {
-        (*sec_tick)++;
-        *tick = 0;
+            (*sec_tick)++;
+            *tick = 0;
         }
 
         if((*sec_tick) >= 1)
         {
-        *delta = (*delta + ((*D_delta / (1000 / TICK))));
+            *delta = (*delta + ((*D_delta / (1000 / TICK))));
         }
 
         if(*delta >= 1)
         {
-        *delta = 1;
-        *tick = 0;
+            *delta = 1;
+            *tick = 0;
         }
     }
 }

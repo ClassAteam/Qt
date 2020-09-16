@@ -61,9 +61,14 @@ public slots:
     void logic_sashes();
     void releasing_loop(double* delta, double* D_delta,
                         int* tick, int* sec_tick, bool* clue);
+    void balloon_presure(double* P_bal);
     void intake_loop(double* delta, int* tick, int* sec_tick, bool* clue);
     void m_togglebutton_R();
+    void m_InputForBalloons(QLineEdit* field, double* value, double* V_bal);
     void m_DoubleInput(QLineEdit* field, double* value);
     void m_RedButton(QPushButton* button, bool* clue);
+
+signals:
+    void presure_retake(double *P_bal);
 };
 

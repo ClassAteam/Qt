@@ -43,6 +43,7 @@ SOURCES += \
     landinggear_carts.cpp \
     landinggear_racks.cpp \
     landinggear_racks_rel.cpp \
+    landinggear_relay.cpp \
     landinggear_sashes.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -76,6 +77,7 @@ HEADERS += \
     landinggear_carts.h \
     landinggear_racks.h \
     landinggear_racks_rel.h \
+    landinggear_relay.h \
     landinggear_sashes.h \
     main.h \
     mainwindow.h \

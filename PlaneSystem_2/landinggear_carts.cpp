@@ -81,20 +81,21 @@ landinggear_carts::landinggear_carts(QWidget* pwgt)
 
     layout_carts_main->addLayout(layout_carts_labels);
     wgt_carts.setLayout(layout_carts_main);
-    wgt_carts.setFixedHeight(1000);
+    wgt_carts.setFixedHeight(1400);
 
 }
 void landinggear_carts::logic_carts()
 {
     //Ddelta_stv toggling
-    if (Pgs2 >= 130.0 && Pgs2 < 280.0)
-    {
-        Ddelta_tel = two_points_to_Y(Pgs2, 130.0, 280.0, 0.0, 0.25);
-    }
-    if (Pgs2 >= 280.0)
-    {
-        Ddelta_tel = 0.25;
-    }
+//    if (Pgs2 >= 130.0 && Pgs2 < 280.0)
+//    {
+//        Ddelta_tel = two_points_to_Y(Pgs2, 130.0, 280.0, 0.0, 0.25);
+//    }
+//    if (Pgs2 >= 280.0)
+//    {
+//        Ddelta_tel = 0.25;
+//    }
+    Ddelta_tel = 0.25;
 
         if (GK_oovsh == false)
         {

@@ -2050,7 +2050,7 @@ BSS824X2i_label->setText
     layout_rightpilot_main->addLayout(layout_rightpilot_buttons_1);
     wgt_rightpilot.setLayout(layout_rightpilot_main);
 //    wgt_rightpilot.setFixedWidth(500);
-    wgt_rightpilot.setFixedHeight(1000);
+    wgt_rightpilot.setFixedHeight(1400);
 }
 void emergencyalarm_rightpilot::m_togglebutton_R()
 {

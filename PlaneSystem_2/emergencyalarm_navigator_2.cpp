@@ -603,7 +603,7 @@ emergencyalarm_navigator_2::emergencyalarm_navigator_2(QWidget* pwgt)
     layout_navigator_2_main->addLayout(layout_navigator_2_buttons);
     wgt_navigator_2.setLayout(layout_navigator_2_main);
 //    wgt_navigator_2.setFixedWidth(500);
-    wgt_navigator_2.setFixedHeight(1000);
+    wgt_navigator_2.setFixedHeight(1400);
 
 
 }

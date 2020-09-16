@@ -2004,7 +2004,7 @@ BSS913X2p_label->setText
     layout_leftpilot_2_main->addLayout(layout_leftpilot_2_buttons_1);
     wgt_leftpilot_2.setLayout(layout_leftpilot_2_main);
     wgt_leftpilot_2.setFixedWidth(500);
-    wgt_leftpilot_2.setFixedHeight(1000);
+    wgt_leftpilot_2.setFixedHeight(1400);
 }
 
 int emergencyalarm_leftpilot_2::m_BSS913X3A_on()

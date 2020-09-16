@@ -59,4 +59,7 @@ public slots:
     void m_togglebutton_R();
     void m_DoubleInput(QLineEdit* field, double* value);
     void m_RedButton(QPushButton* button, bool* clue);
+signals:
+    void presure_retake(double *P_bal);
+
 };

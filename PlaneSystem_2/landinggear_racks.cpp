@@ -91,7 +91,7 @@ landinggear_racks::landinggear_racks(QWidget* pwgt)
 
     layout_racks_main->addLayout(layout_racks_labels);
     wgt_racks.setLayout(layout_racks_main);
-    wgt_racks.setFixedHeight(1000);
+    wgt_racks.setFixedHeight(1400);
 }
 
 void landinggear_racks::logic_racks()
@@ -171,12 +171,12 @@ void landinggear_racks::logic_racks()
             // emergency left release
             if (P_bal_l >= 60.0)
             {
-                Ddelta_racks_l = two_points_to_Y(P_bal_l, 60.0, 150.0, 0.0, 0.16);
+                Ddelta_racks_l = two_points_to_Y(P_bal_l, 60.0, 150.0, 0.0, 0.3);
             }
 
             if (P_bal_p >= 60.0)
             {
-                Ddelta_racks_p = two_points_to_Y(P_bal_p, 60.0, 150.0, 0.0, 0.16);
+                Ddelta_racks_p = two_points_to_Y(P_bal_p, 60.0, 150.0, 0.0, 0.3);
             }
 
 
@@ -188,6 +188,7 @@ void landinggear_racks::logic_racks()
                         GK_avl == true)
                 {
                     racks_left_tick++;
+                    emit presure_retake(&P_bal_l);
                 }
                 if(delta_racks_p != 1 &&
                         delta_stv_p == 90 &&
@@ -196,6 +197,7 @@ void landinggear_racks::logic_racks()
                         GK_avp == true)
                 {
                     racks_right_tick++;
+                    emit presure_retake(&P_bal_p);
                 }
                 //releasing left
                releasing_loop(&delta_racks_l, &Ddelta_racks_l, &racks_left_tick,

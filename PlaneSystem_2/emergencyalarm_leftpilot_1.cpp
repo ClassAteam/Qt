@@ -1747,7 +1747,7 @@ BSS812X6f_label->setText
     layout_leftpilot_1_main->addLayout(layout_leftpilot_1_buttons_1);
     wgt_leftpilot_1.setLayout(layout_leftpilot_1_main);
     wgt_leftpilot_1.setFixedWidth(500);
-    wgt_leftpilot_1.setFixedHeight(1000);
+    wgt_leftpilot_1.setFixedHeight(1400);
 }
 
 int emergencyalarm_leftpilot_1::m_BSS812X5j_on()

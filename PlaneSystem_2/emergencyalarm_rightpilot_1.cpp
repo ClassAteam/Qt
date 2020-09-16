@@ -569,7 +569,7 @@ QObject::connect
     layout_rightpilot_1_main->addLayout(layout_rightpilot_1_buttons);
     wgt_rightpilot_1.setLayout(layout_rightpilot_1_main);
 //    wgt_rightpilot_1.setFixedWidth(500);
-    wgt_rightpilot_1.setFixedHeight(1000);
+    wgt_rightpilot_1.setFixedHeight(1400);
 
 
 }

@@ -25,17 +25,21 @@ right_tick_sec,
 nose_tick_sec;
 
 double
+Ksho,
 delta_sh_l,
 delta_sh_p,
 delta_sh_n,
 delta_stv_l,
 delta_stv_p,
 delta_stv_n,
-Ddelta_stv, //change the state for second
+Ddelta_stv, //changing state by second
 Ddelta_stv_l,
 Ddelta_stv_p,
 Ddelta_stv_n,
 Pgs2,
+V_bal_l,
+V_bal_p,
+V_bal_n,
 P_bal_l,
 P_bal_p,
 P_bal_per;
@@ -45,6 +49,7 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     : QWidget(pwgt)
 {
     QFont underlined("Arial", 10, QFont::Bold);
+    Ksho = 0.2;
     left_released = 0;
     right_released = 0;
     nose_released = 0;
@@ -68,9 +73,12 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     Ddelta_stv_p = 0;
     Ddelta_stv_n = 0;
     Pgs2 = 0;
-    P_bal_l = 0;
-    P_bal_p = 0;
-    P_bal_per = 0;
+    V_bal_l = 44100;
+    V_bal_p = 44100;
+    V_bal_n = 37000;
+    P_bal_l = 150;
+    P_bal_p = 150;
+    P_bal_per = 150;
 
     delta_sh_l_label = new QLabel;
     delta_sh_p_label = new QLabel;
@@ -199,7 +207,7 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     layout_sashes_main->addLayout(layout_sashes_labels);
     layout_sashes_main->addLayout(layout_sashes_buttons);
     wgt_sashes.setLayout(layout_sashes_main);
-    wgt_sashes.setFixedHeight(1000);
+    wgt_sashes.setFixedHeight(1400);
 }
 void landinggear_sashes::logic_sashes()
 {
@@ -298,14 +306,17 @@ void landinggear_sashes::logic_sashes()
                if(delta_stv_l != 90 && GK_avl == true)
                 {
                     left_tick++;
+                    emit presure_retake(&P_bal_l);
                 }
                 if(delta_stv_p != 90 && GK_avp == true)
                 {
                     right_tick++;
+                    emit presure_retake(&P_bal_p);
                 }
                 if(delta_stv_n != 90 && GK_avn == true)
                 {
                     nose_tick++;
+                    emit presure_retake(&P_bal_per);
                 }
 
                 //releasing left
@@ -327,7 +338,10 @@ void landinggear_sashes::logic_sashes()
             nose_tick_sec = 0;
         }
 
+
         //end logic
+
+
 
         //showing values
     delta_sh_l_label->setText
@@ -385,20 +399,20 @@ void landinggear_sashes::releasing_loop(double* delta, double* D_delta,
     {
         if(((*tick) * TICK) >= 1000)
         {
-        (*sec_tick)++;
-        *tick = 0;
+            (*sec_tick)++;
+            *tick = 0;
         }
 
         if((*sec_tick) >= 1)
         {
-        *delta = (*delta + ((*D_delta / (1000 / TICK))));
+            *delta = (*delta + ((*D_delta / (1000 / TICK))));
         }
 
         if(*delta >= 90)
         {
-        *delta = 90;
-        *clue = true;
-        *tick = 0;
+            *delta = 90;
+            *clue = true;
+            *tick = 0;
         }
     }
 }
@@ -425,7 +439,36 @@ void landinggear_sashes::intake_loop(double* delta, int* tick,
         *tick = 0;
         }
     }
-
+}
+void landinggear_sashes::balloon_presure( double* P_bal)
+{
+    double delta_V_bal;
+    double V_bal;
+    V_bal = 0;
+    if((*P_bal) == P_bal_l)
+    {
+        V_bal = V_bal_l;
+        delta_V_bal = (Ksho * (*P_bal));
+        V_bal = V_bal + delta_V_bal;
+        V_bal_l = V_bal;
+        *P_bal = 6615000 / V_bal;
+    }
+    if((*P_bal) == P_bal_p)
+    {
+        V_bal = V_bal_p;
+        delta_V_bal = (Ksho * (*P_bal));
+        V_bal = V_bal + delta_V_bal;
+        V_bal_p = V_bal;
+        *P_bal = 6615000 / V_bal;
+    }
+    if((*P_bal) == P_bal_per)
+    {
+        V_bal = V_bal_n;
+        delta_V_bal = (Ksho * (*P_bal));
+        V_bal = V_bal + delta_V_bal;
+        V_bal_n = V_bal;
+        *P_bal = 5550000 / V_bal;
+    }
 }
 void landinggear_sashes::m_togglebutton_R()
 {
@@ -434,6 +477,18 @@ void landinggear_sashes::m_togglebutton_R()
     if(obj == Pgs2_edit)
     {
         m_DoubleInput(Pgs2_edit, &Pgs2);
+    }
+    if(obj == P_bal_l_edit)
+    {
+        m_InputForBalloons(P_bal_l_edit, &P_bal_l, &V_bal_l);
+    }
+    if(obj == P_bal_p_edit)
+    {
+        m_InputForBalloons(P_bal_p_edit, &P_bal_p, &V_bal_p);
+    }
+    if(obj == P_bal_per_edit)
+    {
+        m_InputForBalloons(P_bal_per_edit, &P_bal_per, &V_bal_n);
     }
     if(obj == delta_sh_l_edit)
     {
@@ -463,19 +518,6 @@ void landinggear_sashes::m_togglebutton_R()
     {
         m_DoubleInput(Pgs2_edit, &Pgs2);
     }
-    if(obj == P_bal_l_edit)
-    {
-        m_DoubleInput(P_bal_l_edit, &P_bal_l);
-    }
-    if(obj == P_bal_p_edit)
-    {
-        m_DoubleInput(P_bal_p_edit, &P_bal_p);
-    }
-    if(obj == P_bal_per_edit)
-    {
-        m_DoubleInput(P_bal_per_edit, &P_bal_per);
-    }
-
     if(obj == GK_oovsh_on_button)
     {
         m_RedButton(GK_oovsh_on_button, &GK_oovsh);
@@ -521,4 +563,11 @@ void landinggear_sashes::m_RedButton(QPushButton* button, bool* clue)
 void landinggear_sashes::m_DoubleInput(QLineEdit* field, double* value)
 {
     *value = field->text().toDouble();
+}
+
+void landinggear_sashes::m_InputForBalloons(QLineEdit* field, double* value,
+                                            double* V_bal)
+{
+    *value = field->text().toDouble();
+    *V_bal = (6615000 / (*value));
 }

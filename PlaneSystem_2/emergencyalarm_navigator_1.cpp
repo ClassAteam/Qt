@@ -644,7 +644,7 @@ emergencyalarm_navigator_1::emergencyalarm_navigator_1(QWidget* pwgt)
     layout_navigator_1_main->addLayout(layout_navigator_1_buttons);
     wgt_navigator_1.setLayout(layout_navigator_1_main);
 //    wgt_navigator_1.setFixedWidth(500);
-    wgt_navigator_1.setFixedHeight(1000);
+    wgt_navigator_1.setFixedHeight(1400);
 
 
 }

@@ -90,8 +90,8 @@ landinggear_relay::landinggear_relay(QWidget* pwgt)
     K6_3230 = 0;
     K7_3230 = 0;
     K8_3230 = 0;
-    K8_3230_1112 = 0;
-    K8_3230_2223 = 0;
+    K8_3230_1112 = 1;
+    K8_3230_2223 = 1;
     K8_3230_AB = 0;
     K8_3230_VG = 0;
     K9_3230 = 0;
@@ -344,7 +344,9 @@ void landinggear_relay::logic_relay()
     PSDVV = false;
     S46_3230 = 0;
     PSDVU = false;
-    S47_3230 = 0;
+    S47_3230 = false;
+    S28_3230 = false;
+    S29_3230 = false;
 
     // Presure signal intake
     if (GK_vsh == true)
@@ -558,8 +560,8 @@ void landinggear_relay::logic_relay()
 
     // the locking resolving
     if (F113_3230 == true &&
-            K9_3230 == true &&
-            K10_3230 == true &&
+            K9_3230 == false &&
+            K10_3230 == false &&
             K8_3230_1112 == true)
     {
         if (K30_3230 == true || (S4_3230 == 1 && S6_3230 == 1))
@@ -594,6 +596,19 @@ void landinggear_relay::logic_relay()
         {
             K12_3230 = true;
         }
+    }
+    else
+    {
+        if(F13_3230 == true)
+        {
+            if(K8_3230_2223 == true)
+            {
+                K8_3230_VG = true;
+                K8_3230_1112 = true;
+                K8_3230_2223 = false;
+            }
+        }
+
     }
     //clocking
     if (K44_3230 == true &&

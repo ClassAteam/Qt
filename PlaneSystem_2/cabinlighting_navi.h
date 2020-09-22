@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QLineEdit>
 
+extern bool
+P1OBPOP;
 extern double
 Ush2p;
 

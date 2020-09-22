@@ -121,6 +121,9 @@ void landinggear_racks::logic_racks()
                         nedovip_osn_op_l == false)
                 {
                     racks_left_tick++;
+                    //releasing left
+                    releasing_loop(&delta_racks_l, &Ddelta_racks, &racks_left_tick,
+                                   &racks_left_tick_sec);
                 }
                 if(delta_racks_p != 1 &&
                         delta_stv_p == 90 &&
@@ -130,15 +133,12 @@ void landinggear_racks::logic_racks()
                         nedovip_osn_op_p == false)
                 {
                     racks_right_tick++;
+                    //releasing right
+                    releasing_loop(&delta_racks_p, &Ddelta_racks, &racks_right_tick,
+                                   &racks_right_tick_sec);
                 }
 
-                //releasing left
-                releasing_loop(&delta_racks_l, &Ddelta_racks, &racks_left_tick,
-                               &racks_left_tick_sec);
 
-                //releasing right
-                releasing_loop(&delta_racks_p, &Ddelta_racks, &racks_right_tick,
-                               &racks_right_tick_sec);
             }
 
             // intake loop
@@ -147,17 +147,17 @@ void landinggear_racks::logic_racks()
                 if(delta_racks_l != 0 && delta_sh_l == 1)
                 {
                     racks_left_tick++;
+                    //intake left
+                    intake_loop(&delta_racks_l, &racks_left_tick,
+                                &racks_left_tick_sec);
                 }
                 if(delta_racks_p != 0 && delta_sh_p == 1)
                 {
                     racks_right_tick++;
+                    //intake right
+                    intake_loop(&delta_racks_p, &racks_right_tick,
+                                &racks_right_tick_sec);
                 }
-                //intake left
-                intake_loop(&delta_racks_l, &racks_left_tick,
-                            &racks_left_tick_sec);
-                //intake right
-                intake_loop(&delta_racks_p, &racks_right_tick,
-                            &racks_right_tick_sec);
             }
             else
             {

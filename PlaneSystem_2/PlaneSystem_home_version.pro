@@ -41,10 +41,13 @@ SOURCES += \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
     landinggear_carts.cpp \
+    landinggear_position.cpp \
     landinggear_racks.cpp \
     landinggear_racks_rel.cpp \
     landinggear_relay.cpp \
     landinggear_sashes.cpp \
+    landinggear_switches.cpp \
+    landinggear_valves.cpp \
     main.cpp \
     mainwindow.cpp \
     presure_regulation.cpp
@@ -75,10 +78,13 @@ HEADERS += \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \
     landinggear_carts.h \
+    landinggear_position.h \
     landinggear_racks.h \
     landinggear_racks_rel.h \
     landinggear_relay.h \
     landinggear_sashes.h \
+    landinggear_switches.h \
+    landinggear_valves.h \
     main.h \
     mainwindow.h \
     presure_regulation.h

@@ -109,40 +109,40 @@ void landinggear_carts::logic_carts()
                         delta_sh_l > 0.4)
                 {
                     carts_left_tick++;
+                    //releasing left
+                    releasing_loop(&delta_tel_l, &Ddelta_tel, &carts_left_tick,
+                                   &carts_left_tick_sec);
                 }
                 if(delta_tel_p != 1 &&
                         delta_stv_p == 90 &&
                         delta_sh_p > 0.4)
                 {
                     carts_right_tick++;
+                    //releasing right
+                    releasing_loop(&delta_tel_p, &Ddelta_tel, &carts_right_tick,
+                                   &carts_right_tick_sec);
                 }
 
-                //releasing left
-                releasing_loop(&delta_tel_l, &Ddelta_tel, &carts_left_tick,
-                               &carts_left_tick_sec);
 
-                //releasing right
-                releasing_loop(&delta_tel_p, &Ddelta_tel, &carts_right_tick,
-                               &carts_right_tick_sec);
             }
 
             // intake loop
             if (GK_ush == true && GK_vsh == false)
             {
-                if(delta_tel_l != 0 && delta_racks_l == 0)
+                if(delta_tel_l != 0 && delta_sh_l < 0.65)
                 {
                     carts_left_tick++;
+                    //intake left
+                    intake_loop(&delta_tel_l, &carts_left_tick,
+                                &carts_left_tick_sec);
                 }
-                if(delta_tel_p != 0 && delta_racks_p == 0)
+                if(delta_tel_p != 0 && delta_sh_p < 0.65)
                 {
                     carts_right_tick++;
+                    //intake right
+                    intake_loop(&delta_tel_p, &carts_right_tick,
+                                &carts_right_tick_sec);
                 }
-                //intake left
-                intake_loop(&delta_tel_l, &carts_left_tick,
-                            &carts_left_tick_sec);
-                //intake right
-                intake_loop(&delta_tel_p, &carts_right_tick,
-                            &carts_right_tick_sec);
             }
             else
             {

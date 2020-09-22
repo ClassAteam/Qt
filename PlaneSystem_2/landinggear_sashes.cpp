@@ -143,12 +143,6 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     QObject::connect
 (delta_sh_n_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
     QObject::connect
-(delta_stv_l_edit, SIGNAL(returnPressed()), this, SLOT(m_DoubleInput()));
-    QObject::connect
-(delta_stv_p_edit, SIGNAL(returnPressed()), this, SLOT(m_DoubleInput()));
-    QObject::connect
-(delta_stv_n_edit, SIGNAL(returnPressed()), this, SLOT(m_DoubleInput()));
-    QObject::connect
 (Pgs2_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
     QObject::connect
 (P_bal_l_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
@@ -230,27 +224,27 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_l != 90)
                 {
                     left_tick++;
+                    //releasing left
+                    releasing_loop(&delta_stv_l, &Ddelta_stv, &left_tick,
+                                   &left_tick_sec, &left_released);
                 }
                 if(delta_stv_p != 90)
                 {
                     right_tick++;
+                    //releasing right
+                    releasing_loop(&delta_stv_p, &Ddelta_stv, &right_tick,
+                                   &right_tick_sec, &right_released);
                 }
                 if(delta_stv_n != 90)
                 {
                     nose_tick++;
+                    //releasing nose
+                    releasing_loop(&delta_stv_n, &Ddelta_stv, &nose_tick,
+                                   &nose_tick_sec, &nose_released);
                 }
 
-                //releasing left
-                releasing_loop(&delta_stv_l, &Ddelta_stv, &left_tick,
-                               &left_tick_sec, &left_released);
 
-                //releasing right
-                releasing_loop(&delta_stv_p, &Ddelta_stv, &right_tick,
-                               &right_tick_sec, &right_released);
 
-                //releasing nose
-                releasing_loop(&delta_stv_n, &Ddelta_stv, &nose_tick,
-                               &nose_tick_sec, &nose_released);
             }
 
             // intake loop
@@ -259,24 +253,24 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_l != 0 && delta_sh_l == 0)
                 {
                     left_tick++;
+                    //intake left
+                    intake_loop(&delta_stv_l, &left_tick,
+                                &left_tick_sec, &left_intaken);
                 }
                 if(delta_stv_p != 0 && delta_sh_p == 0)
                 {
                     right_tick++;
+                    //intake right
+                    intake_loop(&delta_stv_p, &right_tick,
+                                &right_tick_sec, &right_intaken);
                 }
                 if(delta_stv_n != 0 && delta_sh_n == 0)
                 {
                     nose_tick++;
+                    // intake nose
+                    intake_loop(&delta_stv_n, &nose_tick,
+                                &nose_tick_sec, &nose_intaken);
                 }
-                //intake left
-                intake_loop(&delta_stv_l, &left_tick,
-                            &left_tick_sec, &left_intaken);
-                //intake right
-                intake_loop(&delta_stv_p, &right_tick,
-                            &right_tick_sec, &right_intaken);
-                // intake nose
-                intake_loop(&delta_stv_n, &nose_tick,
-                            &nose_tick_sec, &nose_intaken);
             }
             else
             {

@@ -30,6 +30,9 @@
 #include <landinggear_racks.h>
 #include <landinggear_racks_rel.h>
 #include <landinggear_relay.h>
+#include <landinggear_switches.h>
+#include <landinggear_valves.h>
+#include <landinggear_position.h>
 
 const double TICK = 200;
 
@@ -65,6 +68,9 @@ int main(int argc, char *argv[])
     landinggear_racks racks;
     landinggear_racks_rel racks_rel;
     landinggear_relay relay;
+    landinggear_switches switches;
+    landinggear_valves valves;
+    landinggear_position position;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -145,6 +151,8 @@ int main(int argc, char *argv[])
     layout_landinggear.addWidget(&racks.wgt_racks);
     layout_landinggear.addWidget(&racks_rel.wgt_racks_rel);
     layout_landinggear.addWidget(&relay.wgt_relay);
+    layout_landinggear.addWidget(&switches.wgt_switches);
+    layout_landinggear.addWidget(&position.wgt_position);
     window_landinggear.setLayout(&layout_landinggear);
     window_landinggear.setWindowTitle("Landing Gear");
     window_landinggear.setWindowState(Qt::WindowFullScreen);
@@ -208,6 +216,12 @@ int main(int argc, char *argv[])
                      &racks_rel , SLOT(logic_racks_rel()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &relay , SLOT(logic_relay()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &switches , SLOT(logic_switches()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &valves , SLOT(logic_valves()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &position , SLOT(logic_position()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

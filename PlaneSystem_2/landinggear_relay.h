@@ -9,6 +9,8 @@ extern const double
 TICK;
 
 extern bool
+S28_3230,
+S29_3230,
 GK_avl,
 GK_avp,
 GK_avn,

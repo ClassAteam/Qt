@@ -5,6 +5,7 @@
 #include <QPushButton>
 
 extern bool
+P2OBLOP,
 K24_2610,
 K50_2610,
 K51_2610,

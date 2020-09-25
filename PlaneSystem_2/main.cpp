@@ -33,6 +33,8 @@
 #include <landinggear_switches.h>
 #include <landinggear_valves.h>
 #include <landinggear_position.h>
+#include <landinggear_nose.h>
+#include <wingsmech_flaps.h>
 
 const double TICK = 200;
 
@@ -71,6 +73,8 @@ int main(int argc, char *argv[])
     landinggear_switches switches;
     landinggear_valves valves;
     landinggear_position position;
+    landinggear_nose nose;
+    wingsmech_flaps flaps;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -153,6 +157,8 @@ int main(int argc, char *argv[])
     layout_landinggear.addWidget(&relay.wgt_relay);
     layout_landinggear.addWidget(&switches.wgt_switches);
     layout_landinggear.addWidget(&position.wgt_position);
+    layout_landinggear.addWidget(&nose.wgt_nose);
+    layout_landinggear.addWidget(&flaps.wgt_flaps);
     window_landinggear.setLayout(&layout_landinggear);
     window_landinggear.setWindowTitle("Landing Gear");
     window_landinggear.setWindowState(Qt::WindowFullScreen);
@@ -222,6 +228,10 @@ int main(int argc, char *argv[])
                      &valves , SLOT(logic_valves()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &position , SLOT(logic_position()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &nose , SLOT(logic_nose()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &flaps , SLOT(logic_flaps()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

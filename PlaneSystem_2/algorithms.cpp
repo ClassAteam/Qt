@@ -1,7 +1,7 @@
 #include "algorithms.h"
 #include "math.h"
 
-// get Y value of point on linear function between two points(x1,y1 ; x2,y2)
+// get Y value from linear function between two points(x1,y1 ; x2,y2)
 double two_points_to_Y(double insert, double x1, double x2, double y1, double y2)
 {
     double Y;

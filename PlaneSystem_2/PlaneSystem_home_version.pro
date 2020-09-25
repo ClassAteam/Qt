@@ -41,6 +41,7 @@ SOURCES += \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
     landinggear_carts.cpp \
+    landinggear_nose.cpp \
     landinggear_position.cpp \
     landinggear_racks.cpp \
     landinggear_racks_rel.cpp \
@@ -50,7 +51,8 @@ SOURCES += \
     landinggear_valves.cpp \
     main.cpp \
     mainwindow.cpp \
-    presure_regulation.cpp
+    presure_regulation.cpp \
+    wingsmech_flaps.cpp
 
 HEADERS += \
     algorithms.h \
@@ -78,6 +80,7 @@ HEADERS += \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \
     landinggear_carts.h \
+    landinggear_nose.h \
     landinggear_position.h \
     landinggear_racks.h \
     landinggear_racks_rel.h \
@@ -87,7 +90,8 @@ HEADERS += \
     landinggear_valves.h \
     main.h \
     mainwindow.h \
-    presure_regulation.h
+    presure_regulation.h \
+    wingsmech_flaps.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

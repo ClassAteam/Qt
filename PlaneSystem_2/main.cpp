@@ -35,6 +35,8 @@
 #include <landinggear_position.h>
 #include <landinggear_nose.h>
 #include <wingsmech_flaps.h>
+#include <wingsmech_underwings.h>
+#include <wingsmech_movingpart.h>
 
 const double TICK = 200;
 
@@ -75,6 +77,8 @@ int main(int argc, char *argv[])
     landinggear_position position;
     landinggear_nose nose;
     wingsmech_flaps flaps;
+    wingsmech_underwings underwings;
+    wingsmech_movingpart movingpart;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -159,6 +163,7 @@ int main(int argc, char *argv[])
     layout_landinggear.addWidget(&position.wgt_position);
     layout_landinggear.addWidget(&nose.wgt_nose);
     layout_landinggear.addWidget(&flaps.wgt_flaps);
+    layout_landinggear.addWidget(&underwings.wgt_underwings);
     window_landinggear.setLayout(&layout_landinggear);
     window_landinggear.setWindowTitle("Landing Gear");
     window_landinggear.setWindowState(Qt::WindowFullScreen);
@@ -232,6 +237,10 @@ int main(int argc, char *argv[])
                      &nose , SLOT(logic_nose()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &flaps , SLOT(logic_flaps()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &underwings , SLOT(logic_underwings()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &movingpart , SLOT(logic_movingpart()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

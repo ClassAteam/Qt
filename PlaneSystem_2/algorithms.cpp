@@ -1,6 +1,93 @@
 #include "algorithms.h"
 #include "math.h"
 
+double m_2_L_intervals(double input,
+                                        double x1,
+                                        double x2,
+                                        double x3,
+                                        double y1,
+                                        double y2,
+                                        double y3)
+{
+    double result;
+    result = 0;
+    if((input > x1) && (input) < x2)
+    {
+        result = two_points_to_Y(input,x1, x2, y1, y2 );
+        return result;
+    }
+    if((input >= x2) && (input) <= x3)
+    {
+        result = two_points_to_Y(input,x2, x3, y2, y3 );
+        return result;
+    }
+    return result;
+}
+double m_3_L_intervals(double input,
+                                        double x1,
+                                        double x2,
+                                        double x3,
+                                        double x4,
+                                        double y1,
+                                        double y2,
+                                        double y3,
+                                        double y4)
+{
+    double result;
+    result = 0;
+    if((input >= x1) && (input) <= x2)
+    {
+        result = two_points_to_Y(input,x1, x2, y1, y2 );
+        return result;
+    }
+    if((input > x2) && (input) < x3)
+    {
+        result = two_points_to_Y(input,x2, x3, y2, y3 );
+        return result;
+    }
+    if((input >= x3) && (input) <= x4)
+    {
+        result = two_points_to_Y(input,x3, x4, y3, y4 );
+        return result;
+    }
+    return result;
+}
+double m_4_L_intervals(double input,
+                                        double x1,
+                                        double x2,
+                                        double x3,
+                                        double x4,
+                                        double x5,
+                                        double y1,
+                                        double y2,
+                                        double y3,
+                                        double y4,
+                                        double y5)
+{
+    double result;
+    result = 0;
+    if((input >= x1) && (input) <= x2)
+    {
+        result = two_points_to_Y(input,x1, x2, y1, y2 );
+        return result;
+    }
+    if((input > x2) && (input) < x3)
+    {
+        result = two_points_to_Y(input,x2, x3, y2, y3 );
+        return result;
+    }
+    if((input >= x3) && (input) <= x4)
+    {
+        result = two_points_to_Y(input,x3, x4, y3, y4 );
+        return result;
+    }
+    if((input >= x4) && (input) <= x5)
+    {
+        result = two_points_to_Y(input,x4, x5, y4, y5 );
+        return result;
+    }
+    return result;
+}
 // get Y value from linear function between two points(x1,y1 ; x2,y2)
 double two_points_to_Y(double insert, double x1, double x2, double y1, double y2)
 {

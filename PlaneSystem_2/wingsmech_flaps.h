@@ -51,6 +51,7 @@ public:
     QLabel* X_P_label;
     QLabel* Pgs4_label;
 
+
     QPushButton* otkaz_osn_1k_zakr_on;
     QPushButton* otkaz_osn_2k_zakr_on;
     QPushButton* otkaz_1k_zakr_on;
@@ -64,13 +65,14 @@ public:
     QRadioButton* S2_2750_2_on;
 
     QLineEdit* Pgs4_edit;
-    QLineEdit* delta_pr_l_edit;
-    QLineEdit* delta_pr_p_edit;
-    QLineEdit* X_L_edit;
-    QLineEdit* X_P_edit;
-    QLineEdit* delta_zr_vh_edit;
+//    QLineEdit* delta_pr_l_edit;
+//    QLineEdit* delta_pr_p_edit;
+//    QLineEdit* X_L_edit;
+//    QLineEdit* X_P_edit;
+//    QLineEdit* delta_zr_vh_edit;
 
     QSlider* delta_z_vh_slider;
+
 
 
 public slots:

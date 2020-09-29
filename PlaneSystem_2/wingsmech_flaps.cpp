@@ -7,6 +7,7 @@ otkaz_osn_2k_zakr,
 otkaz_1k_zakr,
 otkaz_2k_zakr,
 otkaz_rassgl_zakr,
+PRRKZ,
 PRR1KZ,
 PRR2KZ,
 PSR1KZ,
@@ -36,12 +37,13 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     : QWidget(pwgt)
 {
     QFont underlined("Arial", 10, QFont::Bold);
-    Pgs4 = 0;
+    Pgs4 = 280;
     otkaz_osn_1k_zakr = 0;
     otkaz_osn_2k_zakr = 0;
     otkaz_1k_zakr = 0;
     otkaz_2k_zakr = 0;
     otkaz_rassgl_zakr = 0;
+    PRRKZ = 0;
     PRR1KZ = 0;
     PRR2KZ = 0;
     PSR1KZ = 0;
@@ -60,8 +62,8 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     Ddelta_z_p = 0;
     delta_pr_l = 0;
     delta_pr_p = 0;
-    X_L = 0;
-    X_P = 0;
+    X_L = 20;
+    X_P = 20;
 
     Pgs4_label = new QLabel;
     otkaz_osn_1k_zakr_label = new QLabel;
@@ -80,7 +82,9 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     S2_2750_label = new QLabel;
     Kz_label = new QLabel;
     delta_z_l_label = new QLabel;
+    delta_z_l_label->setFont(underlined);
     delta_z_p_label = new QLabel;
+    delta_z_p_label->setFont(underlined);
     delta_z_zad_label = new QLabel;
     delta_zr_vh_label = new QLabel;
     Ddelta_z_l_label = new QLabel;
@@ -88,7 +92,9 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     delta_pr_l_label = new QLabel;
     delta_pr_p_label = new QLabel;
     X_L_label = new QLabel;
+    X_L_label->setFont(underlined);
     X_P_label = new QLabel;
+    X_P_label->setFont(underlined);
 
     otkaz_osn_1k_zakr_on = new QPushButton("otkaz_osn_1k_zakr_on", this);
     otkaz_osn_2k_zakr_on = new QPushButton("otkaz_osn_2k_zakr_on", this);
@@ -103,11 +109,11 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     S2_2750_2_on = new QRadioButton("S2 UBRAN", this);
 
     Pgs4_edit = new QLineEdit;
-    delta_pr_l_edit = new QLineEdit;
-    delta_pr_p_edit = new QLineEdit;
-    X_L_edit = new QLineEdit;
-    X_P_edit = new QLineEdit;
-    delta_zr_vh_edit = new QLineEdit;
+//    delta_pr_l_edit = new QLineEdit;
+//    delta_pr_p_edit = new QLineEdit;
+//    X_L_edit = new QLineEdit;
+//    X_P_edit = new QLineEdit;
+//    delta_zr_vh_edit = new QLineEdit;
 
     delta_z_vh_slider = new QSlider(Qt::Horizontal);
     delta_z_vh_slider->setRange(0,100);
@@ -137,16 +143,16 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
 
     QObject::connect
 (Pgs4_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
-    QObject::connect
-(delta_pr_l_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
-    QObject::connect
-(delta_pr_p_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
-    QObject::connect
-(X_L_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
-    QObject::connect
-(X_P_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
-    QObject::connect
-(delta_zr_vh_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
+//    QObject::connect
+//(delta_pr_l_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
+//    QObject::connect
+//(delta_pr_p_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
+//    QObject::connect
+//(X_L_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
+//    QObject::connect
+//(X_P_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
+//    QObject::connect
+//(delta_zr_vh_edit, SIGNAL(returnPressed()), this, SLOT(m_togglebutton_R()));
     QObject::connect
 (delta_z_vh_slider, SIGNAL(valueChanged(int)), this, SLOT(m_Slider(int)));
 
@@ -187,13 +193,13 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     layout_flaps_labels->addWidget(Ddelta_z_l_label);
     layout_flaps_labels->addWidget(Ddelta_z_p_label);
     layout_flaps_labels->addWidget(delta_pr_l_label);
-    layout_flaps_labels->addWidget(delta_pr_l_edit);
+//    layout_flaps_labels->addWidget(delta_pr_l_edit);
     layout_flaps_labels->addWidget(delta_pr_p_label);
-    layout_flaps_labels->addWidget(delta_pr_p_edit);
+//    layout_flaps_labels->addWidget(delta_pr_p_edit);
     layout_flaps_labels->addWidget(X_L_label);
-    layout_flaps_labels->addWidget(X_L_edit);
+//    layout_flaps_labels->addWidget(X_L_edit);
     layout_flaps_labels->addWidget(X_P_label);
-    layout_flaps_labels->addWidget(X_P_edit);
+//    layout_flaps_labels->addWidget(X_P_edit);
     layout_flaps_labels->addWidget(Pgs4_label);
     layout_flaps_labels->addWidget(Pgs4_edit);
 
@@ -242,6 +248,7 @@ void wingsmech_flaps::logic_flaps()
             }
         }
     }
+    PRRKZ = false;
     PRR2KZ = false;
     PSR2KZ = false;
     POR2KZ = false;
@@ -279,9 +286,9 @@ void wingsmech_flaps::logic_flaps()
     }
     if(POR1KZ == true || PSR1KZ == true)
     {
-        if(delta_pr_l >= 21)
+        if(delta_z_l < delta_z_zad)
         {
-            if((X_L > 20  && X_L < 30) && (delta_z_l < delta_z_zad))
+            if((delta_pr_l >= 21) && (X_L >= 20  && X_L <= 30))
             {
                 Ddelta_z_l = 2.2;
             }
@@ -292,29 +299,19 @@ void wingsmech_flaps::logic_flaps()
         }
         else
         {
-            if(delta_pr_l > 0)
-            {
-                Ddelta_z_l = 0;
-            }
-            else
-            {
-                if(delta_z_l >= delta_z_zad)
-                {
-                    Ddelta_z_l = -2.2;
-                }
-                else
-                {
-                    Ddelta_z_l = 0;
-                }
-            }
+            Ddelta_z_l = -2.2;
         }
+    }
+    else
+    {
+        Ddelta_z_l = 0;
     }
 
     if(POR2KZ == true || PSR2KZ == true)
     {
-        if(delta_pr_p >= 21)
+        if(delta_z_p < delta_z_zad)
         {
-            if((X_P > 20  && X_P < 30) && (delta_z_p < delta_z_zad))
+            if((delta_pr_p >= 21) && (X_P >= 20  && X_P <= 30))
             {
                 Ddelta_z_p = 2.2;
             }
@@ -325,22 +322,12 @@ void wingsmech_flaps::logic_flaps()
         }
         else
         {
-            if(delta_pr_p > 0)
-            {
-                Ddelta_z_p = 0;
-            }
-            else
-            {
-                if(delta_z_p >= delta_z_zad)
-                {
-                    Ddelta_z_p = -2.2;
-                }
-                else
-                {
-                    Ddelta_z_p = 0;
-                }
-            }
+            Ddelta_z_p = -2.2;
         }
+    }
+    else
+    {
+        Ddelta_z_p = 0;
     }
     if(POR1KZ == true)
     {
@@ -365,7 +352,7 @@ void wingsmech_flaps::logic_flaps()
         {
             if(delta_pr_l >= 21)
             {
-                if(X_L > 20 && X_L <35)
+                if(X_L >= 20 && X_L <= 35)
                 {
                     Ddelta_z_l = 2.2;
                 }
@@ -384,14 +371,7 @@ void wingsmech_flaps::logic_flaps()
         {
             if(S2_2750 == 2)
             {
-                if(delta_pr_l > 0)
-                {
-                    Ddelta_z_l = 0;
-                }
-                else
-                {
-                    Ddelta_z_l = -2.2;
-                }
+                Ddelta_z_l = -2.2;
             }
             else
             {
@@ -406,7 +386,7 @@ void wingsmech_flaps::logic_flaps()
         {
             if(delta_pr_p >= 21)
             {
-                if(X_P > 20 && X_P <35)
+                if(X_P >= 20 && X_P <= 35)
                 {
                     Ddelta_z_p = 2.2;
                 }
@@ -424,20 +404,16 @@ void wingsmech_flaps::logic_flaps()
         {
             if(S2_2750 == 2)
             {
-                if(delta_pr_p > 0)
-                {
-                    Ddelta_z_p = 0;
-                }
-                else
-                {
-                    Ddelta_z_p = -2.2;
-                }
+                Ddelta_z_p = -2.2;
             }
             else
             {
                 Ddelta_z_p = 0;
             }
         }
+
+        PRRKZ = true;
+
         if(PRR1KZ == false)
         {
             Ddelta_z_l = 0.5 * Ddelta_z_l;
@@ -448,12 +424,18 @@ void wingsmech_flaps::logic_flaps()
     {
         if(PRR1KZ == true)
         {
+            PRRKZ = true;
             Ddelta_z_l = 0.5 * Ddelta_z_l;
             Ddelta_z_p = 0.5 * Ddelta_z_p;
         }
     }
     if(abs(delta_z_l - delta_z_p) < 2.5)
     {
+        if(PRRKZ == true)
+        {
+            delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
+            delta_z_p = delta_z_p + (Ddelta_z_p * (TICK / 1000));
+        }
         if(abs(delta_z_l - delta_z_zad) >= 0.1)
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
@@ -578,26 +560,26 @@ void wingsmech_flaps::m_togglebutton_R()
     {
         m_DoubleInput(Pgs4_edit, &Pgs4);
     }
-    if(obj == delta_pr_l_edit)
-    {
-        m_DoubleInput(delta_pr_l_edit, &delta_pr_l);
-    }
-    if(obj == delta_pr_p_edit)
-    {
-        m_DoubleInput(delta_pr_p_edit, &delta_pr_p);
-    }
-    if(obj == delta_zr_vh_edit)
-    {
-        m_DoubleInput(delta_zr_vh_edit, &delta_zr_vh);
-    }
-    if(obj == X_L_edit)
-    {
-        m_DoubleInput(X_L_edit, &X_L);
-    }
-    if(obj == X_P_edit)
-    {
-        m_DoubleInput(X_P_edit, &X_P);
-    }
+//    if(obj == delta_pr_l_edit)
+//    {
+//        m_DoubleInput(delta_pr_l_edit, &delta_pr_l);
+//    }
+//    if(obj == delta_pr_p_edit)
+//    {
+//        m_DoubleInput(delta_pr_p_edit, &delta_pr_p);
+//    }
+//    if(obj == delta_zr_vh_edit)
+//    {
+//        m_DoubleInput(delta_zr_vh_edit, &delta_zr_vh);
+//    }
+//    if(obj == X_L_edit)
+//    {
+//        m_DoubleInput(X_L_edit, &X_L);
+//    }
+//    if(obj == X_P_edit)
+//    {
+//        m_DoubleInput(X_P_edit, &X_P);
+//    }
     if(obj == S2_2750_0_on)
     {
         m_RadioButton(S2_2750_0_on);

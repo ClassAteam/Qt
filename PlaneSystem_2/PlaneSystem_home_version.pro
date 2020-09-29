@@ -52,7 +52,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     presure_regulation.cpp \
-    wingsmech_flaps.cpp
+    wingsmech_flaps.cpp \
+    wingsmech_movingpart.cpp \
+    wingsmech_underwings.cpp
 
 HEADERS += \
     algorithms.h \
@@ -91,7 +93,9 @@ HEADERS += \
     main.h \
     mainwindow.h \
     presure_regulation.h \
-    wingsmech_flaps.h
+    wingsmech_flaps.h \
+    wingsmech_movingpart.h \
+    wingsmech_underwings.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

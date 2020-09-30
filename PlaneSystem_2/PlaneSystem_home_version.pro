@@ -52,6 +52,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     presure_regulation.cpp \
+    wingsmech_alarm.cpp \
     wingsmech_flaps.cpp \
     wingsmech_movingpart.cpp \
     wingsmech_underwings.cpp
@@ -93,6 +94,7 @@ HEADERS += \
     main.h \
     mainwindow.h \
     presure_regulation.h \
+    wingsmech_alarm.h \
     wingsmech_flaps.h \
     wingsmech_movingpart.h \
     wingsmech_underwings.h

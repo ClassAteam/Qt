@@ -440,6 +440,11 @@ void wingsmech_flaps::logic_flaps()
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
         }
+        else
+        {
+            Ddelta_z_l = 0;
+        }
+
         if(otkaz_rassgl_zakr == true)
         {
             delta_z_zad = delta_z_zad - 2.7;
@@ -448,6 +453,10 @@ void wingsmech_flaps::logic_flaps()
         if(abs(delta_z_p - delta_z_zad) >= 0.1)
         {
             delta_z_p = delta_z_p + (Ddelta_z_p * (TICK / 1000));
+        }
+        else
+        {
+            Ddelta_z_p = 0;
         }
 
     }

@@ -660,7 +660,7 @@ void wingsmech_alarm::logic_alarm()
         delta_z_p_111 = delta_z_l;
         delta_pr_p_115 = delta_pr_l;
         delta_pr = ((delta_pr_l + delta_pr_p) / 2);
-        delta_pr_116 = ((0.8 + 200) / (21 * delta_pr));
+        delta_pr_116 = (0.8 + (200 * (delta_pr / 21)));
     }
     else
     {

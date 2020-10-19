@@ -26,6 +26,7 @@ SOURCES += \
     antiicing_mkam.cpp \
     antiicing_ppd.cpp \
     antiicing_windshields.cpp \
+    brakes_modes.cpp \
     cabinlighting_beacons.cpp \
     cabinlighting_inner.cpp \
     cabinlighting_navi.cpp \
@@ -68,6 +69,7 @@ HEADERS += \
     antiicing_mkam.h \
     antiicing_ppd.h \
     antiicing_windshields.h \
+    brakes_modes.h \
     cabinlighting_beacons.h \
     cabinlighting_inner.h \
     cabinlighting_navi.h \

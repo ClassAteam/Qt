@@ -189,6 +189,7 @@ brakes_modes::brakes_modes(QWidget*pwgt)
     QObject::connect
 (alpha_rud_4dv_slider, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_rud4(int)));
 
+
     QObject::connect
 (X_ped11_slider, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_xped11(int)));
     QObject::connect
@@ -302,9 +303,9 @@ void brakes_modes::logic_modes()
     }
 
     if(alpha_rud_1dv < 45 &&
-       alpha_rud_2dv < 45 &&
-       alpha_rud_3dv < 45 &&
-       alpha_rud_4dv < 45)
+            alpha_rud_2dv < 45 &&
+            alpha_rud_3dv < 45 &&
+            alpha_rud_4dv < 45)
     {
         PRR = false;
     }
@@ -314,9 +315,9 @@ void brakes_modes::logic_modes()
     }
 
     if(Ush1dpl >= 18 &&
-        K35_3230 == true &&
-        K27_3230 == true &&
-        K26_3230 == true)
+            K35_3230 == true &&
+            K27_3230 == true &&
+            K26_3230 == true)
     {
         POSH2 = true;
     }
@@ -334,10 +335,11 @@ void brakes_modes::logic_modes()
     PAVT_N = false;
     PAVT_P = false;
     PAVT_S = false;
+    PAVTT = false;
 
     if(Ushal >= 18 && Ush1dpl >= 18)
     {
-        if(otkaz_osn_sis_torm)
+        if(otkaz_osn_sis_torm == true)
         {
             PBUTZO = false;
             POOST = true;
@@ -346,34 +348,32 @@ void brakes_modes::logic_modes()
         else
         {
             PBUTZO = true;
-        }
-
-        if(S1_3240 == 1)
-        {
-            PAVTT = true;
-            PAVT_N = true;
-        }
-        else
-        {
-            if(S1_3240 == 2)
+            if(S1_3240 == 1)
             {
                 PAVTT = true;
-                PAVT_P = true;
+                PAVT_N = true;
             }
             else
             {
-                if(S1_3240 == 3)
+                if(S1_3240 == 2)
                 {
                     PAVTT = true;
-                    PAVT_S = true;
+                    PAVT_P = true;
                 }
                 else
                 {
-                    PAVTT = false;
-                    PBAVTT = false;
+                    if(S1_3240 == 3)
+                    {
+                        PAVTT = true;
+                        PAVT_S = true;
+                    }
+                    else
+                    {
+                        PAVTT = false;
+                        PBAVTT = false;
+                    }
                 }
             }
-        }
 
             if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12 )
             {
@@ -386,43 +386,45 @@ void brakes_modes::logic_modes()
                 PstoyanT = true;
 
                 if(X1_45_7620 == false &&
-                X2_45_7620 == false &&
-                X3_45_7620 == false &&
-                X4_45_7620 == false)
+                        X2_45_7620 == false &&
+                        X3_45_7620 == false &&
+                        X4_45_7620 == false)
                 {
                     PstartT = true;
                 }
             }
-    }
-
-    if(POSH2 == true)
-    {
-        if(S3_3240 == true)
-        {
-            PvkFT = true;
-            PFT = true;
-        }
-
-        if(delta_z >= 23 && delta_z <= 28)
-        {
-            if(PAFT == true || PRR == true)
+            if(POSH2 == true)
             {
-                if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
+                if(S3_3240 == true)
                 {
+                    PvkFT = true;
                     PFT = true;
-                    PAFT = true;
+                }
+
+                if(delta_z >= 23 && delta_z <= 28)
+                {
+                    if(PAFT == true || PRR == true)
+                    {
+                        if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
+                        {
+                            PFT = true;
+                            PAFT = true;
+                        }
+                    }
+                }
+                else
+                {
+                    PAFT = 0;
                 }
             }
+            else
+            {
+                PAFT = false;
+            }
         }
-        else
-        {
-            PAFT = 0;
-        }
+
     }
-    else
-    {
-        PAFT = false;
-    }
+
 
     if(PAVTT == false)
     {
@@ -433,7 +435,7 @@ void brakes_modes::logic_modes()
 
     //end logic
     otkaz_osn_sis_torm_label->setText
-    ("otkaz_osn_sis_torm = " + QString::number(otkaz_osn_sis_torm));
+            ("otkaz_osn_sis_torm = " + QString::number(otkaz_osn_sis_torm));
     PAFT_label->setText
             ("PAFT = " + QString::number(PAFT));
     PAVTT_label->setText

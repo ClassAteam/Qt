@@ -39,6 +39,7 @@
 #include <wingsmech_movingpart.h>
 #include <wingsmech_alarm.h>
 #include <brakes_modes.h>
+#include <brakes_reserve.h>
 
 const double TICK = 200;
 
@@ -83,6 +84,7 @@ int main(int argc, char *argv[])
     wingsmech_movingpart movingpart;
     wingsmech_alarm alarm;
     brakes_modes modes;
+    brakes_reserve reserve;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -177,6 +179,7 @@ int main(int argc, char *argv[])
     QWidget window_brakes;
     QHBoxLayout layout_brakes;
     layout_brakes.addWidget(&modes.wgt_modes);
+    layout_brakes.addWidget(&reserve.wgt_reserve);
     window_brakes.setLayout(&layout_brakes);
     window_brakes.setWindowTitle("Brakes");
     window_brakes.setWindowState(Qt::WindowFullScreen);
@@ -258,6 +261,8 @@ int main(int argc, char *argv[])
                      &alarm , SLOT(logic_alarm()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &modes , SLOT(logic_modes()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &reserve , SLOT(logic_reserve()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

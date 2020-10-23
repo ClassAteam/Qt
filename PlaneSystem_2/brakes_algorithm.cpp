@@ -223,17 +223,15 @@ void brakes_algorithm::logic_algorithm()
                                     else
                                     {
                                         tick_alg_2++;
-                                        P_t_lev = (P_t_lev + (110 * (((tick_alg_2 * TICK) / 1000) - 0.5)));
-                                        P_t_prav = (P_t_prav + (110 * (((tick_alg_2 * TICK) / 1000) - 0.5)));
+                                        P_t_lev = (P_t_lev * (((tick_alg_2 * TICK) / 1000) - 0.5));
+                                        P_t_prav = (P_t_prav * (((tick_alg_2 * TICK) / 1000) - 0.5));
                                     }
                                 }
                                 else
                                 {
                                     tick_alg_2++;
-                                    P_t_lev = (P_t_lev -
-                                               (220 * ((tick_alg_2 * TICK) / 1000)));
-                                    P_t_prav = (P_t_prav -
-                                               (220 * ((tick_alg_2 * TICK) / 1000)));
+                                    P_t_lev = ((P_t_lev * (1 - (2 * ((tick_alg_2 * TICK) / 1000)))) + 5);
+                                    P_t_prav = ((P_t_prav * (1 - (2 * ((tick_alg_2 * TICK) / 1000)))) + 5);
                                 }
                             }
                         }

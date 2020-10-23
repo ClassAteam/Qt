@@ -279,7 +279,7 @@ void brakes_modes::logic_modes()
         X_tp_lev = X_ped21;
     }
 
-    if(X_ped12 <= X_ped22)
+    if(X_ped12 >= X_ped22)
     {
         X_tp_prav = X_ped12;
     }
@@ -605,17 +605,17 @@ void brakes_modes::m_Slider_rud1(int)
 void brakes_modes::m_Slider_rud2(int)
 {
     double buffer = alpha_rud_2dv_slider->value();
-    alpha_rud_2dv = (buffer / 100);
+    alpha_rud_2dv = buffer;
 }
 void brakes_modes::m_Slider_rud3(int)
 {
     double buffer = alpha_rud_3dv_slider->value();
-    alpha_rud_3dv = (buffer / 100);
+    alpha_rud_3dv = buffer;
 }
 void brakes_modes::m_Slider_rud4(int)
 {
     double buffer = alpha_rud_4dv_slider->value();
-    alpha_rud_4dv = (buffer / 100);
+    alpha_rud_4dv = buffer;
 }
 void brakes_modes::m_Slider_xped11(int)
 {

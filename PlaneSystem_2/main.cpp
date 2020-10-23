@@ -40,6 +40,7 @@
 #include <wingsmech_alarm.h>
 #include <brakes_modes.h>
 #include <brakes_reserve.h>
+#include <brakes_algorithm.h>
 
 const double TICK = 200;
 
@@ -85,6 +86,7 @@ int main(int argc, char *argv[])
     wingsmech_alarm alarm;
     brakes_modes modes;
     brakes_reserve reserve;
+    brakes_algorithm algorithm;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -263,6 +265,8 @@ int main(int argc, char *argv[])
                      &modes , SLOT(logic_modes()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &reserve , SLOT(logic_reserve()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &algorithm , SLOT(logic_algorithm()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

@@ -7,6 +7,14 @@
 #include <QLineEdit>
 
 extern bool
+POSH,
+PPDGAKT,
+PTavtN,
+PTavtP,
+PTavtS,
+PTstart,
+PTstoyan,
+PTfors,
 PBUTZO,
 PAFT,
 PAVTT,
@@ -29,9 +37,18 @@ S2_3240,
 S3_3240;
 
 extern int
+tick_alg_3,
+tick_alg_2,
+tick_alg_1,
 S1_3240;
 
 extern double
+Pavart,
+ax_ts,
+Pg_at,
+P_t_lev,
+P_t_prav,
+V_kh,
 delta_z,
 X_ped11,
 X_ped12,
@@ -60,14 +77,13 @@ public:
     brakes_reserve(QWidget* pwgt = 0);
     QWidget wgt_reserve;
 
-    //brake reserve logic
     QLabel* otkaz_avt_per_na_rt_label;
     QLabel* otkaz_rt_label;
     QLabel* otkaz_gs3_label;
     QLabel* S1_3241_label;
     QLabel* PvklR_label;
-    QLabel* PBUPTZR_label;
-    QLabel* PBUPTZO_label;
+    QLabel* PBUTZR_label;
+    QLabel* PBUTZO_label;
     QLabel* PAVART_label;
     QLabel* PORST_label;
     QLabel* PBRRT_label;
@@ -77,9 +93,30 @@ public:
     QPushButton* otkaz_rt_on;
     QPushButton* otkaz_gs3_on;
 
+    //brake algorithm logic
+    QLabel* POSH_label;
+    QLabel* PPDGAKT_label;
+    QLabel* PTavtN_label;
+    QLabel* PTavtP_label;
+    QLabel* PTavtS_label;
+    QLabel* PTstart_label;
+    QLabel* PTstoyan_label;
+    QLabel* PTfors_label;
+    QLabel* tick_alg_3_label;
+    QLabel* tick_alg_2_label;
+    QLabel* tick_alg_1_label;
+    QLabel* Pavart_label;
+    QLabel* ax_ts_label;
+    QLabel* Pg_at_label;
+    QLabel* P_t_lev_label;
+    QLabel* P_t_prav_label;
+    QLabel* V_kh_label;
+
+    QSlider* V_kh_slider;
 
 public slots:
     void logic_reserve();
     void m_togglebutton_R();
     void m_RedButton(QPushButton* button, bool* clue);
+    void m_Slider_V_kh(int);
 };

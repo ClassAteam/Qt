@@ -36,8 +36,8 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
     otkaz_gs3_label = new QLabel;
     S1_3241_label = new QLabel;
     PvklR_label = new QLabel;
-    PBUPTZR_label = new QLabel;
-    PBUPTZO_label = new QLabel;
+    PBUTZR_label = new QLabel;
+    PBUTZO_label = new QLabel;
     PAVART_label = new QLabel;
     PORST_label = new QLabel;
     PBRRT_label = new QLabel;
@@ -56,6 +56,32 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
     QObject::connect
             (otkaz_gs3_on, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
 
+    //brake algorithm logic
+    POSH_label = new QLabel;
+    PPDGAKT_label = new QLabel;
+    PTavtN_label = new QLabel;
+    PTavtP_label = new QLabel;
+    PTavtS_label = new QLabel;
+    PTstart_label = new QLabel;
+    PTstoyan_label = new QLabel;
+    PTfors_label = new QLabel;
+    tick_alg_3_label = new QLabel;
+    tick_alg_2_label = new QLabel;
+    tick_alg_1_label = new QLabel;
+    Pavart_label = new QLabel;
+    ax_ts_label = new QLabel;
+    Pg_at_label = new QLabel;
+    P_t_lev_label = new QLabel;
+    P_t_prav_label = new QLabel;
+    V_kh_label = new QLabel;
+
+    V_kh_slider = new QSlider(Qt::Horizontal);
+    V_kh_slider->setRange(0, 300);
+    V_kh_slider->setPageStep(1);
+
+    QObject::connect
+(V_kh_slider, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_V_kh(int)));
+
     //layout setting
     QVBoxLayout *layout_reserve_labels = new QVBoxLayout;
     QVBoxLayout *layout_reserve_main = new QVBoxLayout;
@@ -69,11 +95,31 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
     layout_reserve_labels->addWidget(S1_3241_label);
     layout_reserve_labels->addWidget(S1_3241_on);
     layout_reserve_labels->addWidget(PvklR_label);
-    layout_reserve_labels->addWidget(PBUPTZR_label);
-    layout_reserve_labels->addWidget(PBUPTZO_label);
+    layout_reserve_labels->addWidget(PBUTZR_label);
+    layout_reserve_labels->addWidget(PBUTZO_label);
     layout_reserve_labels->addWidget(PAVART_label);
     layout_reserve_labels->addWidget(PORST_label);
     layout_reserve_labels->addWidget(PBRRT_label);
+
+    //brake algorithm logic
+    layout_reserve_labels->addWidget(POSH_label);
+    layout_reserve_labels->addWidget(PPDGAKT_label);
+    layout_reserve_labels->addWidget(PTavtN_label);
+    layout_reserve_labels->addWidget(PTavtP_label);
+    layout_reserve_labels->addWidget(PTavtS_label);
+    layout_reserve_labels->addWidget(PTstart_label);
+    layout_reserve_labels->addWidget(PTstoyan_label);
+    layout_reserve_labels->addWidget(PTfors_label);
+    layout_reserve_labels->addWidget(tick_alg_3_label);
+    layout_reserve_labels->addWidget(tick_alg_2_label);
+    layout_reserve_labels->addWidget(tick_alg_1_label);
+    layout_reserve_labels->addWidget(Pavart_label);
+    layout_reserve_labels->addWidget(ax_ts_label);
+    layout_reserve_labels->addWidget(Pg_at_label);
+    layout_reserve_labels->addWidget(P_t_lev_label);
+    layout_reserve_labels->addWidget(P_t_prav_label);
+    layout_reserve_labels->addWidget(V_kh_label);
+    layout_reserve_labels->addWidget(V_kh_slider);
 
     layout_reserve_main->addLayout(layout_reserve_labels);
     wgt_reserve.setLayout(layout_reserve_main);
@@ -304,9 +350,9 @@ void brakes_reserve::logic_reserve()
             ("S1_3241 = " + QString::number(S1_3241));
     PvklR_label->setText
             ("PvklR = " + QString::number(PvklR));
-    PBUPTZR_label->setText
+    PBUTZR_label->setText
             ("PBUTZR = " + QString::number(PBUTZR));
-    PBUPTZO_label->setText
+    PBUTZO_label->setText
             ("PBUTZO = " + QString::number(PBUTZO));
     PAVART_label->setText
             ("PAVART = " + QString::number(PAVART));
@@ -314,6 +360,42 @@ void brakes_reserve::logic_reserve()
             ("PORST = " + QString::number(PORST));
     PBRRT_label->setText
             ("PBRRT = " + QString::number(PBRRT));
+
+    //brake algorithm logic
+    POSH_label->setText
+    ("POSH = " + QString::number(POSH));
+    PPDGAKT_label->setText
+    ("PPDGAKT = " + QString::number(PPDGAKT));
+    PTavtN_label->setText
+    ("PTavtN = " + QString::number(PTavtN));
+    PTavtP_label->setText
+    ("PTavtP = " + QString::number(PTavtP));
+    PTavtS_label->setText
+    ("PTavtS = " + QString::number(PTavtS));
+    PTstart_label->setText
+    ("PTstart = " + QString::number(PTstart));
+    PTstoyan_label->setText
+    ("PTstoyan = " + QString::number(PTstoyan));
+    PTfors_label->setText
+    ("PTfors = " + QString::number(PTfors));
+    tick_alg_3_label->setText
+    ("tick_alg_3 = " + QString::number(tick_alg_3));
+    tick_alg_2_label->setText
+    ("tick_alg_2 = " + QString::number(tick_alg_2));
+    tick_alg_1_label->setText
+    ("tick_alg_1 = " + QString::number(tick_alg_1));
+    Pavart_label->setText
+    ("Pavart = " + QString::number(Pavart));
+    ax_ts_label->setText
+    ("ax_ts = " + QString::number(ax_ts));
+    Pg_at_label->setText
+    ("Pg_at = " + QString::number(Pg_at));
+    P_t_lev_label->setText
+    ("P_t_lev = " + QString::number(P_t_lev));
+    P_t_prav_label->setText
+    ("P_t_prav = " + QString::number(P_t_prav));
+    V_kh_label->setText
+    ("V_kh = " + QString::number(V_kh));
 }
 void brakes_reserve::m_RedButton(QPushButton* button, bool* clue)
 {
@@ -351,5 +433,10 @@ void brakes_reserve::m_togglebutton_R()
     {
         m_RedButton(otkaz_gs3_on, &otkaz_gs3);
     }
+}
+void brakes_reserve::m_Slider_V_kh(int)
+{
+    double buffer = V_kh_slider->value();
+    V_kh = buffer;
 }
 

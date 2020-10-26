@@ -29,6 +29,7 @@ SOURCES += \
     brakes_algorithm.cpp \
     brakes_modes.cpp \
     brakes_reserve.cpp \
+    brakes_skid.cpp \
     cabinlighting_beacons.cpp \
     cabinlighting_inner.cpp \
     cabinlighting_navi.cpp \
@@ -74,6 +75,7 @@ HEADERS += \
     brakes_algorithm.h \
     brakes_modes.h \
     brakes_reserve.h \
+    brakes_skid.h \
     cabinlighting_beacons.h \
     cabinlighting_inner.h \
     cabinlighting_navi.h \

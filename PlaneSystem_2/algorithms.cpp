@@ -88,14 +88,14 @@ double m_4_L_intervals(double input,
     }
     return result;
 }
-// get Y value from linear function between two points(x1,y1 ; x2,y2)
+// to get Y value from linear function between two points(x1,y1 ; x2,y2)
 double two_points_to_Y(double insert, double x1, double x2, double y1, double y2)
 {
     double Y;
     Y = (((insert - x1) / (x2 - x1)) * (y2 - y1)) + y1;
     return Y;
 }
-// get presure from altitude
+// to get presure from altitude
 double presure_from_altitude(double altitude)
 {
     double result;

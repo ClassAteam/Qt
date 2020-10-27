@@ -41,6 +41,7 @@
 #include <brakes_modes.h>
 #include <brakes_reserve.h>
 #include <brakes_algorithm.h>
+#include <brakes_skid.h>
 
 const double TICK = 200;
 
@@ -87,6 +88,7 @@ int main(int argc, char *argv[])
     brakes_modes modes;
     brakes_reserve reserve;
     brakes_algorithm algorithm;
+    brakes_skid skid;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -182,6 +184,7 @@ int main(int argc, char *argv[])
     QHBoxLayout layout_brakes;
     layout_brakes.addWidget(&modes.wgt_modes);
     layout_brakes.addWidget(&reserve.wgt_reserve);
+    layout_brakes.addWidget(&skid.wgt_skid);
     window_brakes.setLayout(&layout_brakes);
     window_brakes.setWindowTitle("Brakes");
     window_brakes.setWindowState(Qt::WindowFullScreen);
@@ -267,6 +270,8 @@ int main(int argc, char *argv[])
                      &reserve , SLOT(logic_reserve()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &algorithm , SLOT(logic_algorithm()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &skid , SLOT(logic_skid()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

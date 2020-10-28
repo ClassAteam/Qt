@@ -288,18 +288,27 @@ void brakes_modes::logic_modes()
         X_tp_prav = X_ped22;
     }
 
-    P_ped_11 = m_2_L_intervals(X_ped11, 0.1, 0.1, 1.0, 0, 0.3, 1.0);
-    P_ped_12 = m_2_L_intervals(X_ped12, 0.1, 0.1, 1.0, 0, 0.3, 1.0);
-    P_ped_21 = m_2_L_intervals(X_ped21, 0.1, 0.1, 1.0, 0, 0.3, 1.0);
-    P_ped_22 = m_2_L_intervals(X_ped22, 0.1, 0.1, 1.0, 0, 0.3, 1.0);
+    P_ped_11 = m_2_L_intervals(X_ped11, 0.1, 0.1, 1.0, 0, 0.25, 1.0);
+    P_ped_12 = m_2_L_intervals(X_ped12, 0.1, 0.1, 1.0, 0, 0.25, 1.0);
+    P_ped_21 = m_2_L_intervals(X_ped21, 0.1, 0.1, 1.0, 0, 0.25, 1.0);
+    P_ped_22 = m_2_L_intervals(X_ped22, 0.1, 0.1, 1.0, 0, 0.25, 1.0);
 
-    if(P_ped_11 >= P_ped_22)
+    if(P_ped_11 >= P_ped_21)
     {
-        P_tp_prav = P_ped_21;
+        P_t_lev = P_ped_11 * 120;
     }
     else
     {
-        P_tp_prav = P_ped_22;
+        P_t_lev = P_ped_21 * 120;
+    }
+
+    if(P_ped_12 >= P_ped_22)
+    {
+        P_t_prav = P_ped_12 * 120;
+    }
+    else
+    {
+        P_t_prav = P_ped_22 * 120;
     }
 
     if(alpha_rud_1dv < 45 &&

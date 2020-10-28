@@ -11,7 +11,6 @@ double
 delta_Ptr,
 S_ogr1,
 S_ogr3,
-K1,
 K2,
 K3;
 
@@ -20,6 +19,7 @@ QVector<bool> brakes_PK1(6, 0.0);
 QVector<bool> brakes_PK2(6, 0.0);
 QVector<bool> brakes_PK5(6, 0.0);
 QVector<bool> brakes_PRAT(6, 0.0);
+QVector<double> brakes_K1{0.01, 0.01, 0.01, 0.01, 0.01, 0.01};
 QVector<double> brakes_Sk(6, 0.0);
 QVector<double> brakes_Vk(6, 0.0);
 QVector<double> brakes_Wk(6, 0.0);
@@ -30,7 +30,6 @@ QVector<double> brakes_DVk(6, 0.0);
 QVector<double> brakes_Vk_p(6, 0.0);
 QVector<double> brakes_Vkr(6, 0.0);
 QVector<double> brakes_DPt(6, 0.0);
-QVector<double> brakes_DPtr(6, 0.0);
 QVector<double> brakes_DPavt(6, 0.0);
 QVector<double> brakes_Ptr(6, 0.0);
 QVector<double> brakes_Pt(6, 0.0);
@@ -42,7 +41,6 @@ QVector<double> brakes_Vsvk_p(6, 0.0);
 brakes_skid::brakes_skid(QWidget*pwgt)
     : QWidget(pwgt)
 {
-    K1 = 0;
     K2 = 0.35;
     K3 = 1.26;
     otkaz_ots_dav_v1k_levt  = 0;
@@ -51,6 +49,7 @@ brakes_skid::brakes_skid(QWidget*pwgt)
     S_ogr1  = 0;
     S_ogr3  = 0;
 
+    brakes_K1_label = new QLabel;
     brakes_PK1_label = new QLabel;
     brakes_PK2_label = new QLabel;
     brakes_PK5_label = new QLabel;
@@ -65,7 +64,6 @@ brakes_skid::brakes_skid(QWidget*pwgt)
     brakes_Vk_p_label = new QLabel;
     brakes_Vkr_label = new QLabel;
     brakes_DPt_label = new QLabel;
-    brakes_DPtr_label = new QLabel;
     brakes_DPavt_label = new QLabel;
     brakes_Ptr_label = new QLabel;
     brakes_Pt_label = new QLabel;
@@ -79,7 +77,6 @@ brakes_skid::brakes_skid(QWidget*pwgt)
     delta_Ptr_label = new QLabel;
     S_ogr1_label = new QLabel;
     S_ogr3_label = new QLabel;
-    K1_label = new QLabel;
     K2_label = new QLabel;
     K3_label = new QLabel;
 
@@ -101,9 +98,10 @@ brakes_skid::brakes_skid(QWidget*pwgt)
     QVBoxLayout *layout_skid_labels = new QVBoxLayout;
     QVBoxLayout *layout_skid_main = new QVBoxLayout;
 
+    layout_skid_labels->addWidget(delta_Ptr_label);
     layout_skid_labels->addWidget(S_ogr1_label);
     layout_skid_labels->addWidget(S_ogr3_label);
-    layout_skid_labels->addWidget(K1_label);
+    layout_skid_labels->addWidget(brakes_K1_label);
     layout_skid_labels->addWidget(K1_slider);
     layout_skid_labels->addWidget(K2_label);
     layout_skid_labels->addWidget(K3_label);
@@ -125,7 +123,6 @@ brakes_skid::brakes_skid(QWidget*pwgt)
     layout_skid_labels->addWidget(brakes_Vk_p_label);
     layout_skid_labels->addWidget(brakes_Vkr_label);
     layout_skid_labels->addWidget(brakes_DPt_label);
-    layout_skid_labels->addWidget(brakes_DPtr_label);
     layout_skid_labels->addWidget(brakes_DPavt_label);
     layout_skid_labels->addWidget(brakes_Ptr_label);
     layout_skid_labels->addWidget(brakes_Pt_label);
@@ -142,7 +139,7 @@ brakes_skid::brakes_skid(QWidget*pwgt)
 
 void brakes_skid::logic_skid()
 {
-    delta_Ptr = two_points_to_Y(V_kh, 0, 320, 130, 30);
+    delta_Ptr = (two_points_to_Y(V_kh, 0, 89, 100, 30) * (TICK / 1000));
 
     for(int i = 0; i <= 5; i++)
     {
@@ -198,9 +195,12 @@ void brakes_skid::logic_skid()
         if(brakes_PRAT[i] == true)
         {
             brakes_Pt[i] = brakes_Pt[i] - brakes_DPavt[i];
+        }
+        else
+        {
             brakes_DPavt[i] = 0;
             brakes_DPt[i] = brakes_Ptr[i] - brakes_Pt[i];
-            if(abs(brakes_DPt[i]) >= brakes_DPtr[i])
+            if(abs(brakes_DPt[i]) >= delta_Ptr)
             {
                 if(brakes_DPt[i] >= 0)
                 {
@@ -216,22 +216,17 @@ void brakes_skid::logic_skid()
                 brakes_Pt[i] = brakes_Ptr[i];
             }
         }
-        else
-        {
-            brakes_Pt[i] = brakes_Pt[i] - brakes_DPavt[i];
-        }
 
 
         if(brakes_Pt[i] >= 0)
         {
             if(POSH == true)
             {
-                brakes_Vkr[i] =
-                        brakes_Vk_p[i] - K1 * brakes_Pt[i] - 0.25 * (TICK / 1000);
+                brakes_Vkr[i] = V_kh - (brakes_K1[i] * brakes_Pt[i]);
             }
             else
             {
-                brakes_Vkr[i] = V_kh - (K1 * brakes_Pt[i]);
+                brakes_Vkr[i] = brakes_Vk_p[i] - brakes_K1[i] * brakes_Pt[i] - (50 * (TICK / 1000));
             }
         }
         else
@@ -240,12 +235,16 @@ void brakes_skid::logic_skid()
         }
 
 
-        if(brakes_Vkr[i] <= 0)
+        if(brakes_Vkr[i] <= 0.01)
         {
             brakes_Vkr[i] = 0;
         }
 
         brakes_DVk[i] = ((brakes_Vkr[i] - brakes_Vk_p[i]) * K2);
+        if(brakes_DVk[i] > (-0.01) && brakes_DVk[i] < 0.01)
+        {
+            brakes_DVk[i] = 0;
+        }
 
         brakes_Vk[i] = brakes_Vk_p[i] + brakes_DVk[i];
         brakes_Wk[i] = K3 * brakes_Vk[i];
@@ -256,7 +255,7 @@ void brakes_skid::logic_skid()
         brakes_Wsvk[j] = K3 * brakes_Vsvk[j];
         brakes_Wsvk_p[j] = brakes_Wsvk[j];
 
-        if(brakes_Vsvk[j] >= 30 && brakes_Vsvk[j] <= 300)
+        if(brakes_Vsvk[j] >= 8.3 && brakes_Vsvk[j] <= 83)
         {
 
             brakes_Sk[i] = ((brakes_Wsvk[j] - brakes_Wk[i]) / brakes_Wsvk[j]);
@@ -269,7 +268,7 @@ void brakes_skid::logic_skid()
             }
             else
             {
-                if((brakes_DVk[i] - brakes_DVsvk[j]) > 10)
+                if((brakes_DVk[i] - brakes_DVsvk[j]) > 2.7)
                 {
                     brakes_PK1[i] = true;
                 }
@@ -301,8 +300,7 @@ void brakes_skid::logic_skid()
             else
             {
                 if(brakes_PK1[i] == true ||
-                        brakes_PK2[i] == true ||
-                        brakes_PRAT[i] == false)
+                        brakes_PK2[i] == true)
                 {
                     brakes_PK5[i] = true;
 
@@ -362,15 +360,20 @@ void brakes_skid::logic_skid()
                 }
                 else
                 {
-                    brakes_DPavt[i] = brakes_Pt[i] - brakes_Pkv[i];
+                    if(brakes_PRAT[i] == true)
+                    {
+                        brakes_DPavt[i] = brakes_Pt[i] - brakes_Pkv[i];
 
-                    brakes_PRAT[i] = false;
-                    brakes_PK5[i] = false;
+                        brakes_PRAT[i] = false;
+                        brakes_PK5[i] = false;
+                    }
                 }
             }
         }
         else
         {
+            brakes_PK1[i] = false;
+            brakes_PK2[i] = false;
             brakes_PRAT[i] = false;
             brakes_PK5[i] = false;
         }
@@ -379,6 +382,7 @@ void brakes_skid::logic_skid()
     //end logic
 
     //stroke creating for pools
+    QString K1_str;
     QString PK1_str;
     QString PK2_str;
     QString PK5_str;
@@ -406,6 +410,7 @@ void brakes_skid::logic_skid()
     {
         if(i > 0)
         {
+            K1_str += " ";
             PK1_str += " ";
             PK2_str += " ";
             PK5_str += " ";
@@ -430,6 +435,7 @@ void brakes_skid::logic_skid()
             Vsvk_p_str += " ";
         }
 
+        K1_str += QString::number(brakes_K1[i]);
         PK1_str += QString::number(brakes_PK1[i]);
         PK2_str += QString::number(brakes_PK2[i]);
         PK5_str += QString::number(brakes_PK5[i]);
@@ -444,7 +450,6 @@ void brakes_skid::logic_skid()
         Vk_p_str += QString::number(brakes_Vk_p[i]);
         Vkr_str += QString::number(brakes_Vkr[i]);
         DPt_str += QString::number(brakes_DPt[i]);
-        DPtr_str += QString::number(brakes_DPtr[i]);
         DPavt_str += QString::number(brakes_DPavt[i]);
         Ptr_str += QString::number(brakes_Ptr[i]);
         Pt_str += QString::number(brakes_Pt[i]);
@@ -453,6 +458,7 @@ void brakes_skid::logic_skid()
         Vsvk_str += QString::number(brakes_Vsvk[i]);
         Vsvk_p_str += QString::number(brakes_Vsvk_p[i]);
     }
+    brakes_K1_label->setText("K1_" + K1_str);
     brakes_PK1_label->setText("PK1_" + PK1_str);
     brakes_PK2_label->setText("PK2_" + PK2_str);
     brakes_PK5_label->setText("PK5_" + PK5_str);
@@ -467,7 +473,6 @@ void brakes_skid::logic_skid()
     brakes_Vk_p_label->setText("Vk_p_" + Vk_p_str);
     brakes_Vkr_label->setText("Vkr_" + Vkr_str);
     brakes_DPt_label->setText("DPt_" + DPt_str);
-    brakes_DPtr_label->setText("DPtr_" + DPtr_str);
     brakes_DPavt_label->setText("DPavt_" + DPavt_str);
     brakes_Ptr_label->setText("Ptr_" + Ptr_str);
     brakes_Pt_label->setText("Pt_" + Pt_str);
@@ -484,7 +489,6 @@ void brakes_skid::logic_skid()
     delta_Ptr_label->setText("delta Ptr = " + QString::number(delta_Ptr));
     S_ogr1_label->setText("S_ogr1 = " + QString::number(S_ogr1));
     S_ogr3_label->setText("S_ogr3 = " + QString::number(S_ogr3));
-    K1_label->setText("K1 = " + QString::number(K1));
     K2_label->setText("K2 = " + QString::number(K2));
     K2_label->setText("K3 = " + QString::number(K3));
 
@@ -522,7 +526,7 @@ void brakes_skid::m_RedButton(QPushButton* button, bool* clue)
 void brakes_skid::m_Slider_K1(int)
 {
     double buffer = K1_slider->value();
-    K1 = (buffer / 1000);
+    brakes_K1[2] = (buffer / 1000);
 }
 
 

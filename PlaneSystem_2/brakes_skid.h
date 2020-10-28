@@ -29,6 +29,7 @@ class brakes_skid : public QWidget
 public:
     brakes_skid(QWidget* pwgt = 0);
     QWidget wgt_skid;
+    QLabel* brakes_K1_label;
     QLabel* brakes_PK1_label;
     QLabel* brakes_PK2_label;
     QLabel* brakes_PK5_label;
@@ -43,7 +44,6 @@ public:
     QLabel* brakes_Vk_p_label;
     QLabel* brakes_Vkr_label;
     QLabel* brakes_DPt_label;
-    QLabel* brakes_DPtr_label;
     QLabel* brakes_DPavt_label;
     QLabel* brakes_Ptr_label;
     QLabel* brakes_Pt_label;
@@ -57,7 +57,6 @@ public:
     QLabel* delta_Ptr_label;
     QLabel* S_ogr1_label;
     QLabel* S_ogr3_label;
-    QLabel* K1_label;
     QLabel* K2_label;
     QLabel* K3_label;
 

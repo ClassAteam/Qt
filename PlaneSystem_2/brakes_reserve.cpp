@@ -76,7 +76,7 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
     V_kh_label = new QLabel;
 
     V_kh_slider = new QSlider(Qt::Horizontal);
-    V_kh_slider->setRange(0, 300);
+    V_kh_slider->setRange(0, 89);
     V_kh_slider->setPageStep(1);
 
     QObject::connect

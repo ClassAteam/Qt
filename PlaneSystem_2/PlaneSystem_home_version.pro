@@ -27,6 +27,7 @@ SOURCES += \
     antiicing_ppd.cpp \
     antiicing_windshields.cpp \
     brakes_algorithm.cpp \
+    brakes_balarm.cpp \
     brakes_modes.cpp \
     brakes_reserve.cpp \
     brakes_skid.cpp \
@@ -73,6 +74,7 @@ HEADERS += \
     antiicing_ppd.h \
     antiicing_windshields.h \
     brakes_algorithm.h \
+    brakes_balarm.h \
     brakes_modes.h \
     brakes_reserve.h \
     brakes_skid.h \

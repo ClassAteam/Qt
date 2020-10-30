@@ -111,8 +111,6 @@ brakes_modes::brakes_modes(QWidget*pwgt)
     P_ped_12_label = new QLabel;
     P_ped_21_label = new QLabel;
     P_ped_22_label = new QLabel;
-    P_tp_lev_label = new QLabel;
-    P_tp_prav_label = new QLabel;
     alpha_rud_1dv_label = new QLabel;
     alpha_rud_2dv_label = new QLabel;
     alpha_rud_3dv_label = new QLabel;
@@ -250,8 +248,6 @@ brakes_modes::brakes_modes(QWidget*pwgt)
     layout_modes_labels->addWidget(P_ped_12_label);
     layout_modes_labels->addWidget(P_ped_21_label);
     layout_modes_labels->addWidget(P_ped_22_label);
-    layout_modes_labels->addWidget(P_tp_lev_label);
-    layout_modes_labels->addWidget(P_tp_prav_label);
     layout_modes_labels->addWidget(alpha_rud_1dv_label);
     layout_modes_labels->addWidget(alpha_rud_1dv_slider);
     layout_modes_labels->addWidget(alpha_rud_2dv_label);
@@ -507,10 +503,6 @@ void brakes_modes::logic_modes()
             ("P_ped_21 = " + QString::number(P_ped_21));
     P_ped_22_label->setText
             ("P_ped_22 = " + QString::number(P_ped_22));
-    P_tp_lev_label->setText
-            ("P_tp_lev = " + QString::number(P_tp_lev));
-    P_tp_prav_label->setText
-            ("P_tp_prav = " + QString::number(P_tp_prav));
     alpha_rud_1dv_label->setText
             ("alpha_rud_1dv = " + QString::number(alpha_rud_1dv));
     alpha_rud_2dv_label->setText

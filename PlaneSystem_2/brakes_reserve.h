@@ -119,4 +119,5 @@ public slots:
     void m_togglebutton_R();
     void m_RedButton(QPushButton* button, bool* clue);
     void m_Slider_V_kh(int);
+    void m_Pt_labels_set();
 };

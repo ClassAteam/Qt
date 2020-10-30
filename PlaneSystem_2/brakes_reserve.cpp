@@ -390,10 +390,6 @@ void brakes_reserve::logic_reserve()
     ("ax_ts = " + QString::number(ax_ts));
     Pg_at_label->setText
     ("Pg_at = " + QString::number(Pg_at));
-    P_t_lev_label->setText
-    ("P_t_lev = " + QString::number(P_t_lev));
-    P_t_prav_label->setText
-    ("P_t_prav = " + QString::number(P_t_prav));
     V_kh_label->setText
     ("V_kh = " + QString::number(V_kh));
 }
@@ -438,5 +434,12 @@ void brakes_reserve::m_Slider_V_kh(int)
 {
     double buffer = V_kh_slider->value();
     V_kh = buffer;
+}
+void brakes_reserve::m_Pt_labels_set()
+{
+    P_t_lev_label->setText
+    ("P_t_lev = " + QString::number(P_t_lev));
+    P_t_prav_label->setText
+    ("P_t_prav = " + QString::number(P_t_prav));
 }
 

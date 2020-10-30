@@ -308,11 +308,15 @@ void brakes_balarm::logic_balarm()
 
     if(Pg_at >= 130)
     {
-        Pg_at = Pg_at - (Pavart / (TICK / 1000));
+        Pg_at = Pg_at - (Pavart * (TICK / 1000));
     }
-    P_az_gat = Pg_at;
 
-    if(X1_45_7620 == X2_45_7620 == X3_45_7620 == X4_45_7620)
+    P_az_gat = 115 + (0.59 * Pg_at);
+
+    if(X1_45_7620 == true &&
+            X2_45_7620 == true &&
+            X3_45_7620 == true &&
+            X4_45_7620 == true)
     {
         UKS2X234 = P_az_gat;
     }

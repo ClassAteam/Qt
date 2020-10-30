@@ -47,4 +47,6 @@ public:
 
 public slots:
     void logic_algorithm();
+signals:
+    void s_P_t_changed();
 };

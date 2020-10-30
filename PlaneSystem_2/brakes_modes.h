@@ -60,8 +60,6 @@ public:
     QLabel* P_ped_12_label;
     QLabel* P_ped_21_label;
     QLabel* P_ped_22_label;
-    QLabel* P_tp_lev_label;
-    QLabel* P_tp_prav_label;
     QLabel* alpha_rud_1dv_label;
     QLabel* alpha_rud_2dv_label;
     QLabel* alpha_rud_3dv_label;

@@ -284,6 +284,8 @@ int main(int argc, char *argv[])
                      &sashes, &landinggear_sashes::balloon_presure);
     QObject::connect(&racks_rel, &landinggear_racks_rel::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);
+    QObject::connect(&algorithm, &brakes_algorithm::s_P_t_changed,
+                     &reserve, &brakes_reserve::m_Pt_labels_set);
 
     timer->start(TICK);
     return a.exec();

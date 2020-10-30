@@ -89,7 +89,7 @@ void brakes_algorithm::logic_algorithm()
             if(PstartT == true)
             {
                 PTstart = true;
-                if(V_kh <= 30)
+                if(V_kh <= 8.1)
                 {
                     P_t_lev = 150;
                     P_t_prav = 150;
@@ -107,7 +107,7 @@ void brakes_algorithm::logic_algorithm()
                 PTstoyan = true;
             }
 
-            if(V_kh <= 30)
+            if(V_kh <= 8.1)
             {
                 if(PAVT_N == true)
                 {
@@ -211,7 +211,7 @@ void brakes_algorithm::logic_algorithm()
                     }
                     else
                     {
-                        if(Pg_at <= 130 || V_kh <= 50)
+                        if(Pg_at < 130 || V_kh <= 13.5)
                         {
                             P_t_lev = 120;
                             P_t_prav = 120;
@@ -313,4 +313,6 @@ void brakes_algorithm::logic_algorithm()
         P_t_lev = 120;
         P_t_prav = 120;
     }
+
+    emit s_P_t_changed();
 }

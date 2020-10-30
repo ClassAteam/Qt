@@ -43,6 +43,7 @@
 #include <brakes_algorithm.h>
 #include <brakes_skid.h>
 #include <brakes_balarm.h>
+#include <brakes_parachute.h>
 
 const double TICK = 200;
 
@@ -91,6 +92,7 @@ int main(int argc, char *argv[])
     brakes_algorithm algorithm;
     brakes_skid skid;
     brakes_balarm balarm;
+    brakes_parachute parachute;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -188,6 +190,7 @@ int main(int argc, char *argv[])
     layout_brakes.addWidget(&reserve.wgt_reserve);
     layout_brakes.addWidget(&skid.wgt_skid);
     layout_brakes.addWidget(&balarm.wgt_balarm);
+    layout_brakes.addWidget(&parachute.wgt_parachute);
     window_brakes.setLayout(&layout_brakes);
     window_brakes.setWindowTitle("Brakes");
     window_brakes.setWindowState(Qt::WindowFullScreen);
@@ -277,6 +280,8 @@ int main(int argc, char *argv[])
                      &skid , SLOT(logic_skid()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &balarm , SLOT(logic_balarm()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &parachute , SLOT(logic_parachute()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

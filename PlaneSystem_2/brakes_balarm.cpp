@@ -302,7 +302,21 @@ void brakes_balarm::logic_balarm()
         }
         else
         {
-            BSS812_vkl_rt = true;
+            if(PORST == true)
+            {
+                if(S1_3241)
+                {
+                    BSS812_vkl_rt = true;
+                }
+                else
+                {
+                    BSS812_vkl_rt = false;
+                }
+            }
+            else
+            {
+                BSS812_vkl_rt = true;
+            }
         }
     }
 

@@ -46,6 +46,7 @@ SOURCES += \
     emergencyalarm_rightpilot.cpp \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
+    hydro_pumpsrel.cpp \
     landinggear_carts.cpp \
     landinggear_nose.cpp \
     landinggear_position.cpp \
@@ -94,6 +95,7 @@ HEADERS += \
     emergencyalarm_rightpilot.h \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \
+    hydro_pumpsrel.h \
     landinggear_carts.h \
     landinggear_nose.h \
     landinggear_position.h \

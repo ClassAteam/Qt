@@ -44,6 +44,7 @@
 #include <brakes_skid.h>
 #include <brakes_balarm.h>
 #include <brakes_parachute.h>
+#include <hydro_pumpsrel.h>
 
 const double TICK = 200;
 
@@ -93,6 +94,7 @@ int main(int argc, char *argv[])
     brakes_skid skid;
     brakes_balarm balarm;
     brakes_parachute parachute;
+    hydro_pumpsrel pumpsrel;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -196,6 +198,14 @@ int main(int argc, char *argv[])
     window_brakes.setWindowState(Qt::WindowFullScreen);
     window_brakes.show();
 
+    QWidget window_hydro;
+    QHBoxLayout layout_hydro;
+    layout_hydro.addWidget(&pumpsrel.wgt_pumpsrel);
+    window_hydro.setLayout(&layout_hydro);
+    window_hydro.setWindowTitle("Hydro");
+    window_hydro.setWindowState(Qt::WindowFullScreen);
+    window_hydro.show();
+
 //    QObject::connect(timer, SIGNAL(timeout()),
 //                     &logic_valve , SLOT(logic_valves()));
 //    QObject::connect(timer, SIGNAL(timeout()),
@@ -282,6 +292,8 @@ int main(int argc, char *argv[])
                      &balarm , SLOT(logic_balarm()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &parachute , SLOT(logic_parachute()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &pumpsrel , SLOT(logic_pumpsrel()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

@@ -188,12 +188,6 @@ void brakes_parachute::logic_parachute()
         S5_9921 = true;
         S7_9921 = true;
     }
-    else
-    {
-        S4_9921 = false;
-        S5_9921 = false;
-        S7_9921 = false;
-    }
 
     if(PSTP == true)
     {

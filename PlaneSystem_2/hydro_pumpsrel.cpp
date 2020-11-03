@@ -20,6 +20,10 @@ F8_2910,
 F91_2910,
 F9_2910,
 F9_7322,
+K1_2930,
+K2_2930,
+K3_2930,
+K4_2930,
 K10_2910,
 K11_2910,
 K12_2910,
@@ -362,62 +366,7 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     QVBoxLayout *layout_pumpsrel_labels = new QVBoxLayout;
     QVBoxLayout *layout_pumpsrel_labels1 = new QVBoxLayout;
     QHBoxLayout *layout_pumpsrel_main = new QHBoxLayout;
-    layout_pumpsrel_labels1->addWidget(EZR1_34_label);
-    layout_pumpsrel_labels1->addWidget(EZR1_34_on);
-    layout_pumpsrel_labels1->addWidget(EZR2_34_label);
-    layout_pumpsrel_labels1->addWidget(EZR2_34_on);
-    layout_pumpsrel_labels1->addWidget(EZR3_34_label);
-    layout_pumpsrel_labels1->addWidget(EZR3_34_on);
-    layout_pumpsrel_labels1->addWidget(EZR4_34_label);
-    layout_pumpsrel_labels1->addWidget(EZR4_34_on);
-    layout_pumpsrel_labels1->addWidget(F101_2910_label);
-    layout_pumpsrel_labels1->addWidget(F18_2910_label);
-    layout_pumpsrel_labels1->addWidget(F318_2910_label);
-    layout_pumpsrel_labels1->addWidget(F31_2910_label);
-    layout_pumpsrel_labels1->addWidget(F32_2910_label);
-    layout_pumpsrel_labels1->addWidget(F323_2910_label);
-    layout_pumpsrel_labels1->addWidget(F3_10010_label);
-    layout_pumpsrel_labels1->addWidget(F3_2910_label);
-    layout_pumpsrel_labels1->addWidget(F58_2910_label);
-    layout_pumpsrel_labels1->addWidget(F78_2910_label);
-    layout_pumpsrel_labels1->addWidget(F88_2910_label);
-    layout_pumpsrel_labels1->addWidget(F8_2910_label);
-    layout_pumpsrel_labels1->addWidget(F91_2910_label);
-    layout_pumpsrel_labels1->addWidget(F9_2910_label);
-    layout_pumpsrel_labels1->addWidget(F9_7322_label);
-    layout_pumpsrel_labels1->addWidget(K10_2910_label);
-    layout_pumpsrel_labels1->addWidget(K11_2910_label);
-    layout_pumpsrel_labels1->addWidget(K12_2910_label);
-    layout_pumpsrel_labels1->addWidget(K13_2910_label);
-    layout_pumpsrel_labels1->addWidget(K14_2910_label);
-    layout_pumpsrel_labels1->addWidget(K15_2910_label);
-    layout_pumpsrel_labels1->addWidget(K16_2910_label);
-    layout_pumpsrel_labels1->addWidget(K17_2910_label);
-    layout_pumpsrel_labels1->addWidget(K18_2910_label);
-    layout_pumpsrel_labels1->addWidget(K19_2910_label);
-    layout_pumpsrel_labels1->addWidget(K1_2910_label);
-    layout_pumpsrel_labels1->addWidget(K20_2910_label);
-    layout_pumpsrel_labels1->addWidget(K21_2910_label);
-    layout_pumpsrel_labels1->addWidget(K22_2910_label);
-    layout_pumpsrel_labels1->addWidget(K23_2910_label);
-    layout_pumpsrel_labels1->addWidget(K25_2910_label);
-    layout_pumpsrel_labels1->addWidget(K26_2910_label);
-    layout_pumpsrel_labels1->addWidget(K27_2910_label);
-    layout_pumpsrel_labels1->addWidget(K28_2910_label);
-    layout_pumpsrel_labels1->addWidget(K29_2910_label);
-    layout_pumpsrel_labels1->addWidget(K2_2910_label);
-    layout_pumpsrel_labels1->addWidget(K30_2910_label);
-    layout_pumpsrel_labels1->addWidget(K31_2910_label);
-    layout_pumpsrel_labels1->addWidget(K32_2910_label);
-    layout_pumpsrel_labels1->addWidget(K33_2910_label);
-    layout_pumpsrel_labels1->addWidget(K34_2910_label);
-    layout_pumpsrel_labels1->addWidget(K35_2910_label);
-    layout_pumpsrel_labels1->addWidget(K36_2910_label);
-    layout_pumpsrel_labels1->addWidget(K37_2910_label);
-    layout_pumpsrel_labels1->addWidget(K38_2910_label);
-    layout_pumpsrel_labels1->addWidget(K3_2910_label);
-    layout_pumpsrel_labels1->addWidget(K4_2910_label);
-    layout_pumpsrel_labels1->addWidget(K5_2910_label);
+
     layout_pumpsrel_labels->addWidget(K7_2910_label);
     layout_pumpsrel_labels->addWidget(K8_2910_label);
     layout_pumpsrel_labels->addWidget(K9_2910_label);
@@ -431,6 +380,14 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     layout_pumpsrel_labels->addWidget(PRN2gs2_label);
     layout_pumpsrel_labels->addWidget(PRN2gs3_label);
     layout_pumpsrel_labels->addWidget(PRN2gs4_label);
+    layout_pumpsrel_labels->addWidget(Pn1gs1_label);
+    layout_pumpsrel_labels->addWidget(Pn1gs2_label);
+    layout_pumpsrel_labels->addWidget(Pn1gs3_label);
+    layout_pumpsrel_labels->addWidget(Pn1gs4_label);
+    layout_pumpsrel_labels->addWidget(Pn2gs1_label);
+    layout_pumpsrel_labels->addWidget(Pn2gs2_label);
+    layout_pumpsrel_labels->addWidget(Pn2gs3_label);
+    layout_pumpsrel_labels->addWidget(Pn2gs4_label);
     layout_pumpsrel_labels->addWidget(S1_2910_label);
     layout_pumpsrel_labels->addWidget(S1_2910_on);
     layout_pumpsrel_labels->addWidget(S2_2910_label);
@@ -470,15 +427,62 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     layout_pumpsrel_labels->addWidget(UKS2X338_label);
     layout_pumpsrel_labels->addWidget(UKS2X339_label);
     layout_pumpsrel_labels->addWidget(Ush1p_label);
-    layout_pumpsrel_labels->addWidget(Pn1gs1_label);
-    layout_pumpsrel_labels->addWidget(Pn1gs2_label);
-    layout_pumpsrel_labels->addWidget(Pn1gs3_label);
-    layout_pumpsrel_labels->addWidget(Pn1gs4_label);
-    layout_pumpsrel_labels->addWidget(Pn2gs1_label);
-    layout_pumpsrel_labels->addWidget(Pn2gs2_label);
-    layout_pumpsrel_labels->addWidget(Pn2gs3_label);
-    layout_pumpsrel_labels->addWidget(Pn2gs4_label);
-
+    layout_pumpsrel_labels1->addWidget(EZR1_34_label);
+    layout_pumpsrel_labels1->addWidget(EZR1_34_on);
+    layout_pumpsrel_labels1->addWidget(EZR2_34_label);
+    layout_pumpsrel_labels1->addWidget(EZR2_34_on);
+    layout_pumpsrel_labels1->addWidget(EZR3_34_label);
+    layout_pumpsrel_labels1->addWidget(EZR3_34_on);
+    layout_pumpsrel_labels1->addWidget(EZR4_34_label);
+    layout_pumpsrel_labels1->addWidget(EZR4_34_on);
+    layout_pumpsrel_labels1->addWidget(F101_2910_label);
+    layout_pumpsrel_labels1->addWidget(F18_2910_label);
+    layout_pumpsrel_labels1->addWidget(F318_2910_label);
+    layout_pumpsrel_labels1->addWidget(F31_2910_label);
+    layout_pumpsrel_labels1->addWidget(F323_2910_label);
+    layout_pumpsrel_labels1->addWidget(F32_2910_label);
+    layout_pumpsrel_labels1->addWidget(F3_10010_label);
+    layout_pumpsrel_labels1->addWidget(F3_2910_label);
+    layout_pumpsrel_labels1->addWidget(F58_2910_label);
+    layout_pumpsrel_labels1->addWidget(F78_2910_label);
+    layout_pumpsrel_labels1->addWidget(F88_2910_label);
+    layout_pumpsrel_labels1->addWidget(F8_2910_label);
+    layout_pumpsrel_labels1->addWidget(F91_2910_label);
+    layout_pumpsrel_labels1->addWidget(F9_2910_label);
+    layout_pumpsrel_labels1->addWidget(F9_7322_label);
+    layout_pumpsrel_labels1->addWidget(K1_2910_label);
+    layout_pumpsrel_labels1->addWidget(K2_2910_label);
+    layout_pumpsrel_labels1->addWidget(K3_2910_label);
+    layout_pumpsrel_labels1->addWidget(K4_2910_label);
+    layout_pumpsrel_labels1->addWidget(K5_2910_label);
+    layout_pumpsrel_labels1->addWidget(K10_2910_label);
+    layout_pumpsrel_labels1->addWidget(K11_2910_label);
+    layout_pumpsrel_labels1->addWidget(K12_2910_label);
+    layout_pumpsrel_labels1->addWidget(K13_2910_label);
+    layout_pumpsrel_labels1->addWidget(K14_2910_label);
+    layout_pumpsrel_labels1->addWidget(K15_2910_label);
+    layout_pumpsrel_labels1->addWidget(K16_2910_label);
+    layout_pumpsrel_labels1->addWidget(K17_2910_label);
+    layout_pumpsrel_labels1->addWidget(K18_2910_label);
+    layout_pumpsrel_labels1->addWidget(K19_2910_label);
+    layout_pumpsrel_labels1->addWidget(K20_2910_label);
+    layout_pumpsrel_labels1->addWidget(K21_2910_label);
+    layout_pumpsrel_labels1->addWidget(K22_2910_label);
+    layout_pumpsrel_labels1->addWidget(K23_2910_label);
+    layout_pumpsrel_labels1->addWidget(K25_2910_label);
+    layout_pumpsrel_labels1->addWidget(K26_2910_label);
+    layout_pumpsrel_labels1->addWidget(K27_2910_label);
+    layout_pumpsrel_labels1->addWidget(K28_2910_label);
+    layout_pumpsrel_labels1->addWidget(K29_2910_label);
+    layout_pumpsrel_labels1->addWidget(K30_2910_label);
+    layout_pumpsrel_labels1->addWidget(K31_2910_label);
+    layout_pumpsrel_labels1->addWidget(K32_2910_label);
+    layout_pumpsrel_labels1->addWidget(K33_2910_label);
+    layout_pumpsrel_labels1->addWidget(K34_2910_label);
+    layout_pumpsrel_labels1->addWidget(K35_2910_label);
+    layout_pumpsrel_labels1->addWidget(K36_2910_label);
+    layout_pumpsrel_labels1->addWidget(K37_2910_label);
+    layout_pumpsrel_labels1->addWidget(K38_2910_label);
     layout_pumpsrel_main->addLayout(layout_pumpsrel_labels);
     layout_pumpsrel_main->addLayout(layout_pumpsrel_labels1);
     wgt_pumpsrel.setLayout(layout_pumpsrel_main);
@@ -639,54 +643,75 @@ void hydro_pumpsrel::logic_pumpsrel()
     }
 
     K10_2910 = false;
-    K11_2910 = false;
 
     if(F31_2910 == true)
     {
         if(K2_2910 == true ||
                 K4_2910 == true ||
-                K12_2910 == true)
+                K12_2910 == true ||
+                K25_2910 == true)
         {
             K10_2910 = true;
-        }
-        else
-        {
-            if(K25_2910 == true)
-            {
-                K10_2910 = false;
-            }
         }
 
         if(S1_2910 == true)
         {
-            K28_2910 = false;
-            K29_2910 = false;
-            K30_2910 = false;
-            K31_2910 = false;
-            UKS2X324 = false;
-            UKS2X325 = false;
-            UKS2X326 = false;
-            UKS2X327 = false;
+            K11_2910 = false;
+        }
+        else
+        {
+            if(K1_2930 == true ||
+                    K2_2930 == true ||
+                    K3_2930 == true ||
+                    K4_2930 == true)
+            {
+                K11_2910 = true;
+            }
+            else
+            {
+                if(K11_2910 == true && K27_2910 == true)
+                {
+                    K11_2910 = false;
+                }
+            }
         }
     }
+    else
+    {
+        K11_2910 = false;
+    }
+
+    K28_2910 = false;
+    K29_2910 = false;
+    K30_2910 = false;
+    K31_2910 = false;
+    UKS2X324 = false;
+    UKS2X325 = false;
+    UKS2X326 = false;
+    UKS2X327 = false;
 
     if(Ushal >= 18.0)
     {
         if(Pn2gs2 <= 80)
         {
             K29_2910 = true;
+            UKS2X324 = true;
         }
         if(Pn1gs1 <= 80)
         {
             K28_2910 = true;
+            UKS2X325 = true;
+
         }
         if(Pn1gs2 <= 80)
         {
             K30_2910 = true;
+            UKS2X326 = true;
         }
         if(Pn2gs1 <= 80)
         {
             K31_2910 = true;
+            UKS2X327 = true;
         }
     }
 
@@ -704,18 +729,22 @@ void hydro_pumpsrel::logic_pumpsrel()
         if(Pn1gs3 <= 80)
         {
             K34_2910 = true;
+            UKS2X329 = true;
         }
         if(Pn2gs3 <= 80)
         {
             K38_2910 = true;
+            UKS2X331 = true;
         }
         if(Pn1gs4 <= 80)
         {
             K35_2910 = true;
+            UKS2X330 = true;
         }
         if(Pn2gs4 <= 80)
         {
             K32_2910 = true;
+            UKS2X328 = true;
         }
     }
 
@@ -785,7 +814,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K27_2910 == true)
         {
-            if(alpha_rud_4dv < 45 && F91_2910 == true)
+            if(alpha_rud_2dv < 45 && F91_2910 == true)
             {
                 if(S7_2910 == true || S5_2910 == true)
                 {
@@ -928,7 +957,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         {
             PRN2gs1 = true;
             K17_2910 = true;
-            UKS2X334 = true;
+            UKS2X335 = true;
         }
     }
     if(Ushap >= 18.0)

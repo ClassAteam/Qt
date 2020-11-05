@@ -99,14 +99,6 @@ public:
     QLabel* S5_2910_label;
     QLabel* S6_2910_label;
     QLabel* S7_2910_label;
-    QLabel* UKS1X324_label;
-    QLabel* UKS1X325_label;
-    QLabel* UKS1X326_label;
-    QLabel* UKS1X327_label;
-    QLabel* UKS1X328_label;
-    QLabel* UKS1X329_label;
-    QLabel* UKS1X330_label;
-    QLabel* UKS1X331_label;
     QLabel* UKS2X324_label;
     QLabel* UKS2X325_label;
     QLabel* UKS2X326_label;

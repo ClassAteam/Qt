@@ -76,14 +76,6 @@ S4_2910,
 S5_2910,
 S6_2910,
 S7_2910,
-UKS1X324,
-UKS1X325,
-UKS1X326,
-UKS1X327,
-UKS1X328,
-UKS1X329,
-UKS1X330,
-UKS1X331,
 UKS2X324,
 UKS2X325,
 UKS2X326,
@@ -183,14 +175,6 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     S5_2910 = 0;
     S6_2910 = 0;
     S7_2910 = 0;
-    UKS1X324 = 0;
-    UKS1X325 = 0;
-    UKS1X326 = 0;
-    UKS1X327 = 0;
-    UKS1X328 = 0;
-    UKS1X329 = 0;
-    UKS1X330 = 0;
-    UKS1X331 = 0;
     UKS2X324 = 0;
     UKS2X325 = 0;
     UKS2X326 = 0;
@@ -288,14 +272,6 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     S5_2910_label = new QLabel;
     S6_2910_label = new QLabel;
     S7_2910_label = new QLabel;
-    UKS1X324_label = new QLabel;
-    UKS1X325_label = new QLabel;
-    UKS1X326_label = new QLabel;
-    UKS1X327_label = new QLabel;
-    UKS1X328_label = new QLabel;
-    UKS1X329_label = new QLabel;
-    UKS1X330_label = new QLabel;
-    UKS1X331_label = new QLabel;
     UKS2X324_label = new QLabel;
     UKS2X325_label = new QLabel;
     UKS2X326_label = new QLabel;
@@ -402,14 +378,6 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     layout_pumpsrel_labels->addWidget(S6_2910_on);
     layout_pumpsrel_labels->addWidget(S7_2910_label);
     layout_pumpsrel_labels->addWidget(S7_2910_on);
-    layout_pumpsrel_labels->addWidget(UKS1X324_label);
-    layout_pumpsrel_labels->addWidget(UKS1X325_label);
-    layout_pumpsrel_labels->addWidget(UKS1X326_label);
-    layout_pumpsrel_labels->addWidget(UKS1X327_label);
-    layout_pumpsrel_labels->addWidget(UKS1X328_label);
-    layout_pumpsrel_labels->addWidget(UKS1X329_label);
-    layout_pumpsrel_labels->addWidget(UKS1X330_label);
-    layout_pumpsrel_labels->addWidget(UKS1X331_label);
     layout_pumpsrel_labels->addWidget(UKS2X324_label);
     layout_pumpsrel_labels->addWidget(UKS2X325_label);
     layout_pumpsrel_labels->addWidget(UKS2X326_label);
@@ -1068,14 +1036,6 @@ void hydro_pumpsrel::logic_pumpsrel()
     S5_2910_label->setText("S5_2910 = " + QString::number(S5_2910));
     S6_2910_label->setText("S6_2910 = " + QString::number(S6_2910));
     S7_2910_label->setText("S7_2910 = " + QString::number(S7_2910));
-    UKS1X324_label->setText("UKS1X324 = " + QString::number(UKS1X324));
-    UKS1X325_label->setText("UKS1X325 = " + QString::number(UKS1X325));
-    UKS1X326_label->setText("UKS1X326 = " + QString::number(UKS1X326));
-    UKS1X327_label->setText("UKS1X327 = " + QString::number(UKS1X327));
-    UKS1X328_label->setText("UKS1X328 = " + QString::number(UKS1X328));
-    UKS1X329_label->setText("UKS1X329 = " + QString::number(UKS1X329));
-    UKS1X330_label->setText("UKS1X330 = " + QString::number(UKS1X330));
-    UKS1X331_label->setText("UKS1X331 = " + QString::number(UKS1X331));
     UKS2X324_label->setText("UKS2X324 = " + QString::number(UKS2X324));
     UKS2X325_label->setText("UKS2X325 = " + QString::number(UKS2X325));
     UKS2X326_label->setText("UKS2X326 = " + QString::number(UKS2X326));

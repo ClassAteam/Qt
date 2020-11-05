@@ -45,6 +45,7 @@
 #include <brakes_balarm.h>
 #include <brakes_parachute.h>
 #include <hydro_pumpsrel.h>
+#include <hydro_hvalves.h>
 
 const double TICK = 200;
 
@@ -95,6 +96,7 @@ int main(int argc, char *argv[])
     brakes_balarm balarm;
     brakes_parachute parachute;
     hydro_pumpsrel pumpsrel;
+    hydro_hvalves hvalves;
     QTimer *timer = new QTimer;
 
 //    QWidget window_antifire;
@@ -201,6 +203,7 @@ int main(int argc, char *argv[])
     QWidget window_hydro;
     QHBoxLayout layout_hydro;
     layout_hydro.addWidget(&pumpsrel.wgt_pumpsrel);
+    layout_hydro.addWidget(&hvalves.wgt_hvalves);
     window_hydro.setLayout(&layout_hydro);
     window_hydro.setWindowTitle("Hydro");
     window_hydro.setWindowState(Qt::WindowFullScreen);
@@ -294,6 +297,8 @@ int main(int argc, char *argv[])
                      &parachute , SLOT(logic_parachute()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &pumpsrel , SLOT(logic_pumpsrel()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &hvalves , SLOT(logic_hvalves()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

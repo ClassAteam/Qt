@@ -47,6 +47,7 @@ SOURCES += \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
     hydro_hvalves.cpp \
+    hydro_pumping.cpp \
     hydro_pumpsrel.cpp \
     landinggear_carts.cpp \
     landinggear_nose.cpp \
@@ -60,6 +61,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     presure_regulation.cpp \
+    wind_functions.cpp \
     wingsmech_alarm.cpp \
     wingsmech_flaps.cpp \
     wingsmech_movingpart.cpp \
@@ -97,6 +99,7 @@ HEADERS += \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \
     hydro_hvalves.h \
+    hydro_pumping.h \
     hydro_pumpsrel.h \
     landinggear_carts.h \
     landinggear_nose.h \
@@ -110,6 +113,7 @@ HEADERS += \
     main.h \
     mainwindow.h \
     presure_regulation.h \
+    wind_functions.h \
     wingsmech_alarm.h \
     wingsmech_flaps.h \
     wingsmech_movingpart.h \

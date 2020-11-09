@@ -11,7 +11,7 @@ double m_2_L_intervals(double input,
 {
     double result;
     result = 0;
-    if((input > x1) && (input) < x2)
+    if((input >= x1) && (input) < x2)
     {
         result = two_points_to_Y(input,x1, x2, y1, y2 );
         return result;

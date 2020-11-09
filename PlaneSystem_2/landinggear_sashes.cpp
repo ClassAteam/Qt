@@ -72,7 +72,7 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     Ddelta_stv_l = 0;
     Ddelta_stv_p = 0;
     Ddelta_stv_n = 0;
-    Pgs2 = 280;
+    Pgs2 = 0;
     V_bal_l = 44100;
     V_bal_p = 44100;
     V_bal_n = 37000;

@@ -7,6 +7,12 @@
 #include <QLineEdit>
 
 extern bool
+//third hydrosystem
+pntnugs1,
+pntnugs2,
+pntnugs3,
+pntnugs4,
+//
 PRN1gs1,
 PRN1gs2,
 PRN1gs3,
@@ -20,7 +26,36 @@ extern double
 Pgs1,
 Pgs2,
 Pgs3,
-Pgs4;
+Pgs4,
+//third hydrosystem
+kkgs3,
+qpgs3,
+p0_gs3,
+Pg_at_z,
+pgs3_z,
+Pv_vsu,
+delta_wpgs3,
+dxst_dt,
+kgs,
+qngat,
+qngs1,
+qngs2,
+qngs3,
+qngs4,
+qntnugs1,
+qntnugs2,
+qntnugs3,
+qntnugs4,
+qp3_sum,
+qtnugs1,
+qtnugs2,
+qtnugs3,
+qtnugs4,
+qutgs3,
+sst,
+w0gs3,
+wpgs3;
+
 
 class hydro_pumping : public QWidget
 {
@@ -70,6 +105,40 @@ public:
     QSlider* Pgs3_sl;
     QSlider* Pgs4_sl;
 
+    //third hydrosystem
+    QLabel* pntnugs1_label;
+    QLabel* pntnugs2_label;
+    QLabel* pntnugs3_label;
+    QLabel* pntnugs4_label;
+    QLabel* kkgs3_label;
+    QLabel* qpgs3_label;
+    QLabel* p0_gs3_label;
+    QLabel* Pg_at_z_label;
+    QLabel* pgs3_z_label;
+    QLabel* Pv_vsu_label;
+    QLabel* delta_wpgs3_label;
+    QLabel* kgs_label;
+    QLabel* qngat_label;
+    QLabel* qngs1_label;
+    QLabel* qngs2_label;
+    QLabel* qngs3_label;
+    QLabel* qngs4_label;
+    QLabel* qntnugs1_label;
+    QLabel* qntnugs2_label;
+    QLabel* qntnugs3_label;
+    QLabel* qntnugs4_label;
+    QLabel* qp3_sum_label;
+    QLabel* qtnugs1_label;
+    QLabel* qtnugs2_label;
+    QLabel* qtnugs3_label;
+    QLabel* qtnugs4_label;
+    QLabel* qutgs3_label;
+    QLabel* w0gs3_label;
+    QLabel* wpgs3_label;
+
+    QSlider* Pv_vsu_sl;
+    QSlider* qp3_sum_sl;
+
 public slots:
     void logic_pumping();
     void m_togglebutton_R();
@@ -82,5 +151,7 @@ public slots:
     void m_Slider_Pgs2(int);
     void m_Slider_Pgs3(int);
     void m_Slider_Pgs4(int);
+    void m_Slider_Pv_vsu(int);
+    void m_Slider_qp3_sum(int);
 };
 

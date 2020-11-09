@@ -63,6 +63,37 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     Pgs3_label = new QLabel;
     Pgs4_label = new QLabel;
 
+    //third hydrosystem
+    pntnugs1_label = new QLabel;
+    pntnugs2_label = new QLabel;
+    pntnugs3_label = new QLabel;
+    pntnugs4_label = new QLabel;
+    kkgs3_label = new QLabel;
+    qpgs3_label = new QLabel;
+    p0_gs3_label = new QLabel;
+    Pg_at_z_label = new QLabel;
+    pgs3_z_label = new QLabel;
+    Pv_vsu_label = new QLabel;
+    delta_wpgs3_label = new QLabel;
+    kgs_label = new QLabel;
+    qngat_label = new QLabel;
+    qngs1_label = new QLabel;
+    qngs2_label = new QLabel;
+    qngs3_label = new QLabel;
+    qngs4_label = new QLabel;
+    qntnugs1_label = new QLabel;
+    qntnugs2_label = new QLabel;
+    qntnugs3_label = new QLabel;
+    qntnugs4_label = new QLabel;
+    qp3_sum_label = new QLabel;
+    qtnugs1_label = new QLabel;
+    qtnugs2_label = new QLabel;
+    qtnugs3_label = new QLabel;
+    qtnugs4_label = new QLabel;
+    qutgs3_label = new QLabel;
+    w0gs3_label = new QLabel;
+    wpgs3_label = new QLabel;
+
     otkaz_gs1_on = new QPushButton("otkaz_gs1_on", this);
     otkaz_gs2_on = new QPushButton("otkaz_gs2_on", this);
     otkaz_gs3_on = new QPushButton("otkaz_gs3_on", this);
@@ -98,6 +129,15 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     Pgs4_sl->setPageStep(1);
     Pgs4_sl->setValue(Pgs4);
 
+    //third hydrosystem
+    Pv_vsu_sl = new QSlider(Qt::Horizontal);
+    Pv_vsu_sl->setRange(0, 8);
+    Pv_vsu_sl->setPageStep(1);
+
+    qp3_sum_sl = new QSlider(Qt::Horizontal);
+    qp3_sum_sl->setRange(0, 100);
+    qp3_sum_sl->setPageStep(1);
+
 
     QObject::connect
 (otkaz_gs1_on, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));
@@ -123,6 +163,14 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
 (Pgs3_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_Pgs3(int)));
     QObject::connect
 (Pgs4_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_Pgs4(int)));
+
+    //third hydrosystem
+    QObject::connect
+(Pv_vsu_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_Pv_vsu(int)));
+    QObject::connect
+(qp3_sum_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_qp3_sum(int)));
+
+
 
     //layout setting
     QVBoxLayout *layout_pumping_labels = new QVBoxLayout;
@@ -167,6 +215,39 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     layout_pumping_labels->addWidget(Pgs4_label);
     layout_pumping_labels->addWidget(Pgs4_sl);
 
+    //third hydrosystem
+    layout_pumping_labels->addWidget(pntnugs1_label);
+    layout_pumping_labels->addWidget(pntnugs2_label);
+    layout_pumping_labels->addWidget(pntnugs3_label);
+    layout_pumping_labels->addWidget(pntnugs4_label);
+    layout_pumping_labels->addWidget(kkgs3_label);
+    layout_pumping_labels->addWidget(qpgs3_label);
+    layout_pumping_labels->addWidget(p0_gs3_label);
+    layout_pumping_labels->addWidget(Pg_at_z_label);
+    layout_pumping_labels->addWidget(pgs3_z_label);
+    layout_pumping_labels->addWidget(Pv_vsu_label);
+    layout_pumping_labels->addWidget(Pv_vsu_sl);
+    layout_pumping_labels->addWidget(delta_wpgs3_label);
+    layout_pumping_labels->addWidget(kgs_label);
+    layout_pumping_labels->addWidget(qngat_label);
+    layout_pumping_labels->addWidget(qngs1_label);
+    layout_pumping_labels->addWidget(qngs2_label);
+    layout_pumping_labels->addWidget(qngs3_label);
+    layout_pumping_labels->addWidget(qngs4_label);
+    layout_pumping_labels->addWidget(qntnugs1_label);
+    layout_pumping_labels->addWidget(qntnugs2_label);
+    layout_pumping_labels->addWidget(qntnugs3_label);
+    layout_pumping_labels->addWidget(qntnugs4_label);
+    layout_pumping_labels->addWidget(qp3_sum_label);
+    layout_pumping_labels->addWidget(qp3_sum_sl);
+    layout_pumping_labels->addWidget(qtnugs1_label);
+    layout_pumping_labels->addWidget(qtnugs2_label);
+    layout_pumping_labels->addWidget(qtnugs3_label);
+    layout_pumping_labels->addWidget(qtnugs4_label);
+    layout_pumping_labels->addWidget(qutgs3_label);
+    layout_pumping_labels->addWidget(w0gs3_label);
+    layout_pumping_labels->addWidget(wpgs3_label);
+
 
     layout_pumping_main->addLayout(layout_pumping_labels);
     wgt_pumping.setLayout(layout_pumping_main);
@@ -203,7 +284,8 @@ void hydro_pumping::logic_pumping()
             l_gs1[i] = 0;
         }
 
-        Qngngs1[i] = Kngs1[i] * l_gs1[i] * nVDfirst2[i];
+        Qngngs1[i] = Kngs1[i] * l_gs1[i];
+        Qngngs1[i] = Qngngs1[i] * nVDfirst2[i];
 
         //2
         if(Pgs2 >= 90)
@@ -303,6 +385,35 @@ void hydro_pumping::logic_pumping()
         m_settext_lbl(Pgs2_label, Pgs2, "Pgs2");
         m_settext_lbl(Pgs3_label, Pgs3, "Pgs3");
         m_settext_lbl(Pgs4_label, Pgs4, "Pgs4");
+        //third hydrosystem
+        m_settext_lbl(pntnugs1_label, pntnugs1, "pntnugs1");
+        m_settext_lbl(pntnugs2_label,pntnugs2 , "pntnugs2");
+        m_settext_lbl(pntnugs3_label,pntnugs3 , "pntnugs3");
+        m_settext_lbl(pntnugs4_label,pntnugs4 , "pntnugs4");
+        m_settext_lbl(qpgs3_label,qpgs3 , "qpgs3");
+        m_settext_lbl(p0_gs3_label,p0_gs3 , "p0_gs3");
+        m_settext_lbl(Pg_at_z_label,Pg_at_z , "Pg_at_z");
+        m_settext_lbl(pgs3_z_label,pgs3_z , "pgs3_z");
+        m_settext_lbl(Pv_vsu_label,Pv_vsu , "Pv_vsu");
+        m_settext_lbl(delta_wpgs3_label,delta_wpgs3 , "delta_wpgs3");
+        m_settext_lbl(kgs_label,kgs , "kgs");
+        m_settext_lbl(qngat_label,qngat , "qngat");
+        m_settext_lbl(qngs1_label,qngs1 , "qngs1");
+        m_settext_lbl(qngs2_label,qngs2 , "qngs2");
+        m_settext_lbl(qngs3_label,qngs3 , "qngs3");
+        m_settext_lbl(qngs4_label,qngs4 , "qngs4");
+        m_settext_lbl(qntnugs1_label,qntnugs1 , "qntnugs1");
+        m_settext_lbl(qntnugs2_label,qntnugs2 , "qntnugs2");
+        m_settext_lbl(qntnugs3_label,qntnugs3 , "qntnugs3");
+        m_settext_lbl(qntnugs4_label,qntnugs4 , "qntnugs4");
+        m_settext_lbl(qp3_sum_label,qp3_sum , "qp3_sum");
+        m_settext_lbl(qtnugs1_label,qtnugs1 , "qtnugs1");
+        m_settext_lbl(qtnugs2_label,qtnugs2 , "qtnugs2");
+        m_settext_lbl(qtnugs3_label,qtnugs3 , "qtnugs3");
+        m_settext_lbl(qtnugs4_label,qtnugs4 , "qtnugs4");
+        m_settext_lbl(qutgs3_label,qutgs3 , "qutgs3");
+        m_settext_lbl(w0gs3_label,w0gs3 , "w0gs3");
+        m_settext_lbl(wpgs3_label,wpgs3 , "wpgs3");
 
     }
 
@@ -339,6 +450,16 @@ void hydro_pumping::m_Slider_Pgs3(int)
 void hydro_pumping::m_Slider_Pgs4(int)
 {
     Pgs4 = Pgs4_sl->value();
+}
+void hydro_pumping::m_Slider_Pv_vsu(int)
+{
+    double buffer = 0;
+    buffer = Pv_vsu_sl->value();
+    Pv_vsu = (buffer / 2);
+}
+void hydro_pumping::m_Slider_qp3_sum(int)
+{
+    qp3_sum = qp3_sum_sl->value();
 }
 
 void hydro_pumping::m_togglebutton_R()

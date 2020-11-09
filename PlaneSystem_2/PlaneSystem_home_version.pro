@@ -46,6 +46,7 @@ SOURCES += \
     emergencyalarm_rightpilot.cpp \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
+    hydro_3rdsystem.cpp \
     hydro_hvalves.cpp \
     hydro_pumping.cpp \
     hydro_pumpsrel.cpp \
@@ -98,6 +99,7 @@ HEADERS += \
     emergencyalarm_rightpilot.h \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \
+    hydro_3rdsystem.h \
     hydro_hvalves.h \
     hydro_pumping.h \
     hydro_pumpsrel.h \

@@ -47,6 +47,7 @@
 #include <hydro_pumpsrel.h>
 #include <hydro_hvalves.h>
 #include <hydro_pumping.h>
+#include <hydro_3rdsystem.h>
 
 const double TICK = 200;
 
@@ -99,6 +100,7 @@ int main(int argc, char *argv[])
     hydro_pumpsrel pumpsrel;
     hydro_hvalves hvalves;
     hydro_pumping pumping;
+    hydro_3rdsystem thirdsystem;
 
     QTimer *timer = new QTimer;
 
@@ -305,6 +307,8 @@ int main(int argc, char *argv[])
                      &hvalves , SLOT(logic_hvalves()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &pumping , SLOT(logic_pumping()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &thirdsystem , SLOT(logic_3rdsystem()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

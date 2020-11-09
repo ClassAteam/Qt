@@ -1,6 +1,7 @@
 #include "algorithms.h"
 #include "math.h"
 
+//to take  the value along the function within 2 linear intervals
 double m_2_L_intervals(double input,
                                         double x1,
                                         double x2,
@@ -21,8 +22,11 @@ double m_2_L_intervals(double input,
         result = two_points_to_Y(input,x2, x3, y2, y3 );
         return result;
     }
+    result = y3;
     return result;
 }
+
+//to take  the value along the function within 3 linear intervals
 double m_3_L_intervals(double input,
                                         double x1,
                                         double x2,
@@ -50,6 +54,7 @@ double m_3_L_intervals(double input,
         result = two_points_to_Y(input,x3, x4, y3, y4 );
         return result;
     }
+    result = y4;
     return result;
 }
 double m_4_L_intervals(double input,
@@ -86,6 +91,7 @@ double m_4_L_intervals(double input,
         result = two_points_to_Y(input,x4, x5, y4, y5 );
         return result;
     }
+    result = y5;
     return result;
 }
 // to get Y value from linear function between two points(x1,y1 ; x2,y2)

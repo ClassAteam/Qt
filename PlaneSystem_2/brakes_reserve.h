@@ -13,7 +13,7 @@ PTavtN,
 PTavtP,
 PTavtS,
 PTstart,
-PTstoyan,
+ptstoyan,
 PTfors,
 PBUTZO,
 PAFT,
@@ -45,7 +45,7 @@ S1_3240;
 extern double
 Pavart,
 ax_ts,
-Pg_at,
+pgat,
 P_t_lev,
 P_t_prav,
 V_kh,
@@ -107,7 +107,7 @@ public:
     QLabel* tick_alg_1_label;
     QLabel* Pavart_label;
     QLabel* ax_ts_label;
-    QLabel* Pg_at_label;
+    QLabel* pgat_label;
     QLabel* P_t_lev_label;
     QLabel* P_t_prav_label;
     QLabel* V_kh_label;

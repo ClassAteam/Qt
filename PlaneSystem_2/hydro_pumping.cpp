@@ -7,10 +7,10 @@ otkaz_gs1,
 otkaz_gs2,
 otkaz_gs4;
 
-QVector<bool>PNNgs1(2, false);
-QVector<bool>PNNgs2(2, false);
-QVector<bool>PNNgs3(2, false);
-QVector<bool>PNNgs4(2, false);
+QVector<bool>pnngs1(2, false);
+QVector<bool>pnngs2(2, false);
+QVector<bool>pnngs3(2, false);
+QVector<bool>pnngs4(2, false);
 
 QVector<double>Qngngs1(2, 0.0);
 QVector<double>Qngngs2(2, 0.0);
@@ -68,10 +68,8 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     pntnugs2_label = new QLabel;
     pntnugs3_label = new QLabel;
     pntnugs4_label = new QLabel;
-    kkgs3_label = new QLabel;
     qpgs3_label = new QLabel;
     p0_gs3_label = new QLabel;
-    Pg_at_z_label = new QLabel;
     pgs3_z_label = new QLabel;
     Pv_vsu_label = new QLabel;
     delta_wpgs3_label = new QLabel;
@@ -135,7 +133,7 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     Pv_vsu_sl->setPageStep(1);
 
     qp3_sum_sl = new QSlider(Qt::Horizontal);
-    qp3_sum_sl->setRange(0, 100);
+    qp3_sum_sl->setRange(0, 10);
     qp3_sum_sl->setPageStep(1);
 
 
@@ -220,10 +218,8 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     layout_pumping_labels->addWidget(pntnugs2_label);
     layout_pumping_labels->addWidget(pntnugs3_label);
     layout_pumping_labels->addWidget(pntnugs4_label);
-    layout_pumping_labels->addWidget(kkgs3_label);
     layout_pumping_labels->addWidget(qpgs3_label);
     layout_pumping_labels->addWidget(p0_gs3_label);
-    layout_pumping_labels->addWidget(Pg_at_z_label);
     layout_pumping_labels->addWidget(pgs3_z_label);
     layout_pumping_labels->addWidget(Pv_vsu_label);
     layout_pumping_labels->addWidget(Pv_vsu_sl);
@@ -275,12 +271,12 @@ void hydro_pumping::logic_pumping()
 
         if(otkaz_gs1 == false && PRNgs1_pool[i] == false && nVDfirst2[i] >= 7)
         {
-            PNNgs1[i] = true;
+            pnngs1[i] = true;
             l_gs1[i] = m_2_L_intervals(Pgs1, 0, 200, 285, 1, 0.7, 0);
         }
         else
         {
-            PNNgs1[i] = false;
+            pnngs1[i] = false;
             l_gs1[i] = 0;
         }
 
@@ -299,12 +295,12 @@ void hydro_pumping::logic_pumping()
 
         if(otkaz_gs2 == false && PRNgs2_pool[i] == false && nVDfirst2[i] >= 7)
         {
-            PNNgs2[i] = true;
+            pnngs2[i] = true;
             l_gs2[i] = m_2_L_intervals(Pgs2, 0, 200, 285, 1, 0.7, 0);
         }
         else
         {
-            PNNgs2[i] = false;
+            pnngs2[i] = false;
             l_gs2[i] = 0;
         }
 
@@ -322,12 +318,12 @@ void hydro_pumping::logic_pumping()
 
         if(otkaz_gs3 == false && PRNgs3_pool[i] == false && nVDsecond2[i] >= 7)
         {
-            PNNgs3[i] = true;
+            pnngs3[i] = true;
             l_gs3[i] = m_2_L_intervals(Pgs3, 0, 200, 285, 1, 0.7, 0);
         }
         else
         {
-            PNNgs3[i] = false;
+            pnngs3[i] = false;
             l_gs3[i] = 0;
         }
 
@@ -345,12 +341,12 @@ void hydro_pumping::logic_pumping()
 
         if(otkaz_gs4 == false && PRNgs4_pool[i] == false && nVDsecond2[i] >= 7)
         {
-            PNNgs4[i] = true;
+            pnngs4[i] = true;
             l_gs4[i] = m_2_L_intervals(Pgs4, 0, 200, 285, 1, 0.7, 0);
         }
         else
         {
-            PNNgs4[i] = false;
+            pnngs4[i] = false;
             l_gs4[i] = 0;
         }
 
@@ -358,15 +354,15 @@ void hydro_pumping::logic_pumping()
 
         //end logic
         m_settext_lbl(otkaz_gs1_label, otkaz_gs1, "OTKAZ GS1");
-        m_settext_lbl(PNNgs1_label, PNNgs1, "PNNgs1");
+        m_settext_lbl(PNNgs1_label, pnngs1, "PNNgs1");
         m_settext_lbl(otkaz_gs1_label, otkaz_gs1, "otkaz_gs1");
         m_settext_lbl(otkaz_gs2_label, otkaz_gs2, "otkaz_gs2");
         m_settext_lbl(otkaz_gs3_label, otkaz_gs3, "otkaz_gs3");
         m_settext_lbl(otkaz_gs4_label, otkaz_gs4, "otkaz_gs4");
-        m_settext_lbl(PNNgs1_label, PNNgs1, "PNNgs1");
-        m_settext_lbl(PNNgs2_label, PNNgs2, "PNNgs2");
-        m_settext_lbl(PNNgs3_label, PNNgs3, "PNNgs3");
-        m_settext_lbl(PNNgs4_label, PNNgs4, "PNNgs4");
+        m_settext_lbl(PNNgs1_label, pnngs1, "PNNgs1");
+        m_settext_lbl(PNNgs2_label, pnngs2, "PNNgs2");
+        m_settext_lbl(PNNgs3_label, pnngs3, "PNNgs3");
+        m_settext_lbl(PNNgs4_label, pnngs4, "PNNgs4");
         m_settext_lbl(Qngngs1_label, Qngngs1, "Qngngs1");
         m_settext_lbl(Qngngs2_label, Qngngs2, "Qngngs2");
         m_settext_lbl(Qngngs3_label, Qngngs3, "Qngngs3");
@@ -392,7 +388,6 @@ void hydro_pumping::logic_pumping()
         m_settext_lbl(pntnugs4_label,pntnugs4 , "pntnugs4");
         m_settext_lbl(qpgs3_label,qpgs3 , "qpgs3");
         m_settext_lbl(p0_gs3_label,p0_gs3 , "p0_gs3");
-        m_settext_lbl(Pg_at_z_label,Pg_at_z , "Pg_at_z");
         m_settext_lbl(pgs3_z_label,pgs3_z , "pgs3_z");
         m_settext_lbl(Pv_vsu_label,Pv_vsu , "Pv_vsu");
         m_settext_lbl(delta_wpgs3_label,delta_wpgs3 , "delta_wpgs3");
@@ -459,7 +454,8 @@ void hydro_pumping::m_Slider_Pv_vsu(int)
 }
 void hydro_pumping::m_Slider_qp3_sum(int)
 {
-    qp3_sum = qp3_sum_sl->value();
+    double buffer = qp3_sum_sl->value();
+    qp3_sum = buffer / 10;
 }
 
 void hydro_pumping::m_togglebutton_R()

@@ -48,6 +48,7 @@
 #include <hydro_hvalves.h>
 #include <hydro_pumping.h>
 #include <hydro_3rdsystem.h>
+#include <hydro_4systems.h>
 
 const double TICK = 200;
 
@@ -101,6 +102,7 @@ int main(int argc, char *argv[])
     hydro_hvalves hvalves;
     hydro_pumping pumping;
     hydro_3rdsystem thirdsystem;
+    hydro_4systems foursystems;
 
     QTimer *timer = new QTimer;
 
@@ -210,6 +212,7 @@ int main(int argc, char *argv[])
     layout_hydro.addWidget(&pumpsrel.wgt_pumpsrel);
     layout_hydro.addWidget(&hvalves.wgt_hvalves);
     layout_hydro.addWidget(&pumping.wgt_pumping);
+    layout_hydro.addWidget(&foursystems.wgt_4system);
     window_hydro.setLayout(&layout_hydro);
     window_hydro.setWindowTitle("Hydro");
     window_hydro.setWindowState(Qt::WindowFullScreen);
@@ -309,6 +312,8 @@ int main(int argc, char *argv[])
                      &pumping , SLOT(logic_pumping()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &thirdsystem , SLOT(logic_3rdsystem()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &foursystems , SLOT(logic_4systems()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

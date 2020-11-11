@@ -18,7 +18,7 @@ extern double
 V_kh,
 P_t_lev,
 P_t_prav,
-Pg_at;
+pgat;
 
 extern const double
 TICK;

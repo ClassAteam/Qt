@@ -70,7 +70,7 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
     tick_alg_1_label = new QLabel;
     Pavart_label = new QLabel;
     ax_ts_label = new QLabel;
-    Pg_at_label = new QLabel;
+    pgat_label = new QLabel;
     P_t_lev_label = new QLabel;
     P_t_prav_label = new QLabel;
     V_kh_label = new QLabel;
@@ -115,7 +115,7 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
     layout_reserve_labels->addWidget(tick_alg_1_label);
     layout_reserve_labels->addWidget(Pavart_label);
     layout_reserve_labels->addWidget(ax_ts_label);
-    layout_reserve_labels->addWidget(Pg_at_label);
+    layout_reserve_labels->addWidget(pgat_label);
     layout_reserve_labels->addWidget(P_t_lev_label);
     layout_reserve_labels->addWidget(P_t_prav_label);
     layout_reserve_labels->addWidget(V_kh_label);
@@ -375,7 +375,7 @@ void brakes_reserve::logic_reserve()
     PTstart_label->setText
     ("PTstart = " + QString::number(PTstart));
     PTstoyan_label->setText
-    ("PTstoyan = " + QString::number(PTstoyan));
+    ("PTstoyan = " + QString::number(ptstoyan));
     PTfors_label->setText
     ("PTfors = " + QString::number(PTfors));
     tick_alg_3_label->setText
@@ -388,8 +388,8 @@ void brakes_reserve::logic_reserve()
     ("Pavart = " + QString::number(Pavart));
     ax_ts_label->setText
     ("ax_ts = " + QString::number(ax_ts));
-    Pg_at_label->setText
-    ("Pg_at = " + QString::number(Pg_at));
+    pgat_label->setText
+    ("pgat = " + QString::number(pgat));
     V_kh_label->setText
     ("V_kh = " + QString::number(V_kh));
 }

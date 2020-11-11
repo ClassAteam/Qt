@@ -8,7 +8,7 @@ PTavtN,
 PTavtP,
 PTavtS,
 PTstart,
-PTstoyan,
+ptstoyan,
 PTfors;
 int
 tick_alg_3,
@@ -18,7 +18,7 @@ tick_alg_1;
 double
 Pavart,
 ax_ts,
-Pg_at,
+pgat,
 P_t_lev,
 P_t_prav,
 V_kh;
@@ -33,14 +33,14 @@ brakes_algorithm::brakes_algorithm(QWidget*pwgt)
     PTavtP = 0;
     PTavtS = 0;
     PTstart = 0;
-    PTstoyan = 0;
+    ptstoyan = 0;
     PTfors = 0;
     tick_alg_3 = 0;
     tick_alg_2 = 0;
     tick_alg_1 = 0;
     Pavart = 0;
     ax_ts = 0;
-    Pg_at = 150;
+    pgat = 0;
     P_t_lev = 0;
     P_t_prav = 0;
     V_kh = 0;
@@ -54,9 +54,9 @@ void brakes_algorithm::logic_algorithm()
     PTavtS = false;
     PTfors = false;
     PTstart = false;
-    PTstoyan = false;
+    ptstoyan = false;
     PPDGAKT = false;
-    if((Pgs2 >= 200 || Pgs3 >= 220 || Pg_at >= 130) && V_kh <= 260)
+    if((Pgs2 >= 200 || Pgs3 >= 220 || pgat >= 130) && V_kh <= 260)
     {
         if(K35_3230 == true && (K27_3230 == true || K26_3230 == true))
         {
@@ -104,7 +104,7 @@ void brakes_algorithm::logic_algorithm()
             {
                 P_t_lev = 120;
                 P_t_prav = 120;
-                PTstoyan = true;
+                ptstoyan = true;
             }
 
             if(V_kh <= 8.1)
@@ -211,7 +211,7 @@ void brakes_algorithm::logic_algorithm()
                     }
                     else
                     {
-                        if(Pg_at < 130 || V_kh <= 13.5)
+                        if(pgat < 130 || V_kh <= 13.5)
                         {
                             P_t_lev = 120;
                             P_t_prav = 120;
@@ -297,7 +297,7 @@ void brakes_algorithm::logic_algorithm()
         tick_alg_3 = 0;
     }
 
-    if(Pg_at >= 130)
+    if(pgat >= 130)
     {
 
     }

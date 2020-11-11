@@ -28,14 +28,12 @@ Pgs2,
 Pgs3,
 Pgs4,
 //third hydrosystem
-kkgs3,
 qpgs3,
 p0_gs3,
 Pg_at_z,
 pgs3_z,
 Pv_vsu,
 delta_wpgs3,
-dxst_dt,
 kgs,
 qngat,
 qngs1,
@@ -110,10 +108,8 @@ public:
     QLabel* pntnugs2_label;
     QLabel* pntnugs3_label;
     QLabel* pntnugs4_label;
-    QLabel* kkgs3_label;
     QLabel* qpgs3_label;
     QLabel* p0_gs3_label;
-    QLabel* Pg_at_z_label;
     QLabel* pgs3_z_label;
     QLabel* Pv_vsu_label;
     QLabel* delta_wpgs3_label;

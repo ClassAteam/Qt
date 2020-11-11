@@ -320,12 +320,12 @@ void brakes_balarm::logic_balarm()
         }
     }
 
-    if(Pg_at >= 130)
+    if(pgat >= 130)
     {
-        Pg_at = Pg_at - (Pavart * (TICK / 1000));
+        pgat = pgat - (Pavart * (TICK / 1000));
     }
 
-    P_az_gat = 115 + (0.59 * Pg_at);
+    P_az_gat = 115 + (0.59 * pgat);
 
     if(X1_45_7620 == true &&
             X2_45_7620 == true &&
@@ -338,7 +338,7 @@ void brakes_balarm::logic_balarm()
     {
         UKS2X234 = 0;
     }
-    UKS2X212 = Pg_at;
+    UKS2X212 = pgat;
 
     if(PstoyanT)
     {
@@ -353,7 +353,7 @@ void brakes_balarm::logic_balarm()
 
     if(Ushap >= 18.0)
     {
-        if(PstoyanT == true && Pg_at >= 80.0)
+        if(PstoyanT == true && pgat >= 80.0)
         {
             UKS1X18 = true;
             BSS812X5r = true;

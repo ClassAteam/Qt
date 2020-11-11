@@ -1,3 +1,4 @@
+#include "math.h"
 #include "algorithms.h"
 #include "hydro_3rdsystem.h"
 #include "wind_functions.h"
@@ -7,10 +8,10 @@ pntnugs1,
 pntnugs2,
 pntnugs3,
 pntnugs4;
+
 double
 qpgs3,
 p0_gs3,
-Pg_at_z,
 pgs3_z,
 Pv_vsu,
 delta_wpgs3,
@@ -42,7 +43,6 @@ hydro_3rdsystem::hydro_3rdsystem(QWidget*pwgt)
     pntnugs4 = 0;
     qpgs3 = 0;
     p0_gs3 = 115;
-    Pg_at_z = 0;
     pgs3_z = 0;
     Pv_vsu = 0;
     delta_wpgs3 = 0;
@@ -62,7 +62,7 @@ hydro_3rdsystem::hydro_3rdsystem(QWidget*pwgt)
     qtnugs3 = 0;
     qtnugs4 = 0;
     qutgs3 = 0;
-    w0gs3 = 2.36;
+    w0gs3 = 2.4;
     wpgs3 = 0;
 }
 
@@ -98,9 +98,9 @@ void hydro_3rdsystem::logic_3rdsystem()
     qngs3 = Qngngs3[0] + Qngngs3[1] + qntnugs3;
     qngs4 = Qngngs4[0] + Qngngs4[1] + qntnugs4;
 
-    if(PNNgs3[0] == true || PNNgs3[1] == true || pntnugs3 == true)
+    if(pnngs3[0] == true || pnngs3[1] == true || pntnugs3 == true)
     {
-        qpgs3 = qp3_sum + qutgs3;
+        qpgs3 = (qp3_sum + qutgs3) * 0.1;
         delta_wpgs3 = qngs3 - qpgs3;
         wpgs3 = wpgs3 + delta_wpgs3;
 
@@ -135,14 +135,7 @@ void hydro_3rdsystem::logic_3rdsystem()
     }
     else
     {
-        if(wpgs3 > 0)
-        {
-            wpgs3 = wpgs3 + ((-600 - wpgs3) / kgs);
-        }
-        else
-        {
-            wpgs3 = 0;
-        }
+        wpgs3 = wpgs3 + ((-100 - wpgs3) * 0.01);
     }
 
     pgs3_z = p0_gs3 * (w0gs3 / (w0gs3 - wpgs3));

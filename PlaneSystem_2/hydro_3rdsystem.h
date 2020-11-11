@@ -18,10 +18,10 @@ Pgs3,
 Pgs4;
 extern  QVector<bool>
 KKGS,
-PNNgs1,
-PNNgs2,
-PNNgs3,
-PNNgs4,
+pnngs1,
+pnngs2,
+pnngs3,
+pnngs4,
 PTNUGS;
 extern  QVector<double>
 Qngngs1,

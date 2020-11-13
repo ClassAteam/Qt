@@ -31,19 +31,19 @@ void hydro_consumers::m_pgs_toconsume(QString str)
 {
     if(str == "pgs1")
     {
-        qp1sum = qp1sum + 100;
+        qp1sum = qp1sum + 50;
     }
     if(str == "pgs2")
     {
-        qp2sum = qp2sum + 100;
+        qp2sum = qp2sum + 50;
     }
     if(str == "pgs3")
     {
-        qp3sum = qp3sum + 100;
+        qp3sum = qp3sum + 50;
     }
     if(str == "pgs4")
     {
-        qp4sum = qp4sum + 100;
+        qp4sum = qp4sum + 50;
     }
 
 }

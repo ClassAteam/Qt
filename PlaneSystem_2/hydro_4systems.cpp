@@ -115,13 +115,13 @@ hydro_4systems::hydro_4systems(QWidget*pwgt)
     wpgs4_label = new QLabel;
 
     qp1sum_sl = new QSlider(Qt::Horizontal);
-    qp1sum_sl->setRange(0, 10);
+    qp1sum_sl->setRange(0, 300);
     qp1sum_sl->setPageStep(1);
     qp2sum_sl = new QSlider(Qt::Horizontal);
-    qp2sum_sl->setRange(0, 10);
+    qp2sum_sl->setRange(0, 300);
     qp2sum_sl->setPageStep(1);
     qp4sum_sl = new QSlider(Qt::Horizontal);
-    qp4sum_sl->setRange(0, 10);
+    qp4sum_sl->setRange(0, 300);
     qp4sum_sl->setPageStep(1);
 
     QObject::connect
@@ -401,19 +401,22 @@ void hydro_4systems::logic_4systems()
     m_settext_lbl(wpgs2_label,wpgs2 , "wpgs2 ");
     m_settext_lbl(wpgs4_label,wpgs4 , "wpgs4 ");
 
+    qp1sum_sl->setValue(qp1sum);
+    qp2sum_sl->setValue(qp2sum);
+    qp4sum_sl->setValue(qp4sum);
 }
 void hydro_4systems::m_Slider_qp1sum(int)
 {
-    double buffer = qp1sum_sl->value();
-    qp1sum = buffer / 10;
+//    double buffer = qp1sum_sl->value();
+//    qp1sum = buffer / 10;
 }
 void hydro_4systems::m_Slider_qp2sum(int)
 {
-    double buffer = qp2sum_sl->value();
-    qp2sum = buffer / 10;
+//    double buffer = qp2sum_sl->value();
+//    qp2sum = buffer / 10;
 }
 void hydro_4systems::m_Slider_qp4sum(int)
 {
-    double buffer = qp4sum_sl->value();
-    qp4sum = buffer / 10;
+//    double buffer = qp4sum_sl->value();
+//    qp4sum = buffer / 10;
 }

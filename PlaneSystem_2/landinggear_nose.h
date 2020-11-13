@@ -89,6 +89,7 @@ public:
 
 public slots:
     void logic_nose();
+    void consume();
     void m_switch(bool* toggler, bool* toggling);
     double m_pedals_to_fi(double Xped,
                         double interval_Y1,

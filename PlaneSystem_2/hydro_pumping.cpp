@@ -132,9 +132,9 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     Pv_vsu_sl->setRange(0, 8);
     Pv_vsu_sl->setPageStep(1);
 
-    qp3_sum_sl = new QSlider(Qt::Horizontal);
-    qp3_sum_sl->setRange(0, 10);
-    qp3_sum_sl->setPageStep(1);
+    qp3sum_sl = new QSlider(Qt::Horizontal);
+    qp3sum_sl->setRange(0, 300);
+    qp3sum_sl->setPageStep(1);
 
 
     QObject::connect
@@ -166,7 +166,7 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     QObject::connect
 (Pv_vsu_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_Pv_vsu(int)));
     QObject::connect
-(qp3_sum_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_qp3_sum(int)));
+(qp3sum_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_qp3_sum(int)));
 
 
 
@@ -235,7 +235,7 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     layout_pumping_labels->addWidget(qntnugs3_label);
     layout_pumping_labels->addWidget(qntnugs4_label);
     layout_pumping_labels->addWidget(qp3_sum_label);
-    layout_pumping_labels->addWidget(qp3_sum_sl);
+    layout_pumping_labels->addWidget(qp3sum_sl);
     layout_pumping_labels->addWidget(qtnugs1_label);
     layout_pumping_labels->addWidget(qtnugs2_label);
     layout_pumping_labels->addWidget(qtnugs3_label);
@@ -401,7 +401,7 @@ void hydro_pumping::logic_pumping()
         m_settext_lbl(qntnugs2_label,qntnugs2 , "qntnugs2");
         m_settext_lbl(qntnugs3_label,qntnugs3 , "qntnugs3");
         m_settext_lbl(qntnugs4_label,qntnugs4 , "qntnugs4");
-        m_settext_lbl(qp3_sum_label,qp3sum , "qp3_sum");
+        m_settext_lbl(qp3_sum_label,qp3sum , "qp3sum");
         m_settext_lbl(qtnugs1_label,qtnugs1 , "qtnugs1");
         m_settext_lbl(qtnugs2_label,qtnugs2 , "qtnugs2");
         m_settext_lbl(qtnugs3_label,qtnugs3 , "qtnugs3");
@@ -410,6 +410,11 @@ void hydro_pumping::logic_pumping()
         m_settext_lbl(w0gs3_label,w0gs3 , "w0gs3");
         m_settext_lbl(wpgs3_label,wpgs3 , "wpgs3");
 
+    Pgs1_sl->setValue(Pgs1);
+    Pgs2_sl->setValue(Pgs2);
+    Pgs3_sl->setValue(Pgs3);
+    Pgs4_sl->setValue(Pgs4);
+    qp3sum_sl->setValue(qp3sum);
     }
 
 }
@@ -454,8 +459,8 @@ void hydro_pumping::m_Slider_Pv_vsu(int)
 }
 void hydro_pumping::m_Slider_qp3_sum(int)
 {
-    double buffer = qp3_sum_sl->value();
-    qp3sum = buffer / 10;
+//    double buffer = qp3sum_sl->value();
+//    qp3sum = buffer / 10;
 }
 
 void hydro_pumping::m_togglebutton_R()

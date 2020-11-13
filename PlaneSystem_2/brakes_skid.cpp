@@ -205,10 +205,12 @@ void brakes_skid::logic_skid()
                 if(brakes_DPt[i] >= 0)
                 {
                     brakes_Pt[i] = brakes_Pt[i] + delta_Ptr;
+                    consume();
                 }
                 else
                 {
                     brakes_Pt[i] = brakes_Pt[i] - delta_Ptr;
+                    consume();
                 }
             }
             else
@@ -494,6 +496,17 @@ void brakes_skid::logic_skid()
 
 }
 
+void brakes_skid::consume()
+{
+   if(PBUTZO)
+   {
+       emit pgs_toconsume("pgs2");
+   }
+   if(PBUTZR)
+   {
+       emit pgs_toconsume("pgs3");
+   }
+}
 void brakes_skid::m_togglebutton_R()
 {
     QObject* obj;

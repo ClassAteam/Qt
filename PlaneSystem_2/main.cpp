@@ -339,6 +339,10 @@ int main(int argc, char *argv[])
                      &consumers, &hydro_consumers::m_pgs_toconsume);
     QObject::connect(&movingpart, &wingsmech_movingpart::pgs_toconsume,
                      &consumers, &hydro_consumers::m_pgs_toconsume);
+    QObject::connect(&nose, &landinggear_nose::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
+    QObject::connect(&skid, &brakes_skid::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
 
     timer->start(TICK);
     return a.exec();

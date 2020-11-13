@@ -563,12 +563,12 @@ void landinggear_nose::logic_nose()
                 if((fi_nk - fi_zad) >= 0)
                 {
                     fi_nk = fi_nk - (V_nk * (TICK / 1000));
-                    emit pgs_toconsume("pgs1");
+                    consume();
                 }
                 else
                 {
                     fi_nk = fi_nk + (V_nk * (TICK / 1000));
-                    emit pgs_toconsume("pgs1");
+                    consume();
                 }
             }
         if(fi_nk >= 60)
@@ -804,5 +804,17 @@ void landinggear_nose::m_RedButton(QPushButton* button, bool* clue)
 void landinggear_nose::m_DoubleInput(QLineEdit* field, double* value)
 {
     *value = field->text().toDouble();
+}
+void landinggear_nose::consume()
+{
+    if(GK_nk1 == true)
+    {
+        emit pgs_toconsume("pgs1");
+    }
+    if(GK_nk2 == true)
+    {
+        emit pgs_toconsume("pgs3");
+    }
+
 }
 

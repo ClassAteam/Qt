@@ -55,7 +55,6 @@ hydro_3rdsystem::hydro_3rdsystem(QWidget*pwgt)
     qntnugs2 = 0;
     qntnugs3 = 0;
     qntnugs4 = 0;
-    qp3sum = 0;
     qtnugs1 = 0;
     qtnugs2 = 0;
     qtnugs3 = 0;

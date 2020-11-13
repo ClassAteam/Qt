@@ -133,7 +133,7 @@ public:
     QLabel* wpgs3_label;
 
     QSlider* Pv_vsu_sl;
-    QSlider* qp3_sum_sl;
+    QSlider* qp3sum_sl;
 
 public slots:
     void logic_pumping();

@@ -224,6 +224,7 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_l != 90)
                 {
                     left_tick++;
+                    emit pgs_toconsume("pgs2");
                     //releasing left
                     releasing_loop(&delta_stv_l, &Ddelta_stv, &left_tick,
                                    &left_tick_sec, &left_released);
@@ -231,6 +232,7 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_p != 90)
                 {
                     right_tick++;
+                    emit pgs_toconsume("pgs2");
                     //releasing right
                     releasing_loop(&delta_stv_p, &Ddelta_stv, &right_tick,
                                    &right_tick_sec, &right_released);
@@ -238,6 +240,7 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_n != 90)
                 {
                     nose_tick++;
+                    emit pgs_toconsume("pgs2");
                     //releasing nose
                     releasing_loop(&delta_stv_n, &Ddelta_stv, &nose_tick,
                                    &nose_tick_sec, &nose_released);
@@ -253,6 +256,7 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_l != 0 && delta_sh_l == 0)
                 {
                     left_tick++;
+                    emit pgs_toconsume("pgs2");
                     //intake left
                     intake_loop(&delta_stv_l, &left_tick,
                                 &left_tick_sec, &left_intaken);
@@ -260,6 +264,7 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_p != 0 && delta_sh_p == 0)
                 {
                     right_tick++;
+                    emit pgs_toconsume("pgs2");
                     //intake right
                     intake_loop(&delta_stv_p, &right_tick,
                                 &right_tick_sec, &right_intaken);
@@ -267,6 +272,7 @@ void landinggear_sashes::logic_sashes()
                 if(delta_stv_n != 0 && delta_sh_n == 0)
                 {
                     nose_tick++;
+                    emit pgs_toconsume("pgs2");
                     // intake nose
                     intake_loop(&delta_stv_n, &nose_tick,
                                 &nose_tick_sec, &nose_intaken);

@@ -70,5 +70,6 @@ public slots:
     void m_RedButton(QPushButton* button, bool* clue);
 signals:
     void presure_retake(double *P_bal);
+    void pgs_toconsume(QString str);
 };
 

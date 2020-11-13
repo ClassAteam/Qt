@@ -338,7 +338,10 @@ void hydro_4systems::logic_4systems()
             }
             else
             {
-                *wpgs_pool[i] = *wpgs_pool[i] + ((-100 - *wpgs_pool[i]) * 0.01);
+                *qpgs_pool[i] = ((*qpsum_pool[i] + 0.1) * 0.1);
+                *d_wpgs_pool[i] = *qngs_pool[i] - *qpgs_pool[i];
+                *wpgs_pool[i] = *wpgs_pool[i] + *d_wpgs_pool[i];
+//                *wpgs_pool[i] = *wpgs_pool[i] + ((-100 - *wpgs_pool[i]) * 0.01);
             }
         }
 

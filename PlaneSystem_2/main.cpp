@@ -49,6 +49,7 @@
 #include <hydro_pumping.h>
 #include <hydro_3rdsystem.h>
 #include <hydro_4systems.h>
+#include <hydro_consumers.h>
 
 const double TICK = 200;
 
@@ -103,6 +104,7 @@ int main(int argc, char *argv[])
     hydro_pumping pumping;
     hydro_3rdsystem thirdsystem;
     hydro_4systems foursystems;
+    hydro_consumers consumers;
 
     QTimer *timer = new QTimer;
 
@@ -314,6 +316,8 @@ int main(int argc, char *argv[])
                      &thirdsystem , SLOT(logic_3rdsystem()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &foursystems , SLOT(logic_4systems()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &consumers , SLOT(logic_consumers()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);
@@ -323,6 +327,18 @@ int main(int argc, char *argv[])
                      &sashes, &landinggear_sashes::balloon_presure);
     QObject::connect(&algorithm, &brakes_algorithm::s_P_t_changed,
                      &reserve, &brakes_reserve::m_Pt_labels_set);
+    QObject::connect(&racks_rel, &landinggear_racks_rel::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
+    QObject::connect(&underwings, &wingsmech_underwings::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
+    QObject::connect(&racks, &landinggear_racks::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
+    QObject::connect(&sashes, &landinggear_sashes::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
+    QObject::connect(&flaps, &wingsmech_flaps::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
+    QObject::connect(&movingpart, &wingsmech_movingpart::pgs_toconsume,
+                     &consumers, &hydro_consumers::m_pgs_toconsume);
 
     timer->start(TICK);
     return a.exec();

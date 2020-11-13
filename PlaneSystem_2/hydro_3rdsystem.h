@@ -12,6 +12,7 @@ otkaz_gs2,
 otkaz_gs3,
 otkaz_gs4;
 extern double
+qp3sum,
 Pgs1,
 Pgs2,
 Pgs3,

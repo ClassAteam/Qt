@@ -36,4 +36,7 @@ public:
 
 public slots:
     void logic_movingpart();
+    void consume_movingpart();
+signals:
+    void pgs_toconsume(QString str);
 };

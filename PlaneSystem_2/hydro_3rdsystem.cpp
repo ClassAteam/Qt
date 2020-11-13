@@ -25,7 +25,6 @@ qntnugs1,
 qntnugs2,
 qntnugs3,
 qntnugs4,
-qp3_sum,
 qtnugs1,
 qtnugs2,
 qtnugs3,
@@ -56,7 +55,7 @@ hydro_3rdsystem::hydro_3rdsystem(QWidget*pwgt)
     qntnugs2 = 0;
     qntnugs3 = 0;
     qntnugs4 = 0;
-    qp3_sum = 0;
+    qp3sum = 0;
     qtnugs1 = 0;
     qtnugs2 = 0;
     qtnugs3 = 0;
@@ -100,7 +99,7 @@ void hydro_3rdsystem::logic_3rdsystem()
 
     if(pnngs3[0] == true || pnngs3[1] == true || pntnugs3 == true)
     {
-        qpgs3 = (qp3_sum + qutgs3) * 0.1;
+        qpgs3 = (qp3sum + qutgs3) * 0.1;
         delta_wpgs3 = qngs3 - qpgs3;
         wpgs3 = wpgs3 + delta_wpgs3;
 

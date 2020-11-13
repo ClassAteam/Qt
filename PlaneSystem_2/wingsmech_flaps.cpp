@@ -434,11 +434,14 @@ void wingsmech_flaps::logic_flaps()
         if(PRRKZ == true)
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
+            emit pgs_toconsume("pgs1");
             delta_z_p = delta_z_p + (Ddelta_z_p * (TICK / 1000));
+            emit pgs_toconsume("pgs4");
         }
         if(abs(delta_z_l - delta_z_zad) >= 0.1)
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
+            emit pgs_toconsume("pgs1");
         }
         else
         {
@@ -453,6 +456,7 @@ void wingsmech_flaps::logic_flaps()
         if(abs(delta_z_p - delta_z_zad) >= 0.1)
         {
             delta_z_p = delta_z_p + (Ddelta_z_p * (TICK / 1000));
+            emit pgs_toconsume("pgs4");
         }
         else
         {

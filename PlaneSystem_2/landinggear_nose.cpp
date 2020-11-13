@@ -563,10 +563,12 @@ void landinggear_nose::logic_nose()
                 if((fi_nk - fi_zad) >= 0)
                 {
                     fi_nk = fi_nk - (V_nk * (TICK / 1000));
+                    emit pgs_toconsume("pgs1");
                 }
                 else
                 {
                     fi_nk = fi_nk + (V_nk * (TICK / 1000));
+                    emit pgs_toconsume("pgs1");
                 }
             }
         if(fi_nk >= 60)

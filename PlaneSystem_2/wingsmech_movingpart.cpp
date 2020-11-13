@@ -30,6 +30,7 @@ otkaz_RASSINHR_PCHK;
 double
 delta_ruk_vh;
 
+
 wingsmech_movingpart::wingsmech_movingpart(QWidget*pwgt)
     : QWidget(pwgt)
 {
@@ -336,13 +337,17 @@ void wingsmech_movingpart::logic_movingpart()
         if(PRRKPCHK == true)
         {
             X_L = X_L + (D_X_l * (TICK / 1000));
+            emit consume_movingpart() ;
+
             X_P = X_P + (D_X_p * (TICK / 1000));
+            emit consume_movingpart() ;
         }
         else
         {
             if(abs(X_P - X_zad) >= 0.1)
             {
                 X_P = X_P + (D_X_p * (TICK / 1000));
+                emit consume_movingpart() ;
             }
             if(otkaz_RASSINHR_PCHK == true)
             {
@@ -351,6 +356,7 @@ void wingsmech_movingpart::logic_movingpart()
             if(abs(X_L - X_zad) >= 0.1)
             {
                 X_L = X_L + (D_X_l * (TICK / 1000));
+                emit consume_movingpart() ;
             }
         }
     }
@@ -397,4 +403,24 @@ void wingsmech_movingpart::logic_movingpart()
         BSS913X3C = false;
     }
 
+}
+
+void wingsmech_movingpart::consume_movingpart()
+{
+    if(PGS1)
+    {
+        emit pgs_toconsume("pgs1");
+    }
+    if(PGS2)
+    {
+        emit pgs_toconsume("pgs2");
+    }
+    if(PGS3)
+    {
+        emit pgs_toconsume("pgs3");
+    }
+    if(PGS4)
+    {
+        emit pgs_toconsume("pgs4");
+    }
 }

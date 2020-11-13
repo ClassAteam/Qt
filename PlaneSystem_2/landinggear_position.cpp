@@ -48,6 +48,7 @@ int
 S31_3230;
 double
 delta_z;
+
 landinggear_position::landinggear_position(QWidget* pwgt)
     : QWidget(pwgt)
 {

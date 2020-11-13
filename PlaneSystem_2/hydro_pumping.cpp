@@ -401,7 +401,7 @@ void hydro_pumping::logic_pumping()
         m_settext_lbl(qntnugs2_label,qntnugs2 , "qntnugs2");
         m_settext_lbl(qntnugs3_label,qntnugs3 , "qntnugs3");
         m_settext_lbl(qntnugs4_label,qntnugs4 , "qntnugs4");
-        m_settext_lbl(qp3_sum_label,qp3_sum , "qp3_sum");
+        m_settext_lbl(qp3_sum_label,qp3sum , "qp3_sum");
         m_settext_lbl(qtnugs1_label,qtnugs1 , "qtnugs1");
         m_settext_lbl(qtnugs2_label,qtnugs2 , "qtnugs2");
         m_settext_lbl(qtnugs3_label,qtnugs3 , "qtnugs3");
@@ -455,7 +455,7 @@ void hydro_pumping::m_Slider_Pv_vsu(int)
 void hydro_pumping::m_Slider_qp3_sum(int)
 {
     double buffer = qp3_sum_sl->value();
-    qp3_sum = buffer / 10;
+    qp3sum = buffer / 10;
 }
 
 void hydro_pumping::m_togglebutton_R()

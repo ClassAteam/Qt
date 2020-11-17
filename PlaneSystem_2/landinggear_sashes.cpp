@@ -49,6 +49,9 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     : QWidget(pwgt)
 {
     QFont underlined("Arial", 10, QFont::Bold);
+    delta_sh_l = 1;
+    delta_sh_p = 1;
+    delta_sh_n = 1;
     Ksho = 0.2;
     left_released = 0;
     right_released = 0;
@@ -65,14 +68,14 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     left_tick = 0;
     right_tick = 0;
     nose_tick = 0;
-    delta_stv_l = 0;
-    delta_stv_p = 0;
-    delta_stv_n = 0;
+    delta_stv_l = 90;
+    delta_stv_p = 90;
+    delta_stv_n = 90;
     Ddelta_stv = 0;
     Ddelta_stv_l = 0;
     Ddelta_stv_p = 0;
     Ddelta_stv_n = 0;
-    Pgs2 = 0;
+    Pgs2 = 280;
     V_bal_l = 44100;
     V_bal_p = 44100;
     V_bal_n = 37000;

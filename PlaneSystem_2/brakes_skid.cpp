@@ -32,7 +32,7 @@ QVector<double> brakes_Vkr(6, 0.0);
 QVector<double> brakes_DPt(6, 0.0);
 QVector<double> brakes_DPavt(6, 0.0);
 QVector<double> brakes_Ptr(6, 0.0);
-QVector<double> brakes_Pt(6, 0.0);
+QVector<double> brakes_Pt(6, 120);
 QVector<double> brakes_Pkv(6, 0.0);
 QVector<double> brakes_DVsvk(6, 0.0);
 QVector<double> brakes_Vsvk(6, 0.0);

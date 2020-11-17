@@ -25,8 +25,8 @@ landinggear_carts::landinggear_carts(QWidget* pwgt)
     fi_sh_p = 0;
     delta_tel_l = 0;
     delta_tel_p = 0;
-    fi_delta_sh_l = 0;
-    fi_delta_sh_p = 0;
+    fi_delta_sh_l = 1;
+    fi_delta_sh_p = 1;
     Ddelta_tel = 0;
     carts_left_tick = 0;
     carts_right_tick = 0;

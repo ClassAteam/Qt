@@ -257,6 +257,14 @@ void hydro_pumping::logic_pumping()
     bool PRNgs2_pool[] = {PRN1gs2, PRN2gs2};
     bool PRNgs3_pool[] = {PRN1gs3, PRN2gs3};
     bool PRNgs4_pool[] = {PRN1gs4, PRN2gs4};
+    double* pngs1_pool[] = {&pn1gs1, &pn2gs1};
+    double* pngs2_pool[] = {&pn1gs2, &pn2gs2};
+    double* pngs3_pool[] = {&pn1gs3, &pn2gs3};
+    double* pngs4_pool[] = {&pn1gs4, &pn2gs4};
+    double* pgs1_pool[] = {&Pgs1, &Pgs1};
+    double* pgs2_pool[] = {&Pgs2, &Pgs2};
+    double* pgs3_pool[] = {&Pgs3, &Pgs3};
+    double* pgs4_pool[] = {&Pgs4, &Pgs4};
     for(int i = 0; i < 2; i++)
     {
         //1
@@ -273,15 +281,18 @@ void hydro_pumping::logic_pumping()
         {
             pnngs1[i] = true;
             l_gs1[i] = m_2_L_intervals(Pgs1, 0, 200, 285, 1, 0.7, 0);
+            *pngs1_pool[i] = *pgs1_pool[i];
         }
         else
         {
             pnngs1[i] = false;
             l_gs1[i] = 0;
+            *pngs1_pool[i] = 0;
         }
 
         Qngngs1[i] = Kngs1[i] * l_gs1[i];
         Qngngs1[i] = Qngngs1[i] * nVDfirst2[i];
+
 
         //2
         if(Pgs2 >= 90)
@@ -293,18 +304,20 @@ void hydro_pumping::logic_pumping()
             Kngs2[i] = 0.16;
         }
 
-        if(otkaz_gs2 == false && PRNgs2_pool[i] == false && nVDfirst2[i] >= 7)
+        if(otkaz_gs2 == false && PRNgs2_pool[i] == false && nVDfirst2[1 - i] >= 7)
         {
             pnngs2[i] = true;
             l_gs2[i] = m_2_L_intervals(Pgs2, 0, 200, 285, 1, 0.7, 0);
+            *pngs2_pool[i] = *pgs2_pool[i];
         }
         else
         {
             pnngs2[i] = false;
             l_gs2[i] = 0;
+            *pngs2_pool[i] = 0;
         }
 
-        Qngngs2[i] = Kngs2[i] * l_gs2[i] * nVDfirst2[i];
+        Qngngs2[i] = Kngs2[i] * l_gs2[i] * nVDfirst2[1 - i];
 
         //3
         if(Pgs3 >= 90)
@@ -320,11 +333,13 @@ void hydro_pumping::logic_pumping()
         {
             pnngs3[i] = true;
             l_gs3[i] = m_2_L_intervals(Pgs3, 0, 200, 285, 1, 0.7, 0);
+            *pngs3_pool[i] = *pgs3_pool[i];
         }
         else
         {
             pnngs3[i] = false;
             l_gs3[i] = 0;
+            *pngs3_pool[i] = 0;
         }
 
         Qngngs3[i] = Kngs3[i] * l_gs3[i] * nVDsecond2[i];
@@ -339,18 +354,20 @@ void hydro_pumping::logic_pumping()
             Kngs4[i] = 0.16;
         }
 
-        if(otkaz_gs4 == false && PRNgs4_pool[i] == false && nVDsecond2[i] >= 7)
+        if(otkaz_gs4 == false && PRNgs4_pool[i] == false && nVDsecond2[1 - i] >= 7)
         {
             pnngs4[i] = true;
             l_gs4[i] = m_2_L_intervals(Pgs4, 0, 200, 285, 1, 0.7, 0);
+            *pngs4_pool[i] = *pgs4_pool[i];
         }
         else
         {
             pnngs4[i] = false;
             l_gs4[i] = 0;
+            *pngs4_pool[i] = 0;
         }
 
-        Qngngs4[i] = Kngs4[i] * l_gs4[i] * nVDsecond2[i];
+        Qngngs4[i] = Kngs4[i] * l_gs4[i] * nVDsecond2[1 - i];
 
         //end logic
         m_settext_lbl(otkaz_gs1_label, otkaz_gs1, "OTKAZ GS1");
@@ -437,19 +454,19 @@ void hydro_pumping::m_Slider_PVD4(int)
 }
 void hydro_pumping::m_Slider_Pgs1(int)
 {
-    Pgs1 = Pgs1_sl->value();
+//    Pgs1 = Pgs1_sl->value();
 }
 void hydro_pumping::m_Slider_Pgs2(int)
 {
-    Pgs2 = Pgs2_sl->value();
+//    Pgs2 = Pgs2_sl->value();
 }
 void hydro_pumping::m_Slider_Pgs3(int)
 {
-    Pgs3 = Pgs3_sl->value();
+//    Pgs3 = Pgs3_sl->value();
 }
 void hydro_pumping::m_Slider_Pgs4(int)
 {
-    Pgs4 = Pgs4_sl->value();
+//    Pgs4 = Pgs4_sl->value();
 }
 void hydro_pumping::m_Slider_Pv_vsu(int)
 {

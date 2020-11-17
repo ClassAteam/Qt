@@ -100,8 +100,8 @@ landinggear_nose::landinggear_nose(QWidget* pwgt)
     fi_nk = 0;
     V_nk = 0;
     Xped = 0;
-    Pgs1 = 0;
-    Pgs3 = 0;
+    Pgs1 = 280;
+    Pgs3 = 280;
 
     otkaz_1_kanala_label = new QLabel;
     otkaz_2_kanala_label = new QLabel;

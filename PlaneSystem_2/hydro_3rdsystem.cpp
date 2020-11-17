@@ -42,7 +42,7 @@ hydro_3rdsystem::hydro_3rdsystem(QWidget*pwgt)
     pntnugs4 = 0;
     qpgs3 = 0;
     p0_gs3 = 115;
-    pgs3_z = 0;
+    pgs3_z = 280;
     Pv_vsu = 0;
     delta_wpgs3 = 0;
     kgs = 0.05;
@@ -133,7 +133,10 @@ void hydro_3rdsystem::logic_3rdsystem()
     }
     else
     {
-        wpgs3 = wpgs3 + ((-100 - wpgs3) * 0.01);
+        qpgs3 = ((qp3sum + qutgs3) + 0.1) * 0.1;
+        delta_wpgs3 = qngs3 - qpgs3;
+        wpgs3 = wpgs3 + delta_wpgs3;
+//        wpgs3 = wpgs3 + ((-100 - wpgs3) * 0.01);
     }
 
     pgs3_z = p0_gs3 * (w0gs3 / (w0gs3 - wpgs3));

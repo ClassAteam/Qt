@@ -114,7 +114,7 @@ landinggear_relay::landinggear_relay(QWidget* pwgt)
     PSDVV = 0;
     PSDVU = 0;
     S1_3230 = 0;
-    S2_3230 = 0;
+    S2_3230 = false;
     S3_3230 = 0;
     S4_3230 = 0;
     S5_3230 = 0;
@@ -210,6 +210,7 @@ landinggear_relay::landinggear_relay(QWidget* pwgt)
 
     S1_3230_on_button = new QPushButton("S1_3230", this);
     S2_3230_on_button = new QPushButton("S2_3230", this);
+    landinggear_relay::m_RedButton(S2_3230_on_button, &S2_3230);
     S3_3230_on_button = new QPushButton("S3_3230", this);
     otkaz_ne_vikl_avt_pos_vip_shas_on_button =
             new QPushButton("OTKAZ NE VIKL AVT ...", this);

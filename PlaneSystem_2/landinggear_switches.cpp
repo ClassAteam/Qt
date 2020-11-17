@@ -87,8 +87,8 @@ landinggear_switches::landinggear_switches(QWidget* pwgt)
     PVPPOP = 0;
     PUPPEROP = 0;
     PVPPEROP = 0;
-    Sl = 0;
-    Sp = 0;
+    Sl = 0.2;
+    Sp = 0.2;
 
     K13_3230_label = new QLabel;
     K14_3230_label = new QLabel;

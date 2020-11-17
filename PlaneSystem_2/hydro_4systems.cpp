@@ -54,6 +54,11 @@ wpgs4;
 hydro_4systems::hydro_4systems(QWidget*pwgt)
     : QWidget(pwgt)
 {
+	qp2sum = 0;
+    pgat_z = 280;
+    pgs1_z = 280;
+    pgs2_z = 280;
+    pgs4_z = 280;
     kgat = 1.0;
     p0gat = 115.0;
     w0gat = 4.0;

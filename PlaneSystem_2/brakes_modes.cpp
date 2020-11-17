@@ -122,6 +122,7 @@ brakes_modes::brakes_modes(QWidget*pwgt)
     X3_45_7620_on = new QPushButton("X3_45_7620", this);
     X4_45_7620_on = new QPushButton("X4_45_7620", this);
     S2_3240_on = new QPushButton("S2_3240_on", this);
+    brakes_modes::m_RedButton(S2_3240_on, &S2_3240);
     S3_3240_on = new QPushButton("S3_3240_on", this);
 
     S1_3240_0_on = new QRadioButton("S1 VIKL", this);

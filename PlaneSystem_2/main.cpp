@@ -1,55 +1,4 @@
-#include "main.h"
-#include <QApplication>
-#include <QtWidgets>
-#include <antifirelogic_valves.h>
-#include <antifirelogic_execution_block.h>
-#include <antifirelogic_alarm.h>
-#include <presure_regulation.h>
-#include <antiicing_mkam.h>
-#include <antiicing_airintake.h>
-#include <antiicing_airintake_warmup.h>
-#include <antiicing_ppd.h>
-#include <antiicing_windshields.h>
-#include <antiicing_lights.h>
-#include <cabinlighting_navi.h>
-#include <cabinlighting_beacons.h>
-#include <cabinlighting_outside.h>
-#include <cabinlighting_inner.h>
-#include <cabinlighting_solid.h>
-#include <emergencyalarm_steersman.h>
-#include <emergencyalarm_leftpilot.h>
-#include <emergencyalarm_leftpilot_1.h>
-#include <emergencyalarm_leftpilot_2.h>
-#include <emergencyalarm_rightpilot.h>
-#include <emergencyalarm_rightpilot_1.h>
-#include <emergencyalarm_navigator.h>
-#include <emergencyalarm_navigator_1.h>
-#include <emergencyalarm_navigator_2.h>
-#include <landinggear_sashes.h>
-#include <landinggear_carts.h>
-#include <landinggear_racks.h>
-#include <landinggear_racks_rel.h>
-#include <landinggear_relay.h>
-#include <landinggear_switches.h>
-#include <landinggear_valves.h>
-#include <landinggear_position.h>
-#include <landinggear_nose.h>
-#include <wingsmech_flaps.h>
-#include <wingsmech_underwings.h>
-#include <wingsmech_movingpart.h>
-#include <wingsmech_alarm.h>
-#include <brakes_modes.h>
-#include <brakes_reserve.h>
-#include <brakes_algorithm.h>
-#include <brakes_skid.h>
-#include <brakes_balarm.h>
-#include <brakes_parachute.h>
-#include <hydro_pumpsrel.h>
-#include <hydro_hvalves.h>
-#include <hydro_pumping.h>
-#include <hydro_3rdsystem.h>
-#include <hydro_4systems.h>
-#include <hydro_consumers.h>
+#include <main.h>
 
 const double TICK = 200;
 
@@ -105,6 +54,7 @@ int main(int argc, char *argv[])
     hydro_3rdsystem thirdsystem;
     hydro_4systems foursystems;
     hydro_consumers consumers;
+    hydro_alarm halarm;
 
     QTimer *timer = new QTimer;
 
@@ -215,6 +165,7 @@ int main(int argc, char *argv[])
     layout_hydro.addWidget(&hvalves.wgt_hvalves);
     layout_hydro.addWidget(&pumping.wgt_pumping);
     layout_hydro.addWidget(&foursystems.wgt_4system);
+    layout_hydro.addWidget(&halarm.wgt_halarm);
     window_hydro.setLayout(&layout_hydro);
     window_hydro.setWindowTitle("Hydro");
     window_hydro.setWindowState(Qt::WindowFullScreen);
@@ -318,6 +269,8 @@ int main(int argc, char *argv[])
                      &foursystems , SLOT(logic_4systems()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &consumers , SLOT(logic_consumers()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &halarm , SLOT(logic_halarm()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

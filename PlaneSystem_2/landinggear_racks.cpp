@@ -33,8 +33,8 @@ landinggear_racks::landinggear_racks(QWidget* pwgt)
     Ddelta_racks_l = 0;
     Ddelta_racks_p = 0;
     Ddelta_racks = 0;
-    delta_racks_l = 0;
-    delta_racks_p = 0;
+    delta_racks_l = 1;
+    delta_racks_p = 1;
     racks_left_tick = 0;
     racks_right_tick = 0;
     racks_left_tick_sec = 0;

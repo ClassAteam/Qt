@@ -37,7 +37,7 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     : QWidget(pwgt)
 {
     QFont underlined("Arial", 10, QFont::Bold);
-    Pgs4 = 0;
+    Pgs4 = 280;
     otkaz_osn_1k_zakr = 0;
     otkaz_osn_2k_zakr = 0;
     otkaz_1k_zakr = 0;

@@ -120,6 +120,56 @@ antiicing_ppd::antiicing_ppd(QWidget* pwgt)
     rud_4dv_edit = new QLineEdit;
 
 
+
+    //layout setting
+    QVBoxLayout *layout_ppd_labels = new QVBoxLayout;
+    QVBoxLayout *layout_ppd_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_ppd_main = new QHBoxLayout;
+
+    layout_ppd_labels->addWidget(BSS811XY_label);
+    layout_ppd_labels->addWidget(obogrev_ppd1_ispr_label);
+    layout_ppd_labels->addWidget(obogrev_ppd2_ispr_label);
+    layout_ppd_labels->addWidget(obogrev_ppd3_ispr_label);
+    layout_ppd_labels->addWidget(alpha_rud_1dv_label);
+    layout_ppd_labels->addWidget(alpha_rud_2dv_label);
+    layout_ppd_labels->addWidget(alpha_rud_3dv_label);
+    layout_ppd_labels->addWidget(alpha_rud_4dv_label);
+    layout_ppd_labels->addWidget(PKPPD_label);
+    layout_ppd_labels->addWidget(POPPD1_label);
+    layout_ppd_labels->addWidget(POPPD2_label);
+    layout_ppd_labels->addWidget(POPPD3_label);
+    layout_ppd_labels->addWidget(K1_3030_label);
+    layout_ppd_labels->addWidget(K2_3030_label);
+    layout_ppd_labels->addWidget(K4_3030_label);
+    layout_ppd_labels->addWidget(K5_3030_label);
+    layout_ppd_labels->addWidget(K7_3030_label);
+    layout_ppd_labels->addWidget(K8_3030_label);
+    layout_ppd_labels->addWidget(K16_3030_label);
+    layout_ppd_labels->addWidget(K18_3030_label);
+    layout_ppd_labels->addWidget(K24_3230_label);
+    layout_ppd_labels->addWidget(K25_3230_label);
+    layout_ppd_labels->addWidget(S1_3030_label);
+    layout_ppd_labels->addWidget(S2_3030_label);
+
+
+    layout_ppd_buttons->addWidget(S1_3030_on_button);
+    layout_ppd_buttons->addWidget(S1_3030_off_button);
+    layout_ppd_buttons->addWidget(S2_3030_on_button);
+    layout_ppd_buttons->addWidget(S2_3030_off_button);
+    layout_ppd_buttons->addWidget(rud1_change_button);
+    layout_ppd_buttons->addWidget(rud_1dv_edit);
+    layout_ppd_buttons->addWidget(rud2_change_button);
+    layout_ppd_buttons->addWidget(rud_2dv_edit);
+    layout_ppd_buttons->addWidget(rud3_change_button);
+    layout_ppd_buttons->addWidget(rud_3dv_edit);
+    layout_ppd_buttons->addWidget(rud4_change_button);
+    layout_ppd_buttons->addWidget(rud_4dv_edit);
+
+
+    layout_ppd_main->addLayout(layout_ppd_labels);
+    layout_ppd_main->addLayout(layout_ppd_buttons);
+    wgt_ppd.setLayout(layout_ppd_main);
+    wgt_ppd.setFixedWidth(300);
 }
 int antiicing_ppd::logic_ppd()
 {
@@ -455,56 +505,6 @@ int antiicing_ppd::logic_ppd()
     K25_3230_label->setText ("K25_3230 = " + QString::number(K25_3230));
     S1_3030_label->setText ("S1_3030 = " + QString::number(S1_3030));
     S2_3030_label->setText ("S2_3030 = " + QString::number(S2_3030));
-
-    //layout setting
-    QVBoxLayout *layout_ppd_labels = new QVBoxLayout;
-    QVBoxLayout *layout_ppd_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_ppd_main = new QHBoxLayout;
-
-    layout_ppd_labels->addWidget(BSS811XY_label);
-    layout_ppd_labels->addWidget(obogrev_ppd1_ispr_label);
-    layout_ppd_labels->addWidget(obogrev_ppd2_ispr_label);
-    layout_ppd_labels->addWidget(obogrev_ppd3_ispr_label);
-    layout_ppd_labels->addWidget(alpha_rud_1dv_label);
-    layout_ppd_labels->addWidget(alpha_rud_2dv_label);
-    layout_ppd_labels->addWidget(alpha_rud_3dv_label);
-    layout_ppd_labels->addWidget(alpha_rud_4dv_label);
-    layout_ppd_labels->addWidget(PKPPD_label);
-    layout_ppd_labels->addWidget(POPPD1_label);
-    layout_ppd_labels->addWidget(POPPD2_label);
-    layout_ppd_labels->addWidget(POPPD3_label);
-    layout_ppd_labels->addWidget(K1_3030_label);
-    layout_ppd_labels->addWidget(K2_3030_label);
-    layout_ppd_labels->addWidget(K4_3030_label);
-    layout_ppd_labels->addWidget(K5_3030_label);
-    layout_ppd_labels->addWidget(K7_3030_label);
-    layout_ppd_labels->addWidget(K8_3030_label);
-    layout_ppd_labels->addWidget(K16_3030_label);
-    layout_ppd_labels->addWidget(K18_3030_label);
-    layout_ppd_labels->addWidget(K24_3230_label);
-    layout_ppd_labels->addWidget(K25_3230_label);
-    layout_ppd_labels->addWidget(S1_3030_label);
-    layout_ppd_labels->addWidget(S2_3030_label);
-
-
-    layout_ppd_buttons->addWidget(S1_3030_on_button);
-    layout_ppd_buttons->addWidget(S1_3030_off_button);
-    layout_ppd_buttons->addWidget(S2_3030_on_button);
-    layout_ppd_buttons->addWidget(S2_3030_off_button);
-    layout_ppd_buttons->addWidget(rud1_change_button);
-    layout_ppd_buttons->addWidget(rud_1dv_edit);
-    layout_ppd_buttons->addWidget(rud2_change_button);
-    layout_ppd_buttons->addWidget(rud_2dv_edit);
-    layout_ppd_buttons->addWidget(rud3_change_button);
-    layout_ppd_buttons->addWidget(rud_3dv_edit);
-    layout_ppd_buttons->addWidget(rud4_change_button);
-    layout_ppd_buttons->addWidget(rud_4dv_edit);
-
-
-    layout_ppd_main->addLayout(layout_ppd_labels);
-    layout_ppd_main->addLayout(layout_ppd_buttons);
-    wgt_ppd.setLayout(layout_ppd_main);
-    wgt_ppd.setFixedWidth(300);
 
 
 }

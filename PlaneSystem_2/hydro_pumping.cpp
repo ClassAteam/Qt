@@ -136,6 +136,8 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
     qp3sum_sl->setRange(0, 300);
     qp3sum_sl->setPageStep(1);
 
+    m_SetSliderGray(qp3sum_sl);
+
 
     QObject::connect
 (otkaz_gs1_on, SIGNAL(clicked()), this, SLOT(m_togglebutton_R()));

@@ -53,6 +53,7 @@ SOURCES += \
     hydro_hvalves.cpp \
     hydro_pumping.cpp \
     hydro_pumpsrel.cpp \
+    hydro_tempr.cpp \
     landinggear_carts.cpp \
     landinggear_nose.cpp \
     landinggear_position.cpp \
@@ -109,6 +110,7 @@ HEADERS += \
     hydro_hvalves.h \
     hydro_pumping.h \
     hydro_pumpsrel.h \
+    hydro_tempr.h \
     landinggear_carts.h \
     landinggear_nose.h \
     landinggear_position.h \

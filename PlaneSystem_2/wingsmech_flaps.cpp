@@ -435,13 +435,16 @@ void wingsmech_flaps::logic_flaps()
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
             emit pgs_toconsume("pgs1");
+            QgsConsumeAndBack(&Ddelta_z_l);
             delta_z_p = delta_z_p + (Ddelta_z_p * (TICK / 1000));
             emit pgs_toconsume("pgs4");
+            QgsConsumeAndBack(&Ddelta_z_p);
         }
         if(abs(delta_z_l - delta_z_zad) >= 0.1)
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
             emit pgs_toconsume("pgs1");
+            QgsConsumeAndBack(&Ddelta_z_l);
         }
         else
         {
@@ -457,6 +460,7 @@ void wingsmech_flaps::logic_flaps()
         {
             delta_z_p = delta_z_p + (Ddelta_z_p * (TICK / 1000));
             emit pgs_toconsume("pgs4");
+            QgsConsumeAndBack(&Ddelta_z_p);
         }
         else
         {
@@ -673,6 +677,32 @@ int wingsmech_flaps::m_Slider(int)
 {
     double buffer = delta_z_vh_slider->value();
     delta_zr_vh = (buffer / 100);
+
+}
+void wingsmech_flaps::QgsConsumeAndBack(double* delta)
+{
+    if(*delta >= 0)
+    {
+        if(delta == &Ddelta_z_l)
+        {
+            emit signal_QgsConsume("qgs1");
+        }
+        if(delta == &Ddelta_z_p)
+        {
+            emit signal_QgsConsume("qgs4");
+        }
+    }
+    if(*delta < 0)
+    {
+        if(delta == &Ddelta_z_l)
+        {
+            emit signal_QgsGiveBack("qgs1");
+        }
+        if(delta == &Ddelta_z_p)
+        {
+            emit signal_QgsGiveBack("qgs4");
+        }
+    }
 
 }
 

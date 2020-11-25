@@ -17,6 +17,10 @@ PBAVTT,
 PFT,
 POSH;
 extern double
+Pgs1,
+Pgs2,
+Pgs3,
+Pgs4,
 V_kh,
 P_t_lev,
 P_t_prav,
@@ -70,10 +74,16 @@ public:
 public slots:
     void logic_skid();
     void consume();
+    void GiveBackQgs();
     void m_togglebutton_R();
     void m_RedButton(QPushButton* button, bool* clue);
     void m_Slider_K1(int);
 
+private slots:
+    void ConsumeQgs();
+
 signals:
     void pgs_toconsume(QString str);
+    void signal_QgsConsume(QString str);
+    void signal_QgsGiveBack(QString str);
 };

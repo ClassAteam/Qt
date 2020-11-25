@@ -264,7 +264,8 @@ void landinggear_racks::releasing_loop(double* delta, double* D_delta,
 
         if((*sec_tick) >= 1)
         {
-        *delta = (*delta + ((*D_delta / (1000 / TICK))));
+            *delta = (*delta + ((*D_delta / (1000 / TICK))));
+            emit signal_QgsGiveBack("qgs2");
         }
 
         if(*delta >= 1)
@@ -288,12 +289,13 @@ void landinggear_racks::intake_loop(double* delta, int* tick,
         if((*sec_tick) >= 1)
         {
             *delta = (*delta - ((Ddelta_racks / (1000 / TICK))));
+            emit signal_QgsConsume("qgs2");
         }
 
         if(*delta <= 0)
         {
-        *delta = 0;
-        *tick = 0;
+            *delta = 0;
+            *tick = 0;
         }
     }
 

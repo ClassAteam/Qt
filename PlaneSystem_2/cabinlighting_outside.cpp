@@ -258,6 +258,99 @@ cabinlighting_outside::cabinlighting_outside(QWidget* pwgt)
     QObject::connect
 (K34_3230_off_button, SIGNAL(clicked()), this, SLOT(m_K34_3230_off()));
 
+    //layout setting
+    QVBoxLayout *layout_outside_labels = new QVBoxLayout;
+    QVBoxLayout *layout_outside_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_outside_main = new QHBoxLayout;
+
+    //labels
+
+    layout_outside_labels->addWidget(S1_2860_label);
+    layout_outside_labels->addWidget(PVFL_label);
+    layout_outside_labels->addWidget(PVFP_label);
+    layout_outside_labels->addWidget(PFPRLR_label);
+    layout_outside_labels->addWidget(PFPRPR_label);
+    layout_outside_labels->addWidget(PFPRLP_label);
+    layout_outside_labels->addWidget(PFPRPP_label);
+    layout_outside_labels->addWidget(PFSV_01LR_label);
+    layout_outside_labels->addWidget(PFSV_01PR_label);
+    layout_outside_labels->addWidget(PFSV_01LP_label);
+    layout_outside_labels->addWidget(PFSV_01PP_label);
+    layout_outside_labels->addWidget(K1_3340_label);
+    layout_outside_labels->addWidget(K2_3340_label);
+    layout_outside_labels->addWidget(K3_3340_label);
+    layout_outside_labels->addWidget(K9_3340_label);
+    layout_outside_labels->addWidget(K11_3340_label);
+    layout_outside_labels->addWidget(K13_3340_label);
+    layout_outside_labels->addWidget(K6_3340_label);
+    layout_outside_labels->addWidget(K7_3340_label);
+    layout_outside_labels->addWidget(K8_3340_label);
+    layout_outside_labels->addWidget(K10_3340_label);
+    layout_outside_labels->addWidget(K12_3340_label);
+    layout_outside_labels->addWidget(K14_3340_label);
+    layout_outside_labels->addWidget(K15_3340_label);
+    layout_outside_labels->addWidget(K32_3230_label);
+    layout_outside_labels->addWidget(K34_3230_label);
+    layout_outside_labels->addWidget(F1_3340_label);
+    layout_outside_labels->addWidget(F2_3340_label);
+    layout_outside_labels->addWidget(F4_3340_label);
+    layout_outside_labels->addWidget(F14_3340_label);
+    layout_outside_labels->addWidget(F13_3340_label);
+    layout_outside_labels->addWidget(F12_3340_label);
+    layout_outside_labels->addWidget(PFSV_02L_label);
+    layout_outside_labels->addWidget(PFSV_02P_label);
+    layout_outside_labels->addWidget(BSS825X5V_label);
+    layout_outside_labels->addWidget(BSS824X1E_label);
+    layout_outside_labels->addWidget(BSS824X1A_label);
+    layout_outside_labels->addWidget(Usha1_label);
+    layout_outside_labels->addWidget(Usha2_label);
+    layout_outside_labels->addWidget(alpha_fsv_ol_label);
+    layout_outside_labels->addWidget(alpha_fsv_op_label);
+    layout_outside_labels->addWidget(Vpr_label);
+    layout_outside_labels->addWidget(alpha_fazl_label);
+    layout_outside_labels->addWidget(alpha_fazp_label);
+    layout_outside_labels->addWidget(fazl_secs_label);
+    layout_outside_labels->addWidget(fazl_counter_label);
+    layout_outside_labels->addWidget(fazp_secs_label);
+    layout_outside_labels->addWidget(fazp_counter_label);
+    layout_outside_labels->addWidget(L_counter_label);
+    layout_outside_labels->addWidget(P_counter_label);
+    layout_outside_labels->addWidget(S1_3340_label);
+    layout_outside_labels->addWidget(S2_3340_label);
+    layout_outside_labels->addWidget(S3_3340_label);
+    layout_outside_labels->addWidget(S4_3340_label);
+    layout_outside_labels->addWidget(S5_3340_label);
+    layout_outside_labels->addWidget(S6_3340_label);
+
+    //Buttons
+    layout_outside_buttons->addWidget(V_change_button);
+    layout_outside_buttons->addWidget(Vpr_edit);
+    layout_outside_buttons->addWidget(S1_3340_on_button);
+    layout_outside_buttons->addWidget(S1_3340_off_button);
+    layout_outside_buttons->addWidget(S2_3340_on_button);
+    layout_outside_buttons->addWidget(S2_3340_off_button);
+    layout_outside_buttons->addWidget(S3_3340_0_button);
+    layout_outside_buttons->addWidget(S3_3340_1_button);
+    layout_outside_buttons->addWidget(S3_3340_2_button);
+    layout_outside_buttons->addWidget(S4_3340_0_button);
+    layout_outside_buttons->addWidget(S4_3340_1_button);
+    layout_outside_buttons->addWidget(S4_3340_2_button);
+    layout_outside_buttons->addWidget(S5_3340_on_button);
+    layout_outside_buttons->addWidget(S5_3340_off_button);
+    layout_outside_buttons->addWidget(S6_3340_0_button);
+    layout_outside_buttons->addWidget(S6_3340_1_button);
+    layout_outside_buttons->addWidget(S6_3340_2_button);
+    layout_outside_buttons->addWidget(S1_2860_on_button);
+    layout_outside_buttons->addWidget(S1_2860_off_button);
+    layout_outside_buttons->addWidget(K32_3230_on_button);
+    layout_outside_buttons->addWidget(K32_3230_off_button);
+    layout_outside_buttons->addWidget(K34_3230_on_button);
+    layout_outside_buttons->addWidget(K34_3230_off_button);
+
+    layout_outside_main->addLayout(layout_outside_labels);
+    layout_outside_main->addLayout(layout_outside_buttons);
+    wgt_outside.setLayout(layout_outside_main);
+    wgt_outside.setFixedWidth(300);
 }
 int cabinlighting_outside::logic_outside()
 {
@@ -870,99 +963,6 @@ int cabinlighting_outside::logic_outside()
     S5_3340_label->setText("S5_3340 = " + QString::number(S5_3340));
     S6_3340_label->setText("S6_3340 = " + QString::number(S6_3340));
 
-    //layout setting
-    QVBoxLayout *layout_outside_labels = new QVBoxLayout;
-    QVBoxLayout *layout_outside_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_outside_main = new QHBoxLayout;
-
-    //labels
-
-    layout_outside_labels->addWidget(S1_2860_label);
-    layout_outside_labels->addWidget(PVFL_label);
-    layout_outside_labels->addWidget(PVFP_label);
-    layout_outside_labels->addWidget(PFPRLR_label);
-    layout_outside_labels->addWidget(PFPRPR_label);
-    layout_outside_labels->addWidget(PFPRLP_label);
-    layout_outside_labels->addWidget(PFPRPP_label);
-    layout_outside_labels->addWidget(PFSV_01LR_label);
-    layout_outside_labels->addWidget(PFSV_01PR_label);
-    layout_outside_labels->addWidget(PFSV_01LP_label);
-    layout_outside_labels->addWidget(PFSV_01PP_label);
-    layout_outside_labels->addWidget(K1_3340_label);
-    layout_outside_labels->addWidget(K2_3340_label);
-    layout_outside_labels->addWidget(K3_3340_label);
-    layout_outside_labels->addWidget(K9_3340_label);
-    layout_outside_labels->addWidget(K11_3340_label);
-    layout_outside_labels->addWidget(K13_3340_label);
-    layout_outside_labels->addWidget(K6_3340_label);
-    layout_outside_labels->addWidget(K7_3340_label);
-    layout_outside_labels->addWidget(K8_3340_label);
-    layout_outside_labels->addWidget(K10_3340_label);
-    layout_outside_labels->addWidget(K12_3340_label);
-    layout_outside_labels->addWidget(K14_3340_label);
-    layout_outside_labels->addWidget(K15_3340_label);
-    layout_outside_labels->addWidget(K32_3230_label);
-    layout_outside_labels->addWidget(K34_3230_label);
-    layout_outside_labels->addWidget(F1_3340_label);
-    layout_outside_labels->addWidget(F2_3340_label);
-    layout_outside_labels->addWidget(F4_3340_label);
-    layout_outside_labels->addWidget(F14_3340_label);
-    layout_outside_labels->addWidget(F13_3340_label);
-    layout_outside_labels->addWidget(F12_3340_label);
-    layout_outside_labels->addWidget(PFSV_02L_label);
-    layout_outside_labels->addWidget(PFSV_02P_label);
-    layout_outside_labels->addWidget(BSS825X5V_label);
-    layout_outside_labels->addWidget(BSS824X1E_label);
-    layout_outside_labels->addWidget(BSS824X1A_label);
-    layout_outside_labels->addWidget(Usha1_label);
-    layout_outside_labels->addWidget(Usha2_label);
-    layout_outside_labels->addWidget(alpha_fsv_ol_label);
-    layout_outside_labels->addWidget(alpha_fsv_op_label);
-    layout_outside_labels->addWidget(Vpr_label);
-    layout_outside_labels->addWidget(alpha_fazl_label);
-    layout_outside_labels->addWidget(alpha_fazp_label);
-    layout_outside_labels->addWidget(fazl_secs_label);
-    layout_outside_labels->addWidget(fazl_counter_label);
-    layout_outside_labels->addWidget(fazp_secs_label);
-    layout_outside_labels->addWidget(fazp_counter_label);
-    layout_outside_labels->addWidget(L_counter_label);
-    layout_outside_labels->addWidget(P_counter_label);
-    layout_outside_labels->addWidget(S1_3340_label);
-    layout_outside_labels->addWidget(S2_3340_label);
-    layout_outside_labels->addWidget(S3_3340_label);
-    layout_outside_labels->addWidget(S4_3340_label);
-    layout_outside_labels->addWidget(S5_3340_label);
-    layout_outside_labels->addWidget(S6_3340_label);
-
-    //Buttons
-    layout_outside_buttons->addWidget(V_change_button);
-    layout_outside_buttons->addWidget(Vpr_edit);
-    layout_outside_buttons->addWidget(S1_3340_on_button);
-    layout_outside_buttons->addWidget(S1_3340_off_button);
-    layout_outside_buttons->addWidget(S2_3340_on_button);
-    layout_outside_buttons->addWidget(S2_3340_off_button);
-    layout_outside_buttons->addWidget(S3_3340_0_button);
-    layout_outside_buttons->addWidget(S3_3340_1_button);
-    layout_outside_buttons->addWidget(S3_3340_2_button);
-    layout_outside_buttons->addWidget(S4_3340_0_button);
-    layout_outside_buttons->addWidget(S4_3340_1_button);
-    layout_outside_buttons->addWidget(S4_3340_2_button);
-    layout_outside_buttons->addWidget(S5_3340_on_button);
-    layout_outside_buttons->addWidget(S5_3340_off_button);
-    layout_outside_buttons->addWidget(S6_3340_0_button);
-    layout_outside_buttons->addWidget(S6_3340_1_button);
-    layout_outside_buttons->addWidget(S6_3340_2_button);
-    layout_outside_buttons->addWidget(S1_2860_on_button);
-    layout_outside_buttons->addWidget(S1_2860_off_button);
-    layout_outside_buttons->addWidget(K32_3230_on_button);
-    layout_outside_buttons->addWidget(K32_3230_off_button);
-    layout_outside_buttons->addWidget(K34_3230_on_button);
-    layout_outside_buttons->addWidget(K34_3230_off_button);
-
-    layout_outside_main->addLayout(layout_outside_labels);
-    layout_outside_main->addLayout(layout_outside_buttons);
-    wgt_outside.setLayout(layout_outside_main);
-    wgt_outside.setFixedWidth(300);
 
 }
 

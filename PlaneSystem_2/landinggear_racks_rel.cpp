@@ -129,7 +129,6 @@ void landinggear_racks_rel::logic_racks_rel()
                         delta_stv_l == 90)
                 {
                     racks_rel_left_tick++;
-                    emit pgs_toconsume("rack");
                     //releasing left
                     releasing_loop(&delta_sh_l, &Ddelta_racks_rel, &racks_rel_left_tick,
                                    &racks_rel_left_tick_sec);
@@ -138,7 +137,6 @@ void landinggear_racks_rel::logic_racks_rel()
                         delta_stv_p == 90)
                 {
                     racks_rel_right_tick++;
-                    emit pgs_toconsume("rack");
                     //releasing right
                     releasing_loop(&delta_sh_p, &Ddelta_racks_rel, &racks_rel_right_tick,
                                    &racks_rel_right_tick_sec);
@@ -147,7 +145,6 @@ void landinggear_racks_rel::logic_racks_rel()
                         delta_stv_n == 90)
                 {
                     racks_rel_nose_tick++;
-                    emit pgs_toconsume("rack");
                     //releasing nose
                     releasing_loop(&delta_sh_n, &Ddelta_racks_rel, &racks_rel_nose_tick,
                                    &racks_rel_nose_tick_sec);
@@ -165,7 +162,6 @@ void landinggear_racks_rel::logic_racks_rel()
                         delta_racks_l == 0)
                 {
                     racks_rel_left_tick++;
-                    emit pgs_toconsume("rack");
                     //intake left
                     intake_loop(&delta_sh_l, &racks_rel_left_tick,
                                 &racks_rel_left_tick_sec);
@@ -175,7 +171,6 @@ void landinggear_racks_rel::logic_racks_rel()
                         delta_racks_p == 0)
                 {
                     racks_rel_right_tick++;
-                    emit pgs_toconsume("rack");
                     //intake right
                     intake_loop(&delta_sh_p, &racks_rel_right_tick,
                                 &racks_rel_right_tick_sec);
@@ -183,7 +178,6 @@ void landinggear_racks_rel::logic_racks_rel()
                 if(delta_sh_n != 0 && otkaz_nepoln_ubor_n == false)
                 {
                     racks_rel_nose_tick++;
-                    emit pgs_toconsume("rack");
                 }
                 //intake nose
                 intake_loop(&delta_sh_n, &racks_rel_nose_tick,
@@ -308,6 +302,8 @@ void landinggear_racks_rel::releasing_loop(double* delta, double* D_delta,
         if((*sec_tick) >= 1)
         {
             *delta = (*delta + ((*D_delta / (1000 / TICK))));
+            emit pgs_toconsume("pgs2");
+            emit signal_QgsGiveBack("qgs2");
         }
 
         if(*delta >= 1)
@@ -331,6 +327,8 @@ void landinggear_racks_rel::intake_loop(double* delta, int* tick,
         if((*sec_tick) >= 1)
         {
             *delta = (*delta - ((Ddelta_racks_rel / (1000 / TICK))));
+            emit pgs_toconsume("pgs2");
+            emit signal_QgsConsume("qgs2");
         }
 
         if(*delta <= 0)

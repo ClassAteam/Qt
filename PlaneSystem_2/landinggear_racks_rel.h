@@ -71,5 +71,7 @@ public slots:
 signals:
     void presure_retake(double *P_bal);
     void pgs_toconsume(QString str);
+    void signal_QgsConsume(QString str);
+    void signal_QgsGiveBack(QString str);
 };
 

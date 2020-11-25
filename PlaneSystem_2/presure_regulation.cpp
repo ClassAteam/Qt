@@ -197,6 +197,65 @@ presure_regulation::presure_regulation(QWidget* pwgt)
      QObject::connect
              (PRTHU1_off_button, SIGNAL(clicked()),
               this, SLOT(PRTHU1_off()));
+    //layout setting
+
+    QVBoxLayout *layout_presure_labels = new QVBoxLayout;
+    QVBoxLayout *layout_presure_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_presure_main = new QHBoxLayout;
+
+    layout_presure_labels->addWidget(K1_2131_label);
+    layout_presure_labels->addWidget(K2_2131_label);
+    layout_presure_labels->addWidget(K4_2131_label);
+    layout_presure_labels->addWidget(PAVARR_label);
+    layout_presure_labels->addWidget(PRTHU1_label);
+    layout_presure_labels->addWidget(PPP_label);
+    layout_presure_labels->addWidget(PGK_label);
+    layout_presure_labels->addWidget(BSS838X5MM_label);
+    layout_presure_labels->addWidget(BSS824X1G_label);
+    layout_presure_labels->addWidget(BSS824X1J_label);
+    layout_presure_labels->addWidget(BSS838X7A_label);
+    layout_presure_labels->addWidget(SKD_D300_label);
+    layout_presure_labels->addWidget(SKD_D301_label);
+    layout_presure_labels->addWidget(otkaz_razgermetizatsiya_label);
+    layout_presure_labels->addWidget(lyukizagermetizirovany_label);
+    layout_presure_labels->addWidget(otkaz_perenadduv_label);
+    layout_presure_labels->addWidget(H_label);
+    layout_presure_labels->addWidget(Ph_label);
+    layout_presure_labels->addWidget(Ph_current_label);
+    layout_presure_labels->addWidget(Ph_msa_label);
+    layout_presure_labels->addWidget(Pkab_label);
+    layout_presure_labels->addWidget(Pkab_delta_label);
+    layout_presure_labels->addWidget(Hkab_label);
+    layout_presure_labels->addWidget(Hkab_ind_label);
+    layout_presure_labels->addWidget(Vkab_label);
+    layout_presure_labels->addWidget(Pkab_zad_label);
+    layout_presure_labels->addWidget(Pkab_ind_delta_label);
+    layout_presure_labels->addWidget(S1_2131_label);
+    layout_presure_labels->addWidget(S2_2131_label);
+    layout_presure_labels->addWidget(Counter_PRESURE_label);
+
+    //Buttons
+    layout_presure_buttons->addWidget(otkaz_razgermetizatsiya_on_button);
+    layout_presure_buttons->addWidget(otkaz_razgermetizatsiya_off_button);
+    layout_presure_buttons->addWidget(PNU_presure_on_button);
+    layout_presure_buttons->addWidget(otkaz_perenadduv_on_button);
+    layout_presure_buttons->addWidget(otkaz_perenadduv_off_button);
+    layout_presure_buttons->addWidget(lyuki_zagermetizirovani_on_button);
+    layout_presure_buttons->addWidget(lyuki_zagermetizirovani_off_button);
+    layout_presure_buttons->addWidget(S1_2131_CW_button);
+    layout_presure_buttons->addWidget(S1_2131_ACW_button);
+    layout_presure_buttons->addWidget(S2_2131_on_button);
+    layout_presure_buttons->addWidget(S2_2131_off_button);
+    layout_presure_buttons->addWidget(Ph_edit);
+    layout_presure_buttons->addWidget(H_change_button);
+    layout_presure_buttons->addWidget(H_edit);
+    layout_presure_buttons->addWidget(PRTHU1_on_button);
+    layout_presure_buttons->addWidget(PRTHU1_off_button);
+
+    layout_presure_main->addLayout(layout_presure_buttons);
+    layout_presure_main->addLayout(layout_presure_labels);
+    wgt_presureregulatoin.setLayout(layout_presure_main);
+    wgt_presureregulatoin.setWindowTitle("Presure regulation system");
 }
 int presure_regulation::logic_presure()
 {
@@ -501,65 +560,6 @@ int presure_regulation::logic_presure()
     Counter_PRESURE_label->setText("Counter_PRESURE = "
                                    + QString::number(Counter_PRESURE));
 
-    //layout setting
-
-    QVBoxLayout *layout_presure_labels = new QVBoxLayout;
-    QVBoxLayout *layout_presure_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_presure_main = new QHBoxLayout;
-
-    layout_presure_labels->addWidget(K1_2131_label);
-    layout_presure_labels->addWidget(K2_2131_label);
-    layout_presure_labels->addWidget(K4_2131_label);
-    layout_presure_labels->addWidget(PAVARR_label);
-    layout_presure_labels->addWidget(PRTHU1_label);
-    layout_presure_labels->addWidget(PPP_label);
-    layout_presure_labels->addWidget(PGK_label);
-    layout_presure_labels->addWidget(BSS838X5MM_label);
-    layout_presure_labels->addWidget(BSS824X1G_label);
-    layout_presure_labels->addWidget(BSS824X1J_label);
-    layout_presure_labels->addWidget(BSS838X7A_label);
-    layout_presure_labels->addWidget(SKD_D300_label);
-    layout_presure_labels->addWidget(SKD_D301_label);
-    layout_presure_labels->addWidget(otkaz_razgermetizatsiya_label);
-    layout_presure_labels->addWidget(lyukizagermetizirovany_label);
-    layout_presure_labels->addWidget(otkaz_perenadduv_label);
-    layout_presure_labels->addWidget(H_label);
-    layout_presure_labels->addWidget(Ph_label);
-    layout_presure_labels->addWidget(Ph_current_label);
-    layout_presure_labels->addWidget(Ph_msa_label);
-    layout_presure_labels->addWidget(Pkab_label);
-    layout_presure_labels->addWidget(Pkab_delta_label);
-    layout_presure_labels->addWidget(Hkab_label);
-    layout_presure_labels->addWidget(Hkab_ind_label);
-    layout_presure_labels->addWidget(Vkab_label);
-    layout_presure_labels->addWidget(Pkab_zad_label);
-    layout_presure_labels->addWidget(Pkab_ind_delta_label);
-    layout_presure_labels->addWidget(S1_2131_label);
-    layout_presure_labels->addWidget(S2_2131_label);
-    layout_presure_labels->addWidget(Counter_PRESURE_label);
-
-    //Buttons
-    layout_presure_buttons->addWidget(otkaz_razgermetizatsiya_on_button);
-    layout_presure_buttons->addWidget(otkaz_razgermetizatsiya_off_button);
-    layout_presure_buttons->addWidget(PNU_presure_on_button);
-    layout_presure_buttons->addWidget(otkaz_perenadduv_on_button);
-    layout_presure_buttons->addWidget(otkaz_perenadduv_off_button);
-    layout_presure_buttons->addWidget(lyuki_zagermetizirovani_on_button);
-    layout_presure_buttons->addWidget(lyuki_zagermetizirovani_off_button);
-    layout_presure_buttons->addWidget(S1_2131_CW_button);
-    layout_presure_buttons->addWidget(S1_2131_ACW_button);
-    layout_presure_buttons->addWidget(S2_2131_on_button);
-    layout_presure_buttons->addWidget(S2_2131_off_button);
-    layout_presure_buttons->addWidget(Ph_edit);
-    layout_presure_buttons->addWidget(H_change_button);
-    layout_presure_buttons->addWidget(H_edit);
-    layout_presure_buttons->addWidget(PRTHU1_on_button);
-    layout_presure_buttons->addWidget(PRTHU1_off_button);
-
-    layout_presure_main->addLayout(layout_presure_buttons);
-    layout_presure_main->addLayout(layout_presure_labels);
-    wgt_presureregulatoin.setLayout(layout_presure_main);
-    wgt_presureregulatoin.setWindowTitle("Presure regulation system");
 
 
 }

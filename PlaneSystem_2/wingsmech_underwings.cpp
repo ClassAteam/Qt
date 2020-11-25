@@ -459,8 +459,10 @@ void wingsmech_underwings::logic_underwings()
         {
             delta_pr_l = delta_pr_l + (Ddelta_pr_l * (TICK / 1000));
             emit pgs_toconsume("pgs2");
+            emit signal_QgsConsume("qgs2");
             delta_pr_p = delta_pr_p + (Ddelta_pr_p * (TICK / 1000));
             emit pgs_toconsume("pgs3");
+            emit signal_QgsConsume("qgs3");
         }
         else
         {
@@ -468,6 +470,7 @@ void wingsmech_underwings::logic_underwings()
             {
                 delta_pr_l = delta_pr_l + (Ddelta_pr_l * (TICK / 1000));
                 emit pgs_toconsume("pgs2");
+                emit signal_QgsGiveBack("qgs2");
             }
             if(otkaz_rassgl_prekr == true)
             {
@@ -478,6 +481,7 @@ void wingsmech_underwings::logic_underwings()
             {
                 delta_pr_p = delta_pr_p + (Ddelta_pr_p * (TICK / 1000));
                 emit pgs_toconsume("pgs3");
+                emit signal_QgsGiveBack("qgs3");
             }
         }
     }

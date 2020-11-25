@@ -90,6 +90,8 @@ public:
 public slots:
     void logic_nose();
     void consume();
+    void ConsumeQgs();
+    void GiveBackQgs();
     void m_switch(bool* toggler, bool* toggling);
     double m_pedals_to_fi(double Xped,
                         double interval_Y1,
@@ -100,6 +102,8 @@ public slots:
 
 signals:
     void pgs_toconsume(QString str);
+    void signal_QgsConsume(QString str);
+    void signal_QgsGiveBack(QString str);
 
 
 

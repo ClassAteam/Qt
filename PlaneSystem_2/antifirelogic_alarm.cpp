@@ -173,6 +173,62 @@ antifirelogic_alarm::antifirelogic_alarm(QWidget* pwgt)
              (lzh_srab_pereg_4_dv_off_button, SIGNAL(clicked()),
               this, SLOT(m_lzh_srab_pereg_4_dv_off()));
 
+//    layout setting
+
+    QVBoxLayout *layout_alarm_labels = new QVBoxLayout;
+    QVBoxLayout *layout_alarm_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_alarm_main = new QHBoxLayout;
+
+    layout_alarm_labels->addWidget(Ushap_label);
+    layout_alarm_labels->addWidget(PKO_label);
+    layout_alarm_labels->addWidget(PO1och_label);
+    layout_alarm_labels->addWidget(K80_2610_label);
+    layout_alarm_labels->addWidget(S10_2610_label);
+    layout_alarm_labels->addWidget(lzh_srab_pereg_1_dv_label);
+    layout_alarm_labels->addWidget(lzh_srab_pereg_2_dv_label);
+    layout_alarm_labels->addWidget(lzh_srab_pereg_3_dv_label);
+    layout_alarm_labels->addWidget(lzh_srab_pereg_4_dv_label);
+    layout_alarm_labels->addWidget(BSS811X1n_label);
+    layout_alarm_labels->addWidget(BSS811X1r_label);
+    layout_alarm_labels->addWidget(BSS812X5h_label);
+    layout_alarm_labels->addWidget(BSS812X5n_label);
+    layout_alarm_labels->addWidget(BSS811X1x_label);
+    layout_alarm_labels->addWidget(BSS811X1z_label);
+    layout_alarm_labels->addWidget(BSS913X3E_label);
+    layout_alarm_labels->addWidget(BSS913X3G_label);
+    layout_alarm_labels->addWidget(BSS811X1B_label);
+    layout_alarm_labels->addWidget(BSS838X7G_label);
+    layout_alarm_labels->addWidget(BSS811X1VV_label);
+    layout_alarm_labels->addWidget(BSS838X7C_label);
+    layout_alarm_labels->addWidget(BSS913X3J_label);
+    layout_alarm_labels->addWidget(BSS926X1j_label);
+    layout_alarm_labels->addWidget(BSS926X1f_label);
+    layout_alarm_labels->addWidget(BSS926X1h_label);
+    layout_alarm_labels->addWidget(BSS913X3L_label);
+    layout_alarm_labels->addWidget(BSS913X3N_label);
+    layout_alarm_labels->addWidget(BSS811X1v_label);
+    layout_alarm_labels->addWidget(BSS811X1p_label);
+    layout_alarm_labels->addWidget(BSS811X1t_label);
+    layout_alarm_labels->addWidget(BSS812X5j_label);
+    layout_alarm_labels->addWidget(BSS812X5p_label);
+    layout_alarm_labels->addWidget(Counter_ALARM_label);
+
+    //Buttons
+    layout_alarm_buttons->addWidget(S10_2610_on_button);
+    layout_alarm_buttons->addWidget(S10_2610_off_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_1_dv_on_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_1_dv_off_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_2_dv_on_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_2_dv_off_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_3_dv_on_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_3_dv_off_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_4_dv_on_button);
+    layout_alarm_buttons->addWidget(lzh_srab_pereg_4_dv_off_button);
+
+    layout_alarm_main->addLayout(layout_alarm_buttons);
+    layout_alarm_main->addLayout(layout_alarm_labels);
+    wgt_alarm.setLayout(layout_alarm_main);
+    wgt_alarm.setWindowTitle("Antifire alarm system");
 }
 int antifirelogic_alarm::logic_alarm()
 {
@@ -670,62 +726,6 @@ else
     Counter_ALARM_label->setText
             ("Counter_ALARM = " + QString::number(Counter_ALARM));
 
-//    layout setting
-
-    QVBoxLayout *layout_alarm_labels = new QVBoxLayout;
-    QVBoxLayout *layout_alarm_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_alarm_main = new QHBoxLayout;
-
-    layout_alarm_labels->addWidget(Ushap_label);
-    layout_alarm_labels->addWidget(PKO_label);
-    layout_alarm_labels->addWidget(PO1och_label);
-    layout_alarm_labels->addWidget(K80_2610_label);
-    layout_alarm_labels->addWidget(S10_2610_label);
-    layout_alarm_labels->addWidget(lzh_srab_pereg_1_dv_label);
-    layout_alarm_labels->addWidget(lzh_srab_pereg_2_dv_label);
-    layout_alarm_labels->addWidget(lzh_srab_pereg_3_dv_label);
-    layout_alarm_labels->addWidget(lzh_srab_pereg_4_dv_label);
-    layout_alarm_labels->addWidget(BSS811X1n_label);
-    layout_alarm_labels->addWidget(BSS811X1r_label);
-    layout_alarm_labels->addWidget(BSS812X5h_label);
-    layout_alarm_labels->addWidget(BSS812X5n_label);
-    layout_alarm_labels->addWidget(BSS811X1x_label);
-    layout_alarm_labels->addWidget(BSS811X1z_label);
-    layout_alarm_labels->addWidget(BSS913X3E_label);
-    layout_alarm_labels->addWidget(BSS913X3G_label);
-    layout_alarm_labels->addWidget(BSS811X1B_label);
-    layout_alarm_labels->addWidget(BSS838X7G_label);
-    layout_alarm_labels->addWidget(BSS811X1VV_label);
-    layout_alarm_labels->addWidget(BSS838X7C_label);
-    layout_alarm_labels->addWidget(BSS913X3J_label);
-    layout_alarm_labels->addWidget(BSS926X1j_label);
-    layout_alarm_labels->addWidget(BSS926X1f_label);
-    layout_alarm_labels->addWidget(BSS926X1h_label);
-    layout_alarm_labels->addWidget(BSS913X3L_label);
-    layout_alarm_labels->addWidget(BSS913X3N_label);
-    layout_alarm_labels->addWidget(BSS811X1v_label);
-    layout_alarm_labels->addWidget(BSS811X1p_label);
-    layout_alarm_labels->addWidget(BSS811X1t_label);
-    layout_alarm_labels->addWidget(BSS812X5j_label);
-    layout_alarm_labels->addWidget(BSS812X5p_label);
-    layout_alarm_labels->addWidget(Counter_ALARM_label);
-
-    //Buttons
-    layout_alarm_buttons->addWidget(S10_2610_on_button);
-    layout_alarm_buttons->addWidget(S10_2610_off_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_1_dv_on_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_1_dv_off_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_2_dv_on_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_2_dv_off_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_3_dv_on_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_3_dv_off_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_4_dv_on_button);
-    layout_alarm_buttons->addWidget(lzh_srab_pereg_4_dv_off_button);
-
-    layout_alarm_main->addLayout(layout_alarm_buttons);
-    layout_alarm_main->addLayout(layout_alarm_labels);
-    wgt_alarm.setLayout(layout_alarm_main);
-    wgt_alarm.setWindowTitle("Antifire alarm system");
 
 }
 

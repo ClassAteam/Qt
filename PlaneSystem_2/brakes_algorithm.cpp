@@ -297,21 +297,18 @@ void brakes_algorithm::logic_algorithm()
         tick_alg_3 = 0;
     }
 
-    if(pgat >= 130)
-    {
-
-    }
-    else
-    {
-        P_t_lev = 120;
-        P_t_lev = 120;
-        PPDGAKT = true;
-    }
-
     if(PstoyanT == true)
     {
-        P_t_lev = 120;
-        P_t_prav = 120;
+        if(pgat >= 130.0)
+        {
+
+        }
+        else
+        {
+            PPDGAKT = true;
+            P_t_lev = 120;
+            P_t_prav = 120;
+        }
     }
 
     emit s_P_t_changed();

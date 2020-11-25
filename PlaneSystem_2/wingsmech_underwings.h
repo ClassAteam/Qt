@@ -137,4 +137,6 @@ public slots:
     int m_Slider(int);
 signals:
     void pgs_toconsume(QString str);
+    void signal_QgsConsume(QString str);
+    void signal_QgsGiveBack(QString str);
 };

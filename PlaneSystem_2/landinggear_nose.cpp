@@ -541,36 +541,40 @@ void landinggear_nose::logic_nose()
 
             }
         }
-            if(abs(fi_zad1) >= abs(fi_zad2))
+
+        if(abs(fi_zad1) >= abs(fi_zad2))
+        {
+            fi_zad = fi_zad1;
+        }
+        else
+        {
+            fi_zad = fi_zad2;
+        }
+
+        if(abs(fi_nk - fi_zad) >= 2) //Recheck !!!
+        {
+            if(PR_R == true)
             {
-                fi_zad = fi_zad1;
+                V_nk = 8;
             }
             else
             {
-                fi_zad = fi_zad2;
+                V_nk = 9;
             }
-
-            if(abs(fi_nk - fi_zad) >= 2) //Recheck !!!
+            if((fi_nk - fi_zad) >= 0)
             {
-                if(PR_R == true)
-                {
-                    V_nk = 8;
-                }
-                else
-                {
-                    V_nk = 9;
-                }
-                if((fi_nk - fi_zad) >= 0)
-                {
-                    fi_nk = fi_nk - (V_nk * (TICK / 1000));
-                    consume();
-                }
-                else
-                {
-                    fi_nk = fi_nk + (V_nk * (TICK / 1000));
-                    consume();
-                }
+                fi_nk = fi_nk - (V_nk * (TICK / 1000));
+                consume();
+                GiveBackQgs();
             }
+            else
+            {
+                fi_nk = fi_nk + (V_nk * (TICK / 1000));
+                consume();
+                ConsumeQgs();
+            }
+        }
+
         if(fi_nk >= 60)
         {
             fi_nk = 60;
@@ -814,6 +818,30 @@ void landinggear_nose::consume()
     if(GK_nk2 == true)
     {
         emit pgs_toconsume("pgs3");
+    }
+
+}
+void landinggear_nose::ConsumeQgs()
+{
+    if(GK_nk1 == true)
+    {
+        emit signal_QgsConsume("qgs1");
+    }
+    if(GK_nk2 == true)
+    {
+        emit signal_QgsConsume("qgs3");
+    }
+
+}
+void landinggear_nose::GiveBackQgs()
+{
+    if(GK_nk1 == true)
+    {
+        emit signal_QgsGiveBack("qgs1");
+    }
+    if(GK_nk2 == true)
+    {
+        emit signal_QgsGiveBack("qgs3");
     }
 
 }

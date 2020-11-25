@@ -188,6 +188,73 @@ antifirelogic_valves::antifirelogic_valves(QWidget* pwgt)
               this, SLOT(S9_2610_off()));
 
 
+//    layout setting
+    QVBoxLayout *layout_valves_labels = new QVBoxLayout;
+    QVBoxLayout *layout_valves_labels_2 = new QVBoxLayout;
+    QVBoxLayout *layout_valves_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_valves_main = new QHBoxLayout;
+
+    layout_valves_labels->addWidget(K15_label);
+    layout_valves_labels->addWidget(K16_label);
+    layout_valves_labels->addWidget(K19_label);
+    layout_valves_labels->addWidget(K20_label);
+    layout_valves_labels->addWidget(K23_label);
+    layout_valves_labels->addWidget(K24_label);
+    layout_valves_labels->addWidget(K25_label);
+    layout_valves_labels->addWidget(K26_label);
+    layout_valves_labels->addWidget(K27_label);
+    layout_valves_labels->addWidget(K28_label);
+    layout_valves_labels->addWidget(K50_label);
+    layout_valves_labels->addWidget(K53_label);
+    layout_valves_labels->addWidget(K51_label);
+    layout_valves_labels->addWidget(K54_label);
+    layout_valves_labels->addWidget(K57_label);
+    layout_valves_labels->addWidget(K58_label);
+    layout_valves_labels->addWidget(K60_label);
+    layout_valves_labels->addWidget(K61_label);
+    layout_valves_labels->addWidget(F25_label);
+    layout_valves_labels->addWidget(F35_label);
+    layout_valves_labels->addWidget(F45_label);
+    layout_valves_labels->addWidget(F55_label);
+    layout_valves_labels->addWidget(F65_label);
+    layout_valves_labels->addWidget(F72_label);
+    layout_valves_labels->addWidget(F82_label);
+    layout_valves_labels->addWidget(F132_label);
+    layout_valves_labels->addWidget(F142_label);
+    layout_valves_labels->addWidget(Ush1dpl_label);
+    layout_valves_labels->addWidget(Ush1dpp_label);
+    layout_valves_labels->addWidget(Uacc_label);
+    layout_valves_labels->addWidget(F7_label);
+    layout_valves_labels->addWidget(F8_label);
+    layout_valves_labels->addWidget(S3_label);
+    layout_valves_labels->addWidget(S4_label);
+    layout_valves_labels->addWidget(S5_label);
+    layout_valves_labels->addWidget(S6_label);
+    layout_valves_labels->addWidget(S7_label);
+    layout_valves_labels->addWidget(S8_label);
+    layout_valves_labels->addWidget(S9_label);
+    layout_valves_labels->addWidget(Counter_label);
+
+    layout_valves_buttons->addWidget(S3_2610_on_button);
+    layout_valves_buttons->addWidget(S3_2610_off_button);
+    layout_valves_buttons->addWidget(S4_2610_on_button);
+    layout_valves_buttons->addWidget(S4_2610_off_button);
+    layout_valves_buttons->addWidget(S5_2610_on_button);
+    layout_valves_buttons->addWidget(S5_2610_off_button);
+    layout_valves_buttons->addWidget(S6_2610_on_button);
+    layout_valves_buttons->addWidget(S6_2610_off_button);
+    layout_valves_buttons->addWidget(S7_2610_on_button);
+    layout_valves_buttons->addWidget(S7_2610_off_button);
+    layout_valves_buttons->addWidget(S8_2610_on_button);
+    layout_valves_buttons->addWidget(S8_2610_off_button);
+    layout_valves_buttons->addWidget(S9_2610_on_button);
+    layout_valves_buttons->addWidget(S9_2610_off_button);
+
+    layout_valves_main->addLayout(layout_valves_buttons);
+    layout_valves_main->addLayout(layout_valves_labels);
+    layout_valves_main->addLayout(layout_valves_labels_2);
+    wgt.setLayout(layout_valves_main);
+    wgt.setWindowTitle("Antifire_system_valves");
 }
 int antifirelogic_valves::logic_valves()
 {
@@ -634,73 +701,6 @@ int antifirelogic_valves::logic_valves()
     S9_label->setText("S9 = " + QString::number(S9_2610));
     Counter_label->setText("Counter = " + QString::number(Counter_valves));
 
-//    layout setting
-    QVBoxLayout *layout_valves_labels = new QVBoxLayout;
-    QVBoxLayout *layout_valves_labels_2 = new QVBoxLayout;
-    QVBoxLayout *layout_valves_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_valves_main = new QHBoxLayout;
-
-    layout_valves_labels->addWidget(K15_label);
-    layout_valves_labels->addWidget(K16_label);
-    layout_valves_labels->addWidget(K19_label);
-    layout_valves_labels->addWidget(K20_label);
-    layout_valves_labels->addWidget(K23_label);
-    layout_valves_labels->addWidget(K24_label);
-    layout_valves_labels->addWidget(K25_label);
-    layout_valves_labels->addWidget(K26_label);
-    layout_valves_labels->addWidget(K27_label);
-    layout_valves_labels->addWidget(K28_label);
-    layout_valves_labels->addWidget(K50_label);
-    layout_valves_labels->addWidget(K53_label);
-    layout_valves_labels->addWidget(K51_label);
-    layout_valves_labels->addWidget(K54_label);
-    layout_valves_labels->addWidget(K57_label);
-    layout_valves_labels->addWidget(K58_label);
-    layout_valves_labels->addWidget(K60_label);
-    layout_valves_labels->addWidget(K61_label);
-    layout_valves_labels->addWidget(F25_label);
-    layout_valves_labels->addWidget(F35_label);
-    layout_valves_labels->addWidget(F45_label);
-    layout_valves_labels->addWidget(F55_label);
-    layout_valves_labels->addWidget(F65_label);
-    layout_valves_labels->addWidget(F72_label);
-    layout_valves_labels->addWidget(F82_label);
-    layout_valves_labels->addWidget(F132_label);
-    layout_valves_labels->addWidget(F142_label);
-    layout_valves_labels->addWidget(Ush1dpl_label);
-    layout_valves_labels->addWidget(Ush1dpp_label);
-    layout_valves_labels->addWidget(Uacc_label);
-    layout_valves_labels->addWidget(F7_label);
-    layout_valves_labels->addWidget(F8_label);
-    layout_valves_labels->addWidget(S3_label);
-    layout_valves_labels->addWidget(S4_label);
-    layout_valves_labels->addWidget(S5_label);
-    layout_valves_labels->addWidget(S6_label);
-    layout_valves_labels->addWidget(S7_label);
-    layout_valves_labels->addWidget(S8_label);
-    layout_valves_labels->addWidget(S9_label);
-    layout_valves_labels->addWidget(Counter_label);
-
-    layout_valves_buttons->addWidget(S3_2610_on_button);
-    layout_valves_buttons->addWidget(S3_2610_off_button);
-    layout_valves_buttons->addWidget(S4_2610_on_button);
-    layout_valves_buttons->addWidget(S4_2610_off_button);
-    layout_valves_buttons->addWidget(S5_2610_on_button);
-    layout_valves_buttons->addWidget(S5_2610_off_button);
-    layout_valves_buttons->addWidget(S6_2610_on_button);
-    layout_valves_buttons->addWidget(S6_2610_off_button);
-    layout_valves_buttons->addWidget(S7_2610_on_button);
-    layout_valves_buttons->addWidget(S7_2610_off_button);
-    layout_valves_buttons->addWidget(S8_2610_on_button);
-    layout_valves_buttons->addWidget(S8_2610_off_button);
-    layout_valves_buttons->addWidget(S9_2610_on_button);
-    layout_valves_buttons->addWidget(S9_2610_off_button);
-
-    layout_valves_main->addLayout(layout_valves_buttons);
-    layout_valves_main->addLayout(layout_valves_labels);
-    layout_valves_main->addLayout(layout_valves_labels_2);
-    wgt.setLayout(layout_valves_main);
-    wgt.setWindowTitle("Antifire_system_valves");
 
 }
 // assign variable values to similar Qobjects

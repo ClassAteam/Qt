@@ -129,6 +129,10 @@ hydro_4systems::hydro_4systems(QWidget*pwgt)
     qp4sum_sl->setRange(0, 300);
     qp4sum_sl->setPageStep(1);
 
+    m_SetSliderGray(qp1sum_sl);
+    m_SetSliderGray(qp2sum_sl);
+    m_SetSliderGray(qp4sum_sl);
+
     QObject::connect
 (qp1sum_sl, SIGNAL(valueChanged(int)), this, SLOT(m_Slider_qp1sum(int)));
     QObject::connect

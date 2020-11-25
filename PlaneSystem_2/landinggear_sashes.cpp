@@ -409,6 +409,7 @@ void landinggear_sashes::releasing_loop(double* delta, double* D_delta,
         if((*sec_tick) >= 1)
         {
             *delta = (*delta + ((*D_delta / (1000 / TICK))));
+            emit signal_QgsGiveBack("qgs2");
         }
 
         if(*delta >= 90)
@@ -433,13 +434,14 @@ void landinggear_sashes::intake_loop(double* delta, int* tick,
         if((*sec_tick) >= 1)
         {
             *delta = (*delta - ((Ddelta_stv / (1000 / TICK))));
+            emit signal_QgsConsume("qgs2");
         }
 
         if(*delta <= 0)
         {
-        *delta = 0;
-        *clue = false;
-        *tick = 0;
+            *delta = 0;
+            *clue = false;
+            *tick = 0;
         }
     }
 }

@@ -202,6 +202,74 @@ antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
              (S6_3080_off_button, SIGNAL(clicked()),
               this, SLOT(m_S6_3080_off()));
 
+
+    //layout setting
+
+    QVBoxLayout *layout_airintake_warmup_labels = new QVBoxLayout;
+    QVBoxLayout *layout_airintake_warmup_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_airintake_warmup_main = new QHBoxLayout;
+
+    layout_airintake_warmup_labels->addWidget(K22_3020_label);
+    layout_airintake_warmup_labels->addWidget(K29_3020_label);
+    layout_airintake_warmup_labels->addWidget(K40_3020_label);
+    layout_airintake_warmup_labels->addWidget(K46_3020_label);
+    layout_airintake_warmup_labels->addWidget(K56_3020_label);
+    layout_airintake_warmup_labels->addWidget(K57_3020_label);
+    layout_airintake_warmup_labels->addWidget(K58_3020_label);
+    layout_airintake_warmup_labels->addWidget(K59_3020_label);
+    layout_airintake_warmup_labels->addWidget(POB1dv1_label);
+    layout_airintake_warmup_labels->addWidget(POB1dv2_label);
+    layout_airintake_warmup_labels->addWidget(POB1dv3_label);
+    layout_airintake_warmup_labels->addWidget(POB1dv4_label);
+    layout_airintake_warmup_labels->addWidget(POB2dv1_label);
+    layout_airintake_warmup_labels->addWidget(POB2dv2_label);
+    layout_airintake_warmup_labels->addWidget(POB2dv3_label);
+    layout_airintake_warmup_labels->addWidget(POB2dv4_label);
+    layout_airintake_warmup_labels->addWidget(POB3dv1_label);
+    layout_airintake_warmup_labels->addWidget(POB3dv2_label);
+    layout_airintake_warmup_labels->addWidget(POB3dv3_label);
+    layout_airintake_warmup_labels->addWidget(POB3dv4_label);
+    layout_airintake_warmup_labels->addWidget(PONdv1_label);
+    layout_airintake_warmup_labels->addWidget(PONdv2_label);
+    layout_airintake_warmup_labels->addWidget(PONdv3_label);
+    layout_airintake_warmup_labels->addWidget(PONdv4_label);
+    layout_airintake_warmup_labels->addWidget(PVOVNA1_label);
+    layout_airintake_warmup_labels->addWidget(PVOVNA2_label);
+    layout_airintake_warmup_labels->addWidget(PVOVNA3_label);
+    layout_airintake_warmup_labels->addWidget(PVOVNA4_label);
+    layout_airintake_warmup_labels->addWidget(BSS824X1z_label);
+    layout_airintake_warmup_labels->addWidget(BSS824X1BB_label);
+    layout_airintake_warmup_labels->addWidget(BSS824X1DD_label);
+    layout_airintake_warmup_labels->addWidget(BSS824X1FF_label);
+    layout_airintake_warmup_labels->addWidget(BSS825PR_label);;
+//    layout_airintake_warmup_labels->addWidget(Counter_warmup_label);
+    layout_airintake_warmup_labels->addWidget(POV3dv1_label);
+    layout_airintake_warmup_labels->addWidget(POV3dv2_label);
+    layout_airintake_warmup_labels->addWidget(POV3dv3_label);
+    layout_airintake_warmup_labels->addWidget(POV3dv4_label);
+    layout_airintake_warmup_labels->addWidget(S3_3080_label);
+    layout_airintake_warmup_labels->addWidget(S4_3080_label);
+    layout_airintake_warmup_labels->addWidget(S5_3080_label);
+    layout_airintake_warmup_labels->addWidget(S6_3080_label);
+    layout_airintake_warmup_labels->addWidget(Ush1l_label);
+    layout_airintake_warmup_labels->addWidget(Ush2l_label);
+    layout_airintake_warmup_labels->addWidget(Ush1p_label);
+    layout_airintake_warmup_labels->addWidget(Ush2p_label);
+
+    layout_airintake_warmup_buttons->addWidget(S3_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S3_3080_off_button);
+    layout_airintake_warmup_buttons->addWidget(S4_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S4_3080_off_button);
+    layout_airintake_warmup_buttons->addWidget(S5_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S5_3080_off_button);
+    layout_airintake_warmup_buttons->addWidget(S6_3080_on_button);
+    layout_airintake_warmup_buttons->addWidget(S6_3080_off_button);
+
+    layout_airintake_warmup_main->addLayout(layout_airintake_warmup_buttons);
+    layout_airintake_warmup_main->addLayout(layout_airintake_warmup_labels);
+    wgt_warmup.setLayout(layout_airintake_warmup_main);
+    wgt_warmup.setFixedWidth(300);
+    wgt_warmup.setWindowTitle("antiicing system warmup");
 }
 int antiicing_airintake_warmup::logic_warmup()
 {
@@ -698,74 +766,6 @@ int antiicing_airintake_warmup::logic_warmup()
     Ush2l_label->setText("Ush2l = " + QString::number(Ush2l));
     Ush1p_label->setText("Ush1p = " + QString::number(Ush1p));
     Ush2p_label->setText("Ush2p = " + QString::number(Ush2p));
-
-    //layout setting
-
-    QVBoxLayout *layout_airintake_warmup_labels = new QVBoxLayout;
-    QVBoxLayout *layout_airintake_warmup_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_airintake_warmup_main = new QHBoxLayout;
-
-    layout_airintake_warmup_labels->addWidget(K22_3020_label);
-    layout_airintake_warmup_labels->addWidget(K29_3020_label);
-    layout_airintake_warmup_labels->addWidget(K40_3020_label);
-    layout_airintake_warmup_labels->addWidget(K46_3020_label);
-    layout_airintake_warmup_labels->addWidget(K56_3020_label);
-    layout_airintake_warmup_labels->addWidget(K57_3020_label);
-    layout_airintake_warmup_labels->addWidget(K58_3020_label);
-    layout_airintake_warmup_labels->addWidget(K59_3020_label);
-    layout_airintake_warmup_labels->addWidget(POB1dv1_label);
-    layout_airintake_warmup_labels->addWidget(POB1dv2_label);
-    layout_airintake_warmup_labels->addWidget(POB1dv3_label);
-    layout_airintake_warmup_labels->addWidget(POB1dv4_label);
-    layout_airintake_warmup_labels->addWidget(POB2dv1_label);
-    layout_airintake_warmup_labels->addWidget(POB2dv2_label);
-    layout_airintake_warmup_labels->addWidget(POB2dv3_label);
-    layout_airintake_warmup_labels->addWidget(POB2dv4_label);
-    layout_airintake_warmup_labels->addWidget(POB3dv1_label);
-    layout_airintake_warmup_labels->addWidget(POB3dv2_label);
-    layout_airintake_warmup_labels->addWidget(POB3dv3_label);
-    layout_airintake_warmup_labels->addWidget(POB3dv4_label);
-    layout_airintake_warmup_labels->addWidget(PONdv1_label);
-    layout_airintake_warmup_labels->addWidget(PONdv2_label);
-    layout_airintake_warmup_labels->addWidget(PONdv3_label);
-    layout_airintake_warmup_labels->addWidget(PONdv4_label);
-    layout_airintake_warmup_labels->addWidget(PVOVNA1_label);
-    layout_airintake_warmup_labels->addWidget(PVOVNA2_label);
-    layout_airintake_warmup_labels->addWidget(PVOVNA3_label);
-    layout_airintake_warmup_labels->addWidget(PVOVNA4_label);
-    layout_airintake_warmup_labels->addWidget(BSS824X1z_label);
-    layout_airintake_warmup_labels->addWidget(BSS824X1BB_label);
-    layout_airintake_warmup_labels->addWidget(BSS824X1DD_label);
-    layout_airintake_warmup_labels->addWidget(BSS824X1FF_label);
-    layout_airintake_warmup_labels->addWidget(BSS825PR_label);;
-//    layout_airintake_warmup_labels->addWidget(Counter_warmup_label);
-    layout_airintake_warmup_labels->addWidget(POV3dv1_label);
-    layout_airintake_warmup_labels->addWidget(POV3dv2_label);
-    layout_airintake_warmup_labels->addWidget(POV3dv3_label);
-    layout_airintake_warmup_labels->addWidget(POV3dv4_label);
-    layout_airintake_warmup_labels->addWidget(S3_3080_label);
-    layout_airintake_warmup_labels->addWidget(S4_3080_label);
-    layout_airintake_warmup_labels->addWidget(S5_3080_label);
-    layout_airintake_warmup_labels->addWidget(S6_3080_label);
-    layout_airintake_warmup_labels->addWidget(Ush1l_label);
-    layout_airintake_warmup_labels->addWidget(Ush2l_label);
-    layout_airintake_warmup_labels->addWidget(Ush1p_label);
-    layout_airintake_warmup_labels->addWidget(Ush2p_label);
-
-    layout_airintake_warmup_buttons->addWidget(S3_3080_on_button);
-    layout_airintake_warmup_buttons->addWidget(S3_3080_off_button);
-    layout_airintake_warmup_buttons->addWidget(S4_3080_on_button);
-    layout_airintake_warmup_buttons->addWidget(S4_3080_off_button);
-    layout_airintake_warmup_buttons->addWidget(S5_3080_on_button);
-    layout_airintake_warmup_buttons->addWidget(S5_3080_off_button);
-    layout_airintake_warmup_buttons->addWidget(S6_3080_on_button);
-    layout_airintake_warmup_buttons->addWidget(S6_3080_off_button);
-
-    layout_airintake_warmup_main->addLayout(layout_airintake_warmup_buttons);
-    layout_airintake_warmup_main->addLayout(layout_airintake_warmup_labels);
-    wgt_warmup.setLayout(layout_airintake_warmup_main);
-    wgt_warmup.setFixedWidth(300);
-    wgt_warmup.setWindowTitle("antiicing system warmup");
 
 }
 

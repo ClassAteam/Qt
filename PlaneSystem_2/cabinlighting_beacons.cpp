@@ -45,6 +45,25 @@ cabinlighting_beacons::cabinlighting_beacons(QWidget* pwgt)
     QObject::connect
 (S2_3341_2_button, SIGNAL(clicked()), this, SLOT(m_S2_3341_2()));
 
+    //layout setting
+    QVBoxLayout *layout_beacons_labels = new QVBoxLayout;
+    QVBoxLayout *layout_beacons_buttons = new QVBoxLayout;
+    QVBoxLayout *layout_beacons_main = new QVBoxLayout;
+
+    PVMN10_label->setFixedHeight(100);
+    layout_beacons_labels->addWidget(PVMV10_label);
+    layout_beacons_labels->addWidget(PVMN10_label);
+    layout_beacons_labels->addWidget(PVMV100_label);
+    layout_beacons_labels->addWidget(PVMN100_label);
+    layout_beacons_labels->addWidget(S2_3341_label);
+    layout_beacons_labels->addWidget(S2_3341_0_button);
+    layout_beacons_labels->addWidget(S2_3341_1_button);
+    layout_beacons_labels->addWidget(S2_3341_2_button);
+
+    layout_beacons_main->addLayout(layout_beacons_labels);
+    wgt_beacons.setLayout(layout_beacons_main);
+    wgt_beacons.setFixedWidth(100);
+    wgt_beacons.setFixedHeight(800);
 }
 int cabinlighting_beacons::logic_beacons()
 {
@@ -129,25 +148,6 @@ int cabinlighting_beacons::logic_beacons()
     PVMN100_label->setText("PVMN100 = " + QString::number(PVMN100));
     S2_3341_label->setText("S2_3341 = " + QString::number(S2_3341));
 
-    //layout setting
-    QVBoxLayout *layout_beacons_labels = new QVBoxLayout;
-    QVBoxLayout *layout_beacons_buttons = new QVBoxLayout;
-    QVBoxLayout *layout_beacons_main = new QVBoxLayout;
-
-    PVMN10_label->setFixedHeight(100);
-    layout_beacons_labels->addWidget(PVMV10_label);
-    layout_beacons_labels->addWidget(PVMN10_label);
-    layout_beacons_labels->addWidget(PVMV100_label);
-    layout_beacons_labels->addWidget(PVMN100_label);
-    layout_beacons_labels->addWidget(S2_3341_label);
-    layout_beacons_labels->addWidget(S2_3341_0_button);
-    layout_beacons_labels->addWidget(S2_3341_1_button);
-    layout_beacons_labels->addWidget(S2_3341_2_button);
-
-    layout_beacons_main->addLayout(layout_beacons_labels);
-    wgt_beacons.setLayout(layout_beacons_main);
-    wgt_beacons.setFixedWidth(100);
-    wgt_beacons.setFixedHeight(800);
 }
 
 int cabinlighting_beacons::m_S2_3341_0()

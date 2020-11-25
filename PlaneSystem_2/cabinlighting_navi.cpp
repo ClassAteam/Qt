@@ -57,6 +57,32 @@ cabinlighting_navi::cabinlighting_navi(QWidget* pwgt)
     QObject::connect
     (S1_3341_4_button, SIGNAL(clicked()), this, SLOT(m_S1_3341_4()));
 
+    //layout setting
+    QVBoxLayout *layout_navi_labels = new QVBoxLayout;
+    QVBoxLayout *layout_navi_buttons = new QVBoxLayout;
+    QVBoxLayout *layout_navi_main = new QVBoxLayout;
+
+    layout_navi_labels->addWidget(PV_OSN_HV_10_label);
+    layout_navi_labels->addWidget(PV_OSN_HV_30_label);
+    layout_navi_labels->addWidget(PV_OSN_HV_100_label);
+    layout_navi_labels->addWidget(PV_OSN_HV_MIG_label);
+    layout_navi_labels->addWidget(PV_DOP_label);
+    layout_navi_labels->addWidget(P1OBPPOP_label);
+    layout_navi_labels->addWidget(S1_3341_label);
+
+    layout_navi_labels->addWidget(P1OBPPOP_on_button);
+    layout_navi_labels->addWidget(P1OBPPOP_off_button);
+    layout_navi_labels->addWidget(S1_3341_0_button);
+    layout_navi_labels->addWidget(S1_3341_1_button);
+    layout_navi_labels->addWidget(S1_3341_2_button);
+    layout_navi_labels->addWidget(S1_3341_3_button);
+    layout_navi_labels->addWidget(S1_3341_4_button);
+
+    layout_navi_main->addLayout(layout_navi_labels);
+    layout_navi_main->addLayout(layout_navi_buttons);
+    wgt_navi.setLayout(layout_navi_main);
+    wgt_navi.setFixedWidth(200);
+    wgt_navi.setFixedHeight(800);
 }
 int cabinlighting_navi::logic_navi()
 {
@@ -119,32 +145,6 @@ int cabinlighting_navi::logic_navi()
     S1_3341_label->setText
     ("S1_3341 = " + QString::number(S1_3341));
 
-    //layout setting
-    QVBoxLayout *layout_navi_labels = new QVBoxLayout;
-    QVBoxLayout *layout_navi_buttons = new QVBoxLayout;
-    QVBoxLayout *layout_navi_main = new QVBoxLayout;
-
-    layout_navi_labels->addWidget(PV_OSN_HV_10_label);
-    layout_navi_labels->addWidget(PV_OSN_HV_30_label);
-    layout_navi_labels->addWidget(PV_OSN_HV_100_label);
-    layout_navi_labels->addWidget(PV_OSN_HV_MIG_label);
-    layout_navi_labels->addWidget(PV_DOP_label);
-    layout_navi_labels->addWidget(P1OBPPOP_label);
-    layout_navi_labels->addWidget(S1_3341_label);
-
-    layout_navi_labels->addWidget(P1OBPPOP_on_button);
-    layout_navi_labels->addWidget(P1OBPPOP_off_button);
-    layout_navi_labels->addWidget(S1_3341_0_button);
-    layout_navi_labels->addWidget(S1_3341_1_button);
-    layout_navi_labels->addWidget(S1_3341_2_button);
-    layout_navi_labels->addWidget(S1_3341_3_button);
-    layout_navi_labels->addWidget(S1_3341_4_button);
-
-    layout_navi_main->addLayout(layout_navi_labels);
-    layout_navi_main->addLayout(layout_navi_buttons);
-    wgt_navi.setLayout(layout_navi_main);
-    wgt_navi.setFixedWidth(200);
-    wgt_navi.setFixedHeight(800);
 
 }
 

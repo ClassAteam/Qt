@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
     hydro_4systems foursystems;
     hydro_consumers consumers;
     hydro_alarm halarm;
+    hydro_tempr tempr;
 
     QTimer *timer = new QTimer;
 
@@ -127,7 +128,7 @@ int main(int argc, char *argv[])
     window_emergencyalarm_1.setLayout(&layout_emergencyalarm_1);
     window_emergencyalarm_1.setWindowTitle("Emergency Alarm_2");
     window_emergencyalarm_1.setWindowState(Qt::WindowFullScreen);
-    window_emergencyalarm_1.show();
+//    window_emergencyalarm_1.show();
 
     QWidget window_landinggear;
     QHBoxLayout layout_landinggear;
@@ -166,6 +167,7 @@ int main(int argc, char *argv[])
     layout_hydro.addWidget(&pumping.wgt_pumping);
     layout_hydro.addWidget(&foursystems.wgt_4system);
     layout_hydro.addWidget(&halarm.wgt_halarm);
+    layout_hydro.addWidget(&tempr.wgt_tempr);
     window_hydro.setLayout(&layout_hydro);
     window_hydro.setWindowTitle("Hydro");
     window_hydro.setWindowState(Qt::WindowFullScreen);
@@ -271,6 +273,8 @@ int main(int argc, char *argv[])
                      &consumers , SLOT(logic_consumers()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &halarm , SLOT(logic_halarm()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &tempr , SLOT(logic_tempr()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);
@@ -280,6 +284,7 @@ int main(int argc, char *argv[])
                      &sashes, &landinggear_sashes::balloon_presure);
     QObject::connect(&algorithm, &brakes_algorithm::s_P_t_changed,
                      &reserve, &brakes_reserve::m_Pt_labels_set);
+    //PGS TAKERS
     QObject::connect(&racks_rel, &landinggear_racks_rel::pgs_toconsume,
                      &consumers, &hydro_consumers::m_pgs_toconsume);
     QObject::connect(&underwings, &wingsmech_underwings::pgs_toconsume,
@@ -296,6 +301,44 @@ int main(int argc, char *argv[])
                      &consumers, &hydro_consumers::m_pgs_toconsume);
     QObject::connect(&skid, &brakes_skid::pgs_toconsume,
                      &consumers, &hydro_consumers::m_pgs_toconsume);
+    //QGS BORROWERS
+    QObject::connect(&nose, &landinggear_nose::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&sashes, &landinggear_sashes::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&skid, &brakes_skid::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&racks_rel, &landinggear_racks_rel::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&underwings, &wingsmech_underwings::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&racks, &landinggear_racks::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&flaps, &wingsmech_flaps::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&movingpart, &wingsmech_movingpart::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    QObject::connect(&skid, &brakes_skid::signal_QgsConsume,
+                     &tempr, &hydro_tempr::m_QgsConsume);
+    //QGS PAYBACKERS
+    QObject::connect(&nose, &landinggear_nose::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&sashes, &landinggear_sashes::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&skid, &brakes_skid::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&racks_rel, &landinggear_racks_rel::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&underwings, &wingsmech_underwings::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&racks, &landinggear_racks::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&flaps, &wingsmech_flaps::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&movingpart, &wingsmech_movingpart::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
+    QObject::connect(&skid, &brakes_skid::signal_QgsGiveBack,
+                     &tempr, &hydro_tempr::m_QgsGiveBack);
 
     timer->start(TICK);
     return a.exec();

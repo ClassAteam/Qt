@@ -91,8 +91,11 @@ public slots:
     void m_RedButton(QPushButton* button, bool* clue);
     void m_RadioButton(QRadioButton* button);
     int m_Slider(int) ;
+    void QgsConsumeAndBack(double* delta);
 signals:
     void pgs_toconsume(QString str);
+    void signal_QgsConsume(QString str);
+    void signal_QgsGiveBack(QString str);
 
 
 };

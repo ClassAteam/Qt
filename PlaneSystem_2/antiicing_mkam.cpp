@@ -156,6 +156,56 @@ antiicing_mkam::antiicing_mkam(QWidget* pwgt)
      QObject::connect
              (S6_3020_off_button, SIGNAL(clicked()),
               this, SLOT(m_S6_3020_off()));
+    //layout setting
+
+    QVBoxLayout *layout_mkam_labels = new QVBoxLayout;
+    QVBoxLayout *layout_mkam_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_mkam_main = new QHBoxLayout;
+
+    layout_mkam_labels->addWidget(M_label);
+    layout_mkam_labels->addWidget(otkaz_vozduhozabor_label);
+    layout_mkam_labels->addWidget(PZ1_label);
+    layout_mkam_labels->addWidget(PZ2_label);
+    layout_mkam_labels->addWidget(PZ3_label);
+    layout_mkam_labels->addWidget(K2_3020_label);
+    layout_mkam_labels->addWidget(K26_3230_label);
+    layout_mkam_labels->addWidget(K27_3230_label);
+    layout_mkam_labels->addWidget(K51_3020_label);
+    layout_mkam_labels->addWidget(F12_3020_label);
+    layout_mkam_labels->addWidget(F110_3020_label);
+    layout_mkam_labels->addWidget(F19_3020_label);
+    layout_mkam_labels->addWidget(F125_3020_label);
+    layout_mkam_labels->addWidget(F134_3020_label);
+    layout_mkam_labels->addWidget(S1_3020_label);
+    layout_mkam_labels->addWidget(S6_3020_label);
+    layout_mkam_labels->addWidget(Usho1p_label);
+    layout_mkam_labels->addWidget(Ushap_label);
+    layout_mkam_labels->addWidget(PZ1_counter_label);
+    layout_mkam_labels->addWidget(PZ2_counter_label);
+    layout_mkam_labels->addWidget(PZ3_counter_label);
+    layout_mkam_labels->addWidget(Counter_mkam_label);
+
+    //Buttons
+    layout_mkam_buttons->addWidget(M_change_button);
+    layout_mkam_buttons->addWidget(M_edit);
+    layout_mkam_buttons->addWidget(otkaz_pos_vozduhzab_on_button);
+    layout_mkam_buttons->addWidget(otkaz_pos_vozduhzab_off_button);
+    layout_mkam_buttons->addWidget(K26_3230_on_button);
+    layout_mkam_buttons->addWidget(K26_3230_off_button);
+    layout_mkam_buttons->addWidget(K27_3230_on_button);
+    layout_mkam_buttons->addWidget(K27_3230_off_button);
+    layout_mkam_buttons->addWidget(S1_3020_0_button);
+    layout_mkam_buttons->addWidget(S1_3020_1_button);
+    layout_mkam_buttons->addWidget(S1_3020_2_button);
+    layout_mkam_buttons->addWidget(S1_3020_3_button);
+    layout_mkam_buttons->addWidget(S6_3020_on_button);
+    layout_mkam_buttons->addWidget(S6_3020_off_button);
+
+    layout_mkam_main->addLayout(layout_mkam_labels);
+    layout_mkam_main->addLayout(layout_mkam_buttons);
+    wgt_mkam.setLayout(layout_mkam_main);
+    wgt_mkam.setFixedWidth(300);
+    wgt_mkam.setWindowTitle("Antiicing system");
 }
 int antiicing_mkam::logic_mkam()
 {
@@ -467,56 +517,6 @@ int antiicing_mkam::logic_mkam()
     Counter_mkam_label->setText("Counter mkam = "
                                 + QString::number(Counter_mkam));
 
-    //layout setting
-
-    QVBoxLayout *layout_mkam_labels = new QVBoxLayout;
-    QVBoxLayout *layout_mkam_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_mkam_main = new QHBoxLayout;
-
-    layout_mkam_labels->addWidget(M_label);
-    layout_mkam_labels->addWidget(otkaz_vozduhozabor_label);
-    layout_mkam_labels->addWidget(PZ1_label);
-    layout_mkam_labels->addWidget(PZ2_label);
-    layout_mkam_labels->addWidget(PZ3_label);
-    layout_mkam_labels->addWidget(K2_3020_label);
-    layout_mkam_labels->addWidget(K26_3230_label);
-    layout_mkam_labels->addWidget(K27_3230_label);
-    layout_mkam_labels->addWidget(K51_3020_label);
-    layout_mkam_labels->addWidget(F12_3020_label);
-    layout_mkam_labels->addWidget(F110_3020_label);
-    layout_mkam_labels->addWidget(F19_3020_label);
-    layout_mkam_labels->addWidget(F125_3020_label);
-    layout_mkam_labels->addWidget(F134_3020_label);
-    layout_mkam_labels->addWidget(S1_3020_label);
-    layout_mkam_labels->addWidget(S6_3020_label);
-    layout_mkam_labels->addWidget(Usho1p_label);
-    layout_mkam_labels->addWidget(Ushap_label);
-    layout_mkam_labels->addWidget(PZ1_counter_label);
-    layout_mkam_labels->addWidget(PZ2_counter_label);
-    layout_mkam_labels->addWidget(PZ3_counter_label);
-    layout_mkam_labels->addWidget(Counter_mkam_label);
-
-    //Buttons
-    layout_mkam_buttons->addWidget(M_change_button);
-    layout_mkam_buttons->addWidget(M_edit);
-    layout_mkam_buttons->addWidget(otkaz_pos_vozduhzab_on_button);
-    layout_mkam_buttons->addWidget(otkaz_pos_vozduhzab_off_button);
-    layout_mkam_buttons->addWidget(K26_3230_on_button);
-    layout_mkam_buttons->addWidget(K26_3230_off_button);
-    layout_mkam_buttons->addWidget(K27_3230_on_button);
-    layout_mkam_buttons->addWidget(K27_3230_off_button);
-    layout_mkam_buttons->addWidget(S1_3020_0_button);
-    layout_mkam_buttons->addWidget(S1_3020_1_button);
-    layout_mkam_buttons->addWidget(S1_3020_2_button);
-    layout_mkam_buttons->addWidget(S1_3020_3_button);
-    layout_mkam_buttons->addWidget(S6_3020_on_button);
-    layout_mkam_buttons->addWidget(S6_3020_off_button);
-
-    layout_mkam_main->addLayout(layout_mkam_labels);
-    layout_mkam_main->addLayout(layout_mkam_buttons);
-    wgt_mkam.setLayout(layout_mkam_main);
-    wgt_mkam.setFixedWidth(300);
-    wgt_mkam.setWindowTitle("Antiicing system");
 
 }
 

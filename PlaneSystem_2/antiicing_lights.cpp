@@ -160,6 +160,62 @@ antiicing_lights::antiicing_lights(QWidget* pwgt)
     QObject::connect(otkaz_lozh_srab_l_k_off_button, SIGNAL(clicked()),
     this, SLOT(m_otkaz_lozh_srab_l_k_off()));
 
+    //layout setting
+    QVBoxLayout *layout_lights_labels = new QVBoxLayout;
+    QVBoxLayout *layout_lights_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_lights_main = new QHBoxLayout;
+
+
+    layout_lights_labels->addWidget(obled_svs_label);
+    layout_lights_labels->addWidget(otkaz_l_so121_label);
+    layout_lights_labels->addWidget(otkaz_p_so121_label);
+    layout_lights_labels->addWidget(signal_obled_label);
+    layout_lights_labels->addWidget(otkaz_lozhn_srab_lev_so121_label);
+    layout_lights_labels->addWidget(otkaz_lozhn_srab_prav_so121_label);
+    layout_lights_labels->addWidget(PSOPD_label);
+    layout_lights_labels->addWidget(PSOLD_label);
+    layout_lights_labels->addWidget(PRSOL_label);
+    layout_lights_labels->addWidget(PRSOP_label);
+    layout_lights_labels->addWidget(PSOBLL_label);
+    layout_lights_labels->addWidget(PSOBLP_label);
+    layout_lights_labels->addWidget(PBSO1_label);
+    layout_lights_labels->addWidget(PBSO2_label);
+    layout_lights_labels->addWidget(K2_3080_label);
+    layout_lights_labels->addWidget(S1_3080_label);
+    layout_lights_labels->addWidget(S2_3080_label);
+    layout_lights_labels->addWidget(S3_3080_label);
+    layout_lights_labels->addWidget(BSS824X1T_label);
+    layout_lights_labels->addWidget(BSS824X1V_label);
+    layout_lights_labels->addWidget(BSS825X5KK_label);
+    layout_lights_labels->addWidget(BSS825X5MM_label);
+    layout_lights_labels->addWidget(UKS1X112_label);
+    layout_lights_labels->addWidget(UKS1X212_label);
+    layout_lights_labels->addWidget(PSOBLP_sec_label);
+    layout_lights_labels->addWidget(PSOBLL_sec_label);
+    layout_lights_labels->addWidget(PSOBLL_tick_label);
+    layout_lights_labels->addWidget(PSOBLP_tick_label);
+
+    layout_lights_buttons->addWidget(S1_3080_on_button);
+    layout_lights_buttons->addWidget(S1_3080_off_button);
+    layout_lights_buttons->addWidget(S2_3080_on_button);
+    layout_lights_buttons->addWidget(S2_3080_off_button);
+    layout_lights_buttons->addWidget(S3_3080_on_button);
+    layout_lights_buttons->addWidget(S3_3080_off_button);
+    layout_lights_buttons->addWidget(otkaz_l_so121_on_button);
+    layout_lights_buttons->addWidget(otkaz_l_so121_off_button);
+    layout_lights_buttons->addWidget(otkaz_p_so121_on_button);
+    layout_lights_buttons->addWidget(otkaz_p_so121_off_button);
+    layout_lights_buttons->addWidget(signal_obled_on_button);
+    layout_lights_buttons->addWidget(signal_obled_off_button);
+    layout_lights_buttons->addWidget(otkaz_lozh_srab_p_k_on_button);
+    layout_lights_buttons->addWidget(otkaz_lozh_srab_p_k_off_button);
+    layout_lights_buttons->addWidget(otkaz_lozh_srab_l_k_on_button);
+    layout_lights_buttons->addWidget(otkaz_lozh_srab_l_k_off_button);
+
+    layout_lights_main->addLayout(layout_lights_labels);
+    layout_lights_main->addLayout(layout_lights_buttons);
+    wgt_lights.setLayout(layout_lights_main);
+    wgt_lights.setFixedWidth(300);
 }
 int antiicing_lights::logic_lights()
 {
@@ -412,62 +468,6 @@ int antiicing_lights::logic_lights()
 
     PSOBLL_sec_label->setText ("PSOBLL secs = " + QString::number(PSOBLL_sec));
 
-    //layout setting
-    QVBoxLayout *layout_lights_labels = new QVBoxLayout;
-    QVBoxLayout *layout_lights_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_lights_main = new QHBoxLayout;
-
-
-    layout_lights_labels->addWidget(obled_svs_label);
-    layout_lights_labels->addWidget(otkaz_l_so121_label);
-    layout_lights_labels->addWidget(otkaz_p_so121_label);
-    layout_lights_labels->addWidget(signal_obled_label);
-    layout_lights_labels->addWidget(otkaz_lozhn_srab_lev_so121_label);
-    layout_lights_labels->addWidget(otkaz_lozhn_srab_prav_so121_label);
-    layout_lights_labels->addWidget(PSOPD_label);
-    layout_lights_labels->addWidget(PSOLD_label);
-    layout_lights_labels->addWidget(PRSOL_label);
-    layout_lights_labels->addWidget(PRSOP_label);
-    layout_lights_labels->addWidget(PSOBLL_label);
-    layout_lights_labels->addWidget(PSOBLP_label);
-    layout_lights_labels->addWidget(PBSO1_label);
-    layout_lights_labels->addWidget(PBSO2_label);
-    layout_lights_labels->addWidget(K2_3080_label);
-    layout_lights_labels->addWidget(S1_3080_label);
-    layout_lights_labels->addWidget(S2_3080_label);
-    layout_lights_labels->addWidget(S3_3080_label);
-    layout_lights_labels->addWidget(BSS824X1T_label);
-    layout_lights_labels->addWidget(BSS824X1V_label);
-    layout_lights_labels->addWidget(BSS825X5KK_label);
-    layout_lights_labels->addWidget(BSS825X5MM_label);
-    layout_lights_labels->addWidget(UKS1X112_label);
-    layout_lights_labels->addWidget(UKS1X212_label);
-    layout_lights_labels->addWidget(PSOBLP_sec_label);
-    layout_lights_labels->addWidget(PSOBLL_sec_label);
-    layout_lights_labels->addWidget(PSOBLL_tick_label);
-    layout_lights_labels->addWidget(PSOBLP_tick_label);
-
-    layout_lights_buttons->addWidget(S1_3080_on_button);
-    layout_lights_buttons->addWidget(S1_3080_off_button);
-    layout_lights_buttons->addWidget(S2_3080_on_button);
-    layout_lights_buttons->addWidget(S2_3080_off_button);
-    layout_lights_buttons->addWidget(S3_3080_on_button);
-    layout_lights_buttons->addWidget(S3_3080_off_button);
-    layout_lights_buttons->addWidget(otkaz_l_so121_on_button);
-    layout_lights_buttons->addWidget(otkaz_l_so121_off_button);
-    layout_lights_buttons->addWidget(otkaz_p_so121_on_button);
-    layout_lights_buttons->addWidget(otkaz_p_so121_off_button);
-    layout_lights_buttons->addWidget(signal_obled_on_button);
-    layout_lights_buttons->addWidget(signal_obled_off_button);
-    layout_lights_buttons->addWidget(otkaz_lozh_srab_p_k_on_button);
-    layout_lights_buttons->addWidget(otkaz_lozh_srab_p_k_off_button);
-    layout_lights_buttons->addWidget(otkaz_lozh_srab_l_k_on_button);
-    layout_lights_buttons->addWidget(otkaz_lozh_srab_l_k_off_button);
-
-    layout_lights_main->addLayout(layout_lights_labels);
-    layout_lights_main->addLayout(layout_lights_buttons);
-    wgt_lights.setLayout(layout_lights_main);
-    wgt_lights.setFixedWidth(300);
 
 }
 

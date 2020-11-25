@@ -424,3 +424,89 @@ void wingsmech_movingpart::consume_movingpart()
         emit pgs_toconsume("pgs4");
     }
 }
+void wingsmech_movingpart::QgsConsumeAndBack(double* delta)
+{
+    if(*delta >= 0)
+    {
+        if(delta == &D_X_l)
+        {
+            if(PGS1)
+            {
+                emit signal_QgsConsume("qgs1");
+            }
+            if(PGS2)
+            {
+                emit signal_QgsConsume("qgs2");
+            }
+            if(PGS3)
+            {
+                emit signal_QgsConsume("qgs3");
+            }
+            if(PGS4)
+            {
+                emit signal_QgsConsume("qgs4");
+            }
+        }
+        if(delta == &D_X_p)
+        {
+            if(PGS1)
+            {
+                emit signal_QgsConsume("qgs1");
+            }
+            if(PGS2)
+            {
+                emit signal_QgsConsume("qgs2");
+            }
+            if(PGS3)
+            {
+                emit signal_QgsConsume("qgs3");
+            }
+            if(PGS4)
+            {
+                emit signal_QgsConsume("qgs4");
+            }
+        }
+    }
+    if(*delta < 0)
+    {
+        if(delta == &D_X_l)
+        {
+            if(PGS1)
+            {
+                emit signal_QgsGiveBack("qgs1");
+            }
+            if(PGS2)
+            {
+                emit signal_QgsGiveBack("qgs2");
+            }
+            if(PGS3)
+            {
+                emit signal_QgsGiveBack("qgs3");
+            }
+            if(PGS4)
+            {
+                emit signal_QgsGiveBack("qgs4");
+            }
+        }
+        if(delta == &D_X_p)
+        {
+            if(PGS1)
+            {
+                emit signal_QgsGiveBack("qgs1");
+            }
+            if(PGS2)
+            {
+                emit signal_QgsGiveBack("qgs2");
+            }
+            if(PGS3)
+            {
+                emit signal_QgsGiveBack("qgs3");
+            }
+            if(PGS4)
+            {
+                emit signal_QgsGiveBack("qgs4");
+            }
+        }
+    }
+
+}

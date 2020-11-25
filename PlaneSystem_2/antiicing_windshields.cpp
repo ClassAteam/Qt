@@ -167,6 +167,64 @@ antiicing_windshields::antiicing_windshields(QWidget* pwgt)
     QObject::connect(F32_3250_off_button, SIGNAL(clicked()),
             this, SLOT(m_F32_3250_off()));
 
+    //layout setting
+
+    QVBoxLayout *layout_windshields_labels = new QVBoxLayout;
+    QVBoxLayout *layout_windshields_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_windshields_main = new QHBoxLayout;
+
+    layout_windshields_labels->addWidget(POLST_label);
+    layout_windshields_labels->addWidget(POLOBST_label);
+    layout_windshields_labels->addWidget(POPST_label);
+    layout_windshields_labels->addWidget(PRD1dv_label);
+    layout_windshields_labels->addWidget(PRD2dv_label);
+    layout_windshields_labels->addWidget(PRD3dv_label);
+    layout_windshields_labels->addWidget(PRD4dv_label);
+    layout_windshields_labels->addWidget(K1_3040_label);
+    layout_windshields_labels->addWidget(K2_3040_label);
+    layout_windshields_labels->addWidget(K3_3040_label);
+    layout_windshields_labels->addWidget(F32_3250_label);
+    layout_windshields_labels->addWidget(F42_3250_label);
+    layout_windshields_labels->addWidget(F11_3040_label);
+    layout_windshields_labels->addWidget(F12_3040_label);
+    layout_windshields_labels->addWidget(F13_3040_label);
+    layout_windshields_labels->addWidget(S2_3040_label);
+    layout_windshields_labels->addWidget(S4_3040_label);
+    layout_windshields_labels->addWidget(S6_3040_label);
+    layout_windshields_labels->addWidget(S8_3040_label);
+    layout_windshields_labels->addWidget(S7_3040_label);
+    layout_windshields_labels->addWidget(Usho2p_label);
+    layout_windshields_labels->addWidget(Ushavlp_label);
+    layout_windshields_labels->addWidget(Ushg3_label);
+    layout_windshields_labels->addWidget(Ushg4_label);
+
+    layout_windshields_buttons->addWidget(PRD1dv_on_button);
+    layout_windshields_buttons->addWidget(PRD1dv_off_button);
+    layout_windshields_buttons->addWidget(PRD2dv_on_button);
+    layout_windshields_buttons->addWidget(PRD2dv_off_button);
+    layout_windshields_buttons->addWidget(PRD3dv_on_button);
+    layout_windshields_buttons->addWidget(PRD3dv_off_button);
+    layout_windshields_buttons->addWidget(PRD4dv_on_button);
+    layout_windshields_buttons->addWidget(PRD4dv_off_button);
+    layout_windshields_buttons->addWidget(S2_3040_on_button);
+    layout_windshields_buttons->addWidget(S2_3040_off_button);
+    layout_windshields_buttons->addWidget(S4_3040_on_button);
+    layout_windshields_buttons->addWidget(S4_3040_off_button);
+    layout_windshields_buttons->addWidget(S6_3040_on_button);
+    layout_windshields_buttons->addWidget(S6_3040_off_button);
+    layout_windshields_buttons->addWidget(S7_3040_0_button);
+    layout_windshields_buttons->addWidget(S7_3040_1_button);
+    layout_windshields_buttons->addWidget(S7_3040_2_button);
+    layout_windshields_buttons->addWidget(S7_3040_3_button);
+    layout_windshields_buttons->addWidget(S8_3040_on_button);
+    layout_windshields_buttons->addWidget(S8_3040_off_button);
+    layout_windshields_buttons->addWidget(F32_3250_on_button);
+    layout_windshields_buttons->addWidget(F32_3250_off_button);
+
+    layout_windshields_main->addLayout(layout_windshields_labels);
+    layout_windshields_main->addLayout(layout_windshields_buttons);
+    wgt_windshields.setLayout(layout_windshields_main);
+    wgt_windshields.setFixedWidth(300);
 }
 int antiicing_windshields::logic_windshields()
 {
@@ -404,64 +462,6 @@ int antiicing_windshields::logic_windshields()
     Ushg3_label->setText ("Ushg3 = " + QString::number(Ushg3));
     Ushg4_label->setText ("Ushg4 = " + QString::number(Ushg4));
 
-    //layout setting
-
-    QVBoxLayout *layout_windshields_labels = new QVBoxLayout;
-    QVBoxLayout *layout_windshields_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_windshields_main = new QHBoxLayout;
-
-    layout_windshields_labels->addWidget(POLST_label);
-    layout_windshields_labels->addWidget(POLOBST_label);
-    layout_windshields_labels->addWidget(POPST_label);
-    layout_windshields_labels->addWidget(PRD1dv_label);
-    layout_windshields_labels->addWidget(PRD2dv_label);
-    layout_windshields_labels->addWidget(PRD3dv_label);
-    layout_windshields_labels->addWidget(PRD4dv_label);
-    layout_windshields_labels->addWidget(K1_3040_label);
-    layout_windshields_labels->addWidget(K2_3040_label);
-    layout_windshields_labels->addWidget(K3_3040_label);
-    layout_windshields_labels->addWidget(F32_3250_label);
-    layout_windshields_labels->addWidget(F42_3250_label);
-    layout_windshields_labels->addWidget(F11_3040_label);
-    layout_windshields_labels->addWidget(F12_3040_label);
-    layout_windshields_labels->addWidget(F13_3040_label);
-    layout_windshields_labels->addWidget(S2_3040_label);
-    layout_windshields_labels->addWidget(S4_3040_label);
-    layout_windshields_labels->addWidget(S6_3040_label);
-    layout_windshields_labels->addWidget(S8_3040_label);
-    layout_windshields_labels->addWidget(S7_3040_label);
-    layout_windshields_labels->addWidget(Usho2p_label);
-    layout_windshields_labels->addWidget(Ushavlp_label);
-    layout_windshields_labels->addWidget(Ushg3_label);
-    layout_windshields_labels->addWidget(Ushg4_label);
-
-    layout_windshields_buttons->addWidget(PRD1dv_on_button);
-    layout_windshields_buttons->addWidget(PRD1dv_off_button);
-    layout_windshields_buttons->addWidget(PRD2dv_on_button);
-    layout_windshields_buttons->addWidget(PRD2dv_off_button);
-    layout_windshields_buttons->addWidget(PRD3dv_on_button);
-    layout_windshields_buttons->addWidget(PRD3dv_off_button);
-    layout_windshields_buttons->addWidget(PRD4dv_on_button);
-    layout_windshields_buttons->addWidget(PRD4dv_off_button);
-    layout_windshields_buttons->addWidget(S2_3040_on_button);
-    layout_windshields_buttons->addWidget(S2_3040_off_button);
-    layout_windshields_buttons->addWidget(S4_3040_on_button);
-    layout_windshields_buttons->addWidget(S4_3040_off_button);
-    layout_windshields_buttons->addWidget(S6_3040_on_button);
-    layout_windshields_buttons->addWidget(S6_3040_off_button);
-    layout_windshields_buttons->addWidget(S7_3040_0_button);
-    layout_windshields_buttons->addWidget(S7_3040_1_button);
-    layout_windshields_buttons->addWidget(S7_3040_2_button);
-    layout_windshields_buttons->addWidget(S7_3040_3_button);
-    layout_windshields_buttons->addWidget(S8_3040_on_button);
-    layout_windshields_buttons->addWidget(S8_3040_off_button);
-    layout_windshields_buttons->addWidget(F32_3250_on_button);
-    layout_windshields_buttons->addWidget(F32_3250_off_button);
-
-    layout_windshields_main->addLayout(layout_windshields_labels);
-    layout_windshields_main->addLayout(layout_windshields_buttons);
-    wgt_windshields.setLayout(layout_windshields_main);
-    wgt_windshields.setFixedWidth(300);
 
 }
 

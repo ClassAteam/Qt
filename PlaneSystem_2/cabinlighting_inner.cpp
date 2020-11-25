@@ -367,6 +367,132 @@ QObject::connect
 (otkaz_k2_vstrosv_ll_off, SIGNAL(clicked()),
  this, SLOT(m_otkaz_k2_vstrosv_ll_off()));
 
+    //layout setting
+    QVBoxLayout *layout_inner_labels = new QVBoxLayout;
+    QVBoxLayout *layout_inner_labels_1 = new QVBoxLayout;
+    QVBoxLayout *layout_inner_buttons = new QVBoxLayout;
+    QHBoxLayout *layout_inner_main = new QHBoxLayout;
+
+    //labels
+    layout_inner_labels->addWidget(PBUSTO3_1_1k_label);
+    layout_inner_labels->addWidget(PBUSTO3_1_2k_label);
+    layout_inner_labels->addWidget(PBUSTO3_2_1k_label);
+    layout_inner_labels->addWidget(PBUSTO3_2_2k_label);
+    layout_inner_labels->addWidget(PBUSTO3_3_1k_label);
+    layout_inner_labels->addWidget(PBUSTO3_3_2k_label);
+    layout_inner_labels->addWidget(PBUSTO3_4_1k_label);
+    layout_inner_labels->addWidget(PBUSTO3_4_2k_label);
+    layout_inner_labels->addWidget(PK11LSPDVO_label);
+    layout_inner_labels->addWidget(PK21LSPDVO_label);
+    layout_inner_labels->addWidget(PK12SPVO_label);
+    layout_inner_labels->addWidget(PK22SPVO_label);
+    layout_inner_labels->addWidget(PK12LBLVO_label);
+    layout_inner_labels->addWidget(PK22LBLVO_label);
+    layout_inner_labels->addWidget(PK11PPDVO_label);
+    layout_inner_labels->addWidget(PK21PPDVO_label);
+    layout_inner_labels->addWidget(PK11PBLVO_label);
+    layout_inner_labels->addWidget(PK21PBLVO_label);
+    layout_inner_labels->addWidget(F1_3311_label);
+    layout_inner_labels->addWidget(F2_3311_label);
+    layout_inner_labels->addWidget(F3_3311_label);
+    layout_inner_labels->addWidget(F4_3311_label);
+    layout_inner_labels->addWidget(F5_3311_label);
+    layout_inner_labels->addWidget(F6_3311_label);
+    layout_inner_labels->addWidget(F7_3311_label);
+    layout_inner_labels->addWidget(F8_3311_label);
+    layout_inner_labels->addWidget(PK1PDSHOVO_label);
+    layout_inner_labels->addWidget(PK2PDSHOVO_label);
+    layout_inner_labels->addWidget(PK1PDSHNVO_label);
+    layout_inner_labels->addWidget(PK2PDSHNVO_label);
+    layout_inner_labels->addWidget(PK1LBSHVO_label);
+    layout_inner_labels->addWidget(PK2LBSHVO_label);
+
+    layout_inner_labels_1->addWidget(PK2PBSHVO_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_lev_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_prav_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_2_k1_lev_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_2_k2_prav_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_shto_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_shtn_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k2_shto_label);
+    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k2_shtn_label);
+    layout_inner_labels_1->addWidget(otkaz_k2_vstrosv_pl_label);
+    layout_inner_labels_1->addWidget(otkaz_k2_vstrosv_ll_label);
+    layout_inner_labels_1->addWidget(UVOLSPD11_label);
+    layout_inner_labels_1->addWidget(UVOLSPD21_label);
+    layout_inner_labels_1->addWidget(UVOSP12_label);
+    layout_inner_labels_1->addWidget(UVOSP22_label);
+    layout_inner_labels_1->addWidget(UVOPPD11_label);
+    layout_inner_labels_1->addWidget(UVOPPD21_label);
+    layout_inner_labels_1->addWidget(UVOPBL11_label);
+    layout_inner_labels_1->addWidget(UVOPBL21_label);
+    layout_inner_labels_1->addWidget(UVOPBSH1_label);
+    layout_inner_labels_1->addWidget(UVOPBSH2_label);
+    layout_inner_labels_1->addWidget(UVOLBSH1_label);
+    layout_inner_labels_1->addWidget(UVOLBSH2_label);
+    layout_inner_labels_1->addWidget(UVOPDSHN1_label);
+    layout_inner_labels_1->addWidget(UVOPDSHN2_label);
+    layout_inner_labels_1->addWidget(UVOLBL12_label);
+    layout_inner_labels_1->addWidget(UVOLBL22_label);
+    layout_inner_labels_1->addWidget(UVOPDSHO1_label);
+    layout_inner_labels_1->addWidget(UVOPDSHO2_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a5_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a6_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a7_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a8_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a10_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a11_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a12_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a13_label);
+    layout_inner_labels_1->addWidget(alpha_ra_a14_label);
+
+    //Buttons
+
+    layout_inner_buttons->addWidget(alpha_ra_5_edit);
+    layout_inner_buttons->addWidget(alpha_ra_5_change);
+    layout_inner_buttons->addWidget(alpha_ra_6_edit);
+    layout_inner_buttons->addWidget(alpha_ra_6_change);
+    layout_inner_buttons->addWidget(alpha_ra_7_edit);
+    layout_inner_buttons->addWidget(alpha_ra_7_change);
+    layout_inner_buttons->addWidget(alpha_ra_8_edit);
+    layout_inner_buttons->addWidget(alpha_ra_8_change);
+    layout_inner_buttons->addWidget(alpha_ra_10_edit);
+    layout_inner_buttons->addWidget(alpha_ra_10_change);
+    layout_inner_buttons->addWidget(alpha_ra_11_edit);
+    layout_inner_buttons->addWidget(alpha_ra_11_change);
+    layout_inner_buttons->addWidget(alpha_ra_12_edit);
+    layout_inner_buttons->addWidget(alpha_ra_12_change);
+    layout_inner_buttons->addWidget(alpha_ra_13_edit);
+    layout_inner_buttons->addWidget(alpha_ra_13_change);
+    layout_inner_buttons->addWidget(alpha_ra_14_edit);
+    layout_inner_buttons->addWidget(alpha_ra_14_change);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_lev_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_lev_off);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_prav_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_prav_off);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k1_lev_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k1_lev_off);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k2_prav_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k2_prav_off);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shto_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shto_off);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shtn_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shtn_off);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shto_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shto_off);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shtn_on);
+    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shtn_off);
+    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_pl_on);
+    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_pl_off);
+    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_ll_on);
+    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_ll_off);
+
+    layout_inner_main->addLayout(layout_inner_labels);
+    layout_inner_main->addLayout(layout_inner_labels_1);
+    layout_inner_main->addLayout(layout_inner_buttons);
+    wgt_inner.setLayout(layout_inner_main);
+    wgt_inner.setFixedWidth(600);
+    wgt_inner.setFixedHeight(1000);
 }
 
 int cabinlighting_inner::logic_inner()
@@ -824,132 +950,6 @@ int cabinlighting_inner::logic_inner()
     alpha_ra_a14_label->setText
 ("alpha_ra_a14 = " + QString::number(alpha_ra_a14));
 
-    //layout setting
-    QVBoxLayout *layout_inner_labels = new QVBoxLayout;
-    QVBoxLayout *layout_inner_labels_1 = new QVBoxLayout;
-    QVBoxLayout *layout_inner_buttons = new QVBoxLayout;
-    QHBoxLayout *layout_inner_main = new QHBoxLayout;
-
-    //labels
-    layout_inner_labels->addWidget(PBUSTO3_1_1k_label);
-    layout_inner_labels->addWidget(PBUSTO3_1_2k_label);
-    layout_inner_labels->addWidget(PBUSTO3_2_1k_label);
-    layout_inner_labels->addWidget(PBUSTO3_2_2k_label);
-    layout_inner_labels->addWidget(PBUSTO3_3_1k_label);
-    layout_inner_labels->addWidget(PBUSTO3_3_2k_label);
-    layout_inner_labels->addWidget(PBUSTO3_4_1k_label);
-    layout_inner_labels->addWidget(PBUSTO3_4_2k_label);
-    layout_inner_labels->addWidget(PK11LSPDVO_label);
-    layout_inner_labels->addWidget(PK21LSPDVO_label);
-    layout_inner_labels->addWidget(PK12SPVO_label);
-    layout_inner_labels->addWidget(PK22SPVO_label);
-    layout_inner_labels->addWidget(PK12LBLVO_label);
-    layout_inner_labels->addWidget(PK22LBLVO_label);
-    layout_inner_labels->addWidget(PK11PPDVO_label);
-    layout_inner_labels->addWidget(PK21PPDVO_label);
-    layout_inner_labels->addWidget(PK11PBLVO_label);
-    layout_inner_labels->addWidget(PK21PBLVO_label);
-    layout_inner_labels->addWidget(F1_3311_label);
-    layout_inner_labels->addWidget(F2_3311_label);
-    layout_inner_labels->addWidget(F3_3311_label);
-    layout_inner_labels->addWidget(F4_3311_label);
-    layout_inner_labels->addWidget(F5_3311_label);
-    layout_inner_labels->addWidget(F6_3311_label);
-    layout_inner_labels->addWidget(F7_3311_label);
-    layout_inner_labels->addWidget(F8_3311_label);
-    layout_inner_labels->addWidget(PK1PDSHOVO_label);
-    layout_inner_labels->addWidget(PK2PDSHOVO_label);
-    layout_inner_labels->addWidget(PK1PDSHNVO_label);
-    layout_inner_labels->addWidget(PK2PDSHNVO_label);
-    layout_inner_labels->addWidget(PK1LBSHVO_label);
-    layout_inner_labels->addWidget(PK2LBSHVO_label);
-
-    layout_inner_labels_1->addWidget(PK2PBSHVO_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_lev_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_prav_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_2_k1_lev_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_2_k2_prav_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_shto_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k1_shtn_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k2_shto_label);
-    layout_inner_labels_1->addWidget(otkaz_vstrosv_busto3_1_k2_shtn_label);
-    layout_inner_labels_1->addWidget(otkaz_k2_vstrosv_pl_label);
-    layout_inner_labels_1->addWidget(otkaz_k2_vstrosv_ll_label);
-    layout_inner_labels_1->addWidget(UVOLSPD11_label);
-    layout_inner_labels_1->addWidget(UVOLSPD21_label);
-    layout_inner_labels_1->addWidget(UVOSP12_label);
-    layout_inner_labels_1->addWidget(UVOSP22_label);
-    layout_inner_labels_1->addWidget(UVOPPD11_label);
-    layout_inner_labels_1->addWidget(UVOPPD21_label);
-    layout_inner_labels_1->addWidget(UVOPBL11_label);
-    layout_inner_labels_1->addWidget(UVOPBL21_label);
-    layout_inner_labels_1->addWidget(UVOPBSH1_label);
-    layout_inner_labels_1->addWidget(UVOPBSH2_label);
-    layout_inner_labels_1->addWidget(UVOLBSH1_label);
-    layout_inner_labels_1->addWidget(UVOLBSH2_label);
-    layout_inner_labels_1->addWidget(UVOPDSHN1_label);
-    layout_inner_labels_1->addWidget(UVOPDSHN2_label);
-    layout_inner_labels_1->addWidget(UVOLBL12_label);
-    layout_inner_labels_1->addWidget(UVOLBL22_label);
-    layout_inner_labels_1->addWidget(UVOPDSHO1_label);
-    layout_inner_labels_1->addWidget(UVOPDSHO2_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a5_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a6_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a7_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a8_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a10_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a11_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a12_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a13_label);
-    layout_inner_labels_1->addWidget(alpha_ra_a14_label);
-
-    //Buttons
-
-    layout_inner_buttons->addWidget(alpha_ra_5_edit);
-    layout_inner_buttons->addWidget(alpha_ra_5_change);
-    layout_inner_buttons->addWidget(alpha_ra_6_edit);
-    layout_inner_buttons->addWidget(alpha_ra_6_change);
-    layout_inner_buttons->addWidget(alpha_ra_7_edit);
-    layout_inner_buttons->addWidget(alpha_ra_7_change);
-    layout_inner_buttons->addWidget(alpha_ra_8_edit);
-    layout_inner_buttons->addWidget(alpha_ra_8_change);
-    layout_inner_buttons->addWidget(alpha_ra_10_edit);
-    layout_inner_buttons->addWidget(alpha_ra_10_change);
-    layout_inner_buttons->addWidget(alpha_ra_11_edit);
-    layout_inner_buttons->addWidget(alpha_ra_11_change);
-    layout_inner_buttons->addWidget(alpha_ra_12_edit);
-    layout_inner_buttons->addWidget(alpha_ra_12_change);
-    layout_inner_buttons->addWidget(alpha_ra_13_edit);
-    layout_inner_buttons->addWidget(alpha_ra_13_change);
-    layout_inner_buttons->addWidget(alpha_ra_14_edit);
-    layout_inner_buttons->addWidget(alpha_ra_14_change);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_lev_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_lev_off);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_prav_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_prav_off);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k1_lev_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k1_lev_off);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k2_prav_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_2_k2_prav_off);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shto_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shto_off);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shtn_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k1_shtn_off);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shto_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shto_off);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shtn_on);
-    layout_inner_buttons->addWidget(otkaz_vstrosv_busto3_1_k2_shtn_off);
-    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_pl_on);
-    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_pl_off);
-    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_ll_on);
-    layout_inner_buttons->addWidget(otkaz_k2_vstrosv_ll_off);
-
-    layout_inner_main->addLayout(layout_inner_labels);
-    layout_inner_main->addLayout(layout_inner_labels_1);
-    layout_inner_main->addLayout(layout_inner_buttons);
-    wgt_inner.setLayout(layout_inner_main);
-    wgt_inner.setFixedWidth(600);
-    wgt_inner.setFixedHeight(1000);
 
 }
 

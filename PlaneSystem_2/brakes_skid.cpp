@@ -32,7 +32,7 @@ QVector<double> brakes_Vkr(6, 0.0);
 QVector<double> brakes_DPt(6, 0.0);
 QVector<double> brakes_DPavt(6, 0.0);
 QVector<double> brakes_Ptr(6, 0.0);
-QVector<double> brakes_Pt(6, 120);
+QVector<double> brakes_Pt(6, 0);
 QVector<double> brakes_Pkv(6, 0.0);
 QVector<double> brakes_DVsvk(6, 0.0);
 QVector<double> brakes_Vsvk(6, 0.0);
@@ -139,7 +139,8 @@ brakes_skid::brakes_skid(QWidget*pwgt)
 
 void brakes_skid::logic_skid()
 {
-    delta_Ptr = (two_points_to_Y(V_kh, 0, 89, 100, 30) * (TICK / 1000));
+//    delta_Ptr = (two_points_to_Y(V_kh, 0, 89, 100, 30) * (TICK / 1000));
+    delta_Ptr = (two_points_to_Y(V_kh, 0, 89, 100, 30));
 
     for(int i = 0; i <= 5; i++)
     {
@@ -158,6 +159,7 @@ void brakes_skid::logic_skid()
     brakes_Vsvk[1] = *std::max_element(brakes_Vk.begin() + 2, brakes_Vk.end());
     brakes_DVsvk[0] = brakes_Vsvk[0] - brakes_Vsvk_p[0];
     brakes_DVsvk[1] = brakes_Vsvk[1] - brakes_Vsvk_p[1];
+
 
     int j = 0;
     for(int i = 0; i <= 5; i++)
@@ -194,23 +196,26 @@ void brakes_skid::logic_skid()
 
         if(brakes_PRAT[i] == true)
         {
-            brakes_Pt[i] = brakes_Pt[i] - brakes_DPavt[i];
+            brakes_Pt[i] = brakes_Pt[i] - brakes_DPavt[i] * (TICK / 1000);
+            ConsumeQgs();
         }
         else
         {
             brakes_DPavt[i] = 0;
-            brakes_DPt[i] = brakes_Ptr[i] - brakes_Pt[i];
-            if(abs(brakes_DPt[i]) >= delta_Ptr)
+            brakes_DPt[i] = (brakes_Ptr[i] - brakes_Pt[i]) ;
+            if(abs(brakes_DPt[i]) >= (delta_Ptr * 0.3))
             {
-                if(brakes_DPt[i] >= 0)
+                if(brakes_DPt[i] >= 0 && (Pgs2 >= 130.0 || Pgs3 >= 130.0))
                 {
-                    brakes_Pt[i] = brakes_Pt[i] + delta_Ptr;
+                    brakes_Pt[i] = brakes_Pt[i] + delta_Ptr * (TICK / 1000);
                     consume();
+                    ConsumeQgs();
                 }
                 else
                 {
-                    brakes_Pt[i] = brakes_Pt[i] - delta_Ptr;
+                    brakes_Pt[i] = brakes_Pt[i] - delta_Ptr * (TICK / 1000);
                     consume();
+                    GiveBackQgs();
                 }
             }
             else
@@ -505,6 +510,28 @@ void brakes_skid::consume()
    if(PBUTZR)
    {
        emit pgs_toconsume("pgs3");
+   }
+}
+void brakes_skid::ConsumeQgs()
+{
+   if(PBUTZO)
+   {
+       emit signal_QgsConsume("qgs2");
+   }
+   if(PBUTZR)
+   {
+       emit signal_QgsConsume("qgs3");
+   }
+}
+void brakes_skid::GiveBackQgs()
+{
+   if(PBUTZO)
+   {
+       emit signal_QgsGiveBack("qgs2");
+   }
+   if(PBUTZR)
+   {
+       emit signal_QgsGiveBack("qgs3");
    }
 }
 void brakes_skid::m_togglebutton_R()

@@ -78,4 +78,36 @@ void m_SetSliderBlue(QSlider* slider)
                              " margin: -2px 0;"
                              "  border-radius: 3px;}");
 }
-
+void m_switch(bool* toggler, bool* toggling)
+{
+    if(*toggler == true)
+    {
+        *toggling = true;
+    }
+    else
+    {
+        *toggling = false;
+    }
+}
+void m_DoubleTrue(bool* UpperToggler, bool* UnderToggler, bool* Trigger)
+{
+    if(*UpperToggler == true || *UnderToggler == true)
+    {
+        *Trigger = true;
+    }
+    else
+    {
+        *Trigger = false;
+    }
+}
+void m_DoubleTrueAnd(bool* UpperToggler, bool* UnderToggler, bool* Trigger)
+{
+    if(*UpperToggler == true && *UnderToggler == true)
+    {
+        *Trigger = true;
+    }
+    else
+    {
+        *Trigger = false;
+    }
+}

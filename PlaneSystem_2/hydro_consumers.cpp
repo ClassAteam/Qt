@@ -14,7 +14,7 @@ hydro_consumers::hydro_consumers(QWidget*pwgt)
 
     layout_consumers_main->addLayout(layout_consumers_labels);
     wgt_consumers.setLayout(layout_consumers_main);
-    wgt_consumers.setFixedWidth(400);
+//    wgt_consumers.setFixedWidth(400);
     wgt_consumers.setFixedHeight(1400);
 
 }

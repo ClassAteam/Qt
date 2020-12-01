@@ -249,7 +249,7 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
 
     layout_pumping_main->addLayout(layout_pumping_labels);
     wgt_pumping.setLayout(layout_pumping_main);
-    wgt_pumping.setFixedWidth(400);
+//    wgt_pumping.setFixedWidth(400);
     wgt_pumping.setFixedHeight(1400);
 }
 

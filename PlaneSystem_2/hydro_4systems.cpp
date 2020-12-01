@@ -196,7 +196,7 @@ hydro_4systems::hydro_4systems(QWidget*pwgt)
 
     layout_4systems_main->addLayout(layout_4systems_labels);
     wgt_4system.setLayout(layout_4systems_main);
-    wgt_4system.setFixedWidth(400);
+//    wgt_4system.setFixedWidth(400);
     wgt_4system.setFixedHeight(1400);
 
 }

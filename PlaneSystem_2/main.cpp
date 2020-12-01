@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
     hydro_consumers consumers;
     hydro_alarm halarm;
     hydro_tempr tempr;
+    hydro_walarm walarm;
 
     QTimer *timer = new QTimer;
 
@@ -168,6 +169,7 @@ int main(int argc, char *argv[])
     layout_hydro.addWidget(&foursystems.wgt_4system);
     layout_hydro.addWidget(&halarm.wgt_halarm);
     layout_hydro.addWidget(&tempr.wgt_tempr);
+    layout_hydro.addWidget(&walarm.wgt_walarm);
     window_hydro.setLayout(&layout_hydro);
     window_hydro.setWindowTitle("Hydro");
     window_hydro.setWindowState(Qt::WindowFullScreen);
@@ -275,6 +277,8 @@ int main(int argc, char *argv[])
                      &halarm , SLOT(logic_halarm()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &tempr , SLOT(logic_tempr()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &walarm , SLOT(logic_walarm()));
 
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);

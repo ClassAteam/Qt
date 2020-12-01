@@ -217,7 +217,7 @@ hydro_tempr::hydro_tempr(QWidget*pwgt)
 
     layout_tempr_main->addLayout(layout_tempr_labels);
     wgt_tempr.setLayout(layout_tempr_main);
-    wgt_tempr.setFixedWidth(400);
+//    wgt_tempr.setFixedWidth(400);
     wgt_tempr.setFixedHeight(1400);
 
 }

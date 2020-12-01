@@ -219,7 +219,7 @@ hydro_alarm::hydro_alarm(QWidget*pwgt)
 
     layout_halarm_main->addLayout(layout_halarm_labels);
     wgt_halarm.setLayout(layout_halarm_main);
-    wgt_halarm.setFixedWidth(400);
+//    wgt_halarm.setFixedWidth(400);
     wgt_halarm.setFixedHeight(1400);
 
 }

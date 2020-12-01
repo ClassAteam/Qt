@@ -188,7 +188,7 @@ hydro_hvalves::hydro_hvalves(QWidget*pwgt)
 
     layout_hvalves_main->addLayout(layout_hvalves_labels);
     wgt_hvalves.setLayout(layout_hvalves_main);
-    wgt_hvalves.setFixedWidth(400);
+//    wgt_hvalves.setFixedWidth(400);
     wgt_hvalves.setFixedHeight(1400);
 }
 

@@ -454,7 +454,7 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     layout_pumpsrel_main->addLayout(layout_pumpsrel_labels);
     layout_pumpsrel_main->addLayout(layout_pumpsrel_labels1);
     wgt_pumpsrel.setLayout(layout_pumpsrel_main);
-    wgt_pumpsrel.setFixedWidth(400);
+//    wgt_pumpsrel.setFixedWidth(400);
     wgt_pumpsrel.setFixedHeight(1400);
 }
 

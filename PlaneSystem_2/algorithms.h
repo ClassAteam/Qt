@@ -27,6 +27,19 @@ double m_4_L_intervals(double input,
                                         double y3,
                                         double y4,
                                         double y5);
+double m_5_L_intervals(double input,
+                                        double x1,
+                                        double x2,
+                                        double x3,
+                                        double x4,
+                                        double x5,
+                                        double x6,
+                                        double y1,
+                                        double y2,
+                                        double y3,
+                                        double y4,
+                                        double y5,
+                                        double y6);
 
 double two_points_to_Y(double insert, double x1,
                        double x2, double y1, double y2);

@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
     hydro_alarm halarm;
     hydro_tempr tempr;
     hydro_walarm walarm;
+    power_dc dc;
 
     QTimer *timer = new QTimer;
 
@@ -112,12 +113,12 @@ int main(int argc, char *argv[])
     window_emergencyalarm.setLayout(&layout_emergencyalarm);
     window_emergencyalarm.setWindowTitle("Emergency Alarm");
     window_emergencyalarm.setWindowState(Qt::WindowFullScreen);
-    scrollArea_1 = new QScrollArea;
-    scrollArea_1->setLayout(&layout_emergencyalarm);
-    scrollArea_1->setWindowState(Qt::WindowFullScreen);
+//    scrollArea_1 = new QScrollArea;
+//    scrollArea_1->setLayout(&layout_emergencyalarm);
+//    scrollArea_1->setWindowState(Qt::WindowFullScreen);
 
 //    scrollArea_1->show();
-//    window_emergencyalarm.show();
+    window_emergencyalarm.show();
 
     QWidget window_emergencyalarm_1;
     QHBoxLayout layout_emergencyalarm_1;
@@ -147,7 +148,7 @@ int main(int argc, char *argv[])
     window_landinggear.setLayout(&layout_landinggear);
     window_landinggear.setWindowTitle("Landing Gear");
     window_landinggear.setWindowState(Qt::WindowFullScreen);
-    window_landinggear.show();
+//    window_landinggear.show();
 
     QWidget window_brakes;
     QHBoxLayout layout_brakes;
@@ -159,7 +160,7 @@ int main(int argc, char *argv[])
     window_brakes.setLayout(&layout_brakes);
     window_brakes.setWindowTitle("Brakes");
     window_brakes.setWindowState(Qt::WindowFullScreen);
-    window_brakes.show();
+//    window_brakes.show();
 
     QWidget window_hydro;
     QHBoxLayout layout_hydro;
@@ -175,6 +176,15 @@ int main(int argc, char *argv[])
     window_hydro.setWindowState(Qt::WindowFullScreen);
     window_hydro.show();
 
+    QWidget window_power;
+    QHBoxLayout layout_power;
+    layout_power.addWidget(&dc.wgt_dc);
+    window_power.setLayout(&layout_power);
+    window_power.setWindowTitle("Power");
+    window_power.setWindowState(Qt::WindowFullScreen);
+    window_power.show();
+
+    //LOGIC TIMER
 //    QObject::connect(timer, SIGNAL(timeout()),
 //                     &logic_valve , SLOT(logic_valves()));
 //    QObject::connect(timer, SIGNAL(timeout()),
@@ -279,7 +289,10 @@ int main(int argc, char *argv[])
                      &tempr , SLOT(logic_tempr()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &walarm , SLOT(logic_walarm()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &dc , SLOT(logic_dc()));
 
+    //PRESURE RETAKE
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,
                      &sashes, &landinggear_sashes::balloon_presure);
     QObject::connect(&racks, &landinggear_racks::presure_retake,

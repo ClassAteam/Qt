@@ -66,6 +66,7 @@ SOURCES += \
     landinggear_valves.cpp \
     main.cpp \
     mainwindow.cpp \
+    power_dc.cpp \
     presure_regulation.cpp \
     wind_functions.cpp \
     wingsmech_alarm.cpp \
@@ -124,6 +125,7 @@ HEADERS += \
     landinggear_valves.h \
     main.h \
     mainwindow.h \
+    power_dc.h \
     presure_regulation.h \
     wind_functions.h \
     wingsmech_alarm.h \

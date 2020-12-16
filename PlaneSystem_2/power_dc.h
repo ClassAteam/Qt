@@ -116,7 +116,7 @@ public:
 public slots:
     void logic_dc();
     void m_togglebutton_R();
-    void m_RedButton(QPushButton* button, bool* clue);
+//    void m_RedButton(QPushButton* button, bool* clue);
 private slots:
     void m_Iak1_sl(int);
     void m_Iak2_sl(int);

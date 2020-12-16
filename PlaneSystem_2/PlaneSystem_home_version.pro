@@ -67,6 +67,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     power_dc.cpp \
+    power_urg27.cpp \
     presure_regulation.cpp \
     wind_functions.cpp \
     wingsmech_alarm.cpp \
@@ -126,6 +127,7 @@ HEADERS += \
     main.h \
     mainwindow.h \
     power_dc.h \
+    power_urg27.h \
     presure_regulation.h \
     wind_functions.h \
     wingsmech_alarm.h \

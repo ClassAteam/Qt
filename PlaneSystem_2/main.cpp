@@ -2,6 +2,7 @@
 
 const double TICK = 200;
 
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -58,6 +59,7 @@ int main(int argc, char *argv[])
     hydro_tempr tempr;
     hydro_walarm walarm;
     power_dc dc;
+    power_urg27 urg27;
 
     QTimer *timer = new QTimer;
 
@@ -160,7 +162,7 @@ int main(int argc, char *argv[])
     window_brakes.setLayout(&layout_brakes);
     window_brakes.setWindowTitle("Brakes");
     window_brakes.setWindowState(Qt::WindowFullScreen);
-//    window_brakes.show();
+    window_brakes.show();
 
     QWidget window_hydro;
     QHBoxLayout layout_hydro;
@@ -179,6 +181,7 @@ int main(int argc, char *argv[])
     QWidget window_power;
     QHBoxLayout layout_power;
     layout_power.addWidget(&dc.wgt_dc);
+    layout_power.addWidget(&urg27.wgt_urg27);
     window_power.setLayout(&layout_power);
     window_power.setWindowTitle("Power");
     window_power.setWindowState(Qt::WindowFullScreen);
@@ -291,6 +294,8 @@ int main(int argc, char *argv[])
                      &walarm , SLOT(logic_walarm()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &dc , SLOT(logic_dc()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &urg27 , SLOT(logic_urg27()));
 
     //PRESURE RETAKE
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,

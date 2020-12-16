@@ -1,5 +1,4 @@
 #include "algorithms.h"
-#include "math.h"
 
 //to take  the value along the function within 2 linear intervals
 double m_2_L_intervals(double input,

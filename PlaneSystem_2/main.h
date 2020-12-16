@@ -55,6 +55,7 @@
 #include <hydro_tempr.h>
 #include <hydro_warmalarm.h>
 #include <power_dc.h>
+#include <power_urg27.h>
 
 QScrollArea* scrollArea_1;
 QScrollArea* scrollArea_2;

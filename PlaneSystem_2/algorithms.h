@@ -1,4 +1,5 @@
 #pragma once
+#include "math.h"
 
 double m_2_L_intervals(double input,
                                         double x1,

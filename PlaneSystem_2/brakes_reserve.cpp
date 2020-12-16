@@ -391,7 +391,7 @@ void brakes_reserve::logic_reserve()
     pgat_label->setText
     ("pgat = " + QString::number(pgat));
     V_kh_label->setText
-    ("V_kh = " + QString::number(V_kh));
+    ("V_kh = " + QString::number(Vkh));
 }
 void brakes_reserve::m_RedButton(QPushButton* button, bool* clue)
 {
@@ -433,7 +433,7 @@ void brakes_reserve::m_togglebutton_R()
 void brakes_reserve::m_Slider_V_kh(int)
 {
     double buffer = V_kh_slider->value();
-    V_kh = buffer;
+    Vkh = buffer;
 }
 void brakes_reserve::m_Pt_labels_set()
 {

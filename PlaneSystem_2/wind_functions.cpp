@@ -111,3 +111,18 @@ void m_DoubleTrueAnd(bool* UpperToggler, bool* UnderToggler, bool* Trigger)
         *Trigger = false;
     }
 }
+void m_RedButton2(QPushButton* button, bool* clue)
+{
+    bool pressed;
+    pressed = *clue;
+    if(pressed == false)
+    {
+        *clue = true;
+        button->setStyleSheet("background-color: red");
+    }
+    if(pressed == true)
+    {
+        *clue = false;
+        button->setStyleSheet("");
+    }
+}

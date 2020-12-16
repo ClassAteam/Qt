@@ -5,8 +5,7 @@ OtkazGen1PostT, OtkazGen2PostT, OtkazGen3PostT, OtkazGen4PostT, OtkazGenVsu,
 prgvsu27,
 pa1, pa2,
 pvkgvsu27,
-pbgvsu27,
-pbg1, pbg2, pbg3, pbg4, pbgvsu,
+pbg1, pbg2, pbg3, pbg4, pbgvsu27,
 pvkg1, pvkg2, pvkg3, pvkg4, pvkgvsu,
 prg1, prg2, prg3, prg4, prgvsu,
 s1_2430, s4_2430, s5_2430, s8_2430, s11_2430;
@@ -16,13 +15,13 @@ uz1ak, uz2ak,
 ur1ak, ur2ak,
 uo1ak, uo2ak,
 uak1  = 25.0, uak2 = 27.0,
-ugrr, ugrrvsu,
-ug1, ug2, ug3, ug4, ugvsu,
+//ugrr, ugrrvsu,
+ug1, ug2, ug3, ug4, ugvsu27,
 uzg1 = 28.5, uzg2 = 28.4, uzg3 = 28.6, uzg4 = 28.7, uzgvsu = 28.5,
-ug1r, ug2r, ug3r, ug4r, ugrvsu,
-ivg1, ivg2, ivg3, ivg4, ivgvsu,
-ing1, ing2, ing3, ing4, ingvsu,
-divg1, divg2, divg3, divg4, divgvsu,
+ug1r, ug2r, ug3r, ug4r, ugrvsu27,
+ivg1, ivg2, ivg3, ivg4, ivgvsu27,
+ing1, ing2, ing3, ing4, ingvsu27,
+divg1, divg2, divg3, divg4, divgvsu27,
 ng1, ng2, ng3, ng4, ngvsu,
 kn1 = 25, krg = 0.0025, krgvsu = 0.0037, kak,
 kg1 = 1.5,
@@ -244,19 +243,19 @@ void power_dc::logic_dc()
     bool* otkaz_pool[] = {&OtkazGen1PostT, &OtkazGen2PostT, &OtkazGen3PostT,
                           &OtkazGen4PostT, &OtkazGenVsu};
     double* ng_pool[] = {&ng1, &ng2, &ng3, &ng4, &ngvsu};
-    double* ug_pool[] = {&ug1, &ug2, &ug3, &ug4, &ugvsu};
+    double* ug_pool[] = {&ug1, &ug2, &ug3, &ug4, &ugvsu27};
     double* uzg_pool[] = {&uzg1, &uzg2, &uzg3, &uzg4, &uzgvsu};
-    double* divg_pool[] = {&divg1, &divg2, &divg3, &divg4, &divgvsu};
-    double* ivg_pool[] = {&ivg1, &ivg2, &ivg3, &ivg4, &ivgvsu};
-    double* ing_pool[] = {&ing1, &ing2, &ing3, &ing4, &ingvsu};
+    double* divg_pool[] = {&divg1, &divg2, &divg3, &divg4, &divgvsu27};
+    double* ivg_pool[] = {&ivg1, &ivg2, &ivg3, &ivg4, &ivgvsu27};
+    double* ing_pool[] = {&ing1, &ing2, &ing3, &ing4, &ingvsu27};
 //    double* ugrr_pool[] = {&ugrr, &ugrr, &ugrr, &ugrr, &ugrrvsu};
-    double* ugr_pool[] = {&ug1r, &ug2r, &ug3r, &ug4r, &ugrvsu};
+    double* ugr_pool[] = {&ug1r, &ug2r, &ug3r, &ug4r, &ugrvsu27};
     double* nvd_pool[] = {&nVDfirst2[0], &nVDfirst2[1], &nVDsecond2[0], &nVDsecond2[1], &nvsu};
     double* krg_pool[] = {&krg, &krg, &krg, &krg, &krgvsu};
     double* kg_pool[] = {&kg1, &kg1, &kg1, &kg1, &kgvsu};
     bool* s4_pool[] = {&s4_2430, &s5_2430, &s8_2430, &s11_2430};
     bool* pvkg_pool[] = {&pvkg1, &pvkg2, &pvkg3, &pvkg4, &pvkgvsu27};
-    bool* pbg_pool[] = {&pbg1, &pbg2, &pbg3, &pbg4, &pbgvsu};
+    bool* pbg_pool[] = {&pbg1, &pbg2, &pbg3, &pbg4, &pbgvsu27};
     bool* prg_pool[] = {&prg1, &prg2, &prg3, &prg4, &prgvsu27};
     int * tick_pool[] = {&tickg1, &tickg2, &tickg3, &tickg4, &tickvsu};
 
@@ -459,7 +458,6 @@ void power_dc::logic_dc()
     m_settext_lbl(pbg2_label, pbg2, "pbg2");
     m_settext_lbl(pbg3_label, pbg3, "pbg3");
     m_settext_lbl(pbg4_label, pbg4, "pbg4");
-    m_settext_lbl(pbgvsu_label, pbgvsu, "pbgvsu");
     m_settext_lbl(pvkg1_label, pvkg1, "pvkg1");
     m_settext_lbl(pvkg2_label, pvkg2, "pvkg2");
     m_settext_lbl(pvkg3_label, pvkg3, "pvkg3");
@@ -469,7 +467,6 @@ void power_dc::logic_dc()
     m_settext_lbl(prg2_label, prg2, "prg2");
     m_settext_lbl(prg3_label, prg3, "prg3");
     m_settext_lbl(prg4_label, prg4, "prg4");
-    m_settext_lbl(prgvsu_label, prgvsu, "prgvsu");
     m_settext_lbl(nvsu_label, nvsu, "nvsu");
     m_settext_lbl(uz1ak_label, uz1ak, "uz1ak");
     m_settext_lbl(uz2ak_label, uz2ak, "uz2ak");
@@ -483,7 +480,7 @@ void power_dc::logic_dc()
     m_settext_lbl(ug2_label, ug2, "ug2");
     m_settext_lbl(ug3_label, ug3, "ug3");
     m_settext_lbl(ug4_label, ug4, "ug4");
-    m_settext_lbl(ugvsu_label, ugvsu, "ugvsu");
+    m_settext_lbl(ugvsu_label, ugvsu27, "ugvsu");
     m_settext_lbl(uzg1_label, uzg1, "uzg1");
     m_settext_lbl(uzg2_label, uzg2, "uzg2");
     m_settext_lbl(uzg3_label, uzg3, "uzg3");
@@ -493,22 +490,22 @@ void power_dc::logic_dc()
     m_settext_lbl(ug2r_label, ug2r, "ug2r");
     m_settext_lbl(ug3r_label, ug3r, "ug3r");
     m_settext_lbl(ug4r_label, ug4r, "ug4r");
-    m_settext_lbl(ugrvsu_label, ugrvsu, "ugrvsu");
+    m_settext_lbl(ugrvsu_label, ugrvsu27, "ugrvsu");
     m_settext_lbl(ivg1_label, ivg1, "ivg1");
     m_settext_lbl(ivg2_label, ivg2, "ivg2");
     m_settext_lbl(ivg3_label, ivg3, "ivg3");
     m_settext_lbl(ivg4_label, ivg4, "ivg4");
-    m_settext_lbl(ivgvsu_label, ivgvsu, "ivgvsu");
+    m_settext_lbl(ivgvsu_label, ivgvsu27, "ivgvsu");
     m_settext_lbl(ing1_label, ing1, "ing1");
     m_settext_lbl(ing2_label, ing2, "ing2");
     m_settext_lbl(ing3_label, ing3, "ing3");
     m_settext_lbl(ing4_label, ing4, "ing4");
-    m_settext_lbl(ingvsu_label, ingvsu, "ingvsu");
+    m_settext_lbl(ingvsu_label, ingvsu27, "ingvsu");
     m_settext_lbl(divg1_label, divg1, "divg1");
     m_settext_lbl(divg2_label, divg2, "divg2");
     m_settext_lbl(divg3_label, divg3, "divg3");
     m_settext_lbl(divg4_label, divg4, "divg4");
-    m_settext_lbl(divgvsu_label, divgvsu, "divgvsu");
+    m_settext_lbl(divgvsu_label, divgvsu27, "divgvsu");
     m_settext_lbl(ng1_label, ng1, "ng1");
     m_settext_lbl(ng2_label, ng2, "ng2");
     m_settext_lbl(ng3_label, ng3, "ng3");
@@ -525,38 +522,23 @@ void power_dc::m_togglebutton_R()
     obj = QObject::sender();
     if(obj == s1_2430_on)
     {
-        m_RedButton(s1_2430_on, &s1_2430);
+        m_RedButton2(s1_2430_on, &s1_2430);
     }
     if(obj == s4_2430_on)
     {
-        m_RedButton(s4_2430_on, &s4_2430);
+        m_RedButton2(s4_2430_on, &s4_2430);
     }
     if(obj == s5_2430_on)
     {
-        m_RedButton(s5_2430_on, &s5_2430);
+        m_RedButton2(s5_2430_on, &s5_2430);
     }
     if(obj == s8_2430_on)
     {
-        m_RedButton(s8_2430_on, &s8_2430);
+        m_RedButton2(s8_2430_on, &s8_2430);
     }
     if(obj == s11_2430_on)
     {
-        m_RedButton(s11_2430_on, &s11_2430);
-    }
-}
-void power_dc::m_RedButton(QPushButton* button, bool* clue)
-{
-    bool pressed;
-    pressed = *clue;
-    if(pressed == false)
-    {
-        *clue = true;
-        button->setStyleSheet("background-color: red");
-    }
-    if(pressed == true)
-    {
-        *clue = false;
-        button->setStyleSheet("");
+        m_RedButton2(s11_2430_on, &s11_2430);
     }
 }
 void power_dc::m_Iak1_sl(int)

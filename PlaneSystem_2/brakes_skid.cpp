@@ -140,7 +140,7 @@ brakes_skid::brakes_skid(QWidget*pwgt)
 void brakes_skid::logic_skid()
 {
 //    delta_Ptr = (two_points_to_Y(V_kh, 0, 89, 100, 30) * (TICK / 1000));
-    delta_Ptr = (two_points_to_Y(V_kh, 0, 89, 100, 30));
+    delta_Ptr = (two_points_to_Y(Vkh, 0, 89, 100, 30));
 
     for(int i = 0; i <= 5; i++)
     {
@@ -229,7 +229,7 @@ void brakes_skid::logic_skid()
         {
             if(POSH == true)
             {
-                brakes_Vkr[i] = V_kh - (brakes_K1[i] * brakes_Pt[i]);
+                brakes_Vkr[i] = Vkh - (brakes_K1[i] * brakes_Pt[i]);
             }
             else
             {

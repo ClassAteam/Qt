@@ -67,7 +67,7 @@ cabinlighting_beacons::cabinlighting_beacons(QWidget* pwgt)
 }
 int cabinlighting_beacons::logic_beacons()
 {
-    if (Ush1p >= 18.0)
+    if (ush1p >= 18.0)
     {
 
         // S2 100% mode

@@ -35,7 +35,7 @@ PW_2_och,
 PW_3_och,
 P2OBLOP;
 extern double
-Ushal;
+ushal;
 
 
 class antifirelogic_alarm : public QWidget

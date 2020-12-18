@@ -16,11 +16,11 @@ alpha_rud_1dv,
 alpha_rud_2dv,
 alpha_rud_3dv,
 alpha_rud_4dv,
-Ush1p,
-Ushal,
-Ushap,
-Ush1dpl,
-Ush2dpl;
+ush1p,
+ushal,
+ushap,
+ush1dpl,
+ush2dpl;
 
 class hydro_pumpsrel : public QWidget
 {

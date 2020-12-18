@@ -183,7 +183,7 @@ void power_urg27::logic_urg27()
         urap1 = 0;
         urap2 = 0;
     }
-    if(Ushal >= 18.0 && pprap1 == true && s2_2430 == true)
+    if(ushal >= 18.0 && pprap1 == true && s2_2430 == true)
     {
         purg27lk4 = true;
     }
@@ -192,7 +192,7 @@ void power_urg27::logic_urg27()
         purg27lk4 = false;
     }
 
-    if(Ushap >= 18.0 && pprap2 == true && s9_2430 == true)
+    if(ushap >= 18.0 && pprap2 == true && s9_2430 == true)
     {
         purg27pk4 = true;
     }
@@ -269,7 +269,7 @@ void power_urg27::logic_urg27()
 
     if(purg27lk5 == true || purg27pk5 == true)
     {
-        if(Ush1dpl >= 18.0 && s13_2430 == true)
+        if(ush1dpl >= 18.0 && s13_2430 == true)
         {
             if(s7_2430 || (plp27 == false && ppp27 == false))
             {
@@ -306,7 +306,7 @@ void power_urg27::logic_urg27()
         }
         else
         {
-            if(Ush1dpl >= 18.0 && s7_2430 == true)
+            if(ush1dpl >= 18.0 && s7_2430 == true)
             {
                 purg27pk1 = true;
                 purg27pk7 = true;
@@ -332,7 +332,7 @@ void power_urg27::logic_urg27()
             purg27pk7 = true;
             purg27pk9 = true;
 
-            if(Ush1dpp >= 18.0 && s7_2430 == true)
+            if(ush1dpp >= 18.0 && s7_2430 == true)
             {
                 purg27lk1 = true;
                 purg27lk7 = true;
@@ -371,7 +371,7 @@ void power_urg27::logic_urg27()
         }
         else
         {
-            if(Ush1dpl >= 18.0 && s7_2430)
+            if(ush1dpl >= 18.0 && s7_2430)
             {
                 purg27pk1 = true;
                 purg27pk7 = true;
@@ -389,7 +389,7 @@ void power_urg27::logic_urg27()
             purg27pk7 = true;
             purg27pk9 = true;
             purg27pk4 = false;
-            if(Ush1dpp >= 18.0 && s7_2430)
+            if(ush1dpp >= 18.0 && s7_2430)
             {
                 purg27lk1 = true;
                 purg27lk7 = true;

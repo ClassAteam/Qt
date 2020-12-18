@@ -220,11 +220,11 @@ antiicing_lights::antiicing_lights(QWidget* pwgt)
 int antiicing_lights::logic_lights()
 {
     //PRSOL toggle
-    if (Ush1dpl >= 18.0 &&
+    if (ush1dpl >= 18.0 &&
             S1_3080 == true &&
             M < 1.25 &&
             otkaz_l_so121 == false &&
-            Ush1l >= 18.0)
+            ush1l >= 18.0)
     {
         PRSOL = true;
     }
@@ -234,11 +234,11 @@ int antiicing_lights::logic_lights()
     }
 
     //PRSOP toggle
-    if (Ush2dpp >= 18.0 &&
+    if (ush2dpp >= 18.0 &&
             S2_3080 == true &&
             M < 1.25 &&
             otkaz_p_so121 == false &&
-            Ush2p >= 18.0)
+            ush2p >= 18.0)
     {
         PRSOP = true;
     }

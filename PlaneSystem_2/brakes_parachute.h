@@ -13,9 +13,9 @@ BSS824X1N,
 S34_3230,
 S36_3230;
 extern double
-Ushal,
-Ushap,
-Ush1dpp;
+ushal,
+ushap,
+ush1dpp;
 
 class brakes_parachute : public QWidget
 {

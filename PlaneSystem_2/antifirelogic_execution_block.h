@@ -31,8 +31,8 @@ extern int
 F7_2610,
 F8_2610;
 extern double
-Ush1dpl,
-Ush1dpp;
+ush1dpl,
+ush1dpp;
 class antifirelogic_exb : public QWidget
 {
     Q_OBJECT

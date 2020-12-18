@@ -273,7 +273,7 @@ int presure_regulation::logic_presure()
 
 
 
-    if (Ush2dpl >= 18.0)
+    if (ush2dpl >= 18.0)
     {
         if ((Pkab - Ph_msa) >= 0.7)
         {

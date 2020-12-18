@@ -107,7 +107,7 @@ void wingsmech_movingpart::logic_movingpart()
     }
     if(PGS1 == true || PGS2 == true)
     {
-        if(Ushal >= 18)
+        if(ushal >= 18)
         {
             if(S1_2790 == true)
             {
@@ -118,7 +118,7 @@ void wingsmech_movingpart::logic_movingpart()
             {
                 if(otkaz_osn_1k_PCHK == false)
                 {
-                    if(Ush1dpl >= 18)
+                    if(ush1dpl >= 18)
                     {
                         POR1KPCHK = true;
                     }
@@ -129,7 +129,7 @@ void wingsmech_movingpart::logic_movingpart()
 
     if(PGS3 == true || PGS4 == true)
     {
-        if(Ushap >= 18)
+        if(ushap >= 18)
         {
             if(S1_2790 == true)
             {
@@ -140,7 +140,7 @@ void wingsmech_movingpart::logic_movingpart()
             {
                 if(otkaz_osn_2k_PCHK == false)
                 {
-                    if(Ush1dpp >= 18)
+                    if(ush1dpp >= 18)
                     {
                         POR2KPCHK = true;
                     }
@@ -376,7 +376,7 @@ void wingsmech_movingpart::logic_movingpart()
     {
         X_P = 65;
     }
-    if(Ushap >= 18)
+    if(ushap >= 18)
     {
         X_PCHK = ((X_L + X_P) / 2);
     }

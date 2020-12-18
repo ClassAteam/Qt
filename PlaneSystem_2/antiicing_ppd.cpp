@@ -174,7 +174,7 @@ antiicing_ppd::antiicing_ppd(QWidget* pwgt)
 int antiicing_ppd::logic_ppd()
 {
     //K16_3030 toggle
-    if (Ush1dpl >= 18.0)
+    if (ush1dpl >= 18.0)
     {
 
         if (alpha_rud_1dv >= 65.0)
@@ -260,7 +260,7 @@ int antiicing_ppd::logic_ppd()
     }
 
     //K18_3030 toggle
-    if (Ush1dpp >= 18.0)
+    if (ush1dpp >= 18.0)
     {
 
         if (alpha_rud_2dv >= 65.0)
@@ -344,7 +344,7 @@ int antiicing_ppd::logic_ppd()
     {
         K18_3030 = false;
     }
-    if (Ushap >= 18.0 && K24_3230 && Usho1p >= 18.0 && S1_3030 == true)
+    if (ushap >= 18.0 && K24_3230 && usho1p >= 18.0 && S1_3030 == true)
     {
         PKPPD = true;
     }
@@ -360,7 +360,7 @@ int antiicing_ppd::logic_ppd()
     }
     else
     {
-        if (Ush2p < 18.0 || M < 1.25)
+        if (ush2p < 18.0 || M < 1.25)
         {
             K2_3030 = false;
         }
@@ -372,7 +372,7 @@ int antiicing_ppd::logic_ppd()
     }
     else
     {
-        if (Ush2p < 18.0 || M < 1.25)
+        if (ush2p < 18.0 || M < 1.25)
         {
             K5_3030 = false;
         }
@@ -385,7 +385,7 @@ int antiicing_ppd::logic_ppd()
     }
     else
     {
-        if (Ush2p < 18.0 || M < 1.25)
+        if (ush2p < 18.0 || M < 1.25)
         {
             K8_3030 = false;
         }
@@ -418,7 +418,7 @@ int antiicing_ppd::logic_ppd()
         K7_3030 = false;
     }
     // POPPD2 toggle
-    if (Ush2p > 18.0 && K1_3030 == true)
+    if (ush2p > 18.0 && K1_3030 == true)
     {
         POPPD2 = true;
     }
@@ -427,7 +427,7 @@ int antiicing_ppd::logic_ppd()
         POPPD2 = false;
     }
     // POPPD1 toggle
-    if (Ush1dpl  > 18.0 && K4_3030 == true)
+    if (ush1dpl  > 18.0 && K4_3030 == true)
     {
         POPPD1 = true;
     }
@@ -437,7 +437,7 @@ int antiicing_ppd::logic_ppd()
     }
 
     // POPPD3 toggle
-    if (Ush2l > 18.0 && K7_3030 == true)
+    if (ush2l > 18.0 && K7_3030 == true)
     {
         POPPD3 = true;
     }

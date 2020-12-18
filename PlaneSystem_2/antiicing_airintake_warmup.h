@@ -49,8 +49,8 @@ F340_3020;
 extern const double
 TICK;
 extern double
-Usho1p,
-Ushap,
+usho1p,
+ushap,
 Ushpl,
 Ushpp;
 

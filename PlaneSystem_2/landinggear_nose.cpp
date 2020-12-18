@@ -243,7 +243,7 @@ landinggear_nose::landinggear_nose(QWidget* pwgt)
 }
 void landinggear_nose::logic_nose()
 {
-    if(Ush1dpl >= 19.0)
+    if(ush1dpl >= 19.0)
     {
         PPBU_1 = 1;
     }
@@ -255,7 +255,7 @@ void landinggear_nose::logic_nose()
     K7_3250 = false;
     K3_3250 = false;
 
-    if(Ush1dpl >= 19.0)
+    if(ush1dpl >= 19.0)
     {
         if(delta_z == 0)
         {
@@ -306,7 +306,7 @@ void landinggear_nose::logic_nose()
 
     PPBU_2 = false;
 
-    if(Ush1dpp >= 19.0)
+    if(ush1dpp >= 19.0)
     {
         PPBU_2 = true;
     }
@@ -319,7 +319,7 @@ void landinggear_nose::logic_nose()
     K4_3250 = false;
     K8_3250 = false;
 
-    if(Ush1dpp >= 19.0)
+    if(ush1dpp >= 19.0)
     {
         if(delta_z == 0)
         {
@@ -390,7 +390,7 @@ void landinggear_nose::logic_nose()
     ///
 
 
-    if(Ush1dpl >= 19.0)
+    if(ush1dpl >= 19.0)
     {
         if(otkaz_1_kanala == true)
         {
@@ -443,7 +443,7 @@ void landinggear_nose::logic_nose()
         }
     }
 
-    if(Ush1dpp >= 19.0)
+    if(ush1dpp >= 19.0)
     {
         if(otkaz_2_kanala == true)
         {

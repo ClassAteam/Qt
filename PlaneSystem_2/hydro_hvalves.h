@@ -7,15 +7,15 @@
 #include <QLineEdit>
 
 extern double
-Ush1dpl,
-Ush1dpp,
-Ush1l,
-Ush1p,
-Ush2dpl,
-Ush2dpp,
-Ush2l,
-Ush2p,
-Ushap;
+ush1dpl,
+ush1dpp,
+ush1l,
+ush1p,
+ush2dpl,
+ush2dpp,
+ush2l,
+ush2p,
+ushap;
 
 class hydro_hvalves : public QWidget
 {

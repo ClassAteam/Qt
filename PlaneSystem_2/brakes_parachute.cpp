@@ -109,7 +109,7 @@ void brakes_parachute::logic_parachute()
     //start logic
     K5_3650 = false;
 
-    if(Ush1dpp >= 18.0)
+    if(ush1dpp >= 18.0)
     {
         if(S1_9921 == true || S2_9921 == true)
         {
@@ -166,13 +166,13 @@ void brakes_parachute::logic_parachute()
     BSS824X1f = false;
     UKS3X311 = false;
 
-    if(Ush1dpp >= 18.0 && Patp < 60)
+    if(ush1dpp >= 18.0 && Patp < 60)
     {
         BSS824X1f = true;
         UKS3X311 = true;
     }
 
-    if(Ushal >= 18.0 && K1_9921 == true && Patp >= 60.0)
+    if(ushal >= 18.0 && K1_9921 == true && Patp >= 60.0)
     {
         PVTP = true;
         if(K2_9921 == true)
@@ -205,7 +205,7 @@ void brakes_parachute::logic_parachute()
     UKS3X310 = false;
     BSS824X1R = false;
 
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(S6_9921 == true)
         {

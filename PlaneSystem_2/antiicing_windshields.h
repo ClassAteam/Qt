@@ -9,9 +9,9 @@ extern bool
 K26_3230,
 K24_3230;
 extern double
-Usho1p,
-Ush1l,
-Ush1p;
+usho1p,
+ush1l,
+ush1p;
 
 class antiicing_windshields : public QWidget
 {

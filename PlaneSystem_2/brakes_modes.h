@@ -18,8 +18,8 @@ alpha_rud_1dv,
 alpha_rud_2dv,
 alpha_rud_3dv,
 alpha_rud_4dv,
-Ush1dpl,
-Ushal;
+ush1dpl,
+ushal;
 
 class brakes_modes : public QWidget
 {

@@ -15,7 +15,7 @@ F134_3020,
 S2_3020;
 
 extern double
-Usho1p;
+usho1p;
 
 class antiicing_airintake : public QWidget
 {

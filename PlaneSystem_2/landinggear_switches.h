@@ -36,9 +36,9 @@ S52_3230,
 S53_3230,
 S54_3230;
 extern double
-Ush1dpp,
-Ushal,
-Ushap,
+ush1dpp,
+ushal,
+ushap,
 delta_sh_n,
 delta_stv_l,
 delta_stv_p,

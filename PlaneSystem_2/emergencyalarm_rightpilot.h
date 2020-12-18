@@ -20,10 +20,10 @@ BSS824X1E,
 BSS824X1G,
 BSS824X1J;
 extern double
-Ush1dpl,
-Ush1dpp,
-Ush2dpl,
-Ush2dpp;
+ush1dpl,
+ush1dpp,
+ush2dpl,
+ush2dpp;
 
 
 class emergencyalarm_rightpilot : public QWidget

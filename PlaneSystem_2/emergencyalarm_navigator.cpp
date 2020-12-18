@@ -546,7 +546,7 @@ BSS926X3T_on_button = new QPushButton("BSS926X3T",this);
 }
 void emergencyalarm_navigator::logic_navigator()
 {
-    if (Ush2dpl >= 18.0 && Ush2dpp >= 18.0)
+    if (ush2dpl >= 18.0 && ush2dpp >= 18.0)
     {
         PRBSS926 = true;
     }
@@ -555,7 +555,7 @@ void emergencyalarm_navigator::logic_navigator()
         PRBSS926 = false;
     }
 
-    if (Ush1dpl >= 18.0 && Ush1dpp >= 18.0)
+    if (ush1dpl >= 18.0 && ush1dpp >= 18.0)
     {
         PRBSS837 = true;
     }
@@ -564,7 +564,7 @@ void emergencyalarm_navigator::logic_navigator()
         PRBSS837 = false;
     }
 
-    if ((Ush2dpl >= 18.0) && (Ush2dpp >= 18.0) && (S7_3364 == true))
+    if ((ush2dpl >= 18.0) && (ush2dpp >= 18.0) && (S7_3364 == true))
     {
         PKLSHO = true;
     }
@@ -573,7 +573,7 @@ void emergencyalarm_navigator::logic_navigator()
         PKLSHO = false;
     }
 
-    if ((Ush1dpl >= 18.0) && (Ush1dpp >= 18.0))
+    if ((ush1dpl >= 18.0) && (ush1dpp >= 18.0))
     {
         USASSHO = two_points_to_Y(alpha_rra7sho, 0, 1, 0.75, 1);
     }

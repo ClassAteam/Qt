@@ -351,7 +351,7 @@ void brakes_balarm::logic_balarm()
         BSS812X5r = false;
     }
 
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(PstoyanT == true && pgat >= 80.0)
         {

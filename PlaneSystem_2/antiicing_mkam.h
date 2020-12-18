@@ -14,7 +14,7 @@ K24_3230,
 K25_3230,
 K26_3230;
 extern double
-Ushap;
+ushap;
 class antiicing_mkam : public QWidget
 {
     Q_OBJECT

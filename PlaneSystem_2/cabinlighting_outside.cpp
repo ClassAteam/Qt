@@ -357,7 +357,7 @@ int cabinlighting_outside::logic_outside()
     PFPRLR = false;
     PFPRLP = false;
     // A left side toggling
-    if (Ush1l >= 18.0 && F1_3340 == true)
+    if (ush1l >= 18.0 && F1_3340 == true)
     {
 
         if (F4_3340 == true)
@@ -509,7 +509,7 @@ int cabinlighting_outside::logic_outside()
     }
 
     // B right side toggling
-    if (Ush1p >= 18.0 && F14_3340 == true)
+    if (ush1p >= 18.0 && F14_3340 == true)
     {
 
         if (F12_3340 == true)
@@ -684,7 +684,7 @@ int cabinlighting_outside::logic_outside()
         K15_3340 = false;
     }
     // C
-    if (Usho1p >= 18.0)
+    if (usho1p >= 18.0)
     {
 
         //default insert left
@@ -834,7 +834,7 @@ int cabinlighting_outside::logic_outside()
 
     // E1
     // BSS824X1E toggle
-    if (Ush1l >= 18.0 && alpha_fsv_ol == true)
+    if (ush1l >= 18.0 && alpha_fsv_ol == true)
     {
         BSS824X1E = true;
     }
@@ -845,7 +845,7 @@ int cabinlighting_outside::logic_outside()
 
     // E2
     // BSS824X1E toggle
-    if (Ush1p >= 18.0 && alpha_fsv_op == true)
+    if (ush1p >= 18.0 && alpha_fsv_op == true)
     {
         BSS824X1E = true;
     }
@@ -856,7 +856,7 @@ int cabinlighting_outside::logic_outside()
 
     // F1
     // BSS824X1A toggle 1
-    if(Ush1l >= 18.0)
+    if(ush1l >= 18.0)
     {
         if(PFPRLP == true)
         {
@@ -864,7 +864,7 @@ int cabinlighting_outside::logic_outside()
         }
         else
         {
-            if(Ush1p >= 18.0)
+            if(ush1p >= 18.0)
             {
                 if(PFPRPP == true)
                 {
@@ -891,7 +891,7 @@ int cabinlighting_outside::logic_outside()
 
 
 
-    if((Usho1p >= 18.0 && alpha_fazl == 125.0)
+    if((usho1p >= 18.0 && alpha_fazl == 125.0)
             ||
             (Usho2p >= 18.0 && alpha_fazp == 125.0))
     {

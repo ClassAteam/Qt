@@ -7,14 +7,14 @@
 
 
 extern double
-Ush1l,
-Ush1p,
-Ush2l,
-Ush2p,
-Ush1dpl,
-Ush1dpp,
-Ush2dpl,
-Ush2dpp;
+ush1l,
+ush1p,
+ush2l,
+ush2p,
+ush1dpl,
+ush1dpp,
+ush2dpl,
+ush2dpp;
 
 class cabinlighting_inner : public QWidget
 {

@@ -8,13 +8,13 @@
 
 extern double
 M,
-Usho1p,
-Ushal,
-Ushap,
-Ush2l,
-Ush2p,
-Ush1dpl,
-Ush1dpp;
+usho1p,
+ushal,
+ushap,
+ush2l,
+ush2p,
+ush1dpl,
+ush1dpp;
 
 class antiicing_ppd : public QWidget
 {

@@ -16,8 +16,8 @@ K25_3230,
 BSS812X5x;
 extern double
 delta_z,
-Ush1dpl,
-Ush1dpp,
+ush1dpl,
+ush1dpp,
 delta_sh_n;
 
 class landinggear_nose : public QWidget

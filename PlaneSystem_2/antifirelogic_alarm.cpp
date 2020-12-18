@@ -37,7 +37,7 @@ BSS811X1t,
 BSS812X5j,
 BSS812X5p;
 double
-Ushap;
+ushap;
 int
 Counter_ALARM;
 
@@ -75,7 +75,7 @@ antifirelogic_alarm::antifirelogic_alarm(QWidget* pwgt)
     BSS811X1t					= 0;
     BSS812X5j					= 0;
     BSS812X5p					= 0;
-    Ushap						= 21.0;
+    ushap						= 21.0;
     Counter_ALARM				= 0;
 
     //Labels
@@ -234,7 +234,7 @@ int antifirelogic_alarm::logic_alarm()
 {
 Counter_ALARM++;
 ///////////////////////////////1st engine check
-if (Ushal >= 18.0)
+if (ushal >= 18.0)
 {
 
    if (K50_2610 || K51_2610 || lzh_srab_pereg_1_dv == true)
@@ -248,7 +248,7 @@ if (Ushal >= 18.0)
 
 }
 
-if ((Ushal >= 18.0) && (K50_2610 == true) && (K51_2610 == true))
+if ((ushal >= 18.0) && (K50_2610 == true) && (K51_2610 == true))
 {
     BSS811X1n = true;
 }
@@ -257,7 +257,7 @@ else
     BSS811X1n = false;
 }
 
-if (Ushap >= 18)
+if (ushap >= 18)
 {
     if(K50_2610 == true || K51_2610 == true)
     {
@@ -275,7 +275,7 @@ else
     PSA10_1 = false;
 }
 
-if (Ushap >= 18 && F25_2610 == true)
+if (ushap >= 18 && F25_2610 == true)
 {
     BSS811X1x = true;
 }
@@ -284,7 +284,7 @@ else
     BSS811X1x = false;
 }
 //////////////////////////////2nd engine check
-if (Ushal >= 18.0)
+if (ushal >= 18.0)
 {
 
    if (K53_2610 || K54_2610 || lzh_srab_pereg_2_dv == true)
@@ -298,7 +298,7 @@ if (Ushal >= 18.0)
 
 }
 
-if ((Ushal >= 18.0) && (K53_2610 == true) && (K54_2610 == true))
+if ((ushal >= 18.0) && (K53_2610 == true) && (K54_2610 == true))
 {
     BSS811X1r = true;
 }
@@ -307,7 +307,7 @@ else
     BSS811X1r = false;
 }
 
-if (Ushap >= 18)
+if (ushap >= 18)
 {
     if(K53_2610 == true || K54_2610 == true)
     {
@@ -325,7 +325,7 @@ else
     PSA10_2 = false;
 }
 
-if (Ushap >= 18 && F35_2610 == true)
+if (ushap >= 18 && F35_2610 == true)
 {
     BSS811X1z = true;
 }
@@ -334,7 +334,7 @@ else
     BSS811X1z = false;
 }
 //////////////////////////////3rd engine check
-if (Ushap >= 18.0)
+if (ushap >= 18.0)
 {
 
    if (K57_2610 || K58_2610 || lzh_srab_pereg_3_dv == true)
@@ -348,7 +348,7 @@ if (Ushap >= 18.0)
 
 }
 
-if ((Ushap >= 18.0) && (K57_2610 == true) && (K58_2610 == true))
+if ((ushap >= 18.0) && (K57_2610 == true) && (K58_2610 == true))
 {
     BSS812X5h = true;
 }
@@ -357,7 +357,7 @@ else
     BSS812X5h = false;
 }
 
-if (Ushal >= 18)
+if (ushal >= 18)
 {
     if(K57_2610 == true || K58_2610 == true)
     {
@@ -375,7 +375,7 @@ else
     PSA19_1 = false;
 }
 
-if (Ushal >= 18 && F55_2610 == true)
+if (ushal >= 18 && F55_2610 == true)
 {
     BSS913X3E = true;
 }
@@ -384,7 +384,7 @@ else
     BSS913X3E = false;
 }
 //////////////////////////////4th engine check
-if (Ushap >= 18.0)
+if (ushap >= 18.0)
 {
 
    if (K60_2610 || K61_2610 || lzh_srab_pereg_4_dv == true)
@@ -398,7 +398,7 @@ if (Ushap >= 18.0)
 
 }
 
-if ((Ushap >= 18.0) && (K60_2610 == true) && (K61_2610 == true))
+if ((ushap >= 18.0) && (K60_2610 == true) && (K61_2610 == true))
 {
     BSS812X5n = true;
 }
@@ -407,7 +407,7 @@ else
     BSS812X5n = false;
 }
 
-if (Ushal >= 18)
+if (ushal >= 18)
 {
     if(K60_2610 == true || K61_2610 == true)
     {
@@ -425,7 +425,7 @@ else
     PSA19_2 = false;
 }
 
-if (Ushal >= 18 && F65_2610 == true)
+if (ushal >= 18 && F65_2610 == true)
 {
     BSS913X3G = true;
 }
@@ -443,7 +443,7 @@ else
     PKO = false;
 }
 
-if (Ushal >= 18.0 && K24_2610 == true)
+if (ushal >= 18.0 && K24_2610 == true)
 {
    BSS811X1B = true;
 }
@@ -452,7 +452,7 @@ else
    BSS811X1B = false;
 }
 
-if ((Ushal >= 18) && F45_2610 == true)
+if ((ushal >= 18) && F45_2610 == true)
 {
    BSS811X1VV = true;
    BSS838X7C = true;
@@ -687,7 +687,7 @@ else
 ///////////////////////////end logic()
 
     //showing values
-    Ushap_label->setText("Ushap = " + QString::number(Ushap));
+    Ushap_label->setText("Ushap = " + QString::number(ushap));
     PKO_label->setText("PKO = " + QString::number(PKO));
     PO1och_label->setText("PO1och = " + QString::number(PO1och));
     K80_2610_label->setText("K80_2610 = " + QString::number(K80_2610));

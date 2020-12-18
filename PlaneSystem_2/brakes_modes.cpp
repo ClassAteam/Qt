@@ -320,7 +320,7 @@ void brakes_modes::logic_modes()
         PRR = true;
     }
 
-    if(Ush1dpl >= 18 &&
+    if(ush1dpl >= 18 &&
             K35_3230 == true &&
             K27_3230 == true &&
             K26_3230 == true)
@@ -343,7 +343,7 @@ void brakes_modes::logic_modes()
     PAVT_S = false;
     PAVTT = false;
 
-    if(Ushal >= 18 && Ush1dpl >= 18)
+    if(ushal >= 18 && ush1dpl >= 18)
     {
         if(otkaz_osn_sis_torm == true)
         {

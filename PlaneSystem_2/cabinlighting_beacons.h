@@ -11,7 +11,7 @@ F32_3250,
 PRD1dv,
 PRD4dv;
 extern double
-Ush1p;
+ush1p;
 extern const double
 TICK;
 

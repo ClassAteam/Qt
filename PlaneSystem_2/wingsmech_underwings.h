@@ -44,8 +44,8 @@ delta_pr_p,
 delta_zr_vh,
 delta_z_l,
 delta_z_p,
-Ushal,
-Ushap,
+ushal,
+ushap,
 Pgs2,
 Pgs3;
 

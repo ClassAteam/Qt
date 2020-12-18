@@ -21,7 +21,7 @@ void landinggear_valves::logic_valves()
     GK_duoop = false;
 
     // Force release left rack hydrovalve
-    if ((Ushal >= 19.0 && K2_3230 == true) || K3_3230 == true)
+    if ((ushal >= 19.0 && K2_3230 == true) || K3_3230 == true)
     {
             GK_dvl = true;
     }
@@ -60,7 +60,7 @@ void landinggear_valves::logic_valves()
     GK_dvp = false;
 
     // Force release right rack hydrovalve
-    if ((Ushap >= 19.0 && K28_3230 == true) || K29_3230 == true)
+    if ((ushap >= 19.0 && K28_3230 == true) || K29_3230 == true)
     {
             GK_dvp = true;
     }
@@ -70,7 +70,7 @@ void landinggear_valves::logic_valves()
     }
 
     // Common release disabling hydrovalve
-    if (Ush1dpp >= 19.0 && S30_3230 == true)
+    if (ush1dpp >= 19.0 && S30_3230 == true)
     {
         GK_oovsh = true;
         K13_3230 = true;
@@ -84,7 +84,7 @@ void landinggear_valves::logic_valves()
     }
 
     // Emergency nose release hydrovalve
-    if (Ush1dpp >= 19.0 && K13_3230 == true)
+    if (ush1dpp >= 19.0 && K13_3230 == true)
     {
         GK_avn = true;
     }
@@ -94,7 +94,7 @@ void landinggear_valves::logic_valves()
     }
 
     // Emergency left and right racks release hydrovalve
-    if (Ush1dpp >= 19.0 && K14_3230 == true)
+    if (ush1dpp >= 19.0 && K14_3230 == true)
     {
         GK_avl = true;
         GK_avp = true;

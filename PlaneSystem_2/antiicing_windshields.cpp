@@ -231,7 +231,7 @@ int antiicing_windshields::logic_windshields()
     //K1_3040 toggle
     K1_3040 = false;
 
-    if (Ush1l >= 18.0 && S2_3040 == 1)
+    if (ush1l >= 18.0 && S2_3040 == 1)
     {
         if (PRD1dv == true &&  PRD4dv == true && F32_3250 == true)
         {
@@ -260,7 +260,7 @@ int antiicing_windshields::logic_windshields()
     //K2_3040 toggle
     K2_3040 = false;
 
-    if (Usho1p >= 18.0 && S4_3040 == 1)
+    if (usho1p >= 18.0 && S4_3040 == 1)
     {
         if (PRD2dv == true &&  PRD3dv == true && F42_3250 == true)
         {
@@ -320,7 +320,7 @@ int antiicing_windshields::logic_windshields()
     F12_3040 = false;
     F13_3040 = false;
 
-    if (Usho1p >= 18.0 && S8_3040 == 1)
+    if (usho1p >= 18.0 && S8_3040 == 1)
     {
         if (PRD1dv == false &&
                 PRD2dv == false &&

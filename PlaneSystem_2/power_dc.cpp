@@ -14,7 +14,7 @@ nvsu,
 uz1ak, uz2ak,
 ur1ak, ur2ak,
 uo1ak, uo2ak,
-uak1  = 25.0, uak2 = 27.0,
+uak1  = 25.0, uak2 = 25.5,
 //ugrr, ugrrvsu,
 ug1, ug2, ug3, ug4, ugvsu27,
 uzg1 = 28.5, uzg2 = 28.4, uzg3 = 28.6, uzg4 = 28.7, uzgvsu = 28.5,
@@ -305,7 +305,7 @@ void power_dc::logic_dc()
         }
     }
 
-    if(Ushal >= 18.0 && s1_2430 == true && BSS812X5t == true)
+    if(ushal >= 18.0 && s1_2430 == true && BSS812X5t == true)
     {
         pvkgvsu27 = true;
     }
@@ -317,7 +317,7 @@ void power_dc::logic_dc()
 
     for(int i = 0; i < 4; i++)
     {
-        if(Ushal >= 18.0 && *s4_pool[i] == true)
+        if(ushal >= 18.0 && *s4_pool[i] == true)
         {
             *pvkg_pool[i] = true;
         }

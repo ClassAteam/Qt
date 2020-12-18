@@ -334,7 +334,7 @@ int antiicing_airintake::logic_airintake()
     F32_3020 = false;
 
     //F32 toggle
-    if (Usho1p > 18.0)
+    if (usho1p > 18.0)
     {
 
         if( F19_3020 == false &&
@@ -359,7 +359,7 @@ int antiicing_airintake::logic_airintake()
     F319_3020 = F353_3020 = F356_3020 = F32_3020;
     //K52, K54, K55 toggle
     //1
-    if (Usho1p >= 18.0 && S2_3020 == true)
+    if (usho1p >= 18.0 && S2_3020 == true)
     {
         K52_3020 = true;
     }
@@ -368,7 +368,7 @@ int antiicing_airintake::logic_airintake()
         K52_3020 = false;
     }
     //2
-    if (Usho1p >= 18.0 && S3_3020 == true)
+    if (usho1p >= 18.0 && S3_3020 == true)
     {
         K53_3020 = true;
     }
@@ -377,7 +377,7 @@ int antiicing_airintake::logic_airintake()
         K53_3020 = false;
     }
     //3
-    if (Usho1p >= 18.0 && S4_3020 == true)
+    if (usho1p >= 18.0 && S4_3020 == true)
     {
         K54_3020 = true;
     }
@@ -386,7 +386,7 @@ int antiicing_airintake::logic_airintake()
         K54_3020 = false;
     }
     //4
-    if (Usho1p >= 18.0 && S5_3020 == true)
+    if (usho1p >= 18.0 && S5_3020 == true)
     {
         K55_3020 = true;
     }
@@ -669,7 +669,7 @@ int antiicing_airintake::logic_airintake()
     S3_3020_label->setText("S3_3020 = "  + QString::number(S3_3020));
     S4_3020_label->setText("S4_3020 = "  + QString::number(S4_3020));
     S5_3020_label->setText("S5_3020 = "  + QString::number(S5_3020));
-    Usho1p_label->setText("Usho1p = "  + QString::number(Usho1p));
+    Usho1p_label->setText("Usho1p = "  + QString::number(usho1p));
     Ushpl_label->setText("Ushpl = "  + QString::number(Ushpl));
     Ushpp_label->setText("Ushpp = "  + QString::number(Ushpp));
     Counter_airintake_label->setText("Counter_airintake = "
@@ -718,11 +718,11 @@ int antiicing_airintake::m_S5_3020_off()
 
 int antiicing_airintake::m_Usho1p_on()
 {
-    Usho1p = 21.0;
+    usho1p = 21.0;
 }
 int antiicing_airintake::m_Usho1p_off()
 {
-    Usho1p = 0.0;
+    usho1p = 0.0;
 }
 
 int antiicing_airintake::m_Ushpl_on()

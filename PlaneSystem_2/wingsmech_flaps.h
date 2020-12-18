@@ -12,8 +12,8 @@ extern bool
 P2OBPOP,
 P2OBLOP;
 extern double
-Ushal,
-Ushap,
+ushal,
+ushap,
 Pgs1,
 Pgs4;
 

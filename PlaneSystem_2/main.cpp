@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
     hydro_walarm walarm;
     power_dc dc;
     power_urg27 urg27;
+    power_split split;
 
     QTimer *timer = new QTimer;
 
@@ -182,6 +183,7 @@ int main(int argc, char *argv[])
     QHBoxLayout layout_power;
     layout_power.addWidget(&dc.wgt_dc);
     layout_power.addWidget(&urg27.wgt_urg27);
+    layout_power.addWidget(&split.wgt_split);
     window_power.setLayout(&layout_power);
     window_power.setWindowTitle("Power");
     window_power.setWindowState(Qt::WindowFullScreen);
@@ -296,6 +298,8 @@ int main(int argc, char *argv[])
                      &dc , SLOT(logic_dc()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &urg27 , SLOT(logic_urg27()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &split , SLOT(logic_split()));
 
     //PRESURE RETAKE
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,

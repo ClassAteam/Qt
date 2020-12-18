@@ -20,10 +20,10 @@ extern const double TICK;
 extern double
 uak1,
 uak2,
-Ush1dpl,
-Ush1dpp,
-Ushap,
-Ushal,
+ush1dpl,
+ush1dpp,
+ushap,
+ushal,
 Vkh;
 
 

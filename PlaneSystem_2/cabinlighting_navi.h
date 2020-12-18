@@ -8,7 +8,7 @@
 extern bool
 P1OBPOP;
 extern double
-Ush2p;
+ush2p;
 
 class cabinlighting_navi : public QWidget
 {

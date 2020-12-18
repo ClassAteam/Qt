@@ -62,10 +62,10 @@ P_ped_21,
 P_ped_22,
 P_tp_lev,
 P_tp_prav,
-Ush1dpl,
-Ush1dpp,
-Ushal,
-Ushap;
+ush1dpl,
+ush1dpp,
+ushal,
+ushap;
 
 extern const double
 TICK;

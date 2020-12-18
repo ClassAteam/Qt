@@ -883,7 +883,7 @@ QObject::connect
 }
 int emergencyalarm_leftpilot::logic_leftpilot()
 {
-    if (Ush1dpl >= 18.0 && Ush1dpp >= 18.0)
+    if (ush1dpl >= 18.0 && ush1dpp >= 18.0)
     {
         PRBSS_811 = true;
     }
@@ -892,7 +892,7 @@ int emergencyalarm_leftpilot::logic_leftpilot()
         PRBSS_811 = false;
     }
 
-    if (Ush2dpl >= 18.0 && Ush2dpp >= 18.0)
+    if (ush2dpl >= 18.0 && ush2dpp >= 18.0)
     {
         PRBSS_812 = true;
     }
@@ -901,7 +901,7 @@ int emergencyalarm_leftpilot::logic_leftpilot()
         PRBSS_812 = false;
     }
 
-    if ((Ush2dpl >= 18.0) && (Ush2dpp >= 18.0) && (S5_3364 == true))
+    if ((ush2dpl >= 18.0) && (ush2dpp >= 18.0) && (S5_3364 == true))
     {
         PKLLL = true;
     }
@@ -910,12 +910,12 @@ int emergencyalarm_leftpilot::logic_leftpilot()
         PKLLL = false;
     }
 
-    if ((Ush1dpl >= 18.0) && (Ush1dpp >= 18.0))
+    if ((ush1dpl >= 18.0) && (ush1dpp >= 18.0))
     {
         USASLL = two_points_to_Y(alpha_rra7ll, 0, 1, 0.75, 1);
     }
 
-    if (Ush2dpl >= 18.0 && Ush2dpp >= 18.0)
+    if (ush2dpl >= 18.0 && ush2dpp >= 18.0)
     {
         PRBSS_913 = true;
     }

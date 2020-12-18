@@ -413,7 +413,7 @@ void landinggear_switches::logic_switches()
     PUPLOP = false;
     PVPLOP = false;
 
-    if (Ushal >= 19.0)
+    if (ushal >= 19.0)
     {
         if (Sl >= 0.1)
         {
@@ -465,7 +465,7 @@ void landinggear_switches::logic_switches()
     PUPPOP = false;
     PVPPOP = false;
 
-    if (Ushap >= 19.0)
+    if (ushap >= 19.0)
     {
         if (Sp >= 0.1)
         {
@@ -493,7 +493,7 @@ void landinggear_switches::logic_switches()
         }
     }
 
-    if (Ush1dpp >= 19.0 && delta_sh_n == 1.0)
+    if (ush1dpp >= 19.0 && delta_sh_n == 1.0)
     {
         PVPPEROP = true;
         K6_3230 = true;

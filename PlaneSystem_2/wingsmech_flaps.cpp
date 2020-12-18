@@ -219,7 +219,7 @@ void wingsmech_flaps::logic_flaps()
 
     if(Pgs1 >= 130)
     {
-        if(Ushal >= 18.0)
+        if(ushal >= 18.0)
         {
             if(S1_2750 == true)
             {
@@ -255,7 +255,7 @@ void wingsmech_flaps::logic_flaps()
 
     if(Pgs4 >= 130)
     {
-        if(Ushap >= 18.0)
+        if(ushap >= 18.0)
         {
             if(S1_2750 == true)
             {

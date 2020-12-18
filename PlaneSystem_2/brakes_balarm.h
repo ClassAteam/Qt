@@ -39,7 +39,7 @@ PFT,
 PTfors,
 BSS812X5r;
 extern double
-Ushap,
+ushap,
 P_t_lev,
 P_t_prav,
 Pgs3,

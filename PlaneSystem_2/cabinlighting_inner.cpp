@@ -499,7 +499,7 @@ int cabinlighting_inner::logic_inner()
 {
     // A1
 
-    if (Ush1l >= 18.0 &&
+    if (ush1l >= 18.0 &&
             F1_3311 == true &&
             otkaz_vstrosv_busto3_1_k1_lev == false)
     {
@@ -512,7 +512,7 @@ int cabinlighting_inner::logic_inner()
 
     // A2
 
-    if (Ush2p >= 18.0 &&
+    if (ush2p >= 18.0 &&
             F2_3311 == true &&
             otkaz_vstrosv_busto3_1_k1_prav == false)
     {
@@ -525,7 +525,7 @@ int cabinlighting_inner::logic_inner()
 
     // A3
 
-    if (Ush1dpl >= 18.0 &&
+    if (ush1dpl >= 18.0 &&
             F3_3311 == true &&
             otkaz_vstrosv_busto3_2_k1_lev == false)
     {
@@ -538,7 +538,7 @@ int cabinlighting_inner::logic_inner()
 
     // A4
 
-    if (Ush2dpp >= 18.0 &&
+    if (ush2dpp >= 18.0 &&
             F4_3311 == true &&
             otkaz_vstrosv_busto3_2_k2_prav == false)
     {
@@ -564,7 +564,7 @@ int cabinlighting_inner::logic_inner()
 
     // C1
 
-    if (PBUSTO3_1_2k && Ush1l >= 18.0)
+    if (PBUSTO3_1_2k && ush1l >= 18.0)
     {
         UVOSP12 = two_points_to_Y(alpha_ra_a6, 0, 1, 0, 1);   //Dummy
         UVOLBL12 = two_points_to_Y(alpha_ra_a7, 0, 1, 0, 1);   //Dummy
@@ -595,7 +595,7 @@ int cabinlighting_inner::logic_inner()
 
     // C2
 
-    if (PBUSTO3_2_2k && Ush1dpl >= 18.0)
+    if (PBUSTO3_2_2k && ush1dpl >= 18.0)
     {
         UVOSP22 = two_points_to_Y(alpha_ra_a6, 0, 1, 0, 1);   //Dummy
         UVOLBL22 = two_points_to_Y(	alpha_ra_a7, 0, 1, 0, 1);  //Dummy
@@ -652,7 +652,7 @@ int cabinlighting_inner::logic_inner()
     //////////////////////////////////////////////////////////////////////////////
     // A5
 
-    if (Ush1l >= 18.0 &&
+    if (ush1l >= 18.0 &&
             F5_3311 == true &&
             otkaz_vstrosv_busto3_1_k1_shto == false)
     {
@@ -665,7 +665,7 @@ int cabinlighting_inner::logic_inner()
 
     // A6
 
-    if (Ush2p >= 18.0 &&
+    if (ush2p >= 18.0 &&
             F6_3311 == true &&
             otkaz_vstrosv_busto3_1_k2_shto == false)
     {
@@ -678,7 +678,7 @@ int cabinlighting_inner::logic_inner()
 
     // A7
 
-    if (Ush1dpl >= 18.0 &&
+    if (ush1dpl >= 18.0 &&
             F7_3311 == true &&
             otkaz_vstrosv_busto3_1_k1_shtn == false)
     {
@@ -691,7 +691,7 @@ int cabinlighting_inner::logic_inner()
 
     // A8
 
-    if (Ush2dpp >= 18.0 &&
+    if (ush2dpp >= 18.0 &&
             F8_3311 == true &&
             otkaz_vstrosv_busto3_1_k2_shtn == false)
     {
@@ -717,7 +717,7 @@ int cabinlighting_inner::logic_inner()
 
     // C3
 
-    if (PBUSTO3_3_1k && Ush1l >= 18.0)
+    if (PBUSTO3_3_1k && ush1l >= 18.0)
     {
         UVOLBSH1 = two_points_to_Y(alpha_ra_a12, 0, 1, 0, 1);   //Dummy
         PK1LBSHVO = true;
@@ -757,7 +757,7 @@ int cabinlighting_inner::logic_inner()
 
     // C4
 
-    if (PBUSTO3_4_1k && Ush1dpl >= 18.0)
+    if (PBUSTO3_4_1k && ush1dpl >= 18.0)
     {
         UVOLBSH2 = two_points_to_Y(alpha_ra_a12, 0, 1, 0, 1);   //Dummy
         PK2LBSHVO = true;
@@ -770,7 +770,7 @@ int cabinlighting_inner::logic_inner()
 
     // C5
 
-    if (PBUSTO3_3_2k && Ush1l >= 18.0)
+    if (PBUSTO3_3_2k && ush1l >= 18.0)
     {
         UVOPBSH1 = two_points_to_Y(alpha_ra_a14, 0, 1, 0, 1);   //Dummy
         PK2PBSHVO = true;
@@ -796,7 +796,7 @@ int cabinlighting_inner::logic_inner()
 
     // C6
 
-    if (PBUSTO3_4_2k && Ush1dpl >= 18.0)
+    if (PBUSTO3_4_2k && ush1dpl >= 18.0)
     {
         UVOPBSH2 = two_points_to_Y(alpha_ra_a14, 0, 1, 0, 1);   //Dummy
         PK2PBSHVO = true;

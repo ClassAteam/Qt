@@ -16,7 +16,7 @@ TICK;
 extern bool
 BSS812X5t;
 extern double
-Ushal;
+ushal;
 
 class power_dc : public QWidget
 {

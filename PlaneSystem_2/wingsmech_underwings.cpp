@@ -250,7 +250,7 @@ void wingsmech_underwings::logic_underwings()
 
     if(Pgs2 >= 130)
     {
-        if(Ushal >= 18.0)
+        if(ushal >= 18.0)
         {
             if(S1_2780 == true)
             {
@@ -286,7 +286,7 @@ void wingsmech_underwings::logic_underwings()
 
     if(Pgs3 >= 130)
     {
-        if(Ushap >= 18.0)
+        if(ushap >= 18.0)
         {
             if(S1_2780 == true)
             {

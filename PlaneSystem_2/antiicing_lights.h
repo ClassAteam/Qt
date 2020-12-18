@@ -11,10 +11,10 @@ S3_3080;
 extern const double
 TICK;
 extern double
-Ush1l,
-Ush2p,
-Ush1dpl,
-Ush2dpp,
+ush1l,
+ush2p,
+ush1dpl,
+ush2dpp,
 M;
 
 class antiicing_lights : public QWidget

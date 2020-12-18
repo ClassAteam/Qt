@@ -51,10 +51,10 @@ S5_3080,
 S6_3080;
 
 double
-Ush1l,
-Ush2l,
-Ush1p,
-Ush2p;
+ush1l,
+ush2l,
+ush1p,
+ush2p;
 
 antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
     : QWidget(pwgt)
@@ -104,10 +104,10 @@ antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
     S4_3080 = 0;
     S5_3080 = 0;
     S6_3080 = 0;
-    Ush1l = 19.0;
-    Ush2l = 19.0;
-    Ush1p = 19.0;
-    Ush2p = 19.0;
+    ush1l = 19.0;
+    ush2l = 19.0;
+    ush1p = 19.0;
+    ush2p = 19.0;
 
     //Labels
     K22_3020_label = new QLabel;
@@ -442,7 +442,7 @@ int antiicing_airintake_warmup::logic_warmup()
     }
 
     //BSS824X1z toggle
-    if (Usho1p >= 18.0 && K22_3020 == true)
+    if (usho1p >= 18.0 && K22_3020 == true)
     {
         BSS824X1z = true;
     }
@@ -451,7 +451,7 @@ int antiicing_airintake_warmup::logic_warmup()
         BSS824X1z = false;
     }
     //BSS824X1BB toggle
-    if (Usho1p >= 18.0 && K29_3020 == true)
+    if (usho1p >= 18.0 && K29_3020 == true)
     {
         BSS824X1BB = true;
     }
@@ -460,7 +460,7 @@ int antiicing_airintake_warmup::logic_warmup()
         BSS824X1BB = false;
     }
     //BSS824X1DD toggle
-    if (Usho1p >= 18.0 && K40_3020 == true)
+    if (usho1p >= 18.0 && K40_3020 == true)
     {
         BSS824X1DD = true;
     }
@@ -469,7 +469,7 @@ int antiicing_airintake_warmup::logic_warmup()
         BSS824X1DD = false;
     }
     //BSS824X1FF toggle
-    if (Usho1p >= 18.0 && K46_3020 == true)
+    if (usho1p >= 18.0 && K46_3020 == true)
     {
         BSS824X1FF = true;
     }
@@ -663,7 +663,7 @@ int antiicing_airintake_warmup::logic_warmup()
         POB3dv4 = false;
 
     }
-    if (Ush1p >= 18.0 && S5_3080 == true)
+    if (ush1p >= 18.0 && S5_3080 == true)
     {
         PVOVNA3 = true;
     }
@@ -671,7 +671,7 @@ int antiicing_airintake_warmup::logic_warmup()
     {
         PVOVNA3 = false;
     }
-    if (Ush2l >= 18.0 && S4_3080 == true)
+    if (ush2l >= 18.0 && S4_3080 == true)
     {
         PVOVNA2 = true;
     }
@@ -679,7 +679,7 @@ int antiicing_airintake_warmup::logic_warmup()
     {
         PVOVNA2 = false;
     }
-    if (Ush1l >= 18.0 && S3_3080 == true)
+    if (ush1l >= 18.0 && S3_3080 == true)
     {
         PVOVNA1 = true;
     }
@@ -688,7 +688,7 @@ int antiicing_airintake_warmup::logic_warmup()
         PVOVNA1 = false;
     }
 
-    if (Ush2p >= 18.0 && S6_3080 == true)
+    if (ush2p >= 18.0 && S6_3080 == true)
     {
         PVOVNA4 = true;
     }
@@ -697,7 +697,7 @@ int antiicing_airintake_warmup::logic_warmup()
         PVOVNA4 = false;
     }
 
-    if (Usho1p >= 18.0 && F110_3020 == true)
+    if (usho1p >= 18.0 && F110_3020 == true)
     {
         BSS825PR = true;
     }
@@ -762,10 +762,10 @@ int antiicing_airintake_warmup::logic_warmup()
     S4_3080_label->setText("S4_3080 = " + QString::number(S4_3080));
     S5_3080_label->setText("S5_3080 = " + QString::number(S5_3080));
     S6_3080_label->setText("S6_3080 = " + QString::number(S6_3080));
-    Ush1l_label->setText("Ush1l = " + QString::number(Ush1l));
-    Ush2l_label->setText("Ush2l = " + QString::number(Ush2l));
-    Ush1p_label->setText("Ush1p = " + QString::number(Ush1p));
-    Ush2p_label->setText("Ush2p = " + QString::number(Ush2p));
+    Ush1l_label->setText("Ush1l = " + QString::number(ush1l));
+    Ush2l_label->setText("Ush2l = " + QString::number(ush2l));
+    Ush1p_label->setText("Ush1p = " + QString::number(ush1p));
+    Ush2p_label->setText("Ush2p = " + QString::number(ush2p));
 
 }
 

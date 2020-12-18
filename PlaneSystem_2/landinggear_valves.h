@@ -25,10 +25,10 @@ GK_duoop,
 GK_oovsh;
 
 extern double
-Ushal,
-Ushap,
-Ush1dpp,
-Ush1dpl;
+ushal,
+ushap,
+ush1dpp,
+ush1dpl;
 
 
 

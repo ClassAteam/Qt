@@ -56,6 +56,7 @@
 #include <hydro_warmalarm.h>
 #include <power_dc.h>
 #include <power_urg27.h>
+#include <power_split.h>
 
 QScrollArea* scrollArea_1;
 QScrollArea* scrollArea_2;

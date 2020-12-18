@@ -18,7 +18,7 @@ a2;
 extern double
 b2;
 extern double
-Ush2dpl;
+ush2dpl;
 
 class presure_regulation : public QWidget
 {

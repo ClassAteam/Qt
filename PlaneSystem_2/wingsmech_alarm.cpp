@@ -454,7 +454,7 @@ wingsmech_alarm::wingsmech_alarm(QWidget*pwgt)
 }
 void wingsmech_alarm::logic_alarm()
 {
-    if(Ushap >= 18)
+    if(ushap >= 18)
     {
         delta_z = ((delta_z_l + delta_z_p) / 2);
         if(delta_z > 22)
@@ -494,7 +494,7 @@ void wingsmech_alarm::logic_alarm()
     BSS825X7A = false;
     BSS825X5J = false;
 
-    if(Ush1dpl > 18)
+    if(ush1dpl > 18)
     {
         delta_pr = ((delta_pr_l + delta_pr_p) / 2);
 
@@ -513,7 +513,7 @@ void wingsmech_alarm::logic_alarm()
     X_1_pk = X_L;
     X_3_pk = X_P;
 
-    if(Ush1dpl >= 18)
+    if(ush1dpl >= 18)
     {
         XL_120 = X_L;
         XP_121 = X_P;
@@ -575,7 +575,7 @@ void wingsmech_alarm::logic_alarm()
             P_141_13 = true;
         }
     }
-    if(Ush1dpp > 18)
+    if(ush1dpp > 18)
     {
         P_142_11 = PGS3;
         P_142_12 = PGS4;
@@ -644,7 +644,7 @@ void wingsmech_alarm::logic_alarm()
         P_143_13 = true;
     }
 
-    if(Ush1dpl >= 18)
+    if(ush1dpl >= 18)
     {
         delta_z_l_110 = delta_z_l;
         delta_pr_l_114 = delta_pr_l;
@@ -655,7 +655,7 @@ void wingsmech_alarm::logic_alarm()
         delta_pr_l_114 = 0;
     }
 
-    if(Ush1dpp >= 18)
+    if(ush1dpp >= 18)
     {
         delta_z_p_111 = delta_z_l;
         delta_pr_p_115 = delta_pr_l;
@@ -668,7 +668,7 @@ void wingsmech_alarm::logic_alarm()
         delta_pr_p_115 = 0;
         delta_pr_116 = 0;
     }
-    if(Ushap >= 18)
+    if(ushap >= 18)
     {
         delta_z = ((delta_z_l + delta_z_p) / 2);
         delta_z_112 = 0.35 + (5.266 * delta_z);
@@ -699,7 +699,7 @@ void wingsmech_alarm::logic_alarm()
 
     P_130_25 = false;
 
-    if(Ush1dpl >= 18)
+    if(ush1dpl >= 18)
     {
         P_130_11 = PGS1;
         P_130_12 = PSR1KZ;
@@ -793,7 +793,7 @@ void wingsmech_alarm::logic_alarm()
     P_131_21 = false;
     P_131_22 = false;
 
-    if(Ush1dpl >= 18)
+    if(ush1dpl >= 18)
     {
         if(otkaz_1k_zakr == true)
         {
@@ -825,7 +825,7 @@ void wingsmech_alarm::logic_alarm()
     P_132_24 = false;
     P_132_25 = false;
 
-    if(Ush1dpp >= 18)
+    if(ush1dpp >= 18)
     {
         P_132_11 = PGS4;
         P_132_12 = PSR2KZ;
@@ -913,7 +913,7 @@ void wingsmech_alarm::logic_alarm()
     P_133_21 = false;
     P_133_22 = false;
 
-    if(Ush1dpp >= 18)
+    if(ush1dpp >= 18)
     {
         if(otkaz_2k_zakr == true)
         {

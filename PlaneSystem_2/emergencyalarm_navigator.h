@@ -8,10 +8,10 @@
 extern const double
 TICK;
 extern double
-Ush1dpl,
-Ush1dpp,
-Ush2dpl,
-Ush2dpp;
+ush1dpl,
+ush1dpp,
+ush2dpl,
+ush2dpp;
 
 extern bool
 BSS926X1f,

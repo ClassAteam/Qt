@@ -6,10 +6,10 @@
 #include <QLineEdit>
 
 extern double
-Usho1p,
+usho1p,
 Usho2p,
-Ush1p,
-Ush1l;
+ush1p,
+ush1l;
 extern const double
 TICK;
 

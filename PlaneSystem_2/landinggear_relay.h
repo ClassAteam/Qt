@@ -19,7 +19,7 @@ GK_vsh,
 GK_ush;
 
 extern double
-Ush2dpl,
+ush2dpl,
 Pgs2;
 
 class landinggear_relay : public QWidget

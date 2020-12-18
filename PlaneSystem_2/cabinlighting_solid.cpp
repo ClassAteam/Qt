@@ -531,7 +531,7 @@ int cabinlighting_solid::logic_solid()
 {
     // PBUSTO4 toggle
         //A1
-        if (Ush1l >= 18.0 &&
+        if (ush1l >= 18.0 &&
                 F1_3310 == true &&
                 otkaz_zaliv_osvesh_ll_1 == false)
         {
@@ -544,7 +544,7 @@ int cabinlighting_solid::logic_solid()
 
         // PBUSTO4 toggle
         //A2
-        if (Ush2p >= 18.0 &&
+        if (ush2p >= 18.0 &&
                 F2_3310 == true &&
                 otkaz_zaliv_osvesh_pl_1 == false)
         {
@@ -557,7 +557,7 @@ int cabinlighting_solid::logic_solid()
 
         // PBUSTO4 toggle
         //A3
-        if (Ush1dpl >= 18.0 &&
+        if (ush1dpl >= 18.0 &&
                 F3_3310 == true &&
                 otkaz_zaliv_osvesh_ll_2 == false)
         {
@@ -570,7 +570,7 @@ int cabinlighting_solid::logic_solid()
 
         // PBUSTO4 toggle
         //A4
-        if (Ush2dpp >= 18.0 &&
+        if (ush2dpp >= 18.0 &&
                 F4_3310 == true &&
                 otkaz_zaliv_osvesh_pl_2 == false)
         {
@@ -583,7 +583,7 @@ int cabinlighting_solid::logic_solid()
 
         // PK21PBLL30, PK11PBLL30 toggle
         //B1
-        if (Ush1l >= 18.0 &&
+        if (ush1l >= 18.0 &&
                 PBUSTO4_2_1k == true)
         {
             UZOPBLL2 = two_points_to_Y(alpha_ra2a3, 0, 1, 0.75, 1);
@@ -597,7 +597,7 @@ int cabinlighting_solid::logic_solid()
 
         // PK21PBLL30, PK11PBLL30 toggle
         //B2
-        if (Ush1dpl >= 18.0 && PBUSTO4_1_1k == true)
+        if (ush1dpl >= 18.0 && PBUSTO4_1_1k == true)
         {
             UZOPBLL1 = two_points_to_Y(alpha_ra2a3, 0, 1, 0.75, 1);
             PK11PBLLZO = true;
@@ -635,7 +635,7 @@ int cabinlighting_solid::logic_solid()
 
         // PK1LSPD30, PK2LSPD30
         //D1
-        if (Ush1dpl >= 18.0 && PBUSTO4_1_1k == true)
+        if (ush1dpl >= 18.0 && PBUSTO4_1_1k == true)
         {
             UZOLSPD1 = two_points_to_Y(alpha_ra2a4, 0 , 1, 0.75, 1);
             PK1LSPDZO = true;
@@ -647,7 +647,7 @@ int cabinlighting_solid::logic_solid()
         }
 
         //D2
-        if (Ush1l >= 18.0 && PBUSTO4_2_1k == true)
+        if (ush1l >= 18.0 && PBUSTO4_2_1k == true)
         {
             UZOLSPD2 = two_points_to_Y(alpha_ra2a4, 0, 1, 0.75, 1);
             PK2LSPDZO = true;
@@ -686,7 +686,7 @@ int cabinlighting_solid::logic_solid()
 
         // PK1PPDZO, PK2PPDZO, PK1SPLS1ZO, PK1SPSSZO toggle
         //E3
-        if (Ush1dpl >= 18.0)
+        if (ush1dpl >= 18.0)
         {
             UZOSPLS1 = two_points_to_Y(alpha_ra50a8, 0, 1, 0.75, 1 );
             PK1SPLSZO = true;
@@ -699,7 +699,7 @@ int cabinlighting_solid::logic_solid()
 
         //  PK1PPDZO, PK2PPDZO, PK1SPLS1ZO, PK1SPSSZO toggle
         //E4
-        if (Ush2dpp >= 18.0)
+        if (ush2dpp >= 18.0)
         {
             UZOSPPS1 = two_points_to_Y(alpha_ra50a8, 0, 1, 0.75, 1 );
             PK1SPPSZO = true;
@@ -712,7 +712,7 @@ int cabinlighting_solid::logic_solid()
 
         // PBUSTO4 toggle
         //A1
-        if (Ush1l >= 18.0 &&
+        if (ush1l >= 18.0 &&
                 F5_3310 == true &&
                 otkaz_zaliv_osvesh_sho_1 == false)
         {
@@ -725,7 +725,7 @@ int cabinlighting_solid::logic_solid()
 
         // PBUSTO4 toggle
         //A2
-        if (Ush2p >= 18.0 &&
+        if (ush2p >= 18.0 &&
                 F6_3310 == true &&
                 otkaz_zaliv_osvesh_shn_1 == false)
         {
@@ -738,7 +738,7 @@ int cabinlighting_solid::logic_solid()
 
         // PBUSTO4 toggle
         //A3
-        if (Ush1dpl >= 18.0 &&
+        if (ush1dpl >= 18.0 &&
                 F7_3310 == true &&
                 otkaz_zaliv_osvesh_sho_2 == false)
         {
@@ -751,7 +751,7 @@ int cabinlighting_solid::logic_solid()
 
         // PBUSTO4 toggle
         //A4
-        if (Ush2dpp >= 18.0 &&
+        if (ush2dpp >= 18.0 &&
                 F8_3310 == true &&
                 otkaz_zaliv_osvesh_shn_2 == false)
         {
@@ -764,7 +764,7 @@ int cabinlighting_solid::logic_solid()
 
         // PK1PDSHOZO, PK2PDSHOZO toggle
         //B1
-        if (Ush1l >= 18.0 && PBUSTO4_4_1k == true)
+        if (ush1l >= 18.0 && PBUSTO4_4_1k == true)
         {
             UZOPDSHO1 = two_points_to_Y(alpha_ra2a11,0, 1, 0.75, 1 );
             PK1PDSHOZO = true;
@@ -777,7 +777,7 @@ int cabinlighting_solid::logic_solid()
 
         // PK1PDSHOZO, PK2PDSHOZO toggle
         //B2
-        if (Ush1dpl >= 18.0 && PBUSTO4_3_1k == true)
+        if (ush1dpl >= 18.0 && PBUSTO4_3_1k == true)
         {
             UZOPDSHO2 = two_points_to_Y(alpha_ra2a11, 0, 1, 0.75, 1);
             PK2PDSHOZO = true;
@@ -816,7 +816,7 @@ int cabinlighting_solid::logic_solid()
 
         // PK1PDSHNZO, PK2PDSHNZO
         //D1
-        if (Ush1dpp >= 18.0 && PBUSTO4_3_2k == true)
+        if (ush1dpp >= 18.0 && PBUSTO4_3_2k == true)
         {
             UZOPDSHN1 = two_points_to_Y(alpha_ra2a14, 0, 1, 0.75, 1);
             PK1PDSHNZO = true;
@@ -828,7 +828,7 @@ int cabinlighting_solid::logic_solid()
         }
 
         //D2
-        if (Ush2p >= 18.0 && PBUSTO4_4_2k == true)
+        if (ush2p >= 18.0 && PBUSTO4_4_2k == true)
         {
             UZOPDSHN2 = two_points_to_Y(alpha_ra2a14, 0 , 1, 0.75, 1);
             PK2PDSHNZO = true;
@@ -867,7 +867,7 @@ int cabinlighting_solid::logic_solid()
 
         // PSSD37RKL, PSSD37RKSH
         //F1
-        if (Ush2l >= 18.0 && F1_3312 == true)
+        if (ush2l >= 18.0 && F1_3312 == true)
         {
             USOOKL = two_points_to_Y(alpha_ra50a1, 0, 1, 0.75, 1);
             PSSD37RKL = true;
@@ -884,7 +884,7 @@ int cabinlighting_solid::logic_solid()
 
         // PSSD42L
         //G1
-        if (Ush1dpl >= 18.0 && F2_3312 == true)
+        if (ush1dpl >= 18.0 && F2_3312 == true)
         {
             PSSD42L = true;
         }
@@ -895,7 +895,7 @@ int cabinlighting_solid::logic_solid()
 
         // PSSD42P
         //G2
-        if (Ush2dpp >= 18.0 && F3_3312 == true)
+        if (ush2dpp >= 18.0 && F3_3312 == true)
         {
             PSSD42P = true;
         }

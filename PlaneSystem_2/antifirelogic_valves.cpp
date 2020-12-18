@@ -27,9 +27,9 @@ F72_2610,
 F132_2610,
 F142_2610;
 double
-Ush1dpl,
-Ush1dpp,
-Ushal;
+ush1dpl,
+ush1dpp,
+ushal;
 int
 F7_2610,
 F8_2610,
@@ -75,9 +75,9 @@ antifirelogic_valves::antifirelogic_valves(QWidget* pwgt)
     F82_2610 = 0;
     F132_2610 = 0;
     F142_2610 = 0;
-    Ush1dpl = 19;
-    Ush1dpp = 19;
-    Ushal = 19;
+    ush1dpl = 19;
+    ush1dpp = 19;
+    ushal = 19;
     F7_2610 = 0;
     F8_2610 = 0;
     S3_2610 = 0;
@@ -263,7 +263,7 @@ int antifirelogic_valves::logic_valves()
     if (S9_2610 == 1)
     {
         // Voltage check
-        if ((Ush1dpl >= 16.0) && (F8_2610 == 1))
+        if ((ush1dpl >= 16.0) && (F8_2610 == 1))
         {
             F82_2610 = 1;
         }
@@ -272,7 +272,7 @@ int antifirelogic_valves::logic_valves()
             F82_2610 = 0;
         }
 
-        if ((Ush1dpp >= 16.0) && (F7_2610 == true))
+        if ((ush1dpp >= 16.0) && (F7_2610 == true))
         {
             F72_2610 = true;
         }
@@ -291,7 +291,7 @@ int antifirelogic_valves::logic_valves()
     if ((F82_2610 == 1) || (F72_2610 == 1))					//009
     {
 
-        if (Ushal >= 16.0)
+        if (ushal >= 16.0)
         {
             F132_2610 = true;
             F142_2610 = true;
@@ -687,9 +687,9 @@ int antifirelogic_valves::logic_valves()
     F82_label->setText("F82 = " + QString::number(F82_2610));
     F132_label->setText("F132 = " + QString::number(F132_2610));
     F142_label->setText("F142 = " + QString::number(F142_2610));
-    Ush1dpl_label->setText("Ush1dpl = " + QString::number(Ush1dpl));
-    Ush1dpp_label->setText("Ush1dpp = " + QString::number(Ush1dpp));
-    Uacc_label->setText("Uacc = " + QString::number(Ushal));
+    Ush1dpl_label->setText("Ush1dpl = " + QString::number(ush1dpl));
+    Ush1dpp_label->setText("Ush1dpp = " + QString::number(ush1dpp));
+    Uacc_label->setText("Uacc = " + QString::number(ushal));
     F7_label->setText("F7 = " + QString::number(F7_2610));
     F8_label->setText("F8 = " + QString::number(F8_2610));
     S3_label->setText("S3 = " + QString::number(S3_2610));

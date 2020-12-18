@@ -234,7 +234,7 @@ QObject::connect
 }
 int emergencyalarm_steersman::logic_steersman()
 {
-    if (Ush2dpl >= 18.0 && Ush2dpp >= 18.0)
+    if (ush2dpl >= 18.0 && ush2dpp >= 18.0)
     {
         PRBSS_939 = true;
     }
@@ -243,7 +243,7 @@ int emergencyalarm_steersman::logic_steersman()
         PRBSS_939 = false;
     }
 
-    if (Ush2dpl >= 18.0 && Ush2dpp >= 18.0 && S8_3364 == 1)
+    if (ush2dpl >= 18.0 && ush2dpp >= 18.0 && S8_3364 == 1)
     {
         PKLSHN = true;
     }
@@ -252,7 +252,7 @@ int emergencyalarm_steersman::logic_steersman()
         PKLSHN = false;
     }
 
-    if (Ush1dpl >= 18.0 && Ush1dpp >= 18.0)
+    if (ush1dpl >= 18.0 && ush1dpp >= 18.0)
     {
         USASSHN = two_points_to_Y(alpha_rra7shn, 0, 1, 0.75, 1);
     }

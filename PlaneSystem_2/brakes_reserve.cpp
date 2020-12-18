@@ -130,7 +130,7 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
 void brakes_reserve::logic_reserve()
 {
     //start logic
-    if(Ushap >= 18.0 && Ushal >= 18.0 && Ush1dpp >= 18.0)
+    if(ushap >= 18.0 && ushal >= 18.0 && ush1dpp >= 18.0)
     {
         if(S1_3241 == false)
         {

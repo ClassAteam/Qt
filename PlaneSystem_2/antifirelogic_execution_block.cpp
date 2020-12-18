@@ -49,8 +49,8 @@ peregrev_3_dv,
 peregrev_4_dv,
 pozhar_vsu;
 double
-Ush2dpl,
-Ush2dpp;
+ush2dpl,
+ush2dpp;
 int
 F9_2610,
 F10_2610,
@@ -103,8 +103,8 @@ antifirelogic_exb::antifirelogic_exb(QWidget* pwgt)
     F915_2610 = 0;
     F916_2610 = 0;
     F917_2610 = 0;
-    Ush2dpl   = 21;
-    Ush2dpp   = 21;
+    ush2dpl   = 21;
+    ush2dpp   = 21;
     F9_2610   = 0;
     F10_2610  = 1;
     F18_2610  = 0;
@@ -605,7 +605,7 @@ int antifirelogic_exb::logic_EXB()
 Counter_EXB++;
 
 //				   F91 toggle
-if (Ush1dpl >= 16.0)
+if (ush1dpl >= 16.0)
 {
     if (F9_2610 == true)
     {
@@ -621,7 +621,7 @@ else
     F91_2610 = false;
 }
 //				   F101 toggle
-if (Ush1dpp >= 16.0)
+if (ush1dpp >= 16.0)
 {
     if (F10_2610 == true)
     {
@@ -633,7 +633,7 @@ if (Ush1dpp >= 16.0)
     }
 }
 //					F181 toggle
-if (Ush1dpl >= 16.0)
+if (ush1dpl >= 16.0)
 {
     if (F18_2610 == true)
     {
@@ -645,7 +645,7 @@ if (Ush1dpl >= 16.0)
     }
 }
 //					F111 toggle
-if (Ush2dpl >= 16.0)
+if (ush2dpl >= 16.0)
 {
     if (F11_2610 == true)
     {
@@ -657,7 +657,7 @@ if (Ush2dpl >= 16.0)
     }
 }
 //					F121 toggle
-if (Ush2dpl >= 16.0)
+if (ush2dpl >= 16.0)
 {
     if (F12_2610 == true)
     {
@@ -1504,8 +1504,8 @@ if (F121_2610 == true && K49_2610 == true)
     F915_2610_label->setText("F915 = " + QString::number(F915_2610));
     F916_2610_label->setText("F916 = " + QString::number(F916_2610));
     F917_2610_label->setText("F917 = " + QString::number(F917_2610));
-    Ush2dpl_label->setText("Ush2dpl = " + QString::number(Ush2dpl));
-    Ush2dpp_label->setText("Ush2dpp = " + QString::number(Ush2dpp));
+    Ush2dpl_label->setText("Ush2dpl = " + QString::number(ush2dpl));
+    Ush2dpp_label->setText("Ush2dpp = " + QString::number(ush2dpp));
     S1_2610_label->setText("S1 = " + QString::number(S1_2610));
     S2_2610_label->setText("S2 = " + QString::number(S2_2610));
     S11_2610_label->setText("S11 = " + QString::number(S11_2610));
@@ -1596,35 +1596,35 @@ int antifirelogic_exb::PAPDvh6_off()
 }
 int antifirelogic_exb::Ush1dpl_on()
 {
-    Ush1dpl = 21.0;
+    ush1dpl = 21.0;
 }
 int antifirelogic_exb::Ush1dpl_off()
 {
-    Ush1dpl = 0.0;
+    ush1dpl = 0.0;
 }
 int antifirelogic_exb::Ush1dpp_on()
 {
-    Ush1dpp = 21.0;
+    ush1dpp = 21.0;
 }
 int antifirelogic_exb::Ush1dpp_off()
 {
-    Ush1dpp = 0.0;
+    ush1dpp = 0.0;
 }
 int antifirelogic_exb::Ush2dpl_on()
 {
-    Ush2dpl = 21.0;
+    ush2dpl = 21.0;
 }
 int antifirelogic_exb::Ush2dpl_off()
 {
-    Ush2dpl = 0.0;
+    ush2dpl = 0.0;
 }
 int antifirelogic_exb::Ush2dpp_on()
 {
-    Ush2dpp = 21.0;
+    ush2dpp = 21.0;
 }
 int antifirelogic_exb::Ush2dpp_off()
 {
-    Ush2dpp = 0.0;
+    ush2dpp = 0.0;
 }
 int antifirelogic_exb::S1_2610_CW()
 {

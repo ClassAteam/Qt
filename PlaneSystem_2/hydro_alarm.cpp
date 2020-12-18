@@ -51,12 +51,12 @@ puksgs1,
 puksgs2,
 puksgs3,
 puksgs4,
-Ush01l;
+usho1l;
 
 hydro_alarm::hydro_alarm(QWidget*pwgt)
     : QWidget(pwgt)
 {
-    Ush01l = 19.0;
+    usho1l = 19.0;
     F14_2930 = 1;
     F15_2930 = 1;
     F1_2930 = 1;
@@ -226,7 +226,7 @@ hydro_alarm::hydro_alarm(QWidget*pwgt)
 
 void hydro_alarm::logic_halarm()
 {
-    double* U1_pool[] = {&Ush1dpl, &Ush1dpl, &Ush1dpp, &Ush1dpp};
+    double* U1_pool[] = {&ush1dpl, &ush1dpl, &ush1dpp, &ush1dpp};
     double* U2_pool[] = {&Ushavlp, &Ushavlp, &Ushavlp, &Ushavlp};
     bool* F_pool[] = {&F1_2930, &F1_2930, &F15_2930, &F15_2930};
     double* ppr_pool[] = {&pprgs1, &pprgs2, &pprgs3, &pprgs4};
@@ -237,7 +237,7 @@ void hydro_alarm::logic_halarm()
     double* uks_pool1[] = {&UKS1X259_60, &UKS1X262_63, &UKS1X264_65, &UKS1X267_68};
     double* uks_pool2[] = {&UKS1X333, &UKS1X334 , &UKS1X335, &UKS1X336};
     double* uks_pool3[] = {&UKS2X316, &UKS2X317 , &UKS2X318, &UKS2X319};
-    double* Ushal_pool[] = {&Ushal, &Ushal, &Ushap, &Ushap};
+    double* Ushal_pool[] = {&ushal, &ushal, &ushap, &ushap};
     bool* H_pool[] = {&H2_2910, &H1_2910, &H4_2910, &H5_2910};
     bool* K1_pool[] = {&K1_2930, &K2_2930, &K3_2930, &K4_2930};
     bool* K2_pool[] = {&K7_2910, &K8_2910, &K15_2910, &K18_2910};
@@ -260,7 +260,7 @@ void hydro_alarm::logic_halarm()
         *uks_pool1[i] = *puks_pool[i];
     }
 
-    if(Ush01l >= 18.0 && F14_2930 == true)
+    if(usho1l >= 18.0 && F14_2930 == true)
     {
         PK = true;
     }
@@ -274,7 +274,7 @@ void hydro_alarm::logic_halarm()
         PKL = false;
     }
 
-    if(Ushal >= 18.0 &&
+    if(ushal >= 18.0 &&
             K7_2910 == false &&
             K8_2910 == false &&
             K15_2910 == false &&
@@ -307,7 +307,7 @@ void hydro_alarm::logic_halarm()
         }
     }
 
-    if(Ush01l >= 18.0 && F14_2930 == true && S13_2920 == true)
+    if(usho1l >= 18.0 && F14_2930 == true && S13_2920 == true)
     {
         PKL1 = true;
     }
@@ -454,7 +454,7 @@ void hydro_alarm::logic_halarm()
     m_settext_lbl(puksgs2_label,puksgs2 , "puksgs2 ");
     m_settext_lbl(puksgs3_label,puksgs3 , "puksgs3 ");
     m_settext_lbl(puksgs4_label,puksgs4 , "puksgs4 ");
-    m_settext_lbl(Ush01l_label,Ush01l , "Ush01l ");
+    m_settext_lbl(Ush01l_label,usho1l , "Ush01l ");
     m_settext_lbl(BSS811X2d_label,BSS811X2d , "BSS811X2d");
     m_settext_lbl(BSS811X2e_label,BSS811X2e , "BSS811X2e");
     m_settext_lbl(BSS811X2f_label,BSS811X2f , "BSS811X2f");

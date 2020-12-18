@@ -191,7 +191,7 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     UKS2X337 = 0;
     UKS2X338 = 0;
     UKS2X339 = 0;
-    Ush1p = 20;
+    ush1p = 20;
     pn1gs1 = 0;
     pn1gs2 = 0;
     pn1gs3 = 0;
@@ -465,7 +465,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     K5_2910 = false;
     K23_2910 = false;
 
-    if(Ush1p >= 18.0 && F9_2910 == true)
+    if(ush1p >= 18.0 && F9_2910 == true)
     {
         F91_2910 = true;
     }
@@ -474,7 +474,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         F91_2910 = false;
     }
 
-    if(Ush2dpl >= 18.0 && F3_2910 == true)
+    if(ush2dpl >= 18.0 && F3_2910 == true)
     {
         F31_2910 = true;
         if(S1_2910 == true)
@@ -507,7 +507,7 @@ void hydro_pumpsrel::logic_pumpsrel()
             }
         }
 
-        if(Ushal >= 18.0)
+        if(ushal >= 18.0)
         {
             if(S35_3230 == true)
             {
@@ -520,7 +520,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         F31_2910 = false;
         F32_2910 = false;
     }
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(S39_3230 == true)
         {
@@ -658,7 +658,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     UKS2X326 = false;
     UKS2X327 = false;
 
-    if(Ushal >= 18.0)
+    if(ushal >= 18.0)
     {
         if(pn2gs2 <= 80)
         {
@@ -692,7 +692,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     UKS2X330 = false;
     UKS2X331 = false;
 
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(pn1gs3 <= 80)
         {
@@ -738,7 +738,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         }
         else
         {
-            if(Ushal >= 18.0 &&
+            if(ushal >= 18.0 &&
                     K4_2910 == false &&
                     K12_2910 == false &&
                     K25_2910 == false)
@@ -765,7 +765,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         }
         else
         {
-            if(Ushap >= 18.0 &&
+            if(ushap >= 18.0 &&
                     K4_2910 == false &&
                     K12_2910 == false &&
                     K2_2910 == false)
@@ -792,7 +792,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         }
         else
         {
-            if(Ushap >= 18 &&
+            if(ushap >= 18 &&
                     K2_2910 == false &&
                     K12_2910 == false &&
                     K25_2910 == false)
@@ -819,7 +819,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         }
         else
         {
-            if(Ushap >= 18 &&
+            if(ushap >= 18 &&
                     K4_2910 == false &&
                     K2_2910 == false &&
                     K25_2910 == false)
@@ -893,7 +893,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         K18_2910 = true;
     }
 
-    if(Ushal >= 18.0)
+    if(ushal >= 18.0)
     {
         if(K2_2910 == true || K1_2910 == true)
         {
@@ -903,7 +903,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         }
     }
 
-    if(Ushal >= 18.0)
+    if(ushal >= 18.0)
     {
         if(K2_2910 == true || K3_2910 == true)
         {
@@ -913,7 +913,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         }
     }
 
-    if(Ushal >= 18.0)
+    if(ushal >= 18.0)
     {
         if(K4_2910 == true || K3_2910 == true)
         {
@@ -923,7 +923,7 @@ void hydro_pumpsrel::logic_pumpsrel()
         }
     }
 
-    if(Ushal >= 18.0)
+    if(ushal >= 18.0)
     {
         if(K4_2910 == true || K1_2910 == true)
         {
@@ -932,7 +932,7 @@ void hydro_pumpsrel::logic_pumpsrel()
             UKS2X335 = true;
         }
     }
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(K12_2910 == true || K21_2910 == true)
         {
@@ -941,7 +941,7 @@ void hydro_pumpsrel::logic_pumpsrel()
             UKS2X336 = true;
         }
     }
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(K12_2910 == true || K19_2910 == true)
         {
@@ -950,7 +950,7 @@ void hydro_pumpsrel::logic_pumpsrel()
             UKS2X337 = true;
         }
     }
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(K25_2910 == true || K19_2910 == true)
         {
@@ -959,7 +959,7 @@ void hydro_pumpsrel::logic_pumpsrel()
             UKS2X338 = true;
         }
     }
-    if(Ushap >= 18.0)
+    if(ushap >= 18.0)
     {
         if(K25_2910 == true || K19_2910 == true)
         {
@@ -1056,7 +1056,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     UKS2X337_label->setText("UKS2X337 = " + QString::number(UKS2X337));
     UKS2X338_label->setText("UKS2X338 = " + QString::number(UKS2X338));
     UKS2X339_label->setText("UKS2X339 = " + QString::number(UKS2X339));
-    Ush1p_label->setText("Ush1p = " + QString::number(Ush1p));
+    Ush1p_label->setText("Ush1p = " + QString::number(ush1p));
     Pn1gs1_label->setText("pn1gs1 = " + QString::number(pn1gs1));
     Pn1gs2_label->setText("pn1gs2 = " + QString::number(pn1gs2));
     Pn1gs3_label->setText("pn1gs3 = " + QString::number(pn1gs3));

@@ -18,7 +18,7 @@ PRD2dv,
 PRD3dv,
 PRD4dv;
 extern double
-Ush2l;
+ush2l;
 class hydro_walarm : public QWidget
 {
     Q_OBJECT

@@ -94,7 +94,7 @@ int cabinlighting_navi::logic_navi()
     PV_OSN_HV_MIG = false;
 
 
-    if (Ush2p >= 18.0)
+    if (ush2p >= 18.0)
     {
         if (S1_3341 == 1)
         {

@@ -17,10 +17,10 @@ BSS811X1z,
 BSS811X1n,
 BSS811X1r;
 extern double
-Ush1dpl,
-Ush1dpp,
-Ush2dpl,
-Ush2dpp;
+ush1dpl,
+ush1dpp,
+ush2dpl,
+ush2dpp;
 
 class emergencyalarm_leftpilot : public QWidget
 {

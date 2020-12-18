@@ -62,11 +62,11 @@ extern double
 P_bal_l,
 P_bal_p,
 P_bal_per,
-Ush1dpl,
-Ush2dpl,
-Ush2dpp,
-Ushal,
-Ushap;
+ush1dpl,
+ush2dpl,
+ush2dpp,
+ushal,
+ushap;
 
 
 class landinggear_position : public QWidget

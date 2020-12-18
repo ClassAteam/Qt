@@ -241,7 +241,7 @@ void landinggear_position::logic_position()
     K45_3230 = false;
     UKS4X317 = false;
 
-    if(Ushap >= 19.0)
+    if(ushap >= 19.0)
     {
         if(S32_3230 == true && S55_3230 == false)
         {
@@ -266,7 +266,7 @@ void landinggear_position::logic_position()
     UKS4X314 = false;
     UKS4X315 = false;
 
-    if(Ushal >= 19.0)
+    if(ushal >= 19.0)
     {
         if(S49_3230 == true)
         {
@@ -282,7 +282,7 @@ void landinggear_position::logic_position()
     K26_3230 = false;
     UKS4X322 = false;
 
-    if(Ushal >= 19.0)
+    if(ushal >= 19.0)
     {
         if(S34_3230 == true && S57_3230 == false)
         {
@@ -304,7 +304,7 @@ void landinggear_position::logic_position()
 
     UKS4X310 = false;
 
-    if(Ushap >= 19.0)
+    if(ushap >= 19.0)
     {
         if(S38_3230 == true && S56_3230 == false)
         {
@@ -367,7 +367,7 @@ void landinggear_position::logic_position()
 
     BSS824X1v = false;
 
-    if(Ush2dpp >= 19.0)
+    if(ush2dpp >= 19.0)
     {
         if(delta_z > 0)
         {
@@ -383,7 +383,7 @@ void landinggear_position::logic_position()
 
         }
     }
-    if(Ush1dpl >= 19.0)
+    if(ush1dpl >= 19.0)
     {
         if(S17_3230 == true)
         {
@@ -425,7 +425,7 @@ void landinggear_position::logic_position()
     K39_3230 = false;
     K40_3230 = false;
 
-    if(Ush1dpl >= 19.0)
+    if(ush1dpl >= 19.0)
     {
         if(S17_3230 == true)
         {
@@ -446,7 +446,7 @@ void landinggear_position::logic_position()
             }
         }
     }
-    if(Ush1dpl >= 19.0)
+    if(ush1dpl >= 19.0)
     {
         if(S17_3230 == true)
         {
@@ -533,7 +533,7 @@ void landinggear_position::logic_position()
     UKS4X323 = false;
     UKS4X326 = false;
 
-    if(Ush2dpl >= 19.0)
+    if(ush2dpl >= 19.0)
     {
         m_switch(&K1_3230, &BSS824X1t);
         if(S18_2930 == true)

@@ -369,7 +369,7 @@ void landinggear_relay::logic_relay()
         }
     }
 
-    if (Ush2dpl >= 19.0)
+    if (ush2dpl >= 19.0)
     {
         F16_3230 = true;
         F13_3230 = true;

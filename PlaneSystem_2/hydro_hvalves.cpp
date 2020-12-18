@@ -195,15 +195,15 @@ hydro_hvalves::hydro_hvalves(QWidget*pwgt)
 void hydro_hvalves::logic_hvalves()
 {
     QVector<double> Ush_pool(4, false);
-    Ush_pool[0] = Ush1l;
-    Ush_pool[1] = Ush2l;
-    Ush_pool[2] = Ush1p;
-    Ush_pool[3] = Ush2p;
+    Ush_pool[0] = ush1l;
+    Ush_pool[1] = ush2l;
+    Ush_pool[2] = ush1p;
+    Ush_pool[3] = ush2p;
     QVector<double> Ushdp_pool(4, false);
-    Ushdp_pool[0] = Ush1dpl;
-    Ushdp_pool[1] = Ush2dpl;
-    Ushdp_pool[2] = Ush1dpp;
-    Ushdp_pool[3] = Ush2dpp;
+    Ushdp_pool[0] = ush1dpl;
+    Ushdp_pool[1] = ush2dpl;
+    Ushdp_pool[2] = ush1dpp;
+    Ushdp_pool[3] = ush2dpp;
     QVector<bool> PAPD_pool(4, false);
     PAPD_pool[0] = PAPD_26;
     PAPD_pool[1] = PAPD_27;
@@ -272,14 +272,14 @@ void hydro_hvalves::logic_hvalves()
             UKS_pool[i] = false;
         }
 
-        Ush1l =	Ush_pool[0];
-        Ush2l =	Ush_pool[1];
-        Ush1p =	Ush_pool[2];
-        Ush2p =	Ush_pool[3];
-        Ush1dpl =	Ushdp_pool[0];
-        Ush2dpl =	Ushdp_pool[1];
-        Ush1dpp =	Ushdp_pool[2];
-        Ush2dpp =	Ushdp_pool[3];
+        ush1l =	Ush_pool[0];
+        ush2l =	Ush_pool[1];
+        ush1p =	Ush_pool[2];
+        ush2p =	Ush_pool[3];
+        ush1dpl =	Ushdp_pool[0];
+        ush2dpl =	Ushdp_pool[1];
+        ush1dpp =	Ushdp_pool[2];
+        ush2dpp =	Ushdp_pool[3];
         PAPD_26 =	PAPD_pool[0];
         PAPD_27 =	PAPD_pool[1];
         PAPD_30 =	PAPD_pool[2];

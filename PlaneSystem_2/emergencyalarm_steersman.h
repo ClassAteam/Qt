@@ -9,10 +9,10 @@
 extern const double
 TICK;
 extern double
-Ush1dpl,
-Ush2dpl,
-Ush1dpp,
-Ush2dpp;
+ush1dpl,
+ush2dpl,
+ush1dpp,
+ush2dpp;
 
 class emergencyalarm_steersman : public QWidget
 {

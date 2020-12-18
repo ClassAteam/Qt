@@ -27,7 +27,7 @@ PZ3_sec,
 Counter_mkam;
 
 double
-Usho1p,
+usho1p,
 M;
 
 antiicing_mkam::antiicing_mkam(QWidget* pwgt)
@@ -48,7 +48,7 @@ antiicing_mkam::antiicing_mkam(QWidget* pwgt)
     otkaz_vozduhozabor =0;
     S1_3020 = 0;
     S6_3020 = 0;
-    Usho1p = 21.0;
+    usho1p = 21.0;
     M = 0.0;
     PZ1_sec = 0;
     PZ2_sec = 0;
@@ -213,7 +213,7 @@ int antiicing_mkam::logic_mkam()
     F12_3020 = false;
     K51_3020 = false;
 
-    if (Usho1p >= 18.0)
+    if (usho1p >= 18.0)
     {
 
         if (M <= 1.25)
@@ -230,7 +230,7 @@ int antiicing_mkam::logic_mkam()
 
     K2_3020 = false;
 
-    if (Ushap >= 18.0)
+    if (ushap >= 18.0)
     {
 
         if (!K51_3020)
@@ -506,8 +506,8 @@ int antiicing_mkam::logic_mkam()
     F134_3020_label->setText("F134_3020 = " + QString::number(F134_3020));
     S1_3020_label->setText("S1_3020 = " + QString::number(S1_3020));
     S6_3020_label->setText("S6_3020 = " + QString::number(S6_3020));
-    Usho1p_label->setText("Usho1p = " + QString::number(Usho1p));
-    Ushap_label->setText("Ushap = " + QString::number(Ushap));
+    Usho1p_label->setText("Usho1p = " + QString::number(usho1p));
+    Ushap_label->setText("Ushap = " + QString::number(ushap));
     PZ1_counter_label->setText("PZ1_counter = "
                                + QString::number(PZ1_sec));
     PZ2_counter_label->setText("PZ2_counter = "

@@ -187,7 +187,6 @@ void power_split::logic_split()
         uls27 = ush1l;
     }
     else
-    if(ush1l >= ush2l)
     {
         ush1l = ush2l;
         uls27 = ush2l;
@@ -228,16 +227,27 @@ void power_split::logic_split()
         ush2p = ush1p;
         ups27 = ush1p;
     }
+    else
+    {
+        ush1p = ush2p;
+        ups27 = ush2p;
+    }
 
     if(pss27)
     {
-        if(uls27 > ups27)
+        if(ush1l > ush1p)
         {
-            ups27 = uls27;
+            ush1p = ush1l;
+            ush2p = ush1l;
+            ushap = ush1l;
+            ups27 = ush1l;
         }
         else
         {
-            uls27 = ups27;
+            ush1l = ush1p;
+            ush2l = ush1p;
+            ushal = ush1p;
+            uls27 = ush1p;
         }
     }
 

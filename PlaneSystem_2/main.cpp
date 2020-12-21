@@ -151,7 +151,7 @@ int main(int argc, char *argv[])
     window_landinggear.setLayout(&layout_landinggear);
     window_landinggear.setWindowTitle("Landing Gear");
     window_landinggear.setWindowState(Qt::WindowFullScreen);
-//    window_landinggear.show();
+    window_landinggear.show();
 
     QWidget window_brakes;
     QHBoxLayout layout_brakes;

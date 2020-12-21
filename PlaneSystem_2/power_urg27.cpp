@@ -274,7 +274,7 @@ void power_urg27::logic_urg27()
             if(s7_2430 || (plp27 == false && ppp27 == false))
             {
                 purg27pk3 = true;
-                pss27 = true;
+//                pss27 = true;
             }
         }
 
@@ -480,8 +480,10 @@ void power_urg27::logic_urg27()
                     if(s7_2430 == true)
                     {
                         purg27pk1 = true;
+                        purg27pk4 = false;
                         purg27pk7 = false;
                         purg27pk9 = false;
+                        pss27 = true;
                     }
                 }
                 else
@@ -497,6 +499,12 @@ void power_urg27::logic_urg27()
 
         }
     }
+
+    if(ppgvsu27 && purg27pk4)
+    {
+        pss27 = false;
+    }
+
     if(prg1 || prg2)
     {
         purg27lk4 = false;

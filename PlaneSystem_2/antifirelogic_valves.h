@@ -68,19 +68,19 @@ public:
      QPushButton* S9_2610_off_button;
 
 public slots:
-    int logic_valves();
-    int S3_2610_on();
-    int S3_2610_off();
-    int S4_2610_on();
-    int S4_2610_off();
-    int S5_2610_on();
-    int S5_2610_off();
-    int S6_2610_on();
-    int S6_2610_off();
-    int S7_2610_on();
-    int S7_2610_off();
-    int S8_2610_on();
-    int S8_2610_off();
-    int S9_2610_on();
-    int S9_2610_off();
+    void logic_valves();
+    void S3_2610_on();
+    void S3_2610_off();
+    void S4_2610_on();
+    void S4_2610_off();
+    void S5_2610_on();
+    void S5_2610_off();
+    void S6_2610_on();
+    void S6_2610_off();
+    void S7_2610_on();
+    void S7_2610_off();
+    void S8_2610_on();
+    void S8_2610_off();
+    void S9_2610_on();
+    void S9_2610_off();
 };

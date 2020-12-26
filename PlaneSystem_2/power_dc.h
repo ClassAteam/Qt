@@ -9,14 +9,16 @@
 #include "algorithms.h"
 
 extern QVector<double>
-nVDfirst2,
-nVDsecond2;
+    nVDfirst2,
+    nVDsecond2;
 extern const double
-TICK;
+    TICK;
 extern bool
-BSS812X5t;
+    BSS812X5t;
 extern double
-ushal;
+    ivsu,
+    ushap,
+    ushal;
 
 class power_dc : public QWidget
 {
@@ -97,6 +99,10 @@ public:
     QLabel* iak2_label;
     QLabel* ea1_label;
     QLabel* ea2_label;
+    QLabel* qa1_label;
+    QLabel* qa2_label;
+    QLabel* ra1_label;
+    QLabel* ra2_label;
 //    QLabel* tickg1_label;
 //    QLabel* tickg2_label;
 //    QLabel* tickg3_label;

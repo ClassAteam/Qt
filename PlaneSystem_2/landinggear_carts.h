@@ -9,9 +9,9 @@ extern const double
 TICK;
 
 extern bool
-GK_oovsh,
-GK_vsh,
-GK_ush;
+gk_oovsh,
+gk_vsh,
+gk_ush;
 
 extern double
 Pgs2,

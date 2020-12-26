@@ -3,13 +3,13 @@
 
 bool
 otkaz_osn_sis_torm,
-PAFT,
-PAVTT,
+paft,
+pavtt,
 PAVT_N,
 PAVT_P,
 PAVT_S,
 PBAVTT,
-PBUTZO,
+pbutzo,
 PstartT,
 PstoyanT,
 PvkFT,
@@ -43,13 +43,13 @@ brakes_modes::brakes_modes(QWidget*pwgt)
     : QWidget(pwgt)
 {
     otkaz_osn_sis_torm = 0;
-    PAFT = 0;
-    PAVTT = 0;
+    paft = 0;
+    pavtt = 0;
     PAVT_N = 0;
     PAVT_P = 0;
     PAVT_S = 0;
     PBAVTT = 0;
-    PBUTZO = 0;
+    pbutzo = 0;
     PstartT = 0;
     PstoyanT = 0;
     PvkFT = 0;
@@ -341,41 +341,41 @@ void brakes_modes::logic_modes()
     PAVT_N = false;
     PAVT_P = false;
     PAVT_S = false;
-    PAVTT = false;
+    pavtt = false;
 
     if(ushal >= 18 && ush1dpl >= 18)
     {
         if(otkaz_osn_sis_torm == true)
         {
-            PBUTZO = false;
+            pbutzo = false;
             POOST = true;
-            PAFT = false;
+            paft = false;
         }
         else
         {
-            PBUTZO = true;
+            pbutzo = true;
             if(S1_3240 == 1)
             {
-                PAVTT = true;
+                pavtt = true;
                 PAVT_N = true;
             }
             else
             {
                 if(S1_3240 == 2)
                 {
-                    PAVTT = true;
+                    pavtt = true;
                     PAVT_P = true;
                 }
                 else
                 {
                     if(S1_3240 == 3)
                     {
-                        PAVTT = true;
+                        pavtt = true;
                         PAVT_S = true;
                     }
                     else
                     {
-                        PAVTT = false;
+                        pavtt = false;
                         PBAVTT = false;
                     }
                 }
@@ -384,7 +384,7 @@ void brakes_modes::logic_modes()
             if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12 )
             {
                 PBAVTT = true;
-                PAVTT = false;
+                pavtt = false;
             }
 
             if(S2_3240 == true)
@@ -409,30 +409,37 @@ void brakes_modes::logic_modes()
 
                 if(delta_z >= 23 && delta_z <= 28)
                 {
-                    if(PAFT == true || PRR == true)
+                    if(paft == true || PRR == true)
                     {
                         if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
                         {
                             PFT = true;
-                            PAFT = true;
+                            paft = true;
                         }
                     }
                 }
                 else
                 {
-                    PAFT = 0;
+                    paft = 0;
                 }
             }
             else
             {
-                PAFT = false;
+                paft = false;
             }
         }
 
     }
+    else
+    {
+        pavtt = false;
+        pbutzo = false;
+        paft = false;
+
+    }
 
 
-    if(PAVTT == false)
+    if(pavtt == false)
     {
         PAVT_N = false;
         PAVT_P = false;
@@ -443,9 +450,9 @@ void brakes_modes::logic_modes()
     otkaz_osn_sis_torm_label->setText
             ("otkaz_osn_sis_torm = " + QString::number(otkaz_osn_sis_torm));
     PAFT_label->setText
-            ("PAFT = " + QString::number(PAFT));
+            ("PAFT = " + QString::number(paft));
     PAVTT_label->setText
-            ("PAVTT = " + QString::number(PAVTT));
+            ("PAVTT = " + QString::number(pavtt));
     PAVT_N_label->setText
             ("PAVT_N = " + QString::number(PAVT_N));
     PAVT_P_label->setText
@@ -455,7 +462,7 @@ void brakes_modes::logic_modes()
     PBAVTT_label->setText
             ("PBAVTT = " + QString::number(PBAVTT));
     PBUTZO_label->setText
-            ("PBUTZO = " + QString::number(PBUTZO));
+            ("PBUTZO = " + QString::number(pbutzo));
     PstartT_label->setText
             ("PstartT = " + QString::number(PstartT));
     PstoyanT_label->setText

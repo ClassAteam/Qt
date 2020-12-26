@@ -118,12 +118,12 @@ void landinggear_racks_rel::logic_racks_rel()
         Ddelta_racks_rel = 0.125;
     }
 
-        if (GK_oovsh == false)
+        if (gk_oovsh == false)
         {
 
 
             // release loop
-            if (GK_vsh == true && GK_ush == false)
+            if (gk_vsh == true && gk_ush == false)
             {
                 if(delta_sh_l != 1 &&
                         delta_stv_l == 90)
@@ -155,7 +155,7 @@ void landinggear_racks_rel::logic_racks_rel()
             }
 
             // intake loop
-            if (GK_ush == true && GK_vsh == false)
+            if (gk_ush == true && gk_vsh == false)
             {
                 if(delta_sh_l != 0 &&
                         otkaz_nepoln_ubor_l == false &&
@@ -210,17 +210,17 @@ void landinggear_racks_rel::logic_racks_rel()
             }
 
             // emergency left release
-               if(delta_sh_l != 1  && GK_avl == true)
+               if(delta_sh_l != 1  && gk_avl == true)
                 {
                     racks_rel_left_tick++;
                     emit presure_retake(&P_bal_l);
                 }
-               if(delta_sh_p != 1  && GK_avp == true)
+               if(delta_sh_p != 1  && gk_avp == true)
                 {
                     racks_rel_right_tick++;
                     emit presure_retake(&P_bal_p);
                 }
-               if(delta_sh_n != 1  && GK_avn == true)
+               if(delta_sh_n != 1  && gk_avn == true)
                 {
                     racks_rel_nose_tick++;
                     emit presure_retake(&P_bal_per);
@@ -238,7 +238,7 @@ void landinggear_racks_rel::logic_racks_rel()
                releasing_loop(&delta_sh_n, &Ddelta_racks_rel_n,
                               &racks_rel_nose_tick, &racks_rel_nose_tick_sec);
         }
-        if(GK_oovsh == false && GK_vsh == false && GK_ush == false)
+        if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
         {
             racks_rel_left_tick_sec = 0;
             racks_rel_right_tick_sec = 0;

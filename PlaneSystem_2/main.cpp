@@ -61,6 +61,7 @@ int main(int argc, char *argv[])
     power_dc dc;
     power_urg27 urg27;
     power_split split;
+    power_loadcurrent loadcurrent;
 
     QTimer *timer = new QTimer;
 
@@ -184,6 +185,7 @@ int main(int argc, char *argv[])
     layout_power.addWidget(&dc.wgt_dc);
     layout_power.addWidget(&urg27.wgt_urg27);
     layout_power.addWidget(&split.wgt_split);
+    layout_power.addWidget(&loadcurrent.wgt_loadcurrent);
     window_power.setLayout(&layout_power);
     window_power.setWindowTitle("Power");
     window_power.setWindowState(Qt::WindowFullScreen);
@@ -300,6 +302,8 @@ int main(int argc, char *argv[])
                      &urg27 , SLOT(logic_urg27()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &split , SLOT(logic_split()));
+    QObject::connect(timer, SIGNAL(timeout()),
+                     &loadcurrent , SLOT(logic_loadcurrent()));
 
     //PRESURE RETAKE
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,

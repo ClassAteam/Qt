@@ -11,7 +11,7 @@ otkaz_lozhn_srab_prav_so121,
 PSOPD,
 PSOLD,
 PRSOL,
-PRSOP,
+prsop,
 PSOBLL,
 PSOBLP,
 PBSO1,
@@ -49,7 +49,7 @@ antiicing_lights::antiicing_lights(QWidget* pwgt)
     PSOBLL_tick = 0;
     PSOBLP_tick = 0;
     PRSOL = 0;
-    PRSOP = 0;
+    prsop = 0;
     PSOBLL = 0;
     PSOBLP = 0;
     BSS824X1T = 0;
@@ -240,11 +240,11 @@ int antiicing_lights::logic_lights()
             otkaz_p_so121 == false &&
             ush2p >= 18.0)
     {
-        PRSOP = true;
+        prsop = true;
     }
     else
     {
-        PRSOP = false;
+        prsop = false;
     }
 
     K2_3080 = false;
@@ -264,7 +264,7 @@ int antiicing_lights::logic_lights()
     }
 
     //K2_3080 toggle by right channel
-    if (PRSOP == true)
+    if (prsop == true)
     {
 
         if (signal_obled == true ||
@@ -327,7 +327,7 @@ int antiicing_lights::logic_lights()
         PSOBLL_sec = 0;
     }
     //Block check right channel
-    if (PRSOP == true)
+    if (prsop == true)
     {
         if (S3_3080 == true && PSOBLP_sec == 0)
         {
@@ -431,7 +431,7 @@ int antiicing_lights::logic_lights()
 
     PRSOL_label->setText ("PRSOL = " + QString::number(PRSOL));
 
-    PRSOP_label->setText ("PRSOP = " + QString::number(PRSOP));
+    PRSOP_label->setText ("PRSOP = " + QString::number(prsop));
 
     PSOBLL_label->setText ("PSOBLL = " + QString::number(PSOBLL));
 

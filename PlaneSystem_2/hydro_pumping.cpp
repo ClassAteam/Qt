@@ -255,10 +255,10 @@ hydro_pumping::hydro_pumping(QWidget*pwgt)
 
 void hydro_pumping::logic_pumping()
 {
-    bool PRNgs1_pool[] = {PRN1gs1, PRN2gs1};
-    bool PRNgs2_pool[] = {PRN1gs2, PRN2gs2};
-    bool PRNgs3_pool[] = {PRN1gs3, PRN2gs3};
-    bool PRNgs4_pool[] = {PRN1gs4, PRN2gs4};
+    bool PRNgs1_pool[] = {prn1gs1, prn2gs1};
+    bool PRNgs2_pool[] = {prn1gs2, prn2gs2};
+    bool PRNgs3_pool[] = {prn1gs3, prn2gs3};
+    bool PRNgs4_pool[] = {prn1gs4, prn2gs4};
     double* pngs1_pool[] = {&pn1gs1, &pn2gs1};
     double* pngs2_pool[] = {&pn1gs2, &pn2gs2};
     double* pngs3_pool[] = {&pn1gs3, &pn2gs3};

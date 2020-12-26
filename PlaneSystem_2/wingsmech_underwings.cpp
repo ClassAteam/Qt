@@ -7,16 +7,16 @@ otkaz_osn_2k_prekr,
 otkaz_1k_prekr,
 otkaz_2k_prekr,
 otkaz_rassgl_prekr,
-PRRKPR,
-PRR1KPR,
-PRR2KPR,
-PSR1KPR,
-PSR2KPR,
-POR1KPR,
-POR2KPR,
-S1_2780;
+prrkpr,
+prr1kpr,
+prr2kpr,
+psr1kpr,
+psr2kpr,
+por1kpr,
+por2kpr,
+s1_2780;
 int
-S2_2780;
+s2_2780;
 double
 Kpr,
 delta_pr_zad,
@@ -33,15 +33,15 @@ wingsmech_underwings::wingsmech_underwings(QWidget* pwgt)
     otkaz_1k_prekr = 0;
     otkaz_2k_prekr = 0;
     otkaz_rassgl_prekr = 0;
-    PRRKPR = 0;
-    PRR1KPR = 0;
-    PRR2KPR = 0;
-    PSR1KPR = 0;
-    PSR2KPR = 0;
-    POR1KPR = 0;
-    POR2KPR = 0;
-    S1_2780 = 0;
-    S2_2780 = 0;
+    prrkpr = 0;
+    prr1kpr = 0;
+    prr2kpr = 0;
+    psr1kpr = 0;
+    psr2kpr = 0;
+    por1kpr = 0;
+    por2kpr = 0;
+    s1_2780 = 0;
+    s2_2780 = 0;
     Kpr = 1;
     delta_pr_zad = 0;
     delta_pr_vh = 0;
@@ -243,18 +243,18 @@ wingsmech_underwings::wingsmech_underwings(QWidget* pwgt)
 void wingsmech_underwings::logic_underwings()
 {
     //start logic
-    PRR1KPR = false;
-    PSR1KPR = false;
-    POR1KPR = false;
+    prr1kpr = false;
+    psr1kpr = false;
+    por1kpr = false;
     delta_pr_zad = m_2_L_intervals(delta_zr_vh, 0, 0.6, 1.0, 0, 21, 21);
 
     if(Pgs2 >= 130)
     {
         if(ushal >= 18.0)
         {
-            if(S1_2780 == true)
+            if(s1_2780 == true)
             {
-                PRR1KPR = true;
+                prr1kpr = true;
             }
             else
             {
@@ -262,13 +262,13 @@ void wingsmech_underwings::logic_underwings()
                 {
                     if(S13_2750 == true)
                     {
-                        PSR1KPR = true;
+                        psr1kpr = true;
                     }
                     else
                     {
                         if(otkaz_osn_1k_prekr == false)
                         {
-                            POR1KPR = true;
+                            por1kpr = true;
                             if(P2OBLOP == false)
                             {
                                 delta_pr_zad = delta_pr_zad * Kpr;
@@ -279,18 +279,18 @@ void wingsmech_underwings::logic_underwings()
             }
         }
     }
-    PRRKPR = false;
-    PRR2KPR = false;
-    PSR2KPR = false;
-    POR2KPR = false;
+    prrkpr = false;
+    prr2kpr = false;
+    psr2kpr = false;
+    por2kpr = false;
 
     if(Pgs3 >= 130)
     {
         if(ushap >= 18.0)
         {
-            if(S1_2780 == true)
+            if(s1_2780 == true)
             {
-                PRR2KPR = true;
+                prr2kpr = true;
             }
             else
             {
@@ -298,13 +298,13 @@ void wingsmech_underwings::logic_underwings()
                 {
                     if(S13_2750 == true)
                     {
-                        PSR2KPR = true;
+                        psr2kpr = true;
                     }
                     else
                     {
                         if(otkaz_osn_2k_prekr == false)
                         {
-                            POR2KPR = true;
+                            por2kpr = true;
                             if(P2OBPOP == false)
                             {
                                 delta_pr_zad = delta_pr_zad * Kpr;
@@ -315,7 +315,7 @@ void wingsmech_underwings::logic_underwings()
             }
         }
     }
-    if(POR1KPR == true || PSR1KPR == true)
+    if(por1kpr == true || psr1kpr == true)
     {
         if(delta_pr_l < delta_pr_zad)
         {
@@ -338,7 +338,7 @@ void wingsmech_underwings::logic_underwings()
         Ddelta_pr_l = 0;
     }
 
-    if(POR2KPR == true || PSR2KPR == true)
+    if(por2kpr == true || psr2kpr == true)
     {
         if(delta_pr_p < delta_pr_zad)
         {
@@ -361,9 +361,9 @@ void wingsmech_underwings::logic_underwings()
         Ddelta_pr_p = 0;
     }
 
-    if(POR1KPR == true)
+    if(por1kpr == true)
     {
-        if(POR2KPR == false)
+        if(por2kpr == false)
         {
             Ddelta_pr_p = 0.5 * Ddelta_pr_p;
             Ddelta_pr_l = 0.5 * Ddelta_pr_l;
@@ -371,16 +371,16 @@ void wingsmech_underwings::logic_underwings()
     }
     else
     {
-        if(POR2KPR == true)
+        if(por2kpr == true)
         {
             Ddelta_pr_p = 0.5 * Ddelta_pr_p;
             Ddelta_pr_l = 0.5 * Ddelta_pr_l;
         }
     }
 
-    if(PRR1KPR == true)
+    if(prr1kpr == true)
     {
-        if(S2_2780 == 1)
+        if(s2_2780 == 1)
         {
             if(delta_pr_l >= 21)
             {
@@ -393,7 +393,7 @@ void wingsmech_underwings::logic_underwings()
         }
         else
         {
-            if(S2_2780 == 2)
+            if(s2_2780 == 2)
             {
                 if(delta_pr_l > 0)
                 {
@@ -411,9 +411,9 @@ void wingsmech_underwings::logic_underwings()
         }
     }
 
-    if(PRR2KPR == true)
+    if(prr2kpr == true)
     {
-        if(S2_2780 == 1)
+        if(s2_2780 == 1)
         {
             if(delta_pr_p >= 21)
             {
@@ -426,7 +426,7 @@ void wingsmech_underwings::logic_underwings()
         }
         else
         {
-            if(S2_2780 == 2)
+            if(s2_2780 == 2)
             {
                 if(delta_pr_p > 0)
                 {
@@ -442,20 +442,20 @@ void wingsmech_underwings::logic_underwings()
                 Ddelta_pr_p = 0;
             }
         }
-        PRRKPR = true;
+        prrkpr = true;
     }
     else
     {
-        if(PRR1KPR == true)
+        if(prr1kpr == true)
         {
             Ddelta_pr_l = 0.5 * Ddelta_pr_l;
             Ddelta_pr_p = 0.5 * Ddelta_pr_p;
-            PRRKPR = true;
+            prrkpr = true;
         }
     }
     if(abs(delta_pr_l - delta_pr_p) < 2.5)
     {
-        if(PRRKPR == true)
+        if(prrkpr == true)
         {
             delta_pr_l = delta_pr_l + (Ddelta_pr_l * (TICK / 1000));
             emit pgs_toconsume("pgs2");
@@ -513,25 +513,25 @@ void wingsmech_underwings::logic_underwings()
     otkaz_rassgl_prekr_label->setText
     ("otkaz_rassgl_prekr = " + QString::number(otkaz_rassgl_prekr));
     PRRKPR_label->setText
-    ("PRRKPR = " + QString::number(PRRKPR));
+    ("PRRKPR = " + QString::number(prrkpr));
     PRR1KPR_label->setText
-    ("PRR1KPR = " + QString::number(PRR1KPR));
+    ("PRR1KPR = " + QString::number(prr1kpr));
     PRR2KPR_label->setText
-    ("PRR2KPR = " + QString::number(PRR2KPR));
+    ("PRR2KPR = " + QString::number(prr2kpr));
     PSR1KPR_label->setText
-    ("PSR1KPR = " + QString::number(PSR1KPR));
+    ("PSR1KPR = " + QString::number(psr1kpr));
     PSR2KPR_label->setText
-    ("PSR2KPR = " + QString::number(PSR2KPR));
+    ("PSR2KPR = " + QString::number(psr2kpr));
     POR1KPR_label->setText
-    ("POR1KPR = " + QString::number(POR1KPR));
+    ("POR1KPR = " + QString::number(por1kpr));
     POR2KPR_label->setText
-    ("POR2KPR = " + QString::number(POR2KPR));
+    ("POR2KPR = " + QString::number(por2kpr));
     S1_2780_label->setText
-    ("S1_2780 = " + QString::number(S1_2780));
+    ("S1_2780 = " + QString::number(s1_2780));
     S2_2780_label->setText
-    ("S2_2780 = " + QString::number(S2_2780));
+    ("S2_2780 = " + QString::number(s2_2780));
     S2_2790_label->setText
-    ("S2_2790 = " + QString::number(S2_2790));
+    ("S2_2790 = " + QString::number(s2_2790));
     Kpr_label->setText
     ("Kpr = " + QString::number(Kpr));
     delta_pr_zad_label->setText
@@ -548,23 +548,23 @@ void wingsmech_underwings::logic_underwings()
     ("delta_pr_p = " + QString::number(delta_pr_p));
 
     PRR1KPCHK_label->setText
-    ("PRR1KPCHK = " + QString::number(PRR1KPCHK));
+    ("PRR1KPCHK = " + QString::number(prr1kpchk));
     PRR2KPCHK_label->setText
-    ("PRR2KPCHK = " + QString::number(PRR2KPCHK));
+    ("PRR2KPCHK = " + QString::number(prr2kpchk));
     POR1KPCHK_label->setText
-    ("POR1KPCHK = " + QString::number(POR1KPCHK));
+    ("POR1KPCHK = " + QString::number(por1kpchk));
     POR2KPCHK_label->setText
-    ("POR2KPCHK = " + QString::number(POR2KPCHK));
+    ("POR2KPCHK = " + QString::number(por2kpchk));
     PGS1_label->setText
-    ("PGS1 = " + QString::number(PGS1));
+    ("PGS1 = " + QString::number(pgs1));
     PGS2_label->setText
-    ("PGS2 = " + QString::number(PGS2));
+    ("PGS2 = " + QString::number(pgs2));
     PGS3_label->setText
-    ("PGS3 = " + QString::number(PGS3));
+    ("PGS3 = " + QString::number(pgs3));
     PGS4_label->setText
-    ("PGS4 = " + QString::number(PGS4));
+    ("PGS4 = " + QString::number(pgs4));
     S1_2790_label->setText
-    ("S1_2790 = " + QString::number(S1_2790));
+    ("S1_2790 = " + QString::number(s1_2790));
     X_PCHK_label->setText
     ("X_PCHK = " + QString::number(X_PCHK));
     X_zad_label->setText
@@ -643,11 +643,11 @@ void wingsmech_underwings::m_togglebutton_R()
     }
     if(obj == S1_2780_on)
     {
-        m_RedButton(S1_2780_on, &S1_2780);
+        m_RedButton(S1_2780_on, &s1_2780);
     }
     if(obj == S1_2790_on)
     {
-        m_RedButton(S1_2790_on, &S1_2790);
+        m_RedButton(S1_2790_on, &s1_2790);
     }
     if(obj == otkaz_osn_1k_PCHK_on)
     {
@@ -682,27 +682,27 @@ void wingsmech_underwings::m_RadioButton(QRadioButton* button)
 {
     if(button == S2_2780_0_on)
     {
-        S2_2780 = 0;
+        s2_2780 = 0;
     }
     if(button == S2_2780_1_on)
     {
-        S2_2780 = 1;
+        s2_2780 = 1;
     }
     if(button == S2_2780_2_on)
     {
-        S2_2780 = 2;
+        s2_2780 = 2;
     }
     if(button == S2_2790_0_on)
     {
-        S2_2790 = 0;
+        s2_2790 = 0;
     }
     if(button == S2_2790_1_on)
     {
-        S2_2790 = 1;
+        s2_2790 = 1;
     }
     if(button == S2_2790_2_on)
     {
-        S2_2790 = 2;
+        s2_2790 = 2;
     }
 }
 int wingsmech_underwings::m_Slider(int)

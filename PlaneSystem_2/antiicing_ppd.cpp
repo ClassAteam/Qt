@@ -6,9 +6,9 @@ obogrev_ppd1_ispr,
 obogrev_ppd2_ispr,
 obogrev_ppd3_ispr,
 PKPPD,
-POPPD1,
-POPPD2,
-POPPD3,
+poppd1,
+poppd2,
+poppd3,
 K1_3030,
 K2_3030,
 K4_3030,
@@ -37,9 +37,9 @@ antiicing_ppd::antiicing_ppd(QWidget* pwgt)
     obogrev_ppd2_ispr = 0;
     obogrev_ppd3_ispr = 0;
     PKPPD = 0;
-    POPPD1 = 0;
-    POPPD2 = 0;
-    POPPD3 = 0;
+    poppd1 = 0;
+    poppd2 = 0;
+    poppd3 = 0;
     K1_3030 = 0;
     K2_3030 = 0;
     K4_3030 = 0;
@@ -420,30 +420,30 @@ int antiicing_ppd::logic_ppd()
     // POPPD2 toggle
     if (ush2p > 18.0 && K1_3030 == true)
     {
-        POPPD2 = true;
+        poppd2 = true;
     }
     else
     {
-        POPPD2 = false;
+        poppd2 = false;
     }
     // POPPD1 toggle
     if (ush1dpl  > 18.0 && K4_3030 == true)
     {
-        POPPD1 = true;
+        poppd1 = true;
     }
     else
     {
-        POPPD1 = false;
+        poppd1 = false;
     }
 
     // POPPD3 toggle
     if (ush2l > 18.0 && K7_3030 == true)
     {
-        POPPD3 = true;
+        poppd3 = true;
     }
     else
     {
-        POPPD3 = false;
+        poppd3 = false;
     }
     //lights toggle
     if (PKPPD == true)
@@ -490,9 +490,9 @@ int antiicing_ppd::logic_ppd()
     alpha_rud_4dv_label->setText
             ("RUD 4DV = " + QString::number(alpha_rud_4dv));
     PKPPD_label->setText ("PKPPD = " + QString::number(PKPPD));
-    POPPD1_label->setText ("POPPD1 = " + QString::number(POPPD1));
-    POPPD2_label->setText ("POPPD2 = " + QString::number(POPPD2));
-    POPPD3_label->setText ("POPPD3 = " + QString::number(POPPD3));
+    POPPD1_label->setText ("POPPD1 = " + QString::number(poppd1));
+    POPPD2_label->setText ("POPPD2 = " + QString::number(poppd2));
+    POPPD3_label->setText ("POPPD3 = " + QString::number(poppd3));
     K1_3030_label->setText ("K1_3030 = " + QString::number(K1_3030));
     K2_3030_label->setText ("K2_3030 = " + QString::number(K2_3030));
     K4_3030_label->setText ("K4_3030 = " + QString::number(K4_3030));

@@ -14,15 +14,15 @@ K22_3230,
 K23_3230,
 K28_3230,
 K29_3230,
-GK_avn,
-GK_avl,
-GK_avp,
-GK_vsh,
-GK_ush,
+gk_avn,
+gk_avl,
+gk_avp,
+gk_vsh,
+gk_ush,
 GK_dvl,
 GK_dvp,
 GK_duoop,
-GK_oovsh;
+gk_oovsh;
 
 extern double
 ushal,

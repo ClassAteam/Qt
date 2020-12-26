@@ -2,18 +2,18 @@
 #include "wingsmech_movingpart.h"
 
 bool
-PRRKPCHK,
-PRR1KPCHK,
-PRR2KPCHK,
-POR1KPCHK,
-POR2KPCHK,
-PGS1,
-PGS2,
-PGS3,
-PGS4,
-S1_2790;
+prrkpchk,
+prr1kpchk,
+prr2kpchk,
+por1kpchk,
+por2kpchk,
+pgs1,
+pgs2,
+pgs3,
+pgs4,
+s1_2790;
 int
-S2_2790;
+s2_2790;
 double
 X_PCHK,
 X_zad,
@@ -35,16 +35,16 @@ wingsmech_movingpart::wingsmech_movingpart(QWidget*pwgt)
     : QWidget(pwgt)
 {
     QFont underlined("Arial", 10, QFont::Bold);
-    PRR1KPCHK = 0;
-    PRR2KPCHK = 0;
-    POR1KPCHK = 0;
-    POR2KPCHK = 0;
-    PGS1 = 0;
-    PGS2 = 0;
-    PGS3 = 0;
-    PGS4 = 0;
-    S1_2790 = 0;
-    S2_2790 = 0;
+    prr1kpchk = 0;
+    prr2kpchk = 0;
+    por1kpchk = 0;
+    por2kpchk = 0;
+    pgs1 = 0;
+    pgs2 = 0;
+    pgs3 = 0;
+    pgs4 = 0;
+    s1_2790 = 0;
+    s2_2790 = 0;
     X_PCHK = 0;
     X_zad = 0;
     D_X_l = 0;
@@ -62,16 +62,16 @@ wingsmech_movingpart::wingsmech_movingpart(QWidget*pwgt)
 }
 void wingsmech_movingpart::logic_movingpart()
 {
-    PRRKPCHK = false;
-    PRR1KPCHK = false;
-    PRR2KPCHK = false;
-    POR1KPCHK = false;
-    POR2KPCHK = false;
+    prrkpchk = false;
+    prr1kpchk = false;
+    prr2kpchk = false;
+    por1kpchk = false;
+    por2kpchk = false;
 
-    PGS1 = false;
-    PGS2 = false;
-    PGS3 = false;
-    PGS4 = false;
+    pgs1 = false;
+    pgs2 = false;
+    pgs3 = false;
+    pgs4 = false;
 
     Kgs1 = 0;
     Kgs2 = 0;
@@ -87,32 +87,32 @@ void wingsmech_movingpart::logic_movingpart()
 
     if(Pgs1 >= 130)
     {
-        PGS1 = true;
+        pgs1 = true;
         Kgs1 = 0.25;
     }
     if(Pgs2 >= 130)
     {
-        PGS2 = true;
+        pgs2 = true;
         Kgs2 = 0.25;
     }
     if(Pgs3 >= 130)
     {
-        PGS3 = true;
+        pgs3 = true;
         Kgs3 = 0.25;
     }
     if(Pgs4 >= 130)
     {
-        PGS4 = true;
+        pgs4 = true;
         Kgs4 = 0.25;
     }
-    if(PGS1 == true || PGS2 == true)
+    if(pgs1 == true || pgs2 == true)
     {
         if(ushal >= 18)
         {
-            if(S1_2790 == true)
+            if(s1_2790 == true)
             {
-                PRRKPCHK = true;
-                PRR1KPCHK = true;
+                prrkpchk = true;
+                prr1kpchk = true;
             }
             else
             {
@@ -120,21 +120,21 @@ void wingsmech_movingpart::logic_movingpart()
                 {
                     if(ush1dpl >= 18)
                     {
-                        POR1KPCHK = true;
+                        por1kpchk = true;
                     }
                 }
             }
         }
     }
 
-    if(PGS3 == true || PGS4 == true)
+    if(pgs3 == true || pgs4 == true)
     {
         if(ushap >= 18)
         {
-            if(S1_2790 == true)
+            if(s1_2790 == true)
             {
-                PRRKPCHK = true;
-                PRR2KPCHK = true;
+                prrkpchk = true;
+                prr2kpchk = true;
             }
             else
             {
@@ -142,13 +142,13 @@ void wingsmech_movingpart::logic_movingpart()
                 {
                     if(ush1dpp >= 18)
                     {
-                        POR2KPCHK = true;
+                        por2kpchk = true;
                     }
                 }
             }
         }
     }
-    if(POR1KPCHK == true)
+    if(por1kpchk == true)
     {
         if((X_zad - X_L) >= 0)
         {
@@ -191,7 +191,7 @@ void wingsmech_movingpart::logic_movingpart()
         D_X_l = 0;
     }
 
-    if(POR2KPCHK == true)
+    if(por2kpchk == true)
     {
         if((X_zad - X_P) >= 0)
         {
@@ -237,9 +237,9 @@ void wingsmech_movingpart::logic_movingpart()
     ///////////////////////////////////////2nd list
     ///
 
-    if(PRR1KPCHK == true)
+    if(prr1kpchk == true)
     {
-        if(S2_2790 == 1)
+        if(s2_2790 == 1)
         {
             if(delta_z_l > 0)
             {
@@ -267,7 +267,7 @@ void wingsmech_movingpart::logic_movingpart()
         }
         else
         {
-            if(S2_2790 == 2)
+            if(s2_2790 == 2)
             {
                 D_X_l = -0.6;
 
@@ -282,9 +282,9 @@ void wingsmech_movingpart::logic_movingpart()
         }
     }
 
-    if(PRR2KPCHK == true)
+    if(prr2kpchk == true)
     {
-        if(S2_2790 == 1)
+        if(s2_2790 == 1)
         {
             if(delta_z_p > 0)
             {
@@ -312,7 +312,7 @@ void wingsmech_movingpart::logic_movingpart()
         }
         else
         {
-            if(S2_2790 == 2)
+            if(s2_2790 == 2)
             {
                 D_X_p = -0.6;
 
@@ -334,7 +334,7 @@ void wingsmech_movingpart::logic_movingpart()
 
     if(abs(X_L - X_P) < 1)
     {
-        if(PRRKPCHK == true)
+        if(prrkpchk == true)
         {
             X_L = X_L + (D_X_l * (TICK / 1000));
             emit consume_movingpart() ;
@@ -407,19 +407,19 @@ void wingsmech_movingpart::logic_movingpart()
 
 void wingsmech_movingpart::consume_movingpart()
 {
-    if(PGS1)
+    if(pgs1)
     {
         emit pgs_toconsume("pgs1");
     }
-    if(PGS2)
+    if(pgs2)
     {
         emit pgs_toconsume("pgs2");
     }
-    if(PGS3)
+    if(pgs3)
     {
         emit pgs_toconsume("pgs3");
     }
-    if(PGS4)
+    if(pgs4)
     {
         emit pgs_toconsume("pgs4");
     }
@@ -430,38 +430,38 @@ void wingsmech_movingpart::QgsConsumeAndBack(double* delta)
     {
         if(delta == &D_X_l)
         {
-            if(PGS1)
+            if(pgs1)
             {
                 emit signal_QgsConsume("qgs1");
             }
-            if(PGS2)
+            if(pgs2)
             {
                 emit signal_QgsConsume("qgs2");
             }
-            if(PGS3)
+            if(pgs3)
             {
                 emit signal_QgsConsume("qgs3");
             }
-            if(PGS4)
+            if(pgs4)
             {
                 emit signal_QgsConsume("qgs4");
             }
         }
         if(delta == &D_X_p)
         {
-            if(PGS1)
+            if(pgs1)
             {
                 emit signal_QgsConsume("qgs1");
             }
-            if(PGS2)
+            if(pgs2)
             {
                 emit signal_QgsConsume("qgs2");
             }
-            if(PGS3)
+            if(pgs3)
             {
                 emit signal_QgsConsume("qgs3");
             }
-            if(PGS4)
+            if(pgs4)
             {
                 emit signal_QgsConsume("qgs4");
             }
@@ -471,38 +471,38 @@ void wingsmech_movingpart::QgsConsumeAndBack(double* delta)
     {
         if(delta == &D_X_l)
         {
-            if(PGS1)
+            if(pgs1)
             {
                 emit signal_QgsGiveBack("qgs1");
             }
-            if(PGS2)
+            if(pgs2)
             {
                 emit signal_QgsGiveBack("qgs2");
             }
-            if(PGS3)
+            if(pgs3)
             {
                 emit signal_QgsGiveBack("qgs3");
             }
-            if(PGS4)
+            if(pgs4)
             {
                 emit signal_QgsGiveBack("qgs4");
             }
         }
         if(delta == &D_X_p)
         {
-            if(PGS1)
+            if(pgs1)
             {
                 emit signal_QgsGiveBack("qgs1");
             }
-            if(PGS2)
+            if(pgs2)
             {
                 emit signal_QgsGiveBack("qgs2");
             }
-            if(PGS3)
+            if(pgs3)
             {
                 emit signal_QgsGiveBack("qgs3");
             }
-            if(PGS4)
+            if(pgs4)
             {
                 emit signal_QgsGiveBack("qgs4");
             }

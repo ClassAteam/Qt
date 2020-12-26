@@ -503,33 +503,33 @@ void brakes_skid::logic_skid()
 
 void brakes_skid::consume()
 {
-   if(PBUTZO)
+   if(pbutzo)
    {
        emit pgs_toconsume("pgs2");
    }
-   if(PBUTZR)
+   if(pbutzr)
    {
        emit pgs_toconsume("pgs3");
    }
 }
 void brakes_skid::ConsumeQgs()
 {
-   if(PBUTZO)
+   if(pbutzo)
    {
        emit signal_QgsConsume("qgs2");
    }
-   if(PBUTZR)
+   if(pbutzr)
    {
        emit signal_QgsConsume("qgs3");
    }
 }
 void brakes_skid::GiveBackQgs()
 {
-   if(PBUTZO)
+   if(pbutzo)
    {
        emit signal_QgsGiveBack("qgs2");
    }
-   if(PBUTZR)
+   if(pbutzr)
    {
        emit signal_QgsGiveBack("qgs3");
    }

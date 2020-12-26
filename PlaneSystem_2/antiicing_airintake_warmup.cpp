@@ -274,7 +274,7 @@ antiicing_airintake_warmup::antiicing_airintake_warmup(QWidget* pwgt)
 int antiicing_airintake_warmup::logic_warmup()
 {
     //1 K56 toggle
-    if (F34_3020 == true)
+    if (f34_3020 == true)
     {
 
         if(K14_3020 == false &&
@@ -298,7 +298,7 @@ int antiicing_airintake_warmup::logic_warmup()
     K22_3020 = false;
 
     //2 K57 toggle
-    if (F320_3020 == true)
+    if (f320_3020 == true)
     {
 
         if(K21_3020 == false &&
@@ -322,7 +322,7 @@ int antiicing_airintake_warmup::logic_warmup()
     K29_3020 = false;
 
     //3 K58 toggle
-    if (F330_3020 == true)
+    if (f330_3020 == true)
     {
 
         if(K30_3020 == false &&
@@ -346,7 +346,7 @@ int antiicing_airintake_warmup::logic_warmup()
     K40_3020 = false;
 
     //4 K59 toggle
-    if (F340_3020 == true)
+    if (f340_3020 == true)
     {
 
         if(K37_3020 == false &&
@@ -370,7 +370,7 @@ int antiicing_airintake_warmup::logic_warmup()
     K46_3020 = false;
 
     //K22 delaying
-    if (F32_3020 == true && K56_3020 == false)
+    if (f32_3020 == true && K56_3020 == false)
     {
         Counter_warmup_k22++;
 
@@ -388,7 +388,7 @@ int antiicing_airintake_warmup::logic_warmup()
     }
 
     //K29 delaying
-    if (F319_3020 == true && K57_3020 == false)
+    if (f319_3020 == true && K57_3020 == false)
     {
         Counter_warmup_k29++;
 
@@ -406,7 +406,7 @@ int antiicing_airintake_warmup::logic_warmup()
     }
 
     //K40 delaying
-    if (F356_3020 == true && K58_3020 == false)
+    if (f356_3020 == true && K58_3020 == false)
     {
         Counter_warmup_k40++;
 
@@ -424,7 +424,7 @@ int antiicing_airintake_warmup::logic_warmup()
     }
 
     //K46 delaying
-    if (F353_3020 == true && K59_3020 == false)
+    if (f353_3020 == true && K59_3020 == false)
     {
         Counter_warmup_k46++;
 

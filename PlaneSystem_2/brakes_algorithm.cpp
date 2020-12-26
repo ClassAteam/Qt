@@ -195,7 +195,7 @@ void brakes_algorithm::logic_algorithm()
 
             }
 
-            if(PAVTT == true && PFT == true)
+            if(pavtt == true && PFT == true)
             {
                 P_t_lev = P_t_lev + 25.0;
                 P_t_prav = P_t_prav + 25.0;
@@ -203,7 +203,7 @@ void brakes_algorithm::logic_algorithm()
 
             if(PAVART == true)
             {
-                if(PAVTT == true)
+                if(pavtt == true)
                 {
                     if(PRR == true)
                     {
@@ -266,7 +266,7 @@ void brakes_algorithm::logic_algorithm()
         {
             P_t_lev = 0;
             P_t_prav = 0;
-            if(PBUTZO == true &&
+            if(pbutzo == true &&
                     S1_3230 == true &&
                     PRR == true &&
                     K27_3230 == false &&

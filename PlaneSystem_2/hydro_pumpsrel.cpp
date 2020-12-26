@@ -64,18 +64,18 @@ K38_2910,
 K3_2910,
 K4_2910,
 PBI4M_1,
-PRN1gs1,
-PRN1gs2,
-PRN1gs3,
-PRN1gs4,
-PRN2gs1,
-PRN2gs2,
-PRN2gs3,
-PRN2gs4,
-S1_2910,
-S2_2910,
-S3_2910,
-S4_2910,
+prn1gs1,
+prn1gs2,
+prn1gs3,
+prn1gs4,
+prn2gs1,
+prn2gs2,
+prn2gs3,
+prn2gs4,
+s1_2910,
+s2_2910,
+s3_2910,
+s4_2910,
 UKS2X324,
 UKS2X325,
 UKS2X326,
@@ -160,18 +160,18 @@ hydro_pumpsrel::hydro_pumpsrel(QWidget*pwgt)
     K8_2910 = 0;
     K9_2910 = 0;
     PBI4M_1 = 0;
-    PRN1gs1 = 0;
-    PRN1gs2 = 0;
-    PRN1gs3 = 0;
-    PRN1gs4 = 0;
-    PRN2gs1 = 0;
-    PRN2gs2 = 0;
-    PRN2gs3 = 0;
-    PRN2gs4 = 0;
-    S1_2910 = 0;
-    S2_2910 = 0;
-    S3_2910 = 0;
-    S4_2910 = 0;
+    prn1gs1 = 0;
+    prn1gs2 = 0;
+    prn1gs3 = 0;
+    prn1gs4 = 0;
+    prn2gs1 = 0;
+    prn2gs2 = 0;
+    prn2gs3 = 0;
+    prn2gs4 = 0;
+    s1_2910 = 0;
+    s2_2910 = 0;
+    s3_2910 = 0;
+    s4_2910 = 0;
     S5_2910 = 0;
     S6_2910 = 0;
     S7_2910 = 0;
@@ -477,7 +477,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     if(ush2dpl >= 18.0 && F3_2910 == true)
     {
         F31_2910 = true;
-        if(S1_2910 == true)
+        if(s1_2910 == true)
         {
             K9_2910 = true;
             K5_2910 = true;
@@ -548,14 +548,14 @@ void hydro_pumpsrel::logic_pumpsrel()
         F323_2910 = false;
     }
 
-    if(F32_2910 == true && S2_2910 == true)
+    if(F32_2910 == true && s2_2910 == true)
     {
         F323_2910 = true;
     }
 
     if(F323_2910 == true && F32_2910 == true)
     {
-        if(S3_2910 == true)
+        if(s3_2910 == true)
         {
             K1_2910 = true;
             K3_2910 = false;
@@ -566,7 +566,7 @@ void hydro_pumpsrel::logic_pumpsrel()
             K3_2910 = true;
         }
 
-        if(S4_2910 == true)
+        if(s4_2910 == true)
         {
             K19_2910 = false;
             K21_2910 = true;
@@ -622,7 +622,7 @@ void hydro_pumpsrel::logic_pumpsrel()
             K10_2910 = true;
         }
 
-        if(S1_2910 == true)
+        if(s1_2910 == true)
         {
             K11_2910 = false;
         }
@@ -833,43 +833,43 @@ void hydro_pumpsrel::logic_pumpsrel()
     K8_2910 = false;
     K15_2910 = false;
     K18_2910 = false;
-    PRN2gs2 = false;
+    prn2gs2 = false;
     K13_2910 = false;
     UKS2X332 = false;
 
-    PRN1gs1 = false;
+    prn1gs1 = false;
     K14_2910 = false;
     UKS2X333 = false;
 
-    PRN1gs2 = false;
+    prn1gs2 = false;
     K16_2910 = false;
     UKS2X334 = false;
 
-    PRN2gs1 = false;
+    prn2gs1 = false;
     K17_2910 = false;
     UKS2X335 = false;
 
-    PRN2gs4 = false;
+    prn2gs4 = false;
     K20_2910 = false;
     UKS2X336 = false;
 
-    PRN1gs3 = false;
+    prn1gs3 = false;
     K33_2910 = false;
     UKS2X337 = false;
 
-    PRN1gs4 = false;
+    prn1gs4 = false;
     K20_2910 = false;
     UKS2X336 = false;
 
-    PRN1gs3 = false;
+    prn1gs3 = false;
     K33_2910 = false;
     UKS2X337 = false;
 
-    PRN1gs4 = false;
+    prn1gs4 = false;
     K36_2910 = false;
     UKS2X338 = false;
 
-    PRN2gs3 = false;
+    prn2gs3 = false;
     K37_2910 = false;
     UKS2X339 = false;
 
@@ -897,7 +897,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K2_2910 == true || K1_2910 == true)
         {
-            PRN2gs2 = true;
+            prn2gs2 = true;
             K13_2910 = true;
             UKS2X332 = true;
         }
@@ -907,7 +907,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K2_2910 == true || K3_2910 == true)
         {
-            PRN1gs1 = true;
+            prn1gs1 = true;
             K14_2910 = true;
             UKS2X333 = true;
         }
@@ -917,7 +917,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K4_2910 == true || K3_2910 == true)
         {
-            PRN1gs2 = true;
+            prn1gs2 = true;
             K16_2910 = true;
             UKS2X334 = true;
         }
@@ -927,7 +927,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K4_2910 == true || K1_2910 == true)
         {
-            PRN2gs1 = true;
+            prn2gs1 = true;
             K17_2910 = true;
             UKS2X335 = true;
         }
@@ -936,7 +936,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K12_2910 == true || K21_2910 == true)
         {
-            PRN2gs4 = true;
+            prn2gs4 = true;
             K20_2910 = true;
             UKS2X336 = true;
         }
@@ -945,7 +945,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K12_2910 == true || K19_2910 == true)
         {
-            PRN1gs3 = true;
+            prn1gs3 = true;
             K33_2910 = true;
             UKS2X337 = true;
         }
@@ -954,7 +954,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K25_2910 == true || K19_2910 == true)
         {
-            PRN1gs4 = true;
+            prn1gs4 = true;
             K36_2910 = true;
             UKS2X338 = true;
         }
@@ -963,7 +963,7 @@ void hydro_pumpsrel::logic_pumpsrel()
     {
         if(K25_2910 == true || K19_2910 == true)
         {
-            PRN2gs3 = true;
+            prn2gs3 = true;
             K37_2910 = true;
             UKS2X339 = true;
         }
@@ -1025,18 +1025,18 @@ void hydro_pumpsrel::logic_pumpsrel()
     K8_2910_label->setText("K8_2910 = " + QString::number(K8_2910));
     K9_2910_label->setText("K9_2910 = " + QString::number(K9_2910));
     PBI4M_1_label->setText("PBI4M_1 = " + QString::number(PBI4M_1));
-    PRN1gs1_label->setText("PRN1gs1 = " + QString::number(PRN1gs1));
-    PRN1gs2_label->setText("PRN1gs2 = " + QString::number(PRN1gs2));
-    PRN1gs3_label->setText("PRN1gs3 = " + QString::number(PRN1gs3));
-    PRN1gs4_label->setText("PRN1gs4 = " + QString::number(PRN1gs4));
-    PRN2gs1_label->setText("PRN2gs1 = " + QString::number(PRN2gs1));
-    PRN2gs2_label->setText("PRN2gs2 = " + QString::number(PRN2gs2));
-    PRN2gs3_label->setText("PRN2gs3 = " + QString::number(PRN2gs3));
-    PRN2gs4_label->setText("PRN2gs4 = " + QString::number(PRN2gs4));
-    S1_2910_label->setText("S1_2910 = " + QString::number(S1_2910));
-    S2_2910_label->setText("S2_2910 = " + QString::number(S2_2910));
-    S3_2910_label->setText("S3_2910 = " + QString::number(S3_2910));
-    S4_2910_label->setText("S4_2910 = " + QString::number(S4_2910));
+    PRN1gs1_label->setText("PRN1gs1 = " + QString::number(prn1gs1));
+    PRN1gs2_label->setText("PRN1gs2 = " + QString::number(prn1gs2));
+    PRN1gs3_label->setText("PRN1gs3 = " + QString::number(prn1gs3));
+    PRN1gs4_label->setText("PRN1gs4 = " + QString::number(prn1gs4));
+    PRN2gs1_label->setText("PRN2gs1 = " + QString::number(prn2gs1));
+    PRN2gs2_label->setText("PRN2gs2 = " + QString::number(prn2gs2));
+    PRN2gs3_label->setText("PRN2gs3 = " + QString::number(prn2gs3));
+    PRN2gs4_label->setText("PRN2gs4 = " + QString::number(prn2gs4));
+    S1_2910_label->setText("S1_2910 = " + QString::number(s1_2910));
+    S2_2910_label->setText("S2_2910 = " + QString::number(s2_2910));
+    S3_2910_label->setText("S3_2910 = " + QString::number(s3_2910));
+    S4_2910_label->setText("S4_2910 = " + QString::number(s4_2910));
     S5_2910_label->setText("S5_2910 = " + QString::number(S5_2910));
     S6_2910_label->setText("S6_2910 = " + QString::number(S6_2910));
     S7_2910_label->setText("S7_2910 = " + QString::number(S7_2910));
@@ -1072,19 +1072,19 @@ void hydro_pumpsrel::m_togglebutton_R()
     obj = QObject::sender();
     if(obj == S1_2910_on)
     {
-        m_RedButton(S1_2910_on, &S1_2910);
+        m_RedButton(S1_2910_on, &s1_2910);
     }
     if(obj == S2_2910_on)
     {
-        m_RedButton(S2_2910_on, &S2_2910);
+        m_RedButton(S2_2910_on, &s2_2910);
     }
     if(obj == S3_2910_on)
     {
-        m_RedButton(S3_2910_on, &S3_2910);
+        m_RedButton(S3_2910_on, &s3_2910);
     }
     if(obj == S4_2910_on)
     {
-        m_RedButton(S4_2910_on, &S4_2910);
+        m_RedButton(S4_2910_on, &s4_2910);
     }
     if(obj == S5_2910_on)
     {

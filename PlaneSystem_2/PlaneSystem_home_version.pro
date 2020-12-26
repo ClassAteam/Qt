@@ -67,6 +67,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     power_dc.cpp \
+    power_loadcurrent.cpp \
     power_split.cpp \
     power_urg27.cpp \
     presure_regulation.cpp \
@@ -128,6 +129,7 @@ HEADERS += \
     main.h \
     mainwindow.h \
     power_dc.h \
+    power_loadcurrent.h \
     power_split.h \
     power_urg27.h \
     presure_regulation.h \

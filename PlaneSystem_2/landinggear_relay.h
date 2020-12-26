@@ -11,12 +11,12 @@ TICK;
 extern bool
 S28_3230,
 S29_3230,
-GK_avl,
-GK_avp,
-GK_avn,
-GK_oovsh,
-GK_vsh,
-GK_ush;
+gk_avl,
+gk_avp,
+gk_avn,
+gk_oovsh,
+gk_vsh,
+gk_ush;
 
 extern double
 ush2dpl,

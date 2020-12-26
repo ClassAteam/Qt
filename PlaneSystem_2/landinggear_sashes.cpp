@@ -9,12 +9,12 @@ nose_released,
 left_intaken,
 right_intaken,
 nose_intaken,
-GK_oovsh,
-GK_vsh,
-GK_ush,
-GK_avl,
-GK_avp,
-GK_avn;
+gk_oovsh,
+gk_vsh,
+gk_ush,
+gk_avl,
+gk_avp,
+gk_avn;
 
 int
 left_tick,
@@ -56,12 +56,12 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
     left_released = 0;
     right_released = 0;
     nose_released = 0;
-    GK_oovsh = 0;
-    GK_vsh = 0;
-    GK_ush = 0;
-    GK_avl = 0;
-    GK_avp = 0;
-    GK_avn = 0;
+    gk_oovsh = 0;
+    gk_vsh = 0;
+    gk_ush = 0;
+    gk_avl = 0;
+    gk_avp = 0;
+    gk_avn = 0;
     left_tick_sec = 0;
     right_tick_sec = 0;
     nose_tick_sec = 0;
@@ -208,7 +208,7 @@ landinggear_sashes::landinggear_sashes(QWidget* pwgt)
 }
 void landinggear_sashes::logic_sashes()
 {
-        if (GK_oovsh == false)
+        if (gk_oovsh == false)
         {
 
             //Ddelta_stv toggling
@@ -222,7 +222,7 @@ void landinggear_sashes::logic_sashes()
             }
 
             // release loop
-            if (GK_vsh == true && GK_ush == false)
+            if (gk_vsh == true && gk_ush == false)
             {
                 if(delta_stv_l != 90)
                 {
@@ -254,7 +254,7 @@ void landinggear_sashes::logic_sashes()
             }
 
             // intake loop
-            if (GK_ush == true && GK_vsh == false)
+            if (gk_ush == true && gk_vsh == false)
             {
                 if(delta_stv_l != 0 && delta_sh_l == 0)
                 {
@@ -306,17 +306,17 @@ void landinggear_sashes::logic_sashes()
             }
 
             // emergency left release
-               if(delta_stv_l != 90 && GK_avl == true)
+               if(delta_stv_l != 90 && gk_avl == true)
                 {
                     left_tick++;
                     emit presure_retake(&P_bal_l);
                 }
-                if(delta_stv_p != 90 && GK_avp == true)
+                if(delta_stv_p != 90 && gk_avp == true)
                 {
                     right_tick++;
                     emit presure_retake(&P_bal_p);
                 }
-                if(delta_stv_n != 90 && GK_avn == true)
+                if(delta_stv_n != 90 && gk_avn == true)
                 {
                     nose_tick++;
                     emit presure_retake(&P_bal_per);
@@ -334,7 +334,7 @@ void landinggear_sashes::logic_sashes()
                 releasing_loop(&delta_stv_n, &Ddelta_stv_n, &nose_tick,
                                &nose_tick_sec, &nose_released);
         }
-        if(GK_oovsh == false && GK_vsh == false && GK_ush == false)
+        if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
         {
             left_tick_sec = 0;
             right_tick_sec = 0;
@@ -354,17 +354,17 @@ void landinggear_sashes::logic_sashes()
     delta_sh_n_label->setText
     ("delta sh  N = " + QString::number(delta_sh_n));
     GK_oovsh_label->setText
-    ("GK_oovsh = " + QString::number(GK_oovsh));
+    ("GK_oovsh = " + QString::number(gk_oovsh));
     GK_vsh_label->setText
-    ("GK_vsh = " + QString::number(GK_vsh));
+    ("GK_vsh = " + QString::number(gk_vsh));
     GK_ush_label->setText
-    ("GK_ush = " + QString::number(GK_ush));
+    ("GK_ush = " + QString::number(gk_ush));
     GK_avl_label->setText
-    ("GK_avl = " + QString::number(GK_avl));
+    ("GK_avl = " + QString::number(gk_avl));
     GK_avp_label->setText
-    ("GK_avp = " + QString::number(GK_avp));
+    ("GK_avp = " + QString::number(gk_avp));
     GK_avn_label->setText
-    ("GK_avn = " + QString::number(GK_avn));
+    ("GK_avn = " + QString::number(gk_avn));
     left_tick_label->setText
     ("left_tick = " + QString::number(left_tick_sec));
     right_tick_label->setText
@@ -525,27 +525,27 @@ void landinggear_sashes::m_togglebutton_R()
     }
     if(obj == GK_oovsh_on_button)
     {
-        m_RedButton(GK_oovsh_on_button, &GK_oovsh);
+        m_RedButton(GK_oovsh_on_button, &gk_oovsh);
     }
     if(obj == GK_vsh_on_button)
     {
-        m_RedButton(GK_vsh_on_button, &GK_vsh);
+        m_RedButton(GK_vsh_on_button, &gk_vsh);
     }
     if(obj == GK_ush_on_button)
     {
-        m_RedButton(GK_ush_on_button, &GK_ush);
+        m_RedButton(GK_ush_on_button, &gk_ush);
     }
     if(obj == GK_avl_on_button)
     {
-        m_RedButton(GK_avl_on_button, &GK_avl);
+        m_RedButton(GK_avl_on_button, &gk_avl);
     }
     if(obj == GK_avp_on_button)
     {
-        m_RedButton(GK_avp_on_button, &GK_avp);
+        m_RedButton(GK_avp_on_button, &gk_avp);
     }
     if(obj == GK_avn_on_button)
     {
-        m_RedButton(GK_avn_on_button, &GK_avn);
+        m_RedButton(GK_avn_on_button, &gk_avn);
     }
 
 }

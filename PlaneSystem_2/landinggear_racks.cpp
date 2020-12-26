@@ -97,7 +97,7 @@ landinggear_racks::landinggear_racks(QWidget* pwgt)
 void landinggear_racks::logic_racks()
 {
 
-        if (GK_oovsh == false)
+        if (gk_oovsh == false)
         {
 
             //Ddelta_stv toggling
@@ -111,7 +111,7 @@ void landinggear_racks::logic_racks()
             }
 
             // release loop
-            if (GK_vsh == true && GK_ush == false)
+            if (gk_vsh == true && gk_ush == false)
             {
                 if(delta_racks_l != 1 &&
                         delta_stv_l == 90 &&
@@ -144,7 +144,7 @@ void landinggear_racks::logic_racks()
             }
 
             // intake loop
-            if (GK_ush == true && GK_vsh == false)
+            if (gk_ush == true && gk_vsh == false)
             {
                 if(delta_racks_l != 0 && delta_sh_l == 1)
                 {
@@ -189,7 +189,7 @@ void landinggear_racks::logic_racks()
                         delta_stv_l == 90 &&
                         delta_tel_l == 1 &&
                         delta_sh_l == 1 &&
-                        GK_avl == true)
+                        gk_avl == true)
                 {
                     racks_left_tick++;
                     emit presure_retake(&P_bal_l);
@@ -198,7 +198,7 @@ void landinggear_racks::logic_racks()
                         delta_stv_p == 90 &&
                         delta_tel_p == 1 &&
                         delta_sh_p == 1 &&
-                        GK_avp == true)
+                        gk_avp == true)
                 {
                     racks_right_tick++;
                     emit presure_retake(&P_bal_p);
@@ -211,7 +211,7 @@ void landinggear_racks::logic_racks()
                releasing_loop(&delta_racks_p, &Ddelta_racks_p, &racks_right_tick,
                               &racks_right_tick_sec);
         }
-        if(GK_oovsh == false && GK_vsh == false && GK_ush == false)
+        if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
         {
             racks_left_tick_sec = 0;
             racks_right_tick_sec = 0;

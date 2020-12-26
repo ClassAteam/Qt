@@ -183,7 +183,7 @@ brakes_balarm::brakes_balarm(QWidget*pwgt)
 void brakes_balarm::logic_balarm()
 {
     //start logic
-    if(PBUTZO == true || PBUTZR == true)
+    if(pbutzo == true || pbutzr == true)
     {
         balarm_BD11 = brakes_Pt[0];
         balarm_BD12 = brakes_Pt[1];
@@ -200,7 +200,7 @@ void brakes_balarm::logic_balarm()
         balarm_SA2 = PTavtP;
         balarm_AV1 = PAVT_S;
         balarm_SA1 = PTavtS;
-        balarm_AV0 = PAVTT;
+        balarm_AV0 = pavtt;
         balarm_SUF = PFT;
         balarm_SF = PTfors;
         balarm_AA11 = brakes_PRAT[0];
@@ -212,7 +212,7 @@ void brakes_balarm::logic_balarm()
         balarm_SVR1 = POOST;
         balarm_SS1 = false;
 
-        if(PBUTZO == true && (P_t_lev >= 30 || P_t_prav >= 30))
+        if(pbutzo == true && (P_t_lev >= 30 || P_t_prav >= 30))
         {
             if(POSH == true)
             {
@@ -223,13 +223,13 @@ void brakes_balarm::logic_balarm()
         }
         balarm_SS2 = false;
 
-        if(PBUTZR == true && Pgs3 >= 220 && POSH == true)
+        if(pbutzr == true && Pgs3 >= 220 && POSH == true)
         {
             balarm_SS2 = true;
         }
 
         balarm_SOR = PORST;
-        balarm_SVR2 = PBUTZR;
+        balarm_SVR2 = pbutzr;
         balarm_SDA = PPDGAKT;
         balarm_SUR = PvklR;
         balarm_SAT = PAVART;

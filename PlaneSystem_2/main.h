@@ -57,6 +57,7 @@
 #include <power_dc.h>
 #include <power_urg27.h>
 #include <power_split.h>
+#include <power_loadcurrent.h>
 
 QScrollArea* scrollArea_1;
 QScrollArea* scrollArea_2;

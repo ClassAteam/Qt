@@ -7,13 +7,13 @@ otkaz_osn_2k_zakr,
 otkaz_1k_zakr,
 otkaz_2k_zakr,
 otkaz_rassgl_zakr,
-PRRKZ,
-PRR1KZ,
-PRR2KZ,
-PSR1KZ,
-PSR2KZ,
-POR1KZ,
-POR2KZ,
+prrkz,
+prr1kz,
+prr2kz,
+psr1kz,
+psr2kz,
+por1kz,
+por2kz,
 S1_2750,
 S13_2750;
 int
@@ -43,13 +43,13 @@ wingsmech_flaps::wingsmech_flaps(QWidget* pwgt)
     otkaz_1k_zakr = 0;
     otkaz_2k_zakr = 0;
     otkaz_rassgl_zakr = 0;
-    PRRKZ = 0;
-    PRR1KZ = 0;
-    PRR2KZ = 0;
-    PSR1KZ = 0;
-    PSR2KZ = 0;
-    POR1KZ = 0;
-    POR2KZ = 0;
+    prrkz = 0;
+    prr1kz = 0;
+    prr2kz = 0;
+    psr1kz = 0;
+    psr2kz = 0;
+    por1kz = 0;
+    por2kz = 0;
     S1_2750 = 0;
     S13_2750 = 0;
     S2_2750 = 0;
@@ -212,9 +212,9 @@ void wingsmech_flaps::logic_flaps()
 {
 
     //start logic
-    PRR1KZ = false;
-    PSR1KZ = false;
-    POR1KZ = false;
+    prr1kz = false;
+    psr1kz = false;
+    por1kz = false;
     delta_z_zad = m_3_L_intervals(delta_zr_vh, 0, 0.3, 0.6, 1.0, 0, 15, 25, 40);
 
     if(Pgs1 >= 130)
@@ -223,7 +223,7 @@ void wingsmech_flaps::logic_flaps()
         {
             if(S1_2750 == true)
             {
-                PRR1KZ = true;
+                prr1kz = true;
             }
             else
             {
@@ -231,13 +231,13 @@ void wingsmech_flaps::logic_flaps()
                 {
                     if(S13_2750 == true)
                     {
-                        PSR1KZ = true;
+                        psr1kz = true;
                     }
                     else
                     {
                         if(otkaz_osn_1k_zakr == false)
                         {
-                            POR1KZ = true;
+                            por1kz = true;
                             if(P2OBLOP == false)
                             {
                                 delta_z_zad = delta_z_zad * Kz;
@@ -248,10 +248,10 @@ void wingsmech_flaps::logic_flaps()
             }
         }
     }
-    PRRKZ = false;
-    PRR2KZ = false;
-    PSR2KZ = false;
-    POR2KZ = false;
+    prrkz = false;
+    prr2kz = false;
+    psr2kz = false;
+    por2kz = false;
 
     if(Pgs4 >= 130)
     {
@@ -259,7 +259,7 @@ void wingsmech_flaps::logic_flaps()
         {
             if(S1_2750 == true)
             {
-                PRR2KZ = true;
+                prr2kz = true;
             }
             else
             {
@@ -267,13 +267,13 @@ void wingsmech_flaps::logic_flaps()
                 {
                     if(S13_2750 == true)
                     {
-                        PSR2KZ = true;
+                        psr2kz = true;
                     }
                     else
                     {
                         if(otkaz_osn_2k_zakr == false)
                         {
-                            POR2KZ = true;
+                            por2kz = true;
                             if(P2OBPOP == false)
                             {
                                 delta_z_zad = delta_z_zad * Kz;
@@ -284,7 +284,7 @@ void wingsmech_flaps::logic_flaps()
             }
         }
     }
-    if(POR1KZ == true || PSR1KZ == true)
+    if(por1kz == true || psr1kz == true)
     {
         if(delta_z_l < delta_z_zad)
         {
@@ -307,7 +307,7 @@ void wingsmech_flaps::logic_flaps()
         Ddelta_z_l = 0;
     }
 
-    if(POR2KZ == true || PSR2KZ == true)
+    if(por2kz == true || psr2kz == true)
     {
         if(delta_z_p < delta_z_zad)
         {
@@ -329,9 +329,9 @@ void wingsmech_flaps::logic_flaps()
     {
         Ddelta_z_p = 0;
     }
-    if(POR1KZ == true)
+    if(por1kz == true)
     {
-        if(POR2KZ == false)
+        if(por2kz == false)
         {
             Ddelta_z_p = 0.5 * Ddelta_z_p;
             Ddelta_z_l = 0.5 * Ddelta_z_l;
@@ -339,14 +339,14 @@ void wingsmech_flaps::logic_flaps()
     }
     else
     {
-        if(POR2KZ == true)
+        if(por2kz == true)
         {
             Ddelta_z_p = 0.5 * Ddelta_z_p;
             Ddelta_z_l = 0.5 * Ddelta_z_l;
         }
     }
 
-    if(PRR1KZ == true)
+    if(prr1kz == true)
     {
         if(S2_2750 == 1)
         {
@@ -380,7 +380,7 @@ void wingsmech_flaps::logic_flaps()
         }
     }
 
-    if(PRR2KZ == true)
+    if(prr2kz == true)
     {
         if(S2_2750 == 1)
         {
@@ -412,9 +412,9 @@ void wingsmech_flaps::logic_flaps()
             }
         }
 
-        PRRKZ = true;
+        prrkz = true;
 
-        if(PRR1KZ == false)
+        if(prr1kz == false)
         {
             Ddelta_z_l = 0.5 * Ddelta_z_l;
             Ddelta_z_p = 0.5 * Ddelta_z_p;
@@ -422,16 +422,16 @@ void wingsmech_flaps::logic_flaps()
     }
     else
     {
-        if(PRR1KZ == true)
+        if(prr1kz == true)
         {
-            PRRKZ = true;
+            prrkz = true;
             Ddelta_z_l = 0.5 * Ddelta_z_l;
             Ddelta_z_p = 0.5 * Ddelta_z_p;
         }
     }
     if(abs(delta_z_l - delta_z_p) < 2.5)
     {
-        if(PRRKZ == true)
+        if(prrkz == true)
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
             emit pgs_toconsume("pgs1");
@@ -499,17 +499,17 @@ void wingsmech_flaps::logic_flaps()
     otkaz_rassgl_zakr_label->setText
     ("otkaz_rassgl_zakr = " + QString::number(otkaz_rassgl_zakr));
     PRR1KZ_label->setText
-    ("PRR1KZ = " + QString::number(PRR1KZ));
+    ("PRR1KZ = " + QString::number(prr1kz));
     PRR2KZ_label->setText
-    ("PRR2KZ = " + QString::number(PRR2KZ));
+    ("PRR2KZ = " + QString::number(prr2kz));
     PSR1KZ_label->setText
-    ("PSR1KZ = " + QString::number(PSR1KZ));
+    ("PSR1KZ = " + QString::number(psr1kz));
     PSR2KZ_label->setText
-    ("PSR2KZ = " + QString::number(PSR2KZ));
+    ("PSR2KZ = " + QString::number(psr2kz));
     POR1KZ_label->setText
-    ("POR1KZ = " + QString::number(POR1KZ));
+    ("POR1KZ = " + QString::number(por1kz));
     POR2KZ_label->setText
-    ("POR2KZ = " + QString::number(POR2KZ));
+    ("POR2KZ = " + QString::number(por2kz));
     S1_2750_label->setText
     ("S1_2750 = " + QString::number(S1_2750));
     S13_2750_label->setText

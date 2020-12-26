@@ -10,17 +10,17 @@
 extern const double
 TICK;
 extern int
-S2_2790;
+s2_2790;
 extern bool
-PRR1KPCHK,
-PRR2KPCHK,
-POR1KPCHK,
-POR2KPCHK,
-PGS1,
-PGS2,
-PGS3,
-PGS4,
-S1_2790,
+prr1kpchk,
+prr2kpchk,
+por1kpchk,
+por2kpchk,
+pgs1,
+pgs2,
+pgs3,
+pgs4,
+s1_2790,
 otkaz_osn_1k_PCHK,
 otkaz_osn_2k_PCHK,
 otkaz_RASSINHR_PCHK,

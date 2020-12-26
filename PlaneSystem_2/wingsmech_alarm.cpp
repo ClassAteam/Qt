@@ -520,8 +520,8 @@ void wingsmech_alarm::logic_alarm()
         XTR_122 = m_3_L_intervals(X_PCHK, 20, 30, 35, 65, 1, 54, 80, 208);
         delta_ruk_123 = 60 * delta_ruk_vh;
 
-        P_140_11 = PGS1;
-        P_140_12 = PGS2;
+        P_140_11 = pgs1;
+        P_140_12 = pgs2;
         P_140_13 = false;
         P_140_14 = false;
         if(D_X_l != 0)
@@ -535,7 +535,7 @@ void wingsmech_alarm::logic_alarm()
                 P_140_14 = true;
             }
         }
-        if(PRR1KPCHK == true)
+        if(prr1kpchk == true)
         {
             if(D_X_l != 0)
             {
@@ -558,7 +558,7 @@ void wingsmech_alarm::logic_alarm()
         P_141_16 = false;
         P_141_17 = false;
 
-        P_140_15 = PRR1KPCHK;
+        P_140_15 = prr1kpchk;
 
         if((abs(X_L - X_P)) >= 1)
         {
@@ -577,8 +577,8 @@ void wingsmech_alarm::logic_alarm()
     }
     if(ush1dpp > 18)
     {
-        P_142_11 = PGS3;
-        P_142_12 = PGS4;
+        P_142_11 = pgs3;
+        P_142_12 = pgs4;
 
         P_142_13 = false;
 
@@ -600,7 +600,7 @@ void wingsmech_alarm::logic_alarm()
 
         P_142_17 = false;
 
-        if(PRR2KPCHK == true)
+        if(prr2kpchk == true)
         {
             if(D_X_p != 0)
             {
@@ -624,7 +624,7 @@ void wingsmech_alarm::logic_alarm()
     P_143_16 = false;
     P_143_17 = false;
 
-    P_142_15 = PRR2KPCHK;
+    P_142_15 = prr2kpchk;
 
     P_143_16 = false;
     P_143_17 = false;
@@ -701,8 +701,8 @@ void wingsmech_alarm::logic_alarm()
 
     if(ush1dpl >= 18)
     {
-        P_130_11 = PGS1;
-        P_130_12 = PSR1KZ;
+        P_130_11 = pgs1;
+        P_130_12 = psr1kz;
 
         if(delta_z >= 28.1)
         {
@@ -738,9 +738,9 @@ void wingsmech_alarm::logic_alarm()
             }
         }
 
-        P_130_19 = PRR1KZ;
+        P_130_19 = prr1kz;
 
-        if(PRR1KZ == true)
+        if(prr1kz == true)
         {
             if(Ddelta_z_l != 0)
             {
@@ -757,7 +757,7 @@ void wingsmech_alarm::logic_alarm()
 
         }
 
-        if(PRR1KPR == true)
+        if(prr1kpr == true)
         {
             if(Ddelta_pr_l != 0)
             {
@@ -827,8 +827,8 @@ void wingsmech_alarm::logic_alarm()
 
     if(ush1dpp >= 18)
     {
-        P_132_11 = PGS4;
-        P_132_12 = PSR2KZ;
+        P_132_11 = pgs4;
+        P_132_12 = psr2kz;
 
         if(delta_z >= 28.1)
         {
@@ -862,9 +862,9 @@ void wingsmech_alarm::logic_alarm()
             }
         }
 
-        P_132_19 = PRR2KZ;
+        P_132_19 = prr2kz;
 
-        if(PRR2KZ == true)
+        if(prr2kz == true)
         {
             if(Ddelta_z_l != 0)
             {
@@ -879,7 +879,7 @@ void wingsmech_alarm::logic_alarm()
             }
         }
 
-        if(PRR2KPR == true)
+        if(prr2kpr == true)
         {
             if(Ddelta_pr_l != 0)
             {

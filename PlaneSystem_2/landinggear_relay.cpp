@@ -308,21 +308,21 @@ void landinggear_relay::logic_relay()
 {// Presure definition
     if (Pgs2 >= 130.0)
     {
-        if(GK_oovsh == true)
+        if(gk_oovsh == true)
         {
            Plv = 30;
            Plu = 30;
         }
         else
         {
-            if(GK_vsh == true)
+            if(gk_vsh == true)
             {
                 Plv= Pgs2;
                 Plu= 30;
             }
             else
             {
-                if(GK_ush == true)
+                if(gk_ush == true)
                 {
                     Plv = 30;
                     Plu = Pgs2;
@@ -350,7 +350,7 @@ void landinggear_relay::logic_relay()
     S29_3230 = false;
 
     // Presure signal intake
-    if (GK_vsh == true)
+    if (gk_vsh == true)
     {
         if (Plv >= 130.0)
         {
@@ -360,7 +360,7 @@ void landinggear_relay::logic_relay()
     }
 
     // Presure signal release
-    if (GK_ush == true)
+    if (gk_ush == true)
     {
         if (Plu >= 130.0)
         {

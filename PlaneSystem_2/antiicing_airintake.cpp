@@ -26,18 +26,18 @@ K20_3020,
 K28_3020,
 K36_3020,
 K44_3020,
-F32_3020,
-F34_3020,
-F319_3020,
-F356_3020,
-F353_3020,
-F320_3020,
-F330_3020,
-F340_3020,
-S2_3020,
-S3_3020,
-S4_3020,
-S5_3020;
+f32_3020,
+f34_3020,
+f319_3020,
+f356_3020,
+f353_3020,
+f320_3020,
+f330_3020,
+f340_3020,
+s2_3020,
+s3_3020,
+s4_3020,
+s5_3020;
 int
 Counter_airintake;
 double
@@ -75,17 +75,17 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
     K28_3020 = 0;
     K36_3020 = 0;
     K44_3020 = 0;
-    F32_3020 = 0;
-    F319_3020 = 0;
-    F356_3020 = 0;
-    F353_3020 = 0;
-    F320_3020 = 0;
-    F330_3020 = 0;
-    F340_3020 = 0;
-    S2_3020 = 0;
-    S3_3020 = 0;
-    S4_3020 = 0;
-    S5_3020 = 0;
+    f32_3020 = 0;
+    f319_3020 = 0;
+    f356_3020 = 0;
+    f353_3020 = 0;
+    f320_3020 = 0;
+    f330_3020 = 0;
+    f340_3020 = 0;
+    s2_3020 = 0;
+    s3_3020 = 0;
+    s4_3020 = 0;
+    s5_3020 = 0;
     Counter_airintake = 0;
     Ushpl = 115.0;
     Ushpp = 115.0;
@@ -331,7 +331,7 @@ antiicing_airintake::antiicing_airintake(QWidget* pwgt)
 int antiicing_airintake::logic_airintake()
 {
     Counter_airintake++;
-    F32_3020 = false;
+    f32_3020 = false;
 
     //F32 toggle
     if (usho1p > 18.0)
@@ -342,24 +342,24 @@ int antiicing_airintake::logic_airintake()
                 F125_3020 == false &&
                 F134_3020 == false)
         {
-            F32_3020 = false;
+            f32_3020 = false;
         }
         else
         {
-            F32_3020 = true;
+            f32_3020 = true;
         }
 
     }
     else
     {
-        F32_3020 = false;
+        f32_3020 = false;
     }
 
 
-    F319_3020 = F353_3020 = F356_3020 = F32_3020;
+    f319_3020 = f353_3020 = f356_3020 = f32_3020;
     //K52, K54, K55 toggle
     //1
-    if (usho1p >= 18.0 && S2_3020 == true)
+    if (usho1p >= 18.0 && s2_3020 == true)
     {
         K52_3020 = true;
     }
@@ -368,7 +368,7 @@ int antiicing_airintake::logic_airintake()
         K52_3020 = false;
     }
     //2
-    if (usho1p >= 18.0 && S3_3020 == true)
+    if (usho1p >= 18.0 && s3_3020 == true)
     {
         K53_3020 = true;
     }
@@ -377,7 +377,7 @@ int antiicing_airintake::logic_airintake()
         K53_3020 = false;
     }
     //3
-    if (usho1p >= 18.0 && S4_3020 == true)
+    if (usho1p >= 18.0 && s4_3020 == true)
     {
         K54_3020 = true;
     }
@@ -386,7 +386,7 @@ int antiicing_airintake::logic_airintake()
         K54_3020 = false;
     }
     //4
-    if (usho1p >= 18.0 && S5_3020 == true)
+    if (usho1p >= 18.0 && s5_3020 == true)
     {
         K55_3020 = true;
     }
@@ -397,56 +397,56 @@ int antiicing_airintake::logic_airintake()
 
     // F34_3020, F320_3020, F330_3020, F340_3020 toggle
     //1
-    if (F32_3020 == true && K52_3020 == false && (!OTKAZ_vtsepiob_pos1dv) && Ushpl >= 104.0)
+    if (f32_3020 == true && K52_3020 == false && (!OTKAZ_vtsepiob_pos1dv) && Ushpl >= 104.0)
     {
-        F34_3020 = true;
+        f34_3020 = true;
     }
     else
     {
-        F34_3020 = false;
+        f34_3020 = false;
     }
 
     //2
-    if (F319_3020 == true
+    if (f319_3020 == true
             && K53_3020 == false
             && (!OTKAZ_vtsepiob_pos2dv)
             && Ushpl >= 104.0)
     {
-        F320_3020 = true;
+        f320_3020 = true;
     }
     else
     {
-        F320_3020 = false;
+        f320_3020 = false;
     }
 
     //3
-    if (F356_3020 == true
+    if (f356_3020 == true
             && K54_3020 == false
             && (!OTKAZ_vtsepiob_pos3dv)
             && Ushpp >= 104.0)
     {
-        F330_3020 = true;
+        f330_3020 = true;
     }
     else
     {
-        F330_3020 = false;
+        f330_3020 = false;
     }
 
     //4
-    if (F353_3020 == true
+    if (f353_3020 == true
             && K55_3020 == false
             && OTKAZ_vtsepiob_pos4dv == false
             && Ushpp >= 104.0)
     {
-        F340_3020 = true;
+        f340_3020 = true;
     }
     else
     {
-        F340_3020 = false;
+        f340_3020 = false;
     }
     //K14, K21, K30, K37 toggle
     //1
-    if (F110_3020 == true && F34_3020 == true)
+    if (F110_3020 == true && f34_3020 == true)
     {
         K14_3020 = true;
     }
@@ -455,7 +455,7 @@ int antiicing_airintake::logic_airintake()
         K14_3020 = false;
     }
     //2
-    if (F110_3020 == true && F320_3020 == true)
+    if (F110_3020 == true && f320_3020 == true)
     {
         K21_3020 = true;
     }
@@ -465,7 +465,7 @@ int antiicing_airintake::logic_airintake()
     }
 
     //3
-    if (F110_3020 == true && F330_3020 == true)
+    if (F110_3020 == true && f330_3020 == true)
     {
         K30_3020 = true;
     }
@@ -475,7 +475,7 @@ int antiicing_airintake::logic_airintake()
     }
 
     //4
-    if (F110_3020 == true && F340_3020 == true)
+    if (F110_3020 == true && f340_3020 == true)
     {
         K37_3020 = true;
     }
@@ -487,7 +487,7 @@ int antiicing_airintake::logic_airintake()
 
     // K16, K23, K32, K39 toggle
     //1
-    if (F34_3020 == true && F110_3020 == false && F19_3020 == true)
+    if (f34_3020 == true && F110_3020 == false && F19_3020 == true)
     {
         K16_3020 = true;
     }
@@ -496,7 +496,7 @@ int antiicing_airintake::logic_airintake()
         K16_3020 = false;
     }
     //2
-    if (F320_3020 == true && F110_3020 == false && F19_3020 == true)
+    if (f320_3020 == true && F110_3020 == false && F19_3020 == true)
     {
         K23_3020 = true;
     }
@@ -506,7 +506,7 @@ int antiicing_airintake::logic_airintake()
     }
 
     //3
-    if (F330_3020 == true && F110_3020 == false && F19_3020 == true)
+    if (f330_3020 == true && F110_3020 == false && F19_3020 == true)
     {
         K32_3020 = true;
     }
@@ -516,7 +516,7 @@ int antiicing_airintake::logic_airintake()
     }
 
     //4
-    if (F340_3020 == true && F110_3020 == false && F19_3020 == true)
+    if (f340_3020 == true && F110_3020 == false && F19_3020 == true)
     {
         K39_3020 = true;
     }
@@ -530,7 +530,7 @@ int antiicing_airintake::logic_airintake()
     if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
-            && F34_3020 == true)
+            && f34_3020 == true)
     {
         K19_3020 = true;
     }
@@ -544,7 +544,7 @@ int antiicing_airintake::logic_airintake()
     if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
-            && F320_3020 == true)
+            && f320_3020 == true)
     {
         K25_3020 = true;
     }
@@ -557,7 +557,7 @@ int antiicing_airintake::logic_airintake()
     if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
-            && F330_3020 == true)
+            && f330_3020 == true)
     {
         K35_3020 = true;
     }
@@ -570,7 +570,7 @@ int antiicing_airintake::logic_airintake()
     if (F125_3020 == true
             && F19_3020 == false
             && F110_3020 == false
-            && F340_3020 == true)
+            && f340_3020 == true)
     {
         K41_3020 = true;
 
@@ -585,7 +585,7 @@ int antiicing_airintake::logic_airintake()
             && F125_3020 == false
             && F19_3020 == false
             && F110_3020 == false
-            && F34_3020 == true)
+            && f34_3020 == true)
     {
         K20_3020 = true;
     }
@@ -599,7 +599,7 @@ int antiicing_airintake::logic_airintake()
             && F125_3020 == false
             && F19_3020 == false
             && F110_3020 == false
-            && F320_3020 == true)
+            && f320_3020 == true)
     {
         K28_3020 = true;
 
@@ -614,7 +614,7 @@ int antiicing_airintake::logic_airintake()
             && F125_3020 == false
             && F19_3020 == false
             && F110_3020 == false
-            && F330_3020 == true)
+            && f330_3020 == true)
     {
         K36_3020 = true;
     }
@@ -628,7 +628,7 @@ int antiicing_airintake::logic_airintake()
             && F125_3020 == false
             && F19_3020 == false
             && F110_3020 == false
-            && F340_3020 == true)
+            && f340_3020 == true)
     {
         K44_3020 = true;
     }
@@ -658,17 +658,17 @@ int antiicing_airintake::logic_airintake()
     K28_3020_label->setText("K28_3020 = "  + QString::number(K28_3020));
     K36_3020_label->setText("K36_3020 = "  + QString::number(K36_3020));
     K44_3020_label->setText("K44_3020 = "  + QString::number(K44_3020));
-    F32_3020_label->setText("F32_3020 = "  + QString::number(F32_3020));
-    F319_3020_label->setText("F319_3020 = "  + QString::number(F319_3020));
-    F356_3020_label->setText("F356_3020 = "  + QString::number(F356_3020));
-    F353_3020_label->setText("F353_3020 = "  + QString::number(F353_3020));
-    F320_3020_label->setText("F320_3020 = "  + QString::number(F320_3020));
-    F330_3020_label->setText("F330_3020 = "  + QString::number(F330_3020));
-    F340_3020_label->setText("F340_3020 = "  + QString::number(F340_3020));
-    S2_3020_label->setText("S2_3020 = "  + QString::number(S2_3020));
-    S3_3020_label->setText("S3_3020 = "  + QString::number(S3_3020));
-    S4_3020_label->setText("S4_3020 = "  + QString::number(S4_3020));
-    S5_3020_label->setText("S5_3020 = "  + QString::number(S5_3020));
+    F32_3020_label->setText("F32_3020 = "  + QString::number(f32_3020));
+    F319_3020_label->setText("F319_3020 = "  + QString::number(f319_3020));
+    F356_3020_label->setText("F356_3020 = "  + QString::number(f356_3020));
+    F353_3020_label->setText("F353_3020 = "  + QString::number(f353_3020));
+    F320_3020_label->setText("F320_3020 = "  + QString::number(f320_3020));
+    F330_3020_label->setText("F330_3020 = "  + QString::number(f330_3020));
+    F340_3020_label->setText("F340_3020 = "  + QString::number(f340_3020));
+    S2_3020_label->setText("S2_3020 = "  + QString::number(s2_3020));
+    S3_3020_label->setText("S3_3020 = "  + QString::number(s3_3020));
+    S4_3020_label->setText("S4_3020 = "  + QString::number(s4_3020));
+    S5_3020_label->setText("S5_3020 = "  + QString::number(s5_3020));
     Usho1p_label->setText("Usho1p = "  + QString::number(usho1p));
     Ushpl_label->setText("Ushpl = "  + QString::number(Ushpl));
     Ushpp_label->setText("Ushpp = "  + QString::number(Ushpp));
@@ -680,40 +680,40 @@ int antiicing_airintake::logic_airintake()
 
 int antiicing_airintake::m_S2_3020_on()
 {
-    S2_3020 = true;
+    s2_3020 = true;
 }
 
 int antiicing_airintake::m_S2_3020_off()
 {
-    S2_3020 = false;
+    s2_3020 = false;
 }
 
 int antiicing_airintake::m_S3_3020_on()
 {
-    S3_3020 = true;
+    s3_3020 = true;
 }
 
 int antiicing_airintake::m_S3_3020_off()
 {
-    S3_3020 = false;
+    s3_3020 = false;
 }
 
 int antiicing_airintake::m_S4_3020_on()
 {
-    S4_3020 = true;
+    s4_3020 = true;
 }
 int antiicing_airintake::m_S4_3020_off()
 {
-    S4_3020 = false;
+    s4_3020 = false;
 }
 int antiicing_airintake::m_S5_3020_on()
 {
-    S5_3020 = true;
+    s5_3020 = true;
 }
 
 int antiicing_airintake::m_S5_3020_off()
 {
-    S5_3020 = false;
+    s5_3020 = false;
 }
 
 int antiicing_airintake::m_Usho1p_on()

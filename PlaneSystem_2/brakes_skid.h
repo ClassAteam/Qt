@@ -7,8 +7,8 @@
 #include <QLineEdit>
 
 extern bool
-PBUTZO,
-PBUTZR,
+pbutzo,
+pbutzr,
 PAVART,
 PAVT_N,
 PAVT_P,

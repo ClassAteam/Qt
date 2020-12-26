@@ -14,16 +14,16 @@ nvsu,
 uz1ak, uz2ak,
 ur1ak, ur2ak,
 uo1ak, uo2ak,
-uak1  = 25.0, uak2 = 25.5,
+uak1, uak2,
 //ugrr, ugrrvsu,
 ug1, ug2, ug3, ug4, ugvsu27,
 uzg1 = 28.5, uzg2 = 28.4, uzg3 = 28.6, uzg4 = 28.7, uzgvsu = 28.5,
 ug1r, ug2r, ug3r, ug4r, ugrvsu27,
 ivg1, ivg2, ivg3, ivg4, ivgvsu27,
-ing1, ing2, ing3, ing4, ingvsu27,
+ing1, ing2, ing3, ing4, ivsu,
 divg1, divg2, divg3, divg4, divgvsu27,
 ng1, ng2, ng3, ng4, ngvsu,
-kn1 = 25, krg = 0.0025, krgvsu = 0.0037, kak,
+kn1 = 25, krg = 0.00025, krgvsu = 0.0037, kak,
 kg1 = 1.5,
 kgvsu = 1.5,
 kg10 = 0.15,
@@ -111,6 +111,10 @@ power_dc::power_dc(QWidget*pwgt)
     iak2_label = new QLabel;
     ea1_label = new QLabel;
     ea2_label = new QLabel;
+    qa1_label = new QLabel;
+    qa2_label = new QLabel;
+    ra1_label = new QLabel;
+    ra2_label = new QLabel;
 
     s1_2430_on = new QPushButton("s1_2430_on", this);
     s4_2430_on = new QPushButton("s4_2430_on", this);
@@ -189,8 +193,12 @@ power_dc::power_dc(QWidget*pwgt)
     layout_dc_labels1->addWidget(ur2ak_label);
     layout_dc_labels1->addWidget(uo1ak_label);
     layout_dc_labels1->addWidget(uo2ak_label);
+    layout_dc_labels1->addWidget(ra1_label);
+    layout_dc_labels1->addWidget(ra2_label);
     layout_dc_labels->addWidget(ea1_label);
     layout_dc_labels->addWidget(ea2_label);
+    layout_dc_labels->addWidget(qa1_label);
+    layout_dc_labels->addWidget(qa2_label);
     layout_dc_labels->addWidget(uak1_label);
     layout_dc_labels->addWidget(uak2_label);
     layout_dc_labels->addWidget(ug1_label);
@@ -247,7 +255,7 @@ void power_dc::logic_dc()
     double* uzg_pool[] = {&uzg1, &uzg2, &uzg3, &uzg4, &uzgvsu};
     double* divg_pool[] = {&divg1, &divg2, &divg3, &divg4, &divgvsu27};
     double* ivg_pool[] = {&ivg1, &ivg2, &ivg3, &ivg4, &ivgvsu27};
-    double* ing_pool[] = {&ing1, &ing2, &ing3, &ing4, &ingvsu27};
+    double* ing_pool[] = {&ing1, &ing2, &ing3, &ing4, &ivsu};
 //    double* ugrr_pool[] = {&ugrr, &ugrr, &ugrr, &ugrr, &ugrrvsu};
     double* ugr_pool[] = {&ug1r, &ug2r, &ug3r, &ug4r, &ugrvsu27};
     double* nvd_pool[] = {&nVDfirst2[0], &nVDfirst2[1], &nVDsecond2[0], &nVDsecond2[1], &nvsu};
@@ -367,6 +375,7 @@ void power_dc::logic_dc()
     double* uoak_pool[] = {&uo1ak, &uo2ak};
     double* uak_pool[] = {&uak1, &uak2};
     double* ra_pool[] = {&ra1, &ra2};
+    double* ush_pool[] = {&ushal, &ushap};
 
     for(int i = 0; i < 2; i++)
     {
@@ -374,35 +383,36 @@ void power_dc::logic_dc()
         if(*ea_pool[i] > 18.0)
         {
             *pa_pool[i] = true;
-            *uzak_pool[i] = *uak_pool[i] + 2.5;
+
+            *uzak_pool[i] = *ush_pool[i];
+//            *uzak_pool[i] = *uak_pool[i] + 2.5;
 
             if(*iak_pool[i] >= 0)
             {
-                *qa_pool[i] = *qa_pool[i] - *iak_pool[i] * (TICK / 1000);
+                *qa_pool[i] = *qa_pool[i] - (*iak_pool[i] / 3600) * (TICK / 1000);
             }
             else
             {
-                *qa_pool[i] = *qa_pool[i] - 0.857 *
-                        (*uzak_pool[i] / *uak_pool[i]) *
-                        (*iak_pool[i] * (TICK / 1000));
+                *qa_pool[i] = *qa_pool[i] - 0.857 * (*uzak_pool[i] / *uak_pool[i])
+                                                * ((*iak_pool[i] / 3600) * (TICK / 1000));
             }
 
             *uoak_pool[i] = m_5_L_intervals((*qa_pool[i]),
                                             0, 5, 10, 20, 30, 40,
                                             0, 23.9, 24.0, 24.4, 24.8, 25.54);
 
-            if(*pa_pool[i] == true && (*uzak_pool[i] >= *ea_pool[i]))
+            if(*pa_pool[i] == true && (*uzak_pool[i] > *ea_pool[i]))
             {
-                if(*uzak_pool[i] >= *uoak_pool[i])
+                if((*uzak_pool[i] - *uoak_pool[i]) >= 2.5)
                 {
-                    *urak_pool[i] = *urak_pool[i] + 0.1 *
-                            ((25 - *urak_pool[i]) * (TICK / 1000));
+                    *urak_pool[i] = *urak_pool[i] + 0.001 *
+                                                        ((25 - *urak_pool[i]) * (TICK / 1000));
                 }
                 else
                 {
-                    *urak_pool[i] = *urak_pool[i] + 0.1 *
-                            ((*uzak_pool[i] + *uoak_pool[i] - *urak_pool[i]) *
-                             (TICK / 1000));
+                    *urak_pool[i] =
+                        *urak_pool[i] + 0.01 * ((*uzak_pool[i] - *uoak_pool[i] - *urak_pool[i])
+                                                          * (TICK / 1000));
                 }
             }
             else
@@ -440,6 +450,9 @@ void power_dc::logic_dc()
         *ra_pool[i] = m_4_L_intervals((*qa_pool[i]),
                                         5, 10, 20, 30, 40,
                                         0.5, 0.035, 0.0175, 0.0116, 0.009);
+
+        *uak_pool[i] = *ea_pool[i] - (*iak_pool[i] * (*ra_pool[i]));
+
     }
 
 
@@ -500,7 +513,7 @@ void power_dc::logic_dc()
     m_settext_lbl(ing2_label, ing2, "ing2");
     m_settext_lbl(ing3_label, ing3, "ing3");
     m_settext_lbl(ing4_label, ing4, "ing4");
-    m_settext_lbl(ingvsu_label, ingvsu27, "ingvsu");
+    m_settext_lbl(ingvsu_label, ivsu, "ivsu");
     m_settext_lbl(divg1_label, divg1, "divg1");
     m_settext_lbl(divg2_label, divg2, "divg2");
     m_settext_lbl(divg3_label, divg3, "divg3");
@@ -515,6 +528,10 @@ void power_dc::logic_dc()
     m_settext_lbl(iak2_label, iak2, "iak2");
     m_settext_lbl(ea1_label, ea1, "ea1");
     m_settext_lbl(ea2_label, ea2, "ea2");
+    m_settext_lbl(qa1_label, qa1, "qa1");
+    m_settext_lbl(qa2_label, qa2, "qa2");
+    m_settext_lbl(ra1_label, ra1, "ra1");
+    m_settext_lbl(ra2_label, ra2, "ra2");
 }
 void power_dc::m_togglebutton_R()
 {

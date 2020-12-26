@@ -80,15 +80,6 @@ void power_split::logic_split()
         ushzvsu = ushal;
     }
 
-    if(purg27lk4)
-    {
-        ushal = urap1;
-    }
-
-    if(purg27pk4)
-    {
-        ushap = urap2;
-    }
 
     if(plp27 || (ppp27 && pss27))
     {
@@ -143,6 +134,16 @@ void power_split::logic_split()
                 ushap = 0.0;
             }
         }
+    }
+
+    if(purg27lk4)
+    {
+        ushal = urap1;
+    }
+
+    if(purg27pk4)
+    {
+        ushap = urap2;
     }
 
     if(purg27pk3)

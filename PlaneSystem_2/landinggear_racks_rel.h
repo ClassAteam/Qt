@@ -9,12 +9,12 @@ extern const double
 TICK;
 
 extern bool
-GK_avl,
-GK_avp,
-GK_avn,
-GK_oovsh,
-GK_vsh,
-GK_ush;
+gk_avl,
+gk_avp,
+gk_avn,
+gk_oovsh,
+gk_vsh,
+gk_ush;
 
 extern double
 P_bal_l,

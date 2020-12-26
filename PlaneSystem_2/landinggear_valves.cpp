@@ -41,20 +41,20 @@ void landinggear_valves::logic_valves()
     {
         if (K23_3230 == false)
         {
-            GK_vsh = false;
-            GK_ush = false;
+            gk_vsh = false;
+            gk_ush = false;
         }
         else
         {
-            GK_vsh = false;
-            GK_ush = true;
+            gk_vsh = false;
+            gk_ush = true;
         }
     }
 
     else
     {
-            GK_vsh = true;
-            GK_ush = false;
+            gk_vsh = true;
+            gk_ush = false;
     }
 
     GK_dvp = false;
@@ -72,13 +72,13 @@ void landinggear_valves::logic_valves()
     // Common release disabling hydrovalve
     if (ush1dpp >= 19.0 && S30_3230 == true)
     {
-        GK_oovsh = true;
+        gk_oovsh = true;
         K13_3230 = true;
         K14_3230 = true;
     }
     else
     {
-        GK_oovsh = false;
+        gk_oovsh = false;
         K13_3230 = false;
         K14_3230 = false;
     }
@@ -86,23 +86,23 @@ void landinggear_valves::logic_valves()
     // Emergency nose release hydrovalve
     if (ush1dpp >= 19.0 && K13_3230 == true)
     {
-        GK_avn = true;
+        gk_avn = true;
     }
     else
     {
-        GK_avn = false;
+        gk_avn = false;
     }
 
     // Emergency left and right racks release hydrovalve
     if (ush1dpp >= 19.0 && K14_3230 == true)
     {
-        GK_avl = true;
-        GK_avp = true;
+        gk_avl = true;
+        gk_avp = true;
     }
     else
     {
-        GK_avl = false;
-        GK_avp = false;
+        gk_avl = false;
+        gk_avp = false;
     }
 }
 

@@ -7,7 +7,7 @@ otkaz_rt,
 otkaz_gs3,
 S1_3241,
 PvklR,
-PBUTZR,
+pbutzr,
 PAVART,
 PORST,
 PBRRT;
@@ -24,8 +24,8 @@ brakes_reserve::brakes_reserve(QWidget*pwgt)
     otkaz_gs3 = 0;
     S1_3241 = 0;
     PvklR = 0;
-    PBUTZR = 0;
-    PBUTZO = 0;
+    pbutzr = 0;
+    pbutzo = 0;
     PAVART = 0;
     PORST = 0;
     PBRRT = 0;
@@ -141,10 +141,10 @@ void brakes_reserve::logic_reserve()
             PvklR = true;
         }
 
-        if(PBUTZO == true)
+        if(pbutzo == true)
         {
             PBRRT = false;
-            PBUTZR = false;
+            pbutzr = false;
             PvklR = false;
             tick_block_rt = false;
         }
@@ -178,8 +178,8 @@ void brakes_reserve::logic_reserve()
             PAVT_N = false;
             PAVT_P = false;
             PAVT_S = false;
-            PAVTT = false;
-            PBUTZR = false;
+            pavtt = false;
+            pbutzr = false;
 
             if(otkaz_avt_per_na_rt == true)
             {
@@ -187,34 +187,34 @@ void brakes_reserve::logic_reserve()
                 {
                     if(otkaz_rt == true)
                     {
-                        PBUTZR = false;
+                        pbutzr = false;
                         PORST = true;
                     }
                     else
                     {
-                        PBUTZR = true;
+                        pbutzr = true;
                         if(S1_3240 == 1)
                         {
-                            PAVTT = true;
+                            pavtt = true;
                             PAVT_N = true;
                         }
                         else
                         {
                             if(S1_3240 == 2)
                             {
-                                PAVTT = true;
+                                pavtt = true;
                                 PAVT_P = true;
                             }
                             else
                             {
                                 if(S1_3240 == 3)
                                 {
-                                    PAVTT = true;
+                                    pavtt = true;
                                     PAVT_S = true;
                                 }
                                 else
                                 {
-                                    PAVTT = false;
+                                    pavtt = false;
                                     PBAVTT = false;
                                 }
                             }
@@ -223,25 +223,25 @@ void brakes_reserve::logic_reserve()
                         if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
                         {
                             PBAVTT = true;
-                            PAVTT = false;
+                            pavtt = false;
                         }
 
                         if(POSH2 == true)
                         {
                             if(delta_z >= 23.0 && delta_z <= 28.0)
                             {
-                                if(PAFT == true || PRR == true)
+                                if(paft == true || PRR == true)
                                 {
                                     if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
                                     {
                                         PFT = true;
-                                        PAFT = true;
+                                        paft = true;
                                     }
                                 }
                             }
                             else
                             {
-                                PAFT = false;
+                                paft = false;
                             }
                         }
                     }
@@ -252,35 +252,35 @@ void brakes_reserve::logic_reserve()
             {
                 if(otkaz_rt == true)
                 {
-                    PBUTZR = false;
+                    pbutzr = false;
                     PORST = true;
                 }
                 else
                 {
-                    PBUTZR = true;
+                    pbutzr = true;
                 }
                 if(S1_3240 == 1)
                 {
-                    PAVTT = true;
+                    pavtt = true;
                     PAVT_N = true;
                 }
                 else
                 {
                     if(S1_3240 == 2)
                     {
-                        PAVTT = true;
+                        pavtt = true;
                         PAVT_P = true;
                     }
                     else
                     {
                         if(S1_3240 == 3)
                         {
-                            PAVTT = true;
+                            pavtt = true;
                             PAVT_S = true;
                         }
                         else
                         {
-                            PAVTT = false;
+                            pavtt = false;
                             PBAVTT = false;
                         }
                     }
@@ -289,25 +289,25 @@ void brakes_reserve::logic_reserve()
                 if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
                 {
                     PBAVTT = true;
-                    PAVTT = false;
+                    pavtt = false;
                 }
 
                 if(POSH2 == true)
                 {
                     if(delta_z >= 23.0 && delta_z <= 28.0)
                     {
-                        if(PAFT == true || PRR == true)
+                        if(paft == true || PRR == true)
                         {
                             if(X_tp_lev >= 0.12 && X_tp_prav >= 0.12)
                             {
                                 PFT = true;
-                                PAFT = true;
+                                paft = true;
                             }
                         }
                     }
                     else
                     {
-                        PAFT = false;
+                        paft = false;
                     }
                 }
             }
@@ -315,7 +315,7 @@ void brakes_reserve::logic_reserve()
     }
     else
     {
-        PBUTZR = false;
+        pbutzr = false;
         PvklR = false;
         PBRRT = false;
     }
@@ -332,7 +332,7 @@ void brakes_reserve::logic_reserve()
         }
     }
 
-    if(PAVTT == false)
+    if(pavtt == false)
     {
         PAVT_N = false;
         PAVT_P = false;
@@ -351,9 +351,9 @@ void brakes_reserve::logic_reserve()
     PvklR_label->setText
             ("PvklR = " + QString::number(PvklR));
     PBUTZR_label->setText
-            ("PBUTZR = " + QString::number(PBUTZR));
+            ("PBUTZR = " + QString::number(pbutzr));
     PBUTZO_label->setText
-            ("PBUTZO = " + QString::number(PBUTZO));
+            ("PBUTZO = " + QString::number(pbutzo));
     PAVART_label->setText
             ("PAVART = " + QString::number(PAVART));
     PORST_label->setText

@@ -14,6 +14,11 @@ void m_settext_lbl(QLabel* label, bool variable, QString str)
         label->setStyleSheet("");
     }
 }
+void m_settext_lbl(QLabel* label, int variable, QString str)
+{
+    label->setText(str + " = " + QString::number(variable));
+    label->setStyleSheet("blue");
+}
 void m_settext_lbl(QLabel* label, double variable, QString str)
 {
     label->setText(str + " = " + QString::number(variable));
@@ -124,5 +129,12 @@ void m_RedButton2(QPushButton* button, bool* clue)
     {
         *clue = false;
         button->setStyleSheet("");
+    }
+}
+void m_RadioButton2(QRadioButton *rbutton, int* holder, int value)
+{
+    if(rbutton->isChecked())
+    {
+        *holder = value;
     }
 }

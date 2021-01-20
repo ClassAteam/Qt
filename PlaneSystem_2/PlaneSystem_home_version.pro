@@ -55,6 +55,7 @@ SOURCES += \
     hydro_pumpsrel.cpp \
     hydro_tempr.cpp \
     hydro_warmalarm.cpp \
+    interfacing.cpp \
     landinggear_carts.cpp \
     landinggear_nose.cpp \
     landinggear_position.cpp \
@@ -66,11 +67,12 @@ SOURCES += \
     landinggear_valves.cpp \
     main.cpp \
     mainwindow.cpp \
-    power_dc.cpp \
-    power_inddc.cpp \
-    power_loadcurrent.cpp \
-    power_split.cpp \
-    power_urg27.cpp \
+    powerdc_1.cpp \
+    powerdc_2.cpp \
+    powerdc_3.cpp \
+    powerdc_4.cpp \
+    powerdc_5.cpp \
+    powerdc_int.cpp \
     presure_regulation.cpp \
     wind_functions.cpp \
     wingsmech_alarm.cpp \
@@ -118,6 +120,7 @@ HEADERS += \
     hydro_pumpsrel.h \
     hydro_tempr.h \
     hydro_warmalarm.h \
+    interfacing.h \
     landinggear_carts.h \
     landinggear_nose.h \
     landinggear_position.h \
@@ -129,11 +132,12 @@ HEADERS += \
     landinggear_valves.h \
     main.h \
     mainwindow.h \
-    power_dc.h \
-    power_inddc.h \
-    power_loadcurrent.h \
-    power_split.h \
-    power_urg27.h \
+    powerdc_1.h \
+    powerdc_2.h \
+    powerdc_3.h \
+    powerdc_4.h \
+    powerdc_5.h \
+    powerdc_int.h \
     presure_regulation.h \
     wind_functions.h \
     wingsmech_alarm.h \

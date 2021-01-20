@@ -74,37 +74,4 @@ extern double
     usho1p,
     Vkh;
 
-
-class power_split : public QWidget
-{
-    Q_OBJECT
-public:
-    power_split(QWidget* pwgt = 0);
-    QWidget wgt_split;
-    QLabel* ush1dpl_label;
-    QLabel* ush1dpp_label;
-    QLabel* ush1l_label;
-    QLabel* ush1p_label;
-    QLabel* ush2dpl_label;
-    QLabel* ush2dpp_label;
-    QLabel* ush2l_label;
-    QLabel* ush2p_label;
-    QLabel* ushal_label;
-    QLabel* ushap_label;
-    QLabel* usho1p_label;
-    QLabel* ugvsu27_label;
-    QLabel* uls27_label;
-    QLabel* ups27_label;
-    QLabel* urap1_label;
-    QLabel* urap2_label;
-    QLabel* ushak1_label;
-    QLabel* ushak2_label;
-    QLabel* usho1l_label;
-    QLabel* usho2l_label;
-    QLabel* usho2p_label;
-    QLabel* ushzvsu_label;
-
-public slots:
-    void logic_split();
-    void m_togglebutton_R();
-};
+void powerdc_4();

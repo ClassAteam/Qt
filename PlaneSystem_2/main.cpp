@@ -58,11 +58,8 @@ int main(int argc, char *argv[])
     hydro_alarm halarm;
     hydro_tempr tempr;
     hydro_walarm walarm;
-    power_dc dc;
-    power_urg27 urg27;
-    power_split split;
-    power_loadcurrent loadcurrent;
-    power_inddc inddc;
+    powerdc_ind powerdc;
+    powerdc.show();
 
     QTimer *timer = new QTimer;
 
@@ -181,17 +178,6 @@ int main(int argc, char *argv[])
     window_hydro.setWindowState(Qt::WindowFullScreen);
     window_hydro.show();
 
-    QWidget window_power;
-    QHBoxLayout layout_power;
-    layout_power.addWidget(&dc.wgt_dc);
-    layout_power.addWidget(&urg27.wgt_urg27);
-    layout_power.addWidget(&split.wgt_split);
-    layout_power.addWidget(&loadcurrent.wgt_loadcurrent);
-    layout_power.addWidget(&inddc.wgt_inddc);
-    window_power.setLayout(&layout_power);
-    window_power.setWindowTitle("Power");
-    window_power.setWindowState(Qt::WindowFullScreen);
-    window_power.show();
 
     //LOGIC TIMER
 //    QObject::connect(timer, SIGNAL(timeout()),
@@ -298,16 +284,6 @@ int main(int argc, char *argv[])
                      &tempr , SLOT(logic_tempr()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &walarm , SLOT(logic_walarm()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &dc , SLOT(logic_dc()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &urg27 , SLOT(logic_urg27()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &split , SLOT(logic_split()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &loadcurrent , SLOT(logic_loadcurrent()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &inddc , SLOT(logic_inddc()));
 
     //PRESURE RETAKE
     QObject::connect(&sashes, &landinggear_sashes::presure_retake,

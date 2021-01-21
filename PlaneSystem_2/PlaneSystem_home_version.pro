@@ -72,6 +72,8 @@ SOURCES += \
     powerdc_3.cpp \
     powerdc_4.cpp \
     powerdc_5.cpp \
+    powerdc_8.cpp \
+    powerdc_9.cpp \
     powerdc_int.cpp \
     presure_regulation.cpp \
     wind_functions.cpp \
@@ -137,6 +139,8 @@ HEADERS += \
     powerdc_3.h \
     powerdc_4.h \
     powerdc_5.h \
+    powerdc_8.h \
+    powerdc_9.h \
     powerdc_int.h \
     presure_regulation.h \
     wind_functions.h \

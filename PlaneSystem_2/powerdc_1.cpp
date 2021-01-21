@@ -12,7 +12,7 @@ double
     upr,
     ipr;
 
-void powerdc_1()
+void powerdc_1() //7
 {
     //start logic
     if(s17_2430 == akk1_rap1)

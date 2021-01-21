@@ -11,6 +11,7 @@
 #include "powerdc_3.h"
 #include "powerdc_4.h"
 #include "powerdc_5.h"
+#include "powerdc_8.h"
 
 extern double
     inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
@@ -32,6 +33,14 @@ extern double
 extern int
     s16_2430, s17_2430;
 extern bool
+    otk_pereg_gen1, otk_pereg_gen2, otk_pereg_gen3, otk_pereg_gen4,
+    otk_pereg_akk1, otk_pereg_akk2,
+    BSS837X1d, BSS837X1p, BSS926X3C, BSS926X1MM, BSS926X3J,
+    BSS926X3A, BSS926X3L, BSS926X1x, BSS926X1BB, BSS837X1t,
+    BSS837X1j, BSS926X1z, BSS926X1DD, BSS837X1v, BSS837X1n,
+    BSS837X1h, BSS926X3E, BSS837X1b, BSS837X1f, BSS837X1r,
+    BSS837X1f, BSS826X1FF, BSS837X1x, BSS926X1FF, BSS926X1HH,
+    BSS826X1HH, BSS837X1z,
     y1_3650, y2_3650, r865gd, apdvsu_35, apdvsu_49, s1_11028, s1_4940,
     k1_11038, k2_11038, s1_11052, s2_11052, s1_11081, s1_11313, k1_17723,
     k2_17723, k11_2250, k14_2420, k15_2420, k1_2250, k1_2420, k2_2420, k30_2420,

@@ -36,7 +36,7 @@ tickg1, tickg2, tickg3, tickg4, tickvsu;
 
 
 
-void powerdc_2()
+void powerdc_2() //1
 {
     //start logic
     bool* otkaz_pool[] = {&OtkazGen1PostT, &OtkazGen2PostT, &OtkazGen3PostT,

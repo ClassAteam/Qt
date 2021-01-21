@@ -88,6 +88,9 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createRadioButton(&s16_2430, "sh2lev", false);
     createRadioButton(&s16_2430, "sh1prav", false);
     createRadioButton(&s16_2430, "sh2prav", true);
+    createRadioButton(&s17_2430, "akk1_rap1", false);
+    createRadioButton(&s17_2430, "akk2_rap2", false);
+    createRadioButton(&s17_2430, "vsu", true);
     createLabelClue(&pvkchrl, "pvkchrl");
     createLabelClue(&pvkchrp, "pvkchrp");
     createLabelClue(&purg27lk1, "purg27lk1");
@@ -112,6 +115,7 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&urap1, "urap1");
     createLabelValue(&urap2, "urap2");
     createLabelValue(&ugvsu27, "ugvsu27");
+    createRedButton(&s1_2430, "s1_2430");
     createRedButton(&s2_2430, "s2_2430");
     createRedButton(&s3_2430, "s3_2430");
     createRedButton(&s7_2430, "s7_2430");
@@ -207,6 +211,39 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createRedButton(&k11_7322, "k11_7322");
     createRedButton(&k18_7322, "k18_7322");
     createRedButton(&k4_4940, "k4_4940");
+    createLabelClue(&BSS837X1d, "BSS837X1d");
+    createLabelClue(&BSS837X1p, "BSS837X1p");
+    createLabelClue(&BSS926X3C, "BSS926X3C");
+    createLabelClue(&BSS926X1MM, "BSS926X1MM");
+    createLabelClue(&BSS926X3J, "BSS926X3J");
+    createLabelClue(&BSS926X3A, "BSS926X3A");
+    createLabelClue(&BSS926X3L, "BSS926X3L");
+    createLabelClue(&BSS926X1x, "BSS926X1x");
+    createLabelClue(&BSS926X1BB, "BSS926X1BB");
+    createLabelClue(&BSS837X1t, "BSS837X1t");
+    createLabelClue(&BSS837X1j, "BSS837X1j");
+    createLabelClue(&BSS926X1z, "BSS926X1z");
+    createLabelClue(&BSS926X1DD, "BSS926X1DD");
+    createLabelClue(&BSS837X1v, "BSS837X1v");
+    createLabelClue(&BSS837X1n, "BSS837X1n");
+    createLabelClue(&BSS837X1h, "BSS837X1h");
+    createLabelClue(&BSS926X3E, "BSS926X3E");
+    createLabelClue(&BSS837X1b, "BSS837X1b");
+    createLabelClue(&BSS837X1f, "BSS837X1f");
+    createLabelClue(&BSS837X1r, "BSS837X1r");
+    createLabelClue(&BSS837X1f, "BSS837X1f");
+    createLabelClue(&BSS926X1FF, "BSS826X1FF");
+    createLabelClue(&BSS837X1x, "BSS837X1x");
+    createLabelClue(&BSS926X1FF, "BSS926X1FF");
+    createLabelClue(&BSS926X1HH, "BSS926X1HH");
+    createLabelClue(&BSS837X1z, "BSS837X1z");
+    createRedButton(&otk_pereg_gen1, "otk_pereg_gen1");
+    createRedButton(&otk_pereg_gen2, "otk_pereg_gen2");
+    createRedButton(&otk_pereg_gen3, "otk_pereg_gen3");
+    createRedButton(&otk_pereg_gen4, "otk_pereg_gen4");
+    createRedButton(&otk_pereg_akk1, "otk_pereg_akk1");
+    createRedButton(&otk_pereg_akk2, "otk_pereg_akk2");
+
 }
 void powerdc_ind::updateLogic()
 {
@@ -215,4 +252,5 @@ void powerdc_ind::updateLogic()
     powerdc_3();
     powerdc_4();
     powerdc_5();
+    powerdc_8();
 }

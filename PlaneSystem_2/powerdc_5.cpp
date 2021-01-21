@@ -68,7 +68,7 @@ double
     kg3_27,
     kg4_27;
 
-void powerdc_5()
+void powerdc_5() //5 6
 {
     //start logic
     inshal = k1_2420 * 15 + k2_2420 * 15
@@ -314,7 +314,7 @@ void powerdc_5()
 
     urap1 = 28.5 - 0.003 * irap1;
 
-    urap2 = 27.5 - 0.003 * irap2;
+    urap2 = 28.5 - 0.003 * irap2;
 
     ivsu = 0;
 

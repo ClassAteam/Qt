@@ -3,7 +3,6 @@
 interfacing::interfacing(QWidget *parent)
     : QWidget(parent)
 {
-
     layout_buttons = new QGridLayout(this);
     row =0;
     column =0;

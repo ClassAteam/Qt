@@ -33,6 +33,7 @@ s13_2430,
 s3_2430,
 s10_2430,
 glviklvsu;
+
 int
 tick_vsu27,
 tick_rap1,
@@ -43,7 +44,7 @@ double
 urap1,
 urap2;
 
-void powerdc_3()
+void powerdc_3() //2 //3
 {
     //start logic
     if(abs(Vkh) < 0.1)
@@ -381,6 +382,7 @@ void powerdc_3()
 
                 if((tick_vsu27 * TICK) >= 3000)
                 {
+                    purg27lk5 = false;
                     purg27lk1 = true;
                     purg27lk4 = false;
                     purg27lk7 = false;
@@ -390,6 +392,8 @@ void powerdc_3()
 
                     if(s7_2430 == true)
                     {
+                        purg27pk5 = false;
+                        purg27pk3 = true;
                         purg27pk1 = true;
                         purg27pk4 = false;
                         purg27pk7 = false;

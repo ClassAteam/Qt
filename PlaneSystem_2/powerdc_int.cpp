@@ -121,7 +121,8 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createRedButton(&s7_2430, "s7_2430");
     createRedButton(&s9_2430, "s9_2430");
     createRedButton(&s10_2430, "s10_2430");
-    createRedButton(&s13_2430, "s13_2430");
+    createRadioButton(&s13_2430, "ground", false);
+    createRadioButton(&s13_2430, "air", true);
     createRedButton(&s14_2430, "s14_2430");
     createRedButton(&s15_2430, "s15_2430");
     createRedButton(&glviklvsu, "glviklvsu");
@@ -225,8 +226,8 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelClue(&BSS926X1z, "BSS926X1z");
     createLabelClue(&BSS926X1DD, "BSS926X1DD");
     createLabelClue(&BSS837X1v, "BSS837X1v");
-    createLabelClue(&BSS837X1n, "BSS837X1n");
     createLabelClue(&BSS837X1h, "BSS837X1h");
+    createLabelClue(&BSS837X1n, "BSS837X1n");
     createLabelClue(&BSS926X3E, "BSS926X3E");
     createLabelClue(&BSS837X1b, "BSS837X1b");
     createLabelClue(&BSS837X1f, "BSS837X1f");
@@ -243,14 +244,62 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createRedButton(&otk_pereg_gen4, "otk_pereg_gen4");
     createRedButton(&otk_pereg_akk1, "otk_pereg_akk1");
     createRedButton(&otk_pereg_akk2, "otk_pereg_akk2");
-
+    createLabelClue(&UKS1X36, "UKS1X36");
+    createLabelClue(&UKS1X37, "UKS1X37");
+    createLabelClue(&UKS3X343, "UKS3X343");
+    createLabelClue(&UKS3X344, "UKS3X344");
+    createLabelClue(&UKS3X325, "UKS3X325");
+    createLabelClue(&UKS4X338, "UKS4X338");
+    createLabelClue(&UKS2X313, "UKS2X313");
+    createLabelClue(&UKS3X326, "UKS3X326");
+    createLabelClue(&UKS1X38, "UKS1X38");
+    createLabelClue(&UKS1X39, "UKS1X39");
+    createLabelClue(&UKS3X327, "UKS3X327");
+    createLabelClue(&UKS3X328, "UKS3X328");
+    createLabelClue(&UKS1X311, "UKS1X311");
+    createLabelClue(&UKS3X324, "UKS3X324");
+    createLabelClue(&UKS1X310, "UKS1X310");
+    createLabelClue(&UKS2X353, "UKS2X353");
+    createLabelClue(&UKS2X354, "UKS2X354");
+    createLabelClue(&UKS4X343, "UKS4X343");
+    createLabelClue(&UKS4X344, "UKS4X344");
+    createLabelClue(&UKS1X343, "UKS1X343");
+    createLabelClue(&UKS1X344, "UKS1X344");
+    createLabelClue(&UKS2X314, "UKS2X314");
+    createLabelClue(&UKS4X339, "UKS4X339");
+    createLabelClue(&UKS2X355, "UKS2X355");
+    createLabelClue(&UKS4X352, "UKS4X352");
+    createLabelClue(&UKS2X312, "UKS2X312");
+    createLabelClue(&UKS4X337, "UKS4X337");
+    createLabelClue(&UKS4X340, "UKS4X340");
+    createLabelClue(&UKS2X310, "UKS2X310");
+    createLabelClue(&UKS2X311, "UKS2X311");
+    createLabelClue(&UKS4X335, "UKS4X335");
+    createLabelClue(&UKS4X336, "UKS4X336");
+    createLabelClue(&UKS2X315, "UKS2X315");
+    createLabelClue(&UKS2X356, "UKS2X356");
+    createLabelValue(&UKS2X394, "UKS2X394");
+    createLabelValue(&UKS4X394, "UKS4X394");
+    createLabelValue(&UKS2X395, "UKS2X395");
+    createLabelValue(&UKS4X395, "UKS4X395");
+    createLabelClue(&UKS3X394, "UKS3X394");
+    createLabelClue(&UKS3X395, "UKS3X395");
+    createLabelValue(&UKS4X2105, "UKS4X2105");
+    createLabelValue(&UKS4X2106, "UKS4X2106");
+    createLabelValue(&UKS2X2105, "UKS2X2105");
+    createLabelValue(&UKS2X2106, "UKS2X2106");
+    createLabelValue(&UKS1X394, "UKS1X394");
+    createLabelValue(&UKS1X395, "UKS1X395");
+    createLabelValue(&UKS1X3105, "UKS1X3105");
+    createLabelValue(&UKS1X3106, "UKS1X3106");
 }
 void powerdc_ind::updateLogic()
 {
     powerdc_1();
-    powerdc_2();
-    powerdc_3();
+    powerdc_2_3();
     powerdc_4();
-    powerdc_5();
+    powerdc_5_6();
+    powerdc_7();
     powerdc_8();
+    powerdc_9_10();
 }

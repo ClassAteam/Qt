@@ -1,4 +1,4 @@
-#include "powerdc_9.h"
+#include "powerdc_9_10.h"
 
 bool
     UKS1X36,
@@ -35,14 +35,14 @@ bool
     UKS4X336,
     UKS2X315,
     UKS2X356,
-    UKS2X394,
-    UKS4X394,
-    UKS2X395,
-    UKS4X395,
     UKS3X394,
     UKS3X395;
 
 double
+    UKS2X395,
+    UKS4X395,
+    UKS2X394,
+    UKS4X394,
     UKS4X2105,
     UKS4X2106,
     UKS2X2105,
@@ -52,7 +52,7 @@ double
     UKS1X3105,
     UKS1X3106;
 
-void powerdc_9()
+void powerdc_9_10()
 {
     if(BSS837X1b)
         UKS1X36 = true;
@@ -176,36 +176,36 @@ void powerdc_9()
     else
         UKS4X338 = false;
 
-    if(uak1 >= 18.0 && s14_2430)
-    {
-        UKS2X355 = true;
+//    if(uak1 >= 18.0 && s14_2430)
+//    {
+//        UKS2X355 = true;
 
-        if(otk_pereg_akk1)
-            UKS2X312 = true;
-        else
-            UKS2X312 = false;
-    }
-    else
-    {
-        UKS2X355 = false;
-        UKS2X312 = false;
+//        if(otk_pereg_akk1)
+//            UKS2X312 = true;
+//        else
+//            UKS2X312 = false;
+//    }
+//    else
+//    {
+//        UKS2X355 = false;
+//        UKS2X312 = false;
 
-    }
+//    }
 
-    if(uak2 >= 18.0 && s15_2430)
-    {
-        UKS4X352 = true;
+//    if(uak2 >= 18.0 && s15_2430)
+//    {
+//        UKS4X352 = true;
 
-        if(otk_pereg_akk2)
-            UKS4X337 = true;
-        else
-            UKS4X337 = false;
-    }
-    else
-    {
-        UKS4X352 = false;
-        UKS4X337 = false;
-    }
+//        if(otk_pereg_akk2)
+//            UKS4X337 = true;
+//        else
+//            UKS4X337 = false;
+//    }
+//    else
+//    {
+//        UKS4X352 = false;
+//        UKS4X337 = false;
+//    }
 
     if(purg27pk3)
         UKS4X340 = true;
@@ -227,7 +227,7 @@ void powerdc_9()
     else
         UKS4X335 = false;
 
-    if(BSS837X1h)
+    if(BSS837X1n)
         UKS4X336 = true;
     else
         UKS4X336 = false;

@@ -1,4 +1,7 @@
-#include "powerdc_3.h"
+#include "powerdc_2_3.h"
+
+enum
+    s13_2430_pos{ground, air};
 
 bool
 pvkchrl,
@@ -29,12 +32,12 @@ s9_2430,
 s14_2430,
 s15_2430,
 s7_2430,
-s13_2430,
 s3_2430,
 s10_2430,
 glviklvsu;
 
 int
+s13_2430,
 tick_vsu27,
 tick_rap1,
 tick_rap11,
@@ -44,7 +47,7 @@ double
 urap1,
 urap2;
 
-void powerdc_3() //2 //3
+void powerdc_2_3() //2 //3
 {
     //start logic
     if(abs(Vkh) < 0.1)
@@ -96,7 +99,7 @@ void powerdc_3() //2 //3
         purg27pk4 = false;
     }
 
-    if(s13_2430 == true)
+    if(s13_2430 == air)
     {
         purg27lk4 = false;
         purg27pk4 = false;
@@ -164,7 +167,7 @@ void powerdc_3() //2 //3
 
     if(purg27lk5 == true || purg27pk5 == true)
     {
-        if(ush1dpl >= 18.0 && s13_2430 == true)
+        if(ush1dpl >= 18.0 && s13_2430 == air)
         {
             if(s7_2430 || (plp27 == false && ppp27 == false))
             {
@@ -311,7 +314,7 @@ void powerdc_3() //2 //3
 
         }
     }
-    if(s13_2430 == false)
+    if(s13_2430 == ground)
     {
         if(purg27lk4 == true)
         {

@@ -38,7 +38,6 @@ extern bool
     s14_2430,
     s15_2430,
     s7_2430,
-    s13_2430,
     s3_2430,
     s10_2430,
     glviklvsu,
@@ -49,6 +48,8 @@ extern bool
     prgvsu27,
     BSS812X5t;
 
+extern int
+    s13_2430;
 extern double
     uak1,
     uak2,

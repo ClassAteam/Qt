@@ -68,12 +68,12 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     powerdc_1.cpp \
-    powerdc_2.cpp \
-    powerdc_3.cpp \
+    powerdc_2_3.cpp \
     powerdc_4.cpp \
-    powerdc_5.cpp \
+    powerdc_5_6.cpp \
+    powerdc_7.cpp \
     powerdc_8.cpp \
-    powerdc_9.cpp \
+    powerdc_9_10.cpp \
     powerdc_int.cpp \
     presure_regulation.cpp \
     wind_functions.cpp \
@@ -135,12 +135,12 @@ HEADERS += \
     main.h \
     mainwindow.h \
     powerdc_1.h \
-    powerdc_2.h \
-    powerdc_3.h \
+    powerdc_2_3.h \
     powerdc_4.h \
-    powerdc_5.h \
+    powerdc_5_6.h \
+    powerdc_7.h \
     powerdc_8.h \
-    powerdc_9.h \
+    powerdc_9_10.h \
     powerdc_int.h \
     presure_regulation.h \
     wind_functions.h \

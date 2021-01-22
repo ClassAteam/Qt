@@ -40,6 +40,7 @@ public:
     QSignalMapper* signalMapperRbtns;
     int rbGroupID;
     int rbID;
+    int rbMappedValue;
     QVector<int*> rbTogglers;
     QVector<QRadioButton*> rbtnPool;
     void posOcupied();
@@ -48,7 +49,7 @@ public:
 signals:
     int digitClicked(int);
     int changeValue(int);
-    int rbClicked(int);
+    int rbClicked(const QString);
 
 public slots:
     void createRedButton(bool* clue, QString name);
@@ -59,7 +60,7 @@ public slots:
     void m_RedButton2(int);
     void setLbl();
     void setSlV(int);
-    void setRB(int);
+    void setRB(const QString);
     void trigerButton();
     virtual void updateLogic();
 };

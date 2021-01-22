@@ -1,4 +1,5 @@
 extern bool
+    UKS2X355,
     s14_2430,
     s15_2430,
     purg27pk3,

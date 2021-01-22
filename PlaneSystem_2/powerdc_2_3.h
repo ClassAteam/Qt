@@ -26,5 +26,5 @@ ushap,
 ushal,
 Vkh;
 
-void powerdc_3();
+void powerdc_2_3();
 

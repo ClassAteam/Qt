@@ -27,11 +27,12 @@ interfacing::interfacing(QWidget *parent)
     //rbuttons
     rbGroupID = 0;
     rbID = 0;
+    rbMappedValue = 0;
     QButtonGroup* firstgroup = new QButtonGroup;
     rbGrPool.append(firstgroup);
     signalMapperRbtns = new QSignalMapper(this);
-    connect(signalMapperRbtns, SIGNAL(mapped(int)), this, SIGNAL(rbClicked(int)));
-    connect(this, SIGNAL(rbClicked(int)), this, SLOT(setRB(int)));
+    connect(signalMapperRbtns, SIGNAL(mapped(const QString)), this, SIGNAL(rbClicked(const QString)));
+    connect(this, SIGNAL(rbClicked(const QString)), this, SLOT(setRB(const QString)));
 }
 
 void interfacing::createRedButton(bool* clue, QString name)
@@ -88,13 +89,16 @@ void interfacing::createRadioButton(int* toggler, QString name, bool isLastInGrp
     rbGrPool[rbGroupID]->addButton(rbutton);
     layout_buttons->addWidget(rbutton, row, column);
     posOcupied();
-    signalMapperRbtns->setMapping(rbutton, rbID);
+    const QString str = QString::number(rbID) + "_" + QString::number(rbMappedValue) ;
+    signalMapperRbtns->setMapping(rbutton, str);
     connect(rbutton, SIGNAL(clicked()), signalMapperRbtns, SLOT(map()));
     rbTogglers.append(toggler);
     rbtnPool.append(rbutton);
     rbID++;
+    rbMappedValue++;
     if(isLastInGrp)
     {
+        rbMappedValue = 0;
         rbGroupID++;
         QButtonGroup* newGroup = new QButtonGroup;
         rbGrPool.append(newGroup);
@@ -156,9 +160,17 @@ void interfacing::setLbl()
     }
 }
 
-void interfacing::setRB(int value)
+void interfacing::setRB(const QString str)
 {
-    *rbTogglers[value] = value;
+    QStringList list;
+    QString value_index;
+    QString value;
+
+    list = str.split(QRegularExpression("_"));
+    value_index = list[0];
+    value = list[1];
+
+    *rbTogglers[value_index.toInt()] = value.toInt();
 }
 
 void interfacing::posOcupied()

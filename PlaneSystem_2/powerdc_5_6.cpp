@@ -1,4 +1,4 @@
-#include "powerdc_5.h"
+#include "powerdc_5_6.h"
 
 bool
     y1_3650,
@@ -68,7 +68,7 @@ double
     kg3_27,
     kg4_27;
 
-void powerdc_5() //5 6
+void powerdc_5_6() //5 6
 {
     //start logic
     inshal = k1_2420 * 15 + k2_2420 * 15

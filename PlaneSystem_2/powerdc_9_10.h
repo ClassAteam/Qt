@@ -11,7 +11,7 @@ extern bool
     prg3,
     prg4,
     prgvsu27,
-    BSS837X1h,
+    BSS837X1n,
     BSS837X1BB,
     BSS837X1b,
     BSS837X1f,
@@ -31,7 +31,7 @@ extern bool
     BSS926X1z,
     BSS926X1DD,
     BSS837X1v,
-    BSS837X1n,
+    BSS837X1h,
     BSS926X3E,
     s14_2430,
     s15_2430,
@@ -55,5 +55,5 @@ extern double
 
 
 
-void powerdc_9();
+void powerdc_9_10();
 

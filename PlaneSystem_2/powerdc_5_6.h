@@ -90,4 +90,4 @@ extern double
     nvsu,
     ushzvsu;
 
-void powerdc_5();
+void powerdc_5_6();

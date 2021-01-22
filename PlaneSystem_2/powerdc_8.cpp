@@ -153,7 +153,16 @@ void powerdc_8()
     {
         if(s14_2430)
         {
-            BSS926X1HH = true;
+            if(purg27lk4)
+            {
+                BSS926X1HH = false;
+                UKS2X355 = false;
+            }
+            else
+            {
+                BSS926X1HH = true;
+                UKS2X355 = true;
+            }
 
             if(otk_pereg_akk1)
             {
@@ -174,7 +183,11 @@ void powerdc_8()
     {
         if(s15_2430)
         {
-            BSS837X1z = true;
+            if(purg27pk4)
+                BSS837X1z = false;
+            else
+                BSS837X1z = true;
+
             if(otk_pereg_akk2)
             {
                 BSS837X1x = true;

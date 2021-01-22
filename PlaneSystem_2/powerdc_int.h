@@ -6,12 +6,13 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include "interfacing.h"
+#include "powerdc_7.h"
 #include "powerdc_1.h"
-#include "powerdc_2.h"
-#include "powerdc_3.h"
+#include "powerdc_2_3.h"
 #include "powerdc_4.h"
-#include "powerdc_5.h"
+#include "powerdc_5_6.h"
 #include "powerdc_8.h"
+#include "powerdc_9_10.h"
 
 extern double
     inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
@@ -29,9 +30,11 @@ extern double
     divg1, divg2, divg3, divg4, divgvsu27,
     ng1, ng2, ng3, ng4, ngvsu,
     kn1, krg, krgvsu, kak,
-    kg1, kgvsu, kg10 , qa1, qa2, ea1, ea2, iak1, iak2, ra1, ra2, urap1, urap2;
+    kg1, kgvsu, kg10 , qa1, qa2, ea1, ea2, iak1, iak2, ra1, ra2, urap1, urap2,
+    UKS4X2105, UKS4X2106, UKS2X2105, UKS2X2106, UKS1X394, UKS1X395,UKS2X394,
+    UKS2X395, UKS4X395, UKS4X394,  UKS1X3105, UKS1X3106;
 extern int
-    s16_2430, s17_2430;
+    s13_2430, s16_2430, s17_2430;
 extern bool
     otk_pereg_gen1, otk_pereg_gen2, otk_pereg_gen3, otk_pereg_gen4,
     otk_pereg_akk1, otk_pereg_akk2,
@@ -56,8 +59,13 @@ extern bool
     pvkchrl, pvkchrp, purg27lk1, purg27pk1, purg27pk3, purg27lk4, purg27pk4,
     purg27lk5, purg27pk5, purg27lk6, purg27lk7, purg27pk7, purg27lk9, purg27pk9,
     ppgvsu27, pvrap1, pvrap2, pprap1, pprap2, plp27, ppp27, pss27, pshzvsu,
-    s2_2430, s9_2430, s14_2430, s15_2430, s7_2430, s13_2430, s3_2430, s10_2430,
-    glviklvsu;
+    s2_2430, s9_2430, s14_2430, s15_2430, s7_2430,  s3_2430, s10_2430,
+    glviklvsu,
+    UKS1X36, UKS1X37, UKS3X343, UKS3X344, UKS3X325, UKS4X338, UKS2X313,
+    UKS3X326, UKS1X38, UKS1X39, UKS3X327, UKS3X328, UKS1X311, UKS3X324,
+    UKS1X310, UKS2X353, UKS2X354, UKS4X343, UKS4X344, UKS1X343, UKS1X344,
+    UKS2X314, UKS4X339, UKS2X355, UKS4X352, UKS2X312, UKS4X337, UKS4X340,
+    UKS2X310, UKS2X311, UKS4X335, UKS4X336, UKS2X315, UKS2X356, UKS3X394, UKS3X395;
 
 
 class powerdc_ind : public interfacing

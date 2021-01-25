@@ -71,9 +71,7 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&ng4, "ng4");
     createLabelValue(&ngvsu, "ngvsu");
     createLabelValue(&iak1, "iak1");
-    createSlider(&iak1, -100, 600);
     createLabelValue(&iak2, "iak2");
-    createSlider(&iak2, -100, 600);
     createLabelValue(&ea1, "ea1");
     createLabelValue(&ea2, "ea2");
     createLabelValue(&qa1, "qa1");
@@ -118,9 +116,13 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createRedButton(&s1_2430, "s1_2430");
     createRedButton(&s2_2430, "s2_2430");
     createRedButton(&s3_2430, "s3_2430");
+    createRedButton(&s4_2430, "s4_2430");
+    createRedButton(&s5_2430, "s5_2430");
     createRedButton(&s7_2430, "s7_2430");
+    createRedButton(&s8_2430, "s8_2430");
     createRedButton(&s9_2430, "s9_2430");
     createRedButton(&s10_2430, "s10_2430");
+    createRedButton(&s11_2430, "s11_2430");
     createRadioButton(&s13_2430, "ground", false);
     createRadioButton(&s13_2430, "air", true);
     createRedButton(&s14_2430, "s14_2430");
@@ -230,10 +232,8 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelClue(&BSS837X1n, "BSS837X1n");
     createLabelClue(&BSS926X3E, "BSS926X3E");
     createLabelClue(&BSS837X1b, "BSS837X1b");
-    createLabelClue(&BSS837X1f, "BSS837X1f");
     createLabelClue(&BSS837X1r, "BSS837X1r");
     createLabelClue(&BSS837X1f, "BSS837X1f");
-    createLabelClue(&BSS926X1FF, "BSS826X1FF");
     createLabelClue(&BSS837X1x, "BSS837X1x");
     createLabelClue(&BSS926X1FF, "BSS926X1FF");
     createLabelClue(&BSS926X1HH, "BSS926X1HH");
@@ -282,16 +282,13 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&UKS4X394, "UKS4X394");
     createLabelValue(&UKS2X395, "UKS2X395");
     createLabelValue(&UKS4X395, "UKS4X395");
-    createLabelClue(&UKS3X394, "UKS3X394");
-    createLabelClue(&UKS3X395, "UKS3X395");
+    createLabelValue(&UKS3X394, "UKS3X394");
+    createLabelValue(&UKS3X395, "UKS3X395");
     createLabelValue(&UKS4X2105, "UKS4X2105");
-    createLabelValue(&UKS4X2106, "UKS4X2106");
     createLabelValue(&UKS2X2105, "UKS2X2105");
-    createLabelValue(&UKS2X2106, "UKS2X2106");
     createLabelValue(&UKS1X394, "UKS1X394");
     createLabelValue(&UKS1X395, "UKS1X395");
     createLabelValue(&UKS1X3105, "UKS1X3105");
-    createLabelValue(&UKS1X3106, "UKS1X3106");
 }
 void powerdc_ind::updateLogic()
 {

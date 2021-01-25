@@ -34,11 +34,11 @@ bool
     UKS4X335,
     UKS4X336,
     UKS2X315,
-    UKS2X356,
-    UKS3X394,
-    UKS3X395;
+    UKS2X356;
 
 double
+    UKS3X394,
+    UKS3X395,
     UKS2X395,
     UKS4X395,
     UKS2X394,
@@ -75,16 +75,11 @@ void powerdc_9_10()
         UKS3X326 = false;
 
     if(BSS926X1x)
-        UKS3X326 = true;
-    else
-        UKS3X326 = false;
-
-    if(BSS926X1x)
         UKS1X38 = true;
     else
         UKS1X38 = false;
 
-    if(BSS837X1BB)
+    if(BSS926X1BB)
         UKS1X39 = true;
     else
         UKS1X39 = false;
@@ -105,9 +100,9 @@ void powerdc_9_10()
         UKS1X311 = false;
 
     if(BSS926X3J)
-        UKS3X325 = true;
+        UKS3X324 = true;
     else
-        UKS3X325 = false;
+        UKS3X324 = false;
 
     if(BSS926X3C)
         UKS1X310 = true;
@@ -142,7 +137,7 @@ void powerdc_9_10()
         UKS2X353 = false;
 
     if(prg2)
-        UKS2X353 = true;
+        UKS2X354 = true;
     else
         UKS2X354 = false;
 
@@ -249,10 +244,12 @@ void powerdc_9_10()
     UKS1X394 = ush1l;
     UKS1X395 = ush2l;
 
+    UKS3X394 = ush1p;
+    UKS3X395 = ush2p;
+
     if(purg27lk5)
     {
         UKS2X2105 = iak1;
-        UKS2X2106 = iak1;
     }
     else
     {

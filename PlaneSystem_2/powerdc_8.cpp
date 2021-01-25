@@ -18,7 +18,7 @@ void powerdc_8()
         BSS837X1p = true;
     else
         BSS837X1p = false;
-    if(purg27pk3)
+    if(purg27pk3 || pss27)
         BSS926X3C = true;
     else
         BSS926X3C = false;
@@ -148,6 +148,8 @@ void powerdc_8()
     BSS926X1HH = false;
     BSS837X1x = false;
     BSS837X1z = false;
+    UKS2X355 = false;
+    UKS4X352 = false;
 
     if(uak1 >= 18.0)
     {
@@ -156,7 +158,6 @@ void powerdc_8()
             if(purg27lk4)
             {
                 BSS926X1HH = false;
-                UKS2X355 = false;
             }
             else
             {
@@ -184,9 +185,14 @@ void powerdc_8()
         if(s15_2430)
         {
             if(purg27pk4)
+            {
                 BSS837X1z = false;
+            }
             else
+            {
                 BSS837X1z = true;
+                UKS4X352 = true;
+            }
 
             if(otk_pereg_akk2)
             {

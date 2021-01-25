@@ -57,6 +57,7 @@ void powerdc_1() //1
     bool* pbg_pool[] = {&pbg1, &pbg2, &pbg3, &pbg4, &pbgvsu27};
     bool* prg_pool[] = {&prg1, &prg2, &prg3, &prg4, &prgvsu27};
     int * tick_pool[] = {&tickg1, &tickg2, &tickg3, &tickg4, &tickvsu};
+    double* ushal_pool[] = {&ushal, &ushal, &ushap, &ushap};
 
     for(int i = 0; i < 5; i++)
     {
@@ -116,7 +117,7 @@ void powerdc_1() //1
 
     for(int i = 0; i < 4; i++)
     {
-        if(ushal >= 18.0 && *s4_pool[i] == true)
+        if(*ushal_pool[i] >= 18.0 && *s4_pool[i] == true)
         {
             *pvkg_pool[i] = true;
         }

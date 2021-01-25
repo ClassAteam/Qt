@@ -267,11 +267,13 @@ void powerdc_2_3() //2 //3
         purg27lk1 = true;
         purg27lk7 = true;
         purg27lk9 = true;
+        purg27lk5 = false;
 //        purg27lk4 = false;
 //        plp27 = true;
 
         if(ppp27)
         {
+            purg27pk5 = false;
             purg27pk1 = true;
             purg27pk7 = true;
             purg27pk9 = true;
@@ -286,6 +288,7 @@ void powerdc_2_3() //2 //3
                 purg27pk7 = true;
                 purg27pk9 = true;
                 purg27pk4 = false;
+                purg27pk5 = false;
                 pss27 = true;
 //                ppp27 = true;
             }
@@ -298,6 +301,7 @@ void powerdc_2_3() //2 //3
             purg27pk1 = true;
             purg27pk7 = true;
             purg27pk9 = true;
+            purg27pk5 = false;
 //            purg27pk4 = false;
 //            ppp27 = true;
 
@@ -307,6 +311,8 @@ void powerdc_2_3() //2 //3
                 purg27lk7 = true;
                 purg27lk9 = true;
                 purg27lk4 = false;
+                purg27lk5 = false;
+
                 pss27 = true;
 //                plp27 = true;
             }

@@ -175,7 +175,7 @@ int main(int argc, char *argv[])
     layout_hydro.addWidget(&walarm.wgt_walarm);
     window_hydro.setLayout(&layout_hydro);
     window_hydro.setWindowTitle("Hydro");
-    window_hydro.setWindowState(Qt::WindowFullScreen);
+//    window_hydro.setWindowState(Qt::WindowFullScreen);
     window_hydro.show();
 
 

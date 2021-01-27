@@ -13,7 +13,21 @@
 #include "powerdc_5_6.h"
 #include "powerdc_8.h"
 #include "powerdc_9_10.h"
+#include "powerdc_11.h"
 
+namespace alt{
+extern double
+    fg[5], ng1, ng2, ng3, ng4, ngvsu,
+    ivg1, ivg2, ivg3, ivg4, ivgvsu,
+    ing1, ing2, ing3, ing4, ingvsu,
+    divg1, divg2, divg3, divg4, divgvsu,
+    ug1, ug2, ug3, ug4, ugvsu,
+    ug1r, ug2r, ug3r, ug4r, ugvsur,
+    ug1z, ug2z, ug3z, ug4z, ugvsuz,
+    ug1a, ug2a, ug3a, ug4a, ugVsuA,
+    ug1b, ug2b, ug3b, ug4b, ugVsuB,
+    ug1c, ug2c, ug3c, ug4c, ugVsuC;
+}
 extern double
     inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
     inshal, inshap, insh1l, insh1p, insh2l, insh2p, inshzvsu, insl27,
@@ -36,6 +50,13 @@ extern double
 extern int
     s13_2430, s16_2430, s17_2430;
 extern bool
+    BSS838X5E, BSS838X5N, BSS837X3N, BSS837X3C,
+    s3_2420, s6_2420, s11_2420, s14_2420, f9_2420, f14_2420, f24_2420,
+    f28_2420, popg1, popg2, popg3, popg4, ppg1, ppg2, ppg3, ppg4, otkGenPerT1,
+    otkGenPerT2, otkGenPerT3, otkGenPerT4, otkGenPerVsu, otkPadDavlMaslPpo1G, otkPadDavlMaslPpo2G,
+    otkPadDavlMaslPpo3G, otkPadDavlMaslPpo4G, popp01, popp02, popp03, popp04,
+    f92_2420, f142_2420, f242_2420, f282_2420, k25_2420, k26_2420, k27_2420,
+    k28_2420,
     otk_pereg_gen1, otk_pereg_gen2, otk_pereg_gen3, otk_pereg_gen4,
     otk_pereg_akk1, otk_pereg_akk2,
     BSS837X1d, BSS837X1p, BSS926X3C, BSS926X1MM, BSS926X3J,

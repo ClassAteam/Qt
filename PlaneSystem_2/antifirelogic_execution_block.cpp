@@ -3,7 +3,7 @@
 bool
 PAPDvh6,
 PPBI,
-PNU,
+pnu,
 K1_2610,
 K3_2610,
 K6_2610,
@@ -117,7 +117,7 @@ antifirelogic_exb::antifirelogic_exb(QWidget* pwgt)
     S13_2610   = 0;
     S14_2610   = 0;
     S15_2610   = 0;
-    PNU   	  = false;
+    pnu   	  = false;
     otkaz_avtomatiki_SPZ = false;
     pozhar_1_dv = 0;
     pozhar_2_dv = 0;
@@ -1439,7 +1439,7 @@ else
 
 }
 //					PW toggles
-if (PNU == true)
+if (pnu == true)
 {
     PW_1_och_l = true;
     PW_1_och_o = true;
@@ -1513,7 +1513,7 @@ if (F121_2610 == true && K49_2610 == true)
     S13_2610_label->setText("S13 = " + QString::number(S13_2610));
     S14_2610_label->setText("S14 = " + QString::number(S14_2610));
     S15_2610_label->setText("S15 = " + QString::number(S15_2610));
-    PNU_label->setText("PNU = " + QString::number(PNU));
+    PNU_label->setText("PNU = " + QString::number(pnu));
     PW_1_och_l_label->setText("PW 1 och L = " + QString::number(PW_1_och_l));
     PW_1_och_o_label->setText("PW 1 och O = " + QString::number(PW_1_och_o));
     PW_2_och_label->setText("PW 2 och = " + QString::number(PW_2_och));
@@ -1798,11 +1798,11 @@ int antifirelogic_exb::otkaz_avtomatiki_SPZ_off()
 }
 int antifirelogic_exb::PNU_on()
 {
-    PNU = true;
+    pnu = true;
 }
 int antifirelogic_exb::PNU_off()
 {
-    PNU = false;
+    pnu = false;
 }
 int antifirelogic_exb::pozhar_vsu_on()
 {

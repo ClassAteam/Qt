@@ -384,6 +384,45 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelClue(&BSS838X5N, "BSS838X5N");
     createLabelClue(&BSS837X3N, "BSS837X3N");
     createLabelClue(&BSS837X3C, "BSS837X3C");
+    createLabelClue(&purglk6, "purglk6");
+    createLabelClue(&purgpk6, "purgpk6");
+    createLabelClue(&pvkgen[0], "pvkgen1"),
+    createLabelClue(&pvkgen[1], "pvkgen2"),
+    createLabelClue(&pvkgen[2], "pvkgen3"),
+    createLabelClue(&pvkgen[3], "pvkgen4"),
+    createLabelClue(&pvkgen[4], "pvkgenVSU"),
+    createLabelClue(&pzvg[0], "pzvg1");
+    createLabelClue(&pzvg[1], "pzvg2");
+    createLabelClue(&pzvg[2], "pzvg3");
+    createLabelClue(&pzvg[3], "pzvg4");
+    createLabelClue(&pzvg[4], "pzvgvsu");
+    createLabelClue(&purgk1, "purgk1");
+    createLabelClue(&purgk21, "purgk21");
+    createLabelClue(&purgk31, "purgk31");
+    createLabelClue(&purgk41, "purgk41");
+    createLabelClue(&purglk4, "purglk4");
+    createLabelClue(&purgpk4, "purgpk4");
+    createLabelClue(&purglk5, "purglk5");
+    createLabelClue(&purgpk5, "purgpk5");
+    createLabelClue(&prgen[0], "prgen1");
+    createLabelClue(&prgen[1], "prgen2");
+    createLabelClue(&prgen[2], "prgen3");
+    createLabelClue(&prgen[3], "prgen4");
+    createLabelClue(&prgen[4], "prgenVSU");
+    createLabelClue(&pog[0], "pog1");
+    createLabelClue(&pog[1], "pog2");
+    createLabelClue(&pog[2], "pog3");
+    createLabelClue(&pog[3], "pog4");
+    createLabelClue(&pchrl, "pchrl");
+    createLabelClue(&pchrp, "pchrp");
+    createLabelClue(&k1_2430, "k1_2430");
+    createRedButton(&s1_2420, "s1_2420");
+    createRedButton(&s5_2420, "s5_2420");
+    createRedButton(&s10_2420, "s10_2420");
+    createRedButton(&s13_2420, "s13_2420");
+    createRedButton(&s4_2420, "s4_2420");
+    createRedButton(&s12_2420, "s12_2420");
+    createRedButton(&s8_2420, "s8_2420");
 }
 void powerdc_ind::updateLogic()
 {
@@ -395,4 +434,5 @@ void powerdc_ind::updateLogic()
     powerdc_8();
     powerdc_9_10();
     powerdc_11();
+    powerdc_12();
 }

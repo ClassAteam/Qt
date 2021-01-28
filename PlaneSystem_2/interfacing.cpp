@@ -141,7 +141,7 @@ void interfacing::setLbl()
         else
         {
             label->setText(label->text());
-            label->setStyleSheet("");
+            label->setStyleSheet("background-color: orange");
         }
     }
 

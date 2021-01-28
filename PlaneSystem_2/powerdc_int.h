@@ -14,6 +14,7 @@
 #include "powerdc_8.h"
 #include "powerdc_9_10.h"
 #include "powerdc_11.h"
+#include "powerdc_12.h"
 
 namespace alt{
 extern double
@@ -50,6 +51,10 @@ extern double
 extern int
     s13_2430, s16_2430, s17_2430;
 extern bool
+    purglk6, purgpk6, pvkgen[5], pvkgen2, pvkgen3, pvkgen4, pvkgenvsu,
+    pzvg[5], pzvgvsu, purgk1, purgk21, purgk31, purgk41, purglk4, purgpk4,
+    purglk5, purgpk5, prgen[5], pog[4], pchrl, pchrp, k1_2430,
+    s1_2420, s5_2420, s10_2420, s13_2420, s4_2420, s12_2420, s8_2420,
     BSS838X5E, BSS838X5N, BSS837X3N, BSS837X3C,
     s3_2420, s6_2420, s11_2420, s14_2420, f9_2420, f14_2420, f24_2420,
     f28_2420, popg1, popg2, popg3, popg4, ppg1, ppg2, ppg3, ppg4, otkGenPerT1,

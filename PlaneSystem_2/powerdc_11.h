@@ -21,6 +21,7 @@ extern QVector<double>
 extern double
     nvsu,
     ushal,
+    ushap,
     ush1dpl,
     ush2dpl,
     ush1dpp,

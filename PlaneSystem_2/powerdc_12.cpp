@@ -123,6 +123,10 @@ void powerdc_12()
             else
                 pog[x] = true;
         }
+        else
+        {
+            pog[x] = true;
+        }
     }
     if(prgen[0])
         purgk1 = true;

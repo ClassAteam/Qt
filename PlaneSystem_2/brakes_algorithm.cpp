@@ -21,7 +21,7 @@ ax_ts,
 pgat,
 P_t_lev,
 P_t_prav,
-Vkh;
+vkh;
 
 
 brakes_algorithm::brakes_algorithm(QWidget*pwgt)
@@ -43,7 +43,7 @@ brakes_algorithm::brakes_algorithm(QWidget*pwgt)
     pgat = 0;
     P_t_lev = 0;
     P_t_prav = 0;
-    Vkh = 0;
+    vkh = 0;
 }
 
 void brakes_algorithm::logic_algorithm()
@@ -56,7 +56,7 @@ void brakes_algorithm::logic_algorithm()
     PTstart = false;
     ptstoyan = false;
     PPDGAKT = false;
-    if((Pgs2 >= 200 || Pgs3 >= 220 || pgat >= 130) && Vkh <= 260)
+    if((Pgs2 >= 200 || Pgs3 >= 220 || pgat >= 130) && vkh <= 260)
     {
         if(K35_3230 == true && (K27_3230 == true || K26_3230 == true))
         {
@@ -89,7 +89,7 @@ void brakes_algorithm::logic_algorithm()
             if(PstartT == true)
             {
                 PTstart = true;
-                if(Vkh <= 8.1)
+                if(vkh <= 8.1)
                 {
                     P_t_lev = 150;
                     P_t_prav = 150;
@@ -107,7 +107,7 @@ void brakes_algorithm::logic_algorithm()
                 ptstoyan = true;
             }
 
-            if(Vkh <= 8.1)
+            if(vkh <= 8.1)
             {
                 if(PAVT_N == true)
                 {
@@ -211,7 +211,7 @@ void brakes_algorithm::logic_algorithm()
                     }
                     else
                     {
-                        if(pgat < 130 || Vkh <= 13.5)
+                        if(pgat < 130 || vkh <= 13.5)
                         {
                             P_t_lev = 120;
                             P_t_prav = 120;

@@ -368,10 +368,10 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelClue(&popg2, "popg2");
     createLabelClue(&popg3, "popg3");
     createLabelClue(&popg4, "popg4");
-    createLabelClue(&ppg1, "ppg1");
-    createLabelClue(&ppg2, "ppg2");
-    createLabelClue(&ppg3, "ppg3");
-    createLabelClue(&ppg4, "ppg4");
+    createLabelClue(&pvksku[0], "pvksku1");
+    createLabelClue(&pvksku[1], "pvksku2");
+    createLabelClue(&pvksku[2], "pvksku3");
+    createLabelClue(&pvksku[3], "pvksku4");
     createLabelClue(&f92_2420, "f92_2420");
     createLabelClue(&f142_2420, "f142_2420");
     createLabelClue(&f242_2420, "f242_2420");
@@ -423,6 +423,24 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createRedButton(&s4_2420, "s4_2420");
     createRedButton(&s12_2420, "s12_2420");
     createRedButton(&s8_2420, "s8_2420");
+    createRedButton(&s2_2420, "s2_2420");
+    createRedButton(&s9_2420, "s9_2420");
+    createRedButton(&pvrap, "pvrap");
+    createLabelClue(&pprap, "pprap");
+    createLabelClue(&purglk2, "purglk2");
+    createLabelClue(&purgpk3, "purgpk3");
+    createLabelClue(&purglk7, "purglk7");
+    createLabelClue(&purgpk7, "purgpk7");
+    createLabelClue(&purglk8, "purglk8");
+    createLabelClue(&pp400[0], "plp400");
+    createLabelClue(&pp400[1], "ppp400");
+    createLabelClue(&pss400, "pss400");
+    createLabelValue(&urap, "urap");
+    createLabelValue(&frap, "frap");
+    createRedButton(&s1_7710, "s1_7710");
+    createRedButton(&s2_7710, "s2_7710");
+    createRedButton(&s3_7710, "s3_7710");
+    createRedButton(&s4_7710, "s4_7710");
 }
 void powerdc_ind::updateLogic()
 {
@@ -435,4 +453,5 @@ void powerdc_ind::updateLogic()
     powerdc_9_10();
     powerdc_11();
     powerdc_12();
+    powerdc_13();
 }

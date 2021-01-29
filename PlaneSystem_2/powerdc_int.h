@@ -15,6 +15,7 @@
 #include "powerdc_9_10.h"
 #include "powerdc_11.h"
 #include "powerdc_12.h"
+#include "powerdc_13.h"
 
 namespace alt{
 extern double
@@ -30,6 +31,7 @@ extern double
     ug1c, ug2c, ug3c, ug4c, ugVsuC;
 }
 extern double
+    urap, frap,
     inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
     inshal, inshap, insh1l, insh1p, insh2l, insh2p, inshzvsu, insl27,
     insp27, insho1l, insho1p, insho2l, insho2p, kg1_27, kg2_27, kg3_27, kg4_27,
@@ -51,13 +53,16 @@ extern double
 extern int
     s13_2430, s16_2430, s17_2430;
 extern bool
+    s1_7710, s2_7710, s3_7710, s4_7710,
+    s2_2420, s9_2420, pvrap, pprap, purglk2, purgpk3, purglk7, purgpk7,
+    purglk8, pp400[2], pss400,
     purglk6, purgpk6, pvkgen[5], pvkgen2, pvkgen3, pvkgen4, pvkgenvsu,
     pzvg[5], pzvgvsu, purgk1, purgk21, purgk31, purgk41, purglk4, purgpk4,
     purglk5, purgpk5, prgen[5], pog[4], pchrl, pchrp, k1_2430,
     s1_2420, s5_2420, s10_2420, s13_2420, s4_2420, s12_2420, s8_2420,
     BSS838X5E, BSS838X5N, BSS837X3N, BSS837X3C,
     s3_2420, s6_2420, s11_2420, s14_2420, f9_2420, f14_2420, f24_2420,
-    f28_2420, popg1, popg2, popg3, popg4, ppg1, ppg2, ppg3, ppg4, otkGenPerT1,
+    f28_2420, popg1, popg2, popg3, popg4, pvksku[4], otkGenPerT1,
     otkGenPerT2, otkGenPerT3, otkGenPerT4, otkGenPerVsu, otkPadDavlMaslPpo1G, otkPadDavlMaslPpo2G,
     otkPadDavlMaslPpo3G, otkPadDavlMaslPpo4G, popp01, popp02, popp03, popp04,
     f92_2420, f142_2420, f242_2420, f282_2420, k25_2420, k26_2420, k27_2420,

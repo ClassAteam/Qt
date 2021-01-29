@@ -1,6 +1,14 @@
 #include "powerdc_11.h"
 
 bool
+    k21_2420,
+    k22_2420,
+    k23_2420,
+    k24_2420,
+    s1_7710,
+    s2_7710,
+    s3_7710,
+    s4_7710,
     s3_2420,
     s6_2420,
     s11_2420,
@@ -9,10 +17,7 @@ bool
     popg2,
     popg3,
     popg4,
-    ppg1,
-    ppg2,
-    ppg3,
-    ppg4,
+    pvksku[4],
     otkGenPerT1,
     otkGenPerT2,
     otkGenPerT3,
@@ -75,11 +80,12 @@ void powerdc_11()
     bool* popg1_pool[] = {&popg1, &popg2, &popg3, &popg4, &dummy};
     double* ush1dpl_pool[] = {&ush1dpl, &ush2dpl, &ush1dpp, &ush2dpp};
     bool* f9_pool[] = {&f9_2420, &f14_2420, &f24_2420, &f28_2420};
-    bool* ppg1_pool[] = {&ppg1, &ppg2, &ppg3, &ppg4};
+    bool* pvksku_pool[] = {&pvksku[0], &pvksku[1], &pvksku[2], &pvksku[3]};
     bool* otk_pad_pool[] = {&otkPadDavlMaslPpo1G, &otkPadDavlMaslPpo2G,
                             &otkPadDavlMaslPpo3G, &otkPadDavlMaslPpo4G};
     bool* otk_gen[] = {&otkGenPerT1, &otkGenPerT2, &otkGenPerT3, &otkGenPerT4, &otkGenPerVsu};
     bool* popp01_pool[] = {&popp01, &popp02, &popp03, &popp04};
+    bool* k21_pool[] = {&k21_2420, &k22_2420, &k23_2420, &k24_2420};
 
     bool* f92_pool[] = {&f92_2420, &f142_2420, &f242_2420, &f282_2420};
     bool* k25_pool[] = {&k25_2420, &k26_2420, &k27_2420, &k28_2420};
@@ -98,18 +104,59 @@ void powerdc_11()
     double* uga_pool[] = {&alt::ug1a, &alt::ug2a, &alt::ug3a, &alt::ug4a, &alt::ugVsuA};
     double* ugb_pool[] = {&alt::ug1b, &alt::ug2b, &alt::ug3b, &alt::ug4b, &alt::ugVsuB};
     double* ugc_pool[] = {&alt::ug1c, &alt::ug2c, &alt::ug3c, &alt::ug4c, &alt::ugVsuC};
+    double* ushap_pool[] = {&ushap, &ushap, &ushal, &ushal};
+    double* ushdpl_pool[] = {&ush1dpl, &ush1dpl, &ush1dpp, &ush1dpp};
+    double* ushdpp_pool[] = {&ush1dpp, &ush1dpp, &ush1dpl, &ush1dpl};
+    bool* s1_pool[] = {&s1_7710, &s2_7710, &s3_7710, &s4_7710};
 
     for(int i = 0; i < 4; i++)
     {
-        if(*ush1dpl_pool[i] >= 18.0 && *f9_pool[i])
-            *ppg1_pool[i] = true;
-        else
-            *ppg1_pool[i] = false;
+        //        if(*ush1dpl_pool[i] >= 18.0 && *f9_pool[i])
+        //            *ppg1_pool[i] = true;
+        //        else
+        //            *ppg1_pool[i] = false;
 
-        if(*otk_pad_pool[i])
-            *popp01_pool[i] = true;
+        //        if(*otk_pad_pool[i])
+        //            *popp01_pool[i] = true;
+        //        else
+        //            *popp01_pool[i] = false;
+
+        *pvksku_pool[i] = false;
+
+        if(*ushap_pool[i] >= 18.0)
+        {
+            if(*ushdpl_pool[i] >= 18.0 || *ushdpp_pool[i] >= 18.0)
+            {
+                if(*s1_pool[i])
+                {
+                    *pvksku_pool[i] = true;
+                }
+                else
+                {
+                    if(*otk_pad_pool[i])
+                    {
+                        *popp01_pool[i] = true;
+                        *k21_pool[i] = true;
+                    }
+                    else
+                    {
+                        *popp01_pool[i] = false;
+                        *k21_pool[i] = false;
+                    }
+                }
+            }
+            else
+            {
+                *popp01_pool[i] = false;
+                *k21_pool[i] = false;
+            }
+        }
+
+
+        if(*s3_pool[i] && *ush1dpl_pool[i] >= 18.0)
+            *f92_pool[i] = true;
         else
-            *popp01_pool[i] = false;
+            *f92_pool[i] = false;
 
         if(*f92_pool[i])
         {
@@ -128,7 +175,7 @@ void powerdc_11()
             *tick_g1_pool[i] = 0;
         }
 
-        if(*ppg1_pool[i] == true)
+        if(*pvksku_pool[i] == true)
         {
             if(*nvd_pool[i] >= 49.0)
                 *bss838_pool[i] = false;
@@ -137,10 +184,6 @@ void powerdc_11()
 
             if(*nvd_pool[i] >= 40.0 && *popp01_pool[i] == true)
                 *bss838_pool[i] = true;
-            if(*s3_pool[i])
-                *f92_pool[i] = true;
-            else
-                *f92_pool[i] = false;
         }
         if(*f92_pool[i] && *k25_pool[i])
             *k1_pool[i] = true;

@@ -24,7 +24,7 @@ ush1dpl,
 ush1dpp,
 ushap,
 ushal,
-Vkh;
+vkh;
 
 void powerdc_2_3();
 

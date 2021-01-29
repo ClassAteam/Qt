@@ -73,6 +73,6 @@ extern double
     usho1l,
     usho1l,
     usho1p,
-    Vkh;
+    vkh;
 
 void powerdc_4();

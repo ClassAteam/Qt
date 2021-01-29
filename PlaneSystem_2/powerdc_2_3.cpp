@@ -50,7 +50,7 @@ urap2;
 void powerdc_2_3() //2 //3
 {
     //start logic
-    if(abs(Vkh) < 0.1)
+    if(abs(vkh) < 0.1)
     {
         if(pvrap1 == true)
         {

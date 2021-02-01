@@ -16,6 +16,8 @@
 #include "powerdc_11.h"
 #include "powerdc_12.h"
 #include "powerdc_13.h"
+#include "powerdc_14.h"
+#include "powerdc_15.h"
 
 namespace alt{
 extern double
@@ -31,6 +33,9 @@ extern double
     ug1c, ug2c, ug3c, ug4c, ugVsuC;
 }
 extern double
+    ushpzl, ushpzp, upos, fpos,
+    ushp1a, ushp1b, ushp1s, ushavpp, upts, uptsa, uptsb, uptss,
+    ushavla, ushavlb, ushavls, ushavpa, ushavpb, ushavps, fpts,
     urap, frap,
     inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
     inshal, inshap, insh1l, insh1p, insh2l, insh2p, inshzvsu, insl27,
@@ -51,8 +56,14 @@ extern double
     UKS4X2105, UKS4X2106, UKS2X2105, UKS2X2106, UKS1X394, UKS1X395,UKS2X394,
     UKS2X395, UKS4X395, UKS4X394,  UKS1X3105, UKS1X3106, UKS3X394, UKS3X395;
 extern int
-    s13_2430, s16_2430, s17_2430;
+    s20_2420, s13_2430, s16_2430, s17_2430;
 extern bool
+    otk_pos1000, k12_2420, k13_2420, k14_2420, k16_2420, k18_2420,
+    k30_2420, k31_2420, k34_2420, s7_2420, s17_2420, s18_2420,
+    s19_2420, s21_2420, pbapsh[5],
+    purglk3, otk_preobr_pts1, s15_2420, pbapsh1, pbapsh2, pbapsh3,
+    pbapsh5, pbapsh6,
+    purglk9, purgpk9, purglk10, k13_2420, k16_2420, k17_2420, k19_2420, k20_2420,
     s1_7710, s2_7710, s3_7710, s4_7710,
     s2_2420, s9_2420, pvrap, pprap, purglk2, purgpk3, purglk7, purgpk7,
     purglk8, pp400[2], pss400,

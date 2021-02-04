@@ -19,8 +19,8 @@ bool
     s19_2420,
     s21_2420;
 double
-    ushp3p,
-    ushp3l,
+    ush6pp,
+    ushp5pl,
     ushpzl,
     ushpzp,
     upos,
@@ -84,11 +84,11 @@ void powerdc_15()
 
     if(k18_2420)
     {
-        if(ushpzl >= 65.0)
+        if(ushpos[0] >= 65.0)
         {
             if(pbapsh5)
             {
-                k18_2420 = true;
+                k31_2420 = true;
                 purglk11 = true;
             }
         }
@@ -97,7 +97,7 @@ void powerdc_15()
             if(tick_apsh5 * TICK >= 800)
             {
                 pbapsh5 = true;
-                k18_2420 = true;
+                k31_2420 = true;
                 purglk11 = true;
             }
             else
@@ -109,11 +109,11 @@ void powerdc_15()
 
     if(k12_2420)
     {
-        if(ushpzp >= 65.0)
+        if(ushpos[1] >= 65.0)
         {
             if(pbapsh6)
             {
-                k12_2420 = true;
+                k34_2420 = true;
                 purgpk11 = true;
             }
         }
@@ -122,7 +122,7 @@ void powerdc_15()
             if(tick_apsh6 * TICK >= 800)
             {
                 pbapsh6 = true;
-                k12_2420 = true;
+                k34_2420 = true;
                 purgpk11 = true;
             }
             else
@@ -135,19 +135,19 @@ void powerdc_15()
     switch (s20_2420)
     {
     case apsh1:
-        apsh_switch(ushavla, k13_2420, pbapsh1, purglk9);
+        apsh_switch(ushavP[0][0], k13_2420, pbapsh1, purglk9);
         break;
     case apsh2:
-        apsh_switch(ushavpa, k16_2420, pbapsh2, purgpk9);
+        apsh_switch(ushavP[1][0], k16_2420, pbapsh2, purgpk9);
         break;
     case apsh3:
-        apsh_switch(ushp1a, k14_2420, pbapsh3, purglk10);
+        apsh_switch(ushpts[0], k14_2420, pbapsh3, purglk10);
         break;
     case apsh5:
-        apsh_switch(ushp3l, k31_2420, pbapsh5, purglk11);
+        apsh_switch(ushpos[0], k31_2420, pbapsh5, purglk11);
         break;
     case apsh6:
-        apsh_switch(ushp3p, k34_2420, pbapsh6, purgpk11);
+        apsh_switch(ushpos[1], k34_2420, pbapsh6, purgpk11);
         break;
     }
 

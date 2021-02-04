@@ -1,33 +1,26 @@
 #include "interfacing.h"
 
 interfacing::interfacing(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent), btnID{0}, slID{0}, lblClueID{0},row{0}, column{0},
+       rbGroupID{0}, rbID{0}, rbMappedValue{0}
 {
     layout_buttons = new QGridLayout(this);
-    row =0;
-    column =0;
     this->setLayout(layout_buttons);
     font = new QFont("Courier", 10, QFont::Bold);
     //buttons
-    btnID = 0;
     signalMapperBtns = new QSignalMapper(this);
     connect(signalMapperBtns, SIGNAL(mapped(int)), this, SIGNAL(digitClicked(int)));
     connect(this, SIGNAL(digitClicked(int)), this, SLOT(m_RedButton2(int)));
     //labels
-    lblClueID = 0;
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(setLbl()));
     connect(timer, SIGNAL(timeout()), this, SLOT(updateLogic()));
     timer->start(200);
     //sliders
-    slID = 0;
     signalMapperSldrs = new QSignalMapper(this);
     connect(signalMapperSldrs, SIGNAL(mapped(int)), this, SIGNAL(changeValue(int)));
     connect(this, SIGNAL(changeValue(int)), this, SLOT(setSlV(int)));
     //rbuttons
-    rbGroupID = 0;
-    rbID = 0;
-    rbMappedValue = 0;
     QButtonGroup* firstgroup = new QButtonGroup;
     rbGrPool.append(firstgroup);
     signalMapperRbtns = new QSignalMapper(this);
@@ -75,6 +68,7 @@ void interfacing::createSlider(double* variable, int low_val, int high_val)
     slider->setRange(low_val, high_val);
     slider->setPageStep(1);
     slider->setValue(0);
+    slider->setStyleSheet("max-width: 10em;");
     layout_buttons->addWidget(slider, row, column);
     posOcupied();
     signalMapperSldrs->setMapping(slider, slID);
@@ -95,6 +89,10 @@ void interfacing::createRadioButton(int* toggler, QString name, bool isLastInGrp
     rbTogglers.append(toggler);
     rbtnPool.append(rbutton);
     rbID++;
+    if(rbMappedValue == 0)
+    {
+        rbutton->setChecked(true);
+    }
     rbMappedValue++;
     if(isLastInGrp)
     {
@@ -136,12 +134,14 @@ void interfacing::setLbl()
         if(pressed != false)
         {
             label->setText(label->text());
-            label->setStyleSheet("background-color: green");
+            label->setStyleSheet("background-color: green;"
+                                 "font: bold 14px;");
         }
         else
         {
             label->setText(label->text());
-            label->setStyleSheet("background-color: orange");
+            label->setStyleSheet("background-color: orange;"
+                                 "font: bold 14px;");
         }
     }
 
@@ -157,6 +157,12 @@ void interfacing::setLbl()
             }
         }
         label->setText(str + " = " + QString::number(*lblValues[i]));
+        if(*lblValues[i] != 0)
+            label->setStyleSheet("color: blue;"
+                                 "font: bold 14px;");
+        else
+            label->setStyleSheet("color: gray;"
+                                 "font: bold 14px");
     }
 }
 

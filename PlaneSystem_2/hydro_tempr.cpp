@@ -350,7 +350,7 @@ void hydro_tempr::logic_tempr()
     UKS4X298 = tb3;
     UKS4X2100 = tb4;
 
-    if(S38_3230 == true && Ushg4 >= 100.0)
+    if(S38_3230 == true && ushg4 >= 100.0)
     {
         UKS2UBGS1 = qgs1;
         UKS2UBGS2 = qgs2;

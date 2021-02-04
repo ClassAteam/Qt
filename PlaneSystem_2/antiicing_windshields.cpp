@@ -27,8 +27,8 @@ S7_3040;
 double
 Usho2p,
 Ushavlp,
-Ushg3,
-Ushg4;
+ushg3,
+ushg4;
 
 antiicing_windshields::antiicing_windshields(QWidget* pwgt)
     : QWidget(pwgt)
@@ -56,8 +56,8 @@ antiicing_windshields::antiicing_windshields(QWidget* pwgt)
     S7_3040 = 0;
     Usho2p = 21;
     Ushavlp = 115;
-    Ushg3 = 115;
-    Ushg4 = 115;
+    ushg3 = 115;
+    ushg4 = 115;
 
     //Labels
     POLST_label = new QLabel;
@@ -278,7 +278,7 @@ int antiicing_windshields::logic_windshields()
         }
 
     }
-    if (Ushg3 >= 106.0 && K2_3040 == true)
+    if (ushg3 >= 106.0 && K2_3040 == true)
     {
         POLOBST = true;
     }
@@ -307,7 +307,7 @@ int antiicing_windshields::logic_windshields()
         }
 
     }
-    if (Ushg4 >= 106.0 && K3_3040 == true)
+    if (ushg4 >= 106.0 && K3_3040 == true)
     {
         POPST = true;
     }
@@ -459,8 +459,8 @@ int antiicing_windshields::logic_windshields()
     S7_3040_label->setText ("S7_30409 = " + QString::number(S7_3040));
     Usho2p_label->setText ("Usho2p = " + QString::number(Usho2p));
     Ushavlp_label->setText ("Ushavlp = " + QString::number(Ushavlp));
-    Ushg3_label->setText ("Ushg3 = " + QString::number(Ushg3));
-    Ushg4_label->setText ("Ushg4 = " + QString::number(Ushg4));
+    Ushg3_label->setText ("Ushg3 = " + QString::number(ushg3));
+    Ushg4_label->setText ("Ushg4 = " + QString::number(ushg4));
 
 
 }

@@ -16,20 +16,8 @@ bool
     k19_2420,
     k20_2420;
 double
-    ushp1a,
-    ushp1b,
-    ushp1s,
-    ushavpp,
     upts,
-    uptsa,
-    uptsb,
-    uptss,
-    ushavla,
-    ushavlb,
-    ushavls,
-    ushavpa,
-    ushavpb,
-    ushavps,
+    uptsP[3],
     fpts;
 void powerdc_14()
 {
@@ -83,7 +71,7 @@ void powerdc_14()
 
     if(k17_2420)
     {
-        if(ushp1a >= 65.0 && ushp1b >= 65.0 && ushp1s >= 65.0)
+        if(ushpts[0] >= 65.0 && ushpts[1] >= 65.0 && ushpts[2] >= 65.0)
         {
             if(pbapsh3)
             {
@@ -124,7 +112,7 @@ void powerdc_14()
 
     if(k19_2420)
     {
-        if(ushavla >= 65.0 && ushavlb >= 65.0 && ushavls >= 65.0)
+        if(ushavP[0][0] >= 65.0 && ushavP[0][1] >= 65.0 && ushavP[0][2] >= 65.0)
         {
             if(pbapsh1)
             {
@@ -162,7 +150,7 @@ void powerdc_14()
     }
     if(k20_2420)
     {
-        if(ushavpa >= 65.0 && ushavpb >= 65.0 && ushavps >= 65.0)
+        if(ushavP[1][0] >= 65.0 && ushavP[1][1] >= 65.0 && ushavP[1][2] >= 65.0)
         {
             if(pbapsh2)
             {
@@ -185,7 +173,7 @@ void powerdc_14()
     else
         pbapsh2 = false;
 
-    uptsa = upts;
-    uptsb = upts - 1;
-    uptss = upts - 2;
+    uptsP[0] = upts;
+    uptsP[1] = upts - 1;
+    uptsP[2] = upts - 2;
 }

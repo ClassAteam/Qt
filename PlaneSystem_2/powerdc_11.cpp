@@ -49,9 +49,7 @@ double
     ug1, ug2, ug3, ug4, ugvsu,
     ug1r, ug2r, ug3r, ug4r, ugvsur,
     ug1z{118}, ug2z{117}, ug3z{115}, ug4z{116}, ugvsuz{117},
-    ug1a, ug2a, ug3a, ug4a, ugVsuA,
-    ug1b, ug2b, ug3b, ug4b, ugVsuB,
-    ug1c, ug2c, ug3c, ug4c, ugVsuC;
+    ugP[5][3]; //generator's phases
 }
 
 
@@ -101,10 +99,8 @@ void powerdc_11()
     double* ivg_pool[] = {&alt::ivg1, &alt::ivg2, &alt::ivg3, &alt::ivg4, &alt::ivgvsu};
     double* divg_pool[] = {&alt::divg1, &alt::divg2, &alt::divg3, &alt::divg4, &alt::divgvsu};
     double* ing_pool[] = {&alt::ing1, &alt::ing2, &alt::ing3, &alt::ing4, &alt::ingvsu};
-    double* uga_pool[] = {&alt::ug1a, &alt::ug2a, &alt::ug3a, &alt::ug4a, &alt::ugVsuA};
-    double* ugb_pool[] = {&alt::ug1b, &alt::ug2b, &alt::ug3b, &alt::ug4b, &alt::ugVsuB};
-    double* ugc_pool[] = {&alt::ug1c, &alt::ug2c, &alt::ug3c, &alt::ug4c, &alt::ugVsuC};
     double* ushap_pool[] = {&ushap, &ushap, &ushal, &ushal};
+    double* ushal_pool[] = {&ushal, &ushal, &ushap, &ushap};
     double* ushdpl_pool[] = {&ush1dpl, &ush1dpl, &ush1dpp, &ush1dpp};
     double* ushdpp_pool[] = {&ush1dpp, &ush1dpp, &ush1dpl, &ush1dpl};
     bool* s1_pool[] = {&s1_7710, &s2_7710, &s3_7710, &s4_7710};
@@ -158,6 +154,23 @@ void powerdc_11()
         else
             *f92_pool[i] = false;
 
+
+        if(*pvksku_pool[i] == true)
+        {
+            if(*nvd_pool[i] >= 49.0)
+                *bss838_pool[i] = false;
+            else
+                *bss838_pool[i] = true;
+
+            if(*nvd_pool[i] >= 40.0 && *popp01_pool[i] == true)
+            {
+                *bss838_pool[i] = true;
+                *f92_pool[i] = true;
+            }
+            else
+                *f92_pool[i] = false;
+        }
+
         if(*f92_pool[i])
         {
             if((*tick_g1_pool[i] * TICK) >= 1600)
@@ -175,20 +188,33 @@ void powerdc_11()
             *tick_g1_pool[i] = 0;
         }
 
-        if(*pvksku_pool[i] == true)
+        if(*ushal_pool[i] >= 18.0)
         {
-            if(*nvd_pool[i] >= 49.0)
-                *bss838_pool[i] = false;
-            else
-                *bss838_pool[i] = true;
+            if(*f92_pool[i])
+            {
+                if(!(*k25_pool[i]))
+                {
+                    *k1_pool[i] = true;
+                }
+                else
+                {
+                    if(*k25_pool[i] && *k1_pool[i])
+                        *k1_pool[i] = true;
+                    else
+                        *k1_pool[i] = false;
+                }
 
-            if(*nvd_pool[i] >= 40.0 && *popp01_pool[i] == true)
-                *bss838_pool[i] = true;
+            }
+            else
+            {
+                *k1_pool[i] = false;
+            }
         }
-        if(*f92_pool[i] && *k25_pool[i])
-            *k1_pool[i] = true;
         else
+        {
             *k1_pool[i] = false;
+            *k25_pool[i] = false;
+        }
 
         if(pnu)
             *popp01_pool[i] = false;
@@ -246,9 +272,9 @@ void powerdc_11()
             *ug_pool[y] = *ug_pool[y] + (*ugr_pool[y] - *ug_pool[y]) * kg1[y];
         }
 
-        *uga_pool[y] = *ug_pool[y];
-        *ugb_pool[y] = *ug_pool[y] - 1;
-        *ugc_pool[y] = *ug_pool[y] - 2;
+        alt::ugP[y][0] = *ug_pool[y];
+        alt::ugP[y][1] = *ug_pool[y] - 1;
+        alt::ugP[y][2] = *ug_pool[y] - 2;
 
         alt::fg[y] = m_2_L_intervals(*ug_pool[y], 0, 115, 121, 0, 395, 405);
     }

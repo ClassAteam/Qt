@@ -26,7 +26,7 @@ pntnugs2,
 pntnugs3,
 pntnugs4;
 extern double
-Ushg4,
+ushg4,
 Pgs1,
 Pgs2,
 Pgs3,

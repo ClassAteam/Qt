@@ -19,13 +19,17 @@ void powerdc_13()
     if(pvrap && vkh < 0.1)
     {
         pprap = true;
-        urap = 117.0;
+        urapP[0] = 117.0;
+        urapP[1] = 115.0;
+        urapP[2] = 116.0;
         frap = 401.0;
     }
     else
     {
         pprap = false;
-        urap = 0;
+        urapP[0] = 0;
+        urapP[1] = 0;
+        urapP[2] = 0;
         frap = 0;
     }
 
@@ -46,12 +50,25 @@ void powerdc_13()
 
     for(int x = 0; x < 2; x++)
     {
-        if(pog[x] && pog[x + 1])
-            pp400[x] = false;
+        if(x == 0)
+        {
+            if(pog[0] && pog[1])
+                pp400[0] = false;
+            else
+            {
+                pp400[0] = true;
+                purglk7 = false;
+            }
+        }
         else
         {
-            pp400[x] = true;
-            purglk7 = false;
+            if(pog[2] && pog[3])
+                pp400[1] = false;
+            else
+            {
+                pp400[1] = true;
+                purgpk7 = false;
+            }
         }
     }
 

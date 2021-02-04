@@ -8,6 +8,8 @@ extern bool
     purgpk3;
 
 extern double
+    ushavP[4][3],
+    ushpts[3],
     frap,
     ush2dpp,
     ush2dpl;

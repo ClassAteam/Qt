@@ -73,6 +73,7 @@ SOURCES += \
     powerdc_13.cpp \
     powerdc_14.cpp \
     powerdc_15.cpp \
+    powerdc_16.cpp \
     powerdc_2_3.cpp \
     powerdc_4.cpp \
     powerdc_5_6.cpp \
@@ -145,6 +146,7 @@ HEADERS += \
     powerdc_13.h \
     powerdc_14.h \
     powerdc_15.h \
+    powerdc_16.h \
     powerdc_2_3.h \
     powerdc_4.h \
     powerdc_5_6.h \

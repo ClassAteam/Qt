@@ -15,10 +15,9 @@ extern bool
     purglk10;
 
 extern double
-    ushavla,
-    ushavpa,
-    ushp1a,
-    ushavpp,
+    ushavP[4][3],
+    ushpos[2],
+    ushpts[3],
     ush2dpp,
     ush2dpl;
 extern const double

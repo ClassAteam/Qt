@@ -18,6 +18,7 @@
 #include "powerdc_13.h"
 #include "powerdc_14.h"
 #include "powerdc_15.h"
+#include "powerdc_16.h"
 
 namespace alt{
 extern double
@@ -28,15 +29,15 @@ extern double
     ug1, ug2, ug3, ug4, ugvsu,
     ug1r, ug2r, ug3r, ug4r, ugvsur,
     ug1z, ug2z, ug3z, ug4z, ugvsuz,
-    ug1a, ug2a, ug3a, ug4a, ugVsuA,
-    ug1b, ug2b, ug3b, ug4b, ugVsuB,
-    ug1c, ug2c, ug3c, ug4c, ugVsuC;
+    ugP[5][3];
 }
 extern double
+
+    ushpP[2][3], ushavP[4][3], ushgP[4][3], urapP[3],
+    ushpos[2], ushpts[3], fshg[5], fshp[2], fshpos[2], fshav[4],
     ushpzl, ushpzp, upos, fpos,
-    ushp1a, ushp1b, ushp1s, ushavpp, upts, uptsa, uptsb, uptss,
-    ushavla, ushavlb, ushavls, ushavpa, ushavpb, ushavps, fpts,
-    urap, frap,
+    ushpts[3], upts, uptsP[3],
+    fpts, urap, frap,
     inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
     inshal, inshap, insh1l, insh1p, insh2l, insh2p, inshzvsu, insl27,
     insp27, insho1l, insho1p, insho2l, insho2p, kg1_27, kg2_27, kg3_27, kg4_27,

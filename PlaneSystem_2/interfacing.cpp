@@ -6,6 +6,11 @@ interfacing::interfacing(QWidget *parent)
 {
     layout_buttons = new QGridLayout(this);
     this->setLayout(layout_buttons);
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect screenGeometry = screen->geometry();
+    this->setFixedHeight(screenGeometry.height());
+    this->setFixedWidth(screenGeometry.width());
+    this->setWindowState(Qt::WindowFullScreen);
     font = new QFont("Courier", 10, QFont::Bold);
     //buttons
     signalMapperBtns = new QSignalMapper(this);
@@ -31,6 +36,8 @@ interfacing::interfacing(QWidget *parent)
 void interfacing::createRedButton(bool* clue, QString name)
 {
     QPushButton *button = new QPushButton(name);
+    button->setFixedHeight(40);
+    button->setFixedWidth(150);
     layout_buttons->addWidget(button, row, column);
     posOcupied();
     button->setFont(*font);
@@ -115,14 +122,15 @@ void interfacing::m_RedButton2(int value)
     if(pressed == false)
     {
         *btnClues[value] = true;
-        button->setStyleSheet("background-color: red");
+        button->setStyleSheet("background-color: red;"
+                              "border-width: 2px;"
+                              "border-color: black;");
     }
     if(pressed == true)
     {
         *btnClues[value] = false;
         button->setStyleSheet("");
-    }
-    qDebug() << "button pressed";
+   }
 }
 void interfacing::setLbl()
 {
@@ -140,7 +148,7 @@ void interfacing::setLbl()
         else
         {
             label->setText(label->text());
-            label->setStyleSheet("background-color: orange;"
+            label->setStyleSheet("background-color: gray;"
                                  "font: bold 14px;");
         }
     }
@@ -148,6 +156,7 @@ void interfacing::setLbl()
     for(int i = 0; i < lblsPoolValue.count(); i++)
     {
         QLabel *label = lblsPoolValue[i];
+        label->setFixedWidth(150);
         QString str = label->text();
         for(int i = 0; i < str.size(); ++i)
         {

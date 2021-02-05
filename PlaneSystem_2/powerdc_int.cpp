@@ -7,11 +7,11 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     powerdc_ind::setWindowTitle("powerdc");
     createLabelValue(&upr, "upr");
     createLabelValue(&ipr, "ipr");
-    createLabelClue(&OtkazGen1PostT, "OTKAZ GEN 1 POStT");
-    createLabelClue(&OtkazGen2PostT, "OTKAZ GEN 2 POStT");
-    createLabelClue(&OtkazGen3PostT, "OTKAZ GEN 3 POStT");
-    createLabelClue(&OtkazGen4PostT, "OTKAZ GEN 4 POStT");
-    createLabelClue(&OtkazGenVsu, "OTKAZ GEN VSU");
+//    createLabelClue(&OtkazGen1PostT, "OTKAZ GEN 1 POStT");
+//    createLabelClue(&OtkazGen2PostT, "OTKAZ GEN 2 POStT");
+//    createLabelClue(&OtkazGen3PostT, "OTKAZ GEN 3 POStT");
+//    createLabelClue(&OtkazGen4PostT, "OTKAZ GEN 4 POStT");
+//    createLabelClue(&OtkazGenVsu, "OTKAZ GEN VSU");
     createLabelClue(&pa1, "pa1");
     createLabelClue(&pa2, "pa2");
     createLabelClue(&pvkgvsu27, "pvkgvsu27");

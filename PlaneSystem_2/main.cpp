@@ -115,12 +115,7 @@ int main(int argc, char *argv[])
     window_emergencyalarm.setLayout(&layout_emergencyalarm);
     window_emergencyalarm.setWindowTitle("Emergency Alarm");
     window_emergencyalarm.setWindowState(Qt::WindowFullScreen);
-//    scrollArea_1 = new QScrollArea;
-//    scrollArea_1->setLayout(&layout_emergencyalarm);
-//    scrollArea_1->setWindowState(Qt::WindowFullScreen);
-
-//    scrollArea_1->show();
-    window_emergencyalarm.show();
+//    window_emergencyalarm.show();
 
     QWidget window_emergencyalarm_1;
     QHBoxLayout layout_emergencyalarm_1;
@@ -150,7 +145,7 @@ int main(int argc, char *argv[])
     window_landinggear.setLayout(&layout_landinggear);
     window_landinggear.setWindowTitle("Landing Gear");
     window_landinggear.setWindowState(Qt::WindowFullScreen);
-    window_landinggear.show();
+//    window_landinggear.show();
 
     QWidget window_brakes;
     QHBoxLayout layout_brakes;
@@ -162,7 +157,7 @@ int main(int argc, char *argv[])
     window_brakes.setLayout(&layout_brakes);
     window_brakes.setWindowTitle("Brakes");
     window_brakes.setWindowState(Qt::WindowFullScreen);
-    window_brakes.show();
+//    window_brakes.show();
 
     QWidget window_hydro;
     QHBoxLayout layout_hydro;

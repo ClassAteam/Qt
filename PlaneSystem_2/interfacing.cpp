@@ -36,8 +36,9 @@ interfacing::interfacing(QWidget *parent)
 void interfacing::createRedButton(bool* clue, QString name)
 {
     QPushButton *button = new QPushButton(name);
-    button->setFixedHeight(40);
-    button->setFixedWidth(150);
+//    button->setFixedHeight(40);
+//    button->setFixedWidth(150);
+    button->setStyleSheet("max-width: 10em");
     layout_buttons->addWidget(button, row, column);
     posOcupied();
     button->setFont(*font);
@@ -124,12 +125,13 @@ void interfacing::m_RedButton2(int value)
         *btnClues[value] = true;
         button->setStyleSheet("background-color: red;"
                               "border-width: 2px;"
-                              "border-color: black;");
+                              "border-color: black;"
+                                 "max-width: 10em;");
     }
     if(pressed == true)
     {
         *btnClues[value] = false;
-        button->setStyleSheet("");
+        button->setStyleSheet("max-width: 10em");
    }
 }
 void interfacing::setLbl()
@@ -143,20 +145,22 @@ void interfacing::setLbl()
         {
             label->setText(label->text());
             label->setStyleSheet("background-color: green;"
-                                 "font: bold 14px;");
+                                 "font: bold 14px;"
+                                 "max-width: 10em;");
         }
         else
         {
             label->setText(label->text());
             label->setStyleSheet("background-color: gray;"
-                                 "font: bold 14px;");
+                                 "font: bold 14px;"
+                                 "max-width: 10em;");
         }
     }
 
     for(int i = 0; i < lblsPoolValue.count(); i++)
     {
         QLabel *label = lblsPoolValue[i];
-        label->setFixedWidth(150);
+//        label->setFixedWidth(150);
         QString str = label->text();
         for(int i = 0; i < str.size(); ++i)
         {
@@ -190,7 +194,7 @@ void interfacing::setRB(const QString str)
 
 void interfacing::posOcupied()
 {
-    if(row < 40)
+    if(row < 45)
     {
         row++;
     }

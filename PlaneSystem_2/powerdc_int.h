@@ -120,9 +120,4 @@ public:
     powerdc_ind(QWidget *parent = nullptr);
     virtual void updateLogic();
 
-
-
-public slots:
-//    QVector<QPushButton*> *createButtons(QMap<QString, bool> bool_map, const char *member);
-//    void m_logic();
 };

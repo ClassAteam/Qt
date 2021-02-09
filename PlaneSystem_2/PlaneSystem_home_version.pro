@@ -26,12 +26,13 @@ SOURCES += \
     antiicing_mkam.cpp \
     antiicing_ppd.cpp \
     antiicing_windshields.cpp \
-    brakes_algorithm.cpp \
-    brakes_balarm.cpp \
-    brakes_modes.cpp \
-    brakes_parachute.cpp \
-    brakes_reserve.cpp \
-    brakes_skid.cpp \
+    brakes_1.cpp \
+    brakes_2.cpp \
+    brakes_3.cpp \
+    brakes_4.cpp \
+    brakes_5.cpp \
+    brakes_6.cpp \
+    brakes_int.cpp \
     cabinlighting_beacons.cpp \
     cabinlighting_inner.cpp \
     cabinlighting_navi.cpp \
@@ -46,25 +47,27 @@ SOURCES += \
     emergencyalarm_rightpilot.cpp \
     emergencyalarm_rightpilot_1.cpp \
     emergencyalarm_steersman.cpp \
-    hydro_3rdsystem.cpp \
-    hydro_4systems.cpp \
-    hydro_alarm.cpp \
-    hydro_consumers.cpp \
-    hydro_hvalves.cpp \
-    hydro_pumping.cpp \
-    hydro_pumpsrel.cpp \
-    hydro_tempr.cpp \
-    hydro_warmalarm.cpp \
+    hydro_1.cpp \
+    hydro_2.cpp \
+    hydro_3.cpp \
+    hydro_4.cpp \
+    hydro_5.cpp \
+    hydro_6.cpp \
+    hydro_7.cpp \
+    hydro_8.cpp \
+    hydro_9.cpp \
+    hydro_int.cpp \
     interfacing.cpp \
-    landinggear_carts.cpp \
-    landinggear_nose.cpp \
-    landinggear_position.cpp \
-    landinggear_racks.cpp \
-    landinggear_racks_rel.cpp \
-    landinggear_relay.cpp \
-    landinggear_sashes.cpp \
-    landinggear_switches.cpp \
-    landinggear_valves.cpp \
+    landinggear_1.cpp \
+    landinggear_2.cpp \
+    landinggear_3.cpp \
+    landinggear_4.cpp \
+    landinggear_5.cpp \
+    landinggear_6.cpp \
+    landinggear_7.cpp \
+    landinggear_8.cpp \
+    landinggear_9.cpp \
+    landinggear_int.cpp \
     main.cpp \
     mainwindow.cpp \
     powerdc_1.cpp \
@@ -74,6 +77,7 @@ SOURCES += \
     powerdc_14.cpp \
     powerdc_15.cpp \
     powerdc_16.cpp \
+    powerdc_17.cpp \
     powerdc_2_3.cpp \
     powerdc_4.cpp \
     powerdc_5_6.cpp \
@@ -83,10 +87,11 @@ SOURCES += \
     powerdc_int.cpp \
     presure_regulation.cpp \
     wind_functions.cpp \
-    wingsmech_alarm.cpp \
-    wingsmech_flaps.cpp \
-    wingsmech_movingpart.cpp \
-    wingsmech_underwings.cpp
+    wingsmech_1.cpp \
+    wingsmech_2.cpp \
+    wingsmech_3.cpp \
+    wingsmech_4.cpp \
+    wingsmech_int.cpp
 
 HEADERS += \
     algorithms.h \
@@ -99,12 +104,13 @@ HEADERS += \
     antiicing_mkam.h \
     antiicing_ppd.h \
     antiicing_windshields.h \
-    brakes_algorithm.h \
-    brakes_balarm.h \
-    brakes_modes.h \
-    brakes_parachute.h \
-    brakes_reserve.h \
-    brakes_skid.h \
+    brakes_1.h \
+    brakes_2.h \
+    brakes_3.h \
+    brakes_4.h \
+    brakes_5.h \
+    brakes_6.h \
+    brakes_int.h \
     cabinlighting_beacons.h \
     cabinlighting_inner.h \
     cabinlighting_navi.h \
@@ -119,25 +125,27 @@ HEADERS += \
     emergencyalarm_rightpilot.h \
     emergencyalarm_rightpilot_1.h \
     emergencyalarm_steersman.h \
-    hydro_3rdsystem.h \
-    hydro_4systems.h \
-    hydro_alarm.h \
-    hydro_consumers.h \
-    hydro_hvalves.h \
-    hydro_pumping.h \
-    hydro_pumpsrel.h \
-    hydro_tempr.h \
-    hydro_warmalarm.h \
+    hydro_1.h \
+    hydro_2.h \
+    hydro_3.h \
+    hydro_4.h \
+    hydro_5.h \
+    hydro_6.h \
+    hydro_7.h \
+    hydro_8.h \
+    hydro_9.h \
+    hydro_int.h \
     interfacing.h \
-    landinggear_carts.h \
-    landinggear_nose.h \
-    landinggear_position.h \
-    landinggear_racks.h \
-    landinggear_racks_rel.h \
-    landinggear_relay.h \
-    landinggear_sashes.h \
-    landinggear_switches.h \
-    landinggear_valves.h \
+    landinggear_1.h \
+    landinggear_2.h \
+    landinggear_3.h \
+    landinggear_4.h \
+    landinggear_5.h \
+    landinggear_6.h \
+    landinggear_7.h \
+    landinggear_8.h \
+    landinggear_9.h \
+    landinggear_int.h \
     main.h \
     mainwindow.h \
     powerdc_1.h \
@@ -147,6 +155,7 @@ HEADERS += \
     powerdc_14.h \
     powerdc_15.h \
     powerdc_16.h \
+    powerdc_17.h \
     powerdc_2_3.h \
     powerdc_4.h \
     powerdc_5_6.h \
@@ -156,10 +165,11 @@ HEADERS += \
     powerdc_int.h \
     presure_regulation.h \
     wind_functions.h \
-    wingsmech_alarm.h \
-    wingsmech_flaps.h \
-    wingsmech_movingpart.h \
-    wingsmech_underwings.h
+    wingsmech_1.h \
+    wingsmech_2.h \
+    wingsmech_3.h \
+    wingsmech_4.h \
+    wingsmech_int.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

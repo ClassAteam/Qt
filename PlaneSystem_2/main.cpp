@@ -30,36 +30,18 @@ int main(int argc, char *argv[])
     emergencyalarm_navigator navigator;
     emergencyalarm_navigator_1 navigator_1;
     emergencyalarm_navigator_2 navigator_2;
-    landinggear_sashes sashes;
-    landinggear_carts carts;
-    landinggear_racks racks;
-    landinggear_racks_rel racks_rel;
-    landinggear_relay relay;
-    landinggear_switches switches;
-    landinggear_valves valves;
-    landinggear_position position;
-    landinggear_nose nose;
-    wingsmech_flaps flaps;
-    wingsmech_underwings underwings;
-    wingsmech_movingpart movingpart;
-    wingsmech_alarm alarm;
-    brakes_modes modes;
-    brakes_reserve reserve;
-    brakes_algorithm algorithm;
-    brakes_skid skid;
-    brakes_balarm balarm;
-    brakes_parachute parachute;
-    hydro_pumpsrel pumpsrel;
-    hydro_hvalves hvalves;
-    hydro_pumping pumping;
-    hydro_3rdsystem thirdsystem;
-    hydro_4systems foursystems;
-    hydro_consumers consumers;
-    hydro_alarm halarm;
-    hydro_tempr tempr;
-    hydro_walarm walarm;
+
     powerdc_ind powerdc;
     powerdc.show();
+    hydro_int hydro;
+    hydro.show();
+    brakes_int brakes;
+    brakes.show();
+    wingsmech_int wingsmech;
+    wingsmech.show();
+    landinggear_int landinggear;
+    landinggear.show();
+
 
     QTimer *timer = new QTimer;
 
@@ -129,49 +111,8 @@ int main(int argc, char *argv[])
     window_emergencyalarm_1.setWindowState(Qt::WindowFullScreen);
 //    window_emergencyalarm_1.show();
 
-    QWidget window_landinggear;
-    QHBoxLayout layout_landinggear;
-    layout_landinggear.addWidget(&sashes.wgt_sashes);
-    layout_landinggear.addWidget(&carts.wgt_carts);
-    layout_landinggear.addWidget(&racks.wgt_racks);
-    layout_landinggear.addWidget(&racks_rel.wgt_racks_rel);
-    layout_landinggear.addWidget(&relay.wgt_relay);
-    layout_landinggear.addWidget(&switches.wgt_switches);
-    layout_landinggear.addWidget(&position.wgt_position);
-    layout_landinggear.addWidget(&nose.wgt_nose);
-    layout_landinggear.addWidget(&flaps.wgt_flaps);
-    layout_landinggear.addWidget(&underwings.wgt_underwings);
-    layout_landinggear.addWidget(&alarm.wgt_alarm);
-    window_landinggear.setLayout(&layout_landinggear);
-    window_landinggear.setWindowTitle("Landing Gear");
-    window_landinggear.setWindowState(Qt::WindowFullScreen);
-//    window_landinggear.show();
 
-    QWidget window_brakes;
-    QHBoxLayout layout_brakes;
-    layout_brakes.addWidget(&modes.wgt_modes);
-    layout_brakes.addWidget(&reserve.wgt_reserve);
-    layout_brakes.addWidget(&skid.wgt_skid);
-    layout_brakes.addWidget(&balarm.wgt_balarm);
-    layout_brakes.addWidget(&parachute.wgt_parachute);
-    window_brakes.setLayout(&layout_brakes);
-    window_brakes.setWindowTitle("Brakes");
-    window_brakes.setWindowState(Qt::WindowFullScreen);
-//    window_brakes.show();
 
-    QWidget window_hydro;
-    QHBoxLayout layout_hydro;
-    layout_hydro.addWidget(&pumpsrel.wgt_pumpsrel);
-    layout_hydro.addWidget(&hvalves.wgt_hvalves);
-    layout_hydro.addWidget(&pumping.wgt_pumping);
-    layout_hydro.addWidget(&foursystems.wgt_4system);
-    layout_hydro.addWidget(&halarm.wgt_halarm);
-    layout_hydro.addWidget(&tempr.wgt_tempr);
-    layout_hydro.addWidget(&walarm.wgt_walarm);
-    window_hydro.setLayout(&layout_hydro);
-    window_hydro.setWindowTitle("Hydro");
-//    window_hydro.setWindowState(Qt::WindowFullScreen);
-    window_hydro.show();
 
 
     //LOGIC TIMER
@@ -223,127 +164,6 @@ int main(int argc, char *argv[])
                      &navigator_1 , SLOT(logic_navigator_1()));
     QObject::connect(timer, SIGNAL(timeout()),
                      &navigator_2 , SLOT(logic_navigator_2()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &sashes , SLOT(logic_sashes()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &carts , SLOT(logic_carts()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &racks , SLOT(logic_racks()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &racks_rel , SLOT(logic_racks_rel()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &relay , SLOT(logic_relay()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &switches , SLOT(logic_switches()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &valves , SLOT(logic_valves()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &position , SLOT(logic_position()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &nose , SLOT(logic_nose()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &flaps , SLOT(logic_flaps()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &underwings , SLOT(logic_underwings()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &movingpart , SLOT(logic_movingpart()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &alarm , SLOT(logic_alarm()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &modes , SLOT(logic_modes()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &reserve , SLOT(logic_reserve()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &algorithm , SLOT(logic_algorithm()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &skid , SLOT(logic_skid()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &balarm , SLOT(logic_balarm()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &parachute , SLOT(logic_parachute()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &pumpsrel , SLOT(logic_pumpsrel()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &hvalves , SLOT(logic_hvalves()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &pumping , SLOT(logic_pumping()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &thirdsystem , SLOT(logic_3rdsystem()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &foursystems , SLOT(logic_4systems()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &consumers , SLOT(logic_consumers()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &halarm , SLOT(logic_halarm()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &tempr , SLOT(logic_tempr()));
-    QObject::connect(timer, SIGNAL(timeout()),
-                     &walarm , SLOT(logic_walarm()));
-
-    //PRESURE RETAKE
-    QObject::connect(&sashes, &landinggear_sashes::presure_retake,
-                     &sashes, &landinggear_sashes::balloon_presure);
-    QObject::connect(&racks, &landinggear_racks::presure_retake,
-                     &sashes, &landinggear_sashes::balloon_presure);
-    QObject::connect(&racks_rel, &landinggear_racks_rel::presure_retake,
-                     &sashes, &landinggear_sashes::balloon_presure);
-    QObject::connect(&algorithm, &brakes_algorithm::s_P_t_changed,
-                     &reserve, &brakes_reserve::m_Pt_labels_set);
-    //PGS TAKERS
-    QObject::connect(&racks_rel, &landinggear_racks_rel::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    QObject::connect(&underwings, &wingsmech_underwings::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    QObject::connect(&racks, &landinggear_racks::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    QObject::connect(&sashes, &landinggear_sashes::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    QObject::connect(&flaps, &wingsmech_flaps::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    QObject::connect(&movingpart, &wingsmech_movingpart::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    QObject::connect(&nose, &landinggear_nose::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    QObject::connect(&skid, &brakes_skid::pgs_toconsume,
-                     &consumers, &hydro_consumers::m_pgs_toconsume);
-    //QGS BORROWERS
-    QObject::connect(&nose, &landinggear_nose::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&sashes, &landinggear_sashes::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&skid, &brakes_skid::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&racks_rel, &landinggear_racks_rel::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&underwings, &wingsmech_underwings::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&racks, &landinggear_racks::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&flaps, &wingsmech_flaps::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&movingpart, &wingsmech_movingpart::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    QObject::connect(&skid, &brakes_skid::signal_QgsConsume,
-                     &tempr, &hydro_tempr::m_QgsConsume);
-    //QGS PAYBACKERS
-    QObject::connect(&nose, &landinggear_nose::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&sashes, &landinggear_sashes::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&skid, &brakes_skid::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&racks_rel, &landinggear_racks_rel::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&underwings, &wingsmech_underwings::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&racks, &landinggear_racks::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&flaps, &wingsmech_flaps::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&movingpart, &wingsmech_movingpart::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
-    QObject::connect(&skid, &brakes_skid::signal_QgsGiveBack,
-                     &tempr, &hydro_tempr::m_QgsGiveBack);
 
     timer->start(TICK);
     return a.exec();

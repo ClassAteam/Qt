@@ -1,5 +1,8 @@
 #include "interfacing.h"
 
+extern const double
+    TICK;
+
 interfacing::interfacing(QWidget *parent)
     : QWidget(parent), btnID{0}, slID{0}, lblClueID{0},row{0}, column{0},
        rbGroupID{0}, rbID{0}, rbMappedValue{0}
@@ -20,7 +23,7 @@ interfacing::interfacing(QWidget *parent)
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(setLbl()));
     connect(timer, SIGNAL(timeout()), this, SLOT(updateLogic()));
-    timer->start(200);
+    timer->start(TICK);
     //sliders
     signalMapperSldrs = new QSignalMapper(this);
     connect(signalMapperSldrs, SIGNAL(mapped(int)), this, SIGNAL(changeValue(int)));
@@ -139,21 +142,29 @@ void interfacing::setLbl()
     for(int i = 0; i < lblsPoolClue.count(); i++)
     {
         QLabel *label = lblsPoolClue[i];
+        QString str = label->text();
+        for(int i = 0; i < str.size(); ++i)
+        {
+            if(str.at(i) == QChar(' '))
+            {
+                str.truncate(i + 1);
+            }
+        }
         bool pressed;
         pressed = *lblClues[i];
         if(pressed != false)
         {
-            label->setText(label->text());
-            label->setStyleSheet("background-color: green;"
-                                 "font: bold 14px;"
-                                 "max-width: 10em;");
+            label->setText(str + " = true ");
+//            label->setStyleSheet("background-color: green;"
+//                                 "font: bold 14px;"
+//                                 "max-width: 10em;");
         }
         else
         {
-            label->setText(label->text());
-            label->setStyleSheet("background-color: gray;"
-                                 "font: bold 14px;"
-                                 "max-width: 10em;");
+            label->setText(str + " = false ");
+//            label->setStyleSheet("background-color: gray;"
+//                                 "font: bold 14px;"
+//                                 "max-width: 10em;");
         }
     }
 
@@ -170,12 +181,12 @@ void interfacing::setLbl()
             }
         }
         label->setText(str + " = " + QString::number(*lblValues[i]));
-        if(*lblValues[i] != 0)
-            label->setStyleSheet("color: blue;"
-                                 "font: bold 14px;");
-        else
-            label->setStyleSheet("color: gray;"
-                                 "font: bold 14px");
+//        if(*lblValues[i] != 0)
+//            label->setStyleSheet("color: blue;"
+//                                 "font: bold 14px;");
+//        else
+//            label->setStyleSheet("color: gray;"
+//                                 "font: bold 14px");
     }
 }
 

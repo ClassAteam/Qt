@@ -68,7 +68,6 @@ class hydro_int : public interfacing
 {
     Q_OBJECT
 
-
 public:
     hydro_int(QWidget *parent = nullptr);
     virtual void updateLogic();

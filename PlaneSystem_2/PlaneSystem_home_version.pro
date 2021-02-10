@@ -17,15 +17,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     algorithms.cpp \
-    antifirelogic_alarm.cpp \
-    antifirelogic_execution_block.cpp \
-    antifirelogic_valves.cpp \
-    antiicing_airintake.cpp \
-    antiicing_airintake_warmup.cpp \
-    antiicing_lights.cpp \
-    antiicing_mkam.cpp \
-    antiicing_ppd.cpp \
-    antiicing_windshields.cpp \
+    antifire_1.cpp \
+    antifire_2.cpp \
+    antifire_3.cpp \
+    antiicing_1.cpp \
+    antiicing_2.cpp \
+    antiicing_3.cpp \
+    antiicing_4.cpp \
+    antiicing_5.cpp \
+    antiicing_6.cpp \
+    antiicing_int.cpp \
     brakes_1.cpp \
     brakes_2.cpp \
     brakes_3.cpp \
@@ -33,20 +34,22 @@ SOURCES += \
     brakes_5.cpp \
     brakes_6.cpp \
     brakes_int.cpp \
-    cabinlighting_beacons.cpp \
-    cabinlighting_inner.cpp \
-    cabinlighting_navi.cpp \
-    cabinlighting_outside.cpp \
-    cabinlighting_solid.cpp \
-    emergencyalarm_leftpilot.cpp \
-    emergencyalarm_leftpilot_1.cpp \
-    emergencyalarm_leftpilot_2.cpp \
-    emergencyalarm_navigator.cpp \
-    emergencyalarm_navigator_1.cpp \
-    emergencyalarm_navigator_2.cpp \
-    emergencyalarm_rightpilot.cpp \
-    emergencyalarm_rightpilot_1.cpp \
-    emergencyalarm_steersman.cpp \
+    cabinlighting_1.cpp \
+    cabinlighting_2.cpp \
+    cabinlighting_3.cpp \
+    cabinlighting_4.cpp \
+    cabinlighting_5.cpp \
+    cabinlighting_int.cpp \
+    emergencyalarm_1.cpp \
+    emergencyalarm_2.cpp \
+    emergencyalarm_3.cpp \
+    emergencyalarm_4.cpp \
+    emergencyalarm_5.cpp \
+    emergencyalarm_6.cpp \
+    emergencyalarm_7.cpp \
+    emergencyalarm_8.cpp \
+    emergencyalarm_9.cpp \
+    emergencyalarm_int.cpp \
     hydro_1.cpp \
     hydro_2.cpp \
     hydro_3.cpp \
@@ -85,7 +88,8 @@ SOURCES += \
     powerdc_8.cpp \
     powerdc_9_10.cpp \
     powerdc_int.cpp \
-    presure_regulation.cpp \
+    presure.cpp \
+    presure_int.cpp \
     wind_functions.cpp \
     wingsmech_1.cpp \
     wingsmech_2.cpp \
@@ -95,15 +99,16 @@ SOURCES += \
 
 HEADERS += \
     algorithms.h \
-    antifirelogic_alarm.h \
-    antifirelogic_execution_block.h \
-    antifirelogic_valves.h \
-    antiicing_airintake.h \
-    antiicing_airintake_warmup.h \
-    antiicing_lights.h \
-    antiicing_mkam.h \
-    antiicing_ppd.h \
-    antiicing_windshields.h \
+    antifire_1.h \
+    antifire_2.h \
+    antifire_3.h \
+    antiicing_1.h \
+    antiicing_2.h \
+    antiicing_3.h \
+    antiicing_4.h \
+    antiicing_5.h \
+    antiicing_6.h \
+    antiicing_int.h \
     brakes_1.h \
     brakes_2.h \
     brakes_3.h \
@@ -111,20 +116,22 @@ HEADERS += \
     brakes_5.h \
     brakes_6.h \
     brakes_int.h \
-    cabinlighting_beacons.h \
-    cabinlighting_inner.h \
-    cabinlighting_navi.h \
-    cabinlighting_outside.h \
-    cabinlighting_solid.h \
-    emergencyalarm_leftpilot.h \
-    emergencyalarm_leftpilot_1.h \
-    emergencyalarm_leftpilot_2.h \
-    emergencyalarm_navigator.h \
-    emergencyalarm_navigator_1.h \
-    emergencyalarm_navigator_2.h \
-    emergencyalarm_rightpilot.h \
-    emergencyalarm_rightpilot_1.h \
-    emergencyalarm_steersman.h \
+    cabinlighting_1.h \
+    cabinlighting_2.h \
+    cabinlighting_3.h \
+    cabinlighting_4.h \
+    cabinlighting_5.h \
+    cabinlighting_int.h \
+    emergencyalarm_1.h \
+    emergencyalarm_2.h \
+    emergencyalarm_3.h \
+    emergencyalarm_4.h \
+    emergencyalarm_5.h \
+    emergencyalarm_6.h \
+    emergencyalarm_7.h \
+    emergencyalarm_8.h \
+    emergencyalarm_9.h \
+    emergencyalarm_int.h \
     hydro_1.h \
     hydro_2.h \
     hydro_3.h \
@@ -146,7 +153,6 @@ HEADERS += \
     landinggear_8.h \
     landinggear_9.h \
     landinggear_int.h \
-    main.h \
     mainwindow.h \
     powerdc_1.h \
     powerdc_11.h \
@@ -163,7 +169,8 @@ HEADERS += \
     powerdc_8.h \
     powerdc_9_10.h \
     powerdc_int.h \
-    presure_regulation.h \
+    presure.h \
+    presure_int.h \
     wind_functions.h \
     wingsmech_1.h \
     wingsmech_2.h \

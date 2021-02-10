@@ -612,4 +612,5 @@ void powerdc_ind::updateLogic()
     powerdc_14();
     powerdc_15();
     powerdc_16();
+    qDebug() << "powerdc logic end";
 }

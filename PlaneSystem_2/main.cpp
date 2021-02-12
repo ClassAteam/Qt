@@ -1,4 +1,3 @@
-#pragma once
 #include "QScrollArea"
 #include <QApplication>
 #include <QtWidgets>
@@ -30,7 +29,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
 
-    a.setStyleSheet("QLabel[urgent=true] {color: red}");
+//    a.setStyleSheet("QLabel[urgent=true] {color: red}");
 //    QTimer* timer_main = new QTimer;
 //    QObject::connect(timer_main, SIGNAL(timeout()), );
     brakes_int brakes;

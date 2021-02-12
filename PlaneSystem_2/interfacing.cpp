@@ -156,25 +156,25 @@ void interfacing::setLbl()
         if(pressed != false)
         {
 //            label->setText(str + " = true ");
-            label->setProperty("urgent", true);
+//            label->setProperty("urgent", true);
 //            label->setStyle(QApplication::style());
 
-//            label->setStyleSheet("background-color: green;"
-//                                 "font: bold 14px;"
-//                                 "max-width: 10em;");
+            label->setStyleSheet("background-color: green;"
+                                 "font: bold 14px;"
+                                 "max-width: 10em;");
         }
         else
         {
-            label->setProperty("urgent", false);
+//            label->setProperty("urgent", false);
 //            label->style()->polish(label);
 //            label->setStyle(QApplication::style());
 
 //            label->setText(str + " = false ");
-//            label->setStyleSheet("background-color: gray;"
-//                                 "font: bold 14px;"
-//                                 "max-width: 10em;");
+            label->setStyleSheet("background-color: gray;"
+                                 "font: bold 14px;"
+                                 "max-width: 10em;");
         }
-        label->style()->polish(label);
+//        label->style()->polish(label);
     }
 
     for(int i = 0; i < lblsPoolValue.count(); i++)
@@ -191,14 +191,20 @@ void interfacing::setLbl()
         }
         label->setText(str + " = " + QString::number(*lblValues[i]));
         if(*lblValues[i] != 0)
-            label->setProperty("urgent", true);
-//            label->setStyleSheet("color: blue;"
-//                                 "font: bold 14px;");
+        {
+//            label->setProperty("urgent", true);
+            label->setStyleSheet("color: blue;"
+                                 "font: bold 14px;"
+                                 "max-width: 10em;");
+        }
         else
-            label->setProperty("urgent", false);
-//            label->setStyleSheet("color: gray;"
-//                                 "font: bold 14px");
-        label->style()->polish(label);
+        {
+//            label->setProperty("urgent", false);
+            label->setStyleSheet("color: gray;"
+                                 "font: bold 14px;"
+                                 "max-width: 10em;");
+// label->style()->polish(label);
+        }
     }
 }
 

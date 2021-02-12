@@ -29,6 +29,10 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    a.setStyleSheet("QLabel[urgent=true] {background-color: red};"
+                    "QLabel[urgent=false] {background-color: yellow;");
+//    QTimer* timer_main = new QTimer;
+//    QObject::connect(timer_main, SIGNAL(timeout()), );
     brakes_int brakes;
     brakes.show();
     wingsmech_int wingsmech;
@@ -47,6 +51,7 @@ int main(int argc, char *argv[])
     hydro.show();
     antiicing_int antiicing;
     antiicing.show();
+
 
     return a.exec();
 }

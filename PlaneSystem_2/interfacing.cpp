@@ -34,6 +34,7 @@ interfacing::interfacing(QWidget *parent)
     signalMapperRbtns = new QSignalMapper(this);
     connect(signalMapperRbtns, SIGNAL(mapped(const QString)), this, SIGNAL(rbClicked(const QString)));
     connect(this, SIGNAL(rbClicked(const QString)), this, SLOT(setRB(const QString)));
+//    this->setStyleSheet("QLabel {color: red}");
 }
 
 void interfacing::createRedButton(bool* clue, QString name)
@@ -154,18 +155,26 @@ void interfacing::setLbl()
         pressed = *lblClues[i];
         if(pressed != false)
         {
-            label->setText(str + " = true ");
+//            label->setText(str + " = true ");
+            label->setProperty("urgent", true);
+//            label->setStyle(QApplication::style());
+
 //            label->setStyleSheet("background-color: green;"
 //                                 "font: bold 14px;"
 //                                 "max-width: 10em;");
         }
         else
         {
-            label->setText(str + " = false ");
+            label->setProperty("urgent", false);
+//            label->style()->polish(label);
+//            label->setStyle(QApplication::style());
+
+//            label->setText(str + " = false ");
 //            label->setStyleSheet("background-color: gray;"
 //                                 "font: bold 14px;"
 //                                 "max-width: 10em;");
         }
+        label->style()->polish(label);
     }
 
     for(int i = 0; i < lblsPoolValue.count(); i++)

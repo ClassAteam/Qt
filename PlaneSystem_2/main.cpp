@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    a.setStyleSheet("QLabel[urgent=true] {background-color: red};"
-                    "QLabel[urgent=false] {background-color: yellow;");
+
+    a.setStyleSheet("QLabel[urgent=true] {color: red}");
 //    QTimer* timer_main = new QTimer;
 //    QObject::connect(timer_main, SIGNAL(timeout()), );
     brakes_int brakes;

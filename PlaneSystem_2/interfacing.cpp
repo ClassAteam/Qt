@@ -34,7 +34,7 @@ interfacing::interfacing(QWidget *parent)
     signalMapperRbtns = new QSignalMapper(this);
     connect(signalMapperRbtns, SIGNAL(mapped(const QString)), this, SIGNAL(rbClicked(const QString)));
     connect(this, SIGNAL(rbClicked(const QString)), this, SLOT(setRB(const QString)));
-//    this->setStyleSheet("QLabel {color: red}");
+//    this->setStyleSheet("QLabel {color: green}"); //would be very expensive
 }
 
 void interfacing::createRedButton(bool* clue, QString name)
@@ -190,12 +190,15 @@ void interfacing::setLbl()
             }
         }
         label->setText(str + " = " + QString::number(*lblValues[i]));
-//        if(*lblValues[i] != 0)
+        if(*lblValues[i] != 0)
+            label->setProperty("urgent", true);
 //            label->setStyleSheet("color: blue;"
 //                                 "font: bold 14px;");
-//        else
+        else
+            label->setProperty("urgent", false);
 //            label->setStyleSheet("color: gray;"
 //                                 "font: bold 14px");
+        label->style()->polish(label);
     }
 }
 

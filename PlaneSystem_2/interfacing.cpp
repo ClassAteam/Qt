@@ -174,7 +174,8 @@ void interfacing::setLbl()
 //                                 "font: bold 14px;"
 //                                 "max-width: 10em;");
         }
-        label->style()->polish(label);
+//        label->style()->unpolish(label);
+//        label->style()->polish(label);
     }
 
     for(int i = 0; i < lblsPoolValue.count(); i++)
@@ -198,7 +199,8 @@ void interfacing::setLbl()
             label->setProperty("urgent", false);
 //            label->setStyleSheet("color: gray;"
 //                                 "font: bold 14px");
-        label->style()->polish(label);
+//        label->style()->unpolish(label);
+//        label->style()->polish(label);
     }
 }
 

@@ -6,12 +6,7 @@
 #include <antifire_2.h>
 #include <antifire_3.h>
 #include <presure.h>
-#include <antiicing_1.h>
-#include <antiicing_2.h>
-#include <antiicing_3.h>
-#include <antiicing_4.h>
-#include <antiicing_5.h>
-#include <antiicing_6.h>
+#include "antiicing_int.h"
 #include "powerdc_int.h"
 #include "hydro_int.h"
 #include "brakes_int.h"

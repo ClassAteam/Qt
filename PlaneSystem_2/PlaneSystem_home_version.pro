@@ -20,6 +20,7 @@ SOURCES += \
     antifire_1.cpp \
     antifire_2.cpp \
     antifire_3.cpp \
+    antifire_int.cpp \
     antiicing_1.cpp \
     antiicing_2.cpp \
     antiicing_3.cpp \
@@ -102,6 +103,7 @@ HEADERS += \
     antifire_1.h \
     antifire_2.h \
     antifire_3.h \
+    antifire_int.h \
     antiicing_1.h \
     antiicing_2.h \
     antiicing_3.h \

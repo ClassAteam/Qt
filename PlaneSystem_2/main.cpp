@@ -1,9 +1,6 @@
 #include "QScrollArea"
 #include <QApplication>
 #include <QtWidgets>
-#include <antifire_1.h>
-#include <antifire_2.h>
-#include <antifire_3.h>
 #include <presure.h>
 #include "antiicing_int.h"
 #include "powerdc_int.h"
@@ -15,6 +12,7 @@
 #include "cabinlighting_int.h"
 #include "antiicing_int.h"
 #include "presure_int.h"
+#include "antifire_int.h"
 
 const double TICK = 200;
 
@@ -32,6 +30,7 @@ int main(int argc, char *argv[])
     a.style()->unpolish(&a);
 //    QTimer* timer_main = new QTimer;
 //    QObject::connect(timer_main, SIGNAL(timeout()), );
+    antifire_int antifire;
     brakes_int brakes;
     brakes.show();
     wingsmech_int wingsmech;

@@ -459,7 +459,7 @@ void antifire_3()
     if (F91_2610 == true && K80_2610 == true)
     {
 
-        if (F101_2610 == F181_2610 == true)
+        if(F101_2610 && F181_2610)
         {
             PO1och = false;
         }

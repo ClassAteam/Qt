@@ -1,4 +1,3 @@
-#include "QScrollArea"
 #include <QApplication>
 #include <QtWidgets>
 #include <presure.h>

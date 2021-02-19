@@ -14,7 +14,10 @@ interfacing::interfacing(QWidget *parent)
     this->setFixedHeight(screenGeometry.height());
     this->setFixedWidth(screenGeometry.width());
     this->setWindowState(Qt::WindowFullScreen);
-    font = new QFont("Courier", 10, QFont::Bold);
+    //fonts
+    btnFont = new QFont("Courier", 12, QFont::Bold);
+    lblClueFontAct = new QFont("Time", 12, QFont::Bold);
+    lblClueFontInact = new QFont("Time", 8, QFont::Bold);
     //buttons
     signalMapperBtns = new QSignalMapper(this);
     connect(signalMapperBtns, SIGNAL(mapped(int)), this, SIGNAL(digitClicked(int)));
@@ -45,7 +48,7 @@ void interfacing::createRedButton(bool* clue, QString name)
     button->setStyleSheet("max-width: 10em");
     layout_buttons->addWidget(button, row, column);
     posOcupied();
-    button->setFont(*font);
+    button->setFont(*btnFont);
     signalMapperBtns->setMapping(button, btnID);
     connect(button, SIGNAL(clicked()), signalMapperBtns, SLOT(map()));
     btnClues.append(clue);
@@ -57,6 +60,7 @@ void interfacing::createLabelClue(bool* clue, QString name)
 {
     QLabel *label = new QLabel(name);
     layout_buttons->addWidget(label, row, column);
+    label->setStyleSheet("max-width: 10em;");
     posOcupied();
     lblClues.append(clue);
     lblClueID++;
@@ -68,6 +72,7 @@ void interfacing::createLabelValue(double* value, QString name)
 {
     QLabel *label = new QLabel(name);
     layout_buttons->addWidget(label, row, column);
+    label->setStyleSheet("max-width: 10em;");
     posOcupied();
     lblValues.append(value);
     lblValueID++;
@@ -153,35 +158,26 @@ void interfacing::setLbl()
         }
         bool pressed;
         pressed = *lblClues[i];
-        if(pressed != false)
+        if(pressed)
         {
-//            label->setText(str + " = true ");
-            label->setProperty("urgent", true);
-//            label->setStyle(QApplication::style());
-
-//            label->setStyleSheet("background-color: green;"
-//                                 "font: bold 14px;"
-//                                 "max-width: 10em;");
+            QPalette pal = label->palette();
+            pal.setColor(QPalette::WindowText, Qt::red);
+            label->setPalette(pal);
+            label->setFont(*lblClueFontAct);
         }
         else
         {
-            label->setProperty("urgent", false);
-//            label->style()->polish(label);
-//            label->setStyle(QApplication::style());
-
-//            label->setText(str + " = false ");
-//            label->setStyleSheet("background-color: gray;"
-//                                 "font: bold 14px;"
-//                                 "max-width: 10em;");
+            QPalette pal = label->palette();
+            pal.setColor(QPalette::WindowText, Qt::gray);
+            label->setPalette(pal);
+            label->setFont(*lblClueFontInact);
         }
-//        label->style()->unpolish(label);
-//        label->style()->polish(label);
+
     }
 
     for(int i = 0; i < lblsPoolValue.count(); i++)
     {
         QLabel *label = lblsPoolValue[i];
-//        label->setFixedWidth(150);
         QString str = label->text();
         for(int i = 0; i < str.size(); ++i)
         {
@@ -190,17 +186,25 @@ void interfacing::setLbl()
                 str.truncate(i + 1);
             }
         }
+
+
         label->setText(str + " = " + QString::number(*lblValues[i]));
+
         if(*lblValues[i] != 0)
-            label->setProperty("urgent", true);
-//            label->setStyleSheet("color: blue;"
-//                                 "font: bold 14px;");
+        {
+            QPalette pal = label->palette();
+            pal.setColor(QPalette::WindowText, Qt::blue);
+            label->setPalette(pal);
+            label->setFont(*lblClueFontAct);
+        }
         else
-            label->setProperty("urgent", false);
-//            label->setStyleSheet("color: gray;"
-//                                 "font: bold 14px");
-//        label->style()->unpolish(label);
-//        label->style()->polish(label);
+        {
+            QPalette pal = label->palette();
+            pal.setColor(QPalette::WindowText, Qt::gray);
+            label->setPalette(pal);
+            label->setFont(*lblClueFontInact);
+
+        }
     }
 }
 

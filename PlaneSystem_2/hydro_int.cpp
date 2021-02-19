@@ -294,5 +294,4 @@ void hydro_int::updateLogic()
     hydro_7();
     hydro_8();
     hydro_9();
-    qDebug() << "hydrologic ends";
 }

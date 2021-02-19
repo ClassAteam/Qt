@@ -19,16 +19,6 @@ const double TICK = 200;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    a.style()->unpolish(&a);
-
-
-    a.style()->unpolish(&a);
-//    QObject::connect(timer, SIGNAL(timeout()), [&a](){a.style()->unpolish(&a);});
-    a.setStyleSheet("QLabel[urgent=true] {color: red}"
-                    "QLabel{color: blue}");
-    a.style()->unpolish(&a);
-//    QTimer* timer_main = new QTimer;
-//    QObject::connect(timer_main, SIGNAL(timeout()), );
     antifire_int antifire;
     brakes_int brakes;
     brakes.show();

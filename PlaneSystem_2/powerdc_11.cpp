@@ -56,11 +56,11 @@ double
 
 void powerdc_11()
 {
-    static bool
-        f9_2420{true},
-        f14_2420{true},
-        f24_2420{true},
-        f28_2420{true};
+//    static bool
+//        f9_2420{true},
+//        f14_2420{true},
+//        f24_2420{true},
+//        f28_2420{true};
 
     double kn1{25},
         k10{1.5}, k20{1.5}, k30{1.5}, k40{1.5}, k50{1.5},
@@ -77,7 +77,7 @@ void powerdc_11()
 
     bool* popg1_pool[] = {&popg1, &popg2, &popg3, &popg4, &dummy};
     double* ush1dpl_pool[] = {&ush1dpl, &ush2dpl, &ush1dpp, &ush2dpp};
-    bool* f9_pool[] = {&f9_2420, &f14_2420, &f24_2420, &f28_2420};
+//    bool* f9_pool[] = {&f9_2420, &f14_2420, &f24_2420, &f28_2420};
     bool* pvksku_pool[] = {&pvksku[0], &pvksku[1], &pvksku[2], &pvksku[3]};
     bool* otk_pad_pool[] = {&otkPadDavlMaslPpo1G, &otkPadDavlMaslPpo2G,
                             &otkPadDavlMaslPpo3G, &otkPadDavlMaslPpo4G};

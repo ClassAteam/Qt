@@ -16,7 +16,11 @@ public:
     interfacing(QWidget *parent = nullptr);
 
 public:
-    QFont *font;
+    QFont *btnFont;
+    QFont *lblClueFontAct;
+    QFont *lblClueFontInact;
+    QFont *lblValueFontAct;
+    QFont *lblValueFontInact;
     QGridLayout* layout_buttons;
     QVector<QPushButton*> btnsPool;
     QVector<QLabel*> lblsPoolClue;

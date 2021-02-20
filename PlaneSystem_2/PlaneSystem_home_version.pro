@@ -88,6 +88,7 @@ SOURCES += \
     powerdc_7.cpp \
     powerdc_8.cpp \
     powerdc_9_10.cpp \
+    powerdc_consumers.cpp \
     powerdc_int.cpp \
     presure.cpp \
     presure_int.cpp \
@@ -170,6 +171,7 @@ HEADERS += \
     powerdc_7.h \
     powerdc_8.h \
     powerdc_9_10.h \
+    powerdc_consumers.h \
     powerdc_int.h \
     presure.h \
     presure_int.h \

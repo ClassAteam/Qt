@@ -96,10 +96,6 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&S4_3080, "S4_3080");
     createLabelClue(&S5_3080, "S5_3080");
     createLabelClue(&S6_3080, "S6_3080");
-    createLabelClue(&POV3dv1, "POV3dv1");
-    createLabelClue(&POV3dv2, "POV3dv2");
-    createLabelClue(&POV3dv3, "POV3dv3");
-    createLabelClue(&POV3dv4, "POV3dv4");
     createLabelClue(&obogrev_ppd1_ispr, "obogrev_ppd1_ispr");
     createLabelClue(&obogrev_ppd2_ispr, "obogrev_ppd2_ispr");
     createLabelClue(&obogrev_ppd3_ispr, "obogrev_ppd3_ispr");

@@ -37,7 +37,8 @@ bool
     S3_3080,
     S4_3080,
     S5_3080,
-    S6_3080,
+    S6_3080;
+int
     POV3dv1,
     POV3dv2,
     POV3dv3,

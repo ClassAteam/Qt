@@ -21,7 +21,6 @@ extern bool
     POB2dv4, POB3dv1, POB3dv2, POB3dv3, POB3dv4, PONdv1, PONdv2, PONdv3,
     PONdv4, PVOVNA1, PVOVNA2, PVOVNA3, PVOVNA4, BSS824X1z, BSS824X1BB,
     BSS824X1DD, BSS824X1FF, BSS825PR, S3_3080, S4_3080, S5_3080, S6_3080,
-    POV3dv1, POV3dv2, POV3dv3, POV3dv4,
     obogrev_ppd1_ispr, obogrev_ppd2_ispr, obogrev_ppd3_ispr,
     PKPPD, poppd1, poppd2, poppd3, K1_3030, K2_3030, K4_3030,
     K5_3030, K7_3030, K8_3030, K16_3030, K18_3030, K24_3230,
@@ -35,6 +34,7 @@ extern bool
     BSS825X5MM, UKS1X112, UKS1X212
     ;
 extern int
+    POV3dv1, POV3dv2, POV3dv3, POV3dv4,
     S1_3020, S6_3020, S7_3040
     ;
 extern double

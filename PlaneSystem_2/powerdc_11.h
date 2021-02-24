@@ -1,6 +1,8 @@
+#include <QtDebug>
 #include <QVector>
 #include "algorithms.h"
 #include <math.h>
+#include "powerdc_consumers.h"
 
 extern const double
     TICK;

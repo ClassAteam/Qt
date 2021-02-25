@@ -20,6 +20,8 @@
 #include "powerdc_15.h"
 #include "powerdc_16.h"
 
+extern allElCons consumers;
+
 namespace alt{
 extern double
     fg[5], ng1, ng2, ng3, ng4, ngvsu,

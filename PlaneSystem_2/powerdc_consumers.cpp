@@ -55,52 +55,143 @@ allElCons::allElCons()
     consumers.append(sngElCons(POV3dv2, sngElCons::shp1, "POV3dv2"));
     consumers.append(sngElCons(POV3dv3, sngElCons::shp2, "POV3dv3"));
     consumers.append(sngElCons(POV3dv4, sngElCons::shp2, "POV3dv4"));
-    }
-QVector<int> allElCons::getIvg_pool()
+}
+QVector<double> allElCons::getIvg_pool()
 {
-    QVector<int>ivg(allElCons::consumers.size());
+    QVector<double>ivg(allElCons::consumers.size());
     for(int i = 0; i < consumers.size(); ++i)
     {
-        switch(consumers[i].bus)
+        if(consumers[i].isActive == true)
         {
-        case sngElCons::gen1:
-            ivg[gen1] += (consumers[i].currency);
-            break;
-        case sngElCons::gen2:
-            ivg[gen2] += consumers[i].currency;
-            break;
-        case sngElCons::gen3:
-            ivg[gen3] += consumers[i].currency;
-            break;
-        case sngElCons::gen4:
-            ivg[gen4] += consumers[i].currency;
-            break;
-        case sngElCons::shavar1:
-            ivg[shavar1] += consumers[i].currency;
-            break;
-        case sngElCons::shavar2:
-            ivg[shavar2] += consumers[i].currency;
-            break;
-        case sngElCons::shavar3:
-            ivg[shavar3] += consumers[i].currency;
-            break;
-        case sngElCons::shavar4:
-            ivg[shavar4] += consumers[i].currency;
-            break;
-        case sngElCons::shp1:
-            ivg[shp1] += consumers[i].currency;
-            break;
-        case sngElCons::shp2:
-            ivg[shp2] += consumers[i].currency;
-            break;
+            switch(consumers[i].bus)
+            {
+            case sngElCons::gen1:
+                ivg[gen1] += (consumers[i].currency);
+                break;
+            case sngElCons::gen2:
+                ivg[gen2] += consumers[i].currency;
+                break;
+            case sngElCons::gen3:
+                ivg[gen3] += consumers[i].currency;
+                break;
+            case sngElCons::gen4:
+                ivg[gen4] += consumers[i].currency;
+                break;
+            case sngElCons::shavar1:
+                ivg[shavar1] += consumers[i].currency;
+                break;
+            case sngElCons::shavar2:
+                ivg[shavar2] += consumers[i].currency;
+                break;
+            case sngElCons::shavar3:
+                ivg[shavar3] += consumers[i].currency;
+                break;
+            case sngElCons::shavar4:
+                ivg[shavar4] += consumers[i].currency;
+                break;
+            case sngElCons::shp1:
+                ivg[shp1] += consumers[i].currency;
+                break;
+            case sngElCons::shp2:
+                ivg[shp2] += consumers[i].currency;
+                break;
+            }
         }
     }
+    busesLoad = ivg;
     return ivg;
 }
 
 void allElCons::makeCorresCurr()
 {
+    using namespace alt;
+    QVector<double>buses = getIvg_pool();
 
+    buses[shp1] = 5;
+    buses[shp2] = 5;
+    if(!purglk4)
+        buses[shp1] = buses[shp1] + buses[shavar3];
+    if(!purgpk4)
+        buses[shp2]= buses[shp2] + buses[shavar4];
+
+    ing1 = 0;
+    ing2 = 0;
+    if(purgk1)
+    {
+        ing1 = buses[gen1];
+        if(purgk21)
+        {
+            ing2 = buses[gen2] + buses[shp1];
+        }
+        else
+        {
+            ing1 +=(buses[gen2] + buses[shp1]);
+        }
+        if(!pp400[1] && pss400)
+            ing1 = ing1 + buses[gen3] + buses[gen4] + buses[shp2];
+    }
+    else
+    {
+        if(purgk21)
+        {
+            ing2 = buses[gen1] + buses[gen2] + buses[shp1];
+
+            if(!pp400[1] && pss400)
+                ing2 = ing2 + buses[gen3] + buses[gen4] + buses[shp2] + buses[shavar4];
+        }
+        else
+        {
+            if(purglk4)
+            {
+                if(purglk5)
+                    ing1 = buses[shavar3];
+                else
+                    if(prgen[1])
+                    ing2 = buses[shavar3];
+            }
+        }
+    }
+    ing3 = 0;
+    ing4 = 0;
+
+    if(purgk41)
+    {
+        ing4 = buses[gen4];
+
+        if(purgk31)
+            ing3 = buses[gen3] + buses[shp2];
+        else
+        {
+            ing4 = buses[gen4] + buses[gen3] + buses[shp2];
+            if(!pp400[0] && pss400)
+                ing4 = ing4 + buses[gen1] + buses[gen2] + buses[shp1];
+        }
+
+    }
+    else
+    {
+        if(purgk31)
+        {
+            ing3 = buses[gen4] + buses[gen3] + buses[shp2];
+            if(!pp400[0] && pss400)
+            {
+                ing3 = ing3 + buses[gen1] + buses[gen2] + buses[shp1];
+            }
+        }
+        else
+        {
+            if(purgpk4)
+            {
+                if(purgpk5)
+                    ing4 = buses[shavar4];
+                else
+                {
+                    if(prgen[2])
+                        ing3 = buses[shavar4];
+                }
+            }
+        }
+    }
 }
 
 

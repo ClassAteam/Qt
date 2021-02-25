@@ -502,18 +502,6 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&uptsP[0], "uptsa");
     createLabelValue(&uptsP[1], "uptsb");
     createLabelValue(&uptsP[2], "uptsc");
-    createLabelValue(&ushavP[0][0], "ushav1 a");
-    createLabelValue(&ushavP[0][1], "ushav1 b");
-    createLabelValue(&ushavP[0][2], "ushav1 c");
-    createLabelValue(&ushavP[1][0], "ushav2 a");
-    createLabelValue(&ushavP[1][1], "ushav2 b");
-    createLabelValue(&ushavP[1][2], "ushav2 c");
-    createLabelValue(&ushavP[2][0], "ushav3 a");
-    createLabelValue(&ushavP[2][1], "ushav3 b");
-    createLabelValue(&ushavP[2][2], "ushav3 c");
-    createLabelValue(&ushavP[3][0], "ushav4 a");
-    createLabelValue(&ushavP[3][1], "ushav4 b");
-    createLabelValue(&ushavP[3][2], "ushav4 c");
     createLabelValue(&fpts, "fpts");
     createRedButton(&otk_preobr_pts1, "otk_preobr_pts1");
     createRedButton(&s15_2420, "s15_2420");
@@ -546,43 +534,19 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&upos, "upos");
     createLabelValue(&fpos, "fpos");
     createLabelValue(&ushpP[0][0], "ushp1-a");
-    createLabelValue(&ushpP[0][1], "ushp1-b");
-    createLabelValue(&ushpP[0][2], "ushp1-c");
     createLabelValue(&ushpP[1][0], "ushp2-a");
-    createLabelValue(&ushpP[1][1], "ushp2-b");
-    createLabelValue(&ushpP[1][2], "ushp2-c");
     createLabelValue(&ushavP[0][0], "ushav1-a");
-    createLabelValue(&ushavP[0][1], "ushav1-b");
-    createLabelValue(&ushavP[0][2], "ushav1-c");
     createLabelValue(&ushavP[1][0], "ushav2-a");
-    createLabelValue(&ushavP[1][1], "ushav2-b");
-    createLabelValue(&ushavP[1][2], "ushav2-c");
     createLabelValue(&ushavP[2][0], "ushav3-a");
-    createLabelValue(&ushavP[2][1], "ushav3-b");
-    createLabelValue(&ushavP[2][2], "ushav3-c");
     createLabelValue(&ushavP[3][0], "ushav4-a");
-    createLabelValue(&ushavP[3][1], "ushav4-b");
-    createLabelValue(&ushavP[3][2], "ushav4-c");
     createLabelValue(&ushgP[0][0], "ushg1-a");
-    createLabelValue(&ushgP[0][1], "ushg1-b");
-    createLabelValue(&ushgP[0][2], "ushg1-c");
     createLabelValue(&ushgP[1][0], "ushg2-a");
-    createLabelValue(&ushgP[1][1], "ushg2-b");
-    createLabelValue(&ushgP[1][2], "ushg2-c");
     createLabelValue(&ushgP[2][0], "ushg3-a");
-    createLabelValue(&ushgP[2][1], "ushg3-b");
-    createLabelValue(&ushgP[2][2], "ushg3-c");
     createLabelValue(&ushgP[3][0], "ushg4-a");
-    createLabelValue(&ushgP[3][1], "ushg4-b");
-    createLabelValue(&ushgP[3][2], "ushg4-c");
     createLabelValue(&urapP[0], "urap-a");
-    createLabelValue(&urapP[1], "urap-b");
-    createLabelValue(&urapP[2], "urap-c");
     createLabelValue(&ushpos[0], "ushpos1");
     createLabelValue(&ushpos[1], "ushpos2");
     createLabelValue(&ushpts[0], "ushpts-a");
-    createLabelValue(&ushpts[1], "ushpts-b");
-    createLabelValue(&ushpts[2], "ushpts-c");
     createLabelValue(&fshg[0], "fshg-1");
     createLabelValue(&fshg[1], "fshg-2");
     createLabelValue(&fshg[2], "fshg-3");
@@ -596,6 +560,13 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&fshav[1], "fshav2");
     createLabelValue(&fshav[2], "fshav3");
     createLabelValue(&fshav[3], "fshav4");
+    for(int i = 0; i < consumers.consumers.count(); ++i)
+    {
+        createRedButton(&consumers.consumers[i].isActive, consumers.consumers[i].name);
+    }
+
+//    createLabelValue(&consumers.busesLoad[1], "bus1");
+
 }
 void powerdc_ind::updateLogic()
 {

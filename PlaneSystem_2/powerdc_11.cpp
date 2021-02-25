@@ -53,6 +53,7 @@ double
 }
 
 
+allElCons consumers;
 
 void powerdc_11()
 {
@@ -61,7 +62,8 @@ void powerdc_11()
 //        f14_2420{true},
 //        f24_2420{true},
 //        f28_2420{true};
-static allElCons fuelConsumers;
+
+consumers.makeCorresCurr();
 
     double kn1{25},
         k10{1.5}, k20{1.5}, k30{1.5}, k40{1.5}, k50{1.5},
@@ -279,10 +281,4 @@ static allElCons fuelConsumers;
 
         alt::fg[y] = m_2_L_intervals(*ug_pool[y], 0, 115, 121, 0, 395, 405);
     }
-    QVector<int> ivt{};
-    ivt = fuelConsumers.getIvg_pool();
-    qDebug()<< "gen1"<<ivt[0];
-    qDebug()<< "gen2"<<ivt[1];
-    qDebug()<< "gen3"<<ivt[2];
-    qDebug()<< "gen4"<<ivt[3];
 }

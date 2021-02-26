@@ -20,13 +20,13 @@
 #include "powerdc_15.h"
 #include "powerdc_16.h"
 
-extern allElCons consumers;
+extern allElCons consumers_global_inst;
 
 namespace alt{
 extern double
     fg[5], ng1, ng2, ng3, ng4, ngvsu,
     ivg1, ivg2, ivg3, ivg4, ivgvsu,
-    ing1, ing2, ing3, ing4, ingvsu,
+    ing1, ing2, ing3, ing4, ingvsu, ingrap,
     divg1, divg2, divg3, divg4, divgvsu,
     ug1, ug2, ug3, ug4, ugvsu,
     ug1r, ug2r, ug3r, ug4r, ugvsur,
@@ -43,7 +43,7 @@ extern double
     inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
     inshal, inshap, insh1l, insh1p, insh2l, insh2p, inshzvsu, insl27,
     insp27, insho1l, insho1p, insho2l, insho2p, kg1_27, kg2_27, kg3_27, kg4_27,
-    nvsu, pbgvsu, ugvsu, ugrvsu, ivgvsu, ingvsu, divgvsu,
+    nvsu, pbgvsu, ugvsu, ugrvsu, ivgvsu, ingvsu,ingrap, divgvsu,
     uak1, uak2, uo1ak, uo2ak, upr, ipr, ur1ak, ur2ak, uz1ak, uz2ak,
     usho2l, usho2p, ushak1, ushak2, uls27, ups27, ushzvsu,
     //ugrr, ugrrvsu,

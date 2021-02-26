@@ -44,7 +44,7 @@ double
     fg[5] = {0},
     ng1, ng2, ng3, ng4, ngvsu,
     ivg1, ivg2, ivg3, ivg4, ivgvsu,
-    ing1, ing2, ing3, ing4, ingvsu,
+    ing1, ing2, ing3, ing4, ingvsu, ingrap,
     divg1, divg2, divg3, divg4, divgvsu,
     ug1, ug2, ug3, ug4, ugvsu,
     ug1r, ug2r, ug3r, ug4r, ugvsur,
@@ -53,7 +53,7 @@ double
 }
 
 
-allElCons consumers;
+allElCons consumers_global_inst;
 
 void powerdc_11()
 {
@@ -63,11 +63,11 @@ void powerdc_11()
 //        f24_2420{true},
 //        f28_2420{true};
 
-consumers.makeCorresCurr();
+consumers_global_inst.makeCorresCurr();
 
     double kn1{25},
         k10{1.5}, k20{1.5}, k30{1.5}, k40{1.5}, k50{1.5},
-        kng1{0.15}, kng2{0.15}, kng3{0.15}, kng4{0.15}, knvsu{0.15},
+        kng1{0.0025}, kng2{0.0025}, kng3{0.0025}, kng4{0.0025}, knvsu{0.0037},
         kg1[] = {k10, k20, k30, k40, k50},
         kng[] = {kng1, kng2, kng3, kng4, knvsu};
     static int

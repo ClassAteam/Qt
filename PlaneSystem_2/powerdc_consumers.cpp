@@ -58,8 +58,8 @@ allElCons::allElCons()
 }
 QVector<double> allElCons::getIvg_pool()
 {
-    QVector<double>ivg(allElCons::consumers.size());
-    for(int i = 0; i < consumers.size(); ++i)
+    QVector<double>ivg(consumers.count());
+    for(int i = 0; i < consumers.count(); ++i)
     {
         if(consumers[i].isActive == true)
         {
@@ -98,14 +98,14 @@ QVector<double> allElCons::getIvg_pool()
             }
         }
     }
-    busesLoad = ivg;
     return ivg;
 }
 
 void allElCons::makeCorresCurr()
 {
     using namespace alt;
-    QVector<double>buses = getIvg_pool();
+    QVector<double>buses;
+    buses = getIvg_pool();
 
     buses[shp1] = 5;
     buses[shp2] = 5;
@@ -192,6 +192,84 @@ void allElCons::makeCorresCurr()
             }
         }
     }
+    /////////////////////////////////////////////////////ingrap & ingvsu
+
+    double sumA{buses[gen1] + buses[gen2] + buses[gen3] + buses[gen4] + buses[shp1] + buses[shp2]};
+    double sumB{buses[gen1] + buses[gen2] + buses[shp1]};
+    double sumC{buses[gen3] + buses[gen4]+ buses[shp2]};
+
+    if(purglk2)
+    {
+        if(purglk7)
+        {
+            if(purglk8 && purgpk7)
+            {
+                ingvsu = sumA;
+            }
+            else
+            {
+                ingvsu = sumB;
+            }
+        }
+        else
+        {
+            if(purglk8 && purgpk7)
+            {
+                ingvsu = sumC;
+                BSS837X1FF = true;
+            }
+            else
+            {
+                ingvsu = 0;
+                BSS837X1FF = false;
+            }
+        }
+    }
+    else
+    {
+        ingvsu = 0;
+        BSS837X1FF = false;
+    }
+
+    if(purgpk3)
+    {
+        if(purgpk7)
+        {
+            if(purglk8 && purglk7)
+            {
+                ingrap = sumA;
+                BSS926X3R = true;
+            }
+            else
+            {
+                ingrap = sumC;
+                BSS926X3R = true;
+            }
+        }
+        else
+        {
+            if(purglk8 && purglk7)
+            {
+                ingrap = sumB;
+                BSS926X3R = true;
+            }
+            else
+            {
+                ingrap = 0;
+                BSS926X3R = false;
+            }
+        }
+    }
+    else
+    {
+        ingrap = 0;
+        BSS926X3R = false;
+    }
+
+    if(pss400)
+        BSS926X3T = true;
+    else
+        BSS926X3T = false;
 }
 
 

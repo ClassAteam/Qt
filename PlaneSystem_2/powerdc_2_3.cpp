@@ -391,7 +391,7 @@ void powerdc_2_3() //2 //3
 
                 if((tick_vsu27 * TICK) >= 3000)
                 {
-                    purg27lk5 = false;
+//                    purg27lk5 = false;
                     purg27lk1 = true;
                     purg27lk4 = false;
                     purg27lk7 = false;
@@ -401,7 +401,7 @@ void powerdc_2_3() //2 //3
 
                     if(s7_2430 == true)
                     {
-                        purg27pk5 = false;
+//                        purg27pk5 = false;
                         purg27pk3 = true;
                         purg27pk1 = true;
                         purg27pk4 = false;

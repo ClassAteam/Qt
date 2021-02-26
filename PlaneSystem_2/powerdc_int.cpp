@@ -347,6 +347,7 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&alt::ing3, "ing3");
     createLabelValue(&alt::ing4, "ing4");
     createLabelValue(&alt::ingvsu, "ingvsu");
+    createLabelValue(&alt::ingrap, "ingrap");
     createLabelValue(&alt::divg1, "divg1");
     createLabelValue(&alt::divg2, "divg2");
     createLabelValue(&alt::divg3, "divg3");
@@ -560,9 +561,9 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&fshav[1], "fshav2");
     createLabelValue(&fshav[2], "fshav3");
     createLabelValue(&fshav[3], "fshav4");
-    for(int i = 0; i < consumers.consumers.count(); ++i)
+    for(int i = 0; i < consumers_global_inst.consumers.count(); ++i)
     {
-        createRedButton(&consumers.consumers[i].isActive, consumers.consumers[i].name);
+        createRedButton(&consumers_global_inst.consumers[i].isActive, consumers_global_inst.consumers[i].name);
     }
 
 //    createLabelValue(&consumers.busesLoad[1], "bus1");
@@ -580,7 +581,7 @@ void powerdc_ind::updateLogic()
     powerdc_11();
     powerdc_12();
     powerdc_13();
+    powerdc_16();
     powerdc_14();
     powerdc_15();
-    powerdc_16();
 }

@@ -1,6 +1,9 @@
 #include <QVector>
 
 extern bool
+    BSS837X1FF,
+    BSS926X3R,
+    BSS926X3T,
     purgk1,
     purgk21,
     purgk31,
@@ -10,14 +13,18 @@ extern bool
     purglk4,
     purgpk4,
     purglk5,
+    purglk7,
+    purglk8,
     purgpk5,
+    purgpk7,
+    purgpk8,
     plp400,
     pp400[2],
     pss400,
     prgen[5];
 namespace alt{
 extern double
-    ing1, ing2, ing3, ing4;
+    ing1, ing2, ing3, ing4, ingvsu, ingrap;
 }
 
 extern int

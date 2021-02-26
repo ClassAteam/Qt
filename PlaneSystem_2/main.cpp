@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     landinggear_int landinggear;
 //    landinggear.show();
     emergencyalarm_int emergencyalarm;
-//    emergencyalarm.show();
+    emergencyalarm.show();
     cabinlighting cabinlighting;
 //    cabinlighting.show();
     presure_int presure;

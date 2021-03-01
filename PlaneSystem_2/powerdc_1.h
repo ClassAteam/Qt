@@ -14,6 +14,8 @@ extern QVector<double>
 extern const double
     TICK;
 extern bool
+    purg27lk4,
+    purg27pk4,
     BSS812X5t;
 extern double
     ivsu,

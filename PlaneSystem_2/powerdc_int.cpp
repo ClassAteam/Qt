@@ -24,6 +24,8 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelClue(&pvkg2, "pvkg2");
     createLabelClue(&pvkg3, "pvkg3");
     createLabelClue(&pvkg4, "pvkg4");
+    createRedButton(&apdvsu_35, "APDVSU35");
+    createRedButton(&apdvsu_49, "APDVSU49");
     createLabelClue(&pvkgvsu, "pvkgvsu");
     createLabelClue(&prg1, "prg1");
     createLabelClue(&prg2, "prg2");

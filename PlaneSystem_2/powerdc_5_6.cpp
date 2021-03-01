@@ -143,105 +143,87 @@ void powerdc_5_6() //5 6
         inshap = (inshap + insh1dpp + insh2dpp);
     }
 
-    if(s14_2430 && !purg27lk4)
+    if(purg27lk6)
     {
-        if(purg27lk5)
-        {
-            if(purg27pk3)
-            {
-                iak1 = ((inshal + inshap) / 2);
-            }
-            else
-            {
-                if(ppgvsu27)
-                {
-                    iak1 = 0.013 * ((ea1 - ushal) / ra1);
-                }
-                else
-                {
-                    if(plp27)
-                    {
-                        iak1 = 0.013 * ((ea1 - ushal) / ra1);
-                    }
-                    else
-                    {
-                        if(!ppp27)
-                        {
-                            iak1 = inshal;
-                        }
-                        else
-                        {
-                            if(pss27)
-                            {
-                                iak1 = 0.013 * ((ea1 - ushal) / ra1);
-                            }
-                            else
-                            {
-                                iak1 = inshal;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        else
-        {
-            if(purg27lk6)
-            {
-                iak1 = inshzvsu;
-            }
-            else
-            {
-                iak1 = 0;
-            }
-        }
+        iak1 = inshzvsu;
     }
     else
     {
-        iak1 = 0;
+        if(!s14_2430)
+            iak1 = 0;
+        else
+        {
+            if(purg27lk4)
+            iak1 = 0;
+            else
+            {
+                if(plp27)
+                    iak1 = 0.013 * (ea1 - ushal) / ra1; //what is the order
+                else
+                {
+                    if(ppp27)
+                    {
+                        if(pss27)
+                            iak1 = 0.013 * (ea1 - ushal) / ra1;
+                        else
+                        {
+                            iak1 = inshal;
+                        }
+                    }
+                    else
+                    {
+                        if(!purg27pk3)
+                            iak1 = inshal;
+                        else
+                        {
+                            if(purg27pk5)
+                                iak1 = (inshal + inshap) / 2;
+                            else
+                                iak1 = (inshal + inshap);
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    if(s15_2430 && !purg27pk4 && purg27pk5)
+    if(!s15_2430)
+        iak2 = 0;
+    else
     {
-        if(purg27pk3)
-        {
-            iak2 = ((inshal + inshap) / 2);
-        }
+        if(purg27pk4)
+            iak2 = 0;
         else
         {
             if(ppp27)
-            {
-                iak2 = 0.013 * ((ea2 - ushap) / ra2);
-            }
+                iak2 = 0.013 * (ea2 - ushap) / ra2;
             else
             {
-                if(!plp27)
-                {
-                    iak2 = inshap;
-                }
-                else
+                if(plp27)
                 {
                     if(pss27)
-                    {
-                        iak2 = 0.013 * ((ea2 - ushap) / ra2);
-                    }
+                        iak2 = 0.013 * (ea2 - ushap) / ra2;
                     else
                     {
                         iak2 = inshap;
                     }
                 }
+                else
+                {
+                    if(!purg27pk3)
+                        iak2 = inshap;
+                    else
+                    {
+                        if(!purg27lk5)
+                            iak2 = inshal + inshap;
+                        else
+                            iak2 = (inshal + inshap) / 2;
+                    }
+                }
             }
         }
     }
-    else
-    {
-        iak2 = 0;
-    }
 
-    if(purg27lk9)
-    {
-        insh1l = insh1l + insh2dpl + insh1dpl;
-    }
 //    else
 //    {
 //        inshal = inshal + insh1dpl + insh2dpl;

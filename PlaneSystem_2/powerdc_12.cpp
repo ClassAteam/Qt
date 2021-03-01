@@ -198,7 +198,7 @@ void powerdc_12()
         }
     }
 
-    if(!purgk21 && purgk1)
+    if(purgk1 && !purgk21)
         purglk6 = true;
     else
         purglk6 = false;

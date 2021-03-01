@@ -1,38 +1,38 @@
 #include "powerdc_1.h"
 
 bool
-OtkazGen1PostT, OtkazGen2PostT, OtkazGen3PostT, OtkazGen4PostT, OtkazGenVsu,
-prgvsu27,
-pa1, pa2,
-pvkgvsu27,
-pbg1, pbg2, pbg3, pbg4, pbgvsu27,
-pvkg1, pvkg2, pvkg3, pvkg4, pvkgvsu,
-prg1, prg2, prg3, prg4, prgvsu,
-s1_2430, s4_2430, s5_2430, s8_2430, s11_2430;
+    OtkazGen1PostT, OtkazGen2PostT, OtkazGen3PostT, OtkazGen4PostT, OtkazGenVsu,
+    prgvsu27,
+    pa1, pa2,
+    pvkgvsu27,
+    pbg1, pbg2, pbg3, pbg4, pbgvsu27,
+    pvkg1, pvkg2, pvkg3, pvkg4, pvkgvsu,
+    prg1, prg2, prg3, prg4, prgvsu,
+    s1_2430, s4_2430, s5_2430, s8_2430, s11_2430;
 double
-nvsu,
-uz1ak, uz2ak,
-ur1ak, ur2ak,
-uo1ak, uo2ak,
-uak1, uak2,
-//ugrr, ugrrvsu,
-ug1, ug2, ug3, ug4, ugvsu27,
-uzg1 = 28.5, uzg2 = 28.4, uzg3 = 28.6, uzg4 = 28.7, uzgvsu = 28.5,
-ug1r, ug2r, ug3r, ug4r, ugrvsu27,
-ivg1, ivg2, ivg3, ivg4, ivgvsu27,
-ing1, ing2, ing3, ing4, ivsu,
-divg1, divg2, divg3, divg4, divgvsu27,
-ng1, ng2, ng3, ng4, ngvsu,
-kn1 = 25, krg = 0.00025, krgvsu = 0.00037, kak,
-kg1 = 1.5,
-kgvsu = 1.5,
-kg10 = 0.15,
-qa1 = 40.0, qa2 = 40.0,
-ea1 = 25.5, ea2 = 25.5,
-iak1, iak2,
-ra1, ra2;
+    nvsu,
+    uz1ak, uz2ak,
+    ur1ak, ur2ak,
+    uo1ak, uo2ak,
+    uak1{25.5}, uak2{25.5},
+    //ugrr, ugrrvsu,
+    ug1, ug2, ug3, ug4, ugvsu27,
+    uzg1 = 28.5, uzg2 = 28.4, uzg3 = 28.6, uzg4 = 28.7, uzgvsu = 28.5,
+    ug1r, ug2r, ug3r, ug4r, ugrvsu27,
+    ivg1, ivg2, ivg3, ivg4, ivgvsu27,
+    ing1, ing2, ing3, ing4, ivsu,
+    divg1, divg2, divg3, divg4, divgvsu27,
+    ng1, ng2, ng3, ng4, ngvsu,
+    kn1 = 25, krg = 0.00025, krgvsu = 0.00037, kak,
+    kg1 = 1.5,
+    kgvsu = 1.5,
+    kg10 = 0.05,
+    qa1 = 40.0, qa2 = 40.0,
+    ea1 = 25.5, ea2 = 25.5,
+    iak1, iak2,
+    ra1, ra2;
 int
-tickg1, tickg2, tickg3, tickg4, tickvsu;
+    tickg1, tickg2, tickg3, tickg4, tickvsu;
 
 
 
@@ -168,6 +168,7 @@ void powerdc_1() //1
     double* uak_pool[] = {&uak1, &uak2};
     double* ra_pool[] = {&ra1, &ra2};
     double* ush_pool[] = {&ushal, &ushap};
+    bool* purg27lk_pool[] = {&purg27lk4, &purg27pk4};
 
     for(int i = 0; i < 2; i++)
     {
@@ -179,7 +180,7 @@ void powerdc_1() //1
             *uzak_pool[i] = *ush_pool[i];
 //            *uzak_pool[i] = *uak_pool[i] + 2.5;
 
-            if(*iak_pool[i] >= 0)
+            if(*iak_pool[i] > 0)
             {
                 *qa_pool[i] = *qa_pool[i] - (*iak_pool[i] / 3600) * (TICK / 1000);
             }
@@ -195,16 +196,25 @@ void powerdc_1() //1
 
             if(*pa_pool[i] == true && (*uzak_pool[i] > *ea_pool[i]))
             {
-                if((*uzak_pool[i] - *uoak_pool[i]) >= 2.5)
+                if(!(*purg27lk_pool[i]))
                 {
-                    *urak_pool[i] = *urak_pool[i] + 0.001 *
-                                                        ((25 - *urak_pool[i]) * (TICK / 1000));
+                    if((*uzak_pool[i] - *uoak_pool[i]) >= 2.5)
+                    {
+                        *urak_pool[i] = *urak_pool[i] + 0.001 *
+                                                            ((25 - *urak_pool[i]) * (TICK / 1000));
+                    }
+                    else
+                    {
+                        *urak_pool[i] =
+                            *urak_pool[i] + 0.01 * ((*uzak_pool[i] - *uoak_pool[i] - *urak_pool[i])
+                                                    * (TICK / 1000));
+                    }
                 }
                 else
                 {
                     *urak_pool[i] =
-                        *urak_pool[i] + 0.01 * ((*uzak_pool[i] - *uoak_pool[i] - *urak_pool[i])
-                                                          * (TICK / 1000));
+                        *urak_pool[i] + 0.01 * (((-(*uzak_pool[i])) + *uoak_pool[i] - *urak_pool[i])
+                                                * (TICK / 1000));
                 }
             }
             else

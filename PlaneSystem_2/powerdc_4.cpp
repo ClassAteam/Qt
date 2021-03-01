@@ -19,7 +19,7 @@ void powerdc_4()
     }
     else
     {
-        ushzvsu = ushal;
+        ushzvsu = 0;
     }
 
 

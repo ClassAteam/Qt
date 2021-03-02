@@ -61,6 +61,7 @@ SOURCES += \
     hydro_8.cpp \
     hydro_9.cpp \
     hydro_int.cpp \
+    input_feed.cpp \
     interfacing.cpp \
     landinggear_1.cpp \
     landinggear_2.cpp \
@@ -81,6 +82,7 @@ SOURCES += \
     powerdc_14.cpp \
     powerdc_15.cpp \
     powerdc_16.cpp \
+    powerdc_20.cpp \
     powerdc_2_3.cpp \
     powerdc_4.cpp \
     powerdc_5_6.cpp \
@@ -144,6 +146,7 @@ HEADERS += \
     hydro_8.h \
     hydro_9.h \
     hydro_int.h \
+    input_feed.h \
     interfacing.h \
     landinggear_1.h \
     landinggear_2.h \
@@ -163,6 +166,7 @@ HEADERS += \
     powerdc_14.h \
     powerdc_15.h \
     powerdc_16.h \
+    powerdc_20.h \
     powerdc_2_3.h \
     powerdc_4.h \
     powerdc_5_6.h \

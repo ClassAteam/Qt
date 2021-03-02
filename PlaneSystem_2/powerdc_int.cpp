@@ -568,8 +568,14 @@ powerdc_ind::powerdc_ind(QWidget *parent)
         createRedButton(&consumers_global_inst.consumers[i].isActive, consumers_global_inst.consumers[i].name);
     }
 
-//    createLabelValue(&consumers.busesLoad[1], "bus1");
-
+    createRedButton(&feed_global_inst.pvksku1, "pvksku1");
+    createRedButton(&feed_global_inst.pvksku2, "pvksku2");
+    createRedButton(&feed_global_inst.pvksku3, "pvksku3");
+    createRedButton(&feed_global_inst.pvksku4, "pvksku4");
+    createRedButton(&feed_global_inst.otk_overload_altgen1, "peregr_gen1");
+    createRedButton(&feed_global_inst.otk_overload_altgen2, "peregr_gen2");
+    createRedButton(&feed_global_inst.otk_overload_altgen3, "peregr_gen3");
+    createRedButton(&feed_global_inst.otk_overload_altgen4, "peregr_gen4");
 }
 void powerdc_ind::updateLogic()
 {
@@ -586,4 +592,5 @@ void powerdc_ind::updateLogic()
     powerdc_16();
     powerdc_14();
     powerdc_15();
+    powerdc_20();
 }

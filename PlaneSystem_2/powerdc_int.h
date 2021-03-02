@@ -19,8 +19,10 @@
 #include "powerdc_14.h"
 #include "powerdc_15.h"
 #include "powerdc_16.h"
+#include "powerdc_20.h"
 
 extern allElCons consumers_global_inst;
+extern extrn_feed feed_global_inst;
 
 namespace alt{
 extern double

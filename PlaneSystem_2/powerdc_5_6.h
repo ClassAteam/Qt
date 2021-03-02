@@ -10,6 +10,8 @@
 #include "math.h"
 
 extern bool
+    purgk27pk3,
+    pvkgvsu27,
     purglk4,
     purglk6,
     prg1,

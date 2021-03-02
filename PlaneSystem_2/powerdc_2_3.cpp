@@ -167,15 +167,18 @@ void powerdc_2_3() //2 //3
 
     if(purg27lk5 == true || purg27pk5 == true)
     {
-        if(ush1dpl >= 18.0 && s13_2430 == air)
+        if(!plp27 && !ppp27)
         {
-            if(s7_2430 || (plp27 == false && ppp27 == false))
+            if(s7_2430)
             {
                 purg27pk3 = true;
-//                pss27 = true;
+            }
+            else
+            {
+                if(s13_2430 == s13_2430_pos::air)
+                    purg27pk3 = true;
             }
         }
-
     }
 
     purg27lk1 = false;

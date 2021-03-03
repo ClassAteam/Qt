@@ -7,10 +7,13 @@
 #include <QLineEdit>
 #include "interfacing.h"
 #include "presure.h"
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern bool
-    K1_2131, K2_2131, K4_2131, PAVARR, PRTHU1, PPP, PGK, BSS838X5MM,
-    BSS824X1G, BSS824X1J, BSS838X7A, SKD_D300, SKD_D301,
+    K1_2131, K2_2131, K4_2131, PAVARR, PRTHU1, PPP, PGK,
+    SKD_D300, SKD_D301,
     otkaz_razgermetizatsiya, lyukizagermetizirovany, otkaz_perenadduv,
     S2_2131
     ;

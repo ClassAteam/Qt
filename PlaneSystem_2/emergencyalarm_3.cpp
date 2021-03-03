@@ -179,7 +179,7 @@ void emergencyalarm_3()
     {
         ///////////////Yellow lights
         //////////////1
-        if (BSS812X5j == true)
+        if (bss_inst.BSS812X5j == true)
         {
             BSS812X6T = true;
             if(PZH812_X5j_b == true)
@@ -206,7 +206,7 @@ void emergencyalarm_3()
 
         ///////////////Yellow lights
         //////////////2
-        if (BSS812X5p == true)
+        if (bss_inst.BSS812X5p == true)
         {
             BSS812X6V = true;
             if(PZH812_X5p_b == true)
@@ -411,7 +411,7 @@ void emergencyalarm_3()
 
         ///////////////Red lights_1
         //////////////1
-        if (BSS812X5h == true)
+        if (bss_inst.BSS812X5h == true)
         {
             BSS812X6S = true;
             if(PK812_X5h_b == true)
@@ -437,7 +437,7 @@ void emergencyalarm_3()
         }
         ///////////////Red lights_1
         //////////////2
-        if (BSS812X5n == true)
+        if (bss_inst.BSS812X5n == true)
         {
             BSS812X6U = true;
             if(PK812_X5n_b == true)

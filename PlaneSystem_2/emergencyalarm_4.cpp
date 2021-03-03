@@ -820,7 +820,7 @@ void emergencyalarm_4()
 
         ///////////////Yellow lights
         //////////////25
-        if (BSS913X3E == true)
+        if (bss_inst.BSS913X3E == true)
         {
             BSS913X2j = true;
             if(PZH913_X3E_b == true)
@@ -847,7 +847,7 @@ void emergencyalarm_4()
 
         ///////////////Yellow lights
         //////////////26
-        if (BSS913X3G == true)
+        if (bss_inst.BSS913X3G == true)
         {
             BSS913X2k = true;
             if(PZH913_X3G_b == true)
@@ -1056,7 +1056,7 @@ void emergencyalarm_4()
 
         ///////////////White lights_1
         //////////////3
-        if (BSS913X3J == true)
+        if (bss_inst.BSS913X3J == true)
         {
             BSS913X2m = true;
         }
@@ -1067,7 +1067,7 @@ void emergencyalarm_4()
 
         ///////////////White lights_1
         //////////////4
-        if (BSS913X3L == true)
+        if (bss_inst.BSS913X3L == true)
         {
             BSS913X2n = true;
         }
@@ -1078,7 +1078,7 @@ void emergencyalarm_4()
 
         ///////////////White lights_1
         //////////////5
-        if (BSS913X3N == true)
+        if (bss_inst.BSS913X3N == true)
         {
             BSS913X2p = true;
         }

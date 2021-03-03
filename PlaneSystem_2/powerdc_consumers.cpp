@@ -216,19 +216,19 @@ void allElCons::makeCorresCurr()
             if(purglk8 && purgpk7)
             {
                 ingvsu = sumC;
-                BSS837X1FF = true;
+                bss_inst.BSS837X1FF = true;
             }
             else
             {
                 ingvsu = 0;
-                BSS837X1FF = false;
+                bss_inst.BSS837X1FF = false;
             }
         }
     }
     else
     {
         ingvsu = 0;
-        BSS837X1FF = false;
+        bss_inst.BSS837X1FF = false;
     }
 
     if(purgpk3)
@@ -238,12 +238,12 @@ void allElCons::makeCorresCurr()
             if(purglk8 && purglk7)
             {
                 ingrap = sumA;
-                BSS926X3R = true;
+                bss_inst.BSS926X3R = true;
             }
             else
             {
                 ingrap = sumC;
-                BSS926X3R = true;
+                bss_inst.BSS926X3R = true;
             }
         }
         else
@@ -251,25 +251,25 @@ void allElCons::makeCorresCurr()
             if(purglk8 && purglk7)
             {
                 ingrap = sumB;
-                BSS926X3R = true;
+                bss_inst.BSS926X3R = true;
             }
             else
             {
                 ingrap = 0;
-                BSS926X3R = false;
+                bss_inst.BSS926X3R = false;
             }
         }
     }
     else
     {
         ingrap = 0;
-        BSS926X3R = false;
+        bss_inst.BSS926X3R = false;
     }
 
     if(pss400)
-        BSS926X3T = true;
+        bss_inst.BSS926X3T = true;
     else
-        BSS926X3T = false;
+        bss_inst.BSS926X3T = false;
 }
 
 

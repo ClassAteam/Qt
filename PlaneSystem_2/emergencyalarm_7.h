@@ -1,4 +1,7 @@
 #pragma once
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern const double
 TICK;
@@ -7,11 +10,6 @@ ush1dpl,
 ush1dpp,
 ush2dpl,
 ush2dpp;
-
-extern bool
-BSS926X1f,
-BSS926X1h,
-BSS926X1j;
 
 void emergencyalarm_7();
 

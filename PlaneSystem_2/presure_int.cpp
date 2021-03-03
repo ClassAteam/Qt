@@ -11,10 +11,10 @@ presure_int::presure_int(QWidget *parent)
     createLabelClue(&PRTHU1, "PRTHU1");
     createLabelClue(&PPP, "PPP");
     createLabelClue(&PGK, "PGK");
-    createLabelClue(&BSS838X5MM, "BSS838X5MM");
-    createLabelClue(&BSS824X1G, "BSS824X1G");
-    createLabelClue(&BSS824X1J, "BSS824X1J");
-    createLabelClue(&BSS838X7A, "BSS838X7A");
+    createLabelClue(&bss_inst.BSS838X5MM, "BSS838X5MM");
+    createLabelClue(&bss_inst.BSS824X1G, "BSS824X1G");
+    createLabelClue(&bss_inst.BSS824X1J, "BSS824X1J");
+    createLabelClue(&bss_inst.BSS838X7A, "BSS838X7A");
     createLabelClue(&SKD_D300, "SKD_D300");
     createLabelClue(&SKD_D301, "SKD_D301");
     createLabelClue(&otkaz_razgermetizatsiya, "otkaz_razgermetizatsiya");

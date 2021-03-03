@@ -11,37 +11,37 @@ bool
 void powerdc_8()
 {
     if(purg27lk5)
-        BSS837X1d = true;
+        bss_inst.BSS837X1d = true;
     else
-        BSS837X1d = false;
+        bss_inst.BSS837X1d = false;
     if(purg27pk5)
-        BSS837X1p = true;
+        bss_inst.BSS837X1p = true;
     else
-        BSS837X1p = false;
+        bss_inst.BSS837X1p = false;
     if(purg27pk3 || pss27)
-        BSS926X3C = true;
+        bss_inst.BSS926X3C = true;
     else
-        BSS926X3C = false;
+        bss_inst.BSS926X3C = false;
     if(purg27lk4)
-        BSS926X1MM = true;
+        bss_inst.BSS926X1MM = true;
     else
-        BSS926X1MM = false;
+        bss_inst.BSS926X1MM = false;
     if(purg27pk4)
-        BSS926X3J = true;
+        bss_inst.BSS926X3J = true;
     else
-        BSS926X3J = false;
+        bss_inst.BSS926X3J = false;
     if(pvkchrl)
-        BSS926X3A = true;
+        bss_inst.BSS926X3A = true;
     else
-        BSS926X3A = false;
+        bss_inst.BSS926X3A = false;
     if(pvkchrp)
-        BSS926X3L = true;
+        bss_inst.BSS926X3L = true;
     else
-        BSS926X3L = false;
+        bss_inst.BSS926X3L = false;
 
-    BSS926X1x = false;
-    BSS926X1z = false;
-    BSS837X1b=  false;
+    bss_inst.BSS926X1x = false;
+    bss_inst.BSS926X1z = false;
+    bss_inst.BSS837X1b=  false;
 
     if(pvkg1)
     {
@@ -49,25 +49,25 @@ void powerdc_8()
         {
             if(otk_pereg_gen1)
             {
-                BSS837X1b = true;
-                BSS926X1x = true;
+                bss_inst.BSS837X1b = true;
+                bss_inst.BSS926X1x = true;
             }
         }
         else
         {
-            BSS926X1x = true;
+            bss_inst.BSS926X1x = true;
         }
     }
     else
     {
         if(ushal >= 18.0)
         {
-            BSS926X1z = true;
+            bss_inst.BSS926X1z = true;
         }
     }
-    BSS837X1f = false;
-    BSS926X1BB = false;
-    BSS926X1DD = false;
+    bss_inst.BSS837X1f = false;
+    bss_inst.BSS926X1BB = false;
+    bss_inst.BSS926X1DD = false;
 
     if(pvkg2)
     {
@@ -75,28 +75,28 @@ void powerdc_8()
         {
             if(otk_pereg_gen2)
             {
-                BSS837X1f = true;
-                BSS926X1BB = true;
+                bss_inst.BSS837X1f = true;
+                bss_inst.BSS926X1BB = true;
             }
         }
         else
         {
-            BSS926X1BB = true;
+            bss_inst.BSS926X1BB = true;
         }
     }
     else
     {
         if(ushal >= 18.0)
         {
-            BSS926X1DD = true;
+            bss_inst.BSS926X1DD = true;
         }
     }
-    BSS837X1r = false;
-    BSS837X1t = false;
-    BSS837X1v = false;
-    BSS837X1h = false;
-    BSS837X1j = false;
-    BSS837X1n = false;
+    bss_inst.BSS837X1r = false;
+    bss_inst.BSS837X1t = false;
+    bss_inst.BSS837X1v = false;
+    bss_inst.BSS837X1h = false;
+    bss_inst.BSS837X1j = false;
+    bss_inst.BSS837X1n = false;
 
     if(pvkg3)
     {
@@ -104,20 +104,20 @@ void powerdc_8()
         {
             if(otk_pereg_gen3)
             {
-                BSS837X1r = true;
-                BSS837X1t = true;
+                bss_inst.BSS837X1r = true;
+                bss_inst.BSS837X1t = true;
             }
         }
         else
         {
-            BSS837X1t = true;
+            bss_inst.BSS837X1t = true;
         }
     }
     else
     {
         if(ushap >= 18.0)
         {
-            BSS837X1v = true;
+            bss_inst.BSS837X1v = true;
         }
     }
 
@@ -127,27 +127,27 @@ void powerdc_8()
         {
             if(otk_pereg_gen4)
             {
-                BSS837X1h = true;
-                BSS837X1j = true;
+                bss_inst.BSS837X1h = true;
+                bss_inst.BSS837X1j = true;
             }
         }
         else
         {
-            BSS837X1j = true;
+            bss_inst.BSS837X1j = true;
         }
     }
     else
     {
         if(ushap >= 18.0)
         {
-            BSS837X1n = true;
+            bss_inst.BSS837X1n = true;
         }
     }
 
-    BSS926X1FF = false;
-    BSS926X1HH = false;
-    BSS837X1x = false;
-    BSS837X1z = false;
+    bss_inst.BSS926X1FF = false;
+    bss_inst.BSS926X1HH = false;
+    bss_inst.BSS837X1x = false;
+    bss_inst.BSS837X1z = false;
     UKS2X355 = false;
     UKS4X352 = false;
 
@@ -157,26 +157,26 @@ void powerdc_8()
         {
             if(purg27lk4)
             {
-                BSS926X1HH = false;
+                bss_inst.BSS926X1HH = false;
             }
             else
             {
-                BSS926X1HH = true;
+                bss_inst.BSS926X1HH = true;
                 UKS2X355 = true;
             }
 
             if(otk_pereg_akk1)
             {
-                BSS926X1FF = true;
+                bss_inst.BSS926X1FF = true;
             }
             else
             {
-                BSS926X1FF = false;
+                bss_inst.BSS926X1FF = false;
             }
         }
         else
         {
-            BSS926X1FF = false;
+            bss_inst.BSS926X1FF = false;
         }
     }
 
@@ -186,31 +186,31 @@ void powerdc_8()
         {
             if(purg27pk4)
             {
-                BSS837X1z = false;
+                bss_inst.BSS837X1z = false;
             }
             else
             {
-                BSS837X1z = true;
+                bss_inst.BSS837X1z = true;
                 UKS4X352 = true;
             }
 
             if(otk_pereg_akk2)
             {
-                BSS837X1x = true;
+                bss_inst.BSS837X1x = true;
             }
             else
             {
-                BSS837X1x = false;
+                bss_inst.BSS837X1x = false;
             }
         }
         else
         {
-            BSS837X1x = false;
+            bss_inst.BSS837X1x = false;
         }
     }
 
     if(ppgvsu27)
-        BSS926X3E = true;
+        bss_inst.BSS926X3E = true;
     else
-        BSS926X3E = false;
+        bss_inst.BSS926X3E = false;
 }

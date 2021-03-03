@@ -1,16 +1,11 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
-#include "wind_functions.h"
 #include "algorithms.h"
+#include "bss.h"
+#include "wind_functions.h"
+
+extern bss bss_inst;
 
 extern bool
-BSS811X1N,
-BSS824X1b,
 S18_2930,
 K26_3230,
 PRD1dv,

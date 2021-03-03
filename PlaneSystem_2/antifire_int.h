@@ -1,13 +1,10 @@
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#pragma once
 #include "interfacing.h"
 #include "antifire_1.h"
 #include "antifire_2.h"
 #include "antifire_3.h"
+
+extern bss bss_inst;
 
 
 

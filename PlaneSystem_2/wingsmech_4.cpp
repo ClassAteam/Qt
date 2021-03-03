@@ -114,40 +114,40 @@ void wingsmech_4()
         delta_z = ((delta_z_l + delta_z_p) / 2);
         if(delta_z > 22)
         {
-            BSS824X1KK = true;
-            BSS824X1MM = false;
+            bss_inst.BSS824X1KK = true;
+            bss_inst.BSS824X1MM = false;
         }
         else
         {
-            BSS824X1KK = false;
-            BSS824X1MM = true;
+            bss_inst.BSS824X1KK = false;
+            bss_inst.BSS824X1MM = true;
         }
         if(delta_z > 28)
         {
-            BSS824X3C = true;
-            BSS824X1KK = false;
+            bss_inst.BSS824X3C = true;
+            bss_inst.BSS824X1KK = false;
         }
         if(delta_z > 38)
         {
-            BSS824X1A = true;
-            BSS824X3C = false;
+            bss_inst.BSS824X1A = true;
+            bss_inst.BSS824X3C = false;
         }
         else
         {
-            BSS824X1A = false;
+            bss_inst.BSS824X1A = false;
         }
     }
     else
     {
-        BSS824X1KK = false;
-        BSS824X1MM = false;
+        bss_inst.BSS824X1KK = false;
+        bss_inst.BSS824X1MM = false;
 
-        BSS824X1A = false;
-        BSS824X3C = false;
+        bss_inst.BSS824X1A = false;
+        bss_inst.BSS824X3C = false;
     }
 
-    BSS825X7A = false;
-    BSS825X5J = false;
+    bss_inst.BSS825X7A = false;
+    bss_inst.BSS825X5J = false;
 
     if(ush1dpl > 18)
     {
@@ -155,12 +155,12 @@ void wingsmech_4()
 
         if(delta_pr > 0)
         {
-            BSS825X7A = true;
+            bss_inst.BSS825X7A = true;
         }
         if(delta_pr < 21)
         {
-            BSS825X5J = true;
-            BSS825X7A = false;
+            bss_inst.BSS825X5J = true;
+            bss_inst.BSS825X7A = false;
         }
     }
     delta_z_1_pk = delta_z_l;

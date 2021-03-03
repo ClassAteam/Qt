@@ -1,10 +1,8 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include <QVector>
+#include "bss.h"
+
+extern bss bss_inst;
 
 
 extern bool
@@ -15,20 +13,6 @@ K5_2910,
 K7_2910,
 K8_2910,
 K9_2910,
-BSS811X2d,
-BSS811X2e,
-BSS811X2f,
-BSS811X2g,
-BSS811X1Z,
-BSS811X1b,
-BSS811X1d,
-BSS811X1f,
-BSS812X5E,
-BSS812X5G,
-BSS812X5J,
-BSS812X5L,
-BSS812X5N,
-BSS824X1HH,
 F101_2910,
 K15_2910,
 K18_2910,

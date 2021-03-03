@@ -35,6 +35,7 @@ SOURCES += \
     brakes_5.cpp \
     brakes_6.cpp \
     brakes_int.cpp \
+    bss.cpp \
     cabinlighting_1.cpp \
     cabinlighting_2.cpp \
     cabinlighting_3.cpp \
@@ -120,6 +121,7 @@ HEADERS += \
     brakes_5.h \
     brakes_6.h \
     brakes_int.h \
+    bss.h \
     cabinlighting_1.h \
     cabinlighting_2.h \
     cabinlighting_3.h \

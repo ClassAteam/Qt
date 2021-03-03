@@ -92,13 +92,13 @@ void hydro_9()
                     K12_2935 == true ||
                     (K10_2935 == false && K12_2935 == false))
             {
-                BSS811X1N = false;
-                BSS824X1b = false;
+                bss_inst.BSS811X1N = false;
+                bss_inst.BSS824X1b = false;
             }
             else
             {
-                BSS811X1N = true;
-                BSS824X1b = true;
+                bss_inst.BSS811X1N = true;
+                bss_inst.BSS824X1b = true;
             }
         }
         else
@@ -107,19 +107,19 @@ void hydro_9()
             {
                 if(K1_2935 == true || K2_2935 == true)
                 {
-                    BSS811X1N = true;
-                    BSS824X1b = true;
+                    bss_inst.BSS811X1N = true;
+                    bss_inst.BSS824X1b = true;
                 }
                 else
                 {
-                    BSS811X1N = false;
-                    BSS824X1b = false;
+                    bss_inst.BSS811X1N = false;
+                    bss_inst.BSS824X1b = false;
                 }
             }
             else
             {
-                BSS811X1N = false;
-                BSS824X1b = false;
+                bss_inst.BSS811X1N = false;
+                bss_inst.BSS824X1b = false;
             }
         }
 

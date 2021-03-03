@@ -1,5 +1,7 @@
+#pragma once
+#include "bss.h"
 
-
+extern bss bss_inst;
 
 extern const double
 TICK;

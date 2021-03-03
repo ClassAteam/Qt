@@ -1,17 +1,9 @@
 #pragma once
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern bool
-BSS824X1n,
-BSS824X1p,
-BSS824X1r,
-BSS824X1v,
-BSS824X1t,
-BSS824X1j,
-BSS825X5BB,
-BSS825X5DD,
-BSS825X5v,
-BSS825X5x,
-BSS825X5z,
 K1_3230,
 K19_3230,
 K24_3230,

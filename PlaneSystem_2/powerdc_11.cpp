@@ -91,7 +91,10 @@ consumers_global_inst.makeCorresCurr();
     bool* f92_pool[] = {&f92_2420, &f142_2420, &f242_2420, &f282_2420};
     bool* k25_pool[] = {&k25_2420, &k26_2420, &k27_2420, &k28_2420};
     bool* k1_pool[] = {&k1_2420, &k2_2420, &k7_2420, &k8_2420};
-    bool* bss838_pool[] = {&BSS838X5E, &BSS838X5N, &BSS837X3N, &BSS837X3C, &dummy};
+
+    bool* bss838_pool[] = {&bss_inst.BSS838X5E, &bss_inst.BSS838X5N,
+                           &bss_inst.BSS837X3N, &bss_inst.BSS837X3C, &dummy};
+
     bool* s3_pool[] = {&s3_2420, &s6_2420, &s11_2420, &s14_2420};
     int* tick_g1_pool[] = {&tick_g1, &tick_g2, &tick_g3, &tick_g4};
     double* nvd_pool[] = {&nVDfirst2[0], &nVDfirst2[1], &nVDsecond2[0], &nVDsecond2[1], &nvsu};

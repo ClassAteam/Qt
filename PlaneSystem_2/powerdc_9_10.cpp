@@ -54,57 +54,57 @@ double
 
 void powerdc_9_10()
 {
-    if(BSS837X1b)
+    if(bss_inst.BSS837X1b)
         UKS1X36 = true;
     else
         UKS1X36 = false;
 
-    if(BSS837X1f)
+    if(bss_inst.BSS837X1f)
         UKS1X37 = true;
     else
         UKS1X37 = false;
 
-    if(BSS837X1r)
+    if(bss_inst.BSS837X1r)
         UKS3X325 = true;
     else
         UKS3X325 = false;
 
-    if(BSS837X1h)
+    if(bss_inst.BSS837X1h)
         UKS3X326 = true;
     else
         UKS3X326 = false;
 
-    if(BSS926X1x)
+    if(bss_inst.BSS926X1x)
         UKS1X38 = true;
     else
         UKS1X38 = false;
 
-    if(BSS926X1BB)
+    if(bss_inst.BSS926X1BB)
         UKS1X39 = true;
     else
         UKS1X39 = false;
 
-    if(BSS837X1t)
+    if(bss_inst.BSS837X1t)
         UKS3X327 = true;
     else
         UKS3X327 = false;
 
-    if(BSS837X1j)
+    if(bss_inst.BSS837X1j)
         UKS3X328 = true;
     else
         UKS3X328 = false;
 
-    if(BSS926X1MM)
+    if(bss_inst.BSS926X1MM)
         UKS1X311 = true;
     else
         UKS1X311 = false;
 
-    if(BSS926X3J)
+    if(bss_inst.BSS926X3J)
         UKS3X324 = true;
     else
         UKS3X324 = false;
 
-    if(BSS926X3C)
+    if(bss_inst.BSS926X3C)
         UKS1X310 = true;
     else
         UKS1X310 = false;
@@ -151,22 +151,22 @@ void powerdc_9_10()
     else
         UKS4X344 = false;
 
-    if(BSS926X3A)
+    if(bss_inst.BSS926X3A)
         UKS2X314 = true;
     else
         UKS2X314 = false;
 
-    if(BSS926X3L)
+    if(bss_inst.BSS926X3L)
         UKS4X339 = true;
     else
         UKS4X339 = false;
 
-    if(BSS837X1d)
+    if(bss_inst.BSS837X1d)
         UKS2X313 = true;
     else
         UKS2X313 = false;
 
-    if(BSS837X1p)
+    if(bss_inst.BSS837X1p)
         UKS4X338 = true;
     else
         UKS4X338 = false;
@@ -207,27 +207,27 @@ void powerdc_9_10()
     else
         UKS4X340 = false;
 
-    if(BSS926X1z)
+    if(bss_inst.BSS926X1z)
         UKS2X310 = true;
     else
         UKS2X310 = false;
 
-    if(BSS926X1DD)
+    if(bss_inst.BSS926X1DD)
         UKS2X311 = true;
     else
         UKS2X311 = false;
 
-    if(BSS837X1v)
+    if(bss_inst.BSS837X1v)
         UKS4X335 = true;
     else
         UKS4X335 = false;
 
-    if(BSS837X1n)
+    if(bss_inst.BSS837X1n)
         UKS4X336 = true;
     else
         UKS4X336 = false;
 
-    if(BSS926X3E)
+    if(bss_inst.BSS926X3E)
         UKS2X315 = true;
     else
         UKS2X315 = false;

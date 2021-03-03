@@ -70,9 +70,15 @@ void hydro_7()
     bool* H_pool[] = {&H2_2910, &H1_2910, &H4_2910, &H5_2910};
     bool* K1_pool[] = {&K1_2930, &K2_2930, &K3_2930, &K4_2930};
     bool* K2_pool[] = {&K7_2910, &K8_2910, &K15_2910, &K18_2910};
-    bool* bss812_pool[] = {&BSS812X5E, &BSS812X5G, &BSS812X5J, &BSS812X5L};
-    bool* bss811_pool[] = {&BSS811X1Z, &BSS811X1b, &BSS811X1d, &BSS811X1f };
-    bool* bss811_pool1[] = {&BSS811X2d, &BSS811X2e, &BSS811X2f, &BSS811X2g };
+
+    bool* bss812_pool[] = {&bss_inst.BSS812X5E, &bss_inst.BSS812X5G,
+                           &bss_inst.BSS812X5J, &bss_inst.BSS812X5L};
+
+    bool* bss811_pool[] = {&bss_inst.BSS811X1Z, &bss_inst.BSS811X1b,
+                           &bss_inst.BSS811X1d, &bss_inst.BSS811X1f };
+
+    bool* bss811_pool1[] = {&bss_inst.BSS811X2d, &bss_inst.BSS811X2e,
+                            &bss_inst.BSS811X2f, &bss_inst.BSS811X2g };
 
     for(int i = 0; i < 4; i++)
     {
@@ -109,11 +115,11 @@ void hydro_7()
         K15_2910 == false &&
         K18_2910 == false)
     {
-        BSS812X5N = true;
+        bss_inst.BSS812X5N = true;
     }
     else
     {
-        BSS812X5N = false;
+        bss_inst.BSS812X5N = false;
     }
 
 
@@ -150,11 +156,11 @@ void hydro_7()
     {
         if(s == false)
         {
-            BSS824X1HH = false;
+            bss_inst.BSS824X1HH = false;
         }
         else
         {
-            BSS824X1HH = true;
+            bss_inst.BSS824X1HH = true;
         }
     }
 
@@ -174,24 +180,24 @@ void hydro_7()
     K3_2930 = false;
     K4_2930 = false;
 
-    BSS811X1Z = false;
-    BSS811X1b = false;
-    BSS811X1d = false;
-    BSS811X1f = false;
-    BSS811X2d = false;
-    BSS811X2e = false;
-    BSS811X2f = false;
-    BSS811X2g = false;
+    bss_inst.BSS811X1Z = false;
+    bss_inst.BSS811X1b = false;
+    bss_inst.BSS811X1d = false;
+    bss_inst.BSS811X1f = false;
+    bss_inst.BSS811X2d = false;
+    bss_inst.BSS811X2e = false;
+    bss_inst.BSS811X2f = false;
+    bss_inst.BSS811X2g = false;
 
     H10_2930 = false;
     UKS2X316 = 0;
     UKS2X317 = 0;
     UKS2X318 = 0;
     UKS2X319 = 0;
-    BSS812X5E = false;
-    BSS812X5G = false;
-    BSS812X5J = false;
-    BSS812X5L = false;
+    bss_inst.BSS812X5E = false;
+    bss_inst.BSS812X5G = false;
+    bss_inst.BSS812X5J = false;
+    bss_inst.BSS812X5L = false;
     UKS1X333 = 0;
     UKS1X334 = 0;
     UKS1X335 = 0;

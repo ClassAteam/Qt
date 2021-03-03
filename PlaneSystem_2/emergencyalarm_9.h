@@ -1,10 +1,9 @@
 #pragma once
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern bool
-BSS838X5MM,
-BSS838X7A,
-BSS838X7C,
-BSS838X7G,
 PCSOZHSHO,
 PCSOKSHO,
 PCSOKSHO_2,

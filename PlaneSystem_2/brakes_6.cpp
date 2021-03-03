@@ -80,12 +80,12 @@ void brakes_6()
         K2_9921 = false;
     }
 
-    BSS824X1f = false;
+    bss_inst.BSS824X1f = false;
     UKS3X311 = false;
 
     if(ush1dpp >= 18.0 && Patp < 60)
     {
-        BSS824X1f = true;
+        bss_inst.BSS824X1f = true;
         UKS3X311 = true;
     }
 
@@ -118,9 +118,9 @@ void brakes_6()
     K5_9921 = false;
     K6_9921 = false;
     UKS3X39 = false;
-    BSS824X1N = false;
+    bss_inst.BSS824X1N = false;
     UKS3X310 = false;
-    BSS824X1R = false;
+    bss_inst.BSS824X1R = false;
 
     if(ushap >= 18.0)
     {
@@ -129,7 +129,7 @@ void brakes_6()
             if(S7_9921 == true)
             {
                 K5_9921 = true;
-                BSS824X1N = true;
+                bss_inst.BSS824X1N = true;
                 UKS3X39 = true;
             }
         }
@@ -138,7 +138,7 @@ void brakes_6()
             if(S5_9921 == true)
             {
                 K6_9921 = true;
-                BSS824X1R = true;
+                bss_inst.BSS824X1R = true;
                 UKS3X310 = true;
             }
         }

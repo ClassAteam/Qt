@@ -183,7 +183,7 @@ void landinggear_8()
 
     K21_3230 = false;
 
-    BSS824X1v = false;
+    bss_inst.BSS824X1v = false;
 
     if(ush2dpp >= 19.0)
     {
@@ -196,7 +196,7 @@ void landinggear_8()
         {
             if(K20_3230 == false && K21_3230 == true)
             {
-                BSS824X1v = true;
+                bss_inst.BSS824X1v = true;
             }
 
         }
@@ -311,11 +311,11 @@ void landinggear_8()
 
         if(K36_3230 == true)
         {
-            BSS825X5v = true;
+            bss_inst.BSS825X5v = true;
         }
         else
         {
-            BSS825X5v = false;
+            bss_inst.BSS825X5v = false;
         }
     }
     else
@@ -327,24 +327,24 @@ void landinggear_8()
         else
             if(K36_3230 == true)
             {
-                BSS825X5v = true;
+                bss_inst.BSS825X5v = true;
             }
             else
             {
-                BSS825X5v = false;
+                bss_inst.BSS825X5v = false;
             }
      }
 
-    m_switch(&K41_3230, &BSS825X5z);
-    m_switch(&K39_3230, &BSS825X5x);
-    m_switch(&K37_3230, &BSS825X5BB);
-    m_switch(&K42_3230, &BSS825X5DD);
-    m_switch(&K38_3230, &BSS824X1n);
-    m_switch(&K43_3230, &BSS824X1r);
-    m_switch(&K28_3230, &BSS824X1p);
+    m_switch(&K41_3230, &bss_inst.BSS825X5z);
+    m_switch(&K39_3230, &bss_inst.BSS825X5x);
+    m_switch(&K37_3230, &bss_inst.BSS825X5BB);
+    m_switch(&K42_3230, &bss_inst.BSS825X5DD);
+    m_switch(&K38_3230, &bss_inst.BSS824X1n);
+    m_switch(&K43_3230, &bss_inst.BSS824X1r);
+    m_switch(&K28_3230, &bss_inst.BSS824X1p);
 
-    BSS824X1t = false;
-    BSS824X1j = false;
+    bss_inst.BSS824X1t = false;
+    bss_inst.BSS824X1j = false;
     H2_3230 = false;
     UKS4X325 = false;
     UKS4X324 = false;
@@ -353,7 +353,7 @@ void landinggear_8()
 
     if(ush2dpl >= 19.0)
     {
-        m_switch(&K1_3230, &BSS824X1t);
+        m_switch(&K1_3230, &bss_inst.BSS824X1t);
         if(S18_2930 == true)
         {
             H2_3230 = true;
@@ -399,7 +399,7 @@ void landinggear_8()
 
         if(P_bal_l <= 70 || P_bal_p <= 70 || P_bal_per <= 70.0)
         {
-            BSS824X1j = true;
+            bss_inst.BSS824X1j = true;
         }
     }
 

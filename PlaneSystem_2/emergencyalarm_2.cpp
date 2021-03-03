@@ -1,4 +1,3 @@
-#include "algorithms.h"
 #include "emergencyalarm_2.h"
 
 bool
@@ -12,85 +11,13 @@ bool
     S5_3364,
 
     //yellow input
-    BSS811X1D,
-    BSS811X1N,
-    BSS811X1R,
-    BSS811X1T,
-    BSS811X1V,
-    BSS811X1Z,
-    BSS811X1b,
-    BSS811X1d,
-    BSS811X1f,
-    BSS811X1DD,
     upor_dz_tang_lev_l,
     zakrilk_pariruy,
     dz_otkl,
-    BSS811X1h,
-    BSS811X1j,
     sur_gs1_otkl,
     sur_gs2_otkl,
     sur_gs3_otkl,
     sur_gs4_otkl,
-
-    //yellow output
-    BSS811X2A,
-    BSS811X2B,
-    BSS811X2G,
-    BSS811X2H,
-    BSS811X2J,
-    BSS811X2K,
-    BSS811X2M,
-    BSS811X2N,
-    BSS811X2P,
-    BSS811X2R,
-    BSS811X2c,
-    BSS811X2n,
-    BSS811X2m,
-    BSS811X2L,
-    BSS811X2r,
-    BSS811X2S,
-    BSS811X2T,
-    BSS811X2V,
-    BSS811X2X,
-    BSS811X2Y,
-    BSS811X2Z,
-    BSS811X2a,
-    BSS811X2d,
-    BSS811X2e,
-    BSS811X2f,
-    BSS811X2g,
-
-    //red input
-    BSS811X1E,
-    BSS811X1G,
-    BSS811X1J,
-    BSS811X1L,
-    BSS811X1BB,
-
-    //red output
-    BSS811X2C,
-    BSS811X2D,
-    BSS811X2E,
-    BSS811X2F,
-    BSS811X2U,
-    BSS811X2W,
-    BSS811X2b,
-
-    //white input
-    BSS811X3A,
-    BSS811X3C,
-    BSS811X3D,
-    BSS811X3E,
-    neytral_kren,
-    neytral_kurs,
-
-    //white output
-    BSS811X2h,
-    BSS811X2l,
-    BSS811X2j,
-    BSS811X2k,
-    BSS811X2p,
-    BSS811X2q,
 
     //yellow input clue
     PZH811_X1B,
@@ -232,9 +159,9 @@ void emergencyalarm_2()
     {
         ///////////////Yellow lights
         //////////////1
-        if (BSS811X1B == true)
+        if (bss_inst.BSS811X1B == true)
         {
-            BSS811X2A = true;
+            bss_inst.BSS811X2A = true;
             if(PZH811_X1B_b == true)
             {
                 PZH811_X1B = false;
@@ -246,7 +173,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2A = false;
+            bss_inst.BSS811X2A = false;
             PZH811_X1B_b = false;
             PZH811_X1B = false;
         }
@@ -259,9 +186,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////2
-        if (BSS811X1D == true)
+        if (bss_inst.BSS811X1D == true)
         {
-            BSS811X2B = true;
+            bss_inst.BSS811X2B = true;
             if(PZH811_X1D_b == true)
             {
                 PZH811_X1D = false;
@@ -273,7 +200,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2B = false;
+            bss_inst.BSS811X2B = false;
             PZH811_X1D_b = false;
             PZH811_X1D = false;
         }
@@ -285,9 +212,9 @@ void emergencyalarm_2()
         }
         ///////////////Yellow lights
         //////////////3
-        if (BSS811X1N == true)
+        if (bss_inst.BSS811X1N == true)
         {
-            BSS811X2G = true;
+            bss_inst.BSS811X2G = true;
             if(PZH811_X1N_b == true)
             {
                 PZH811_X1N = false;
@@ -299,7 +226,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2G = false;
+            bss_inst.BSS811X2G = false;
             PZH811_X1N_b = false;
             PZH811_X1N = false;
         }
@@ -312,9 +239,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////4
-        if (BSS811X1R == true)
+        if (bss_inst.BSS811X1R == true)
         {
-            BSS811X2H = true;
+            bss_inst.BSS811X2H = true;
             if(PZH811_X1R_b == true)
             {
                 PZH811_X1R = false;
@@ -326,7 +253,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2H = false;
+            bss_inst.BSS811X2H = false;
             PZH811_X1R_b = false;
             PZH811_X1R = false;
         }
@@ -339,9 +266,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////5
-        if (BSS811X1T == true)
+        if (bss_inst.BSS811X1T == true)
         {
-            BSS811X2J = true;
+            bss_inst.BSS811X2J = true;
             if(PZH811_X1T_b == true)
             {
                 PZH811_X1T = false;
@@ -353,7 +280,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2J = false;
+            bss_inst.BSS811X2J = false;
             PZH811_X1T_b = false;
             PZH811_X1T = false;
         }
@@ -366,9 +293,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////6
-        if (BSS811X1V == true)
+        if (bss_inst.BSS811X1V == true)
         {
-            BSS811X2K = true;
+            bss_inst.BSS811X2K = true;
             if(PZH811_X1V_b == true)
             {
                 PZH811_X1V = false;
@@ -380,7 +307,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2K = false;
+            bss_inst.BSS811X2K = false;
             PZH811_X1V_b = false;
             PZH811_X1V = false;
         }
@@ -393,9 +320,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////7
-        if (BSS811X1Z == true)
+        if (bss_inst.BSS811X1Z == true)
         {
-            BSS811X2M = true;
+            bss_inst.BSS811X2M = true;
             if(PZH811_X1Z_b == true)
             {
                 PZH811_X1Z = false;
@@ -407,7 +334,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2M = false;
+            bss_inst.BSS811X2M = false;
             PZH811_X1Z_b = false;
             PZH811_X1Z = false;
         }
@@ -420,9 +347,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////8
-        if (BSS811X1b == true)
+        if (bss_inst.BSS811X1b == true)
         {
-            BSS811X2N = true;
+            bss_inst.BSS811X2N = true;
             if(PZH811_X1b_b == true)
             {
                 PZH811_X1b = false;
@@ -434,7 +361,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2N = false;
+            bss_inst.BSS811X2N = false;
             PZH811_X1b_b = false;
             PZH811_X1b = false;
         }
@@ -447,9 +374,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////9
-        if (BSS811X1d == true)
+        if (bss_inst.BSS811X1d == true)
         {
-            BSS811X2P = true;
+            bss_inst.BSS811X2P = true;
             if(PZH811_X1d_b == true)
             {
                 PZH811_X1d = false;
@@ -461,7 +388,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2P = false;
+            bss_inst.BSS811X2P = false;
             PZH811_X1d_b = false;
             PZH811_X1d = false;
         }
@@ -474,9 +401,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////10
-        if (BSS811X1f == true)
+        if (bss_inst.BSS811X1f == true)
         {
-            BSS811X2R = true;
+            bss_inst.BSS811X2R = true;
             if(PZH811_X1f_b == true)
             {
                 PZH811_X1f = false;
@@ -488,7 +415,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2R = false;
+            bss_inst.BSS811X2R = false;
             PZH811_X1f_b = false;
             PZH811_X1f = false;
         }
@@ -501,9 +428,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////11
-        if (BSS811X1DD == true)
+        if (bss_inst.BSS811X1DD == true)
         {
-            BSS811X2c = true;
+            bss_inst.BSS811X2c = true;
             if(PZH811_X1DD_b == true)
             {
                 PZH811_X1DD = false;
@@ -515,7 +442,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2c = false;
+            bss_inst.BSS811X2c = false;
             PZH811_X1DD_b = false;
             PZH811_X1DD = false;
         }
@@ -529,7 +456,7 @@ void emergencyalarm_2()
         //////////////12
         if (upor_dz_tang_lev_l == true)
         {
-            BSS811X2n = true;
+            bss_inst.BSS811X2n = true;
             if(PZH_upor_dz_tang_lev_l_b == true)
             {
                 PZH_upor_dz_tang_lev_l = false;
@@ -541,7 +468,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2n = false;
+            bss_inst.BSS811X2n = false;
             PZH_upor_dz_tang_lev_l_b = false;
             PZH_upor_dz_tang_lev_l = false;
         }
@@ -556,7 +483,7 @@ void emergencyalarm_2()
         //////////////13
         if (zakrilk_pariruy == true)
         {
-            BSS811X2m = true;
+            bss_inst.BSS811X2m = true;
             if(PZH_zakrilk_pariruy_b == true)
             {
                 PZH_zakrilk_pariruy = false;
@@ -568,7 +495,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2m = false;
+            bss_inst.BSS811X2m = false;
             PZH_zakrilk_pariruy_b = false;
             PZH_zakrilk_pariruy = false;
         }
@@ -581,9 +508,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////14
-        if (BSS811X1Y == true)
+        if (bss_inst.BSS811X1Y == true)
         {
-            BSS811X2L = true;
+            bss_inst.BSS811X2L = true;
             if(PZH811_X1Y_b == true)
             {
                 PZH811_X1Y = false;
@@ -595,7 +522,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2L = false;
+            bss_inst.BSS811X2L = false;
             PZH811_X1Y_b = false;
             PZH811_X1Y = false;
         }
@@ -609,7 +536,7 @@ void emergencyalarm_2()
         //////////////15
         if (dz_otkl == true)
         {
-            BSS811X2r = true;
+            bss_inst.BSS811X2r = true;
             if(PZH_dz_otkl_b == true)
             {
                 PZH_dz_otkl = false;
@@ -621,7 +548,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2r = false;
+            bss_inst.BSS811X2r = false;
             PZH_dz_otkl_b = false;
             PZH_dz_otkl = false;
         }
@@ -633,9 +560,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////16
-        if (BSS811X1h == true)
+        if (bss_inst.BSS811X1h == true)
         {
-            BSS811X2S = true;
+            bss_inst.BSS811X2S = true;
             if(PZH811_X1h_b == true)
             {
                 PZH811_X1h = false;
@@ -647,7 +574,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2S = false;
+            bss_inst.BSS811X2S = false;
             PZH811_X1h_b = false;
             PZH811_X1h = false;
         }
@@ -659,9 +586,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////17
-        if (BSS811X1j == true)
+        if (bss_inst.BSS811X1j == true)
         {
-            BSS811X2T = true;
+            bss_inst.BSS811X2T = true;
             if(PZH811_X1j_b == true)
             {
                 PZH811_X1j = false;
@@ -673,7 +600,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2T = false;
+            bss_inst.BSS811X2T = false;
             PZH811_X1j_b = false;
             PZH811_X1j = false;
         }
@@ -685,9 +612,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////18
-        if (BSS811X1p == true)
+        if (bss_inst.BSS811X1p == true)
         {
-            BSS811X2V = true;
+            bss_inst.BSS811X2V = true;
             if(PZH811_X1p_b == true)
             {
                 PZH811_X1p = false;
@@ -699,7 +626,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2V = false;
+            bss_inst.BSS811X2V = false;
             PZH811_X1p_b = false;
             PZH811_X1p = false;
         }
@@ -711,9 +638,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////19
-        if (BSS811X1t == true)
+        if (bss_inst.BSS811X1t == true)
         {
-            BSS811X2X = true;
+            bss_inst.BSS811X2X = true;
             if(PZH811_X1t_b == true)
             {
                 PZH811_X1t = false;
@@ -725,7 +652,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2X = false;
+            bss_inst.BSS811X2X = false;
             PZH811_X1t_b = false;
             PZH811_X1t = false;
         }
@@ -737,9 +664,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////20
-        if (BSS811X1v == true)
+        if (bss_inst.BSS811X1v == true)
         {
-            BSS811X2Y = true;
+            bss_inst.BSS811X2Y = true;
             if(PZH811_X1v_b == true)
             {
                 PZH811_X1v = false;
@@ -751,7 +678,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2Y = false;
+            bss_inst.BSS811X2Y = false;
             PZH811_X1v_b = false;
             PZH811_X1v = false;
         }
@@ -763,9 +690,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////21
-        if (BSS811X1x == true)
+        if (bss_inst.BSS811X1x == true)
         {
-            BSS811X2Z = true;
+            bss_inst.BSS811X2Z = true;
             if(PZH811_X1x_b == true)
             {
                 PZH811_X1x = false;
@@ -777,7 +704,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2Z = false;
+            bss_inst.BSS811X2Z = false;
             PZH811_X1x_b = false;
             PZH811_X1x = false;
         }
@@ -789,9 +716,9 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////22
-        if (BSS811X1z == true)
+        if (bss_inst.BSS811X1z == true)
         {
-            BSS811X2a = true;
+            bss_inst.BSS811X2a = true;
             if(PZH811_X1z_b == true)
             {
                 PZH811_X1z = false;
@@ -803,7 +730,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2a = false;
+            bss_inst.BSS811X2a = false;
             PZH811_X1z_b = false;
             PZH811_X1z = false;
         }
@@ -817,7 +744,7 @@ void emergencyalarm_2()
         //////////////23
         if (sur_gs1_otkl == true)
         {
-            BSS811X2d = true;
+            bss_inst.BSS811X2d = true;
             if(PZH_sur_gs1_otkl_b == true)
             {
                 PZH_sur_gs1_otkl = false;
@@ -829,7 +756,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2d = false;
+            bss_inst.BSS811X2d = false;
             PZH_sur_gs1_otkl_b = false;
             PZH_sur_gs1_otkl = false;
         }
@@ -843,7 +770,7 @@ void emergencyalarm_2()
         //////////////24
         if (sur_gs2_otkl == true)
         {
-            BSS811X2e = true;
+            bss_inst.BSS811X2e = true;
             if(PZH_sur_gs2_otkl_b == true)
             {
                 PZH_sur_gs2_otkl = false;
@@ -855,7 +782,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2e = false;
+            bss_inst.BSS811X2e = false;
             PZH_sur_gs2_otkl_b = false;
             PZH_sur_gs2_otkl = false;
         }
@@ -869,7 +796,7 @@ void emergencyalarm_2()
         //////////////25
         if (sur_gs3_otkl == true)
         {
-            BSS811X2f = true;
+            bss_inst.BSS811X2f = true;
             if(PZH_sur_gs3_otkl_b == true)
             {
                 PZH_sur_gs3_otkl = false;
@@ -881,7 +808,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2f = false;
+            bss_inst.BSS811X2f = false;
             PZH_sur_gs3_otkl_b = false;
             PZH_sur_gs3_otkl = false;
         }
@@ -895,7 +822,7 @@ void emergencyalarm_2()
         //////////////26
         if (sur_gs4_otkl == true)
         {
-            BSS811X2g = true;
+            bss_inst.BSS811X2g = true;
             if(PZH_sur_gs4_otkl_b == true)
             {
                 PZH_sur_gs4_otkl = false;
@@ -907,7 +834,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2g = false;
+            bss_inst.BSS811X2g = false;
             PZH_sur_gs4_otkl_b = false;
             PZH_sur_gs4_otkl = false;
         }
@@ -955,9 +882,9 @@ void emergencyalarm_2()
 
         ///////////////Red lights_1
         //////////////1
-        if (BSS811X1E == true)
+        if (bss_inst.BSS811X1E == true)
         {
-            BSS811X2C = true;
+            bss_inst.BSS811X2C = true;
             if(PK811_X1E_b == true)
             {
                 PK811_X1E = false;
@@ -969,7 +896,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2C = false;
+            bss_inst.BSS811X2C = false;
             PK811_X1E_b = false;
             PK811_X1E = false;
         }
@@ -982,9 +909,9 @@ void emergencyalarm_2()
 
         ///////////////Red lights_1
         //////////////2
-        if (BSS811X1G == true)
+        if (bss_inst.BSS811X1G == true)
         {
-            BSS811X2D = true;
+            bss_inst.BSS811X2D = true;
             if(PK811_X1G_b == true)
             {
                 PK811_X1G = false;
@@ -996,7 +923,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2D = false;
+            bss_inst.BSS811X2D = false;
             PK811_X1G_b = false;
             PK811_X1G = false;
         }
@@ -1009,9 +936,9 @@ void emergencyalarm_2()
 
         ///////////////Red lights_1
         //////////////3
-        if (BSS811X1J == true)
+        if (bss_inst.BSS811X1J == true)
         {
-            BSS811X2E = true;
+            bss_inst.BSS811X2E = true;
             if(PK811_X1J_b == true)
             {
                 PK811_X1J = false;
@@ -1023,7 +950,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2E = false;
+            bss_inst.BSS811X2E = false;
             PK811_X1J_b = false;
             PK811_X1J = false;
         }
@@ -1036,9 +963,9 @@ void emergencyalarm_2()
 
         ///////////////Red lights_1
         //////////////4
-        if (BSS811X1L == true)
+        if (bss_inst.BSS811X1L == true)
         {
-            BSS811X2F = true;
+            bss_inst.BSS811X2F = true;
             if(PK811_X1L_b == true)
             {
                 PK811_X1L = false;
@@ -1050,7 +977,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2F = false;
+            bss_inst.BSS811X2F = false;
             PK811_X1L_b = false;
             PK811_X1L = false;
         }
@@ -1063,9 +990,9 @@ void emergencyalarm_2()
 
         ///////////////Red lights_1
         //////////////5
-        if (BSS811X1n == true)
+        if (bss_inst.BSS811X1n == true)
         {
-            BSS811X2U = true;
+            bss_inst.BSS811X2U = true;
             if(PK811_X1n_b == true)
             {
                 PK811_X1n = false;
@@ -1077,7 +1004,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2U = false;
+            bss_inst.BSS811X2U = false;
             PK811_X1n_b = false;
             PK811_X1n = false;
         }
@@ -1090,9 +1017,9 @@ void emergencyalarm_2()
 
         ///////////////Red lights_1
         //////////////6
-        if (BSS811X1r == true)
+        if (bss_inst.BSS811X1r == true)
         {
-            BSS811X2W = true;
+            bss_inst.BSS811X2W = true;
             if(PK811_X1r_b == true)
             {
                 PK811_X1r = false;
@@ -1104,7 +1031,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2W = false;
+            bss_inst.BSS811X2W = false;
             PK811_X1r_b = false;
             PK811_X1r = false;
         }
@@ -1117,9 +1044,9 @@ void emergencyalarm_2()
 
         ///////////////Red lights_1
         //////////////7
-        if (BSS811X1BB == true)
+        if (bss_inst.BSS811X1BB == true)
         {
-            BSS811X2b = true;
+            bss_inst.BSS811X2b = true;
             if(PK811_X1BB_b == true)
             {
                 PK811_X1BB = false;
@@ -1131,7 +1058,7 @@ void emergencyalarm_2()
         }
         else
         {
-            BSS811X2b = false;
+            bss_inst.BSS811X2b = false;
             PK811_X1BB_b = false;
             PK811_X1BB = false;
         }
@@ -1161,171 +1088,171 @@ void emergencyalarm_2()
 
         ///////////////White lights_1
         //////////////1
-        if (BSS811X3A == true)
+        if (bss_inst.BSS811X3A == true)
         {
-            BSS811X2h = true;
+            bss_inst.BSS811X2h = true;
         }
         else
         {
-            BSS811X2h = false;
+            bss_inst.BSS811X2h = false;
         }
 
 
         ///////////////White lights_1
         //////////////2
-        if (BSS811X3C == true)
+        if (bss_inst.BSS811X3C == true)
         {
-            BSS811X2l = true;
+            bss_inst.BSS811X2l = true;
         }
         else
         {
-            BSS811X2l = false;
+            bss_inst.BSS811X2l = false;
         }
 
         ///////////////White lights_1
         //////////////3
-        if (BSS811X3D == true)
+        if (bss_inst.BSS811X3D == true)
         {
-            BSS811X2j = true;
+            bss_inst.BSS811X2j = true;
         }
         else
         {
-            BSS811X2j = false;
+            bss_inst.BSS811X2j = false;
         }
 
         ///////////////White lights_1
         //////////////4
-        if (BSS811X3E == true)
+        if (bss_inst.BSS811X3E == true)
         {
-            BSS811X2k = true;
+            bss_inst.BSS811X2k = true;
         }
         else
         {
-            BSS811X2k = false;
+            bss_inst.BSS811X2k = false;
         }
 
         ///////////////White lights_1
         //////////////5
-        if (neytral_kren == true)
+        if (bss_inst.neytral_kren == true)
         {
-            BSS811X2p = true;
+            bss_inst.BSS811X2p = true;
         }
         else
         {
-            BSS811X2p = false;
+            bss_inst.BSS811X2p = false;
         }
 
 
 
         ///////////////White lights_1
         //////////////6
-        if (neytral_kurs == true)
+        if (bss_inst.neytral_kurs == true)
         {
-            BSS811X2q = true;
+            bss_inst.BSS811X2q = true;
         }
         else
         {
-            BSS811X2q = false;
+            bss_inst.BSS811X2q = false;
         }
 
         if(PKLLL == true)
         {
             PCSOKLL_1 = true;
             PCSOZHLL_1 = true;
-            BSS811X2A = true;
-            BSS811X2B = true;
-            BSS811X2G = true;
-            BSS811X2H = true;
-            BSS811X2J = true;
-            BSS811X2K = true;
-            BSS811X2M = true;
-            BSS811X2N = true;
-            BSS811X2P = true;
-            BSS811X2R = true;
-            BSS811X2c = true;
-            BSS811X2n = true;
-            BSS811X2m = true;
-            BSS811X2L = true;
-            BSS811X2r = true;
-            BSS811X2S = true;
-            BSS811X2T = true;
-            BSS811X2V = true;
-            BSS811X2X = true;
-            BSS811X2Y = true;
-            BSS811X2Z = true;
-            BSS811X2a = true;
-            BSS811X2d = true;
-            BSS811X2e = true;
-            BSS811X2f = true;
-            BSS811X2g = true;
+            bss_inst.BSS811X2A = true;
+            bss_inst.BSS811X2B = true;
+            bss_inst.BSS811X2G = true;
+            bss_inst.BSS811X2H = true;
+            bss_inst.BSS811X2J = true;
+            bss_inst.BSS811X2K = true;
+            bss_inst.BSS811X2M = true;
+            bss_inst.BSS811X2N = true;
+            bss_inst.BSS811X2P = true;
+            bss_inst.BSS811X2R = true;
+            bss_inst.BSS811X2c = true;
+            bss_inst.BSS811X2n = true;
+            bss_inst.BSS811X2m = true;
+            bss_inst.BSS811X2L = true;
+            bss_inst.BSS811X2r = true;
+            bss_inst.BSS811X2S = true;
+            bss_inst.BSS811X2T = true;
+            bss_inst.BSS811X2V = true;
+            bss_inst.BSS811X2X = true;
+            bss_inst.BSS811X2Y = true;
+            bss_inst.BSS811X2Z = true;
+            bss_inst.BSS811X2a = true;
+            bss_inst.BSS811X2d = true;
+            bss_inst.BSS811X2e = true;
+            bss_inst.BSS811X2f = true;
+            bss_inst.BSS811X2g = true;
             //red output
-            BSS811X2C = true;
-            BSS811X2D = true;
-            BSS811X2E = true;
-            BSS811X2F = true;
-            BSS811X2U = true;
-            BSS811X2W = true;
-            BSS811X2b = true;
+            bss_inst.BSS811X2C = true;
+            bss_inst.BSS811X2D = true;
+            bss_inst.BSS811X2E = true;
+            bss_inst.BSS811X2F = true;
+            bss_inst.BSS811X2U = true;
+            bss_inst.BSS811X2W = true;
+            bss_inst.BSS811X2b = true;
             //white output
-            BSS811X2h = true;
-            BSS811X2l = true;
-            BSS811X2j = true;
-            BSS811X2k = true;
-            BSS811X2p = true;
-            BSS811X2q = true;
+            bss_inst.BSS811X2h = true;
+            bss_inst.BSS811X2l = true;
+            bss_inst.BSS811X2j = true;
+            bss_inst.BSS811X2k = true;
+            bss_inst.BSS811X2p = true;
+            bss_inst.BSS811X2q = true;
             //white output
-            BSS811X2h = true;
-            BSS811X2l = true;
-            BSS811X2j = true;
-            BSS811X2k = true;
-            BSS811X2p = true;
-            BSS811X2q = true;
+            bss_inst.BSS811X2h = true;
+            bss_inst.BSS811X2l = true;
+            bss_inst.BSS811X2j = true;
+            bss_inst.BSS811X2k = true;
+            bss_inst.BSS811X2p = true;
+            bss_inst.BSS811X2q = true;
         }
     }
     else
     {
         //yellow output
-        BSS811X2A = false;
-        BSS811X2B = false;
-        BSS811X2G = false;
-        BSS811X2H = false;
-        BSS811X2J = false;
-        BSS811X2K = false;
-        BSS811X2M = false;
-        BSS811X2N = false;
-        BSS811X2P = false;
-        BSS811X2R = false;
-        BSS811X2c = false;
-        BSS811X2n = false;
-        BSS811X2m = false;
-        BSS811X2L = false;
-        BSS811X2r = false;
-        BSS811X2S = false;
-        BSS811X2T = false;
-        BSS811X2V = false;
-        BSS811X2X = false;
-        BSS811X2Y = false;
-        BSS811X2Z = false;
-        BSS811X2a = false;
-        BSS811X2d = false;
-        BSS811X2e = false;
-        BSS811X2f = false;
-        BSS811X2g = false;
+        bss_inst.BSS811X2A = false;
+        bss_inst.BSS811X2B = false;
+        bss_inst.BSS811X2G = false;
+        bss_inst.BSS811X2H = false;
+        bss_inst.BSS811X2J = false;
+        bss_inst.BSS811X2K = false;
+        bss_inst.BSS811X2M = false;
+        bss_inst.BSS811X2N = false;
+        bss_inst.BSS811X2P = false;
+        bss_inst.BSS811X2R = false;
+        bss_inst.BSS811X2c = false;
+        bss_inst.BSS811X2n = false;
+        bss_inst.BSS811X2m = false;
+        bss_inst.BSS811X2L = false;
+        bss_inst.BSS811X2r = false;
+        bss_inst.BSS811X2S = false;
+        bss_inst.BSS811X2T = false;
+        bss_inst.BSS811X2V = false;
+        bss_inst.BSS811X2X = false;
+        bss_inst.BSS811X2Y = false;
+        bss_inst.BSS811X2Z = false;
+        bss_inst.BSS811X2a = false;
+        bss_inst.BSS811X2d = false;
+        bss_inst.BSS811X2e = false;
+        bss_inst.BSS811X2f = false;
+        bss_inst.BSS811X2g = false;
         //red output
-        BSS811X2C = false;
-        BSS811X2D = false;
-        BSS811X2E = false;
-        BSS811X2F = false;
-        BSS811X2U = false;
-        BSS811X2W = false;
-        BSS811X2b = false;
+        bss_inst.BSS811X2C = false;
+        bss_inst.BSS811X2D = false;
+        bss_inst.BSS811X2E = false;
+        bss_inst.BSS811X2F = false;
+        bss_inst.BSS811X2U = false;
+        bss_inst.BSS811X2W = false;
+        bss_inst.BSS811X2b = false;
         //white output
-        BSS811X2h = false;
-        BSS811X2l = false;
-        BSS811X2j = false;
-        BSS811X2k = false;
-        BSS811X2p = false;
-        BSS811X2q = false;
+        bss_inst.BSS811X2h = false;
+        bss_inst.BSS811X2l = false;
+        bss_inst.BSS811X2j = false;
+        bss_inst.BSS811X2k = false;
+        bss_inst.BSS811X2p = false;
+        bss_inst.BSS811X2q = false;
         //yellow input clue
         PZH811_X1B = false;
         PZH811_X1D = false;

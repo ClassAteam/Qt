@@ -1,8 +1,12 @@
+#pragma once
 #include <QtDebug>
 #include <QVector>
 #include "algorithms.h"
 #include <math.h>
 #include "powerdc_consumers.h"
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern const double
     TICK;
@@ -12,11 +16,7 @@ extern bool
     k2_2420,
     k7_2420,
     k8_2420,
-    pnu,
-    BSS838X5E,
-    BSS838X5N,
-    BSS837X3N,
-    BSS837X3C;
+    pnu;
 extern QVector<double>
     nVDfirst2,
     nVDsecond2;

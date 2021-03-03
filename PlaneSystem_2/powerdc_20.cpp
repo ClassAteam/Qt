@@ -11,26 +11,26 @@ void Z_f(bool &prg1, bool &prg2, bool &pchrl, bool &BSS926XN, bool &k31_2420,
 void powerdc_20()
 {
 
- Y_f(f92_2420, feed_global_inst.pvksku1, BSS838X5G, BSS838X5C, ushal,
-    feed_global_inst.otk_overload_altgen1, BSS837X1BB, pvkg1, BSS838X5A, prg1);
+ Y_f(f92_2420, feed_global_inst.pvksku1, bss_inst.BSS838X5G, bss_inst.BSS838X5C, ushal,
+    feed_global_inst.otk_overload_altgen1, bss_inst.BSS837X1BB, pvkg1, bss_inst.BSS838X5A, prg1);
 
- Y_f(f142_2420, feed_global_inst.pvksku2, BSS838X5R, BSS837X3L, ushal,
-    feed_global_inst.otk_overload_altgen2, BSS837X1DD, pvkg2, BSS838X5J, prg2);
+ Y_f(f142_2420, feed_global_inst.pvksku2, bss_inst.BSS838X5R, bss_inst.BSS837X3L, ushal,
+    feed_global_inst.otk_overload_altgen2, bss_inst.BSS837X1DD, pvkg2, bss_inst.BSS838X5J, prg2);
 
- Y_f(f242_2420, feed_global_inst.pvksku3, BSS837X3R, BSS837X3A, ushap,
-    feed_global_inst.otk_overload_altgen3, BSS837X3G, pvkg3, BSS837X3J, prg3);
+ Y_f(f242_2420, feed_global_inst.pvksku3, bss_inst.BSS837X3R, bss_inst.BSS837X3A, ushap,
+    feed_global_inst.otk_overload_altgen3, bss_inst.BSS837X3G, pvkg3, bss_inst.BSS837X3J, prg3);
 
- Y_f(f282_2420, feed_global_inst.pvksku4, BSS837X3E, BSS838X5A, ushap,
-    feed_global_inst.otk_overload_altgen4, BSS837X1KK, pvkg4, BSS837X1MM, prg4);
+ Y_f(f282_2420, feed_global_inst.pvksku4, bss_inst.BSS837X3E, bss_inst.BSS838X5A, ushap,
+    feed_global_inst.otk_overload_altgen4, bss_inst.BSS837X1KK, pvkg4, bss_inst.BSS837X1MM, prg4);
 
- Z_f(prg1, prg2, pchrl, BSS926X3N, k31_2420, BSS837X1N, k13_2420, BSS837X1J);
+ Z_f(prg1, prg2, pchrl, bss_inst.BSS926X3N, k31_2420, bss_inst.BSS837X1N, k13_2420, bss_inst.BSS837X1J);
 
- Z_f(prg3, prg4, pchrp, BSS837X1HH, k34_2420, BSS837X1V, k16_2420, BSS837X1R);
+ Z_f(prg3, prg4, pchrp, bss_inst.BSS837X1HH, k34_2420, bss_inst.BSS837X1V, k16_2420, bss_inst.BSS837X1R);
 
  if(k14_2420)
-     BSS837X1L = true;
+     bss_inst.BSS837X1L = true;
  else
-     BSS837X1L = false;
+     bss_inst.BSS837X1L = false;
 }
 
 void Z_f(bool &prg1, bool &prg2, bool &pchrl, bool &BSS926XN, bool &k31_2420,

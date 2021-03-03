@@ -1,18 +1,9 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern bool
-BSS824X1A,
-BSS824X1KK,
-BSS824X1MM,
-BSS824X3C,
-BSS825X5J,
-BSS825X7A,
 otkaz_1k_zakr,
 otkaz_2k_zakr,
 otkaz_osn_1k_PCHK,

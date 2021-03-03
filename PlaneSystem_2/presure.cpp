@@ -10,10 +10,6 @@ bool
     PRTHU1,
     PPP,
     PGK,
-    BSS838X5MM,
-    BSS824X1G,
-    BSS824X1J,
-    BSS838X7A,
     SKD_D300,
     SKD_D301,
     otkaz_razgermetizatsiya,
@@ -107,12 +103,12 @@ void presure()
     //BSS838X7A blinking
     if (K1_2131 == true && blink_tick > 3)
     {
-        BSS838X7A = true;
+        bss_inst.BSS838X7A = true;
         blink_tick = 0;
     }
     else
     {
-        BSS838X7A = false;
+        bss_inst.BSS838X7A = false;
     }
 
     if (K2_2131 == true)
@@ -128,14 +124,14 @@ void presure()
     //BSS838X5MM, BSS824X1G, BSS824X1J blinking
     if (K2_2131 == true && blink_tick > 3)
     {
-        BSS838X5MM = true;
-        BSS824X1G = true;
-        BSS824X1J = true;
+        bss_inst.BSS838X5MM = true;
+        bss_inst.BSS824X1G = true;
+        bss_inst.BSS824X1J = true;
         blink_tick = 0;
     }
     else
     {
-        BSS838X5MM = false;
+        bss_inst.BSS838X5MM = false;
     }
 
     if (otkaz_razgermetizatsiya == false

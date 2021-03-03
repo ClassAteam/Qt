@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include "interfacing.h"
+#include "bss.h"
 #include "powerdc_7.h"
 #include "powerdc_1.h"
 #include "powerdc_2_3.h"
@@ -23,6 +24,7 @@
 
 extern allElCons consumers_global_inst;
 extern extrn_feed feed_global_inst;
+extern bss bss_inst;
 
 namespace alt{
 extern double
@@ -76,7 +78,6 @@ extern bool
     pzvg[5], pzvgvsu, purgk1, purgk21, purgk31, purgk41, purglk4, purgpk4,
     purglk5, purgpk5, prgen[5], pog[4], pchrl, pchrp, k1_2430,
     s1_2420, s5_2420, s10_2420, s13_2420, s4_2420, s12_2420, s8_2420,
-    BSS838X5E, BSS838X5N, BSS837X3N, BSS837X3C,
     s3_2420, s6_2420, s11_2420, s14_2420, f9_2420, f14_2420, f24_2420,
     f28_2420, popg1, popg2, popg3, popg4, pvksku[4], otkGenPerT1,
     otkGenPerT2, otkGenPerT3, otkGenPerT4, otkGenPerVsu, otkPadDavlMaslPpo1G, otkPadDavlMaslPpo2G,
@@ -85,12 +86,6 @@ extern bool
     k28_2420,
     otk_pereg_gen1, otk_pereg_gen2, otk_pereg_gen3, otk_pereg_gen4,
     otk_pereg_akk1, otk_pereg_akk2,
-    BSS837X1d, BSS837X1p, BSS926X3C, BSS926X1MM, BSS926X3J,
-    BSS926X3A, BSS926X3L, BSS926X1x, BSS926X1BB, BSS837X1t,
-    BSS837X1j, BSS926X1z, BSS926X1DD, BSS837X1v, BSS837X1n,
-    BSS837X1h, BSS926X3E, BSS837X1b, BSS837X1f, BSS837X1r,
-    BSS837X1f, BSS826X1FF, BSS837X1x, BSS926X1FF, BSS926X1HH,
-    BSS826X1HH, BSS837X1z,
     y1_3650, y2_3650, r865gd, apdvsu_35, apdvsu_49, s1_11028, s1_4940,
     k1_11038, k2_11038, s1_11052, s2_11052, s1_11081, s1_11313, k1_17723,
     k2_17723, k11_2250, k14_2420, k15_2420, k1_2250, k1_2420, k2_2420, k30_2420,

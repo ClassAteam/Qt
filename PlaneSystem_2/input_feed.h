@@ -1,3 +1,4 @@
+#pragma once
 #include <QVector>
 
 struct extrn_feed

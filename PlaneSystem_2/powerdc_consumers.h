@@ -1,9 +1,10 @@
+#pragma once
 #include <QVector>
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern bool
-    BSS837X1FF,
-    BSS926X3R,
-    BSS926X3T,
     purgk1,
     purgk21,
     purgk31,

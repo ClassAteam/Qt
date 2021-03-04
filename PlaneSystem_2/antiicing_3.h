@@ -1,3 +1,8 @@
+#pragma once
+#include "bss.h"
+
+extern bss bss_inst;
+
 extern bool
     K55_3020,
     K27_3230,

@@ -1,9 +1,6 @@
 #include "brakes_5.h"
 
 bool
-    BSS812_nazhm_rt,
-    BSS812_vkl_ft,
-    BSS812_vkl_rt,
     UKS1X18,
     balarm_6F01,
     balarm_6F10,
@@ -97,21 +94,21 @@ void brakes_5()
         balarm_SDA = PPDGAKT;
         balarm_SUR = PvklR;
         balarm_SAT = PAVART;
-        BSS812_vkl_ft = false;
+        bss_inst.BSS812_vkl_ft = false;
 
         if(PFT == true)
         {
-            BSS812_vkl_ft = true;
+            bss_inst.BSS812_vkl_ft = true;
         }
 
-        BSS812_nazhm_rt = false;
-        BSS812_vkl_rt = false;
+        bss_inst.BSS812_nazhm_rt = false;
+        bss_inst.BSS812_vkl_rt = false;
     }
     else
     {
-        BSS812_nazhm_rt = 0;
-        BSS812_vkl_ft = 0;
-        BSS812_vkl_rt = 0;
+        bss_inst.BSS812_nazhm_rt = 0;
+        bss_inst.BSS812_vkl_ft = 0;
+        bss_inst.BSS812_vkl_rt = 0;
         UKS1X18 = 0;
         balarm_6F01 = 0;
         balarm_6F10 = 0;
@@ -157,11 +154,11 @@ void brakes_5()
         {
             if(S1_3241)
             {
-                BSS812_vkl_rt = true;
+                bss_inst.BSS812_vkl_rt = true;
             }
             else
             {
-                BSS812_vkl_rt = false;
+                bss_inst.BSS812_vkl_rt = false;
             }
         }
         else
@@ -170,16 +167,16 @@ void brakes_5()
             {
                 if(S1_3241)
                 {
-                    BSS812_vkl_rt = true;
+                    bss_inst.BSS812_vkl_rt = true;
                 }
                 else
                 {
-                    BSS812_vkl_rt = false;
+                    bss_inst.BSS812_vkl_rt = false;
                 }
             }
             else
             {
-                BSS812_vkl_rt = true;
+                bss_inst.BSS812_vkl_rt = true;
             }
         }
     }
@@ -207,12 +204,12 @@ void brakes_5()
     if(PstoyanT)
     {
         UKS1X18 = true;
-        BSS812X5r = true;
+        bss_inst.BSS812X5r = true;
     }
     else
     {
         UKS1X18 = false;
-        BSS812X5r = false;
+        bss_inst.BSS812X5r = false;
     }
 
     if(ushap >= 18.0)
@@ -220,12 +217,12 @@ void brakes_5()
         if(PstoyanT == true && pgat >= 80.0)
         {
             UKS1X18 = true;
-            BSS812X5r = true;
+            bss_inst.BSS812X5r = true;
         }
         else
         {
             UKS1X18 = true;
-            BSS812X5r = true;
+            bss_inst.BSS812X5r = false;
         }
     }
     else

@@ -1,12 +1,9 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "bss.h"
 #include "wind_functions.h"
 #include "algorithms.h"
+
+extern bss bss_inst;
 
 extern QVector<double>
     nVDfirst2,
@@ -15,8 +12,7 @@ extern const double
     TICK;
 extern bool
     purg27lk4,
-    purg27pk4,
-    BSS812X5t;
+    purg27pk4;
 extern double
     ivsu,
     ushap,

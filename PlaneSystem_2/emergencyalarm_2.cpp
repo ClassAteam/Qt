@@ -14,10 +14,6 @@ bool
     upor_dz_tang_lev_l,
     zakrilk_pariruy,
     dz_otkl,
-    sur_gs1_otkl,
-    sur_gs2_otkl,
-    sur_gs3_otkl,
-    sur_gs4_otkl,
 
     //yellow input clue
     PZH811_X1B,
@@ -742,7 +738,7 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////23
-        if (sur_gs1_otkl == true)
+        if (bss_inst.surGs1Otkl == true)
         {
             bss_inst.BSS811X2d = true;
             if(PZH_sur_gs1_otkl_b == true)
@@ -768,7 +764,7 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////24
-        if (sur_gs2_otkl == true)
+        if (bss_inst.surGs2Otkl == true)
         {
             bss_inst.BSS811X2e = true;
             if(PZH_sur_gs2_otkl_b == true)
@@ -794,7 +790,7 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////25
-        if (sur_gs3_otkl == true)
+        if (bss_inst.surGs3Otkl == true)
         {
             bss_inst.BSS811X2f = true;
             if(PZH_sur_gs3_otkl_b == true)
@@ -820,7 +816,7 @@ void emergencyalarm_2()
 
         ///////////////Yellow lights
         //////////////26
-        if (sur_gs4_otkl == true)
+        if (bss_inst.surGs4Otkl == true)
         {
             bss_inst.BSS811X2g = true;
             if(PZH_sur_gs4_otkl_b == true)

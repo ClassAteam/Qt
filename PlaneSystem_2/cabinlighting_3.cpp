@@ -35,10 +35,7 @@ bool
     F13_3340,
     F12_3340,
     PFSV_02L,
-    PFSV_02P,
-    BSS825X5V,
-    BSS824X1E,
-    BSS824X1A;
+    PFSV_02P;
 
 double
     Ush2op,
@@ -385,7 +382,7 @@ void cabinlighting_3()
     }
 
     ///////////////////////////////////////////////////////////////////////////
-    BSS825X5V = false;
+    bss_inst.BSS825X5V = false;
 
     if(Ush2op >= 18.0 && S1_2860 == true)
     {
@@ -459,11 +456,11 @@ void cabinlighting_3()
         // BSS825X5V toggle
         if(alpha_fazl == 125.0)
         {
-            BSS825X5V = true;
+            bss_inst.BSS825X5V = true;
         }
         else
         {
-            BSS825X5V = false;
+            bss_inst.BSS825X5V = false;
         }
 
     }
@@ -537,33 +534,33 @@ void cabinlighting_3()
     // BSS825X5V toggle
     if(alpha_fazp == 125.0)
     {
-        BSS825X5V = true;
+        bss_inst.BSS825X5V = true;
     }
     else
     {
-        BSS825X5V = false;
+        bss_inst.BSS825X5V = false;
     }
 
     // E1
     // BSS824X1E toggle
     if (ush1l >= 18.0 && alpha_fsv_ol == true)
     {
-        BSS824X1E = true;
+        bss_inst.BSS824X1E = true;
     }
     else
     {
-        BSS824X1E = false;
+        bss_inst.BSS824X1E = false;
     }
 
     // E2
     // BSS824X1E toggle
     if (ush1p >= 18.0 && alpha_fsv_op == true)
     {
-        BSS824X1E = true;
+        bss_inst.BSS824X1E = true;
     }
     else
     {
-        BSS824X1E = false;
+        bss_inst.BSS824X1E = false;
     }
 
     // F1
@@ -572,7 +569,7 @@ void cabinlighting_3()
     {
         if(PFPRLP == true)
         {
-            BSS824X1A = true;
+            bss_inst.BSS824X1A = true;
         }
         else
         {
@@ -580,23 +577,23 @@ void cabinlighting_3()
             {
                 if(PFPRPP == true)
                 {
-                    BSS824X1A = true;
+                    bss_inst.BSS824X1A = true;
                 }
                 else
                 {
                     if(PFSV_01PP == true)
                     {
-                        BSS824X1A = true;
+                        bss_inst.BSS824X1A = true;
                     }
                     else
                     {
-                        BSS824X1A = false;
+                        bss_inst.BSS824X1A = false;
                     }
                 }
             }
             if(PFSV_01LP == true)
             {
-                BSS824X1A = true;
+                bss_inst.BSS824X1A = true;
             }
         }
     }
@@ -607,10 +604,10 @@ void cabinlighting_3()
         ||
         (Usho2p >= 18.0 && alpha_fazp == 125.0))
     {
-        BSS825X5V = true;
+        bss_inst.BSS825X5V = true;
     }
     else
     {
-        BSS825X5V = false;
+        bss_inst.BSS825X5V = false;
     }
 }

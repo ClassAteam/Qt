@@ -21,7 +21,7 @@ extern bool
     pbutzr, PAVART, PORST, PBRRT,
     POSH, PPDGAKT, PTavtN, PTavtP, PTavtS, PTstart, ptstoyan, PTfors,
     otkaz_ots_dav_v1k_levt, otkaz_ots_dav_v1k_pravt,
-    BSS812_nazhm_rt, BSS812_vkl_ft, BSS812_vkl_rt, UKS1X18, balarm_6F01,
+    UKS1X18, balarm_6F01,
     balarm_6F10, balarm_AA11, balarm_AA12, balarm_AA13, balarm_AA21,
     balarm_AA22, balarm_AA23, balarm_AV1, balarm_AV2, balarm_AV3, balarm_AV0,
     balarm_SA1, balarm_SA2, balarm_SA3, balarm_SAT, balarm_SDA, balarm_SF,

@@ -303,28 +303,11 @@ void landinggear_8()
                 K43_3230 = true;
             }
         }
-    }
 
-    if(S22_3230 == true)
-    {
-        K39_3230 = true;
+        if(S22_3230 == true)
+        {
+            K39_3230 = true;
 
-        if(K36_3230 == true)
-        {
-            bss_inst.BSS825X5v = true;
-        }
-        else
-        {
-            bss_inst.BSS825X5v = false;
-        }
-    }
-    else
-    {
-        if(S23_3230 == false || S24_3230 == false)
-        {
-            K40_3230 = true;
-        }
-        else
             if(K36_3230 == true)
             {
                 bss_inst.BSS825X5v = true;
@@ -333,15 +316,43 @@ void landinggear_8()
             {
                 bss_inst.BSS825X5v = false;
             }
-     }
+        }
+        else
+        {
+            if(S23_3230 == false || S24_3230 == false)
+            {
+                K40_3230 = true;
+            }
+            else
+                if(K36_3230 == true)
+            {
+                bss_inst.BSS825X5v = true;
+            }
+            else
+            {
+                bss_inst.BSS825X5v = false;
+            }
+        }
 
-    m_switch(&K41_3230, &bss_inst.BSS825X5z);
-    m_switch(&K39_3230, &bss_inst.BSS825X5x);
-    m_switch(&K37_3230, &bss_inst.BSS825X5BB);
-    m_switch(&K42_3230, &bss_inst.BSS825X5DD);
-    m_switch(&K38_3230, &bss_inst.BSS824X1n);
-    m_switch(&K43_3230, &bss_inst.BSS824X1r);
-    m_switch(&K28_3230, &bss_inst.BSS824X1p);
+        m_switch(&K41_3230, &bss_inst.BSS825X5z);
+        m_switch(&K39_3230, &bss_inst.BSS825X5x);
+        m_switch(&K37_3230, &bss_inst.BSS825X5BB);
+        m_switch(&K42_3230, &bss_inst.BSS825X5DD);
+        m_switch(&K38_3230, &bss_inst.BSS824X1n);
+        m_switch(&K43_3230, &bss_inst.BSS824X1r);
+        m_switch(&K28_3230, &bss_inst.BSS824X1p);
+    }
+    else
+    {
+        bss_inst.BSS825X5z = false;
+        bss_inst.BSS825X5x = false;
+        bss_inst.BSS825X5BB = false;
+        bss_inst.BSS825X5DD = false;
+        bss_inst.BSS824X1n = false;
+        bss_inst.BSS824X1r = false;
+        bss_inst.BSS824X1p = false;
+    }
+
 
     bss_inst.BSS824X1t = false;
     bss_inst.BSS824X1j = false;

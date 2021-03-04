@@ -20,8 +20,7 @@ bool
     K24_3230,
     K25_3230,
     S1_3030,
-    S2_3030,
-    BSS811X1Y;
+    S2_3030;
 
 double
     alpha_rud_1dv,
@@ -317,13 +316,20 @@ void antiicing_4()
         obogrev_ppd3_ispr = false;
     }
 
-    if (K1_3030 == K4_3030 == K7_3030 == false)
+    if(ush1dpp >= 18)
     {
-        BSS811X1Y = true;
+        if (K1_3030 && K4_3030 && K7_3030)
+        {
+            bss_inst.BSS811X1Y = false;
+        }
+        else
+        {
+            bss_inst.BSS811X1Y = true;
+        }
     }
     else
     {
-        BSS811X1Y = false;
+        bss_inst.BSS811X1Y = false;
     }
 
 }

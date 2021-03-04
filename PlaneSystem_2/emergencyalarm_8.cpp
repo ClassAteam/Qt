@@ -6,171 +6,82 @@ PRBSS838,
 PCSOZHSHO,
 PCSOKSHO,
 PCSOZHSHO_2,
-PCSOKSHO_2,
-
-//yellow input
-BSS837X1A,
-BSS837X1C,
-BSS837X1E,
-BSS837X1G,
-BSS837X1J,
-BSS837X1N,
-BSS837X1R,
-BSS837X1V,
-BSS837X1L,
-BSS837X1X,
-BSS837X1Z,
-BSS837X1b,
-BSS837X1d,
-BSS837X1f,
-BSS837X1h,
-BSS837X1j,
-BSS837X1r,
-BSS837X1t,
-BSS837X1x,
-BSS837X1BB,
-BSS837X1DD,
-BSS837X1KK,
-BSS837X1MM,
-BSS837X3G,
-BSS837X3J,
-
-//yellow output
-BSS837X2A,
-BSS837X2B,
-BSS837X2C,
-BSS837X2D,
-BSS837X2E,
-BSS837X2G,
-BSS837X2H,
-BSS837X2K,
-BSS837X2F,
-BSS837X2L,
-BSS837X2M,
-BSS837X2N,
-BSS837X2P,
-BSS837X2R,
-BSS837X2S,
-BSS837X2T,
-BSS837X2W,
-BSS837X2X,
-BSS837X2Z,
-BSS837X2b,
-BSS837X2c,
-BSS837X2f,
-BSS837X2g,
-BSS837X2k,
-BSS837X2m,
-
-//red input
-BSS837X1p,
-BSS837X3C,
-BSS837X3N,
-
-//red output
-BSS837X2V,
-BSS837X2i,
-BSS837X2p,
-
-//white input
-BSS837X1T,
-BSS837X1n,
-BSS837X1v,
-BSS837X1z,
-BSS837X1FF,
-BSS837X1HH,
-BSS837X3A,
-BSS837X3E,
-BSS837X3L,
-BSS837X3R,
-BSS837X3T,
-
-//white output
-BSS837X2J,
-BSS837X2U,
-BSS837X2Y,
-BSS837X2a,
-BSS837X2d,
-BSS837X2e,
-BSS837X2h,
-BSS837X2j,
-BSS837X2n,
-BSS837X2q,
-BSS837X2r,
-
-//yellow input clue
-PZH837_X1A,
-PZH837_X1C,
-PZH837_X1E,
-PZH837_X1G,
-PZH837_X1J,
-PZH837_X1N,
-PZH837_X1R,
-PZH837_X1V,
-PZH837_X1L,
-PZH837_X1X,
-PZH837_X1Z,
-PZH837_X1b,
-PZH837_X1d,
-PZH837_X1f,
-PZH837_X1h,
-PZH837_X1j,
-PZH837_X1r,
-PZH837_X1t,
-PZH837_X1x,
-PZH837_X1BB,
-PZH837_X1DD,
-PZH837_X1KK,
-PZH837_X1MM,
-PZH837_X3G,
-PZH837_X3J,
-
-//yellow block clue
-PZH837_X1A_b,
-PZH837_X1C_b,
-PZH837_X1E_b,
-PZH837_X1G_b,
-PZH837_X1J_b,
-PZH837_X1N_b,
-PZH837_X1R_b,
-PZH837_X1V_b,
-PZH837_X1L_b,
-PZH837_X1X_b,
-PZH837_X1Z_b,
-PZH837_X1b_b,
-PZH837_X1d_b,
-PZH837_X1f_b,
-PZH837_X1h_b,
-PZH837_X1j_b,
-PZH837_X1r_b,
-PZH837_X1t_b,
-PZH837_X1x_b,
-PZH837_X1BB_b,
-PZH837_X1DD_b,
-PZH837_X1KK_b,
-PZH837_X1MM_b,
-PZH837_X3G_b,
-PZH837_X3J_b,
-
-//red input clue
-PK837_X1p,
-PK837_X3C,
-PK837_X3N,
-
-//red input block clue
-PK837_X1p_b,
-PK837_X3C_b,
-PK837_X3N_b;
+PCSOKSHO_2;
 
 void emergencyalarm_8()
 {
+    //yellow input clue
+    static bool
+        PZH837_X1A,
+        PZH837_X1C,
+        PZH837_X1E,
+        PZH837_X1G,
+        PZH837_X1J,
+        PZH837_X1N,
+        PZH837_X1R,
+        PZH837_X1V,
+        PZH837_X1L,
+        PZH837_X1X,
+        PZH837_X1Z,
+        PZH837_X1b,
+        PZH837_X1d,
+        PZH837_X1f,
+        PZH837_X1h,
+        PZH837_X1j,
+        PZH837_X1r,
+        PZH837_X1t,
+        PZH837_X1x,
+        PZH837_X1BB,
+        PZH837_X1DD,
+        PZH837_X1KK,
+        PZH837_X1MM,
+        PZH837_X3G,
+        PZH837_X3J,
+
+        //yellow block clue
+        PZH837_X1A_b,
+        PZH837_X1C_b,
+        PZH837_X1E_b,
+        PZH837_X1G_b,
+        PZH837_X1J_b,
+        PZH837_X1N_b,
+        PZH837_X1R_b,
+        PZH837_X1V_b,
+        PZH837_X1L_b,
+        PZH837_X1X_b,
+        PZH837_X1Z_b,
+        PZH837_X1b_b,
+        PZH837_X1d_b,
+        PZH837_X1f_b,
+        PZH837_X1h_b,
+        PZH837_X1j_b,
+        PZH837_X1r_b,
+        PZH837_X1t_b,
+        PZH837_X1x_b,
+        PZH837_X1BB_b,
+        PZH837_X1DD_b,
+        PZH837_X1KK_b,
+        PZH837_X1MM_b,
+        PZH837_X3G_b,
+        PZH837_X3J_b,
+
+        //red input clue
+        PK837_X1p,
+        PK837_X3C,
+        PK837_X3N,
+
+        //red input block clue
+        PK837_X1p_b,
+        PK837_X3C_b,
+        PK837_X3N_b;
+
     if(PRBSS837 == true)
     {
         ///////////////Yellow lights
         //////////////1
-        if (BSS837X1A == true)
+        if (bss_inst.BSS837X1A == true)
         {
-            BSS837X2A = true;
+            bss_inst.BSS837X2A = true;
             if(PZH837_X1A_b == true)
             {
                 PZH837_X1A = false;
@@ -182,7 +93,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2A = false;
+            bss_inst.BSS837X2A = false;
             PZH837_X1A_b = false;
             PZH837_X1A = false;
         }
@@ -195,9 +106,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////2
-        if (BSS837X1C == true)
+        if (bss_inst.BSS837X1C == true)
         {
-            BSS837X2B = true;
+            bss_inst.BSS837X2B = true;
             if(PZH837_X1C_b == true)
             {
                 PZH837_X1C = false;
@@ -209,7 +120,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2B = false;
+            bss_inst.BSS837X2B = false;
             PZH837_X1C_b = false;
             PZH837_X1C = false;
         }
@@ -222,9 +133,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////3
-        if (BSS837X1E == true)
+        if (bss_inst.BSS837X1E == true)
         {
-            BSS837X2C = true;
+            bss_inst.BSS837X2C = true;
             if(PZH837_X1E_b == true)
             {
                 PZH837_X1E = false;
@@ -236,7 +147,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2C = false;
+            bss_inst.BSS837X2C = false;
             PZH837_X1E_b = false;
             PZH837_X1E = false;
         }
@@ -249,9 +160,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////4
-        if (BSS837X1G == true)
+        if (bss_inst.BSS837X1G == true)
         {
-            BSS837X2D = true;
+            bss_inst.BSS837X2D = true;
             if(PZH837_X1G_b == true)
             {
                 PZH837_X1G = false;
@@ -263,7 +174,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2D = false;
+            bss_inst.BSS837X2D = false;
             PZH837_X1G_b = false;
             PZH837_X1G = false;
         }
@@ -276,9 +187,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////5
-        if (BSS837X1J == true)
+        if (bss_inst.BSS837X1J == true)
         {
-            BSS837X2E = true;
+            bss_inst.BSS837X2E = true;
             if(PZH837_X1J_b == true)
             {
                 PZH837_X1J = false;
@@ -290,7 +201,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2E = false;
+            bss_inst.BSS837X2E = false;
             PZH837_X1J_b = false;
             PZH837_X1J = false;
         }
@@ -303,9 +214,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////6
-        if (BSS837X1N == true)
+        if (bss_inst.BSS837X1N == true)
         {
-            BSS837X2G = true;
+            bss_inst.BSS837X2G = true;
             if(PZH837_X1N_b == true)
             {
                 PZH837_X1N = false;
@@ -317,7 +228,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2G = false;
+            bss_inst.BSS837X2G = false;
             PZH837_X1N_b = false;
             PZH837_X1N = false;
         }
@@ -330,9 +241,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////7
-        if (BSS837X1R == true)
+        if (bss_inst.BSS837X1R == true)
         {
-            BSS837X2H = true;
+            bss_inst.BSS837X2H = true;
             if(PZH837_X1R_b == true)
             {
                 PZH837_X1R = false;
@@ -344,7 +255,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2H = false;
+            bss_inst.BSS837X2H = false;
             PZH837_X1R_b = false;
             PZH837_X1R = false;
         }
@@ -357,9 +268,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////8
-        if (BSS837X1V == true)
+        if (bss_inst.BSS837X1V == true)
         {
-            BSS837X2K = true;
+            bss_inst.BSS837X2K = true;
             if(PZH837_X1V_b == true)
             {
                 PZH837_X1V = false;
@@ -371,7 +282,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2K = false;
+            bss_inst.BSS837X2K = false;
             PZH837_X1V_b = false;
             PZH837_X1V = false;
         }
@@ -384,9 +295,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////9
-        if (BSS837X1L == true)
+        if (bss_inst.BSS837X1L == true)
         {
-            BSS837X2F = true;
+            bss_inst.BSS837X2F = true;
             if(PZH837_X1L_b == true)
             {
                 PZH837_X1L = false;
@@ -398,7 +309,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2F = false;
+            bss_inst.BSS837X2F = false;
             PZH837_X1L_b = false;
             PZH837_X1L = false;
         }
@@ -411,9 +322,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////10
-        if (BSS837X1X == true)
+        if (bss_inst.BSS837X1X == true)
         {
-            BSS837X2L = true;
+            bss_inst.BSS837X2L = true;
             if(PZH837_X1X_b == true)
             {
                 PZH837_X1X = false;
@@ -425,7 +336,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2L = false;
+            bss_inst.BSS837X2L = false;
             PZH837_X1X_b = false;
             PZH837_X1X = false;
         }
@@ -438,9 +349,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////11
-        if (BSS837X1Z == true)
+        if (bss_inst.BSS837X1Z == true)
         {
-            BSS837X2M = true;
+            bss_inst.BSS837X2M = true;
             if(PZH837_X1Z_b == true)
             {
                 PZH837_X1Z = false;
@@ -452,7 +363,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2M = false;
+            bss_inst.BSS837X2M = false;
             PZH837_X1Z_b = false;
             PZH837_X1Z = false;
         }
@@ -465,9 +376,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////12
-        if (BSS837X1b == true)
+        if (bss_inst.BSS837X1b == true)
         {
-            BSS837X2N = true;
+            bss_inst.BSS837X2N = true;
             if(PZH837_X1b_b == true)
             {
                 PZH837_X1b = false;
@@ -479,7 +390,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2N = false;
+            bss_inst.BSS837X2N = false;
             PZH837_X1b_b = false;
             PZH837_X1b = false;
         }
@@ -492,9 +403,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////13
-        if (BSS837X1d == true)
+        if (bss_inst.BSS837X1d == true)
         {
-            BSS837X2P = true;
+            bss_inst.BSS837X2P = true;
             if(PZH837_X1d_b == true)
             {
                 PZH837_X1d = false;
@@ -506,7 +417,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2P = false;
+            bss_inst.BSS837X2P = false;
             PZH837_X1d_b = false;
             PZH837_X1d = false;
         }
@@ -519,9 +430,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////14
-        if (BSS837X1f == true)
+        if (bss_inst.BSS837X1f == true)
         {
-            BSS837X2R = true;
+            bss_inst.BSS837X2R = true;
             if(PZH837_X1f_b == true)
             {
                 PZH837_X1f = false;
@@ -533,7 +444,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2R = false;
+            bss_inst.BSS837X2R = false;
             PZH837_X1f_b = false;
             PZH837_X1f = false;
         }
@@ -546,9 +457,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////15
-        if (BSS837X1h == true)
+        if (bss_inst.BSS837X1h == true)
         {
-            BSS837X2S = true;
+            bss_inst.BSS837X2S = true;
             if(PZH837_X1h_b == true)
             {
                 PZH837_X1h = false;
@@ -560,7 +471,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2S = false;
+            bss_inst.BSS837X2S = false;
             PZH837_X1h_b = false;
             PZH837_X1h = false;
         }
@@ -573,9 +484,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////16
-        if (BSS837X1j == true)
+        if (bss_inst.BSS837X1j == true)
         {
-            BSS837X2T = true;
+            bss_inst.BSS837X2T = true;
             if(PZH837_X1j_b == true)
             {
                 PZH837_X1j = false;
@@ -587,7 +498,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2T = false;
+            bss_inst.BSS837X2T = false;
             PZH837_X1j_b = false;
             PZH837_X1j = false;
         }
@@ -600,9 +511,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////17
-        if (BSS837X1r == true)
+        if (bss_inst.BSS837X1r == true)
         {
-            BSS837X2W = true;
+            bss_inst.BSS837X2W = true;
             if(PZH837_X1r_b == true)
             {
                 PZH837_X1r = false;
@@ -614,7 +525,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2W = false;
+            bss_inst.BSS837X2W = false;
             PZH837_X1r_b = false;
             PZH837_X1r = false;
         }
@@ -627,9 +538,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////18
-        if (BSS837X1t == true)
+        if (bss_inst.BSS837X1t == true)
         {
-            BSS837X2X = true;
+            bss_inst.BSS837X2X = true;
             if(PZH837_X1t_b == true)
             {
                 PZH837_X1t = false;
@@ -641,7 +552,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2X = false;
+            bss_inst.BSS837X2X = false;
             PZH837_X1t_b = false;
             PZH837_X1t = false;
         }
@@ -654,9 +565,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////19
-        if (BSS837X1x == true)
+        if (bss_inst.BSS837X1x == true)
         {
-            BSS837X2Z = true;
+            bss_inst.BSS837X2Z = true;
             if(PZH837_X1x_b == true)
             {
                 PZH837_X1x = false;
@@ -668,7 +579,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2Z = false;
+            bss_inst.BSS837X2Z = false;
             PZH837_X1x_b = false;
             PZH837_X1x = false;
         }
@@ -681,9 +592,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////20
-        if (BSS837X1BB == true)
+        if (bss_inst.BSS837X1BB == true)
         {
-            BSS837X2b = true;
+            bss_inst.BSS837X2b = true;
             if(PZH837_X1BB_b == true)
             {
                 PZH837_X1BB = false;
@@ -695,7 +606,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2b = false;
+            bss_inst.BSS837X2b = false;
             PZH837_X1BB_b = false;
             PZH837_X1BB = false;
         }
@@ -708,9 +619,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////21
-        if (BSS837X1DD == true)
+        if (bss_inst.BSS837X1DD == true)
         {
-            BSS837X2c = true;
+            bss_inst.BSS837X2c = true;
             if(PZH837_X1DD_b == true)
             {
                 PZH837_X1DD = false;
@@ -722,7 +633,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2c = false;
+            bss_inst.BSS837X2c = false;
             PZH837_X1DD_b = false;
             PZH837_X1DD = false;
         }
@@ -735,9 +646,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////22
-        if (BSS837X1KK == true)
+        if (bss_inst.BSS837X1KK == true)
         {
-            BSS837X2f = true;
+            bss_inst.BSS837X2f = true;
             if(PZH837_X1KK_b == true)
             {
                 PZH837_X1KK = false;
@@ -749,7 +660,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2f = false;
+            bss_inst.BSS837X2f = false;
             PZH837_X1KK_b = false;
             PZH837_X1KK = false;
         }
@@ -761,9 +672,9 @@ void emergencyalarm_8()
         }
         ///////////////Yellow lights
         //////////////23
-        if (BSS837X1MM == true)
+        if (bss_inst.BSS837X1MM == true)
         {
-            BSS837X2g = true;
+            bss_inst.BSS837X2g = true;
             if(PZH837_X1MM_b == true)
             {
                 PZH837_X1MM = false;
@@ -775,7 +686,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2g = false;
+            bss_inst.BSS837X2g = false;
             PZH837_X1MM_b = false;
             PZH837_X1MM = false;
         }
@@ -788,9 +699,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////24
-        if (BSS837X3G == true)
+        if (bss_inst.BSS837X3G == true)
         {
-            BSS837X2k = true;
+            bss_inst.BSS837X2k = true;
             if(PZH837_X3G_b == true)
             {
                 PZH837_X3G = false;
@@ -802,7 +713,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2k = false;
+            bss_inst.BSS837X2k = false;
             PZH837_X3G_b = false;
             PZH837_X3G = false;
         }
@@ -815,9 +726,9 @@ void emergencyalarm_8()
 
         ///////////////Yellow lights
         //////////////25
-        if (BSS837X3J == true)
+        if (bss_inst.BSS837X3J == true)
         {
-            BSS837X2m = true;
+            bss_inst.BSS837X2m = true;
             if(PZH837_X3J_b == true)
             {
                 PZH837_X3J = false;
@@ -829,7 +740,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2m = false;
+            bss_inst.BSS837X2m = false;
             PZH837_X3J_b = false;
             PZH837_X3J = false;
         }
@@ -879,9 +790,9 @@ void emergencyalarm_8()
 
         ///////////////Red lights_1
         //////////////1
-        if (BSS837X1p == true)
+        if (bss_inst.BSS837X1p == true)
         {
-            BSS837X2V = true;
+            bss_inst.BSS837X2V = true;
             if(PK837_X1p_b == true)
             {
                 PK837_X1p = false;
@@ -893,7 +804,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2V = false;
+            bss_inst.BSS837X2V = false;
             PK837_X1p_b = false;
             PK837_X1p = false;
         }
@@ -906,9 +817,9 @@ void emergencyalarm_8()
 
         ///////////////Red lights_1
         //////////////2
-        if (BSS837X3C == true)
+        if (bss_inst.BSS837X3C == true)
         {
-            BSS837X2i = true;
+            bss_inst.BSS837X2i = true;
             if(PK837_X3C_b == true)
             {
                 PK837_X3C = false;
@@ -920,7 +831,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2i = false;
+            bss_inst.BSS837X2i = false;
             PK837_X3C_b = false;
             PK837_X3C = false;
         }
@@ -933,9 +844,9 @@ void emergencyalarm_8()
 
         ///////////////Red lights_1
         //////////////3
-        if (BSS837X3N == true)
+        if (bss_inst.BSS837X3N == true)
         {
-            BSS837X2p = true;
+            bss_inst.BSS837X2p = true;
             if(PK837_X3N_b == true)
             {
                 PK837_X3N = false;
@@ -947,7 +858,7 @@ void emergencyalarm_8()
         }
         else
         {
-            BSS837X2p = false;
+            bss_inst.BSS837X2p = false;
             PK837_X3N_b = false;
             PK837_X3N = false;
         }
@@ -973,168 +884,168 @@ void emergencyalarm_8()
 
         ///////////////White lights_1
         //////////////1
-        if (BSS837X1T == true)
+        if (bss_inst.BSS837X1T == true)
         {
-            BSS837X2J = true;
+            bss_inst.BSS837X2J = true;
         }
         else
         {
-            BSS837X2J = false;
+            bss_inst.BSS837X2J = false;
         }
 
         ///////////////White lights_1
         //////////////2
-        if (BSS837X1n == true)
+        if (bss_inst.BSS837X1n == true)
         {
-            BSS837X2U = true;
+            bss_inst.BSS837X2U = true;
         }
         else
         {
-            BSS837X2U = false;
+            bss_inst.BSS837X2U = false;
         }
 
         ///////////////White lights_1
         //////////////3
-        if (BSS837X1v == true)
+        if (bss_inst.BSS837X1v == true)
         {
-            BSS837X2Y = true;
+            bss_inst.BSS837X2Y = true;
         }
         else
         {
-            BSS837X2Y = false;
+            bss_inst.BSS837X2Y = false;
         }
 
         ///////////////White lights_1
         //////////////4
-        if (BSS837X1z == true)
+        if (bss_inst.BSS837X1z == true)
         {
-            BSS837X2a = true;
+            bss_inst.BSS837X2a = true;
         }
         else
         {
-            BSS837X2a = false;
+            bss_inst.BSS837X2a = false;
         }
 
         ///////////////White lights_1
         //////////////5
-        if (BSS837X1FF == true)
+        if (bss_inst.BSS837X1FF == true)
         {
-            BSS837X2d = true;
+            bss_inst.BSS837X2d = true;
         }
         else
         {
-            BSS837X2d = false;
+            bss_inst.BSS837X2d = false;
         }
 
         ///////////////White lights_1
         //////////////6
-        if (BSS837X1HH == true)
+        if (bss_inst.BSS837X1HH == true)
         {
-            BSS837X2e = true;
+            bss_inst.BSS837X2e = true;
         }
         else
         {
-            BSS837X2e = false;
+            bss_inst.BSS837X2e = false;
         }
 
         ///////////////White lights_1
         //////////////7
-        if (BSS837X3A == true)
+        if (bss_inst.BSS837X3A == true)
         {
-            BSS837X2h = true;
+            bss_inst.BSS837X2h = true;
         }
         else
         {
-            BSS837X2h = false;
+            bss_inst.BSS837X2h = false;
         }
 
         ///////////////White lights_1
         //////////////8
-        if (BSS837X3E == true)
+        if (bss_inst.BSS837X3E == true)
         {
-            BSS837X2j = true;
+            bss_inst.BSS837X2j = true;
         }
         else
         {
-            BSS837X2j = false;
+            bss_inst.BSS837X2j = false;
         }
 
         ///////////////White lights_1
         //////////////9
-        if (BSS837X3L == true)
+        if (bss_inst.BSS837X3L == true)
         {
-            BSS837X2n = true;
+            bss_inst.BSS837X2n = true;
         }
         else
         {
-            BSS837X2n = false;
+            bss_inst.BSS837X2n = false;
         }
 
         ///////////////White lights_1
         //////////////10
-        if (BSS837X3R == true)
+        if (bss_inst.BSS837X3R == true)
         {
-            BSS837X2q = true;
+            bss_inst.BSS837X2q = true;
         }
         else
         {
-            BSS837X2q = false;
+            bss_inst.BSS837X2q = false;
         }
 
         ///////////////White lights_1
         //////////////11
-        if (BSS837X3T == true)
+        if (bss_inst.BSS837X3T == true)
         {
-            BSS837X2r = true;
+            bss_inst.BSS837X2r = true;
         }
         else
         {
-            BSS837X2r = false;
+            bss_inst.BSS837X2r = false;
         }
 
         if(PKLSHO == true)
         {
             PCSOZHSHO = true;
             PCSOKSHO = true;
-            BSS837X2A = true;
-            BSS837X2B = true;
-            BSS837X2C = true;
-            BSS837X2D = true;
-            BSS837X2E = true;
-            BSS837X2G = true;
-            BSS837X2H = true;
-            BSS837X2K = true;
-            BSS837X2F = true;
-            BSS837X2L = true;
-            BSS837X2M = true;
-            BSS837X2N = true;
-            BSS837X2P = true;
-            BSS837X2R = true;
-            BSS837X2S = true;
-            BSS837X2T = true;
-            BSS837X2W = true;
-            BSS837X2X = true;
-            BSS837X2Z = true;
-            BSS837X2b = true;
-            BSS837X2c = true;
-            BSS837X2f = true;
-            BSS837X2g = true;
-            BSS837X2k = true;
-            BSS837X2m = true;
-            BSS837X2V = true;
-            BSS837X2i = true;
-            BSS837X2p = true;
-            BSS837X2J = true;
-            BSS837X2U = true;
-            BSS837X2Y = true;
-            BSS837X2a = true;
-            BSS837X2d = true;
-            BSS837X2e = true;
-            BSS837X2h = true;
-            BSS837X2j = true;
-            BSS837X2n = true;
-            BSS837X2q = true;
-            BSS837X2r = true;
+            bss_inst.BSS837X2A = true;
+            bss_inst.BSS837X2B = true;
+            bss_inst.BSS837X2C = true;
+            bss_inst.BSS837X2D = true;
+            bss_inst.BSS837X2E = true;
+            bss_inst.BSS837X2G = true;
+            bss_inst.BSS837X2H = true;
+            bss_inst.BSS837X2K = true;
+            bss_inst.BSS837X2F = true;
+            bss_inst.BSS837X2L = true;
+            bss_inst.BSS837X2M = true;
+            bss_inst.BSS837X2N = true;
+            bss_inst.BSS837X2P = true;
+            bss_inst.BSS837X2R = true;
+            bss_inst.BSS837X2S = true;
+            bss_inst.BSS837X2T = true;
+            bss_inst.BSS837X2W = true;
+            bss_inst.BSS837X2X = true;
+            bss_inst.BSS837X2Z = true;
+            bss_inst.BSS837X2b = true;
+            bss_inst.BSS837X2c = true;
+            bss_inst.BSS837X2f = true;
+            bss_inst.BSS837X2g = true;
+            bss_inst.BSS837X2k = true;
+            bss_inst.BSS837X2m = true;
+            bss_inst.BSS837X2V = true;
+            bss_inst.BSS837X2i = true;
+            bss_inst.BSS837X2p = true;
+            bss_inst.BSS837X2J = true;
+            bss_inst.BSS837X2U = true;
+            bss_inst.BSS837X2Y = true;
+            bss_inst.BSS837X2a = true;
+            bss_inst.BSS837X2d = true;
+            bss_inst.BSS837X2e = true;
+            bss_inst.BSS837X2h = true;
+            bss_inst.BSS837X2j = true;
+            bss_inst.BSS837X2n = true;
+            bss_inst.BSS837X2q = true;
+            bss_inst.BSS837X2r = true;
         }
 
    }
@@ -1142,45 +1053,45 @@ void emergencyalarm_8()
     {
         PCSOZHSHO = false;
         PCSOKSHO = false;
-        BSS837X2A = false;
-        BSS837X2B = false;
-        BSS837X2C = false;
-        BSS837X2D = false;
-        BSS837X2E = false;
-        BSS837X2G = false;
-        BSS837X2H = false;
-        BSS837X2K = false;
-        BSS837X2F = false;
-        BSS837X2L = false;
-        BSS837X2M = false;
-        BSS837X2N = false;
-        BSS837X2P = false;
-        BSS837X2R = false;
-        BSS837X2S = false;
-        BSS837X2T = false;
-        BSS837X2W = false;
-        BSS837X2X = false;
-        BSS837X2Z = false;
-        BSS837X2b = false;
-        BSS837X2c = false;
-        BSS837X2f = false;
-        BSS837X2g = false;
-        BSS837X2k = false;
-        BSS837X2m = false;
-        BSS837X2V = false;
-        BSS837X2i = false;
-        BSS837X2p = false;
-        BSS837X2J = false;
-        BSS837X2U = false;
-        BSS837X2Y = false;
-        BSS837X2a = false;
-        BSS837X2d = false;
-        BSS837X2e = false;
-        BSS837X2h = false;
-        BSS837X2j = false;
-        BSS837X2n = false;
-        BSS837X2q = false;
-        BSS837X2r = false;
+        bss_inst.BSS837X2A = false;
+        bss_inst.BSS837X2B = false;
+        bss_inst.BSS837X2C = false;
+        bss_inst.BSS837X2D = false;
+        bss_inst.BSS837X2E = false;
+        bss_inst.BSS837X2G = false;
+        bss_inst.BSS837X2H = false;
+        bss_inst.BSS837X2K = false;
+        bss_inst.BSS837X2F = false;
+        bss_inst.BSS837X2L = false;
+        bss_inst.BSS837X2M = false;
+        bss_inst.BSS837X2N = false;
+        bss_inst.BSS837X2P = false;
+        bss_inst.BSS837X2R = false;
+        bss_inst.BSS837X2S = false;
+        bss_inst.BSS837X2T = false;
+        bss_inst.BSS837X2W = false;
+        bss_inst.BSS837X2X = false;
+        bss_inst.BSS837X2Z = false;
+        bss_inst.BSS837X2b = false;
+        bss_inst.BSS837X2c = false;
+        bss_inst.BSS837X2f = false;
+        bss_inst.BSS837X2g = false;
+        bss_inst.BSS837X2k = false;
+        bss_inst.BSS837X2m = false;
+        bss_inst.BSS837X2V = false;
+        bss_inst.BSS837X2i = false;
+        bss_inst.BSS837X2p = false;
+        bss_inst.BSS837X2J = false;
+        bss_inst.BSS837X2U = false;
+        bss_inst.BSS837X2Y = false;
+        bss_inst.BSS837X2a = false;
+        bss_inst.BSS837X2d = false;
+        bss_inst.BSS837X2e = false;
+        bss_inst.BSS837X2h = false;
+        bss_inst.BSS837X2j = false;
+        bss_inst.BSS837X2n = false;
+        bss_inst.BSS837X2q = false;
+        bss_inst.BSS837X2r = false;
         PZH837_X1A = false;
         PZH837_X1C = false;
         PZH837_X1E = false;

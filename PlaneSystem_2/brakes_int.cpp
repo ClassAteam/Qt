@@ -136,9 +136,6 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelValue(&brakes_Wk[3], "Wk4");
     createLabelValue(&brakes_Wk[4], "Wk5");
     createLabelValue(&brakes_Wk[5], "Wk6");
-    createLabelClue(&BSS812_nazhm_rt, "BSS812_nazhm_rt");
-    createLabelClue(&BSS812_vkl_ft, "BSS812_vkl_ft");
-    createLabelClue(&BSS812_vkl_rt, "BSS812_vkl_rt");
     createLabelClue(&UKS1X18, "UKS1X18");
     createLabelClue(&balarm_6F01, "balarm_6F01");
     createLabelClue(&balarm_6F10, "balarm_6F10");

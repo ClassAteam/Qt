@@ -31,15 +31,15 @@ double
     Vkab,
     Pkab_zad;
 int
-    S1_2131,
-    blink_tick,
-    Counter_PRESURE;
+    S1_2131;
 
 
 void presure()
 {
-    Counter_PRESURE++;
-    blink_tick ++;
+    static int
+    blink_tick1,
+    blink_tick2,
+
     PAVARR = false;
     PPP = false;
     PGK = false;
@@ -55,18 +55,12 @@ void presure()
     if (ush2dpl >= 18.0)
     {
         if ((Pkab - Ph_msa) >= 0.7)
-        {
             K1_2131 = true;
-        }
         else
-        {
             K1_2131 = false;
-        }
 
         if (S1_2131 == 1)
-        {
             PPP = true;
-        }
         else
         {
 
@@ -78,61 +72,43 @@ void presure()
 
         }
 
+        if (H < 8000.0 && S2_2131 == 1)
+            PGK = true;
+
+        if (K4_2131 == false && Pkab <= 0.34)
+            K2_2131 = true;
     }
 
-    if (H < 8000.0 && S2_2131 == 1)
+    if (K1_2131 == true && (blink_tick1 * TICK) >= 600)
     {
-        PGK = true;
-    }
-
-    if (K4_2131 == false && Pkab <= 0.34)
-    {
-        K2_2131 = true;
-    }
-
-    if (K1_2131 == true)
-    {
-
         SKD_D300 = true;
-    }
-    else
-    {
-        SKD_D300 = false;
-    }
-
-    //BSS838X7A blinking
-    if (K1_2131 == true && blink_tick > 3)
-    {
         bss_inst.BSS838X7A = true;
-        blink_tick = 0;
+        blink_tick1 = 0;
+
     }
     else
     {
         bss_inst.BSS838X7A = false;
+        SKD_D300 = false;
+        if(K1_2131) blink_tick1++;
     }
 
-    if (K2_2131 == true)
+    if (K2_2131 == true && (blink_tick2 * TICK) >= 600)
     {
-
         SKD_D301 = true;
-    }
-    else
-    {
-        SKD_D301 = false;
-    }
-
-    //BSS838X5MM, BSS824X1G, BSS824X1J blinking
-    if (K2_2131 == true && blink_tick > 3)
-    {
         bss_inst.BSS838X5MM = true;
-        bss_inst.BSS824X1G = true;
-        bss_inst.BSS824X1J = true;
-        blink_tick = 0;
+        blink_tick2 = 0;
+
     }
     else
     {
         bss_inst.BSS838X5MM = false;
+        SKD_D300 = false;
+        if(K2_2131) blink_tick2++;
     }
+
+
+
 
     if (otkaz_razgermetizatsiya == false
         && PRTHU1 == 1

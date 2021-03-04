@@ -1,3 +1,8 @@
+#pragma once
+#include "bss.h"
+
+extern bss bss_inst;
+
 extern double
 M,
 usho1p,

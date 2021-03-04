@@ -1,21 +1,17 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "bss.h"
 #include "wind_functions.h"
 #include "algorithms.h"
 #include "math.h"
+
+extern bss bss_inst;
 
 extern bool
 prg1,
 prg2,
 prg3,
 prg4,
-prgvsu27,
-BSS812X5t;
+prgvsu27;
 extern const double TICK;
 extern double
 uak1,

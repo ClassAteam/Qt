@@ -87,11 +87,6 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&PVOVNA2, "PVOVNA2");
     createLabelClue(&PVOVNA3, "PVOVNA3");
     createLabelClue(&PVOVNA4, "PVOVNA4");
-    createLabelClue(&BSS824X1z, "BSS824X1z");
-    createLabelClue(&BSS824X1BB, "BSS824X1BB");
-    createLabelClue(&BSS824X1DD, "BSS824X1DD");
-    createLabelClue(&BSS824X1FF, "BSS824X1FF");
-    createLabelClue(&BSS825PR, "BSS825PR");
     createLabelClue(&S3_3080, "S3_3080");
     createLabelClue(&S4_3080, "S4_3080");
     createLabelClue(&S5_3080, "S5_3080");
@@ -115,7 +110,6 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K25_3230, "K25_3230");
     createLabelClue(&S1_3030, "S1_3030");
     createLabelClue(&S2_3030, "S2_3030");
-    createLabelClue(&BSS811X1Y, "BSS811X1Y");
     createLabelValue(&alpha_rud_1dv, "alpha_rud_1dv");
     createLabelValue(&alpha_rud_2dv, "alpha_rud_2dv");
     createLabelValue(&alpha_rud_3dv, "alpha_rud_3dv");
@@ -161,12 +155,9 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K2_3080, "K2_3080");
     createRedButton(&S1_3080, "S1_3080");
     createRedButton(&S2_3080, "S2_3080");
-    createLabelClue(&BSS824X1T, "BSS824X1T");
-    createLabelClue(&BSS824X1V, "BSS824X1V");
-    createLabelClue(&BSS825X5KK, "BSS825X5KK");
-    createLabelClue(&BSS825X5MM, "BSS825X5MM");
     createLabelClue(&UKS1X112, "UKS1X112");
     createLabelClue(&UKS1X212, "UKS1X212");
+    createRedButton(&S2_3030, "S2_3030");
 }
 
 void antiicing_int::updateLogic()

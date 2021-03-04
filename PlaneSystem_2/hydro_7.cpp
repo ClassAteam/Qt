@@ -1,5 +1,6 @@
 #include "algorithms.h"
-#include "hydro_7.h"
+#include "hydro_7.h" 		//actually 8th sheet
+
 
 bool
     PK,
@@ -77,8 +78,8 @@ void hydro_7()
     bool* bss811_pool[] = {&bss_inst.BSS811X1Z, &bss_inst.BSS811X1b,
                            &bss_inst.BSS811X1d, &bss_inst.BSS811X1f };
 
-    bool* bss811_pool1[] = {&bss_inst.BSS811X2d, &bss_inst.BSS811X2e,
-                            &bss_inst.BSS811X2f, &bss_inst.BSS811X2g };
+    bool* bss811_pool1[] = {&bss_inst.surGs1Otkl, &bss_inst.surGs2Otkl,
+                            &bss_inst.surGs3Otkl, &bss_inst.surGs4Otkl };
 
     for(int i = 0; i < 4; i++)
     {
@@ -184,10 +185,10 @@ void hydro_7()
     bss_inst.BSS811X1b = false;
     bss_inst.BSS811X1d = false;
     bss_inst.BSS811X1f = false;
-    bss_inst.BSS811X2d = false;
-    bss_inst.BSS811X2e = false;
-    bss_inst.BSS811X2f = false;
-    bss_inst.BSS811X2g = false;
+    bss_inst.surGs1Otkl = false;
+    bss_inst.surGs2Otkl = false;
+    bss_inst.surGs3Otkl = false;
+    bss_inst.surGs4Otkl = false;
 
     H10_2930 = false;
     UKS2X316 = 0;

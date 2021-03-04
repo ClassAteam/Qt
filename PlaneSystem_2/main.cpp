@@ -21,23 +21,23 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     antifire_int antifire;
     brakes_int brakes;
-//    brakes.show();
+    brakes.show();
     wingsmech_int wingsmech;
-//    wingsmech.show();
+    wingsmech.show();
     landinggear_int landinggear;
-//    landinggear.show();
+    landinggear.show();
     emergencyalarm_int emergencyalarm;
     emergencyalarm.show();
     cabinlighting cabinlighting;
-//    cabinlighting.show();
+    cabinlighting.show();
     presure_int presure;
-//    presure.show();
+    presure.show();
     powerdc_ind powerdc;
     powerdc.show();
     hydro_int hydro;
     hydro.show();
     antiicing_int antiicing;
-//    antiicing.show();
+    antiicing.show();
 
 
     return a.exec();

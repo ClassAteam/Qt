@@ -1,9 +1,7 @@
 #pragma once
-#include <QWidget>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern bool
 PCSOKPL_1,

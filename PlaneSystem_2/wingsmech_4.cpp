@@ -1,5 +1,5 @@
 #include "algorithms.h"
-#include "wingsmech_4.h"
+#include "wingsmech_4.h"			//actually 5th sheet
 
 bool
 P_130_11,
@@ -109,9 +109,10 @@ delta_z_p_111;
 
 void wingsmech_4()
 {
-    if(ushap >= 18)
+    delta_z = ((delta_z_l + delta_z_p) / 2);
+
+    if(ushap >= 18 && delta_z > 0)
     {
-        delta_z = ((delta_z_l + delta_z_p) / 2);
         if(delta_z > 22)
         {
             bss_inst.BSS824X1KK = true;
@@ -157,7 +158,7 @@ void wingsmech_4()
         {
             bss_inst.BSS825X7A = true;
         }
-        if(delta_pr < 21)
+        if(delta_pr >= 21)
         {
             bss_inst.BSS825X5J = true;
             bss_inst.BSS825X7A = false;

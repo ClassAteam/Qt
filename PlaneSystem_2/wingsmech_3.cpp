@@ -345,28 +345,29 @@ void wingsmech_3()
     if(ushap >= 18)
     {
         X_PCHK = ((X_L + X_P) / 2);
-    }
-    else
-    {
-        BSS913X3A = false;
-        BSS913X3C = false;
-    }
-    if(X_PCHK > 22)
-    {
-        BSS913X3A = false;
-    }
-    else
-    {
-        BSS913X3A = true;
-    }
 
-    if((X_PCHK >= 28) && (X_PCHK < 32))
-    {
-        BSS913X3C = true;
+        if(X_PCHK > 22)
+        {
+            bss_inst.BSS913X3A = false;
+        }
+        else
+        {
+            bss_inst.BSS913X3A = true;
+        }
+
+        if((X_PCHK >= 28) && (X_PCHK < 32))
+        {
+            bss_inst.BSS913X3C = true;
+        }
+        else
+        {
+            bss_inst.BSS913X3C = false;
+        }
     }
     else
     {
-        BSS913X3C = false;
+        bss_inst.BSS913X3A = false;
+        bss_inst.BSS913X3C = false;
     }
 
 }

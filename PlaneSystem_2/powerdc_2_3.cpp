@@ -378,7 +378,7 @@ void powerdc_2_3() //2 //3
 //        }
 //    }
 
-    if(uak1 >= 18.0 && glviklvsu && !BSS812X5t)
+    if(uak1 >= 18.0 && glviklvsu && !bss_inst.BSS812X5t)
     {
         purg27lk5 = false;
         purg27lk6 = true;

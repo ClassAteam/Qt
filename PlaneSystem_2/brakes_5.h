@@ -1,10 +1,8 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include <QVector>
+#include "bss.h"
+
+extern bss bss_inst;
 
 extern QVector<bool>
 brakes_PRAT;
@@ -36,8 +34,7 @@ PTavtP,
 PTavtS,
 pavtt,
 PFT,
-PTfors,
-BSS812X5r;
+PTfors;
 extern double
 ushap,
 P_t_lev,

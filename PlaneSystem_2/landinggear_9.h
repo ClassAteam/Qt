@@ -1,19 +1,15 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "bss.h"
 
+extern bss bss_inst;
 
 extern const double
 TICK;
+
 extern bool
-BSS812X5v,
 K24_3230,
-K25_3230,
-BSS812X5x;
+K25_3230;
+
 extern double
 delta_z,
 ush1dpl,

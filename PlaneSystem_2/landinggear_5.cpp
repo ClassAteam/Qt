@@ -6,8 +6,8 @@ bool
     K1_3230,
     K2_3230,
     K3_3230,
-    K4_3230_1211{1},
-    K4_3230_1213{1},
+    K4_3230_1211{true},
+    K4_3230_1213{true},
     K4_3230_2221,
     K4_3230_2223,
     K4_3230_AB,
@@ -16,8 +16,8 @@ bool
     K6_3230,
     K7_3230,
     K8_3230,
-    K8_3230_1112{1},
-    K8_3230_2223{1},
+    K8_3230_1112{true},
+    K8_3230_2223{true},
     K8_3230_AB,
     K8_3230_VG,
     K9_3230,
@@ -62,17 +62,18 @@ bool
     S54_3230,
     S46_3230,
     S47_3230;
-int
-    relay_tick_vu1,
-    relay_tick_sec_vu1,
-    relay_tick_vu,
-    relay_tick_sec_vu;
 double
     Plv,
     Plu;
 
 void landinggear_5()
 {// Presure definition
+static int
+    relay_tick_vu1,
+    relay_tick_sec_vu1,
+    relay_tick_vu,
+    relay_tick_sec_vu;
+
     if (Pgs2 >= 130.0)
     {
         if(gk_oovsh == true)

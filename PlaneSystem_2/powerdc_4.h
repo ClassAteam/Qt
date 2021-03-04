@@ -1,13 +1,10 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "bss.h"
 #include "wind_functions.h"
 #include "algorithms.h"
 #include "math.h"
+
+extern bss bss_inst;
 
 extern bool
     pvkchrl,
@@ -45,8 +42,7 @@ extern bool
     prg2,
     prg3,
     prg4,
-    prgvsu27,
-    BSS812X5t;
+    prgvsu27;
 
 extern int
     s13_2430;

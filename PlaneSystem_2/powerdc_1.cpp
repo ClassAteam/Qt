@@ -105,7 +105,7 @@ void powerdc_1() //1
         }
     }
 
-    if(ushal >= 18.0 && s1_2430 == true && BSS812X5t == true)
+    if(ushal >= 18.0 && s1_2430 == true && bss_inst.BSS812X5t == true)
     {
         pvkgvsu27 = true;
     }

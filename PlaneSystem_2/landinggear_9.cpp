@@ -142,8 +142,8 @@ void landinggear_9()
     else
     {
         K6_3250 = false;
-        BSS812X5v = false;
-        BSS812X5x = false;
+        bss_inst.BSS812X5v = false;
+        bss_inst.BSS812X5x = false;
     }
     if(S1_3250 == true)
     {
@@ -178,24 +178,24 @@ void landinggear_9()
             A2X112_3250 = true;
         }
 
-        BSS812X5v = false;
-        BSS812X5x = false;
+        bss_inst.BSS812X5v = false;
+        bss_inst.BSS812X5x = false;
     }
     else
     {
         K6_3250 = false;
-        BSS812X5v = false;
-        BSS812X5x = false;
+        bss_inst.BSS812X5v = false;
+        bss_inst.BSS812X5x = false;
     }
     if(A1X111_3250 == true)
     {
-        BSS812X5v = true;
+        bss_inst.BSS812X5v = true;
     }
     else
     {
         if(A2X111_3250 == true)
         {
-            BSS812X5x = true;
+            bss_inst.BSS812X5x = true;
         }
     }
 

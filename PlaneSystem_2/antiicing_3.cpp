@@ -29,11 +29,6 @@ bool
     PVOVNA2,
     PVOVNA3,
     PVOVNA4,
-    BSS824X1z,
-    BSS824X1BB,
-    BSS824X1DD,
-    BSS824X1FF,
-    BSS825PR,
     S3_3080,
     S4_3080,
     S5_3080,
@@ -229,38 +224,38 @@ void antiicing_3()
     //BSS824X1z toggle
     if (usho1p >= 18.0 && K22_3020 == true)
     {
-        BSS824X1z = true;
+        bss_inst.BSS824X1z = true;
     }
     else
     {
-        BSS824X1z = false;
+        bss_inst.BSS824X1z = false;
     }
     //BSS824X1BB toggle
     if (usho1p >= 18.0 && K29_3020 == true)
     {
-        BSS824X1BB = true;
+        bss_inst.BSS824X1BB = true;
     }
     else
     {
-        BSS824X1BB = false;
+        bss_inst.BSS824X1BB = false;
     }
     //BSS824X1DD toggle
     if (usho1p >= 18.0 && K40_3020 == true)
     {
-        BSS824X1DD = true;
+        bss_inst.BSS824X1DD = true;
     }
     else
     {
-        BSS824X1DD = false;
+        bss_inst.BSS824X1DD = false;
     }
     //BSS824X1FF toggle
     if (usho1p >= 18.0 && K46_3020 == true)
     {
-        BSS824X1FF = true;
+        bss_inst.BSS824X1FF = true;
     }
     else
     {
-        BSS824X1FF = false;
+        bss_inst.BSS824X1FF = false;
     }
 
     //PONdv1, POB1dv1, POB2dv1, POB3dv1 toggle
@@ -484,11 +479,11 @@ void antiicing_3()
 
     if (usho1p >= 18.0 && F110_3020 == true)
     {
-        BSS825PR = true;
+        bss_inst.BSS825PR = true;
     }
     else
     {
-        BSS825PR = false;
+        bss_inst.BSS825PR = false;
     }
 
     POV3dv1 = (PONdv1 * 35) + (POB1dv1 * 40) +

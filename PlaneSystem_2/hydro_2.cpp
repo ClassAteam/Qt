@@ -11,10 +11,6 @@ QVector<bool> Sfirst4_2920(4, false);
 QVector<bool> Ssecond4_2920(4, false);
 QVector<int> Sthird4_2920(4, 0);
 bool
-UKS1X329,
-UKS1X330,
-UKS1X331,
-UKS1X332,
 PAPD_26,
 PAPD_27,
 PAPD_30,
@@ -39,10 +35,10 @@ void hydro_2()
     PAPD_pool[2] = PAPD_30;
     PAPD_pool[3] = PAPD_31;
     QVector<bool> UKS_pool(4, false);
-    UKS_pool[0] = UKS1X329;
-    UKS_pool[1] = UKS1X330;
-    UKS_pool[2] = UKS1X331;
-    UKS_pool[3] = UKS1X332;
+    UKS_pool[0] = uks_inst.UKS1X329;
+    UKS_pool[1] = uks_inst.UKS1X330;
+    UKS_pool[2] = uks_inst.UKS1X331;
+    UKS_pool[3] = uks_inst.UKS1X332;
     for(int i = 0; i < 4; i++)
     {
         if(Ushdp_pool[i] >= 18.0 && Ffirst4_2920[i] == true && Sfirst4_2920[i] == true )
@@ -113,9 +109,9 @@ void hydro_2()
         PAPD_27 =	PAPD_pool[1];
         PAPD_30 =	PAPD_pool[2];
         PAPD_31 =	PAPD_pool[3];
-        UKS1X329 =	UKS_pool[0];
-        UKS1X330 =	UKS_pool[1];
-        UKS1X331 =	UKS_pool[2];
-        UKS1X332 =	UKS_pool[3];
+        uks_inst.UKS1X329 =	UKS_pool[0];
+        uks_inst.UKS1X330 =	UKS_pool[1];
+        uks_inst.UKS1X331 =	UKS_pool[2];
+        uks_inst.UKS1X332 =	UKS_pool[3];
     }
 }

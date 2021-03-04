@@ -1,7 +1,6 @@
 #include "brakes_5.h"
 
 bool
-    UKS1X18,
     balarm_6F01,
     balarm_6F10,
     balarm_AA11,
@@ -31,8 +30,6 @@ bool
     balarm_SVR2;
 
 double
-    UKS2X212,
-    UKS2X234,
     balarm_BD11,
     balarm_BD12,
     balarm_BD13,
@@ -109,7 +106,7 @@ void brakes_5()
         bss_inst.BSS812_nazhm_rt = 0;
         bss_inst.BSS812_vkl_ft = 0;
         bss_inst.BSS812_vkl_rt = 0;
-        UKS1X18 = 0;
+        uks_inst.UKS1X18 = 0;
         balarm_6F01 = 0;
         balarm_6F10 = 0;
         balarm_AA11 = 0;
@@ -138,8 +135,8 @@ void brakes_5()
         balarm_SUR = 0;
         balarm_SVR1 = 0;
         balarm_SVR2 = 0;
-        UKS2X212 = 0;
-        UKS2X234 = 0;
+        uks_inst.UKS2X212 = 0;
+        uks_inst.UKS2X234 = 0;
         balarm_BD11 = 0;
         balarm_BD12 = 0;
         balarm_BD13 = 0;
@@ -193,22 +190,22 @@ void brakes_5()
         X3_45_7620 == true &&
         X4_45_7620 == true)
     {
-        UKS2X234 = P_az_gat;
+        uks_inst.UKS2X234 = P_az_gat;
     }
     else
     {
-        UKS2X234 = 0;
+        uks_inst.UKS2X234 = 0;
     }
-    UKS2X212 = pgat;
+    uks_inst.UKS2X212 = pgat;
 
     if(PstoyanT)
     {
-        UKS1X18 = true;
+        uks_inst.UKS1X18 = true;
         bss_inst.BSS812X5r = true;
     }
     else
     {
-        UKS1X18 = false;
+        uks_inst.UKS1X18 = false;
         bss_inst.BSS812X5r = false;
     }
 
@@ -216,19 +213,19 @@ void brakes_5()
     {
         if(PstoyanT == true && pgat >= 80.0)
         {
-            UKS1X18 = true;
+            uks_inst.UKS1X18 = true;
             bss_inst.BSS812X5r = true;
         }
         else
         {
-            UKS1X18 = true;
+            uks_inst.UKS1X18 = true;
             bss_inst.BSS812X5r = false;
         }
     }
     else
     {
-        UKS2X212 = 0;
-        UKS2X234 = 0;
+        uks_inst.UKS2X212 = 0;
+        uks_inst.UKS2X234 = 0;
     }
 }
 

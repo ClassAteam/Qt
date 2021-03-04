@@ -17,9 +17,7 @@ bool
     PBSO2,
     K2_3080,
     S1_3080,
-    S2_3080,
-    UKS1X112,
-    UKS1X212;
+    S2_3080;
 int
     PSOBLP_sec,
     PSOBLL_sec,
@@ -186,8 +184,8 @@ void antiicing_6()
     }
 
     //UKS1X212, UKS1X112 toggle
-    UKS1X212 = false;
-    UKS1X112 = false;
+    uks_inst.UKS1X212 = false;
+    uks_inst.UKS1X112 = false;
     if (K2_3080 == true)
     {
 
@@ -197,12 +195,12 @@ void antiicing_6()
 
         if (PSOLD == true)
         {
-            UKS1X112 = true;
+            uks_inst.UKS1X112 = true;
             bss_inst.BSS824X1T = true;
         }
         if (PSOPD == true)
         {
-            UKS1X212 = true;
+            uks_inst.UKS1X212 = true;
             bss_inst.BSS824X1V = true;
         }
     }

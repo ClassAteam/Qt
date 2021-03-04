@@ -1,10 +1,8 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include <QVector>
+#include "uks.h"
+
+extern uks uks_inst;
 
 extern double
 ush1dpl,

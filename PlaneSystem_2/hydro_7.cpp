@@ -22,22 +22,6 @@ bool
     S18_2920;
 
 double
-    UKS2X316,
-    UKS2X317,
-    UKS2X318,
-    UKS2X319,
-    UKS1X259_60,
-    UKS1X262_63,
-    UKS1X264_65,
-    UKS1X267_68,
-    UKS1X333,
-    UKS1X334,
-    UKS1X335,
-    UKS1X336,
-    UKS2X213_14,
-    UKS2X215_8,
-    UKS2X216_9,
-    UKS2X25_6,
     pa1gak,
     pa2gak,
     pa3gak,
@@ -64,9 +48,16 @@ void hydro_7()
     double* pgs_pool[] = {&Pgs1, &Pgs2, &Pgs3, &Pgs4};
     double* puks_pool[] = {&puksgs1, &puksgs2, &puksgs3, &puksgs4};
     double* psurgs_pool[] = {&psurgs1, &psurgs2, &psurgs3, &psurgs4};
-    double* uks_pool1[] = {&UKS1X259_60, &UKS1X262_63, &UKS1X264_65, &UKS1X267_68};
-    double* uks_pool2[] = {&UKS1X333, &UKS1X334 , &UKS1X335, &UKS1X336};
-    double* uks_pool3[] = {&UKS2X316, &UKS2X317 , &UKS2X318, &UKS2X319};
+
+    double* uks_pool1[] = {&uks_inst.UKS1X259_60, &uks_inst.UKS1X262_63,
+                           &uks_inst.UKS1X264_65, &uks_inst.UKS1X267_68};
+
+    double* uks_pool2[] = {&uks_inst.UKS1X333, &uks_inst.UKS1X334,
+                           &uks_inst.UKS1X335, &uks_inst.UKS1X336};
+
+    double* uks_pool3[] = {&uks_inst.UKS2X316, &uks_inst.UKS2X317,
+                           &uks_inst.UKS2X318, &uks_inst.UKS2X319};
+
     double* Ushal_pool[] = {&ushal, &ushal, &ushap, &ushap};
     bool* H_pool[] = {&H2_2910, &H1_2910, &H4_2910, &H5_2910};
     bool* K1_pool[] = {&K1_2930, &K2_2930, &K3_2930, &K4_2930};
@@ -171,10 +162,10 @@ void hydro_7()
     pa4gak = m_3_L_intervals(Pgs4, 0, 115, 285, 330, 115, 115, 285, 330);
 
 
-    UKS2X213_14 = pa2gak;
-    UKS2X215_8 = pa3gak;
-    UKS2X216_9 = pa4gak;
-    UKS2X25_6 = pa1gak;
+    uks_inst.UKS2X213_14 = pa2gak;
+    uks_inst.UKS2X215_8 = pa3gak;
+    uks_inst.UKS2X216_9 = pa4gak;
+    uks_inst.UKS2X25_6 = pa1gak;
 
     K1_2930 = false;
     K2_2930 = false;
@@ -191,18 +182,18 @@ void hydro_7()
     bss_inst.surGs4Otkl = false;
 
     H10_2930 = false;
-    UKS2X316 = 0;
-    UKS2X317 = 0;
-    UKS2X318 = 0;
-    UKS2X319 = 0;
+    uks_inst.UKS2X316 = 0;
+    uks_inst.UKS2X317 = 0;
+    uks_inst.UKS2X318 = 0;
+    uks_inst.UKS2X319 = 0;
     bss_inst.BSS812X5E = false;
     bss_inst.BSS812X5G = false;
     bss_inst.BSS812X5J = false;
     bss_inst.BSS812X5L = false;
-    UKS1X333 = 0;
-    UKS1X334 = 0;
-    UKS1X335 = 0;
-    UKS1X336 = 0;
+    uks_inst.UKS1X333 = 0;
+    uks_inst.UKS1X334 = 0;
+    uks_inst.UKS1X335 = 0;
+    uks_inst.UKS1X336 = 0;
 
     for(int i = 0; i < 4; i++)
     {

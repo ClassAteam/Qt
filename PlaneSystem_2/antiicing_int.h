@@ -29,8 +29,7 @@ extern bool
     F12_3040, F13_3040, S2_3040, S4_3040, S6_3040, S8_3040,
     obled_svs, otkaz_l_so121, otkaz_p_so121, signal_obled, otkaz_lozhn_srab_lev_so121,
     otkaz_lozhn_srab_prav_so121, PSOPD, PSOLD, PRSOL, prsop, PSOBLL, PSOBLP,
-    PBSO1, PBSO2, K2_3080, S1_3080, S2_3080, UKS1X112, UKS1X212
-    ;
+    PBSO1, PBSO2, K2_3080, S1_3080, S2_3080;
 extern int
     POV3dv1, POV3dv2, POV3dv3, POV3dv4,
     S1_3020, S6_3020, S7_3040

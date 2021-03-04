@@ -3,9 +3,6 @@
 bool
     PVTP,
     PSTP,
-    UKS3X39,
-    UKS3X310,
-    UKS3X311,
     K5_3650,
     K1_9921,
     K2_9921,
@@ -81,12 +78,12 @@ void brakes_6()
     }
 
     bss_inst.BSS824X1f = false;
-    UKS3X311 = false;
+    uks_inst.UKS3X311 = false;
 
     if(ush1dpp >= 18.0 && Patp < 60)
     {
         bss_inst.BSS824X1f = true;
-        UKS3X311 = true;
+        uks_inst.UKS3X311 = true;
     }
 
     if(ushal >= 18.0 && K1_9921 == true && Patp >= 60.0)
@@ -117,9 +114,9 @@ void brakes_6()
 
     K5_9921 = false;
     K6_9921 = false;
-    UKS3X39 = false;
+    uks_inst.UKS3X39 = false;
     bss_inst.BSS824X1N = false;
-    UKS3X310 = false;
+    uks_inst.UKS3X310 = false;
     bss_inst.BSS824X1R = false;
 
     if(ushap >= 18.0)
@@ -130,7 +127,7 @@ void brakes_6()
             {
                 K5_9921 = true;
                 bss_inst.BSS824X1N = true;
-                UKS3X39 = true;
+                uks_inst.UKS3X39 = true;
             }
         }
         else
@@ -139,7 +136,7 @@ void brakes_6()
             {
                 K6_9921 = true;
                 bss_inst.BSS824X1R = true;
-                UKS3X310 = true;
+                uks_inst.UKS3X310 = true;
             }
         }
     }

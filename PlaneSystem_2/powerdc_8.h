@@ -1,12 +1,12 @@
 #pragma once
 #include "bss.h"
+#include "uks.h"
 
 extern bss bss_inst;
+extern uks uks_inst;
 
 extern bool
     pss27,
-    UKS4X352,
-    UKS2X355,
     s14_2430,
     s15_2430,
     purg27pk3,

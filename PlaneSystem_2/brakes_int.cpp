@@ -136,7 +136,6 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelValue(&brakes_Wk[3], "Wk4");
     createLabelValue(&brakes_Wk[4], "Wk5");
     createLabelValue(&brakes_Wk[5], "Wk6");
-    createLabelClue(&UKS1X18, "UKS1X18");
     createLabelClue(&balarm_6F01, "balarm_6F01");
     createLabelClue(&balarm_6F10, "balarm_6F10");
     createLabelClue(&balarm_AA11, "balarm_AA11");
@@ -165,8 +164,6 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelClue(&balarm_SVR1, "balarm_SVR1");
     createLabelClue(&balarm_SVR2, "balarm_SVR2");
 
-    createLabelValue(&UKS2X212, "UKS2X212");
-    createLabelValue(&UKS2X234, "UKS2X234");
     createLabelValue(&balarm_BD11, "balarm_BD11");
     createLabelValue(&balarm_BD12, "balarm_BD12");
     createLabelValue(&balarm_BD13, "balarm_BD13");
@@ -181,9 +178,6 @@ brakes_int::brakes_int(QWidget *parent)
 
     createLabelClue(&PVTP, "PVTP");
     createLabelClue(&PSTP, "PSTP");
-    createLabelClue(&UKS3X39, "UKS3X39");
-    createLabelClue(&UKS3X310, "UKS3X310");
-    createLabelClue(&UKS3X311, "UKS3X311");
     createLabelClue(&K5_3650, "K5_3650");
     createLabelClue(&K1_9921, "K1_9921");
     createLabelClue(&K2_9921, "K2_9921");

@@ -1,10 +1,7 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "uks.h"
+
+extern uks uks_inst;
 
 extern bool
 S35_3230,

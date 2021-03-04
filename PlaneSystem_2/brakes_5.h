@@ -1,8 +1,10 @@
 #pragma once
 #include <QVector>
 #include "bss.h"
+#include "uks.h"
 
 extern bss bss_inst;
+extern uks uks_inst;
 
 extern QVector<bool>
 brakes_PRAT;

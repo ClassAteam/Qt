@@ -196,25 +196,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&S56_3230, "S56_3230");
     createLabelClue(&S57_3230, "S57_3230");
     createLabelClue(&S58_3230, "S58_3230");
-    createLabelClue(&UKS4X310, "UKS4X310");
-    createLabelClue(&UKS4X311, "UKS4X311");
-    createLabelClue(&UKS4X312, "UKS4X312");
-    createLabelClue(&UKS4X313, "UKS4X313");
-    createLabelClue(&UKS4X314, "UKS4X314");
-    createLabelClue(&UKS4X315, "UKS4X315");
-    createLabelClue(&UKS4X316, "UKS4X316");
-    createLabelClue(&UKS4X317, "UKS4X317");
-    createLabelClue(&UKS4X318, "UKS4X318");
-    createLabelClue(&UKS4X319, "UKS4X319");
-    createLabelClue(&UKS4X320, "UKS4X320");
-    createLabelClue(&UKS4X321, "UKS4X321");
-    createLabelClue(&UKS4X322, "UKS4X322");
-    createLabelClue(&UKS4X323, "UKS4X323");
-    createLabelClue(&UKS4X324, "UKS4X324");
-    createLabelClue(&UKS4X325, "UKS4X325");
-    createLabelClue(&UKS4X326, "UKS4X326");
-    createLabelClue(&UKS4X38, "UKS4X38");
-    createLabelClue(&UKS4X39, "UKS4X39");
 
     createRadioButton(&S31_3230, "OTKL", false);
     createRadioButton(&S31_3230, "OPORA_PERED", false);

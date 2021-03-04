@@ -22,26 +22,7 @@ S25_3230,
 S55_3230,
 S56_3230,
 S57_3230,
-S58_3230,
-UKS4X310,
-UKS4X311,
-UKS4X312,
-UKS4X313,
-UKS4X314,
-UKS4X315,
-UKS4X316,
-UKS4X317,
-UKS4X318,
-UKS4X319,
-UKS4X320,
-UKS4X321,
-UKS4X322,
-UKS4X323,
-UKS4X324,
-UKS4X325,
-UKS4X326,
-UKS4X38,
-UKS4X39;
+S58_3230;
 
 int
 S31_3230;
@@ -51,132 +32,132 @@ delta_z;
 void landinggear_8()
 {
     K25_3230 = false;
-    UKS4X313 = false;
+    uks_inst.UKS4X313 = false;
 
     K32_3230 = false;
-    UKS4X316 = false;
+    uks_inst.UKS4X316 = false;
 
     K45_3230 = false;
-    UKS4X317 = false;
+    uks_inst.UKS4X317 = false;
 
     if(ushap >= 19.0)
     {
         if(S32_3230 == true && S55_3230 == false)
         {
             K25_3230 = true;
-            UKS4X313 = true;
+            uks_inst.UKS4X313 = true;
         }
 
         if(S35_3230 == true)
         {
             K32_3230 = true;
-            UKS4X316 = true;
+            uks_inst.UKS4X316 = true;
         }
 
         if(S10_3230 == true)
         {
             K45_3230 = true;
-            UKS4X317 = true;
+            uks_inst.UKS4X317 = true;
         }
     }
 
     K31_3230 = false;
-    UKS4X314 = false;
-    UKS4X315 = false;
+    uks_inst.UKS4X314 = false;
+    uks_inst.UKS4X315 = false;
 
     if(ushal >= 19.0)
     {
         if(S49_3230 == true)
         {
-            UKS4X315 = true;
+            uks_inst.UKS4X315 = true;
         }
         if(S33_3230 == true)
         {
             K31_3230 = true;
-            UKS4X314 = true;
+            uks_inst.UKS4X314 = true;
         }
     }
 
     K26_3230 = false;
-    UKS4X322 = false;
+    uks_inst.UKS4X322 = false;
 
     if(ushal >= 19.0)
     {
         if(S34_3230 == true && S57_3230 == false)
         {
             K26_3230 = true;
-            UKS4X322 = true;
+            uks_inst.UKS4X322 = true;
         }
     }
     K24_3230 = false;
-    UKS4X38 = false;
+    uks_inst.UKS4X38 = false;
 
     K33_3230 = false;
-    UKS4X39 = false;
+    uks_inst.UKS4X39 = false;
 
     K34_3230 = false;
-    UKS4X311 = false;
+    uks_inst.UKS4X311 = false;
 
     K44_3230 = false;
-    UKS4X312 = false;
+    uks_inst.UKS4X312 = false;
 
-    UKS4X310 = false;
+    uks_inst.UKS4X310 = false;
 
     if(ushap >= 19.0)
     {
         if(S38_3230 == true && S56_3230 == false)
         {
             K24_3230 = true;
-            UKS4X38  = true;
+            uks_inst.UKS4X38  = true;
         }
 
         if(S37_3230 == true)
         {
             K33_3230 = true;
-            UKS4X39 = true;
+            uks_inst.UKS4X39 = true;
         }
         if(S11_3230 == true)
         {
             K44_3230 = true;
-            UKS4X312 = true;
+            uks_inst.UKS4X312 = true;
         }
         if(S48_3230 == true)
         {
-            UKS4X310 = true;
+            uks_inst.UKS4X310 = true;
         }
         if(S39_3230 == true)
         {
-            UKS4X311 = true;
+            uks_inst.UKS4X311 = true;
         }
 
         if(S36_3230 == true  && S58_3230 == false)
         {
-            UKS4X321 = true;
+            uks_inst.UKS4X321 = true;
         }
         else
         {
-            UKS4X321 = false;
+            uks_inst.UKS4X321 = false;
         }
 
         K35_3230 = false;
-        UKS4X320 = false;
-        UKS4X319 = false;
+        uks_inst.UKS4X320 = false;
+        uks_inst.UKS4X319 = false;
 
         if(S40_3230 == true)
         {
             K35_3230 = true;
-            UKS4X318 = true;
+            uks_inst.UKS4X318 = true;
         }
 
         if(S12_3230 == false)
         {
             K46_3230 = true;
-            UKS4X320 = true;
+            uks_inst.UKS4X320 = true;
         }
 
         if(S41_3230 == false)
         {
-            UKS4X319 = true;
+            uks_inst.UKS4X319 = true;
         }
 
     }
@@ -357,10 +338,10 @@ void landinggear_8()
     bss_inst.BSS824X1t = false;
     bss_inst.BSS824X1j = false;
     H2_3230 = false;
-    UKS4X325 = false;
-    UKS4X324 = false;
-    UKS4X323 = false;
-    UKS4X326 = false;
+    uks_inst.UKS4X325 = false;
+    uks_inst.UKS4X324 = false;
+    uks_inst.UKS4X323 = false;
+    uks_inst.UKS4X326 = false;
 
     if(ush2dpl >= 19.0)
     {
@@ -396,16 +377,16 @@ void landinggear_8()
 
         if(P_bal_l <= 70)
         {
-            UKS4X325 = true;
+            uks_inst.UKS4X325 = true;
         }
 
         if(P_bal_p <= 70)
         {
-            UKS4X324 = true;
+            uks_inst.UKS4X324 = true;
         }
         if(P_bal_per <= 70)
         {
-            UKS4X323 = true;
+            uks_inst.UKS4X323 = true;
         }
 
         if(P_bal_l <= 70 || P_bal_p <= 70 || P_bal_per <= 70.0)

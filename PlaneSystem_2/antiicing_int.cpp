@@ -155,8 +155,6 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K2_3080, "K2_3080");
     createRedButton(&S1_3080, "S1_3080");
     createRedButton(&S2_3080, "S2_3080");
-    createLabelClue(&UKS1X112, "UKS1X112");
-    createLabelClue(&UKS1X212, "UKS1X212");
     createRedButton(&S2_3030, "S2_3030");
 }
 

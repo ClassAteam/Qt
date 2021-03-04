@@ -94,6 +94,7 @@ SOURCES += \
     powerdc_int.cpp \
     presure.cpp \
     presure_int.cpp \
+    uks.cpp \
     wind_functions.cpp \
     wingsmech_1.cpp \
     wingsmech_2.cpp \
@@ -179,6 +180,7 @@ HEADERS += \
     powerdc_int.h \
     presure.h \
     presure_int.h \
+    uks.h \
     wind_functions.h \
     wingsmech_1.h \
     wingsmech_2.h \

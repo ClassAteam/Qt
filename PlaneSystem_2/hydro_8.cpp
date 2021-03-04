@@ -1,25 +1,6 @@
 #include "hydro_8.h"
 
-bool
-UKS2X320,
-UKS2X321,
-UKS2X322,
-UKS2X323;
 double
-UKS2UBGS1,
-UKS2UBGS2,
-UKS2UBGS3,
-UKS2UBGS4,
-UKS4X2100,
-UKS4X248_49,
-UKS4X251_52,
-UKS4X253_54,
-UKS4X256_57,
-UKS4X259_60,
-UKS4X262_63,
-UKS4X294,
-UKS4X296,
-UKS4X298,
 tb1,
 tb2,
 tb3,
@@ -153,44 +134,44 @@ void hydro_8()
         qgs4 = 0;
     }
 
-    UKS2X320 = 0;
-    UKS2X321 = 0;
-    UKS2X322 = 0;
-    UKS2X323 = 0;
+    uks_inst.UKS2X320 = 0;
+    uks_inst.UKS2X321 = 0;
+    uks_inst.UKS2X322 = 0;
+    uks_inst.UKS2X323 = 0;
 
     if(qgs1 <= 10.0)
     {
-        UKS2X320 = true;
+        uks_inst.UKS2X320 = true;
     }
     if(qgs2 <= 10.0)
     {
-        UKS2X321 = true;
+        uks_inst.UKS2X321 = true;
     }
     if(qgs3 <= 10.0)
     {
-        UKS2X322 = true;
+        uks_inst.UKS2X322 = true;
     }
     if(qgs4 <= 10.0)
     {
-        UKS2X323 = true;
+        uks_inst.UKS2X323 = true;
     }
-    UKS4X248_49 = 152;
-    UKS4X251_52 = 151;
-    UKS4X253_54 = 3.5;
-    UKS4X256_57 = 3.5;
-    UKS4X259_60 = 3.5;
-    UKS4X262_63 = 3.5;
-    UKS4X294 = tb1;
-    UKS4X296 = tb2;
-    UKS4X298 = tb3;
-    UKS4X2100 = tb4;
+    uks_inst.UKS4X248_49 = 152;
+    uks_inst.UKS4X251_52 = 151;
+    uks_inst.UKS4X253_54 = 3.5;
+    uks_inst.UKS4X256_57 = 3.5;
+    uks_inst.UKS4X259_60 = 3.5;
+    uks_inst.UKS4X262_63 = 3.5;
+    uks_inst.UKS4X294 = tb1;
+    uks_inst.UKS4X296 = tb2;
+    uks_inst.UKS4X298 = tb3;
+    uks_inst.UKS4X2100 = tb4;
 
     if(S38_3230 == true && ushg4 >= 100.0)
     {
-        UKS2UBGS1 = qgs1;
-        UKS2UBGS2 = qgs2;
-        UKS2UBGS3 = qgs3;
-        UKS2UBGS4 = qgs4;
+        uks_inst.UKS2UBGS1 = qgs1;
+        uks_inst.UKS2UBGS2 = qgs2;
+        uks_inst.UKS2UBGS3 = qgs3;
+        uks_inst.UKS2UBGS4 = qgs4;
     }
 }
 

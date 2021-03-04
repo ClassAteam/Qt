@@ -21,13 +21,13 @@ extern bool
     pbutzr, PAVART, PORST, PBRRT,
     POSH, PPDGAKT, PTavtN, PTavtP, PTavtS, PTstart, ptstoyan, PTfors,
     otkaz_ots_dav_v1k_levt, otkaz_ots_dav_v1k_pravt,
-    UKS1X18, balarm_6F01,
+    balarm_6F01,
     balarm_6F10, balarm_AA11, balarm_AA12, balarm_AA13, balarm_AA21,
     balarm_AA22, balarm_AA23, balarm_AV1, balarm_AV2, balarm_AV3, balarm_AV0,
     balarm_SA1, balarm_SA2, balarm_SA3, balarm_SAT, balarm_SDA, balarm_SF,
     balarm_SOR, balarm_SR, balarm_SS1, balarm_SS2, balarm_ST, balarm_SUF,
     balarm_SUR, balarm_SVR1, balarm_SVR2,
-    PVTP, PSTP, UKS3X39, UKS3X310, UKS3X311, K5_3650, K1_9921, K2_9921,
+    PVTP, PSTP, K5_3650, K1_9921, K2_9921,
     K5_9921, K6_9921, S1_9921, S2_9921, S3_9921, S4_9921, S7_9921, S5_9921,
     S6_9921
     ;
@@ -39,7 +39,7 @@ extern double
     alpha_rud_1dv, alpha_rud_2dv, alpha_rud_3dv, alpha_rud_4dv,
     vkh, Pavart, ax_ts, pgat, P_t_lev, P_t_prav,
     delta_Ptr, S_ogr1, S_ogr3, K2, K3,
-    UKS2X212, UKS2X234, balarm_BD11, balarm_BD12, balarm_BD13,
+    balarm_BD11, balarm_BD12, balarm_BD13,
     balarm_BD21, balarm_BD22, balarm_BD23, P_az_gat,
     Patp
     ;

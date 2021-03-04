@@ -8,8 +8,10 @@
 #include "interfacing.h"
 #include "presure.h"
 #include "bss.h"
+#include "uks.h"
 
 extern bss bss_inst;
+extern uks uks_inst;
 
 extern bool
     K1_2131, K2_2131, K4_2131, PAVARR, PRTHU1, PPP, PGK,

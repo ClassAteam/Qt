@@ -1,12 +1,9 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
 #include "wind_functions.h"
 #include "algorithms.h"
+#include "uks.h"
+
+extern uks uks_inst;
 
 extern const double
 TICK;

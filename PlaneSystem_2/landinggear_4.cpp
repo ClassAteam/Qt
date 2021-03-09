@@ -1,6 +1,5 @@
 #include "landinggear_4.h"
 #include "algorithms.h"
-#include "QtWidgets"
 
 
 bool
@@ -9,22 +8,23 @@ otkaz_nepoln_ubor_l,
 otkaz_nepoln_ubor_p,
 otkaz_nepoln_ubor_n;
 
-double
-Ddelta_racks_rel,
-Ddelta_racks_rel_l,
-Ddelta_racks_rel_p,
-Ddelta_racks_rel_n;
-
-int
-racks_rel_left_tick,
-racks_rel_right_tick,
-racks_rel_nose_tick,
-racks_rel_left_tick_sec,
-racks_rel_right_tick_sec,
-racks_rel_nose_tick_sec;
 
 void landinggear_4()
 {
+    static double
+        Ddelta_racks_rel,
+        Ddelta_racks_rel_l,
+        Ddelta_racks_rel_p,
+        Ddelta_racks_rel_n;
+
+    static int
+        racks_rel_left_tick,
+        racks_rel_right_tick,
+        racks_rel_nose_tick,
+        racks_rel_left_tick_sec,
+        racks_rel_right_tick_sec,
+        racks_rel_nose_tick_sec;
+
     //Ddelta_stv toggling
     if (Pgs2 >= 130.0 && Pgs2 < 280.0)
     {

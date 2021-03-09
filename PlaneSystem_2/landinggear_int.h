@@ -27,7 +27,7 @@ extern bool
     K6_3230, K7_3230, K8_3230, K8_3230_1112, K8_3230_2223, K8_3230_AB, K8_3230_VG,
     K9_3230, K10_3230, K11_3230, K12_3230, K22_3230, K23_3230, K28_3230, K29_3230,
     K30_3230, K44_3230, K45_3230, K46_3230, F16_3230, F13_3230, F113_3230, F114_3230,
-    F115_3230, PSDVV, PSDVU, S1_3230, S2_3230, S3_3230, S4_3230, S5_3230, S6_3230,
+    F115_3230, S1_3230, S2_3230, S3_3230, S4_3230, S5_3230, S6_3230,
     S7_3230, S8_3230, S9_3230, S13_3230, S14_3230, S15_3230, S16_3230, S42_3230,
     S43_3230, S44_3230, S45_3230, S51_3230, S52_3230, S53_3230, S54_3230, S46_3230,
     S47_3230,
@@ -54,13 +54,11 @@ extern int
     S31_3230;
 extern double
     delta_sh_l, delta_sh_p, delta_sh_n, delta_stv_l, delta_stv_p,
-    delta_stv_n, Ddelta_stv, Ddelta_stv_l, Ddelta_stv_p, Ddelta_stv_n,
+    delta_stv_n,
     Pgs2, V_bal_l, V_bal_p, V_bal_n, P_bal_l, P_bal_p, P_bal_per,
     fi_sh_l, fi_sh_p, delta_tel_l, delta_tel_p, fi_delta_sh_l,
-    fi_delta_sh_p, Ddelta_tel,
-    Ddelta_racks_l, Ddelta_racks_p, Ddelta_racks, delta_racks_l, delta_racks_p,
-    Ddelta_racks_rel, Ddelta_racks_rel_l, Ddelta_racks_rel_p, Ddelta_racks_rel_n,
-    Plv, Plu, Sl, Sp, delta_z,
+    fi_delta_sh_p, Ddelta_tel, delta_racks_l, delta_racks_p,
+     Plv, Plu, Sl, Sp, delta_z,
     fi_zad1, fi_zad2, fi_zad, fi_nks, fi_nk, V_nk, Xped, Pgs1, Pgs3
     ;
 

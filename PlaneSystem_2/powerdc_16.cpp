@@ -9,7 +9,7 @@ double
     ushpos[2],                  // voltage of converter3's buses
     ushpts[3],                  // voltage of converter1's bus by phases
     fshg[5],                    //frequency of 4 generators and vsu bases
-    fshp[2],                    //frequency of toggle buses
+    fshp[2],                    //frequency of switching buses
     fshpos[2],                  //frequency of convreter3's buses
     fshpts,
     fshav[4];                   //frequency of emergency buses

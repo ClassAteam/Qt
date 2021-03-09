@@ -1,9 +1,5 @@
 #pragma once
-#include <QWidget>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include <QDebug>
 
 extern const double
 TICK;

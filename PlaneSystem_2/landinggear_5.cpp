@@ -1,6 +1,10 @@
 #include "landinggear_5.h"
 #include "algorithms.h"
 
+enum class s2_3230{release, intake};
+s2_3230 S2_3230;
+
+
 bool
     otkaz_ne_vikl_avt_pos_vip_shas,
     K1_3230,
@@ -37,10 +41,7 @@ bool
     F113_3230,
     F114_3230,
     F115_3230,
-    PSDVV,
-    PSDVU,
     S1_3230,
-    S2_3230,
     S3_3230,
     S4_3230,
     S5_3230,
@@ -68,11 +69,17 @@ double
 
 void landinggear_5()
 {// Presure definition
-static int
-    relay_tick_vu1,
-    relay_tick_sec_vu1,
-    relay_tick_vu,
-    relay_tick_sec_vu;
+
+    static bool
+        PSDVV,
+        PSDVU;
+    static int
+        tick_vu1,
+        relay_tick_sec_vu1,
+        relay_tick_sec_vu;
+
+    if(tick_vu1 * TICK >= 1000)
+        relay_tick_sec_vu++;
 
     if (Pgs2 >= 130.0)
     {
@@ -148,44 +155,50 @@ static int
         K22_3230 = false;
 
         // clocks definition
-        if (S2_3230 == true)
+
+        if (S2_3230 == s2_3230::release)
         {
-            if ((PSDVV == true || S3_3230 == true))
+            if ((PSDVV == false && S3_3230 == false))
             {
-                if(relay_tick_sec_vu <= 60)
-                {
-                    relay_tick_vu++;
-                    if((relay_tick_vu * TICK) > 1000)
-                    {
-                        relay_tick_sec_vu++;
-                        relay_tick_vu = 0;
-                    }
-                }
+                tick_vu1 = 0;
+                K1_3230 = false;
+
             }
             else
             {
-                relay_tick_sec_vu = 0;
-                relay_tick_vu = 0;
+                tick_vu1++;
+
+                if(relay_tick_sec_vu >= 60)
+                {
+                    K1_3230 = true;
+                    relay_tick_sec_vu = 0;
+                }
+                else
+                {
+                    K1_3230 = false;
+                }
             }
         }
         else
         {
-            if ((PSDVU == true || S3_3230 == true))
+            if (PSDVU || S3_3230)
             {
-                if(relay_tick_sec_vu <= 60)
+                tick_vu1++;
+
+                if(relay_tick_sec_vu >= 60)
                 {
-                    relay_tick_vu++;
-                    if((relay_tick_vu * TICK) > 1000)
-                    {
-                        relay_tick_sec_vu++;
-                        relay_tick_vu = 0;
-                    }
+                    K1_3230 = true;
+                    relay_tick_sec_vu = 0;
+                }
+                else
+                {
+                    K1_3230 = false;
                 }
             }
             else
             {
                 relay_tick_sec_vu = 0;
-                relay_tick_vu = 0;
+                K1_3230 = false;
             }
         }
 
@@ -203,7 +216,7 @@ static int
         if (S1_3230 == false)
         {
             //release = true
-            if (S2_3230 == true)
+            if (S2_3230 == s2_3230::release)
             {
                 F113_3230 = false;
                 F13_3230 = true;
@@ -305,11 +318,11 @@ static int
         {
             if(relay_tick_sec_vu1 <= 15)
             {
-                relay_tick_vu1++;
-                if((relay_tick_vu1 * TICK) > 1000)
+                tick_vu1++;
+                if((tick_vu1 * TICK) > 1000)
                 {
                     relay_tick_sec_vu1++;
-                    relay_tick_vu1 = 0;
+                    tick_vu1 = 0;
                 }
 
                 if (relay_tick_sec_vu1 >= 15.0)
@@ -321,7 +334,7 @@ static int
         else
         {
             relay_tick_sec_vu1 = 0;
-            relay_tick_vu1 = 0;
+            tick_vu1 = 0;
             K5_3230 = false;
         }
 
@@ -387,17 +400,17 @@ static int
         if(relay_tick_sec_vu1 <= 15)
         {
             relay_tick_sec_vu1++;
-            if((relay_tick_vu1 * TICK) > 1000)
+            if((tick_vu1 * TICK) > 1000)
             {
                 relay_tick_sec_vu1++;
-                relay_tick_vu1 = 0;
+                tick_vu1 = 0;
             }
         }
     }
     else
     {
         relay_tick_sec_vu1 = 0;
-        relay_tick_vu1 = 0;
+        tick_vu1 = 0;
     }
 
     //resolving intake mode clue

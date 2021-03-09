@@ -23,10 +23,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&delta_stv_l, "delta_stv_l");
     createLabelValue(&delta_stv_p, "delta_stv_p");
     createLabelValue(&delta_stv_n, "delta_stv_n");
-    createLabelValue(&Ddelta_stv, "Ddelta_stv");
-    createLabelValue(&Ddelta_stv_l, "Ddelta_stv_l");
-    createLabelValue(&Ddelta_stv_p, "Ddelta_stv_p");
-    createLabelValue(&Ddelta_stv_n, "Ddelta_stv_n");
     createLabelValue(&Pgs2, "Pgs2");
     createLabelValue(&V_bal_l, "V_bal_l");
     createLabelValue(&V_bal_p, "V_bal_p");
@@ -47,9 +43,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createRedButton(&GK_dvl, "GK_dvl");
     createRedButton(&GK_dvp, "GK_dvp");
 
-    createLabelValue(&Ddelta_racks_l, "Ddelta_racks_l");
-    createLabelValue(&Ddelta_racks_p, "Ddelta_racks_p");
-    createLabelValue(&Ddelta_racks, "Ddelta_racks");
     createLabelValue(&delta_racks_l, "delta_racks_l");
     createLabelValue(&delta_racks_p, "delta_racks_p");
 
@@ -58,10 +51,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createRedButton(&otkaz_nepoln_ubor_p, "otkaz_nepoln_ubor_p");
     createRedButton(&otkaz_nepoln_ubor_n, "otkaz_nepoln_ubor_n");
 
-    createLabelValue(&Ddelta_racks_rel, "Ddelta_racks_rel");
-    createLabelValue(&Ddelta_racks_rel_l, "Ddelta_racks_rel_l");
-    createLabelValue(&Ddelta_racks_rel_p, "Ddelta_racks_rel_p");
-    createLabelValue(&Ddelta_racks_rel_n, "Ddelta_racks_rel_n");
 
     createRedButton(&otkaz_ne_vikl_avt_pos_vip_shas, "otkaz_ne_vikl_avt_pos_vip_shas");
     createLabelClue(&K1_3230, "K1_3230");
@@ -98,8 +87,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&F113_3230, "F113_3230");
     createLabelClue(&F114_3230, "F114_3230");
     createLabelClue(&F115_3230, "F115_3230");
-    createLabelClue(&PSDVV, "PSDVV");
-    createLabelClue(&PSDVU, "PSDVU");
     createRedButton(&S1_3230, "S1_3230");
     createRedButton(&S2_3230, "S2_3230");
     createRedButton(&S3_3230, "S3_3230");

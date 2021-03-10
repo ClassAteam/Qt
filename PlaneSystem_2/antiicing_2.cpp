@@ -1,50 +1,11 @@
 #include "antiicing_2.h"
 
-bool
-    OTKAZ_vtsepiob_pos1dv,
-    OTKAZ_vtsepiob_pos2dv,
-    OTKAZ_vtsepiob_pos3dv,
-    OTKAZ_vtsepiob_pos4dv,
-    K52_3020,
-    K53_3020,
-    K54_3020,
-    K55_3020,
-    K14_3020,
-    K21_3020,
-    K30_3020,
-    K37_3020,
-    K16_3020,
-    K23_3020,
-    K32_3020,
-    K39_3020,
-    K19_3020,
-    K25_3020,
-    K35_3020,
-    K41_3020,
-    K20_3020,
-    K28_3020,
-    K36_3020,
-    K44_3020,
-    f32_3020,
-    f34_3020,
-    f319_3020,
-    f356_3020,
-    f353_3020,
-    f320_3020,
-    f330_3020,
-    f340_3020,
-    s2_3020,
-    s3_3020,
-    s4_3020,
-    s5_3020;
-int
-    Counter_airintake;
-double
-    Ushpl,
-    Ushpp;
 
-void antiicing_2()
+void antiicing_int::antiicing_2()
 {
+static int
+    Counter_airintake;
+
     Counter_airintake++;
     f32_3020 = false;
 
@@ -112,7 +73,7 @@ void antiicing_2()
 
     // F34_3020, F320_3020, F330_3020, F340_3020 toggle
     //1
-    if (f32_3020 == true && K52_3020 == false && (!OTKAZ_vtsepiob_pos1dv) && Ushpl >= 104.0)
+    if (f32_3020 == true && K52_3020 == false && (!OTKAZ_vtsepiob_pos1dv) && powerdc_inst.ushp1 >= 104.0)
     {
         f34_3020 = true;
     }

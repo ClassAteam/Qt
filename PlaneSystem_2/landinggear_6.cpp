@@ -1,51 +1,16 @@
 #include "landinggear_6.h"
 #include "algorithms.h"
 
-bool
-    K19_3230,
-    S10_3230,
-    S11_3230,
-    S12_3230,
-    S17_3230,
-    S18_3230,
-    S19_3230,
-    S20_3230,
-    S21_3230,
-    S22_3230,
-    S23_3230,
-    S24_3230,
-    S26_3230,
-    S28_3230,
-    S27_3230,
-    S29_3230,
-    S32_3230,
-    S33_3230,
-    S34_3230,
-    S35_3230,
-    S36_3230,
-    S37_3230,
-    S38_3230,
-    S39_3230,
-    S40_3230,
-    S41_3230,
-    S48_3230,
-    S49_3230,
-    P1OBPOP,
-    P2OBPOP,
-    P1OBLOP,
-    P2OBLOP,
+
+void landinggear_int::landinggear_6()
+{
+    static bool
     PVPLOP,
     PUPLOP,
     PUPPOP,
     PVPPOP,
     PUPPEROP,
     PVPPEROP;
-double
-    Sl{0.2},
-    Sp{0.2};
-
-void landinggear_6()
-{
     // Left card are open
     if (delta_tel_l == 1.0)
     {

@@ -1,16 +1,6 @@
 #include "powerdc_4.h"
 
-double
-    usho2l,
-    usho2p,
-    ushak1,
-    ushak2,
-    uls27,
-    ups27,
-    ushzvsu;
-
-
-void powerdc_4()
+void powerdc_int::powerdc_4()
 {
     //start logic
     if(purg27lk6)
@@ -102,7 +92,7 @@ void powerdc_4()
 
     if(prg1)
     {
-        ush1l = ug1;
+        ush1l = ug1_27;
     }
     else
     {
@@ -111,7 +101,7 @@ void powerdc_4()
 
     if(prg2)
     {
-        ush2l = ug2;
+        ush2l = ug2_27;
     }
     else
     {
@@ -137,7 +127,7 @@ void powerdc_4()
 
     if(prg3)
     {
-        ush1p = ug3;
+        ush1p = ug3_27;
     }
     else
     {
@@ -146,7 +136,7 @@ void powerdc_4()
 
     if(prg4)
     {
-        ush2p = ug4;
+        ush2p = ug4_27;
     }
     else
     {

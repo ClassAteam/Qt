@@ -1,25 +1,6 @@
 #include "powerdc_14.h"
 
-bool
-    purglk3,
-    otk_preobr_pts1,
-    s15_2420,
-    pbapsh1,
-    pbapsh2,
-    pbapsh3,
-    purglk9,
-    purgpk9,
-    purglk10,
-    k13_2420,
-    k16_2420,
-    k17_2420,
-    k19_2420,
-    k20_2420;
-double
-    upts,
-    uptsP[3],
-    fpts;
-void powerdc_14()
+void powerdc_int::powerdc_14()
 {
     double kpts{2.5};
     static bool f46_2420{true};

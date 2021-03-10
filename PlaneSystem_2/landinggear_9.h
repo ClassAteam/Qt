@@ -1,5 +1,9 @@
 #pragma once
 #include "bss.h"
+#include "landinggear_int.h"
+#include "wind_functions.h"
+
+void m_switch(bool* toggler, bool* toggling);
 
 extern bss bss_inst;
 
@@ -11,13 +15,9 @@ K24_3230,
 K25_3230;
 
 extern double
-delta_z,
 ush1dpl,
-ush1dpp,
-delta_sh_n;
+ush1dpp;
 
-void landinggear_9();
-void m_switch(bool* toggler, bool* toggling);
 
 
 

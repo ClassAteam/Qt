@@ -1,14 +1,14 @@
 #include "landinggear_7.h"
 #include "algorithms.h"
-#include "QtWidgets"
 
-bool
-K13_3230,
-K14_3230,
-S30_3230;
 
-void landinggear_7()
+void landinggear_int::landinggear_7()
 {
+    static bool
+        K13_3230,
+        K14_3230,
+        S30_3230;
+
     GK_dvl = false;
     GK_duoop = false;
 

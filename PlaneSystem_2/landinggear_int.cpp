@@ -88,7 +88,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&F114_3230, "F114_3230");
     createLabelClue(&F115_3230, "F115_3230");
     createRedButton(&S1_3230, "S1_3230");
-    createRedButton(&S2_3230, "S2_3230");
     createRedButton(&S3_3230, "S3_3230");
     createLabelClue(&S4_3230, "S4_3230");
     createLabelClue(&S5_3230, "S5_3230");
@@ -253,3 +252,5 @@ void landinggear_int::updateLogic()
     landinggear_8();
     landinggear_9();
 }
+
+landinggear_int landinggear_inst;

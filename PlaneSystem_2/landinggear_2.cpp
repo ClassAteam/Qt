@@ -1,22 +1,8 @@
 #include "landinggear_2.h"
 #include "algorithms.h"
 
-double
-    fi_sh_l,
-    fi_sh_p,
-    delta_tel_l,
-    delta_tel_p,
-    fi_delta_sh_l{1},
-    fi_delta_sh_p{1},
-    Ddelta_tel;
 
-int
-    carts_left_tick,
-    carts_right_tick,
-    carts_left_tick_sec,
-    carts_right_tick_sec;
-
-void landinggear_2()
+void landinggear_int::landinggear_2()
 {
     //Ddelta_stv toggling
     //    if (Pgs2 >= 130.0 && Pgs2 < 280.0)
@@ -42,7 +28,7 @@ void landinggear_2()
             {
                 carts_left_tick++;
                 //releasing left
-                releasing_loop(&delta_tel_l, &Ddelta_tel, &carts_left_tick,
+                releasing_loop2(&delta_tel_l, &Ddelta_tel, &carts_left_tick,
                                &carts_left_tick_sec);
             }
             if(delta_tel_p != 1 &&
@@ -51,7 +37,7 @@ void landinggear_2()
             {
                 carts_right_tick++;
                 //releasing right
-                releasing_loop(&delta_tel_p, &Ddelta_tel, &carts_right_tick,
+                releasing_loop2(&delta_tel_p, &Ddelta_tel, &carts_right_tick,
                                &carts_right_tick_sec);
             }
 
@@ -65,14 +51,14 @@ void landinggear_2()
             {
                 carts_left_tick++;
                 //intake left
-                intake_loop(&delta_tel_l, &carts_left_tick,
+                intake_loop2(&delta_tel_l, &carts_left_tick,
                             &carts_left_tick_sec);
             }
             if(delta_tel_p != 0 && delta_sh_p < 0.65)
             {
                 carts_right_tick++;
                 //intake right
-                intake_loop(&delta_tel_p, &carts_right_tick,
+                intake_loop2(&delta_tel_p, &carts_right_tick,
                             &carts_right_tick_sec);
             }
         }
@@ -96,11 +82,11 @@ void landinggear_2()
         }
 
         //releasing left
-        releasing_loop(&delta_tel_l, &Ddelta_tel, &carts_left_tick,
+        releasing_loop2(&delta_tel_l, &Ddelta_tel, &carts_left_tick,
                        &carts_left_tick_sec);
 
         //releasing right
-        releasing_loop(&delta_tel_p, &Ddelta_tel, &carts_right_tick,
+        releasing_loop2(&delta_tel_p, &Ddelta_tel, &carts_right_tick,
                        &carts_right_tick_sec);
     }
     if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
@@ -112,7 +98,7 @@ void landinggear_2()
     //end logic
 }
 
-void releasing_loop(double* delta, double* D_delta, int* tick, int* sec_tick)
+void landinggear_int::releasing_loop2(double* delta, double* D_delta, int* tick, int* sec_tick)
 {
     if (*delta < 1)
     {
@@ -134,7 +120,7 @@ void releasing_loop(double* delta, double* D_delta, int* tick, int* sec_tick)
         }
     }
 }
-void intake_loop(double* delta, int* tick, int* sec_tick)
+void landinggear_int::intake_loop2(double* delta, int* tick, int* sec_tick)
 {
     if (*delta > 0)
     {

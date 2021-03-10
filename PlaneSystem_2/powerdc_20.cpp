@@ -1,4 +1,3 @@
-#include <QDebug>
 #include "powerdc_20.h"
 
 
@@ -8,7 +7,7 @@ void Y_f(bool &f92, bool &pvksku, bool &BSS838X5G, bool &BSS838X5C,
 void Z_f(bool &prg1, bool &prg2, bool &pchrl, bool &BSS926XN, bool &k31_2420,
          bool &BSS837X1N, bool &K13, bool &BSS837X1J);
 
-void powerdc_20()
+void powerdc_int::powerdc_20()
 {
 
  Y_f(f92_2420, feed_global_inst.pvksku1, bss_inst.BSS838X5G, bss_inst.BSS838X5C, ushal,

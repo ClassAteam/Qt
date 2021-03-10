@@ -1,31 +1,24 @@
 #include "landinggear_3.h"
 #include "algorithms.h"
 
-bool
-    nedovip_osn_op_l,
-    nedovip_osn_op_p,
-    GK_dvl,
-    GK_dvp;
-double
-    Ddelta_racks_l,
-    Ddelta_racks_p,
-    Ddelta_racks,
-    delta_racks_l,
-    delta_racks_p;
-
-int
-    racks_left_tick,
-    racks_right_tick,
-    racks_left_tick_sec,
-    racks_right_tick_sec;
-
-
-void landinggear_3()
+void landinggear_int::landinggear_3()
 {
+    static bool
+        nedovip_osn_op_l,
+        nedovip_osn_op_p;
+    static double
+        Ddelta_racks_l,
+        Ddelta_racks_p;
+    static int
+        racks_left_tick,
+        racks_right_tick,
+        racks_left_tick_sec,
+        racks_right_tick_sec;
+
     void releasing_loop_cur(double* delta, double* D_delta, int* tick, int* sec_tick);
     void intake_loop_cur(double* delta, int* tick, int* sec_tick);
 
-    if (gk_oovsh == false)
+    if (!gk_oovsh)
     {
 
         //Ddelta_stv toggling
@@ -49,9 +42,9 @@ void landinggear_3()
                 nedovip_osn_op_l == false)
             {
                 racks_left_tick++;
-                //releasing left
-                releasing_loop_cur(&delta_racks_l, &Ddelta_racks, &racks_left_tick,
-                               &racks_left_tick_sec);
+//                //releasing left
+//                releasing_loop_cur(&delta_racks_l, &Ddelta_racks, &racks_left_tick,
+//                                   &racks_left_tick_sec);
             }
             if(delta_racks_p != 1 &&
                 delta_stv_p == 90 &&
@@ -61,9 +54,9 @@ void landinggear_3()
                 nedovip_osn_op_p == false)
             {
                 racks_right_tick++;
-                //releasing right
-                releasing_loop_cur(&delta_racks_p, &Ddelta_racks, &racks_right_tick,
-                               &racks_right_tick_sec);
+//                //releasing right
+//                releasing_loop_cur(&delta_racks_p, &Ddelta_racks, &racks_right_tick,
+//                                   &racks_right_tick_sec);
             }
 
 
@@ -77,14 +70,14 @@ void landinggear_3()
                 racks_left_tick++;
                 //intake left
                 intake_loop_cur(&delta_racks_l, &racks_left_tick,
-                            &racks_left_tick_sec);
+                                &racks_left_tick_sec);
             }
             if(delta_racks_p != 0 && delta_sh_p == 1)
             {
                 racks_right_tick++;
                 //intake right
                 intake_loop_cur(&delta_racks_p, &racks_right_tick,
-                            &racks_right_tick_sec);
+                                &racks_right_tick_sec);
             }
         }
         else
@@ -125,13 +118,13 @@ void landinggear_3()
         {
             racks_right_tick++;
         }
-        //releasing left
-        releasing_loop_cur(&delta_racks_l, &Ddelta_racks_l, &racks_left_tick,
-                       &racks_left_tick_sec);
+//        //releasing left
+//        releasing_loop_cur(&delta_racks_l, &Ddelta_racks_l, &racks_left_tick,
+//                           &racks_left_tick_sec);
 
-        //releasing right
-        releasing_loop_cur(&delta_racks_p, &Ddelta_racks_p, &racks_right_tick,
-                       &racks_right_tick_sec);
+//        //releasing right
+//        releasing_loop_cur(&delta_racks_p, &Ddelta_racks_p, &racks_right_tick,
+//                           &racks_right_tick_sec);
     }
     if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
     {
@@ -141,7 +134,7 @@ void landinggear_3()
 
     //end logic
 }
-void releasing_loop_cur(double* delta, double* D_delta, int* tick, int* sec_tick)
+void landinggear_int::releasing_loop_cur(double* delta, double* D_delta, int* tick, int* sec_tick)
 {
     if (*delta < 1)
     {
@@ -163,7 +156,7 @@ void releasing_loop_cur(double* delta, double* D_delta, int* tick, int* sec_tick
         }
     }
 }
-void intake_loop_cur(double* delta, int* tick, int* sec_tick)
+void landinggear_int::intake_loop_cur(double* delta, int* tick, int* sec_tick)
 {
     if (*delta > 0)
     {

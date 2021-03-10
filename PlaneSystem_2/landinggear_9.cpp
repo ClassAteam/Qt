@@ -1,59 +1,54 @@
 #include "landinggear_9.h"
 #include "algorithms.h"
-#include "QtWidgets"
 
-bool
-    otkaz_1_kanala,
-    otkaz_2_kanala,
-    K3_3250,
-    K4_3250,
-    K5_3250,
-    K6_3250,
-    K7_3250,
-    K8_3250,
-    K24_3250,
-    S1_3250,
-    S4_3250,
-    PPBU_1,
-    PPBU_2,
-    PR_R1,
-    PR_R2,
-    PR_R,
-    PR_VP1,
-    PR_VP2,
-    PR_VP,
-    PR_S_1,
-    PR_S_2,
-    PR_S,
-    GK_nk1,
-    GK_nk2,
-    A1X111_3250,
-    A1X112_3250,
-    A1X119_3250,
-    A1X166_3250,
-    A2X111_3250,
-    A2X112_3250,
-    A2X119_3250,
-    A2X166_3250,
-    SUS_14A_1_isp,
-    SUS_14A_2_isp,
-    SUS_14A_1_rul,
-    SUS_14A_2_rul,
-    SUS_14A_1_vzl,
-    SUS_14A_2_vzl;
-double
-    fi_zad1,
-    fi_zad2,
-    fi_zad,
-    fi_nks,
-    fi_nk,
-    V_nk,
-    Xped,
-    Pgs1{280},
-    Pgs3{280};
-
-void landinggear_9()
+void landinggear_int::landinggear_9()
 {
+    static bool
+        otkaz_1_kanala,
+        otkaz_2_kanala,
+        K3_3250,
+        K4_3250,
+        K5_3250,
+        K6_3250,
+        K7_3250,
+        K8_3250,
+        S1_3250,
+        S4_3250,
+        PPBU_1,
+        PPBU_2,
+        PR_R1,
+        PR_R2,
+        PR_R,
+        PR_VP1,
+        PR_VP2,
+        PR_VP,
+        PR_S_1,
+        PR_S_2,
+        PR_S,
+        GK_nk1,
+        GK_nk2,
+        A1X111_3250,
+        A1X112_3250,
+        A1X119_3250,
+        A1X166_3250,
+        A2X111_3250,
+        A2X112_3250,
+        A2X119_3250,
+        A2X166_3250,
+        SUS_14A_1_isp,
+        SUS_14A_2_isp,
+        SUS_14A_1_rul,
+        SUS_14A_2_rul,
+        SUS_14A_1_vzl,
+        SUS_14A_2_vzl;
+    static double
+        fi_zad1,
+        fi_zad2,
+        fi_zad,
+        fi_nk,
+        V_nk,
+        Xped;
+
     double m_pedals_to_fi(double Xped, double interval_Y1, double interval_Y2);
 
     if(ush1dpl >= 19.0)
@@ -394,10 +389,10 @@ void landinggear_9()
         }
 
         if(PPBU_1 == true
-                && A1X119_3250 == true
-                && A1X166_3250 == true
-                && otkaz_1_kanala == false
-                )
+            && A1X119_3250 == true
+            && A1X166_3250 == true
+            && otkaz_1_kanala == false
+            )
         {
             SUS_14A_1_isp = true;
         }
@@ -409,10 +404,10 @@ void landinggear_9()
         m_switch(&A1X112_3250, &SUS_14A_1_vzl);
 
         if(PPBU_2 == true
-                && A2X119_3250 == true
-                && A2X166_3250 == true
-                && otkaz_2_kanala == false
-                )
+            && A2X119_3250 == true
+            && A2X166_3250 == true
+            && otkaz_2_kanala == false
+            )
         {
             SUS_14A_2_isp = true;
         }

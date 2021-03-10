@@ -1,32 +1,5 @@
+#include "antifire_int.h"
+#include "powerdc_int.h"
 
-extern bool
-P2OBLOP,
-K24_2610,
-K50_2610,
-K51_2610,
-K53_2610,
-K57_2610,
-K58_2610,
-K60_2610,
-K61_2610,
-F25_2610,
-F35_2610,
-F45_2610,
-F55_2610,
-F65_2610,
-F72_2610,
-F82_2610,
-F132_2610,
-F142_2610,
-K50_2610,
-K51_2610,
-K53_2610,
-K54_2610;
-extern int
-F7_2610,
-F8_2610;
-extern double
-ush1dpl,
-ush1dpp;
+extern powerdc_int powerdc_inst;
 
-void antifire_2();

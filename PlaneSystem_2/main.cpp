@@ -6,7 +6,6 @@
 #include "hydro_int.h"
 #include "brakes_int.h"
 #include "wingsmech_int.h"
-#include "landinggear_int.h"
 #include "emergencyalarm_int.h"
 #include "cabinlighting_int.h"
 #include "antiicing_int.h"
@@ -24,15 +23,13 @@ int main(int argc, char *argv[])
     brakes.show();
     wingsmech_int wingsmech;
     wingsmech.show();
-    landinggear_int landinggear;
-    landinggear.show();
     emergencyalarm_int emergencyalarm;
     emergencyalarm.show();
     cabinlighting cabinlighting;
     cabinlighting.show();
     presure_int presure;
     presure.show();
-    powerdc_ind powerdc;
+    powerdc_int powerdc;
     powerdc.show();
     hydro_int hydro;
     hydro.show();

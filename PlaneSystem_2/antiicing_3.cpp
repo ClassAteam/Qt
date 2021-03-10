@@ -45,11 +45,6 @@ int
     Counter_warmup_k40,
     Counter_warmup_k46;
 
-double
-    ush1l,
-    ush2l,
-    ush1p,
-    ush2p;
 
 void antiicing_3()
 {

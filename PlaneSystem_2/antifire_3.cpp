@@ -1,25 +1,9 @@
 #include "antifire_3.h"
 
-bool
-    PSA10_1,
-    PSA10_2,
-    PSA19_1,
-    PSA19_2,
-    PKO,
-    PO1och,
-    K80_2610,
-    S10_2610,
-    lzh_srab_pereg_1_dv,
-    lzh_srab_pereg_2_dv,
-    lzh_srab_pereg_3_dv,
-    lzh_srab_pereg_4_dv;
-double
-    ushap;
-
-void antifire_3()
+void antifire_int::antifire_3()
 {
     ///////////////////////////////1st engine check
-    if (ushal >= 18.0)
+    if (powerdc_inst.ushal >= 18.0)
     {
 
         if (K50_2610 || K51_2610 || lzh_srab_pereg_1_dv == true)
@@ -33,7 +17,7 @@ void antifire_3()
 
     }
 
-    if ((ushal >= 18.0) && (K50_2610 == true) && (K51_2610 == true))
+    if ((powerdc_inst.ushal >= 18.0) && (K50_2610 == true) && (K51_2610 == true))
     {
         bss_inst.BSS811X1n = true;
     }
@@ -42,7 +26,7 @@ void antifire_3()
         bss_inst.BSS811X1n = false;
     }
 
-    if (ushap >= 18)
+    if (powerdc_inst.ushap >= 18)
     {
         if(K50_2610 == true || K51_2610 == true)
         {
@@ -60,7 +44,7 @@ void antifire_3()
         PSA10_1 = false;
     }
 
-    if (ushap >= 18 && F25_2610 == true)
+    if (powerdc_inst.ushap >= 18 && F25_2610 == true)
     {
         bss_inst.BSS811X1x = true;
     }
@@ -69,7 +53,7 @@ void antifire_3()
         bss_inst.BSS811X1x = false;
     }
     //////////////////////////////2nd engine check
-    if (ushal >= 18.0)
+    if (powerdc_inst.ushal >= 18.0)
     {
 
         if (K53_2610 || K54_2610 || lzh_srab_pereg_2_dv == true)
@@ -83,7 +67,7 @@ void antifire_3()
 
     }
 
-    if ((ushal >= 18.0) && (K53_2610 == true) && (K54_2610 == true))
+    if ((powerdc_inst.ushal >= 18.0) && (K53_2610 == true) && (K54_2610 == true))
     {
         bss_inst.BSS811X1r = true;
     }
@@ -92,7 +76,7 @@ void antifire_3()
         bss_inst.BSS811X1r = false;
     }
 
-    if (ushap >= 18)
+    if (powerdc_inst.ushap >= 18)
     {
         if(K53_2610 == true || K54_2610 == true)
         {
@@ -110,7 +94,7 @@ void antifire_3()
         PSA10_2 = false;
     }
 
-    if (ushap >= 18 && F35_2610 == true)
+    if (powerdc_inst.ushap >= 18 && F35_2610 == true)
     {
         bss_inst.BSS811X1z = true;
     }
@@ -119,7 +103,7 @@ void antifire_3()
         bss_inst.BSS811X1z = false;
     }
     //////////////////////////////3rd engine check
-    if (ushap >= 18.0)
+    if (powerdc_inst.ushap >= 18.0)
     {
 
         if (K57_2610 || K58_2610 || lzh_srab_pereg_3_dv == true)
@@ -133,7 +117,7 @@ void antifire_3()
 
     }
 
-    if ((ushap >= 18.0) && (K57_2610 == true) && (K58_2610 == true))
+    if ((powerdc_inst.ushap >= 18.0) && (K57_2610 == true) && (K58_2610 == true))
     {
         bss_inst.BSS812X5h = true;
     }
@@ -142,7 +126,7 @@ void antifire_3()
         bss_inst.BSS812X5h = false;
     }
 
-    if (ushal >= 18)
+    if (powerdc_inst.ushal >= 18)
     {
         if(K57_2610 == true || K58_2610 == true)
         {
@@ -160,7 +144,7 @@ void antifire_3()
         PSA19_1 = false;
     }
 
-    if (ushal >= 18 && F55_2610 == true)
+    if (powerdc_inst.ushal >= 18 && F55_2610 == true)
     {
         bss_inst.BSS913X3E = true;
     }
@@ -169,7 +153,7 @@ void antifire_3()
         bss_inst.BSS913X3E = false;
     }
     //////////////////////////////4th engine check
-    if (ushap >= 18.0)
+    if (powerdc_inst.ushap >= 18.0)
     {
 
         if (K60_2610 || K61_2610 || lzh_srab_pereg_4_dv == true)
@@ -183,7 +167,7 @@ void antifire_3()
 
     }
 
-    if ((ushap >= 18.0) && (K60_2610 == true) && (K61_2610 == true))
+    if ((powerdc_inst.ushap >= 18.0) && (K60_2610 == true) && (K61_2610 == true))
     {
         bss_inst.BSS812X5n = true;
     }
@@ -192,7 +176,7 @@ void antifire_3()
         bss_inst.BSS812X5n = false;
     }
 
-    if (ushal >= 18)
+    if (powerdc_inst.ushal >= 18)
     {
         if(K60_2610 == true || K61_2610 == true)
         {
@@ -210,7 +194,7 @@ void antifire_3()
         PSA19_2 = false;
     }
 
-    if (ushal >= 18 && F65_2610 == true)
+    if (powerdc_inst.ushal >= 18 && F65_2610 == true)
     {
         bss_inst.BSS913X3G = true;
     }
@@ -228,7 +212,7 @@ void antifire_3()
         PKO = false;
     }
 
-    if (ushal >= 18.0 && K24_2610 == true)
+    if (powerdc_inst.ushal >= 18.0 && K24_2610 == true)
     {
         bss_inst.BSS811X1B = true;
     }
@@ -237,7 +221,7 @@ void antifire_3()
         bss_inst.BSS811X1B = false;
     }
 
-    if ((ushal >= 18) && F45_2610 == true)
+    if ((powerdc_inst.ushal >= 18) && F45_2610 == true)
     {
         bss_inst.BSS811X1VV = true;
         bss_inst.BSS838X7C = true;

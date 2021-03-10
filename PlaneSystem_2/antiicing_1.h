@@ -1,12 +1,7 @@
+#include "antiicing_int.h"
+#include "powerdc_int.h"
+
+extern powerdc_int powerdc_inst;
+
 extern const double
 TICK;
-
-extern bool
-P2OBLOP,
-K24_3230,
-K25_3230,
-K26_3230;
-extern double
-ushap;
-
-void antiicing_1();

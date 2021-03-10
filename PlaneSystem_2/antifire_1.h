@@ -1,2 +1,5 @@
+#include "antifire_int.h"
+#include "powerdc_int.h"
 
-void antifire_1();
+extern powerdc_int powerdc_inst;
+

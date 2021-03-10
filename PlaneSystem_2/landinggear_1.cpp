@@ -1,51 +1,7 @@
 #include "landinggear_1.h"
 #include "algorithms.h"
-#include "QtWidgets"
 
-bool
-    left_released,
-    right_released,
-    nose_released,
-    left_intaken,
-    right_intaken,
-    nose_intaken,
-    gk_oovsh,
-    gk_vsh,
-    gk_ush,
-    gk_avl,
-    gk_avp,
-    gk_avn;
-
-int
-    left_tick,
-    right_tick,
-    nose_tick,
-    left_tick_sec,
-    right_tick_sec,
-    nose_tick_sec;
-
-double
-    Ksho{0.2},
-    delta_sh_l{1},
-    delta_sh_p{1},
-    delta_sh_n{1},
-    delta_stv_l{90},
-    delta_stv_p{90},
-    delta_stv_n{90},
-    Ddelta_stv, //changing state by seconds
-    Ddelta_stv_l,
-    Ddelta_stv_p,
-    Ddelta_stv_n,
-    Pgs2{280.0},
-    V_bal_l{44100},
-    V_bal_p{44100},
-    V_bal_n{37000},
-    P_bal_l{150},
-    P_bal_p{150},
-    P_bal_per{150};
-
-
-void landinggear_1()
+void landinggear_int::landinggear_1()
 {
     if (gk_oovsh == false)
     {
@@ -176,7 +132,7 @@ void landinggear_1()
 
 }
 
-void releasing_loop(double* delta, double* D_delta,
+void landinggear_int::releasing_loop(double* delta, double* D_delta,
                                         int* tick, int* sec_tick, bool* clue)
 {
     if (*delta < 90)
@@ -200,7 +156,7 @@ void releasing_loop(double* delta, double* D_delta,
         }
     }
 }
-void intake_loop(double* delta, int* tick,
+void landinggear_int::intake_loop(double* delta, int* tick,
                                      int* sec_tick, bool* clue)
 {
     if (*delta > 0)
@@ -224,7 +180,7 @@ void intake_loop(double* delta, int* tick,
         }
     }
 }
-void balloon_presure( double* P_bal)
+void landinggear_int::balloon_presure( double* P_bal)
 {
     double delta_V_bal;
     double V_bal;

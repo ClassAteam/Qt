@@ -34,8 +34,7 @@ double
     puksgs1,
     puksgs2,
     puksgs3,
-    puksgs4,
-    usho1l;
+    puksgs4;
 
 
 void hydro_7()

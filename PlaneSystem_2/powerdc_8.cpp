@@ -1,14 +1,7 @@
 #include "powerdc_8.h"
 
-bool
-    otk_pereg_gen1,
-    otk_pereg_gen2,
-    otk_pereg_gen3,
-    otk_pereg_gen4,
-    otk_pereg_akk1,
-    otk_pereg_akk2;
 
-void powerdc_8()
+void powerdc_int::powerdc_8()
 {
     if(purg27lk5)
         bss_inst.BSS837X1d = true;

@@ -1,21 +1,9 @@
 #include "antiicing_1.h"
-#include "QtWidgets"
 
-bool
-    PZ1,
-    PZ2,
-    PZ3,
-    K2_3020,
-    K51_3020,
-    F12_3020,
-    F110_3020,
-    F19_3020,
-    F125_3020,
-    F134_3020,
-    K26_3230,
-    K27_3230,
-    otkaz_vozduhozabor;
-int
+void antiicing_int::antiicing_1()
+{
+
+static int
     S1_3020,
     S6_3020,
     PZ1_tick,
@@ -25,14 +13,8 @@ int
     PZ2_sec,
     PZ3_sec,
     Counter_mkam;
-
-double
-    usho1p,
-    M;
-
-void antiicing_1()
-{
     Counter_mkam++;
+
     F12_3020 = false;
     K51_3020 = false;
 
@@ -53,7 +35,7 @@ void antiicing_1()
 
     K2_3020 = false;
 
-    if (ushap >= 18.0)
+    if (powerdc_inst.ushap >= 18.0)
     {
 
         if (!K51_3020)

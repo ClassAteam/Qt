@@ -1,33 +1,6 @@
 #include "powerdc_15.h"
 
-enum s20_pbapsh{apsh1, apsh2, apsh3, apsh5, apsh6};
-
-int
-    s20_2420{0};
-bool
-    purglk11,
-    purgpk11,
-    pbapsh5,
-    pbapsh6,
-    otk_pos1000,
-    k12_2420,
-    k18_2420,
-    k34_2420,
-    s7_2420,
-    s17_2420,
-    s18_2420,
-    s19_2420,
-    s21_2420;
-double
-    ush6pp,
-    ushp5pl,
-    ushpzl,
-    ushpzp,
-    upos,
-    fpos;
-
-
-void powerdc_15()
+void powerdc_int::powerdc_15()
 {
     static int
         tick_apsh5,
@@ -132,28 +105,28 @@ void powerdc_15()
     else
         pbapsh6 = false;
 
-    switch (s20_2420)
+    switch (s20_2430)
     {
-    case apsh1:
+    case s20_2430::apsh1:
         apsh_switch(ushavP[0][0], k13_2420, pbapsh1, purglk9);
         break;
-    case apsh2:
+    case s20_2430::apsh2:
         apsh_switch(ushavP[1][0], k16_2420, pbapsh2, purgpk9);
         break;
-    case apsh3:
+    case s20_2430::apsh3:
         apsh_switch(ushpts[0], k14_2420, pbapsh3, purglk10);
         break;
-    case apsh5:
+    case s20_2430::apsh5:
         apsh_switch(ushpos[0], k31_2420, pbapsh5, purglk11);
         break;
-    case apsh6:
+    case s20_2430::apsh6:
         apsh_switch(ushpos[1], k34_2420, pbapsh6, purgpk11);
         break;
     }
 
 
 }
-void apsh_switch(double &ushavla, bool &knumber, bool &pba, bool &purg)
+void powerdc_int::apsh_switch(double &ushavla, bool &knumber, bool &pba, bool &purg)
 {
     if(ushavla >= 100.0 && !knumber && (s17_2420 || s18_2420 || s19_2420 ))
         pba = true;

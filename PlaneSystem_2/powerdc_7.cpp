@@ -1,21 +1,9 @@
 #include "powerdc_7.h"
 
-enum
-    s16_2430_pos{akk1, akk2, avar1, avar2, sh1lev, sh2lev, sh1prav, sh2prav};
-enum
-    s17_2430_pos{akk1_rap1, akk2_rap2, vsu};
-int
-    s16_2430,
-    s17_2430;
-
-double
-    upr,
-    ipr;
-
-void powerdc_7() //7
+void powerdc_int::powerdc_7() //7
 {
     //start logic
-    if(s17_2430 == akk1_rap1)
+    if(s17_2430 == s17_2430::akk1_rap1)
     {
         if(purg27lk5)
         {
@@ -35,7 +23,7 @@ void powerdc_7() //7
     }
     else
     {
-        if(s17_2430 == akk2_rap2)
+        if(s17_2430 == s17_2430::akk2_rap2)
         {
             if(purg27pk5)
             {
@@ -55,9 +43,9 @@ void powerdc_7() //7
         }
         else
         {
-            if(s17_2430 == vsu)
+            if(s17_2430 == s17_2430::vsu)
             {
-                ipr = ivsu;
+                ipr = ivsu_27;
             }
             else
             {
@@ -68,28 +56,28 @@ void powerdc_7() //7
 
     switch(s16_2430)
     {
-    case akk1:
+    case s16_2430::akk1:
         upr = uak1;
         break;
-    case akk2:
+    case s16_2430::akk2:
         upr = uak2;
         break;
-    case avar1:
+    case s16_2430::avar1:
         upr = ushal;
         break;
-    case avar2:
+    case s16_2430::avar2:
         upr = ushap;
         break;
-    case sh1lev:
+    case s16_2430::sh1lev:
         upr = ush1l;
         break;
-    case sh2lev:
+    case s16_2430::sh2lev:
         upr = ush2l;
         break;
-    case sh1prav:
+    case s16_2430::sh1prav:
         upr = ush1p;
         break;
-    case sh2prav:
+    case s16_2430::sh2prav:
         upr = ush2p;
         break;
     default:

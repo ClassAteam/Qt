@@ -1,10 +1,10 @@
 #include "powerdc_int.h"
 
 
-powerdc_ind::powerdc_ind(QWidget *parent)
+powerdc_int::powerdc_int(QWidget *parent)
     : interfacing(parent)
 {
-    powerdc_ind::setWindowTitle("powerdc");
+    powerdc_int::setWindowTitle("powerdc");
     createLabelValue(&upr, "upr");
     createLabelValue(&ipr, "ipr");
 //    createLabelClue(&OtkazGen1PostT, "OTKAZ GEN 1 POStT");
@@ -46,11 +46,11 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&ug2, "ug2");
     createLabelValue(&ug3, "ug3");
     createLabelValue(&ug4, "ug4");
-    createLabelValue(&uzg1, "uzg1");
-    createLabelValue(&uzg2, "uzg2");
-    createLabelValue(&uzg3, "uzg3");
-    createLabelValue(&uzg4, "uzg4");
-    createLabelValue(&uzgvsu, "uzgvsu");
+    createLabelValue(&uzg1_27, "uzg1");
+    createLabelValue(&uzg2_27, "uzg2");
+    createLabelValue(&uzg3_27, "uzg3");
+    createLabelValue(&uzg4_27, "uzg4");
+    createLabelValue(&uzgvsu_27, "uzgvsu");
     createLabelValue(&ug1r, "ug1r");
     createLabelValue(&ug2r, "ug2r");
     createLabelValue(&ug3r, "ug3r");
@@ -155,7 +155,7 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createLabelValue(&urap2, "urap2");
     createLabelValue(&usho1l, "usho1l");
     createLabelValue(&inpp27, "inpp27");
-    createLabelValue(&ivsu, "ivsu");
+    createLabelValue(&ivsu_27, "ivsu");
     createLabelValue(&irap1, "irap1");
     createLabelValue(&irap2, "irap2");
     createLabelValue(&insh1dpl, "insh1dpl");
@@ -464,7 +464,7 @@ powerdc_ind::powerdc_ind(QWidget *parent)
     createRedButton(&feed_global_inst.otk_overload_altgen3, "peregr_gen3");
     createRedButton(&feed_global_inst.otk_overload_altgen4, "peregr_gen4");
 }
-void powerdc_ind::updateLogic()
+void powerdc_int::updateLogic()
 {
     powerdc_1();
     powerdc_2_3();
@@ -481,3 +481,5 @@ void powerdc_ind::updateLogic()
     powerdc_15();
     powerdc_20();
 }
+
+powerdc_int powerdc_inst;

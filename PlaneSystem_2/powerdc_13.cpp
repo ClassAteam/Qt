@@ -1,20 +1,6 @@
 #include "powerdc_13.h"
-bool
-    s2_2420,
-    s9_2420,
-    pvrap,
-    pprap,
-    purglk2,
-    purgpk3,
-    purglk7,
-    purgpk7,
-    purglk8,
-    pp400[2],
-    pss400;
-double
-    urap,
-    frap;
-void powerdc_13()
+
+void powerdc_int::powerdc_13()
 {
     if(pvrap && vkh < 0.1)
     {

@@ -1,61 +1,8 @@
 #include "powerdc_11.h"
 
-bool
-    k21_2420,
-    k22_2420,
-    k23_2420,
-    k24_2420,
-    s1_7710,
-    s2_7710,
-    s3_7710,
-    s4_7710,
-    s3_2420,
-    s6_2420,
-    s11_2420,
-    s14_2420,
-    popg1,
-    popg2,
-    popg3,
-    popg4,
-    pvksku[4],
-    otkGenPerT1,
-    otkGenPerT2,
-    otkGenPerT3,
-    otkGenPerT4,
-    otkGenPerVsu,
-    otkPadDavlMaslPpo1G,
-    otkPadDavlMaslPpo2G,
-    otkPadDavlMaslPpo3G,
-    otkPadDavlMaslPpo4G,
-    popp01,
-    popp02,
-    popp03,
-    popp04,
-    f92_2420,
-    f142_2420,
-    f242_2420,
-    f282_2420,
-    k25_2420,
-    k26_2420,
-    k27_2420,
-    k28_2420;
-namespace alt{
-double
-    fg[5] = {0},
-    ng1, ng2, ng3, ng4, ngvsu,
-    ivg1, ivg2, ivg3, ivg4, ivgvsu,
-    ing1, ing2, ing3, ing4, ingvsu, ingrap,
-    divg1, divg2, divg3, divg4, divgvsu,
-    ug1, ug2, ug3, ug4, ugvsu,
-    ug1r, ug2r, ug3r, ug4r, ugvsur,
-    ug1z{118}, ug2z{117}, ug3z{115}, ug4z{116}, ugvsuz{117},
-    ugP[5][3]; //generator's phases
-}
-
-
 allElCons consumers_global_inst;
 
-void powerdc_11()
+void powerdc_int::powerdc_11()
 {
 //    static bool
 //        f9_2420{true},
@@ -98,13 +45,13 @@ consumers_global_inst.makeCorresCurr();
     bool* s3_pool[] = {&s3_2420, &s6_2420, &s11_2420, &s14_2420};
     int* tick_g1_pool[] = {&tick_g1, &tick_g2, &tick_g3, &tick_g4};
     double* nvd_pool[] = {&nVDfirst2[0], &nVDfirst2[1], &nVDsecond2[0], &nVDsecond2[1], &nvsu};
-    double* ng_pool[] = {&alt::ng1, &alt::ng2, &alt::ng3, &alt::ng4, &alt::ngvsu};
-    double* ugr_pool[] = {&alt::ug1r, &alt::ug2r, &alt::ug3r, &alt::ug4r, &alt::ugvsur};
-    double* ugz_pool[] = {&alt::ug1z, &alt::ug2z, &alt::ug3z, &alt::ug4z, &alt::ugvsuz};
-    double* ug_pool[] = {&alt::ug1, &alt::ug2, &alt::ug3, &alt::ug4, &alt::ugvsu};
-    double* ivg_pool[] = {&alt::ivg1, &alt::ivg2, &alt::ivg3, &alt::ivg4, &alt::ivgvsu};
-    double* divg_pool[] = {&alt::divg1, &alt::divg2, &alt::divg3, &alt::divg4, &alt::divgvsu};
-    double* ing_pool[] = {&alt::ing1, &alt::ing2, &alt::ing3, &alt::ing4, &alt::ingvsu};
+    double* ng_pool[] = {&ng1, &ng2, &ng3, &ng4, &ngvsu};
+    double* ugr_pool[] = {&ug1r, &ug2r, &ug3r, &ug4r, &ugvsur};
+    double* ugz_pool[] = {&ug1z, &ug2z, &ug3z, &ug4z, &ugvsuz};
+    double* ug_pool[] = {&ug1, &ug2, &ug3, &ug4, &ugvsu};
+    double* ivg_pool[] = {&ivg1, &ivg2, &ivg3, &ivg4, &ivgvsu};
+    double* divg_pool[] = {&divg1, &divg2, &divg3, &divg4, &divgvsu};
+    double* ing_pool[] = {&ing1, &ing2, &ing3, &ing4, &ingvsu};
     double* ushap_pool[] = {&ushap, &ushap, &ushal, &ushal};
     double* ushal_pool[] = {&ushal, &ushal, &ushap, &ushap};
     double* ushdpl_pool[] = {&ush1dpl, &ush1dpl, &ush1dpp, &ush1dpp};
@@ -278,10 +225,10 @@ consumers_global_inst.makeCorresCurr();
             *ug_pool[y] = *ug_pool[y] + (*ugr_pool[y] - *ug_pool[y]) * kg1[y];
         }
 
-        alt::ugP[y][0] = *ug_pool[y];
-        alt::ugP[y][1] = *ug_pool[y] - 1;
-        alt::ugP[y][2] = *ug_pool[y] - 2;
+        ugP[y][0] = *ug_pool[y];
+        ugP[y][1] = *ug_pool[y] - 1;
+        ugP[y][2] = *ug_pool[y] - 2;
 
-        alt::fg[y] = m_2_L_intervals(*ug_pool[y], 0, 115, 121, 0, 395, 405);
+        fg[y] = m_2_L_intervals(*ug_pool[y], 0, 115, 121, 0, 395, 405);
     }
 }

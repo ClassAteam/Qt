@@ -1,55 +1,14 @@
 #include "antifire_1.h"
 
-bool K15_2610,
-    K16_2610,
-    K19_2610,
-    K20_2610,
-    K23_2610,
-    K24_2610,
-    K25_2610,
-    K26_2610,
-    K27_2610,
-    K28_2610,
-    K50_2610,
-    K53_2610,
-    K51_2610,
-    K54_2610,
-    K57_2610,
-    K58_2610,
-    K60_2610,
-    K61_2610,
-    F25_2610,
-    F35_2610,
-    F45_2610,
-    F55_2610,
-    F65_2610,
-    F72_2610,
-    F132_2610,
-    F142_2610;
-double
-    ush1dpl,
-    ush1dpp,
-    ushal;
-int
-    F7_2610,
-    F8_2610,
-    F82_2610,
-    S3_2610,
-    S4_2610,
-    S5_2610,
-    S6_2610,
-    S7_2610,
-    S8_2610,
-    S9_2610;
 
 
-void antifire_1()
+void antifire_int::antifire_1()
 {
 
-    if (S9_2610 == 1)
+    if (S9_2610)
     {
         // Voltage check
-        if ((ush1dpl >= 16.0) && (F8_2610 == 1))
+        if ((powerdc_inst.ush1dpl >= 16.0) && (F8_2610 == 1))
         {
             F82_2610 = 1;
         }
@@ -58,7 +17,7 @@ void antifire_1()
             F82_2610 = 0;
         }
 
-        if ((ush1dpp >= 16.0) && (F7_2610 == true))
+        if ((powerdc_inst.ush1dpp >= 16.0) && (F7_2610 == true))
         {
             F72_2610 = true;
         }
@@ -77,7 +36,7 @@ void antifire_1()
     if ((F82_2610 == 1) || (F72_2610 == 1))					//009
     {
 
-        if (ushal >= 16.0)
+        if (powerdc_inst.ushal >= 16.0)
         {
             F132_2610 = true;
             F142_2610 = true;
@@ -294,10 +253,10 @@ void antifire_1()
     else
     {
 
-        if (F142_2610 == true)
+        if (F142_2610)
         {
 
-            if (K19_2610 == true)
+            if (K19_2610)
             {
                 F35_2610 = true;
             }
@@ -315,7 +274,7 @@ void antifire_1()
     }
 
     //F4-5 contact
-    if (F132_2610 == true)
+    if (F132_2610)
     {
         if (K24_2610 || K23_2610 == true)
         {
@@ -346,7 +305,7 @@ void antifire_1()
     }
 
     //F5-5 contact
-    if (F142_2610 == true)
+    if (F142_2610)
     {
 
         if (K26_2610 == true || K25_2610 == true)

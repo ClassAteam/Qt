@@ -1,25 +1,8 @@
 #include "powerdc_12.h"
 
-bool
-    purglk6,
-    purgpk6,
-    pvkgen[5]{false},
-    pvkgen2,
-    pvkgen3,
-    pvkgen4,
-    pzvg[5]{false},
-    purgk1,
-    purgk21,
-    purgk31,
-    purgk41,
-    purglk4,
-    purgpk4,
-    purglk5,
-    purgpk5,
-    prgen[5]{false},
-    pog[4]{false},
-    pchrl,
-    pchrp,
+void powerdc_int::powerdc_12()
+{
+    static bool
     k1_2430,
     s1_2420,
     s5_2420,
@@ -28,12 +11,9 @@ bool
     s4_2420,
     s12_2420,
     s8_2420;
-
-void powerdc_12()
-{
     static int
         tickG[5]{0};
-    double* ug_pool[] = {&alt::ug1, &alt::ug2, &alt::ug3, &alt::ug4, &alt::ugvsu};
+    double* ug_pool[] = {&ug1, &ug2, &ug3, &ug4, &ugvsu};
     double* ushal_pool[] = {&ushal, &ushal, &ushap, &ushap};
     bool* s1_pool[] = { &s1_2420, &s5_2420, &s10_2420, &s13_2420};
     bool* otk_pool[] = {&otkGenPerT1, &otkGenPerT2, &otkGenPerT3, &otkGenPerT4};
@@ -48,7 +28,7 @@ void powerdc_12()
         }
         else
         {
-            if(alt::fg[y] <= 407.0 && alt::fg[y] >= 370.0)
+            if(fg[y] <= 407.0 && fg[y] >= 370.0)
             {
                 if(*ug_pool[y] >= 104.0 && *ug_pool[y] <= 129.0)
                 {

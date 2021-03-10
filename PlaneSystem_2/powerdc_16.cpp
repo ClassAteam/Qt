@@ -1,20 +1,6 @@
 #include "powerdc_16.h"
 
-double
-    ugvsuP[3],                  //vsu generator voltage by phases
-    ushpP[2][3],                //toggle bus voltages by phases
-    ushavP[4][3],               //emergency buses voltages by phases
-    ushgP[4][3],                //a generator bus voltages by phases
-    urapP[3],                   //rap bus voltahe by phases
-    ushpos[2],                  // voltage of converter3's buses
-    ushpts[3],                  // voltage of converter1's bus by phases
-    fshg[5],                    //frequency of 4 generators and vsu bases
-    fshp[2],                    //frequency of switching buses
-    fshpos[2],                  //frequency of convreter3's buses
-    fshpts,
-    fshav[4];                   //frequency of emergency buses
-
-void powerdc_16()
+void powerdc_int::powerdc_16()
 {
     static int
         tick[4]{};
@@ -34,9 +20,9 @@ void powerdc_16()
         {
             if(*purgk1_pool[i])
             {
-                ushgP[i][y] = alt::ugP[i][y];
+                ushgP[i][y] = ugP[i][y];
 
-                fshg[i] = alt::fg[i];
+                fshg[i] = fg[i];
                 tick[i] = 0;
             }
             else
@@ -44,9 +30,9 @@ void powerdc_16()
                 if(*purgk21_pool[i])
                 {
                     if(i < 1)
-                        ushgP[i][y] = alt::ugP[i + 1][y];
+                        ushgP[i][y] = ugP[i + 1][y];
                     else
-                        ushgP[i][y] = alt::ugP[i - 1][y];
+                        ushgP[i][y] = ugP[i - 1][y];
                 }
                 else
                 {
@@ -74,8 +60,8 @@ void powerdc_16()
                     {
                         if(purglk2)
                         {
-                            ushgP[i][y] = alt::ugP[4][y];
-                            fshg[i] = alt::fg[4];
+                            ushgP[i][y] = ugP[4][y];
+                            fshg[i] = fg[4];
                         }
                         else
                         {
@@ -103,16 +89,16 @@ void powerdc_16()
 
             if(*purgk41_pool[i])
             {
-                ushgP[i + 2][y] = alt::ugP[i + 2][y];
-                fshg[i + 2] = alt::fg[i + 2];
+                ushgP[i + 2][y] = ugP[i + 2][y];
+                fshg[i + 2] = fg[i + 2];
                 tick[i + 2] = 0;
             }
             else
             {
                 if(*purgk31_pool[i])
                 {
-                    ushgP[i + 2][y] = alt::ugP[i + 2][y];
-                    fshg[i + 2] = alt::fg[i + 2];
+                    ushgP[i + 2][y] = ugP[i + 2][y];
+                    fshg[i + 2] = fg[i + 2];
                 }
                 else
                 {
@@ -148,8 +134,8 @@ void powerdc_16()
                         {
                             if(purglk2)
                             {
-                                ushgP[i + 2][y] = alt::ugP[4][y];
-                                fshg[i + 2] = alt::fg[4];
+                                ushgP[i + 2][y] = ugP[4][y];
+                                fshg[i + 2] = fg[4];
                                 tick[i + 2] = 0;
                             }
                             else
@@ -185,8 +171,8 @@ void powerdc_16()
                     {
                         if(purglk2)
                         {
-                            ushgP[i + 2][y] = alt::ugP[4][y];
-                            fshg[i + 2] = alt::fg[4];
+                            ushgP[i + 2][y] = ugP[4][y];
+                            fshg[i + 2] = fg[4];
                         }
                     }
                 }
@@ -239,26 +225,26 @@ void powerdc_16()
                 {
                     if(i == 0)
                     {
-                        ushavP[2][y] = alt::ugP[0][y];
-                        fshav[2] = alt::fg[0];
+                        ushavP[2][y] = ugP[0][y];
+                        fshav[2] = fg[0];
                     }
                     else
                     {
-                        ushavP[3][y] = alt::ugP[3][y];
-                        fshav[3] = alt::fg[3];
+                        ushavP[3][y] = ugP[3][y];
+                        fshav[3] = fg[3];
                     }
                 }
                 else
                 {
                     if(i == 0)
                     {
-                        ushavP[2][y] = alt::ugP[1][y];
-                        fshav[2] = alt::fg[1];
+                        ushavP[2][y] = ugP[1][y];
+                        fshav[2] = fg[1];
                     }
                     else
                     {
-                        ushavP[3][y] = alt::ugP[2][y];
-                        fshav[3] = alt::fg[2];
+                        ushavP[3][y] = ugP[2][y];
+                        fshav[3] = fg[2];
                     }
                 }
             }

@@ -62,10 +62,6 @@ wingsmech_int::wingsmech_int(QWidget *parent)
     createLabelClue(&prr2kpchk, "prr2kpchk");
     createLabelClue(&por1kpchk, "por1kpchk");
     createLabelClue(&por2kpchk, "por2kpchk");
-    createLabelClue(&pgs1, "pgs1");
-    createLabelClue(&pgs2, "pgs2");
-    createLabelClue(&pgs3, "pgs3");
-    createLabelClue(&pgs4, "pgs4");
     createRedButton(&s1_2790, "s1_2790");
 
     createRadioButton(&s2_2790, "s2_2790_menshe", false);

@@ -1,13 +1,8 @@
-#include "algorithms.h"
-#include "bss.h"
+//#include "algorithms.h"
+//#include "bss.h"
+//#include "emergencyalarm_int.h"
+//#include "powerdc_int.h"
 
-extern double
-    ush1dpl,
-    ush1dpp,
-    ush2dpl,
-    ush2dpp;
-
-void emergencyalarm_2();
-
-extern bss bss_inst;
+//extern bss bss_inst;
+//extern powerdc_int powerdc_inst;
 

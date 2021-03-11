@@ -1,8 +1,11 @@
-#pragma once
-#include "landinggear_int.h"
+//#pragma once
+//#include "landinggear_int.h"
+//#include "hydro_int.h"
 
-extern const double
-TICK;
+//extern hydro_int hydro_inst;
 
-extern double ush2dpl;
+//extern const double
+//TICK;
+
+//extern double ush2dpl;
 

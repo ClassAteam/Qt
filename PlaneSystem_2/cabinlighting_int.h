@@ -1,24 +1,27 @@
-#pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
-#include "interfacing.h"
-#include "cabinlighting_1.h"
-#include "cabinlighting_2.h"
-#include "cabinlighting_3.h"
-#include "cabinlighting_4.h"
-#include "cabinlighting_5.h"
+//#pragma once
+//#include "interfacing.h"
 
+//class cabinlighting_int : public interfacing
+//{
+//    Q_OBJECT
 
-class cabinlighting : public interfacing
-{
-    Q_OBJECT
+//public:
 
-public:
-    cabinlighting(QWidget *parent = nullptr);
-    virtual void updateLogic();
+//bool
+//    K32_3230,
+//    PVMV10,
+//    PVMN10,
+//    PVMV100,
+//    PVMN100;
 
-};
+//public:
+//    cabinlighting_int(QWidget *parent = nullptr);
+//    virtual void updateLogic();
+
+//    void cabinlighting_1();
+//    void cabinlighting_2();
+//    void cabinlighting_3();
+//    void cabinlighting_4();
+//    void cabinlighting_5();
+
+//};

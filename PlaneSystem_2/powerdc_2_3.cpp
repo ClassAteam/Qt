@@ -136,7 +136,7 @@ void powerdc_int::powerdc_2_3() //2 //3
             }
             else
             {
-                if(s13_2430 == s13_2430_pos::air)
+                if(s13_2430 == s13_2430::air)
                     purg27pk3 = true;
             }
         }

@@ -1,31 +1,14 @@
 #include "algorithms.h"
 #include "wingsmech_4.h"			//actually 5th sheet
 
-double
-XL_120,
-XP_121,
-XTR_122,
-X_1_pk,
-X_3_pk,
-delta_pr,
-delta_pr_116,
-delta_pr_l_114,
-delta_pr_p_115,
-delta_ruk_123,
-delta_ruz_113,
-delta_z_112,
-delta_z_1_pk,
-delta_z_3_pk,
-delta_z_l_110,
-delta_z_p_111;
 
-void wingsmech_4()
+void wingsmech_int::wingsmech_4()
 {
-    delta_z = ((delta_z_l + delta_z_p) / 2);
+    landinggear_inst.delta_z = ((delta_z_l + delta_z_p) / 2);
 
-    if(ushap >= 18 && delta_z > 0)
+    if(powerdc_inst.ushap >= 18 && landinggear_inst.delta_z > 0)
     {
-        if(delta_z > 22)
+        if(landinggear_inst.delta_z > 22)
         {
             bss_inst.BSS824X1KK = true;
             bss_inst.BSS824X1MM = false;
@@ -35,12 +18,12 @@ void wingsmech_4()
             bss_inst.BSS824X1KK = false;
             bss_inst.BSS824X1MM = true;
         }
-        if(delta_z > 28)
+        if(landinggear_inst.delta_z > 28)
         {
             bss_inst.BSS824X3C = true;
             bss_inst.BSS824X1KK = false;
         }
-        if(delta_z > 38)
+        if(landinggear_inst.delta_z > 38)
         {
             bss_inst.BSS824X1A = true;
             bss_inst.BSS824X3C = false;
@@ -62,7 +45,7 @@ void wingsmech_4()
     bss_inst.BSS825X7A = false;
     bss_inst.BSS825X5J = false;
 
-    if(ush1dpl > 18)
+    if(powerdc_inst.ush1dpl > 18)
     {
         delta_pr = ((delta_pr_l + delta_pr_p) / 2);
 
@@ -81,15 +64,15 @@ void wingsmech_4()
     X_1_pk = X_L;
     X_3_pk = X_P;
 
-    if(ush1dpl >= 18)
+    if(powerdc_inst.ush1dpl >= 18)
     {
         XL_120 = X_L;
         XP_121 = X_P;
         XTR_122 = m_3_L_intervals(X_PCHK, 20, 30, 35, 65, 1, 54, 80, 208);
         delta_ruk_123 = 60 * delta_ruk_vh;
 
-        uks_inst.P_140_11 = pgs1;
-        uks_inst.P_140_12 = pgs2;
+        uks_inst.P_140_11 = hydro_inst.pgs1;
+        uks_inst.P_140_12 = hydro_inst.pgs2;
         uks_inst.P_140_13 = false;
         uks_inst.P_140_14 = false;
         if(D_X_l != 0)
@@ -143,10 +126,10 @@ void wingsmech_4()
             uks_inst.P_141_13 = true;
         }
     }
-    if(ush1dpp > 18)
+    if(powerdc_inst.ush1dpp > 18)
     {
-        uks_inst.P_142_11 = pgs3;
-        uks_inst.P_142_12 = pgs4;
+        uks_inst.P_142_11 = hydro_inst.pgs3;
+        uks_inst.P_142_12 = hydro_inst.pgs4;
 
         uks_inst.P_142_13 = false;
 
@@ -212,7 +195,7 @@ void wingsmech_4()
         uks_inst.P_143_13 = true;
     }
 
-    if(ush1dpl >= 18)
+    if(powerdc_inst.ush1dpl >= 18)
     {
         delta_z_l_110 = delta_z_l;
         delta_pr_l_114 = delta_pr_l;
@@ -223,7 +206,7 @@ void wingsmech_4()
         delta_pr_l_114 = 0;
     }
 
-    if(ush1dpp >= 18)
+    if(powerdc_inst.ush1dpp >= 18)
     {
         delta_z_p_111 = delta_z_l;
         delta_pr_p_115 = delta_pr_l;
@@ -236,10 +219,10 @@ void wingsmech_4()
         delta_pr_p_115 = 0;
         delta_pr_116 = 0;
     }
-    if(ushap >= 18)
+    if(powerdc_inst.ushap >= 18)
     {
-        delta_z = ((delta_z_l + delta_z_p) / 2);
-        delta_z_112 = 0.35 + (5.266 * delta_z);
+        landinggear_inst.delta_z = ((delta_z_l + delta_z_p) / 2);
+        delta_z_112 = 0.35 + (5.266 * landinggear_inst.delta_z);
         delta_ruz_113 = 60 * delta_zr_vh;
     }
 
@@ -267,12 +250,12 @@ void wingsmech_4()
 
     uks_inst.P_130_25 = false;
 
-    if(ush1dpl >= 18)
+    if(powerdc_inst.ush1dpl >= 18)
     {
-        uks_inst.P_130_11 = pgs1;
+        uks_inst.P_130_11 = hydro_inst.pgs1;
         uks_inst.P_130_12 = psr1kz;
 
-        if(delta_z >= 28.1)
+        if(landinggear_inst.delta_z >= 28.1)
         {
             uks_inst.P_130_13 = true;
         }
@@ -361,7 +344,7 @@ void wingsmech_4()
     uks_inst.P_131_21 = false;
     uks_inst.P_131_22 = false;
 
-    if(ush1dpl >= 18)
+    if(powerdc_inst.ush1dpl >= 18)
     {
         if(otkaz_1k_zakr == true)
         {
@@ -393,12 +376,12 @@ void wingsmech_4()
     uks_inst.P_132_24 = false;
     uks_inst.P_132_25 = false;
 
-    if(ush1dpp >= 18)
+    if(powerdc_inst.ush1dpp >= 18)
     {
-        uks_inst.P_132_11 = pgs4;
+        uks_inst.P_132_11 = hydro_inst.pgs4;
         uks_inst.P_132_12 = psr2kz;
 
-        if(delta_z >= 28.1)
+        if(landinggear_inst.delta_z >= 28.1)
         {
             uks_inst.P_132_13 = true;
         }
@@ -481,7 +464,7 @@ void wingsmech_4()
     uks_inst.P_133_21 = false;
     uks_inst.P_133_22 = false;
 
-    if(ush1dpp >= 18)
+    if(powerdc_inst.ush1dpp >= 18)
     {
         if(otkaz_2k_zakr == true)
         {

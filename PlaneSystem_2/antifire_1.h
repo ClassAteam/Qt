@@ -1,5 +1,6 @@
-#include "antifire_int.h"
-#include "powerdc_int.h"
+//#pragma once
+//#include "antifire_int.h"
+//#include "powerdc_int.h"
 
-extern powerdc_int powerdc_inst;
+//extern powerdc_int powerdc_inst;
 

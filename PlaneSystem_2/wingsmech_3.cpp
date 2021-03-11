@@ -1,47 +1,15 @@
 #include "algorithms.h"
 #include "wingsmech_3.h"
 
-bool
-otkaz_osn_1k_PCHK,
-otkaz_osn_2k_PCHK,
-otkaz_RASSINHR_PCHK,
-prrkpchk,
-prr1kpchk,
-prr2kpchk,
-por1kpchk,
-por2kpchk,
-pgs1,
-pgs2,
-pgs3,
-pgs4,
-s1_2790;
-int
-s2_2790;
-double
-X_PCHK,
-X_zad,
-D_X_l,
-D_X_p,
-Kgs,
-Kgs1,
-Kgs2,
-Kgs3,
-Kgs4,
-delta_ruk_vh;
 
 
-void wingsmech_3()
+void wingsmech_int::wingsmech_3()
 {
     prrkpchk = false;
     prr1kpchk = false;
     prr2kpchk = false;
     por1kpchk = false;
     por2kpchk = false;
-
-    pgs1 = false;
-    pgs2 = false;
-    pgs3 = false;
-    pgs4 = false;
 
     Kgs1 = 0;
     Kgs2 = 0;
@@ -55,29 +23,29 @@ void wingsmech_3()
         X_zad = 35;
     }
 
-    if(Pgs1 >= 130)
+    if(hydro_inst.pgs1 >= 130)
     {
-        pgs1 = true;
+        hydro_inst.pgs1 = true;
         Kgs1 = 0.25;
     }
-    if(Pgs2 >= 130)
+    if(hydro_inst.pgs2 >= 130)
     {
-        pgs2 = true;
+        hydro_inst.pgs2 = true;
         Kgs2 = 0.25;
     }
-    if(Pgs3 >= 130)
+    if(hydro_inst.pgs3 >= 130)
     {
-        pgs3 = true;
+        hydro_inst.pgs3 = true;
         Kgs3 = 0.25;
     }
-    if(Pgs4 >= 130)
+    if(hydro_inst.pgs4 >= 130)
     {
-        pgs4 = true;
+        hydro_inst.pgs4 = true;
         Kgs4 = 0.25;
     }
-    if(pgs1 == true || pgs2 == true)
+    if(hydro_inst.pgs1 == true || hydro_inst.pgs2 == true)
     {
-        if(ushal >= 18)
+        if(powerdc_inst.ushal >= 18)
         {
             if(s1_2790 == true)
             {
@@ -88,7 +56,7 @@ void wingsmech_3()
             {
                 if(otkaz_osn_1k_PCHK == false)
                 {
-                    if(ush1dpl >= 18)
+                    if(powerdc_inst.ush1dpl >= 18)
                     {
                         por1kpchk = true;
                     }
@@ -97,9 +65,9 @@ void wingsmech_3()
         }
     }
 
-    if(pgs3 == true || pgs4 == true)
+    if(hydro_inst.pgs3 == true || hydro_inst.pgs4 == true)
     {
-        if(ushap >= 18)
+        if(powerdc_inst.ushap >= 18)
         {
             if(s1_2790 == true)
             {
@@ -110,7 +78,7 @@ void wingsmech_3()
             {
                 if(otkaz_osn_2k_PCHK == false)
                 {
-                    if(ush1dpp >= 18)
+                    if(powerdc_inst.ush1dpp >= 18)
                     {
                         por2kpchk = true;
                     }
@@ -128,7 +96,7 @@ void wingsmech_3()
             }
             else
             {
-                if(P2OBLOP == true)
+                if(landinggear_inst.P2OBLOP == true)
                 {
                     if(X_L >= 35)
                     {
@@ -171,7 +139,7 @@ void wingsmech_3()
             }
             else
             {
-                if(P2OBPOP == true)
+                if(landinggear_inst.P2OBPOP == true)
                 {
                     if(X_P >= 35)
                     {
@@ -217,7 +185,7 @@ void wingsmech_3()
             }
             else
             {
-                if(P2OBLOP == true)
+                if(landinggear_inst.P2OBLOP)
                 {
                     if(X_L > 35)
                     {
@@ -262,7 +230,7 @@ void wingsmech_3()
             }
             else
             {
-                if(P2OBPOP == true)
+                if(landinggear_inst.P2OBPOP)
                 {
                     if(X_P > 35)
                     {
@@ -342,7 +310,7 @@ void wingsmech_3()
     {
         X_P = 65;
     }
-    if(ushap >= 18)
+    if(powerdc_inst.ushap >= 18)
     {
         X_PCHK = ((X_L + X_P) / 2);
 

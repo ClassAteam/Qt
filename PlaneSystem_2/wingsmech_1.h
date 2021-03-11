@@ -1,21 +1,14 @@
 #pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+#include "wingsmech_int.h"
+#include "antifire_int.h"
+#include "hydro_int.h"
+#include "powerdc_int.h"
+#include "landinggear_int.h"
 
+extern antifire_int antifire_inst;
+extern hydro_int hydro_inst;
+extern powerdc_int powerdc_inst;
+extern landinggear_int landinggear_inst;
 extern const double
 TICK;
-extern bool
-P2OBPOP,
-P2OBLOP;
-extern double
-ushal,
-ushap,
-Pgs1,
-Pgs4;
 
-
-void wingsmech_1();

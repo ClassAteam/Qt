@@ -1,12 +1,12 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+//#ifndef MAINWINDOW_H
+//#define MAINWINDOW_H
 
-#include <QMainWindow>
+//#include <QMainWindow>
 
-class MainWindow
-{
-public:
-    MainWindow();
-};
+//class MainWindow
+//{
+//public:
+//    MainWindow();
+//};
 
-#endif // MAINWINDOW_H
+//#endif // MAINWINDOW_H

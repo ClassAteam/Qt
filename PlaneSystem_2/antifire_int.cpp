@@ -1,16 +1,17 @@
-#include "antifire_int.h"
+//#include "antifire_int.h"
 
-antifire_int::antifire_int(QWidget *parent)
-    : interfacing(parent)
-{
-    antifire_int::setWindowTitle("antifire");
+//antifire_int::antifire_int(QWidget *parent)
+//    : interfacing(parent)
+//{
+//    antifire_int::setWindowTitle("antifire");
 
-}
+//}
 
-void antifire_int::updateLogic()
-{
-    antifire_1();
-    antifire_2();
-    antifire_3();
+//void antifire_int::updateLogic()
+//{
+//    antifire_1();
+//    antifire_2();
+//    antifire_3();
+//}
 
-}
+//antifire_int antifire_inst;

@@ -51,10 +51,10 @@ allElCons::allElCons()
     consumers.append(sngElCons(5, sngElCons::gen4, "PNP1B1P"));
     consumers.append(sngElCons(5, sngElCons::shavar4, "PNP3B1P"));
     consumers.append(sngElCons(8, sngElCons::shavar4, "PDN1"));
-    consumers.append(sngElCons(POV3dv1, sngElCons::shp1, "POV3dv1"));
-    consumers.append(sngElCons(POV3dv2, sngElCons::shp1, "POV3dv2"));
-    consumers.append(sngElCons(POV3dv3, sngElCons::shp2, "POV3dv3"));
-    consumers.append(sngElCons(POV3dv4, sngElCons::shp2, "POV3dv4"));
+    consumers.append(sngElCons(antiicing_inst.POV3dv1, sngElCons::shp1, "POV3dv1"));
+    consumers.append(sngElCons(antiicing_inst.POV3dv2, sngElCons::shp1, "POV3dv2"));
+    consumers.append(sngElCons(antiicing_inst.POV3dv3, sngElCons::shp2, "POV3dv3"));
+    consumers.append(sngElCons(antiicing_inst.POV3dv4, sngElCons::shp2, "POV3dv4"));
 }
 QVector<double> allElCons::getIvg_pool()
 {
@@ -103,91 +103,90 @@ QVector<double> allElCons::getIvg_pool()
 
 void allElCons::makeCorresCurr()
 {
-    using namespace alt;
     QVector<double>buses;
     buses = getIvg_pool();
 
     buses[shp1] = 5;
     buses[shp2] = 5;
-    if(!purglk4)
+    if(!powerdc_inst.purglk4)
         buses[shp1] = buses[shp1] + buses[shavar3];
-    if(!purgpk4)
+    if(!powerdc_inst.purgpk4)
         buses[shp2]= buses[shp2] + buses[shavar4];
 
-    ing1 = 0;
-    ing2 = 0;
-    if(purgk1)
+    powerdc_inst.ing1 = 0;
+    powerdc_inst.ing2 = 0;
+    if(powerdc_inst.purgk1)
     {
-        ing1 = buses[gen1];
-        if(purgk21)
+        powerdc_inst.ing1 = buses[gen1];
+        if(powerdc_inst.purgk21)
         {
-            ing2 = buses[gen2] + buses[shp1];
+            powerdc_inst.ing2 = buses[gen2] + buses[shp1];
         }
         else
         {
-            ing1 +=(buses[gen2] + buses[shp1]);
+            powerdc_inst.ing1 +=(buses[gen2] + buses[shp1]);
         }
-        if(!pp400[1] && pss400)
-            ing1 = ing1 + buses[gen3] + buses[gen4] + buses[shp2];
+        if(!powerdc_inst.pp400[1] && powerdc_inst.pss400)
+            powerdc_inst.ing1 = powerdc_inst.ing1 + buses[gen3] + buses[gen4] + buses[shp2];
     }
     else
     {
-        if(purgk21)
+        if(powerdc_inst.purgk21)
         {
-            ing2 = buses[gen1] + buses[gen2] + buses[shp1];
+            powerdc_inst.ing2 = buses[gen1] + buses[gen2] + buses[shp1];
 
-            if(!pp400[1] && pss400)
-                ing2 = ing2 + buses[gen3] + buses[gen4] + buses[shp2] + buses[shavar4];
+            if(!powerdc_inst.pp400[1] && powerdc_inst.pss400)
+                powerdc_inst.ing2 = powerdc_inst.ing2 + buses[gen3] + buses[gen4] + buses[shp2] + buses[shavar4];
         }
         else
         {
-            if(purglk4)
+            if(powerdc_inst.purglk4)
             {
-                if(purglk5)
-                    ing1 = buses[shavar3];
+                if(powerdc_inst.purglk5)
+                    powerdc_inst.ing1 = buses[shavar3];
                 else
-                    if(prgen[1])
-                    ing2 = buses[shavar3];
+                    if(powerdc_inst.prgen[1])
+                    powerdc_inst.ing2 = buses[shavar3];
             }
         }
     }
-    ing3 = 0;
-    ing4 = 0;
+    powerdc_inst.ing3 = 0;
+    powerdc_inst.ing4 = 0;
 
-    if(purgk41)
+    if(powerdc_inst.purgk41)
     {
-        ing4 = buses[gen4];
+        powerdc_inst.ing4 = buses[gen4];
 
-        if(purgk31)
-            ing3 = buses[gen3] + buses[shp2];
+        if(powerdc_inst.purgk31)
+            powerdc_inst.ing3 = buses[gen3] + buses[shp2];
         else
         {
-            ing4 = buses[gen4] + buses[gen3] + buses[shp2];
-            if(!pp400[0] && pss400)
-                ing4 = ing4 + buses[gen1] + buses[gen2] + buses[shp1];
+            powerdc_inst.ing4 = buses[gen4] + buses[gen3] + buses[shp2];
+            if(!powerdc_inst.pp400[0] && powerdc_inst.pss400)
+                powerdc_inst.ing4 = powerdc_inst.ing4 + buses[gen1] + buses[gen2] + buses[shp1];
         }
 
     }
     else
     {
-        if(purgk31)
+        if(powerdc_inst.purgk31)
         {
-            ing3 = buses[gen4] + buses[gen3] + buses[shp2];
-            if(!pp400[0] && pss400)
+            powerdc_inst.ing3 = buses[gen4] + buses[gen3] + buses[shp2];
+            if(!powerdc_inst.pp400[0] && powerdc_inst.pss400)
             {
-                ing3 = ing3 + buses[gen1] + buses[gen2] + buses[shp1];
+                powerdc_inst.ing3 = powerdc_inst.ing3 + buses[gen1] + buses[gen2] + buses[shp1];
             }
         }
         else
         {
-            if(purgpk4)
+            if(powerdc_inst.purgpk4)
             {
-                if(purgpk5)
-                    ing4 = buses[shavar4];
+                if(powerdc_inst.purgpk5)
+                    powerdc_inst.ing4 = buses[shavar4];
                 else
                 {
-                    if(prgen[2])
-                        ing3 = buses[shavar4];
+                    if(powerdc_inst.prgen[2])
+                        powerdc_inst.ing3 = buses[shavar4];
                 }
             }
         }
@@ -198,78 +197,79 @@ void allElCons::makeCorresCurr()
     double sumB{buses[gen1] + buses[gen2] + buses[shp1]};
     double sumC{buses[gen3] + buses[gen4]+ buses[shp2]};
 
-    if(purglk2)
+    if(powerdc_inst.purglk2)
     {
-        if(purglk7)
+        if(powerdc_inst.purglk7)
         {
-            if(purglk8 && purgpk7)
+            if(powerdc_inst.purglk8 && powerdc_inst.purgpk7)
             {
-                ingvsu = sumA;
+                powerdc_inst.ingvsu = sumA;
             }
             else
             {
-                ingvsu = sumB;
+                powerdc_inst.ingvsu = sumB;
             }
         }
         else
         {
-            if(purglk8 && purgpk7)
+            if(powerdc_inst.purglk8 && powerdc_inst.purgpk7)
             {
-                ingvsu = sumC;
+                powerdc_inst.ingvsu = sumC;
                 bss_inst.BSS837X1FF = true;
             }
             else
             {
-                ingvsu = 0;
+                powerdc_inst.ingvsu = 0;
                 bss_inst.BSS837X1FF = false;
             }
         }
     }
     else
     {
-        ingvsu = 0;
+        powerdc_inst.ingvsu = 0;
         bss_inst.BSS837X1FF = false;
     }
 
-    if(purgpk3)
+    if(powerdc_inst.purgpk3)
     {
-        if(purgpk7)
+        if(powerdc_inst.purgpk7)
         {
-            if(purglk8 && purglk7)
+            if(powerdc_inst.purglk8 && powerdc_inst.purglk7)
             {
-                ingrap = sumA;
+                powerdc_inst.ingrap = sumA;
                 bss_inst.BSS926X3R = true;
             }
             else
             {
-                ingrap = sumC;
+                powerdc_inst.ingrap = sumC;
                 bss_inst.BSS926X3R = true;
             }
         }
         else
         {
-            if(purglk8 && purglk7)
+            if(powerdc_inst.purglk8 && powerdc_inst.purglk7)
             {
-                ingrap = sumB;
+                powerdc_inst.ingrap = sumB;
                 bss_inst.BSS926X3R = true;
             }
             else
             {
-                ingrap = 0;
+                powerdc_inst.ingrap = 0;
                 bss_inst.BSS926X3R = false;
             }
         }
     }
     else
     {
-        ingrap = 0;
+        powerdc_inst.ingrap = 0;
         bss_inst.BSS926X3R = false;
     }
 
-    if(pss400)
+    if(powerdc_inst.pss400)
         bss_inst.BSS926X3T = true;
     else
         bss_inst.BSS926X3T = false;
 }
+allElCons consumers_global_inst;
 
 

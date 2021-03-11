@@ -1,18 +1,7 @@
-#pragma once
-#include <QWidget>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+//#pragma once
+//#include "cabinlighting_int.h"
+//#include "powerdc_int.h"
 
-extern double
-ush1l,
-ush2l,
-ush2p,
-ush1dpl,
-ush1dpp,
-ush2dpp;
-
-void cabinlighting_5();
+//extern powerdc_int powerdc_inst;
 
 

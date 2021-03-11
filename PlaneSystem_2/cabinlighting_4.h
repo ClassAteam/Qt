@@ -1,11 +1,5 @@
-extern double
-ush1l,
-ush1p,
-ush2l,
-ush2p,
-ush1dpl,
-ush1dpp,
-ush2dpl,
-ush2dpp;
+//#pragma once
+//#include "cabinlighting_int.h"
+//#include "powerdc_int.h"
 
-void cabinlighting_4();
+//extern powerdc_int powerdc_inst;

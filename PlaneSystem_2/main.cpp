@@ -13,28 +13,30 @@
 #include "antifire_int.h"
 
 const double TICK = 200;
+powerdc_int powerdc_inst;
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    antifire_int antifire;
-    brakes_int brakes;
-    brakes.show();
-    wingsmech_int wingsmech;
-    wingsmech.show();
-    emergencyalarm_int emergencyalarm;
-    emergencyalarm.show();
-    cabinlighting cabinlighting;
-    cabinlighting.show();
-    presure_int presure;
-    presure.show();
-    powerdc_int powerdc;
-    powerdc.show();
-    hydro_int hydro;
-    hydro.show();
-    antiicing_int antiicing;
-    antiicing.show();
+//    antifire_int antifire;
+//    brakes_int brakes;
+//    brakes.show();
+//    wingsmech_int wingsmech;
+//    wingsmech.show();
+//    emergencyalarm_int emergencyalarm;
+//    emergencyalarm.show();
+//    cabinlighting cabinlighting;
+//    cabinlighting.show();
+//    presure_int presure;
+//    presure.show();
+//    powerdc_inst.show();
+//    powerdc_int powerdc;
+//    powerdc.show();
+//    hydro_int hydro;
+//    hydro.show();
+//    antiicing_int antiicing;
+//    antiicing.show();
 
 
     return a.exec();

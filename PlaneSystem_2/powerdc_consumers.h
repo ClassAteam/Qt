@@ -1,38 +1,12 @@
 #pragma once
+#include "powerdc_int.h"
 #include <QVector>
 #include "bss.h"
+#include "antiicing_int.h"
 
 extern bss bss_inst;
-
-extern bool
-    purgk1,
-    purgk21,
-    purgk31,
-    purgk41,
-    purglk2,
-    purgpk3,
-    purglk4,
-    purgpk4,
-    purglk5,
-    purglk7,
-    purglk8,
-    purgpk5,
-    purgpk7,
-    purgpk8,
-    plp400,
-    pp400[2],
-    pss400,
-    prgen[5];
-namespace alt{
-extern double
-    ing1, ing2, ing3, ing4, ingvsu, ingrap;
-}
-
-extern int
-    POV3dv1,
-    POV3dv2,
-    POV3dv3,
-    POV3dv4;
+extern antiicing_int antiicing_inst;
+extern powerdc_int powerdc_inst;
 
 class sngElCons
 {

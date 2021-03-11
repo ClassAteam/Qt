@@ -1,5 +1,6 @@
 #include "powerdc_int.h"
+#include "brakes_int.h"
 
-extern double
-    vkh;
+extern brakes_int brakes_inst;
+
 

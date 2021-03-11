@@ -23,7 +23,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&delta_stv_l, "delta_stv_l");
     createLabelValue(&delta_stv_p, "delta_stv_p");
     createLabelValue(&delta_stv_n, "delta_stv_n");
-    createLabelValue(&Pgs2, "Pgs2");
     createLabelValue(&V_bal_l, "V_bal_l");
     createLabelValue(&V_bal_p, "V_bal_p");
     createLabelValue(&V_bal_n, "V_bal_n");
@@ -236,8 +235,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&fi_nk, "fi_nk");
     createLabelValue(&V_nk, "V_nk");
     createLabelValue(&Xped, "Xped");
-    createLabelValue(&Pgs1, "Pgs1280");
-    createLabelValue(&Pgs3, "Pgs3280");
 
 }
 void landinggear_int::updateLogic()

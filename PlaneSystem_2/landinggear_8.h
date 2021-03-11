@@ -1,26 +1,20 @@
-#pragma once
-#include "bss.h"
-#include "uks.h"
-#include "landinggear_int.h"
+//#pragma once
+//#include "bss.h"
+//#include "uks.h"
+//#include "landinggear_int.h"
+//#include "antiicing_int.h"
+//#include "cabinlighting_int.h"
+//#include "landinggear_int.h"
+//#include "powerdc_int.h"
 
-extern bss bss_inst;
-extern uks uks_inst;
+//extern bss bss_inst;
+//extern uks uks_inst;
+//extern antiicing_int antiicing_inst;
+//extern cabinlighting_int cabinlighting_inst;
+//extern powerdc_int powerdc_inst;
+//extern landinggear_int landinggear_inst;
 
-void m_switch(bool* toggler, bool* toggling);
-
-extern bool
-    K24_3230,
-    K26_3230,
-    K25_3230,
-    K34_3230,
-    K32_3230;
-
-extern double
-ush1dpl,
-ush2dpl,
-ush2dpp,
-ushal,
-ushap;
+//void m_switch(bool* toggler, bool* toggling);
 
 
 

@@ -2,39 +2,9 @@
 #include "presure.h"
 #include "math.h"
 
-bool
-    K1_2131,
-    K2_2131,
-    K4_2131,
-    PAVARR,
-    PRTHU1,
-    PPP,
-    PGK,
-    SKD_D300,
-    SKD_D301,
-    otkaz_razgermetizatsiya,
-    lyukizagermetizirovany,
-    S2_2131,
-    otkaz_perenadduv;
-double
-    H,
-    H_k,
-    Ph,
-    Ph_msa,
-    Ph_,
-    Pk_h,
-    Pkab,
-    Pkab_delta,
-    Pkab_ind_delta,
-    Hkab,
-    Hkab_ind,
-    Vkab,
-    Pkab_zad;
-int
-    S1_2131;
 
 
-void presure()
+void presure_int::presure()
 {
     static int
     blink_tick1,
@@ -52,7 +22,7 @@ void presure()
 
 
 
-    if (ush2dpl >= 18.0)
+    if (powerdc_inst.ush2dpl >= 18.0)
     {
         if ((Pkab - Ph_msa) >= 0.7)
             K1_2131 = true;

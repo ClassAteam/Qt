@@ -2,5 +2,4 @@
 
 extern const double
     TICK;
-}
 

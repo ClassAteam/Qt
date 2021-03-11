@@ -1,15 +1,10 @@
-#pragma once
-#include "bss.h"
+//#pragma once
+//#include "bss.h"
+//#include "emergencyalarm_int.h"
+//#include "powerdc_int.h"
 
-extern bss bss_inst;
+//extern bss bss_inst;
+//extern powerdc_int powerdc_inst;
 
-
-extern const double
-TICK;
-extern double
-ush1dpl,
-ush2dpl,
-ush1dpp,
-ush2dpp;
-
-void emergencyalarm_1();
+//extern const double
+//TICK;

@@ -1,38 +1,11 @@
-#pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+//#pragma once
+//#include "brakes_int.h"
+//#include "landinggear_int.h"
+//#include "antiicing_int.h"
+//#include "hydro_int.h"
 
-extern bool
-PstoyanT,
-PAVART,
-pavtt,
-PAVT_N,
-PAVT_P,
-PAVT_S,
-PBAVTT,
-PORST,
-pbutzo,
-PstartT,
-PORST,
-PFT,
-PRR,
-K27_3230,
-K26_3230,
-K35_3230,
-S1_3230,
-S2_3240;
-extern int
-S1_3240;
-extern double
-P_tp_prav,
-P_tp_lev,
-Pgs2,
-Pgs3;
-extern const double
-TICK;
+//extern const double TICK;
+//extern landinggear_int landinggear_inst;
+//extern antiicing_int antiicing_inst;
+//extern hydro_int hydro_inst;
 
-void brakes_3();

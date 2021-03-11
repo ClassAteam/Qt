@@ -1,17 +1,8 @@
-#pragma once
-#include "bss.h"
+//#pragma once
+//#include "bss.h"
+//#include "antiicing_int.h"
+//#include "powerdc_int.h"
 
-extern bss bss_inst;
-
-extern double
-M,
-usho1p,
-ushal,
-ushap,
-ush2l,
-ush2p,
-ush1dpl,
-ush1dpp;
-
-void antiicing_4();
+//extern bss bss_inst;
+//extern powerdc_int powerdc_inst;
 

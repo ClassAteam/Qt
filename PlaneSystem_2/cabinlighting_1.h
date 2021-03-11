@@ -1,8 +1,6 @@
-extern bool
-P1OBPOP;
-extern double
-ush2p;
+//#include "cabinlighting_int.h"
+//#include "landinggear_int.h"
+//#include "powerdc_int.h"
 
-void cabinlighting_1();
-
-
+//extern landinggear_int landinggear_inst;
+//extern powerdc_int powerdc_inst;

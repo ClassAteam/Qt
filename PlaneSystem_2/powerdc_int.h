@@ -1,10 +1,11 @@
 #pragma once
 #include "interfacing.h"
 #include "bss.h"
-#include "powerdc_int.h"
+#include "powerdc_consumers.h"
+#include "input_feed.h"
 
-//extern allElCons consumers_global_inst;
-//extern extrn_feed feed_global_inst;
+extern allElCons consumers_global_inst;
+extern extrn_feed feed_global_inst;
 extern bss bss_inst;
 
 

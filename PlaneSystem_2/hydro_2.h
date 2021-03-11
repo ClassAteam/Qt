@@ -1,19 +1,10 @@
-#pragma once
-#include <QVector>
-#include "uks.h"
+//#pragma once
+//#include "uks.h"
+//#include "hydro_int.h"
+//#include "powerdc_int.h"
 
-extern uks uks_inst;
+//extern uks uks_inst;
+//extern powerdc_int powerdc_inst;
 
-extern double
-ush1dpl,
-ush1dpp,
-ush1l,
-ush1p,
-ush2dpl,
-ush2dpp,
-ush2l,
-ush2p,
-ushap;
 
-void hydro_2();
 

@@ -1,32 +1,9 @@
-#pragma once
-#include <QWidget>
-#include <QtWidgets>
-#include <QObject>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
+//#pragma once
+//#include "brakes_int.h"
+//#include "hydro_int.h"
 
-extern bool
-pbutzo,
-pbutzr,
-PAVART,
-PAVT_N,
-PAVT_P,
-PAVT_S,
-PBAVTT,
-PFT,
-POSH;
-extern double
-Pgs1,
-Pgs2,
-Pgs3,
-Pgs4,
-vkh,
-P_t_lev,
-P_t_prav,
-pgat;
+//extern hydro_int hydro_inst;
 
-extern const double
-TICK;
+//extern const double
+//TICK;
 
-void brakes_4();

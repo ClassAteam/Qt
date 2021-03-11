@@ -1,50 +1,18 @@
 #include "wingsmech_1.h"
 #include "algorithms.h"
 
-bool
-    otkaz_osn_1k_zakr,
-    otkaz_osn_2k_zakr,
-    otkaz_1k_zakr,
-    otkaz_2k_zakr,
-    otkaz_rassgl_zakr,
-    prrkz,
-    prr1kz,
-    prr2kz,
-    psr1kz,
-    psr2kz,
-    por1kz,
-    por2kz,
-    S1_2750,
-    S13_2750;
-int
-    S2_2750;
-double
-    Pgs4{280},
-    Kz,
-    delta_z_l,
-    delta_z_p,
-    delta_z_zad,
-    delta_zr_vh,
-    Ddelta_z_l,
-    Ddelta_z_p,
-    delta_pr_l,
-    delta_pr_p,
-    X_L{20},
-    X_P{20};
 
-
-void wingsmech_1()
+void wingsmech_int::wingsmech_1()
 {
-
     //start logic
     prr1kz = false;
     psr1kz = false;
     por1kz = false;
     delta_z_zad = m_3_L_intervals(delta_zr_vh, 0, 0.3, 0.6, 1.0, 0, 15, 25, 40);
 
-    if(Pgs1 >= 130)
+    if(hydro_inst.pgs1 >= 130)
     {
-        if(ushal >= 18.0)
+        if(powerdc_inst.ushal >= 18.0)
         {
             if(S1_2750 == true)
             {
@@ -63,7 +31,7 @@ void wingsmech_1()
                         if(otkaz_osn_1k_zakr == false)
                         {
                             por1kz = true;
-                            if(P2OBLOP == false)
+                            if(landinggear_inst.P2OBLOP == false)
                             {
                                 delta_z_zad = delta_z_zad * Kz;
                             }
@@ -78,9 +46,9 @@ void wingsmech_1()
     psr2kz = false;
     por2kz = false;
 
-    if(Pgs4 >= 130)
+    if(hydro_inst.pgs4 >= 130)
     {
-        if(ushap >= 18.0)
+        if(powerdc_inst.ushap >= 18.0)
         {
             if(S1_2750 == true)
             {
@@ -99,7 +67,7 @@ void wingsmech_1()
                         if(otkaz_osn_2k_zakr == false)
                         {
                             por2kz = true;
-                            if(P2OBPOP == false)
+                            if(landinggear_inst.P2OBPOP == false)
                             {
                                 delta_z_zad = delta_z_zad * Kz;
                             }

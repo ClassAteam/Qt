@@ -1,10 +1,5 @@
-extern bool
-K26_3230,
-K24_3230;
-extern double
-usho1p,
-ush1l,
-ush1p;
+//#pragma once
+//#include "antiicing_int.h"
+//#include "powerdc_int.h"
 
-void antiicing_5();
-
+//extern powerdc_int powerdc_inst;

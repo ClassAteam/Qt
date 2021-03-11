@@ -1,6 +1,5 @@
 #include "powerdc_11.h"
 
-allElCons consumers_global_inst;
 
 void powerdc_int::powerdc_11()
 {
@@ -44,7 +43,8 @@ consumers_global_inst.makeCorresCurr();
 
     bool* s3_pool[] = {&s3_2420, &s6_2420, &s11_2420, &s14_2420};
     int* tick_g1_pool[] = {&tick_g1, &tick_g2, &tick_g3, &tick_g4};
-    double* nvd_pool[] = {&nVDfirst2[0], &nVDfirst2[1], &nVDsecond2[0], &nVDsecond2[1], &nvsu};
+    double* nvd_pool[] = {&hydro_inst.nVDfirst2[0], &hydro_inst.nVDfirst2[1],
+                          &hydro_inst.nVDsecond2[0], &hydro_inst.nVDsecond2[1], &nvsu};
     double* ng_pool[] = {&ng1, &ng2, &ng3, &ng4, &ngvsu};
     double* ugr_pool[] = {&ug1r, &ug2r, &ug3r, &ug4r, &ugvsur};
     double* ugz_pool[] = {&ug1z, &ug2z, &ug3z, &ug4z, &ugvsuz};
@@ -169,7 +169,7 @@ consumers_global_inst.makeCorresCurr();
             *k25_pool[i] = false;
         }
 
-        if(pnu)
+        if(antifire_inst.pnu)
             *popp01_pool[i] = false;
         else
         {

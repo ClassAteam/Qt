@@ -15,7 +15,8 @@ static int
     double* ing_pool[] = {&ing1_27, &ing2_27, &ing3_27, &ing4_27, &ivsu_27};
 //    double* ugrr_pool[] = {&ugrr, &ugrr, &ugrr, &ugrr, &ugrrvsu};
     double* ugr_pool[] = {&ug1r_27, &ug2r_27, &ug3r_27, &ug4r_27, &ugrvsu27};
-    double* nvd_pool[] = {&nVDfirst2[0], &nVDfirst2[1], &nVDsecond2[0], &nVDsecond2[1], &nvsu};
+    double* nvd_pool[] = {&hydro_inst.nVDfirst2[0], &hydro_inst.nVDfirst2[1],
+                          &hydro_inst.nVDsecond2[0], &hydro_inst.nVDsecond2[1], &nvsu};
     double* krg_pool[] = {&krg, &krg, &krg, &krg, &krgvsu};
     double* kg_pool[] = {&kg1, &kg1, &kg1, &kg1, &kgvsu};
     bool* s4_pool[] = {&s4_2430, &s5_2430, &s8_2430, &s11_2430};

@@ -9,7 +9,7 @@ void powerdc_int::powerdc_11()
 //        f24_2420{true},
 //        f28_2420{true};
 
-consumers_global_inst.makeCorresCurr();
+allElCons_inst.makeCorresCurr();
 
     double kn1{25},
         k10{1.5}, k20{1.5}, k30{1.5}, k40{1.5}, k50{1.5},
@@ -43,8 +43,9 @@ consumers_global_inst.makeCorresCurr();
 
     bool* s3_pool[] = {&s3_2420, &s6_2420, &s11_2420, &s14_2420};
     int* tick_g1_pool[] = {&tick_g1, &tick_g2, &tick_g3, &tick_g4};
-    double* nvd_pool[] = {&hydro_inst.nVDfirst2[0], &hydro_inst.nVDfirst2[1],
-                          &hydro_inst.nVDsecond2[0], &hydro_inst.nVDsecond2[1], &nvsu};
+    double* nvd_pool[] = {&exchange_inst.eng1_spd, &exchange_inst.eng2_spd,
+                          &exchange_inst.eng3_spd, &exchange_inst.eng4_spd, &nvsu};
+
     double* ng_pool[] = {&ng1, &ng2, &ng3, &ng4, &ngvsu};
     double* ugr_pool[] = {&ug1r, &ug2r, &ug3r, &ug4r, &ugvsur};
     double* ugz_pool[] = {&ug1z, &ug2z, &ug3z, &ug4z, &ugvsuz};
@@ -169,7 +170,7 @@ consumers_global_inst.makeCorresCurr();
             *k25_pool[i] = false;
         }
 
-        if(antifire_inst.pnu)
+        if(exchange_inst.pnu)
             *popp01_pool[i] = false;
         else
         {

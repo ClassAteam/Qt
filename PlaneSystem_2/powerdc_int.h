@@ -1,14 +1,11 @@
 #pragma once
 #include "interfacing.h"
 #include "bss.h"
-#include "powerdc_consumers.h"
+#include "allElCons.h"
 #include "input_feed.h"
 
-extern allElCons consumers_global_inst;
-extern extrn_feed feed_global_inst;
+extern allElCons allElCons_inst;
 extern bss bss_inst;
-
-
 
 class powerdc_int : public interfacing
 {
@@ -96,14 +93,14 @@ public:
         ush1dpp,
         ushap,
         ushal;
-    enum class s13_2430{ground, air};
-    s13_2430 s13_2430;
-    enum class s16_2430{akk1, akk2, avar1, avar2, sh1lev, sh2lev, sh1prav, sh2prav};
-    s16_2430 s16_2430;
-    enum class  s17_2430{akk1_rap1, akk2_rap2, vsu};
-    s17_2430 s17_2430;
-    enum class s20_2430{apsh1, apsh2, apsh3, apsh5, apsh6};
-    s20_2430 s20_2430;
+    enum s13_2430_pos{ground, air};
+    int s13_2430;
+    enum s16_2430_pos{akk1, akk2, avar1, avar2, sh1lev, sh2lev, sh1prav, sh2prav};
+    int s16_2430;
+    enum s17_2430_pos{akk1_rap1, akk2_rap2, vsu};
+    int s17_2430;
+    enum s20_2430_pos{apsh1, apsh2, apsh3, apsh5, apsh6};
+    int s20_2430;
 
     double
         ush1l,

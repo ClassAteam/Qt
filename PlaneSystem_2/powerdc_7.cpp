@@ -3,7 +3,7 @@
 void powerdc_int::powerdc_7() //7
 {
     //start logic
-    if(s17_2430 == s17_2430::akk1_rap1)
+    if(s17_2430 == s17_2430_pos::akk1_rap1)
     {
         if(purg27lk5)
         {
@@ -23,7 +23,7 @@ void powerdc_int::powerdc_7() //7
     }
     else
     {
-        if(s17_2430 == s17_2430::akk2_rap2)
+        if(s17_2430 == s17_2430_pos::akk2_rap2)
         {
             if(purg27pk5)
             {
@@ -43,7 +43,7 @@ void powerdc_int::powerdc_7() //7
         }
         else
         {
-            if(s17_2430 == s17_2430::vsu)
+            if(s17_2430 == s17_2430_pos::vsu)
             {
                 ipr = ivsu_27;
             }
@@ -56,35 +56,34 @@ void powerdc_int::powerdc_7() //7
 
     switch(s16_2430)
     {
-    case s16_2430::akk1:
+    case s16_2430_pos::akk1:
         upr = uak1;
         break;
-    case s16_2430::akk2:
+    case s16_2430_pos::akk2:
         upr = uak2;
         break;
-    case s16_2430::avar1:
+    case s16_2430_pos::avar1:
         upr = ushal;
         break;
-    case s16_2430::avar2:
+    case s16_2430_pos::avar2:
         upr = ushap;
         break;
-    case s16_2430::sh1lev:
+    case s16_2430_pos::sh1lev:
         upr = ush1l;
         break;
-    case s16_2430::sh2lev:
+    case s16_2430_pos::sh2lev:
         upr = ush2l;
         break;
-    case s16_2430::sh1prav:
+    case s16_2430_pos::sh1prav:
         upr = ush1p;
         break;
-    case s16_2430::sh2prav:
+    case s16_2430_pos::sh2prav:
         upr = ush2p;
         break;
     default:
         upr = 0.0;
     }
 }
-
 
 
     //end logic

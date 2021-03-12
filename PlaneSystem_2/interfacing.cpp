@@ -1,7 +1,5 @@
 #include "interfacing.h"
 
-extern const double
-    TICK;
 
 interfacing::interfacing(QWidget *parent)
     : QWidget(parent), btnID{0}, slID{0}, lblClueID{0},row{0}, column{0},

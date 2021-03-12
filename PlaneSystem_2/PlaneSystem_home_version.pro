@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     algorithms.cpp \
+    allElCons.cpp \
     antifire_1.cpp \
     antifire_2.cpp \
     antifire_3.cpp \
@@ -52,6 +53,7 @@ SOURCES += \
     emergencyalarm_8.cpp \
     emergencyalarm_9.cpp \
     emergencyalarm_int.cpp \
+    exchange.cpp \
     hydro_1.cpp \
     hydro_2.cpp \
     hydro_3.cpp \
@@ -62,7 +64,6 @@ SOURCES += \
     hydro_8.cpp \
     hydro_9.cpp \
     hydro_int.cpp \
-    input_feed.cpp \
     interfacing.cpp \
     landinggear_1.cpp \
     landinggear_2.cpp \
@@ -90,7 +91,6 @@ SOURCES += \
     powerdc_7.cpp \
     powerdc_8.cpp \
     powerdc_9_10.cpp \
-    powerdc_consumers.cpp \
     powerdc_int.cpp \
     presure.cpp \
     presure_int.cpp \
@@ -104,6 +104,7 @@ SOURCES += \
 
 HEADERS += \
     algorithms.h \
+    allElCons.h \
     antifire_1.h \
     antifire_2.h \
     antifire_3.h \
@@ -139,6 +140,7 @@ HEADERS += \
     emergencyalarm_8.h \
     emergencyalarm_9.h \
     emergencyalarm_int.h \
+    exchange.h \
     hydro_1.h \
     hydro_2.h \
     hydro_3.h \
@@ -149,7 +151,6 @@ HEADERS += \
     hydro_8.h \
     hydro_9.h \
     hydro_int.h \
-    input_feed.h \
     interfacing.h \
     landinggear_1.h \
     landinggear_2.h \
@@ -176,7 +177,6 @@ HEADERS += \
     powerdc_7.h \
     powerdc_8.h \
     powerdc_9_10.h \
-    powerdc_consumers.h \
     powerdc_int.h \
     presure.h \
     presure_int.h \

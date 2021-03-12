@@ -1,6 +1,5 @@
 #include "powerdc_2_3.h"
 
-
 void powerdc_int::powerdc_2_3() //2 //3
 {
     static int
@@ -11,7 +10,7 @@ void powerdc_int::powerdc_2_3() //2 //3
         tick_rap2;
 
     //start logic
-    if(abs(vkh) < 0.1)
+    if(abs(exchange_inst.speed) < 0.1)
     {
         if(pvrap1 == true)
         {
@@ -60,7 +59,7 @@ void powerdc_int::powerdc_2_3() //2 //3
         purg27pk4 = false;
     }
 
-    if(s13_2430 == s13_2430::air)
+    if(s13_2430 == s13_2430_pos::air)
     {
         purg27lk4 = false;
         purg27pk4 = false;
@@ -136,7 +135,7 @@ void powerdc_int::powerdc_2_3() //2 //3
             }
             else
             {
-                if(s13_2430 == s13_2430::air)
+                if(s13_2430 == s13_2430_pos::air)
                     purg27pk3 = true;
             }
         }

@@ -1,9 +1,10 @@
 #include "input_feed.h"
 #include "bss.h"
 #include "powerdc_int.h"
+#include "exchange.h"
 
 extern bss bss_inst;
-extern extrn_feed feed_global_inst;
+extern exchange exchange_inst;
 
 
 

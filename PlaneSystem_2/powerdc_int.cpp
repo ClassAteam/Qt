@@ -80,17 +80,17 @@ powerdc_int::powerdc_int(QWidget *parent)
     createLabelValue(&qa2, "qa2");
     createLabelValue(&ra1, "ra1");
     createLabelValue(&ra2, "ra2");
-//    createRadioButton(&s16_2430, "akk1", false);
-//    createRadioButton(&s16_2430, "akk2", false);
-//    createRadioButton(&s16_2430, "avar1", false);
-//    createRadioButton(&s16_2430, "avar2", false);
-//    createRadioButton(&s16_2430, "sh1lev", false);
-//    createRadioButton(&s16_2430, "sh2lev", false);
-//    createRadioButton(&s16_2430, "sh1prav", false);
-//    createRadioButton(&s16_2430, "sh2prav", true);
-//    createRadioButton(&s17_2430, "akk1_rap1", false);
-//    createRadioButton(&s17_2430, "akk2_rap2", false);
-//    createRadioButton(&s17_2430, "vsu", true);
+    createRadioButton(&s16_2430, "akk1", false);
+    createRadioButton(&s16_2430, "akk2", false);
+    createRadioButton(&s16_2430, "avar1", false);
+    createRadioButton(&s16_2430, "avar2", false);
+    createRadioButton(&s16_2430, "sh1lev", false);
+    createRadioButton(&s16_2430, "sh2lev", false);
+    createRadioButton(&s16_2430, "sh1prav", false);
+    createRadioButton(&s16_2430, "sh2prav", true);
+    createRadioButton(&s17_2430, "akk1_rap1", false);
+    createRadioButton(&s17_2430, "akk2_rap2", false);
+    createRadioButton(&s17_2430, "vsu", true);
     createLabelClue(&pvkchrl, "pvkchrl");
     createLabelClue(&pvkchrp, "pvkchrp");
     createLabelClue(&purg27lk1, "purg27lk1");
@@ -125,8 +125,8 @@ powerdc_int::powerdc_int(QWidget *parent)
     createRedButton(&s9_2430, "s9_2430");
     createRedButton(&s10_2430, "s10_2430");
     createRedButton(&s11_2430, "s11_2430");
-//    createRadioButton(&s13_2430, "ground", false);
-//    createRadioButton(&s13_2430, "air", true);
+    createRadioButton(&s13_2430, "ground", false);
+    createRadioButton(&s13_2430, "air", true);
     createRedButton(&s14_2430, "s14_2430");
     createRedButton(&s15_2430, "s15_2430");
     createRedButton(&glviklvsu, "glviklvsu");
@@ -450,19 +450,19 @@ powerdc_int::powerdc_int(QWidget *parent)
     createLabelValue(&fshav[1], "fshav2");
     createLabelValue(&fshav[2], "fshav3");
     createLabelValue(&fshav[3], "fshav4");
-    for(int i = 0; i < consumers_global_inst.consumers.count(); ++i)
+    for(int i = 0; i < allElCons_inst.consumers.count(); ++i)
     {
-        createRedButton(&consumers_global_inst.consumers[i].isActive, consumers_global_inst.consumers[i].name);
+        createRedButton(&allElCons_inst.consumers[i].isActive, allElCons_inst.consumers[i].name);
     }
 
-    createRedButton(&feed_global_inst.pvksku1, "pvksku1");
-    createRedButton(&feed_global_inst.pvksku2, "pvksku2");
-    createRedButton(&feed_global_inst.pvksku3, "pvksku3");
-    createRedButton(&feed_global_inst.pvksku4, "pvksku4");
-    createRedButton(&feed_global_inst.otk_overload_altgen1, "peregr_gen1");
-    createRedButton(&feed_global_inst.otk_overload_altgen2, "peregr_gen2");
-    createRedButton(&feed_global_inst.otk_overload_altgen3, "peregr_gen3");
-    createRedButton(&feed_global_inst.otk_overload_altgen4, "peregr_gen4");
+//    createRedButton(&feed_global_inst.pvksku1, "pvksku1");
+//    createRedButton(&feed_global_inst.pvksku2, "pvksku2");
+//    createRedButton(&feed_global_inst.pvksku3, "pvksku3");
+//    createRedButton(&feed_global_inst.pvksku4, "pvksku4");
+//    createRedButton(&feed_global_inst.otk_overload_altgen1, "peregr_gen1");
+//    createRedButton(&feed_global_inst.otk_overload_altgen2, "peregr_gen2");
+//    createRedButton(&feed_global_inst.otk_overload_altgen3, "peregr_gen3");
+//    createRedButton(&feed_global_inst.otk_overload_altgen4, "peregr_gen4");
 }
 void powerdc_int::updateLogic()
 {

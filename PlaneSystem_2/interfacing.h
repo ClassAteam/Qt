@@ -7,7 +7,8 @@
 #include <QLineEdit>
 #include <QTimer>
 
-
+extern const double
+    TICK;
 
 class interfacing : public QWidget
 {

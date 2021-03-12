@@ -1,6 +1,7 @@
 #include "powerdc_int.h"
-#include "brakes_int.h"
+#include "exchange.h"
 
-extern brakes_int brakes_inst;
+extern exchange exchange_inst;
+
 
 

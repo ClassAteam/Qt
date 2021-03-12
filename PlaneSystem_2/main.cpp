@@ -13,8 +13,6 @@
 #include "antifire_int.h"
 
 const double TICK = 200;
-powerdc_int powerdc_inst;
-
 
 int main(int argc, char *argv[])
 {
@@ -31,8 +29,8 @@ int main(int argc, char *argv[])
 //    presure_int presure;
 //    presure.show();
 //    powerdc_inst.show();
-//    powerdc_int powerdc;
-//    powerdc.show();
+    powerdc_int powerdc;
+    powerdc.show();
 //    hydro_int hydro;
 //    hydro.show();
 //    antiicing_int antiicing;

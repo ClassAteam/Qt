@@ -107,19 +107,19 @@ void powerdc_int::powerdc_15()
 
     switch (s20_2430)
     {
-    case s20_2430::apsh1:
+    case s20_2430_pos::apsh1:
         apsh_switch(ushavP[0][0], k13_2420, pbapsh1, purglk9);
         break;
-    case s20_2430::apsh2:
+    case s20_2430_pos::apsh2:
         apsh_switch(ushavP[1][0], k16_2420, pbapsh2, purgpk9);
         break;
-    case s20_2430::apsh3:
+    case s20_2430_pos::apsh3:
         apsh_switch(ushpts[0], k14_2420, pbapsh3, purglk10);
         break;
-    case s20_2430::apsh5:
+    case s20_2430_pos::apsh5:
         apsh_switch(ushpos[0], k31_2420, pbapsh5, purglk11);
         break;
-    case s20_2430::apsh6:
+    case s20_2430_pos::apsh6:
         apsh_switch(ushpos[1], k34_2420, pbapsh6, purgpk11);
         break;
     }

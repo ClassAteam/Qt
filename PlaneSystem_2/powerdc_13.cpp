@@ -2,7 +2,7 @@
 
 void powerdc_int::powerdc_13()
 {
-    if(pvrap && brakes_inst.vkh < 0.1)
+    if(pvrap && exchange_inst.speed < 0.1)
     {
         pprap = true;
         urapP[0] = 117.0;

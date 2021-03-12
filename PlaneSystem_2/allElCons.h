@@ -1,12 +1,10 @@
 #pragma once
-#include "powerdc_int.h"
 #include <QVector>
 #include "bss.h"
-#include "antiicing_int.h"
+#include "exchange.h"
 
 extern bss bss_inst;
-extern antiicing_int antiicing_inst;
-extern powerdc_int powerdc_inst;
+extern exchange exchange_inst;
 
 class sngElCons
 {

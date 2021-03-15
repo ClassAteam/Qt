@@ -1,4 +1,4 @@
-#include "input_feed.h"
+//#include "input_feed.h"
 
-extrn_feed feed_global_inst;
+//extrn_feed feed_global_inst;
 

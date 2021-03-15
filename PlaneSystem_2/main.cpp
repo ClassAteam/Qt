@@ -11,6 +11,7 @@
 #include "antiicing_int.h"
 #include "presure_int.h"
 #include "antifire_int.h"
+#include "landinggear_int.h"
 
 const double TICK = 200;
 
@@ -18,23 +19,25 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 //    antifire_int antifire;
-//    brakes_int brakes;
-//    brakes.show();
+    brakes_int brakes;
+    brakes.show();
 //    wingsmech_int wingsmech;
 //    wingsmech.show();
-//    emergencyalarm_int emergencyalarm;
-//    emergencyalarm.show();
-//    cabinlighting cabinlighting;
-//    cabinlighting.show();
+    emergencyalarm_int emergencyalarm;
+    emergencyalarm.show();
+    cabinlighting_int cabinlighting;
+    cabinlighting.show();
 //    presure_int presure;
 //    presure.show();
-//    powerdc_inst.show();
     powerdc_int powerdc;
     powerdc.show();
-//    hydro_int hydro;
-//    hydro.show();
-//    antiicing_int antiicing;
-//    antiicing.show();
+    hydro_int hydro;
+    hydro.show();
+    antiicing_int antiicing;
+    antiicing.show();
+    landinggear_int landinggear;
+    landinggear.show();
+
 
 
     return a.exec();

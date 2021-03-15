@@ -11,7 +11,7 @@ void powerdc_int::powerdc_14()
     else
         k17_2420 = true;
 
-    if(ush2dpl >= 18.0 && f46_2420 && s15_2420)
+    if(exchange_inst.ush2dpl >= 18.0 && f46_2420 && s15_2420)
         k15_2420 = true;
     else
         k15_2420 = false;
@@ -52,7 +52,7 @@ void powerdc_int::powerdc_14()
 
     if(k17_2420)
     {
-        if(ushpts[0] >= 65.0 && ushpts[1] >= 65.0 && ushpts[2] >= 65.0)
+        if(exchange_inst.ushpts[0] >= 65.0 && exchange_inst.ushpts[1] >= 65.0 && exchange_inst.ushpts[2] >= 65.0)
         {
             if(pbapsh3)
             {
@@ -85,7 +85,7 @@ void powerdc_int::powerdc_14()
     k13_2420 = false;
     purglk9 = false;
 
-    if(ush2dpl >= 18.0 && !k19_2420)
+    if(exchange_inst.ush2dpl >= 18.0 && !k19_2420)
     {
         k13_2420 = true;
         purglk9 = true;
@@ -93,7 +93,8 @@ void powerdc_int::powerdc_14()
 
     if(k19_2420)
     {
-        if(ushavP[0][0] >= 65.0 && ushavP[0][1] >= 65.0 && ushavP[0][2] >= 65.0)
+        if(exchange_inst.ushavP[0][0] >= 65.0 && exchange_inst.ushavP[0][1] >= 65.0 &&
+            exchange_inst.ushavP[0][2] >= 65.0)
         {
             if(pbapsh1)
             {
@@ -124,14 +125,15 @@ void powerdc_int::powerdc_14()
     k16_2420 = false;
     purgpk9 = false;
 
-    if(ush2dpp >= 18.0 && !k20_2420)
+    if(exchange_inst.ush2dpp >= 18.0 && !k20_2420)
     {
         k16_2420 = true;
         purgpk9 = true;
     }
     if(k20_2420)
     {
-        if(ushavP[1][0] >= 65.0 && ushavP[1][1] >= 65.0 && ushavP[1][2] >= 65.0)
+        if(exchange_inst.ushavP[1][0] >= 65.0 && exchange_inst.ushavP[1][1] >= 65.0
+            && exchange_inst.ushavP[1][2] >= 65.0)
         {
             if(pbapsh2)
             {

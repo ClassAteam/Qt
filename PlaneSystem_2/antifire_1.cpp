@@ -6,7 +6,7 @@
 //    if (S9_2610)
 //    {
 //        // Voltage check
-//        if ((powerdc_inst.ush1dpl >= 16.0) && (F8_2610 == 1))
+//        if ((powerdc_inst.ush1dpl >= 16.0) && F8_2610)
 //        {
 //            F82_2610 = 1;
 //        }

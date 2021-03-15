@@ -26,7 +26,8 @@ static int
     bool* pbg_pool[] = {&pbg1, &pbg2, &pbg3, &pbg4, &pbgvsu27};
     bool* prg_pool[] = {&prg1, &prg2, &prg3, &prg4, &prgvsu27};
     int * tick_pool[] = {&tickg1, &tickg2, &tickg3, &tickg4, &tickvsu};
-    double* ushal_pool[] = {&ushal, &ushal, &ushap, &ushap};
+    double* ushal_pool[] = {&exchange_inst.ushal, &exchange_inst.ushal,
+                            &exchange_inst.ushap, &exchange_inst.ushap};
 
     for(int i = 0; i < 5; i++)
     {
@@ -74,7 +75,7 @@ static int
         }
     }
 
-    if(ushal >= 18.0 && s1_2430 == true && bss_inst.BSS812X5t == true)
+    if(exchange_inst.ushal >= 18.0 && s1_2430 == true && bss_inst.BSS812X5t == true)
     {
         pvkgvsu27 = true;
     }
@@ -136,7 +137,7 @@ static int
     double* uoak_pool[] = {&uo1ak, &uo2ak};
     double* uak_pool[] = {&uak1, &uak2};
     double* ra_pool[] = {&ra1, &ra2};
-    double* ush_pool[] = {&ushal, &ushap};
+    double* ush_pool[] = {&exchange_inst.ushal, &exchange_inst.ushap};
     bool* purg27lk_pool[] = {&purg27lk4, &purg27pk4};
 
     for(int i = 0; i < 2; i++)

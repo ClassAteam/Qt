@@ -1,10 +1,6 @@
-//#pragma once
-//#include "uks.h"
-//#include "hydro_int.h"
-//#include "powerdc_int.h"
+#pragma once
+#include "hydro_int.h"
 
-//extern uks uks_inst;
-//extern powerdc_int powerdc_inst;
 
 
 

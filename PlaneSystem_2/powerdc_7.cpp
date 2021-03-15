@@ -63,22 +63,22 @@ void powerdc_int::powerdc_7() //7
         upr = uak2;
         break;
     case s16_2430_pos::avar1:
-        upr = ushal;
+        upr = exchange_inst.ushal;
         break;
     case s16_2430_pos::avar2:
-        upr = ushap;
+        upr = exchange_inst.ushap;
         break;
     case s16_2430_pos::sh1lev:
-        upr = ush1l;
+        upr = exchange_inst.ush1l;
         break;
     case s16_2430_pos::sh2lev:
-        upr = ush2l;
+        upr = exchange_inst.ush2l;
         break;
     case s16_2430_pos::sh1prav:
-        upr = ush1p;
+        upr = exchange_inst.ush1p;
         break;
     case s16_2430_pos::sh2prav:
-        upr = ush2p;
+        upr = exchange_inst.ush2p;
         break;
     default:
         upr = 0.0;

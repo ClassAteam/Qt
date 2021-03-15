@@ -3,9 +3,11 @@
 #include "bss.h"
 #include "allElCons.h"
 #include "input_feed.h"
+#include "exchange.h"
 
 extern allElCons allElCons_inst;
 extern bss bss_inst;
+extern exchange exchange_inst;
 
 class powerdc_int : public interfacing
 {
@@ -30,7 +32,7 @@ public:
         insp27, insho1l, insho1p, insho2l, insho2p, kg1_27, kg2_27, kg3_27, kg4_27,
         nvsu, pbgvsu, ugrvsu,
         uo1ak, uo2ak, upr, ipr, ur1ak, ur2ak, uz1ak, uz2ak,
-        usho2l, usho2p, ushak1, ushak2, uls27, ups27, ushzvsu,
+         uls27, ups27,
         //ugrr, ugrrvsu,
         ugvsu27, ugrvsu27, ivgvsu27, ivsu_27, divgvsu27,
         kak,
@@ -45,7 +47,7 @@ public:
         pbapsh5, pbapsh6,
         purglk9, purgpk9, purglk10,k17_2420, k19_2420, k20_2420,
         s1_7710, s2_7710, s3_7710, s4_7710,
-        s2_2420, s9_2420, pvrap, pprap, purglk2, purgpk3, purglk7, purgpk7,
+        s2_2420, s9_2420, pprap, purglk2, purgpk3, purglk7, purgpk7,
         purglk8, pp400[2], pss400,
         purglk6, purgpk6, pvkgen[5], pvkgen2, pvkgen3, pvkgen4, pvkgenvsu,
         pzvg[5], pzvgvsu, purgk1, purgk21, purgk31, purgk41, purglk4, purgpk4,
@@ -73,7 +75,7 @@ public:
         s1_2430, s4_2430, s5_2430, s8_2430, s11_2430,
         pvkchrl, pvkchrp, purg27lk1, purg27pk1, purg27pk3, purg27lk4, purg27pk4,
         purg27lk5, purg27pk5, purg27lk6, purg27lk7, purg27pk7, purg27lk9, purg27pk9,
-        ppgvsu27, pvrap1, pvrap2, pprap1, pprap2, plp27, ppp27, pss27, pshzvsu,
+        ppgvsu27,  pprap1, pprap2, plp27, ppp27, pss27, pshzvsu,
         s2_2430, s9_2430, s14_2430, s15_2430, s7_2430,  s3_2430, s10_2430,
         glviklvsu;
 
@@ -88,11 +90,7 @@ public:
         ea1{25.5}, ea2{25.5},
         iak1, iak2,
         ra1, ra2;
-    double
-        ush1dpl,
-        ush1dpp,
-        ushap,
-        ushal;
+
     enum s13_2430_pos{ground, air};
     int s13_2430;
     enum s16_2430_pos{akk1, akk2, avar1, avar2, sh1lev, sh2lev, sh1prav, sh2prav};
@@ -102,17 +100,6 @@ public:
     enum s20_2430_pos{apsh1, apsh2, apsh3, apsh5, apsh6};
     int s20_2430;
 
-    double
-        ush1l,
-        ush2l,
-        ush1p,
-        ush2p;
-
-    double
-        usho1p,
-        usho1l,
-        ush2dpl,
-        ush2dpp;
 
     bool
         k21_2420,
@@ -133,22 +120,6 @@ public:
     bool
         purglk11,
         purgpk11;
-    double
-        ush6pp,
-        ushp5pl;
-    double
-        ugvsuP[3],                  //vsu generator voltage by phases
-        ushpP[2][3],                //toggle bus voltages by phases
-        ushavP[4][3],               //emergency buses voltages by phases
-        ushgP[4][3],                //a generator bus voltages by phases
-        urapP[3],                   //rap bus voltahe by phases
-        ushpos[2],                  // voltage of converter3's buses
-        ushpts[3],                  // voltage of converter1's bus by phases
-        fshg[5],                    //frequency of 4 generators and vsu bases
-        fshp[2],                    //frequency of switching buses
-        fshpos[2],                  //frequency of convreter3's buses
-        fshpts,
-        fshav[4];                   //frequency of emergency buses
 
 
 public:

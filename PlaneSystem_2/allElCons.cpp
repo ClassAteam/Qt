@@ -272,6 +272,3 @@ void allElCons::makeCorresCurr()
 }
 
 allElCons allElCons_inst;
-
-
-

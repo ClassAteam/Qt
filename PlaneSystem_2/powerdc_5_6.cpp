@@ -85,7 +85,7 @@ void powerdc_int::powerdc_5_6() //5 6
 
 //    insho2p = k1_17723 * 7;
 
-    if(ushzvsu >= 18.0)
+    if(exchange_inst.ushzvsu >= 18.0)
     {
         if(apdvsu_35)
         {
@@ -129,7 +129,7 @@ void powerdc_int::powerdc_5_6() //5 6
         {
             if(pvkgvsu27)
             {
-                iak1 = 0.013 * (ea1 - ushal) /ra1;
+                iak1 = 0.013 * (ea1 - exchange_inst.ushal) /ra1;
             }
             else
             {
@@ -139,14 +139,14 @@ void powerdc_int::powerdc_5_6() //5 6
                 {
                     if(plp27)
                     {
-                        iak1 = 0.013 * (ea1 - ushal) / ra1; //what is the order
+                        iak1 = 0.013 * (ea1 - exchange_inst.ushal) / ra1; //what is the order
                     }
                     else
                     {
                         if(ppp27)
                         {
                             if(pss27)
-                                iak1 = 0.013 * (ea1 - ushal) / ra1;
+                                iak1 = 0.013 * (ea1 - exchange_inst.ushal) / ra1;
                             else
                             {
                                 iak1 = inshal;
@@ -176,7 +176,7 @@ void powerdc_int::powerdc_5_6() //5 6
     {
         if(pvkgvsu27 && purg27pk3)
         {
-            iak2 = 0.013 * (ea2 - ushap) / ra2;
+            iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
         }
         else
         {
@@ -185,13 +185,13 @@ void powerdc_int::powerdc_5_6() //5 6
             else
             {
                 if(ppp27)
-                    iak2 = 0.013 * (ea2 - ushap) / ra2;
+                    iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
                 else
                 {
                     if(plp27)
                     {
                         if(pss27)
-                            iak2 = 0.013 * (ea2 - ushap) / ra2;
+                            iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
                         else
                         {
                             iak2 = inshap;

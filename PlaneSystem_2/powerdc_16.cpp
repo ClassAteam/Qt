@@ -20,9 +20,9 @@ void powerdc_int::powerdc_16()
         {
             if(*purgk1_pool[i])
             {
-                ushgP[i][y] = ugP[i][y];
+                exchange_inst.ushgP[i][y] = ugP[i][y];
 
-                fshg[i] = fg[i];
+                exchange_inst.fshg[i] = fg[i];
                 tick[i] = 0;
             }
             else
@@ -30,9 +30,9 @@ void powerdc_int::powerdc_16()
                 if(*purgk21_pool[i])
                 {
                     if(i < 1)
-                        ushgP[i][y] = ugP[i + 1][y];
+                        exchange_inst.ushgP[i][y] = ugP[i + 1][y];
                     else
-                        ushgP[i][y] = ugP[i - 1][y];
+                        exchange_inst.ushgP[i][y] = ugP[i - 1][y];
                 }
                 else
                 {
@@ -40,15 +40,15 @@ void powerdc_int::powerdc_16()
                     {
                         if(pss400)
                         {
-                            ushgP[i][y] = ushgP[i + 2][y];
-                            fshg[i] = fshg[i + 2];
+                            exchange_inst.ushgP[i][y] = exchange_inst.ushgP[i + 2][y];
+                            exchange_inst.fshg[i] = exchange_inst.fshg[i + 2];
                         }
                         else
                         {
                             if(tick[i] * TICK >= 500)
                             {
-                                ushgP[i][y] = 0.0;
-                                fshg[i] = 0.0;
+                                exchange_inst.ushgP[i][y] = 0.0;
+                                exchange_inst.fshg[i] = 0.0;
                             }
                             else
                             {
@@ -60,22 +60,22 @@ void powerdc_int::powerdc_16()
                     {
                         if(purglk2)
                         {
-                            ushgP[i][y] = ugP[4][y];
-                            fshg[i] = fg[4];
+                            exchange_inst.ushgP[i][y] = ugP[4][y];
+                            exchange_inst.fshg[i] = fg[4];
                         }
                         else
                         {
                             if(purgpk3)
                             {
-                                ushgP[i][y] = urapP[y];
-                                fshg[i] = frap;
+                                exchange_inst.ushgP[i][y] = exchange_inst.urapP[y];
+                                exchange_inst.fshg[i] = frap;
                             }
                             else
                             {
                                 if(tick[i] * TICK >= 500)
                                 {
-                                    ushgP[i][y] = 0;
-                                    fshg[i] = 0;
+                                    exchange_inst.ushgP[i][y] = 0;
+                                    exchange_inst.fshg[i] = 0;
                                 }
                                 else
                                 {
@@ -89,16 +89,16 @@ void powerdc_int::powerdc_16()
 
             if(*purgk41_pool[i])
             {
-                ushgP[i + 2][y] = ugP[i + 2][y];
-                fshg[i + 2] = fg[i + 2];
+                exchange_inst.ushgP[i + 2][y] = ugP[i + 2][y];
+                exchange_inst.fshg[i + 2] = fg[i + 2];
                 tick[i + 2] = 0;
             }
             else
             {
                 if(*purgk31_pool[i])
                 {
-                    ushgP[i + 2][y] = ugP[i + 2][y];
-                    fshg[i + 2] = fg[i + 2];
+                    exchange_inst.ushgP[i + 2][y] = ugP[i + 2][y];
+                    exchange_inst.fshg[i + 2] = fg[i + 2];
                 }
                 else
                 {
@@ -106,15 +106,15 @@ void powerdc_int::powerdc_16()
                     {
                         if(pss400)
                         {
-                            ushgP[i + 2][y] = ushgP[1][y];
-                            fshg[i + 2] = fshg[1];
+                            exchange_inst.ushgP[i + 2][y] = exchange_inst.ushgP[1][y];
+                            exchange_inst.fshg[i + 2] = exchange_inst.fshg[1];
                         }
                         else
                         {
                             if(tick[i + 2] * TICK >= 500)
                             {
-                                ushgP[i + 2][y] = 0;
-                                fshg[i + 2] = 0;
+                                exchange_inst.ushgP[i + 2][y] = 0;
+                                exchange_inst.fshg[i + 2] = 0;
                             }
                             else
                             {
@@ -126,24 +126,24 @@ void powerdc_int::powerdc_16()
                     {
                         if(purgpk3)
                         {
-                            ushgP[i + 2][y] = urapP[y];
-                            fshg[i + 2] = frap;
+                            exchange_inst.ushgP[i + 2][y] = exchange_inst.urapP[y];
+                            exchange_inst.fshg[i + 2] = frap;
                             tick[i + 2] = 0;
                         }
                         else
                         {
                             if(purglk2)
                             {
-                                ushgP[i + 2][y] = ugP[4][y];
-                                fshg[i + 2] = fg[4];
+                                exchange_inst.ushgP[i + 2][y] = ugP[4][y];
+                                exchange_inst.fshg[i + 2] = fg[4];
                                 tick[i + 2] = 0;
                             }
                             else
                             {
                                 if(tick[i + 2] * TICK >= 500)
                                 {
-                                    ushgP[i + 2][y] = 0;
-                                    fshg[i + 2] = 0;
+                                    exchange_inst.ushgP[i + 2][y] = 0;
+                                    exchange_inst.fshg[i + 2] = 0;
                                 }
                                 else
                                 {
@@ -171,8 +171,8 @@ void powerdc_int::powerdc_16()
                     {
                         if(purglk2)
                         {
-                            ushgP[i + 2][y] = ugP[4][y];
-                            fshg[i + 2] = fg[4];
+                            exchange_inst.ushgP[i + 2][y] = ugP[4][y];
+                            exchange_inst.fshg[i + 2] = fg[4];
                         }
                     }
                 }
@@ -185,8 +185,8 @@ void powerdc_int::powerdc_16()
                     {
                         if(purgpk3)
                         {
-                            ushgP[i][y] = urapP[y];
-                            fshg[i] = frap;
+                            exchange_inst.ushgP[i][y] = exchange_inst.urapP[y];
+                            exchange_inst.fshg[i] = frap;
                         }
                     }
                 }
@@ -196,26 +196,26 @@ void powerdc_int::powerdc_16()
             {
                 if(i == 0)
                 {
-                    ushpP[i][y] = ushgP[i][y];
-                    fshp[0] = fshg[0];
+                    exchange_inst.ushpP[i][y] = exchange_inst.ushgP[i][y];
+                    exchange_inst.fshp[0] = exchange_inst.fshg[0];
                 }
                 else
                 {
-                    ushpP[i][y] = ushgP[3][y];
-                    fshp[1] = fshg[2];
+                    exchange_inst.ushpP[i][y] = exchange_inst.ushgP[3][y];
+                    exchange_inst.fshp[1] = exchange_inst.fshg[2];
                 }
             }
             else
             {
                 if(i == 0)
                 {
-                    ushpP[i][y] = ushgP[1][y];
-                    fshp[0] = fshg[1];
+                    exchange_inst.ushpP[i][y] = exchange_inst.ushgP[1][y];
+                    exchange_inst.fshp[0] = exchange_inst.fshg[1];
                 }
                 else
                 {
-                    ushpP[i][y] = ushgP[3][y];
-                    fshp[1] = fshg[3];
+                    exchange_inst.ushpP[i][y] = exchange_inst.ushgP[3][y];
+                    exchange_inst.fshp[1] = exchange_inst.fshg[3];
                 }
 
             }
@@ -225,26 +225,26 @@ void powerdc_int::powerdc_16()
                 {
                     if(i == 0)
                     {
-                        ushavP[2][y] = ugP[0][y];
-                        fshav[2] = fg[0];
+                        exchange_inst.ushavP[2][y] = ugP[0][y];
+                        exchange_inst.fshav[2] = fg[0];
                     }
                     else
                     {
-                        ushavP[3][y] = ugP[3][y];
-                        fshav[3] = fg[3];
+                        exchange_inst.ushavP[3][y] = ugP[3][y];
+                        exchange_inst.fshav[3] = fg[3];
                     }
                 }
                 else
                 {
                     if(i == 0)
                     {
-                        ushavP[2][y] = ugP[1][y];
-                        fshav[2] = fg[1];
+                        exchange_inst.ushavP[2][y] = ugP[1][y];
+                        exchange_inst.fshav[2] = fg[1];
                     }
                     else
                     {
-                        ushavP[3][y] = ugP[2][y];
-                        fshav[3] = fg[2];
+                        exchange_inst.ushavP[3][y] = ugP[2][y];
+                        exchange_inst.fshav[3] = fg[2];
                     }
                 }
             }
@@ -252,24 +252,24 @@ void powerdc_int::powerdc_16()
             {
                 if(i ==0)
                 {
-                    ushavP[2][y] = ushpP[0][y];
-                    fshav[2] = fshp[0];
+                    exchange_inst.ushavP[2][y] = exchange_inst.ushpP[0][y];
+                    exchange_inst.fshav[2] = exchange_inst.fshp[0];
                 }
                 else
                 {
-                    ushavP[3][y] = ushpP[1][y];
-                    fshav[3] = fshp[1];
+                    exchange_inst.ushavP[3][y] = exchange_inst.ushpP[1][y];
+                    exchange_inst.fshav[3] = exchange_inst.fshp[1];
                 }
 
                 if(*k13_pool[i])
                 {
-                    ushavP[i][y] = ushavP[3 - i][y];
-                    fshav[i] = fshav[3 - i];
+                    exchange_inst.ushavP[i][y] = exchange_inst.ushavP[3 - i][y];
+                    exchange_inst.fshav[i] = exchange_inst.fshav[3 - i];
                 }
                 else
                 {
-                    ushavP[i][y] = ushgP[i + 1][y];
-                    fshav[i] = fshg[i + 1];
+                    exchange_inst.ushavP[i][y] = exchange_inst.ushgP[i + 1][y];
+                    exchange_inst.fshav[i] = exchange_inst.fshg[i + 1];
                 }
             }
 
@@ -277,38 +277,38 @@ void powerdc_int::powerdc_16()
             {
                 if(i == 0)
                 {
-                    ushpos[0] = upos;
-                    fshpos[0] = fpos;
+                    exchange_inst.ushpos[0] = upos;
+                    exchange_inst.fshpos[0] = fpos;
                 }
                 else
                 {
-                    ushpos[1] = upos;
-                    fshpos[1] = fpos;
+                    exchange_inst.ushpos[1] = upos;
+                    exchange_inst.fshpos[1] = fpos;
                 }
             }
             else
             {
                 if(i == 0)
                 {
-                    ushpos[0] = ushavP[0][0];
-                    fshpos[0] = fshav[0];
+                    exchange_inst.ushpos[0] = exchange_inst.ushavP[0][0];
+                    exchange_inst.fshpos[0] = exchange_inst.fshav[0];
                 }
                 else
                 {
-                    ushpos[1] = ushavP[1][0];
-                    fshpos[1] = fshav[1];
+                    exchange_inst.ushpos[1] = exchange_inst.ushavP[1][0];
+                    exchange_inst.fshpos[1] = exchange_inst.fshav[1];
                 }
             }
 
             if(k14_2420)
             {
-                ushpts[y] = uptsP[y];
-                fshpts = fpts ;
+                exchange_inst.ushpts[y] = uptsP[y];
+                exchange_inst.fshpts = fpts ;
             }
             else
             {
-                ushpts[y] = ushavP[0][y];
-                fshpts = fshav[0];
+                exchange_inst.ushpts[y] = exchange_inst.ushavP[0][y];
+                exchange_inst.fshpts = exchange_inst.fshav[0];
             }
         }
     }

@@ -12,7 +12,7 @@ void powerdc_int::powerdc_2_3() //2 //3
     //start logic
     if(abs(exchange_inst.speed) < 0.1)
     {
-        if(pvrap1 == true)
+        if(exchange_inst.pvrap1 == true)
         {
             pprap1 = true;
             urap1 = 28.5;
@@ -23,7 +23,7 @@ void powerdc_int::powerdc_2_3() //2 //3
             urap1 = 0;
         }
 
-        if(pvrap2 == true)
+        if(exchange_inst.pvrap2 == true)
         {
             pprap2 = true;
             urap2 = 28.5;
@@ -41,7 +41,7 @@ void powerdc_int::powerdc_2_3() //2 //3
         urap1 = 0;
         urap2 = 0;
     }
-    if(ushal >= 18.0 && pprap1 == true && s2_2430 == true)
+    if(exchange_inst.ushal >= 18.0 && pprap1 == true && s2_2430 == true)
     {
         purg27lk4 = true;
     }
@@ -50,7 +50,7 @@ void powerdc_int::powerdc_2_3() //2 //3
         purg27lk4 = false;
     }
 
-    if(ushap >= 18.0 && pprap2 == true && s9_2430 == true)
+    if(exchange_inst.ushap >= 18.0 && pprap2 == true && s9_2430 == true)
     {
         purg27pk4 = true;
     }
@@ -172,7 +172,7 @@ void powerdc_int::powerdc_2_3() //2 //3
         }
         else
         {
-            if(ush1dpl >= 18.0 && s7_2430 == true)
+            if(exchange_inst.ush1dpl >= 18.0 && s7_2430 == true)
             {
                 purg27pk1 = true;
                 purg27pk7 = true;
@@ -200,7 +200,7 @@ void powerdc_int::powerdc_2_3() //2 //3
             purg27pk9 = true;
 //            ppp27 = true;
 
-            if(ush1dpp >= 18.0 && s7_2430 == true)
+            if(exchange_inst.ush1dpp >= 18.0 && s7_2430 == true)
             {
                 purg27lk1 = true;
                 purg27lk7 = true;
@@ -245,7 +245,7 @@ void powerdc_int::powerdc_2_3() //2 //3
         }
         else
         {
-            if(ush1dpl >= 18.0 && s7_2430)
+            if(exchange_inst.ush1dpl >= 18.0 && s7_2430)
             {
                 purg27pk1 = true;
                 purg27pk7 = true;
@@ -268,7 +268,7 @@ void powerdc_int::powerdc_2_3() //2 //3
 //            purg27pk4 = false;
 //            ppp27 = true;
 
-            if(ush1dpp >= 18.0 && s7_2430)
+            if(exchange_inst.ush1dpp >= 18.0 && s7_2430)
             {
                 purg27lk1 = true;
                 purg27lk7 = true;

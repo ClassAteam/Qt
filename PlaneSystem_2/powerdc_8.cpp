@@ -53,7 +53,7 @@ void powerdc_int::powerdc_8()
     }
     else
     {
-        if(ushal >= 18.0)
+        if(exchange_inst.ushal >= 18.0)
         {
             bss_inst.BSS926X1z = true;
         }
@@ -79,7 +79,7 @@ void powerdc_int::powerdc_8()
     }
     else
     {
-        if(ushal >= 18.0)
+        if(exchange_inst.ushal >= 18.0)
         {
             bss_inst.BSS926X1DD = true;
         }
@@ -108,7 +108,7 @@ void powerdc_int::powerdc_8()
     }
     else
     {
-        if(ushap >= 18.0)
+        if(exchange_inst.ushap >= 18.0)
         {
             bss_inst.BSS837X1v = true;
         }
@@ -131,7 +131,7 @@ void powerdc_int::powerdc_8()
     }
     else
     {
-        if(ushap >= 18.0)
+        if(exchange_inst.ushap >= 18.0)
         {
             bss_inst.BSS837X1n = true;
         }

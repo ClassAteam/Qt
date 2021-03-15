@@ -1,10 +1,4 @@
 //#pragma once
-//#include <QWidget>
-//#include <QtWidgets>
-//#include <QObject>
-//#include <QLabel>
-//#include <QPushButton>
-//#include <QLineEdit>
 
 
 //extern double

@@ -365,8 +365,8 @@ powerdc_int::powerdc_int(QWidget *parent)
     createLabelClue(&pp400[0], "plp400");
     createLabelClue(&pp400[1], "ppp400");
     createLabelClue(&pss400, "pss400");
-    createLabelValue(&urap, "urap");
-    createLabelValue(&frap, "frap");
+    createLabelValue(&exchange_inst.urap, "urap");
+    createLabelValue(&exchange_inst.frap, "frap");
     createRedButton(&s1_7710, "s1_7710");
     createRedButton(&s2_7710, "s2_7710");
     createRedButton(&s3_7710, "s3_7710");
@@ -388,11 +388,11 @@ powerdc_int::powerdc_int(QWidget *parent)
     createLabelClue(&k20_2420, "k20_2420");
     createLabelValue(&exchange_inst.ushpos[0], "ushpos1");
     createLabelValue(&exchange_inst.ushpos[1], "ushpos2");
-    createLabelValue(&upts, "upts");
-    createLabelValue(&uptsP[0], "uptsa");
-    createLabelValue(&uptsP[1], "uptsb");
-    createLabelValue(&uptsP[2], "uptsc");
-    createLabelValue(&fpts, "fpts");
+    createLabelValue(&exchange_inst.upts, "upts");
+    createLabelValue(&exchange_inst.uptsP[0], "uptsa");
+    createLabelValue(&exchange_inst.uptsP[1], "uptsb");
+    createLabelValue(&exchange_inst.uptsP[2], "uptsc");
+    createLabelValue(&exchange_inst.fpts, "fpts");
     createRedButton(&otk_preobr_pts1, "otk_preobr_pts1");
     createRedButton(&s15_2420, "s15_2420");
     createLabelClue(&otk_pos1000, "otk_pos1000");
@@ -421,8 +421,8 @@ powerdc_int::powerdc_int(QWidget *parent)
     createRadioButton(&s20_2420, "apsh6", true);
     createLabelValue(&ushpzl, "ushpzl");
     createLabelValue(&ushpzp, "ushpzp");
-    createLabelValue(&upos, "upos");
-    createLabelValue(&fpos, "fpos");
+    createLabelValue(&exchange_inst.upos, "upos");
+    createLabelValue(&exchange_inst.fpos, "fpos");
     createLabelValue(&exchange_inst.ushpP[0][0], "ushp1-a");
     createLabelValue(&exchange_inst.ushpP[1][0], "ushp2-a");
     createLabelValue(&exchange_inst.ushavP[0][0], "ushav1-a");

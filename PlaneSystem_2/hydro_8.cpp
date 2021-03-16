@@ -1,10 +1,10 @@
 #include "hydro_8.h"
 
 
-void hydro_int::hydro_8()
+void hydro_int::hydro_8() //actually 9th sheet
 {
     //start logic
-    tgs = tn - 273;
+    air_temr_C = air_tempr_K - 273;
 
 //    double* qgs_pool[] = {&qgs1, &qgs2, &qgs3, &qgs4,};
 //    double* dqgp_pool[] = {&dqg1p, &dqg2p, &dqg3p, &dqg4p,};
@@ -37,7 +37,7 @@ void hydro_int::hydro_8()
         }
         else
         {
-            *tb_z_pool[i] = tgs;
+            *tb_z_pool[i] = air_temr_C;
         }
 
         *tb_pool[i] = *tb_pool[i] + 0.001 * (*tb_z_pool[i] - *tb_pool[i]);

@@ -10,6 +10,8 @@
 extern const double
     TICK;
 
+extern QElapsedTimer timing;
+
 class interfacing : public QWidget
 {
     Q_OBJECT

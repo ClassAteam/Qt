@@ -181,14 +181,15 @@ void brakes_int::brakes_5()
         }
         else
         {
-            uks_inst.UKS1X18 = true;
+            uks_inst.UKS1X18 = false;
             bss_inst.BSS812X5r = false;
         }
     }
     else
     {
-        uks_inst.UKS2X212 = 0;
-        uks_inst.UKS2X234 = 0;
+        uks_inst.UKS2X212 = false;
+        uks_inst.UKS2X234 = false;
+        uks_inst.UKS1X18 = false;
     }
 }
 

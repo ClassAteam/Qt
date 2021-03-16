@@ -68,7 +68,7 @@ void powerdc_int::powerdc_16()
                             if(purgpk3)
                             {
                                 exchange_inst.ushgP[i][y] = exchange_inst.urapP[y];
-                                exchange_inst.fshg[i] = frap;
+                                exchange_inst.fshg[i] = exchange_inst.frap;
                             }
                             else
                             {
@@ -127,7 +127,7 @@ void powerdc_int::powerdc_16()
                         if(purgpk3)
                         {
                             exchange_inst.ushgP[i + 2][y] = exchange_inst.urapP[y];
-                            exchange_inst.fshg[i + 2] = frap;
+                            exchange_inst.fshg[i + 2] = exchange_inst.frap;
                             tick[i + 2] = 0;
                         }
                         else
@@ -186,7 +186,7 @@ void powerdc_int::powerdc_16()
                         if(purgpk3)
                         {
                             exchange_inst.ushgP[i][y] = exchange_inst.urapP[y];
-                            exchange_inst.fshg[i] = frap;
+                            exchange_inst.fshg[i] = exchange_inst.frap;
                         }
                     }
                 }
@@ -277,13 +277,13 @@ void powerdc_int::powerdc_16()
             {
                 if(i == 0)
                 {
-                    exchange_inst.ushpos[0] = upos;
-                    exchange_inst.fshpos[0] = fpos;
+                    exchange_inst.ushpos[0] = exchange_inst.upos;
+                    exchange_inst.fshpos[0] = exchange_inst.fpos;
                 }
                 else
                 {
-                    exchange_inst.ushpos[1] = upos;
-                    exchange_inst.fshpos[1] = fpos;
+                    exchange_inst.ushpos[1] = exchange_inst.upos;
+                    exchange_inst.fshpos[1] = exchange_inst.fpos;
                 }
             }
             else
@@ -302,8 +302,8 @@ void powerdc_int::powerdc_16()
 
             if(k14_2420)
             {
-                exchange_inst.ushpts[y] = uptsP[y];
-                exchange_inst.fshpts = fpts ;
+                exchange_inst.ushpts[y] = exchange_inst.uptsP[y];
+                exchange_inst.fshpts = exchange_inst.fpts ;
             }
             else
             {

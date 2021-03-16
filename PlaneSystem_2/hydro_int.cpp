@@ -197,8 +197,8 @@ hydro_int::hydro_int(QWidget *parent)
     createLabelValue(&tb2_z, "tb2_z");
     createLabelValue(&tb3_z, "tb3_z");
     createLabelValue(&tb4_z, "tb4_z");
-    createLabelValue(&tgs, "tgs");
-    createLabelValue(&tn, "tn");
+    createLabelValue(&air_temr_C, "tgs");
+    createLabelValue(&air_tempr_K, "tn");
     createLabelValue(&dqg1p, "dqg1p");
     createLabelValue(&dqg1t, "dqg1t");
     createLabelValue(&dqg2p, "dqg2p");

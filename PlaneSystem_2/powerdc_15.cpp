@@ -14,13 +14,13 @@ void powerdc_int::powerdc_15()
 
     if(k30_2420 && !otk_pos1000)
     {
-        upos = upos + (118 - upos) / kpos;
-        fpos = fpos + (401 - fpos) / kpos;
+        exchange_inst.upos = exchange_inst.upos + (118 - exchange_inst.upos) / kpos;
+        exchange_inst.fpos = exchange_inst.fpos + (401 - exchange_inst.fpos) / kpos;
     }
     else
     {
-        upos = upos + (0 - upos) / kpos;
-        fpos = fpos + (0 - fpos ) / kpos;
+        exchange_inst.upos = exchange_inst.upos + (0 - exchange_inst.upos) / kpos;
+        exchange_inst.fpos = exchange_inst.fpos + (0 - exchange_inst.fpos ) / kpos;
     }
 
     if(!pp400[0] && !purglk2)

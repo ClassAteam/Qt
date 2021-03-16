@@ -107,7 +107,14 @@ struct exchange
         fshav[4],                   //frequency of emergency buses
         ushgP[4][3],                //a generator bus voltages by phases
         ushavP[4][3],               //emergency buses voltages by phases
-        ushpP[2][3];                //toggle bus voltages by phases
+        ushpP[2][3],                //toggle bus voltages by phases
+        upts,
+        fpos,
+        fpts,
+        urap,
+        upos,
+        frap,
+        uptsP[3];
 
     bool
         S18_2930,

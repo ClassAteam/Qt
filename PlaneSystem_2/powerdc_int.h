@@ -4,9 +4,11 @@
 #include "allElCons.h"
 #include "input_feed.h"
 #include "exchange.h"
+#include "uks.h"
 
 extern allElCons allElCons_inst;
 extern bss bss_inst;
+extern uks uks_inst;
 extern exchange exchange_inst;
 
 class powerdc_int : public interfacing
@@ -24,9 +26,7 @@ public:
         ug1z_27, ug2z_27, ug3z_27, ug4z_27, ugvsuz_27,
         ugP_27[5][3];
     double
-        ushpzl, ushpzp, upos, fpos,
-        upts, uptsP[3],
-        fpts, urap, frap,
+        ushpzl, ushpzp,
         inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
         inshal, inshap, insh1l, insh1p, insh2l, insh2p, inshzvsu, insl27,
         insp27, insho1l, insho1p, insho2l, insho2p, kg1_27, kg2_27, kg3_27, kg4_27,
@@ -140,4 +140,5 @@ public:
     void powerdc_15();
     void powerdc_16();
     void powerdc_20();
+    void powerdc_21();
 };

@@ -8,7 +8,7 @@ void powerdc_int::powerdc_13()
         exchange_inst.urapP[0] = 117.0;
         exchange_inst.urapP[1] = 115.0;
         exchange_inst.urapP[2] = 116.0;
-        frap = 401.0;
+        exchange_inst.frap = 401.0;
     }
     else
     {
@@ -16,7 +16,7 @@ void powerdc_int::powerdc_13()
         exchange_inst.urapP[0] = 0;
         exchange_inst.urapP[1] = 0;
         exchange_inst.urapP[2] = 0;
-        frap = 0;
+        exchange_inst.frap = 0;
     }
 
     if(exchange_inst.ushap >= 18.0 && pprap && s9_2420)

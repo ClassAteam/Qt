@@ -18,24 +18,24 @@ void powerdc_int::powerdc_14()
 
     if(k15_2420 && !otk_preobr_pts1)
     {
-        upts = upts + (117 - upts) / kpts;
-        fpts = fpts + (400 - fpts) / kpts;
+        exchange_inst.upts = exchange_inst.upts + (117 - exchange_inst.upts) / kpts;
+        exchange_inst.fpts = exchange_inst.fpts + (400 - exchange_inst.fpts) / kpts;
     }
     else
     {
-        if(upts > 1.0)
+        if(exchange_inst.upts > 1.0)
         {
-            upts = upts + (0 - upts) / kpts;
+            exchange_inst.upts = exchange_inst.upts + (0 - exchange_inst.upts) / kpts;
         }
         else
-            upts = 0.0;
+            exchange_inst.upts = 0.0;
 
-        if(fpts > 1.0)
+        if(exchange_inst.fpts > 1.0)
         {
-            fpts = fpts + (0 - fpts) / kpts;
+            exchange_inst.fpts = exchange_inst.fpts + (0 - exchange_inst.fpts) / kpts;
         }
         else
-            fpts = 0.0;
+            exchange_inst.fpts = 0.0;
     }
 
 
@@ -156,7 +156,7 @@ void powerdc_int::powerdc_14()
     else
         pbapsh2 = false;
 
-    uptsP[0] = upts;
-    uptsP[1] = upts - 1;
-    uptsP[2] = upts - 2;
+    exchange_inst.uptsP[0] = exchange_inst.upts;
+    exchange_inst.uptsP[1] = exchange_inst.upts - 1;
+    exchange_inst.uptsP[2] = exchange_inst.upts - 2;
 }

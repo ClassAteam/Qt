@@ -420,6 +420,7 @@ void landinggear_int::landinggear_9()
 
     }
 
+//    qDebug() << timing.elapsed();
 }
 
 double m_pedals_to_fi(double Xped, double interval_Y1, double interval_Y2)

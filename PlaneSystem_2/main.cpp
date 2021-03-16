@@ -13,22 +13,23 @@
 #include "antifire_int.h"
 #include "landinggear_int.h"
 
-const double TICK = 200;
+const double TICK = 2;
+QElapsedTimer timing;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-//    antifire_int antifire;
+    antifire_int antifire;
     brakes_int brakes;
     brakes.show();
-//    wingsmech_int wingsmech;
-//    wingsmech.show();
+    wingsmech_int wingsmech;
+    wingsmech.show();
     emergencyalarm_int emergencyalarm;
     emergencyalarm.show();
     cabinlighting_int cabinlighting;
     cabinlighting.show();
-//    presure_int presure;
-//    presure.show();
+    presure_int presure;
+    presure.show();
     powerdc_int powerdc;
     powerdc.show();
     hydro_int hydro;

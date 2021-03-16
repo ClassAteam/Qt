@@ -40,8 +40,12 @@ public:
         pa1gak, pa2gak,
         pa3gak, pa4gak, pprgs1, pprgs2, pprgs3, pprgs4, pprgat, puksgs1,
         puksgs2, puksgs3, puksgs4,
-        tb1, tb2, tb3, tb4, tb1_z, tb2_z,
-        tb3_z, tb4_z, tgs, tn, dqg1p, dqg1t, dqg2p, dqg2t, dqgzat, dqg3p,
+        tb1, tb2, tb3, tb4, //tempreture in the tank
+        tb1_z, tb2_z,//
+        tb3_z, tb4_z,
+        air_temr_C,//air tempreature in C
+        air_tempr_K{288},//tempretaure of air int the sky in K
+        dqg1p, dqg1t, dqg2p, dqg2t, dqgzat, dqg3p,
         dqg3t, dqg4p, dqg4t, dqutg1, dqutg2, dqutg3, dqutg4, q0g1, q0g2,
         q0g3, q0g4, qg1_z, qg2_z, qg3_z, qg4_z, qgs1, qgs2, qgs3, qgs4 ;
 

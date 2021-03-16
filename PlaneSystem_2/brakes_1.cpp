@@ -5,6 +5,7 @@
 
 void brakes_int::brakes_1()
 {
+    timing.start();
     //start logic
     if(X_ped11 >= X_ped21)
     {

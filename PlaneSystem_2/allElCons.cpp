@@ -336,8 +336,8 @@ allElConsDir::allElConsDir()
     consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "s1_11028", &exchange_inst.s1_11028));
     consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "s1_11081", &exchange_inst.s1_11081));
     consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "s2_11052", &exchange_inst.s2_11052));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::shal, "k30_2420", &exchange_inst.k30_2420));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::shal, "k31_2420", &exchange_inst.k31_2420));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k30_2420", &exchange_inst.k30_2420));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k31_2420", &exchange_inst.k31_2420));
     consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k3_7322", &exchange_inst.k3_7322));
     consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k8_7322", &exchange_inst.k8_7322));
     consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "k2_11038", &exchange_inst.k2_11038));
@@ -414,6 +414,12 @@ void allElConsDir::makeCorresCurr()
 {
     QVector<double>buses;
     buses = getIvg_pool();
+
+    powerdc_int::insh2dpp = buses[sh2dpp];
+    powerdc_int::insh2dpl = buses[sh2dpl];
+    powerdc_int::inshal = buses[shal];
+    powerdc_int::insh1dpl = buses[sh1dpl];
+    powerdc_int::insh1l = buses[sh1l];
 
     if(exchange_inst.ushzvsu >= 18.0)
     {
@@ -701,6 +707,3 @@ void allElConsDir::makeCorresCurr()
         }
     }
 }
-
-allElConsAlt allElConsAlt_inst;
-allElConsDir allElConsDir_inst;

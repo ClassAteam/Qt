@@ -2,11 +2,11 @@
 
 void wingsmech_int::wingsmech_3()
 {
-    prrkpchk = false;
-    prr1kpchk = false;
-    prr2kpchk = false;
-    por1kpchk = false;
-    por2kpchk = false;
+    exchange_inst.prrkpchk = false;
+    exchange_inst.prr1kpchk = false;
+    exchange_inst.prr2kpchk = false;
+    exchange_inst.por1kpchk = false;
+    exchange_inst.por2kpchk = false;
 
     Kgs1 = 0;
     Kgs2 = 0;
@@ -44,10 +44,10 @@ void wingsmech_int::wingsmech_3()
     {
         if(exchange_inst.ushal >= 18)
         {
-            if(s1_2790 == true)
+            if(exchange_inst.s1_2790 == true)
             {
-                prrkpchk = true;
-                prr1kpchk = true;
+                exchange_inst.prrkpchk = true;
+                exchange_inst.prr1kpchk = true;
             }
             else
             {
@@ -55,7 +55,7 @@ void wingsmech_int::wingsmech_3()
                 {
                     if(exchange_inst.ush1dpl >= 18)
                     {
-                        por1kpchk = true;
+                        exchange_inst.por1kpchk = true;
                     }
                 }
             }
@@ -66,10 +66,10 @@ void wingsmech_int::wingsmech_3()
     {
         if(exchange_inst.ushap >= 18)
         {
-            if(s1_2790 == true)
+            if(exchange_inst.s1_2790 == true)
             {
-                prrkpchk = true;
-                prr2kpchk = true;
+                exchange_inst.prrkpchk = true;
+                exchange_inst.prr2kpchk = true;
             }
             else
             {
@@ -77,13 +77,13 @@ void wingsmech_int::wingsmech_3()
                 {
                     if(exchange_inst.ush1dpp >= 18)
                     {
-                        por2kpchk = true;
+                        exchange_inst.por2kpchk = true;
                     }
                 }
             }
         }
     }
-    if(por1kpchk == true)
+    if(exchange_inst.por1kpchk == true)
     {
         if((X_zad - X_L) >= 0)
         {
@@ -126,7 +126,7 @@ void wingsmech_int::wingsmech_3()
         D_X_l = 0;
     }
 
-    if(por2kpchk == true)
+    if(exchange_inst.por2kpchk == true)
     {
         if((X_zad - X_P) >= 0)
         {
@@ -172,7 +172,7 @@ void wingsmech_int::wingsmech_3()
     ///////////////////////////////////////2nd list
     ///
 
-    if(prr1kpchk == true)
+    if(exchange_inst.prr1kpchk == true)
     {
         if(s2_2790 == 1)
         {
@@ -217,7 +217,7 @@ void wingsmech_int::wingsmech_3()
         }
     }
 
-    if(prr2kpchk == true)
+    if(exchange_inst.prr2kpchk == true)
     {
         if(s2_2790 == 1)
         {
@@ -269,7 +269,7 @@ void wingsmech_int::wingsmech_3()
 
     if(abs(X_L - X_P) < 1)
     {
-        if(prrkpchk == true)
+        if(exchange_inst.prrkpchk == true)
         {
             X_L = X_L + (D_X_l * (TICK / 1000));
 

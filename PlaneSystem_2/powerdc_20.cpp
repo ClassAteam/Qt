@@ -22,7 +22,7 @@ void powerdc_int::powerdc_20()
  Y_f(f282_2420, exchange_inst.pvksku4, bss_inst.BSS837X3E, bss_inst.BSS838X5A, exchange_inst.ushap,
     exchange_inst.otk_overload_gen4, bss_inst.BSS837X1KK, pvkg4, bss_inst.BSS837X1MM, prg4);
 
- Z_f(prg1, prg2, pchrl, bss_inst.BSS926X3N, k31_2420, bss_inst.BSS837X1N, k13_2420, bss_inst.BSS837X1J);
+ Z_f(prg1, prg2, pchrl, bss_inst.BSS926X3N, exchange_inst.k31_2420, bss_inst.BSS837X1N, k13_2420, bss_inst.BSS837X1J);
 
  Z_f(prg3, prg4, pchrp, bss_inst.BSS837X1HH, k34_2420, bss_inst.BSS837X1V, k16_2420, bss_inst.BSS837X1R);
 

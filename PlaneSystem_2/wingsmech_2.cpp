@@ -6,14 +6,14 @@ void wingsmech_int::wingsmech_2()
     //start logic
     prr1kpr = false;
     psr1kpr = false;
-    por1kpr = false;
+    exchange_inst.por1kpr = false;
     delta_pr_zad = m_2_L_intervals(delta_zr_vh, 0, 0.6, 1.0, 0, 21, 21);
 
     if(exchange_inst.pgs2 >= 130)
     {
         if(exchange_inst.ushal >= 18.0)
         {
-            if(s1_2780 == true)
+            if(exchange_inst.s1_2780 == true)
             {
                 prr1kpr = true;
             }
@@ -21,7 +21,7 @@ void wingsmech_int::wingsmech_2()
             {
                 if(otkaz_1k_prekr == false)
                 {
-                    if(S13_2750 == true)
+                    if(exchange_inst.S13_2750 == true)
                     {
                         psr1kpr = true;
                     }
@@ -29,7 +29,7 @@ void wingsmech_int::wingsmech_2()
                     {
                         if(otkaz_osn_1k_prekr == false)
                         {
-                            por1kpr = true;
+                            exchange_inst.por1kpr = true;
                             if(exchange_inst.P2OBLOP == false)
                             {
                                 delta_pr_zad = delta_pr_zad * Kpr;
@@ -43,13 +43,13 @@ void wingsmech_int::wingsmech_2()
     prrkpr = false;
     prr2kpr = false;
     psr2kpr = false;
-    por2kpr = false;
+    exchange_inst.por2kpr = false;
 
     if(exchange_inst.pgs3 >= 130)
     {
         if(exchange_inst.ushap >= 18.0)
         {
-            if(s1_2780 == true)
+            if(exchange_inst.s1_2780 == true)
             {
                 prr2kpr = true;
             }
@@ -57,7 +57,7 @@ void wingsmech_int::wingsmech_2()
             {
                 if(otkaz_2k_prekr == false)
                 {
-                    if(S13_2750 == true)
+                    if(exchange_inst.S13_2750 == true)
                     {
                         psr2kpr = true;
                     }
@@ -65,7 +65,7 @@ void wingsmech_int::wingsmech_2()
                     {
                         if(otkaz_osn_2k_prekr == false)
                         {
-                            por2kpr = true;
+                            exchange_inst.por2kpr = true;
                             if(exchange_inst.P2OBPOP == false)
                             {
                                 delta_pr_zad = delta_pr_zad * Kpr;
@@ -76,7 +76,7 @@ void wingsmech_int::wingsmech_2()
             }
         }
     }
-    if(por1kpr == true || psr1kpr == true)
+    if(exchange_inst.por1kpr == true || psr1kpr == true)
     {
         if(delta_pr_l < delta_pr_zad)
         {
@@ -99,7 +99,7 @@ void wingsmech_int::wingsmech_2()
         Ddelta_pr_l = 0;
     }
 
-    if(por2kpr == true || psr2kpr == true)
+    if(exchange_inst.por2kpr == true || psr2kpr == true)
     {
         if(delta_pr_p < delta_pr_zad)
         {
@@ -122,9 +122,9 @@ void wingsmech_int::wingsmech_2()
         Ddelta_pr_p = 0;
     }
 
-    if(por1kpr == true)
+    if(exchange_inst.por1kpr == true)
     {
-        if(por2kpr == false)
+        if(exchange_inst.por2kpr == false)
         {
             Ddelta_pr_p = 0.5 * Ddelta_pr_p;
             Ddelta_pr_l = 0.5 * Ddelta_pr_l;
@@ -132,7 +132,7 @@ void wingsmech_int::wingsmech_2()
     }
     else
     {
-        if(por2kpr == true)
+        if(exchange_inst.por2kpr == true)
         {
             Ddelta_pr_p = 0.5 * Ddelta_pr_p;
             Ddelta_pr_l = 0.5 * Ddelta_pr_l;

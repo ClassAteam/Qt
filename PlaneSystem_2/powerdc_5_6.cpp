@@ -3,6 +3,7 @@
 
 void powerdc_int::powerdc_5_6() //5 6
 {
+    allElConsDir_inst.makeCorresCurr();
     static bool
         y1_3650,
         y2_3650,

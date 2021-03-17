@@ -3,14 +3,14 @@
 void powerdc_int::powerdc_12()
 {
     static bool
-    k1_2430,
-    s1_2420,
-    s5_2420,
-    s10_2420,
-    s13_2420,
-    s4_2420,
-    s12_2420,
-    s8_2420;
+        k1_2430{},
+        s1_2420,
+        s5_2420,
+        s10_2420,
+        s13_2420,
+        s4_2420,
+        s12_2420,
+        s8_2420;
     static int
         tickG[5]{0};
     double* ug_pool[] = {&ug1, &ug2, &ug3, &ug4, &ugvsu};

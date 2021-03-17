@@ -6,6 +6,8 @@
 #include "exchange.h"
 #include "uks.h"
 
+//extern allElConsAlt allElConsAlt_inst;
+//extern allElConsDir allElConsDir_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 extern exchange exchange_inst;
@@ -50,7 +52,7 @@ public:
         s20_2420;
     bool
         otk_pos1000, k12_2420, k13_2420, k14_2420, k16_2420, k18_2420,
-        k30_2420, k31_2420, k34_2420, s7_2420, s17_2420, s18_2420,
+        k34_2420, s7_2420, s17_2420, s18_2420,
         s19_2420, s21_2420, pbapsh[5],
         purglk3, otk_preobr_pts1, s15_2420, pbapsh1, pbapsh2, pbapsh3,
         pbapsh5, pbapsh6,
@@ -81,11 +83,11 @@ public:
         prgvsu27, pa1, pa2,
         pbg1, pbg2, pbg3, pbg4, pbgvsu27,
         pvkg1, pvkg2, pvkg3, pvkg4, pvkgvsu,
-                s1_2430, s4_2430, s5_2430, s8_2430, s11_2430,
+        s1_2430, s4_2430, s5_2430, s8_2430, s11_2430,
         pvkchrl, pvkchrp,
-          pprap1, pprap2, pshzvsu,
+        pprap1, pprap2, pshzvsu,
         s2_2430, s9_2430,   s7_2430,  s3_2430, s10_2430,
-        glviklvsu;
+        glviklvsu{false};
 
     double
         uzg1_27 = 28.5, uzg2_27 = 28.4, uzg3_27 = 28.6, uzg4_27 = 28.7, uzgvsu_27 = 28.5,

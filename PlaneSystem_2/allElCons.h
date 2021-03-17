@@ -1,11 +1,7 @@
 #pragma once
-#include <QVector>
-#include "bss.h"
-#include "exchange.h"
 #include "powerdc_int.h"
-
-extern bss bss_inst;
-extern exchange exchange_inst;
+//extern bss bss_inst;
+//extern exchange exchange_inst;
 
 ////////////////////////////////////////////////////////////alternating current
 class sngElConsAlt

@@ -8,11 +8,11 @@ void powerdc_int::powerdc_15()
     double kpos{2.5};
 
     if(exchange_inst.ush2dpp >= 18.0 && s21_2420)
-        k30_2420 = true;
+        exchange_inst.k30_2420 = true;
     else
-        k30_2420 = false;
+        exchange_inst.k30_2420 = false;
 
-    if(k30_2420 && !otk_pos1000)
+    if(exchange_inst.k30_2420 && !otk_pos1000)
     {
         exchange_inst.upos = exchange_inst.upos + (118 - exchange_inst.upos) / kpos;
         exchange_inst.fpos = exchange_inst.fpos + (401 - exchange_inst.fpos) / kpos;
@@ -33,18 +33,18 @@ void powerdc_int::powerdc_15()
     else
         k12_2420 = true;
 
-    if(k30_2420 && !k18_2420)
+    if(exchange_inst.k30_2420 && !k18_2420)
     {
-        k31_2420 = true;
+        exchange_inst.k31_2420 = true;
         purglk11 = true;
     }
     else
     {
-        k31_2420 = false;
+        exchange_inst.k31_2420 = false;
         purglk11 = false;
     }
 
-    if(k30_2420 && !k12_2420)
+    if(exchange_inst.k30_2420 && !k12_2420)
     {
         k34_2420 = true;
         purgpk11 = true;
@@ -61,7 +61,7 @@ void powerdc_int::powerdc_15()
         {
             if(pbapsh5)
             {
-                k31_2420 = true;
+                exchange_inst.k31_2420 = true;
                 purglk11 = true;
             }
         }
@@ -70,7 +70,7 @@ void powerdc_int::powerdc_15()
             if(tick_apsh5 * TICK >= 800)
             {
                 pbapsh5 = true;
-                k31_2420 = true;
+                exchange_inst.k31_2420 = true;
                 purglk11 = true;
             }
             else
@@ -117,7 +117,7 @@ void powerdc_int::powerdc_15()
         apsh_switch(exchange_inst.ushpts[0], k14_2420, pbapsh3, purglk10);
         break;
     case s20_2430_pos::apsh5:
-        apsh_switch(exchange_inst.ushpos[0], k31_2420, pbapsh5, purglk11);
+        apsh_switch(exchange_inst.ushpos[0], exchange_inst.k31_2420, pbapsh5, purglk11);
         break;
     case s20_2430_pos::apsh6:
         apsh_switch(exchange_inst.ushpos[1], k34_2420, pbapsh6, purgpk11);

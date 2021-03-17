@@ -6,10 +6,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QTimer>
-#include "allElCons.h"
 
-extern allElConsAlt allElConsAlt_inst;
-extern allElConsDir allElConsDir_inst;
 
 extern const double
     TICK;

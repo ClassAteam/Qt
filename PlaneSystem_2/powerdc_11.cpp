@@ -9,7 +9,7 @@ void powerdc_int::powerdc_11()
 //        f24_2420{true},
 //        f28_2420{true};
 
-allElCons_inst.makeCorresCurr();
+allElConsAlt_inst.makeCorresCurr();
 
     double kn1{25},
         k10{1.5}, k20{1.5}, k30{1.5}, k40{1.5}, k50{1.5},

@@ -6,7 +6,6 @@
 #include "exchange.h"
 #include "uks.h"
 
-extern allElCons allElCons_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 extern exchange exchange_inst;
@@ -16,7 +15,17 @@ class powerdc_int : public interfacing
     Q_OBJECT
 
 public:
-    double
+    static bool
+        prg1, prg2, prg3, prg4, prgvsu,
+        ppgvsu27,
+        s15_2430,
+        plp27, ppp27, pss27,
+        pvkgvsu27,
+        s14_2430,
+        purg27lk1, purg27pk1, purg27pk3, purg27lk4, purg27pk4, purg27lk5,
+        purg27pk5, purg27lk6, purg27lk7, purg27pk7, purg27lk9, purg27pk9,
+        apdvsu_35, apdvsu_49;
+    static double
         fg_27[5], ng1_27, ng2_27, ng3_27, ng4_27, ngvsu_27,
         ivg1_27, ivg2_27, ivg3_27, ivg4_27, ivgvsu_27,
         ing1_27, ing2_27, ing3_27, ing4_27, ingvsu_27, ingrap_27,
@@ -25,14 +34,14 @@ public:
         ug1r_27, ug2r_27, ug3r_27, ug4r_27, ugvsur_27,
         ug1z_27, ug2z_27, ug3z_27, ug4z_27, ugvsuz_27,
         ugP_27[5][3];
-    double
+    static double
         ushpzl, ushpzp,
         inpp27, irap1, irap2, insh1dpl, insh2dpl, insh1dpp, insh2dpp,
         inshal, inshap, insh1l, insh1p, insh2l, insh2p, inshzvsu, insl27,
         insp27, insho1l, insho1p, insho2l, insho2p, kg1_27, kg2_27, kg3_27, kg4_27,
         nvsu, pbgvsu, ugrvsu,
         uo1ak, uo2ak, upr, ipr, ur1ak, ur2ak, uz1ak, uz2ak,
-         uls27, ups27,
+        uls27, ups27,
         //ugrr, ugrrvsu,
         ugvsu27, ugrvsu27, ivgvsu27, ivsu_27, divgvsu27,
         kak,
@@ -61,33 +70,34 @@ public:
         k28_2420,
         otk_pereg_gen1, otk_pereg_gen2, otk_pereg_gen3, otk_pereg_gen4,
         otk_pereg_akk1, otk_pereg_akk2,
-        y1_3650, y2_3650, r865gd, apdvsu_35, apdvsu_49, s1_11028, s1_4940,
+        y1_3650, y2_3650, r865gd,
+        s1_11028, s1_4940,
         k1_11038, k2_11038, s1_11052, s2_11052, s1_11081, s1_11313, k1_17723,
         k2_17723, k11_2250, k15_2420, k1_2250, k1_2420, k2_2420,
         k3_2250, k5_2250, k7_2420, k8_2250, k8_2420, k3_3650, k4_3650,
         k2_7322, k3_7322, k4_7322, k5_7322, k8_7322, k9_7322, k10_7322, k11_7322,
         k18_7322, k4_4940,
         OtkazGen1PostT, OtkazGen2PostT, OtkazGen3PostT, OtkazGen4PostT, OtkazGenVsu,
-        prgvsu27, pa1, pa2, pvkgvsu27,
+        prgvsu27, pa1, pa2,
         pbg1, pbg2, pbg3, pbg4, pbgvsu27,
         pvkg1, pvkg2, pvkg3, pvkg4, pvkgvsu,
-        prg1, prg2, prg3, prg4, prgvsu,
-        s1_2430, s4_2430, s5_2430, s8_2430, s11_2430,
-        pvkchrl, pvkchrp, purg27lk1, purg27pk1, purg27pk3, purg27lk4, purg27pk4,
-        purg27lk5, purg27pk5, purg27lk6, purg27lk7, purg27pk7, purg27lk9, purg27pk9,
-        ppgvsu27,  pprap1, pprap2, plp27, ppp27, pss27, pshzvsu,
-        s2_2430, s9_2430, s14_2430, s15_2430, s7_2430,  s3_2430, s10_2430,
+                s1_2430, s4_2430, s5_2430, s8_2430, s11_2430,
+        pvkchrl, pvkchrp,
+          pprap1, pprap2, pshzvsu,
+        s2_2430, s9_2430,   s7_2430,  s3_2430, s10_2430,
         glviklvsu;
 
     double
-        uak1{25.5}, uak2{25.5},
-        //ugrr, ugrrvsu,
         uzg1_27 = 28.5, uzg2_27 = 28.4, uzg3_27 = 28.6, uzg4_27 = 28.7, uzgvsu_27 = 28.5,
         kn1{25}, krg{0.00025}, krgvsu{0.00037}, kg1{1.5},
         kgvsu{1.5},
         kg10{0.05},
-        qa1{40.0}, qa2{40.0},
-        ea1{25.5}, ea2{25.5},
+        qa1{40.0}, qa2{40.0};
+
+    static double
+        ea1, ea2,
+        uak1, uak2,
+        //ugrr, ugrrvsu,
         iak1, iak2,
         ra1, ra2;
 

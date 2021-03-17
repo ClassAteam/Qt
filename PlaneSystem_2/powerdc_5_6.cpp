@@ -7,8 +7,6 @@ void powerdc_int::powerdc_5_6() //5 6
         y1_3650,
         y2_3650,
         r865gd,
-        apdvsu_35,
-        apdvsu_49,
         s1_11028,
         s1_4940,
         k1_11038,
@@ -86,270 +84,270 @@ void powerdc_int::powerdc_5_6() //5 6
 
 //    insho2p = k1_17723 * 7;
 
-    if(exchange_inst.ushzvsu >= 18.0)
-    {
-        if(apdvsu_35)
-        {
-            inshzvsu = 600 - 0.14 * nvsu;
-        }
-        else
-        {
-            if(apdvsu_49)
-            {
-                inshzvsu = 250.0;
-            }
-            else
-            {
-                inshzvsu = 0;
-            }
-        }
-    }
-    else
-    {
-        inshzvsu = 0;
-    }
-
-    if(!purg27lk9)
-    {
-        inshal = (inshal + insh1dpl + insh2dpl);
-    }
-    if(!purg27pk9)
-    {
-        inshap = (inshap + insh1dpp + insh2dpp);
-    }
-
-    if(purg27lk6)
-    {
-        iak1 = inshzvsu;
-    }
-    else
-    {
-        if(!s14_2430)
-            iak1 = 0;
-        else
-        {
-            if(pvkgvsu27)
-            {
-                iak1 = 0.013 * (ea1 - exchange_inst.ushal) /ra1;
-            }
-            else
-            {
-                if(purg27lk4)
-                    iak1 = 0;
-                else
-                {
-                    if(plp27)
-                    {
-                        iak1 = 0.013 * (ea1 - exchange_inst.ushal) / ra1; //what is the order
-                    }
-                    else
-                    {
-                        if(ppp27)
-                        {
-                            if(pss27)
-                                iak1 = 0.013 * (ea1 - exchange_inst.ushal) / ra1;
-                            else
-                            {
-                                iak1 = inshal;
-                            }
-                        }
-                        else
-                        {
-                            if(!purg27pk3)
-                                iak1 = inshal;
-                            else
-                            {
-                                if(purg27pk5)
-                                    iak1 = (inshal + inshap) / 2;
-                                else
-                                    iak1 = (inshal + inshap);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    if(!s15_2430)
-        iak2 = 0;
-    else
-    {
-        if(pvkgvsu27 && purg27pk3)
-        {
-            iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
-        }
-        else
-        {
-            if(purg27pk4)
-                iak2 = 0;
-            else
-            {
-                if(ppp27)
-                    iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
-                else
-                {
-                    if(plp27)
-                    {
-                        if(pss27)
-                            iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
-                        else
-                        {
-                            iak2 = inshap;
-                        }
-                    }
-                    else
-                    {
-                        if(!purg27pk3)
-                            iak2 = inshap;
-                        else
-                        {
-                            if(!purg27lk5)
-                                iak2 = inshal + inshap;
-                            else
-                                iak2 = (inshal + inshap) / 2;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+//    if(exchange_inst.ushzvsu >= 18.0)
+//    {
+//        if(apdvsu_35)
+//        {
+//            inshzvsu = 600 - 0.14 * nvsu;
+//        }
+//        else
+//        {
+//            if(apdvsu_49)
+//            {
+//                inshzvsu = 250.0;
+//            }
+//            else
+//            {
+//                inshzvsu = 0;
+//            }
+//        }
+//    }
 //    else
 //    {
-//        inshal = inshal + insh1dpl + insh2dpl;
+//        inshzvsu = 0;
 //    }
 
-    if(purg27pk9)
-    {
-        insh1p = insh1p + insh1dpp + insh2dpp;
-    }
+//    if(!purg27lk9)
+//    {
+//        inshal = (inshal + insh1dpl + insh2dpl);
+//    }
+//    if(!purg27pk9)
+//    {
+//        inshap = (inshap + insh1dpp + insh2dpp);
+//    }
+
+//    if(purg27lk6)
+//    {
+//        iak1 = inshzvsu;
+//    }
 //    else
 //    {
-//        inshap = inshap + insh1dpp + insh2dpp;
+//        if(!s14_2430)
+//            iak1 = 0;
+//        else
+//        {
+//            if(pvkgvsu27)
+//            {
+//                iak1 = 0.013 * (ea1 - exchange_inst.ushal) /ra1;
+//            }
+//            else
+//            {
+//                if(purg27lk4)
+//                    iak1 = 0;
+//                else
+//                {
+//                    if(plp27)
+//                    {
+//                        iak1 = 0.013 * (ea1 - exchange_inst.ushal) / ra1; //what is the order
+//                    }
+//                    else
+//                    {
+//                        if(ppp27)
+//                        {
+//                            if(pss27)
+//                                iak1 = 0.013 * (ea1 - exchange_inst.ushal) / ra1;
+//                            else
+//                            {
+//                                iak1 = inshal;
+//                            }
+//                        }
+//                        else
+//                        {
+//                            if(!purg27pk3)
+//                                iak1 = inshal;
+//                            else
+//                            {
+//                                if(purg27pk5)
+//                                    iak1 = (inshal + inshap) / 2;
+//                                else
+//                                    iak1 = (inshal + inshap);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
 //    }
 
-    insl27 = insh1l + insh2l;
+//    if(!s15_2430)
+//        iak2 = 0;
+//    else
+//    {
+//        if(pvkgvsu27 && purg27pk3)
+//        {
+//            iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
+//        }
+//        else
+//        {
+//            if(purg27pk4)
+//                iak2 = 0;
+//            else
+//            {
+//                if(ppp27)
+//                    iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
+//                else
+//                {
+//                    if(plp27)
+//                    {
+//                        if(pss27)
+//                            iak2 = 0.013 * (ea2 - exchange_inst.ushap) / ra2;
+//                        else
+//                        {
+//                            iak2 = inshap;
+//                        }
+//                    }
+//                    else
+//                    {
+//                        if(!purg27pk3)
+//                            iak2 = inshap;
+//                        else
+//                        {
+//                            if(!purg27lk5)
+//                                iak2 = inshal + inshap;
+//                            else
+//                                iak2 = (inshal + inshap) / 2;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
-    insp27 = insh1p + insh2p;
+////    else
+////    {
+////        inshal = inshal + insh1dpl + insh2dpl;
+////    }
 
-    if(plp27)
-    {
-        insl27 = insl27 + inshal;
-    }
+//    if(purg27pk9)
+//    {
+//        insh1p = insh1p + insh1dpp + insh2dpp;
+//    }
+////    else
+////    {
+////        inshap = inshap + insh1dpp + insh2dpp;
+////    }
 
-    if(ppp27)
-    {
-        insp27 = insp27 + inshap;
-    }
+//    insl27 = insh1l + insh2l;
 
-    if(purg27lk1)
-    {
-        insl27 = insl27 + inshal;
-    }
+//    insp27 = insh1p + insh2p;
 
-    if(purg27pk1)
-    {
-        insp27 = insp27 + inshap;
-    }
+//    if(plp27)
+//    {
+//        insl27 = insl27 + inshal;
+//    }
 
-    if(purg27lk7)
-    {
-        insl27 = insl27  + insho1l + insho2l;
-    }
-    if(purg27pk7)
-    {
-        insp27 = insp27 + insho1p + insho2p;
-    }
+//    if(ppp27)
+//    {
+//        insp27 = insp27 + inshap;
+//    }
 
-    irap1 = 0;
-    irap2 = 0;
+//    if(purg27lk1)
+//    {
+//        insl27 = insl27 + inshal;
+//    }
 
-    if(purg27lk4)
-    {
-        irap1 = (inshal + insh1l + insh2l);
+//    if(purg27pk1)
+//    {
+//        insp27 = insp27 + inshap;
+//    }
 
-        if(!purg27pk4 && pss27)
-        {
-            irap1 = irap1 + insh1p + insh2p;
-        }
-    }
+//    if(purg27lk7)
+//    {
+//        insl27 = insl27  + insho1l + insho2l;
+//    }
+//    if(purg27pk7)
+//    {
+//        insp27 = insp27 + insho1p + insho2p;
+//    }
 
-    if(purg27pk4)
-    {
-        irap2 = inshap + insh1p + insh2p;
+//    irap1 = 0;
+//    irap2 = 0;
 
-        if(!purg27lk4 && pss27)
-        {
-            irap2 = irap2 + insh1l + insh2l;
-        }
-    }
+//    if(purg27lk4)
+//    {
+//        irap1 = (inshal + insh1l + insh2l);
 
-    urap1 = 28.5 - 0.003 * irap1;
+//        if(!purg27pk4 && pss27)
+//        {
+//            irap1 = irap1 + insh1p + insh2p;
+//        }
+//    }
 
-    urap2 = 28.5 - 0.003 * irap2;
+//    if(purg27pk4)
+//    {
+//        irap2 = inshap + insh1p + insh2p;
 
-    ivsu_27 = 0;
+//        if(!purg27lk4 && pss27)
+//        {
+//            irap2 = irap2 + insh1l + insh2l;
+//        }
+//    }
 
-    if(ppgvsu27)
-    {
-        ivsu_27 = inshal + insl27;
+//    urap1 = 28.5 - 0.003 * irap1;
 
-        if(pss27)
-        {
-            ivsu_27 = ivsu_27  + inshap + inpp27;
-        }
-    }
+//    urap2 = 28.5 - 0.003 * irap2;
 
-    ing1_27 = 0;
-    ing2_27 = 0;
-    ing3_27 = 0;
-    ing4_27 = 0;
+//    ivsu_27 = 0;
 
-    if(prg1)
-    {
-        if(pss27)
-        {
-            ing1_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
-        }
-        else
-        {
-            ing1_27 = insl27 / (prg1 + prg2);
-        }
-    }
+//    if(ppgvsu27)
+//    {
+//        ivsu_27 = inshal + insl27;
 
-    if(prg2)
-    {
-        if(pss27)
-        {
-            ing2_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
-        }
-        else
-        {
-            ing2_27 = insl27 / (prg1 + prg2);
-        }
-    }
+//        if(pss27)
+//        {
+//            ivsu_27 = ivsu_27  + inshap + inpp27;
+//        }
+//    }
 
-    if(prg3)
-    {
-        if(pss27)
-        {
-            ing3_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
-        }
-        else
-        {
-            ing3_27 = insp27 / (prg3 + prg4);
-        }
-    }
-    if(prg4)
-    {
-        if(pss27)
-        {
-            ing4_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
-        }
-        else
-        {
-            ing4_27 = insp27 / (prg3 + prg4);
-        }
-    }
+//    ing1_27 = 0;
+//    ing2_27 = 0;
+//    ing3_27 = 0;
+//    ing4_27 = 0;
+
+//    if(prg1)
+//    {
+//        if(pss27)
+//        {
+//            ing1_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
+//        }
+//        else
+//        {
+//            ing1_27 = insl27 / (prg1 + prg2);
+//        }
+//    }
+
+//    if(prg2)
+//    {
+//        if(pss27)
+//        {
+//            ing2_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
+//        }
+//        else
+//        {
+//            ing2_27 = insl27 / (prg1 + prg2);
+//        }
+//    }
+
+//    if(prg3)
+//    {
+//        if(pss27)
+//        {
+//            ing3_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
+//        }
+//        else
+//        {
+//            ing3_27 = insp27 / (prg3 + prg4);
+//        }
+//    }
+//    if(prg4)
+//    {
+//        if(pss27)
+//        {
+//            ing4_27 = ((insl27 + insp27) / (prg1 + prg2 + prg3 + prg4));
+//        }
+//        else
+//        {
+//            ing4_27 = insp27 / (prg3 + prg4);
+//        }
+//    }
 }

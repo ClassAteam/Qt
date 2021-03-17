@@ -6,7 +6,7 @@
 #include "exchange.h"
 #include "algorithms.h"
 
-extern allElCons allElCons_inst;
+extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 extern exchange exchange_inst;
@@ -20,12 +20,8 @@ class wingsmech_int : public interfacing
 public:
 bool
     otkaz_osn_1k_zakr, otkaz_osn_2k_zakr, otkaz_1k_zakr, otkaz_2k_zakr,
-    otkaz_rassgl_zakr, prrkz, prr1kz, prr2kz, psr1kz, psr2kz, por1kz,
-    por2kz, S1_2750, S13_2750,
-    otkaz_osn_1k_prekr, otkaz_osn_2k_prekr, otkaz_1k_prekr, otkaz_2k_prekr,
+    otkaz_rassgl_zakr,     otkaz_osn_1k_prekr, otkaz_osn_2k_prekr, otkaz_1k_prekr, otkaz_2k_prekr,
     otkaz_rassgl_prekr, prrkpr, prr1kpr, prr2kpr, psr1kpr, psr2kpr,
-    por1kpr, por2kpr, s1_2780,
-    prrkpchk, prr1kpchk, prr2kpchk, por1kpchk, por2kpchk, s1_2790,
         otkaz_osn_1k_PCHK{false}, otkaz_osn_2k_PCHK{false}, otkaz_RASSINHR_PCHK;
 
 int

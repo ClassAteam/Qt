@@ -2,6 +2,7 @@
 
 void powerdc_int::powerdc_1() //1
 {
+    allElConsDir_inst.makeCorresCurr();
 static int
     tickg1, tickg2, tickg3, tickg4, tickvsu;
     //start logic

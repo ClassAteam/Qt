@@ -6,7 +6,7 @@
 #include "exchange.h"
 #include "algorithms.h"
 
-extern allElCons allElCons_inst;
+extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern exchange exchange_inst;
 extern const double TICK;

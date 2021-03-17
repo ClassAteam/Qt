@@ -13,6 +13,7 @@
 #include "antifire_int.h"
 #include "landinggear_int.h"
 
+
 const double TICK = 2;
 QElapsedTimer timing;
 

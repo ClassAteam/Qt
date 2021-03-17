@@ -6,7 +6,7 @@
 
 extern exchange exchange_inst;
 extern bss bss_inst;
-extern allElCons allElCons_inst;
+extern allElConsAlt allElConsAlt_inst;
 
 class landinggear_int : public interfacing
 {

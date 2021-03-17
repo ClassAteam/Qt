@@ -8,7 +8,7 @@
 #include "math.h"
 
 extern const double TICK;
-extern allElCons allElCons_inst;
+extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 extern exchange exchange_inst;

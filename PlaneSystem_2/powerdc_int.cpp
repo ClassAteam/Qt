@@ -450,9 +450,15 @@ powerdc_int::powerdc_int(QWidget *parent)
     createLabelValue(&exchange_inst.fshav[1], "fshav2");
     createLabelValue(&exchange_inst.fshav[2], "fshav3");
     createLabelValue(&exchange_inst.fshav[3], "fshav4");
-    for(int i = 0; i < allElCons_inst.consumers.count(); ++i)
+    for(int i = 0; i < allElConsAlt_inst.consumers.count(); ++i)
     {
-        createRedButton(&allElCons_inst.consumers[i].isActive, allElCons_inst.consumers[i].name);
+        createRedButton(&allElConsAlt_inst.consumers[i].isActive, allElConsAlt_inst.consumers[i].name);
+    }
+
+    for(int i = 0; i < allElConsDir_inst.consumers.count(); ++i)
+    {
+        createRedButton(allElConsDir_inst.consumers[i].isActive,
+                        allElConsDir_inst.consumers[i].name);
     }
 
 //    createRedButton(&feed_global_inst.pvksku1, "pvksku1");
@@ -481,4 +487,8 @@ void powerdc_int::updateLogic()
     powerdc_15();
     powerdc_20();
 }
+double powerdc_int::ea1{25.5};
+double powerdc_int::ea2{25.5};
+double powerdc_int::uak1{25.5};
+double powerdc_int::uak2{25.5};
 

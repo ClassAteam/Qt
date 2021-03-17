@@ -300,7 +300,7 @@ void powerdc_int::powerdc_16()
                 }
             }
 
-            if(k14_2420)
+            if(exchange_inst.k14_2420)
             {
                 exchange_inst.ushpts[y] = exchange_inst.uptsP[y];
                 exchange_inst.fshpts = exchange_inst.fpts ;

@@ -290,67 +290,67 @@ allElConsDir::allElConsDir()
     consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn1gs2", &exchange_inst.prn1gs2));
     consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn2gs2", &exchange_inst.prn2gs2));
     consumers.append(sngElConsDir(8.0, sngElConsDir::shal, "pbutzo", &exchange_inst.pbutzo));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "poppd1", &exchange_inst.poppd1));
-    consumers.append(sngElConsDir(8.0, sngElConsDir::shal, "gk_avn", &exchange_inst.gk_avn));
-    consumers.append(sngElConsDir(20.0, sngElConsDir::shal, "k1_17723", &exchange_inst.k1_17723));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "s1_11028", &exchange_inst.s1_11028));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "s1_11313", &exchange_inst.s1_11313));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "k1_2250", &exchange_inst.k1_2250));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "s1_11052", &exchange_inst.s1_11052));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::shal, "k14_2420", &exchange_inst.k14_2420));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::shal, "k15_2420", &exchange_inst.k15_2420));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k2_7322", &exchange_inst.k2_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k9_7322", &exchange_inst.k9_7322));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "k1_11038", &exchange_inst.k1_11038));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "s1_11081", &exchange_inst.s1_11081));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "k3_2250", &exchange_inst.k3_2250));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "poppd3", &exchange_inst.poppd3));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "k3_3650", &exchange_inst.k3_3650));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k4_7322", &exchange_inst.k4_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k11_7322", &exchange_inst.k11_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "r865gd", &exchange_inst.r865gd));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "k5_2250", &exchange_inst.k5_2250));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "y1_3650", &exchange_inst.y1_3650));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "y2_3650", &exchange_inst.y2_3650));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "k1_17723", &exchange_inst.k1_17723));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k7_2420", &exchange_inst.k7_2420));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k8_2420", &exchange_inst.k8_2420));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por2kz", &exchange_inst.por2kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr2kz", &exchange_inst.prr2kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "psr2kz", &exchange_inst.psr2kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por2kpr", &exchange_inst.por2kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr2kpr", &exchange_inst.prr2kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "psr2kpr", &exchange_inst.psr2kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por2kpchk", &exchange_inst.por2kpchk));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr2kpchk", &exchange_inst.prr2kpchk));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn1gs3", &exchange_inst.prn1gs3));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn2gs3", &exchange_inst.prn2gs3));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn1gs4", &exchange_inst.prn1gs4));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn2gs4", &exchange_inst.prn2gs4));
-    consumers.append(sngElConsDir(12.0, sngElConsDir::shal, "gk_avl", &exchange_inst.gk_avl));
-    consumers.append(sngElConsDir(12.0, sngElConsDir::shal, "gk_avp", &exchange_inst.gk_avp));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "k18_7322", &exchange_inst.k18_7322));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "k11_2250", &exchange_inst.k11_2250));
-    consumers.append(sngElConsDir(9.0, sngElConsDir::shal, "poppd2", &exchange_inst.poppd2));
-    consumers.append(sngElConsDir(8.0, sngElConsDir::shal, "pbutzr", &exchange_inst.pbutzr));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "s1_11028", &exchange_inst.s1_11028));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "s1_11081", &exchange_inst.s1_11081));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "s2_11052", &exchange_inst.s2_11052));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh1dpl, "poppd1", &exchange_inst.poppd1));
+    consumers.append(sngElConsDir(8.0, sngElConsDir::sh1dpl, "gk_avn", &exchange_inst.gk_avn));
+    consumers.append(sngElConsDir(20.0, sngElConsDir::sh1dpl, "k1_17723", &exchange_inst.k1_17723));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1dpl, "s1_11028", &exchange_inst.s1_11028));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1dpl, "s1_11313", &exchange_inst.s1_11313));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2dpl, "k1_2250", &exchange_inst.k1_2250));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpl, "s1_11052", &exchange_inst.s1_11052));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpl, "k14_2420", &exchange_inst.k14_2420));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpl, "k15_2420", &exchange_inst.k15_2420));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1l, "k2_7322", &exchange_inst.k2_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1l, "k9_7322", &exchange_inst.k9_7322));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1l, "k1_11038", &exchange_inst.k1_11038));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sh1l, "s1_11081", &exchange_inst.s1_11081));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2l, "k3_2250", &exchange_inst.k3_2250));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2l, "poppd3", &exchange_inst.poppd3));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sh2l, "k3_3650", &exchange_inst.k3_3650));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "k4_7322", &exchange_inst.k4_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "k11_7322", &exchange_inst.k11_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "r865gd", &exchange_inst.r865gd));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sho1l, "k5_2250", &exchange_inst.k5_2250));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho1l, "y1_3650", &exchange_inst.y1_3650));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho1l, "y2_3650", &exchange_inst.y2_3650));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho2l, "k1_17723", &exchange_inst.k1_17723));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::shap, "k7_2420", &exchange_inst.k7_2420));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::shap, "k8_2420", &exchange_inst.k8_2420));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kz", &exchange_inst.por2kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kz", &exchange_inst.prr2kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "psr2kz", &exchange_inst.psr2kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kpr", &exchange_inst.por2kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kpr", &exchange_inst.prr2kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "psr2kpr", &exchange_inst.psr2kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kpchk", &exchange_inst.por2kpchk));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kpchk", &exchange_inst.prr2kpchk));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn1gs3", &exchange_inst.prn1gs3));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn2gs3", &exchange_inst.prn2gs3));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn1gs4", &exchange_inst.prn1gs4));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn2gs4", &exchange_inst.prn2gs4));
+    consumers.append(sngElConsDir(12.0, sngElConsDir::shap, "gk_avl", &exchange_inst.gk_avl));
+    consumers.append(sngElConsDir(12.0, sngElConsDir::shap, "gk_avp", &exchange_inst.gk_avp));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "k18_7322", &exchange_inst.k18_7322));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh1dpp, "k11_2250", &exchange_inst.k11_2250));
+    consumers.append(sngElConsDir(9.0, sngElConsDir::sh1dpp, "poppd2", &exchange_inst.poppd2));
+    consumers.append(sngElConsDir(8.0, sngElConsDir::sh1dpp, "pbutzr", &exchange_inst.pbutzr));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpp, "s1_11028", &exchange_inst.s1_11028));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sh2dpp, "s1_11081", &exchange_inst.s1_11081));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpp, "s2_11052", &exchange_inst.s2_11052));
     consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k30_2420", &exchange_inst.k30_2420));
     consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k31_2420", &exchange_inst.k31_2420));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k3_7322", &exchange_inst.k3_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k8_7322", &exchange_inst.k8_7322));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::shal, "k2_11038", &exchange_inst.k2_11038));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "k8_2250", &exchange_inst.k8_2250));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "prsop", &exchange_inst.prsop));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k5_7322", &exchange_inst.k5_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shal, "k10_7322", &exchange_inst.k10_7322));
-    consumers.append(sngElConsDir(20.0, sngElConsDir::shal, "k2_17723", &exchange_inst.k2_17723));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::shal, "f32_3020", &exchange_inst.f32_3020));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::shal, "f319_3020", &exchange_inst.f319_3020));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::shal, "f356_3020", &exchange_inst.f356_3020));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::shal, "f353_3020", &exchange_inst.f353_3020));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::shal, "k1_17723", &exchange_inst.k1_17723));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1p, "k3_7322", &exchange_inst.k3_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1p, "k8_7322", &exchange_inst.k8_7322));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1p, "k2_11038", &exchange_inst.k2_11038));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2p, "k8_2250", &exchange_inst.k8_2250));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "prsop", &exchange_inst.prsop));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "k5_7322", &exchange_inst.k5_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "k10_7322", &exchange_inst.k10_7322));
+    consumers.append(sngElConsDir(20.0, sngElConsDir::sh2p, "k2_17723", &exchange_inst.k2_17723));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f32_3020", &exchange_inst.f32_3020));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f319_3020", &exchange_inst.f319_3020));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f356_3020", &exchange_inst.f356_3020));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f353_3020", &exchange_inst.f353_3020));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho2p, "k1_17723", &exchange_inst.k1_17723));
 }
 
 QVector<double> allElConsDir::getIvg_pool()
@@ -565,14 +565,19 @@ void allElConsDir::makeCorresCurr()
     {
         powerdc_int::insh1p = buses[sh1p] + buses[sh1dpp] + buses[sh2dpp];
     }
+    if(powerdc_int::purg27lk9)
+    {
+        powerdc_int::insh1l = buses[sh1l] + buses[sh1dpl] + buses[sh2dpl];
+    }
+
 //    else
 //    {
 //        inshap = inshap + insh1dpp + insh2dpp;
 //    }
 
-    powerdc_int::insl27 = buses[sh1l] + buses[sh2l];
+    powerdc_int::insl27 = powerdc_int::insh1l + buses[sh2l];
 
-    powerdc_int::insp27 = buses[sh1p] + buses[sh2p];
+    powerdc_int::insp27 = powerdc_int::insh1p + buses[sh2p];
 
     if(powerdc_int::plp27)
     {
@@ -608,21 +613,22 @@ void allElConsDir::makeCorresCurr()
 
     if(powerdc_int::purg27lk4)
     {
-        powerdc_int::irap1 = (buses[shal] + buses[sh1l] + buses[sh2l]);
+        powerdc_int::irap1 = (powerdc_int::insl27 + powerdc_int::inshzvsu);
 
         if(!powerdc_int::purg27pk4 && powerdc_int::pss27)
         {
-            powerdc_int::irap1 = powerdc_int::irap1 + buses[sh1p] + buses[sh2p];
+            powerdc_int::irap1 = powerdc_int::irap1 + powerdc_int::insp27;
         }
     }
 
     if(powerdc_int::purg27pk4)
     {
-        powerdc_int::irap2 = buses[shap] + buses[sh1p] + buses[sh2p];
+        powerdc_int::irap2 = powerdc_int::irap2 + powerdc_int::insp27;
 
         if(!powerdc_int::purg27lk4 && powerdc_int::pss27)
         {
-            powerdc_int::irap2 = powerdc_int::irap2 + buses[sh1l] + buses[sh2l];
+            powerdc_int::irap2 = powerdc_int::irap2 + powerdc_int::insl27 +
+                                 powerdc_int::inshzvsu;
         }
     }
 
@@ -630,16 +636,15 @@ void allElConsDir::makeCorresCurr()
 
     powerdc_int::urap2 = 28.5 - 0.003 * powerdc_int::irap2;
 
-    powerdc_int::ivsu_27 = 0;
+    powerdc_int::ingvsu_27 = 0;
 
     if(powerdc_int::ppgvsu27)
     {
-        powerdc_int::ivsu_27 = buses[shal] + powerdc_int::insl27;
+        powerdc_int::ingvsu_27 = powerdc_int::insl27;
 
         if(powerdc_int::pss27)
         {
-            powerdc_int::ivsu_27 = powerdc_int::ivsu_27  + buses[shap] +
-                                   powerdc_int::inpp27;
+            powerdc_int::ingvsu_27 = powerdc_int::ingvsu_27 + powerdc_int::insp27;
         }
     }
 
@@ -652,14 +657,15 @@ void allElConsDir::makeCorresCurr()
     {
         if(powerdc_int::pss27)
         {
-            powerdc_int::ing1_27 = ((powerdc_int::insl27 + powerdc_int::insp27) /
-                                    (powerdc_int::prg1 + powerdc_int::prg2 +
-                                     powerdc_int::prg3 + powerdc_int::prg4));//mb static cast to int needed
+            powerdc_int::ing1_27 = ((powerdc_int::insl27 + powerdc_int::insp27
+                                     +powerdc_int::inshzvsu)/ (powerdc_int::prg1 +
+                                       powerdc_int::prg2 + powerdc_int::prg3 +
+                                       powerdc_int::prg4));
         }
         else
         {
-            powerdc_int::ing1_27 = powerdc_int::insl27 / (powerdc_int::prg1 +
-                                                          powerdc_int::prg2);
+            powerdc_int::ing1_27 = ((powerdc_int::insl27 + powerdc_int::inshzvsu) /
+                                                              (powerdc_int::prg1 + powerdc_int::prg2));
         }
     }
 
@@ -667,14 +673,15 @@ void allElConsDir::makeCorresCurr()
     {
         if(powerdc_int::pss27)
         {
-            powerdc_int::ing2_27 = ((powerdc_int::insl27 + powerdc_int::insp27) /
-                                    (powerdc_int::prg1 + powerdc_int::prg2 +
-                                     powerdc_int::prg3 + powerdc_int::prg4));
+            powerdc_int::ing2_27 = ((powerdc_int::insl27 + powerdc_int::insp27
+                                     +powerdc_int::inshzvsu)/ (powerdc_int::prg1 +
+                                       powerdc_int::prg2 + powerdc_int::prg3 +
+                                       powerdc_int::prg4));
         }
         else
         {
-            powerdc_int::ing2_27 = powerdc_int::insl27 /
-                                   (powerdc_int::prg1 + powerdc_int::prg2);
+            powerdc_int::ing1_27 = ((powerdc_int::insl27 + powerdc_int::inshzvsu) /
+                                                              (powerdc_int::prg1 + powerdc_int::prg2));
         }
     }
 
@@ -682,9 +689,10 @@ void allElConsDir::makeCorresCurr()
     {
         if(powerdc_int::pss27)
         {
-            powerdc_int::ing3_27 = ((powerdc_int::insl27 + powerdc_int::insp27) /
-                                    (powerdc_int::prg1 + powerdc_int::prg2 +
-                                     powerdc_int::prg3 + powerdc_int::prg4));
+            powerdc_int::ing3_27 = ((powerdc_int::insl27 + powerdc_int::insp27
+                                     +powerdc_int::inshzvsu)/ (powerdc_int::prg1 +
+                                       powerdc_int::prg2 + powerdc_int::prg3 +
+                                       powerdc_int::prg4));
         }
         else
         {
@@ -696,9 +704,10 @@ void allElConsDir::makeCorresCurr()
     {
         if(powerdc_int::pss27)
         {
-            powerdc_int::ing4_27 = ((powerdc_int::insl27 + powerdc_int::insp27) /
-                                    (powerdc_int::prg1 + powerdc_int::prg2 +
-                                     powerdc_int::prg3 + powerdc_int::prg4));
+            powerdc_int::ing4_27 = ((powerdc_int::insl27 + powerdc_int::insp27
+                                     +powerdc_int::inshzvsu)/ (powerdc_int::prg1 +
+                                       powerdc_int::prg2 + powerdc_int::prg3 +
+                                       powerdc_int::prg4));
         }
         else
         {

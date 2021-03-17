@@ -45,13 +45,13 @@ public:
         uo1ak, uo2ak, upr, ipr, ur1ak, ur2ak, uz1ak, uz2ak,
         uls27, ups27,
         //ugrr, ugrrvsu,
-        ugvsu27, ugrvsu27, ivgvsu27, ivsu_27, divgvsu27,
+        ugvsu27, ugrvsu27, ivgvsu27, divgvsu27,
         kak,
         urap1, urap2;
     int
         s20_2420;
     bool
-        otk_pos1000, k12_2420, k13_2420, k14_2420, k16_2420, k18_2420,
+        otk_pos1000, k12_2420, k13_2420, k16_2420, k18_2420,
         k34_2420, s7_2420, s17_2420, s18_2420,
         s19_2420, s21_2420, pbapsh[5],
         purglk3, otk_preobr_pts1, s15_2420, pbapsh1, pbapsh2, pbapsh3,
@@ -71,14 +71,7 @@ public:
         f92_2420, f142_2420, f242_2420, f282_2420, k25_2420, k26_2420, k27_2420,
         k28_2420,
         otk_pereg_gen1, otk_pereg_gen2, otk_pereg_gen3, otk_pereg_gen4,
-        otk_pereg_akk1, otk_pereg_akk2,
-        y1_3650, y2_3650, r865gd,
-        s1_11028, s1_4940,
-        k1_11038, k2_11038, s1_11052, s2_11052, s1_11081, s1_11313, k1_17723,
-        k2_17723, k11_2250, k15_2420, k1_2250, k1_2420, k2_2420,
-        k3_2250, k5_2250, k7_2420, k8_2250, k8_2420, k3_3650, k4_3650,
-        k2_7322, k3_7322, k4_7322, k5_7322, k8_7322, k9_7322, k10_7322, k11_7322,
-        k18_7322, k4_4940,
+        otk_pereg_akk1, otk_pereg_akk2, k4_3650, y1_3650, y2_3650, r865gd,
         OtkazGen1PostT, OtkazGen2PostT, OtkazGen3PostT, OtkazGen4PostT, OtkazGenVsu,
         prgvsu27, pa1, pa2,
         pbg1, pbg2, pbg3, pbg4, pbgvsu27,
@@ -114,6 +107,10 @@ public:
 
 
     bool
+        k1_2420,
+        k2_2420,
+        k7_2420,
+        k8_2420,
         k21_2420,
         k22_2420,
         k23_2420,

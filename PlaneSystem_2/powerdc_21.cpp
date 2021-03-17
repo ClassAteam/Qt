@@ -120,12 +120,12 @@ void powerdc_int::powerdc_21()
     else
         uks_inst.UKS4X329 = false;
 
-    if(k15_2420)
+    if(exchange_inst.k15_2420)
         uks_inst.UKS2X36 = true;
     else
         uks_inst.UKS2X36 = false;
 
-    if(k14_2420)
+    if(exchange_inst.k14_2420)
         uks_inst.UKS2X37 = true;
     else
         uks_inst.UKS2X37 = false;

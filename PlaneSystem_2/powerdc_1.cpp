@@ -13,7 +13,7 @@ static int
     double* uzg_pool[] = {&uzg1_27, &uzg2_27, &uzg3_27, &uzg4_27, &uzgvsu_27};
     double* divg_pool[] = {&divg1_27, &divg2_27, &divg3_27, &divg4_27, &divgvsu27};
     double* ivg_pool[] = {&ivg1_27, &ivg2_27, &ivg3_27, &ivg4_27, &ivgvsu27};
-    double* ing_pool[] = {&ing1_27, &ing2_27, &ing3_27, &ing4_27, &ivsu_27};
+    double* ing_pool[] = {&ing1_27, &ing2_27, &ing3_27, &ing4_27, &ingvsu_27};
 //    double* ugrr_pool[] = {&ugrr, &ugrr, &ugrr, &ugrr, &ugrrvsu};
     double* ugr_pool[] = {&ug1r_27, &ug2r_27, &ug3r_27, &ug4r_27, &ugrvsu27};
 

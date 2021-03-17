@@ -187,8 +187,8 @@ void powerdc_int::powerdc_9_10()
     else
         uks_inst.UKS2X356 = false;
 
-    uks_inst.UKS1X3105 = ivsu_27;
-    uks_inst.UKS1X3106 = ivsu_27;
+    uks_inst.UKS1X3105 = ingvsu_27;
+    uks_inst.UKS1X3106 = ingvsu_27;
 
     uks_inst.UKS1X394 = exchange_inst.ush1l;
     uks_inst.UKS1X395 = exchange_inst.ush2l;

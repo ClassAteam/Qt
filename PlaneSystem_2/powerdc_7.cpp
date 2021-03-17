@@ -45,7 +45,7 @@ void powerdc_int::powerdc_7() //7
         {
             if(s17_2430 == s17_2430_pos::vsu)
             {
-                ipr = ivsu_27;
+                ipr = ingvsu_27;
             }
             else
             {

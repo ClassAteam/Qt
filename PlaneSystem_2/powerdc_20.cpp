@@ -26,7 +26,7 @@ void powerdc_int::powerdc_20()
 
  Z_f(prg3, prg4, pchrp, bss_inst.BSS837X1HH, k34_2420, bss_inst.BSS837X1V, k16_2420, bss_inst.BSS837X1R);
 
- if(k14_2420)
+ if(exchange_inst.k14_2420)
      bss_inst.BSS837X1L = true;
  else
      bss_inst.BSS837X1L = false;

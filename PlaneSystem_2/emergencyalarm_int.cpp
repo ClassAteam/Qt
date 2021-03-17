@@ -99,7 +99,7 @@ emergencyalarm_int::emergencyalarm_int(QWidget *parent)
         createLabelClue(&bss_inst.BSS812X5n, "BSS812X5n");
         createLabelClue(&bss_inst.BSS812X5p, "BSS812X5p");
         createLabelClue(&bss_inst.BSS812X5r, "BSS812X5r");
-        createLabelClue(&bss_inst.BSS812X5t, "BSS812X5t");
+        createRedButton(&bss_inst.BSS812X5t, "BSS812X5t");
         createLabelClue(&bss_inst.BSS812X5v, "BSS812X5v");
         createLabelClue(&bss_inst.BSS812X5x, "BSS812X5x");
         createLabelClue(&bss_inst.BSS812X5z, "BSS812X5z");

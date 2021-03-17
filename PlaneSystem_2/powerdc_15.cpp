@@ -114,7 +114,7 @@ void powerdc_int::powerdc_15()
         apsh_switch(exchange_inst.ushavP[1][0], k16_2420, pbapsh2, purgpk9);
         break;
     case s20_2430_pos::apsh3:
-        apsh_switch(exchange_inst.ushpts[0], k14_2420, pbapsh3, purglk10);
+        apsh_switch(exchange_inst.ushpts[0], exchange_inst.k14_2420, pbapsh3, purglk10);
         break;
     case s20_2430_pos::apsh5:
         apsh_switch(exchange_inst.ushpos[0], exchange_inst.k31_2420, pbapsh5, purglk11);

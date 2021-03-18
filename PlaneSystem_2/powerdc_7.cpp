@@ -57,31 +57,31 @@ void powerdc_int::powerdc_7() //7
     switch(s16_2430)
     {
     case s16_2430_pos::akk1:
-        upr = uak1;
+        powerdc_int::upr = uak1;
         break;
     case s16_2430_pos::akk2:
-        upr = uak2;
+        powerdc_int::upr = uak2;
         break;
     case s16_2430_pos::avar1:
-        upr = exchange_inst.ushal;
+        powerdc_int::upr = exchange_inst.ushal;
         break;
     case s16_2430_pos::avar2:
-        upr = exchange_inst.ushap;
+        powerdc_int::upr = exchange_inst.ushap;
         break;
     case s16_2430_pos::sh1lev:
-        upr = exchange_inst.ush1l;
+        powerdc_int::upr = exchange_inst.ush1l;
         break;
     case s16_2430_pos::sh2lev:
-        upr = exchange_inst.ush2l;
+        powerdc_int::upr = exchange_inst.ush2l;
         break;
     case s16_2430_pos::sh1prav:
-        upr = exchange_inst.ush1p;
+        powerdc_int::upr = exchange_inst.ush1p;
         break;
     case s16_2430_pos::sh2prav:
-        upr = exchange_inst.ush2p;
+        powerdc_int::upr = exchange_inst.ush2p;
         break;
     default:
-        upr = 0.0;
+        powerdc_int::upr = 0.0;
     }
 }
 

@@ -4,15 +4,31 @@ struct exchange
 {
     double
         speed,
-        eng1_spd{0},
-        eng2_spd,
-        eng3_spd,
-        eng4_spd;
+        eng1_spd{},//engine1 speed
+        eng2_spd{},//engine2 speed
+        eng3_spd{},//engine3 speed
+        eng4_spd{};//engine4 speed
+
 
     bool
-        prrkz, prr1kz, prr2kz, psr1kz, psr2kz, por1kz, por2kz, S1_2750,
-        S13_2750, por1kpr, por2kpr, s1_2780, prrkpchk, prr1kpchk, prr2kpchk,
-        por1kpchk, por2kpchk, s1_2790,
+        prrkz,
+        prr1kz,
+        prr2kz,
+        psr1kz,
+        psr2kz,
+        por1kz,
+        por2kz,
+        S1_2750,
+        S13_2750,
+        por1kpr,
+        por2kpr,
+        s1_2780,
+        prrkpchk,
+        prr1kpchk,
+        prr2kpchk,
+        por1kpchk,
+        por2kpchk,
+        s1_2790,
         pvrap1,
         prr1kpr,
         psr1kpr,
@@ -76,74 +92,39 @@ struct exchange
         f353_3020,
         pvrap2,
         pvrap,
-        pvksku1,
-        pvksku2,
-        pvksku3,
-        pvksku4,
         otk_overload_gen1,
         otk_overload_gen2,
         otk_overload_gen3,
         otk_overload_gen4,
-        purglk1,
-        purglk2,
-        purglk3,
-        purglk4,
-        purglk5,
-        purglk6,
-        purglk7,
-        purglk8,
-        purglk9,
-        purgpk1,
-        purgpk2,
-        purgpk3,
-        purgpk4,
-        purgpk5,
-        purgpk6,
-        purgpk7,
-        purgpk8,
-        purgpk9,
-        prgen[4],
-        pp400[2],
-        purgk31,
-        purgk41,
-        pss400,
-        purgk1,
-        purgk21,
         pnu;
 
     double
-        ingvsu,
-        ingrap,
-        ing1,
-        ing2,
-        ing3,
-        ing4;
+        pgs1{280},//presure in hydrosystem1
+        pgs2{280},//presure in hydrosystem2
+        pgs3{280},//presure in hydrosystem3
+        pgs4{280};//presure in hydrosystem4
 
     double
-        pgs1{280},
-        pgs2{280},
-        pgs3{280},
-        pgs4{280};
-
-    double
-        ush1dpl,
-        ush1dpp,
-        ush2dpp,
+        ush1dpl,//voltage at extra power bus1 left one
+        ush2dpl,//voltage at extra power bus2 left one
+        ush1dpp,//voltage at extra power bus1 right one
+        ush2dpp,//voltage at extra power bus2 right one
         ushap,
-        ushal,
-        ush2dpl;
+        ushal;
 
     double
-        ush1l,
-        ush2l,
-        ush1p,
-        ush2p;
+        ush1l,//bus1 left voltage
+        ush2l,//bus2 left voltage
+        ush1p,//bus1 right voltage
+        ush2p;//bus1 right voltage
+
 
     double
-        usho2l,
-        usho2p,
-        usho1p,
-        usho1l;
+        usho2l,//switching off bus2 left
+        usho2p,//switching off bus2 right
+        usho1p,//switching off bus1 right
+        usho1l;//switching off bus1 left
+
 
     bool
         K34_3230,
@@ -154,23 +135,23 @@ struct exchange
         K25_3230;
 
     double
-        ushzvsu,
-        ushpp,
-        ushak1,
-        ushak2,
+        ushzvsu, //vsu starting bus
+        ushpp,//switching bus right voltage
+        ushak1,//accumulator1 bus voltage
+        ushak2,//accumulator2 bus voltage
         ushp5pl,
-        ugvsuP[3],                  //vsu generator voltage by phases
-        urapP[3],                   //rap bus voltahe by phases
-        ushpos[2],                  // voltage of converter3's buses
-        ushpts[3],                  // voltage of converter1's bus by phases
-        fshg[5],                    //frequency of 4 generators and vsu bases
-        fshp[2],                    //frequency of switching buses
-        fshpos[2],                  //frequency of convreter3's buses
+        ugvsuP[3],//vsu generator voltage by phases
+        urapP[3],//rap bus voltahe by phases
+        ushpos[2],// voltage of converter3's buses
+        ushpts[3],// voltage of converter1's bus by phases
+        fshg[5],//frequency of 4 generators and vsu bases
+        fshp[2],//frequency of switching buses
+        fshpos[2],//frequency of convreter3's buses
         fshpts,
-        fshav[4],                   //frequency of emergency buses
-        ushgP[4][3],                //a generator bus voltages by phases
-        ushavP[4][3],               //emergency buses voltages by phases
-        ushpP[2][3],                //toggle bus voltages by phases
+        fshav[4],//frequency of emergency buses
+        ushgP[4][3],//a generator bus voltages by phases
+        ushavP[4][3],//emergency buses voltages by phases
+        ushpP[2][3],//switching bus voltages by phases
         upts,
         fpos,
         fpts,
@@ -191,23 +172,25 @@ struct exchange
 
     double
         pgat,
-        alpha_rud_1dv,
-        alpha_rud_2dv,
-        alpha_rud_3dv,
-        alpha_rud_4dv;
+        alpha_rud_1dv,//RUD position 1st engine
+        alpha_rud_2dv,//RUD position 2nd engine
+        alpha_rud_3dv,//RUD position 3rd engine
+        alpha_rud_4dv;//RUD position 4th engine
+
     bool
         F32_3250,
         P1OBLOP,
         P2OBLOP,
         P1OBPOP,
         P2OBPOP,
-        PRD1dv,
-        PRD2dv,
-        PRD3dv,
-        PRD4dv,
+        PRD1dv,//engine1 work sign
+        PRD2dv,//engine2 work sign
+        PRD3dv,//engine3 work sign
+        PRD4dv,//engine4 work sign
+
         ptstoyan;
 
     double
-        delta_z;
+        delta_z;//flaps position
 
 };

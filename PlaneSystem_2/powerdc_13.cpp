@@ -24,13 +24,13 @@ void powerdc_int::powerdc_13()
     else
         purgpk3 = false;
 
-    if(prgen[4])
-        purglk2 = true;
+    if(prgen[3])
+        powerdc_int::purglk2 = true;
     else
         purglk2 = false;
 
-    purglk7 = false;
-    purgpk7 = false;
+    powerdc_int::purglk7 = false;
+    powerdc_int::purgpk7 = false;
     purglk8 = false;
     pss400 = false;
 

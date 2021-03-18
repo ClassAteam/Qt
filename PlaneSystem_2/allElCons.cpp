@@ -110,85 +110,85 @@ void allElConsAlt::makeCorresCurr()
 
     buses[shp1] = 5;
     buses[shp2] = 5;
-    if(!exchange_inst.purglk4)
+    if(!powerdc_int::purglk4)
         buses[shp1] = buses[shp1] + buses[shavar3];
-    if(!exchange_inst.purgpk4)
+    if(!powerdc_int::purgpk4)
         buses[shp2]= buses[shp2] + buses[shavar4];
 
-    exchange_inst.ing1 = 0;
-    exchange_inst.ing2 = 0;
-    if(exchange_inst.purgk1)
+    powerdc_int::ing1 = 0;
+    powerdc_int::ing2 = 0;
+    if(powerdc_int::purgk1)
     {
-        exchange_inst.ing1 = buses[gen1];
-        if(exchange_inst.purgk21)
+        powerdc_int::ing1 = buses[gen1];
+        if(powerdc_int::purgk21)
         {
-            exchange_inst.ing2 = buses[gen2] + buses[shp1];
+            powerdc_int::ing2 = buses[gen2] + buses[shp1];
         }
         else
         {
-            exchange_inst.ing1 +=(buses[gen2] + buses[shp1]);
+            powerdc_int::ing1 +=(buses[gen2] + buses[shp1]);
         }
-        if(!exchange_inst.pp400[1] && exchange_inst.pss400)
-            exchange_inst.ing1 = exchange_inst.ing1 + buses[gen3] + buses[gen4] + buses[shp2];
+        if(!powerdc_int::pp400[1] && powerdc_int::pss400)
+            powerdc_int::ing1 = powerdc_int::ing1 + buses[gen3] + buses[gen4] + buses[shp2];
     }
     else
     {
-        if(exchange_inst.purgk21)
+        if(powerdc_int::purgk21)
         {
-            exchange_inst.ing2 = buses[gen1] + buses[gen2] + buses[shp1];
+            powerdc_int::ing2 = buses[gen1] + buses[gen2] + buses[shp1];
 
-            if(!exchange_inst.pp400[1] && exchange_inst.pss400)
-                exchange_inst.ing2 = exchange_inst.ing2 + buses[gen3] + buses[gen4] + buses[shp2] + buses[shavar4];
+            if(!powerdc_int::pp400[1] && powerdc_int::pss400)
+                powerdc_int::ing2 = powerdc_int::ing2 + buses[gen3] + buses[gen4] + buses[shp2] + buses[shavar4];
         }
         else
         {
-            if(exchange_inst.purglk4)
+            if(powerdc_int::purglk4)
             {
-                if(exchange_inst.purglk5)
-                    exchange_inst.ing1 = buses[shavar3];
+                if(powerdc_int::purglk5)
+                    powerdc_int::ing1 = buses[shavar3];
                 else
-                    if(exchange_inst.prgen[1])
-                    exchange_inst.ing2 = buses[shavar3];
+                    if(powerdc_int::prgen[1])
+                    powerdc_int::ing2 = buses[shavar3];
             }
         }
     }
-    exchange_inst.ing3 = 0;
-    exchange_inst.ing4 = 0;
+    powerdc_int::ing3 = 0;
+    powerdc_int::ing4 = 0;
 
-    if(exchange_inst.purgk41)
+    if(powerdc_int::purgk41)
     {
-        exchange_inst.ing4 = buses[gen4];
+        powerdc_int::ing4 = buses[gen4];
 
-        if(exchange_inst.purgk31)
-            exchange_inst.ing3 = buses[gen3] + buses[shp2];
+        if(powerdc_int::purgk31)
+            powerdc_int::ing3 = buses[gen3] + buses[shp2];
         else
         {
-            exchange_inst.ing4 = buses[gen4] + buses[gen3] + buses[shp2];
-            if(!exchange_inst.pp400[0] && exchange_inst.pss400)
-                exchange_inst.ing4 = exchange_inst.ing4 + buses[gen1] + buses[gen2] + buses[shp1];
+            powerdc_int::ing4 = buses[gen4] + buses[gen3] + buses[shp2];
+            if(!powerdc_int::pp400[0] && powerdc_int::pss400)
+                powerdc_int::ing4 = powerdc_int::ing4 + buses[gen1] + buses[gen2] + buses[shp1];
         }
 
     }
     else
     {
-        if(exchange_inst.purgk31)
+        if(powerdc_int::purgk31)
         {
-            exchange_inst.ing3 = buses[gen4] + buses[gen3] + buses[shp2];
-            if(!exchange_inst.pp400[0] && exchange_inst.pss400)
+            powerdc_int::ing3 = buses[gen4] + buses[gen3] + buses[shp2];
+            if(!powerdc_int::pp400[0] && powerdc_int::pss400)
             {
-                exchange_inst.ing3 = exchange_inst.ing3 + buses[gen1] + buses[gen2] + buses[shp1];
+                powerdc_int::ing3 = powerdc_int::ing3 + buses[gen1] + buses[gen2] + buses[shp1];
             }
         }
         else
         {
-            if(exchange_inst.purgpk4)
+            if(powerdc_int::purgpk4)
             {
-                if(exchange_inst.purgpk5)
-                    exchange_inst.ing4 = buses[shavar4];
+                if(powerdc_int::purgpk5)
+                    powerdc_int::ing4 = buses[shavar4];
                 else
                 {
-                    if(exchange_inst.prgen[2])
-                        exchange_inst.ing3 = buses[shavar4];
+                    if(powerdc_int::prgen[2])
+                        powerdc_int::ing3 = buses[shavar4];
                 }
             }
         }
@@ -199,75 +199,75 @@ void allElConsAlt::makeCorresCurr()
     double sumB{buses[gen1] + buses[gen2] + buses[shp1]};
     double sumC{buses[gen3] + buses[gen4]+ buses[shp2]};
 
-    if(exchange_inst.purglk2)
+    if(powerdc_int::purglk2)
     {
-        if(exchange_inst.purglk7)
+        if(powerdc_int::purglk7)
         {
-            if(exchange_inst.purglk8 && exchange_inst.purgpk7)
+            if(powerdc_int::purglk8 && powerdc_int::purgpk7)
             {
-                exchange_inst.ingvsu = sumA;
+                powerdc_int::ingvsu = sumA;
             }
             else
             {
-                exchange_inst.ingvsu = sumB;
+                powerdc_int::ingvsu = sumB;
             }
         }
         else
         {
-            if(exchange_inst.purglk8 && exchange_inst.purgpk7)
+            if(powerdc_int::purglk8 && powerdc_int::purgpk7)
             {
-                exchange_inst.ingvsu = sumC;
+                powerdc_int::ingvsu = sumC;
                 bss_inst.BSS837X1FF = true;
             }
             else
             {
-                exchange_inst.ingvsu = 0;
+                powerdc_int::ingvsu = 0;
                 bss_inst.BSS837X1FF = false;
             }
         }
     }
     else
     {
-        exchange_inst.ingvsu = 0;
+        powerdc_int::ingvsu = 0;
         bss_inst.BSS837X1FF = false;
     }
 
-    if(exchange_inst.purgpk3)
+    if(powerdc_int::purgpk3)
     {
-        if(exchange_inst.purgpk7)
+        if(powerdc_int::purgpk7)
         {
-            if(exchange_inst.purglk8 && exchange_inst.purglk7)
+            if(powerdc_int::purglk8 && powerdc_int::purglk7)
             {
-                exchange_inst.ingrap = sumA;
+                powerdc_int::ingrap = sumA;
                 bss_inst.BSS926X3R = true;
             }
             else
             {
-                exchange_inst.ingrap = sumC;
+                powerdc_int::ingrap = sumC;
                 bss_inst.BSS926X3R = true;
             }
         }
         else
         {
-            if(exchange_inst.purglk8 && exchange_inst.purglk7)
+            if(powerdc_int::purglk8 && powerdc_int::purglk7)
             {
-                exchange_inst.ingrap = sumB;
+                powerdc_int::ingrap = sumB;
                 bss_inst.BSS926X3R = true;
             }
             else
             {
-                exchange_inst.ingrap = 0;
+                powerdc_int::ingrap = 0;
                 bss_inst.BSS926X3R = false;
             }
         }
     }
     else
     {
-        exchange_inst.ingrap = 0;
+        powerdc_int::ingrap = 0;
         bss_inst.BSS926X3R = false;
     }
 
-    if(exchange_inst.pss400)
+    if(powerdc_int::pss400)
         bss_inst.BSS926X3T = true;
     else
         bss_inst.BSS926X3T = false;
@@ -415,11 +415,20 @@ void allElConsDir::makeCorresCurr()
     QVector<double>buses;
     buses = getIvg_pool();
 
-    powerdc_int::insh2dpp = buses[sh2dpp];
     powerdc_int::insh2dpl = buses[sh2dpl];
     powerdc_int::inshal = buses[shal];
     powerdc_int::insh1dpl = buses[sh1dpl];
     powerdc_int::insh1l = buses[sh1l];
+    powerdc_int::insh2l = buses[sh2l];
+    powerdc_int::insho1l = buses[sho1l];
+    powerdc_int::insho2l = buses[sho2l];
+    powerdc_int::inshap = buses[shap];
+    powerdc_int::insh1dpp = buses[sh1dpp];
+    powerdc_int::insh2dpp = buses[sh2dpp];
+    powerdc_int::insh1p = buses[sh1p];
+    powerdc_int::insh2p = buses[sh2p];
+    powerdc_int::insho1p = buses[sho1p];
+    powerdc_int::insho2p = buses[sho2p];
 
     if(exchange_inst.ushzvsu >= 18.0)
     {
@@ -446,11 +455,11 @@ void allElConsDir::makeCorresCurr()
 
     if(!powerdc_int::purg27lk9)
     {
-        powerdc_int::inshal = (buses[shal] + buses[sh1dpl] + buses[sh2dpl]);
+        powerdc_int::inshal = (powerdc_int::inshal + powerdc_int::insh1dpl + powerdc_int::insh2dpl);
     }
     if(!powerdc_int::purg27pk9)
     {
-        powerdc_int::inshap = (buses[shap] + buses[sh1dpp] + buses[sh2dpp]);
+        powerdc_int::inshap = (powerdc_int::inshap + powerdc_int::insh1dpp + powerdc_int::insh2dpp);
     }
 
     if(powerdc_int::purg27lk6)
@@ -536,19 +545,19 @@ void allElConsDir::makeCorresCurr()
                                                 powerdc_int::ra2;
                         else
                         {
-                            powerdc_int::iak2 = buses[shap];
+                            powerdc_int::iak2 = powerdc_int::inshap;
                         }
                     }
                     else
                     {
                         if(!powerdc_int::purg27pk3)
-                            powerdc_int::iak2 = buses[shap];
+                            powerdc_int::iak2 = powerdc_int::inshap;
                         else
                         {
                             if(!powerdc_int::purg27lk5)
-                                powerdc_int::iak2 = buses[shal] + buses[shap];
+                                powerdc_int::iak2 = powerdc_int::inshal + powerdc_int::inshap;
                             else
-                                powerdc_int::iak2 = (buses[shal] + buses[shap]) / 2;
+                                powerdc_int::iak2 = (powerdc_int::inshal + powerdc_int::inshap) / 2;
                         }
                     }
                 }
@@ -563,11 +572,11 @@ void allElConsDir::makeCorresCurr()
 
     if(powerdc_int::purg27pk9)
     {
-        powerdc_int::insh1p = buses[sh1p] + buses[sh1dpp] + buses[sh2dpp];
+        powerdc_int::insh1p = powerdc_int::insh1p + powerdc_int::insh1dpp + powerdc_int::insh2dpp;
     }
     if(powerdc_int::purg27lk9)
     {
-        powerdc_int::insh1l = buses[sh1l] + buses[sh1dpl] + buses[sh2dpl];
+        powerdc_int::insh1l = powerdc_int::insh1l + powerdc_int::insh1dpl + powerdc_int::insh2dpl;
     }
 
 //    else
@@ -575,37 +584,37 @@ void allElConsDir::makeCorresCurr()
 //        inshap = inshap + insh1dpp + insh2dpp;
 //    }
 
-    powerdc_int::insl27 = powerdc_int::insh1l + buses[sh2l];
+    powerdc_int::insl27 = powerdc_int::insh1l + powerdc_int::insh2l;
 
-    powerdc_int::insp27 = powerdc_int::insh1p + buses[sh2p];
+    powerdc_int::insp27 = powerdc_int::insh1p + powerdc_int::insh2p;
 
     if(powerdc_int::plp27)
     {
-        powerdc_int::insl27 = powerdc_int::insl27 + buses[shal];
+        powerdc_int::insl27 = powerdc_int::insl27 + powerdc_int::inshal;
     }
 
     if(powerdc_int::ppp27)
     {
-        powerdc_int::insp27 = powerdc_int::insp27 + buses[shap];
+        powerdc_int::insp27 = powerdc_int::insp27 + powerdc_int::inshap;
     }
 
     if(powerdc_int::purg27lk1)
     {
-        powerdc_int::insl27 = powerdc_int::insl27 + buses[shal];
+        powerdc_int::insl27 = powerdc_int::insl27 + powerdc_int::inshal;
     }
 
     if(powerdc_int::purg27pk1)
     {
-        powerdc_int::insp27 = powerdc_int::insp27 + buses[shap];
+        powerdc_int::insp27 = powerdc_int::insp27 + powerdc_int::inshap;
     }
 
     if(powerdc_int::purg27lk7)
     {
-        powerdc_int::insl27 = powerdc_int::insl27  + buses[sho1l] + buses[sho2l];
+        powerdc_int::insl27 = powerdc_int::insl27  + powerdc_int::insho1l + powerdc_int::insho2l;
     }
     if(powerdc_int::purg27pk7)
     {
-        powerdc_int::insp27 = powerdc_int::insp27 + buses[sho1p] + buses[sho2p];
+        powerdc_int::insp27 = powerdc_int::insp27 + powerdc_int::insho1p + powerdc_int::insho2p;
     }
 
     powerdc_int::irap1 = 0;

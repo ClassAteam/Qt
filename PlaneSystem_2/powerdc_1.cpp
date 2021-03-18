@@ -88,7 +88,7 @@ static int
 
     for(int i = 0; i < 4; i++)
     {
-        if(*ushal_pool[i] >= 18.0 && *s4_pool[i] == true)
+        if(*ushal_pool[i] >= 18.0 && (*s4_pool[i]) == true)
         {
             *pvkg_pool[i] = true;
         }

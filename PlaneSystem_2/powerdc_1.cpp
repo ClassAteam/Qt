@@ -8,7 +8,7 @@ static int
     //start logic
     bool* otkaz_pool[] = {&OtkazGen1PostT, &OtkazGen2PostT, &OtkazGen3PostT,
                           &OtkazGen4PostT, &OtkazGenVsu};
-    double* ng_pool[] = {&ng1, &ng2, &ng3, &ng4, &ngvsu};
+    double* ng_pool[] = {&ng1_27, &ng2_27, &ng3_27, &ng4_27, &ngvsu_27};
     double* ug_pool[] = {&ug1_27, &ug2_27, &ug3_27, &ug4_27, &ugvsu27};
     double* uzg_pool[] = {&uzg1_27, &uzg2_27, &uzg3_27, &uzg4_27, &uzgvsu_27};
     double* divg_pool[] = {&divg1_27, &divg2_27, &divg3_27, &divg4_27, &divgvsu27};
@@ -17,8 +17,8 @@ static int
 //    double* ugrr_pool[] = {&ugrr, &ugrr, &ugrr, &ugrr, &ugrrvsu};
     double* ugr_pool[] = {&ug1r_27, &ug2r_27, &ug3r_27, &ug4r_27, &ugrvsu27};
 
-    double* nvd_pool[] = {&exchange_inst.eng1_spd, &exchange_inst.eng2_spd,
-                          &exchange_inst.eng3_spd, &exchange_inst.eng4_spd, &nvsu};
+    double* nvd_pool[] = {&hydro_int::nVDfirst2[0], &hydro_int::nVDfirst2[1],
+                          &hydro_int::nVDsecond2[0], &hydro_int::nVDsecond2[1], &nvsu};
 
     double* krg_pool[] = {&krg, &krg, &krg, &krg, &krgvsu};
     double* kg_pool[] = {&kg1, &kg1, &kg1, &kg1, &kgvsu};

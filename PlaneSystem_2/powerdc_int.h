@@ -5,6 +5,7 @@
 #include "input_feed.h"
 #include "exchange.h"
 #include "uks.h"
+#include "hydro_int.h"
 
 //extern allElConsAlt allElConsAlt_inst;
 //extern allElConsDir allElConsDir_inst;
@@ -89,28 +90,29 @@ public:
         s19_2420{}, s21_2420{}, pbapsh[5]{},
         otk_preobr_pts1, s15_2420, pbapsh1, pbapsh2, pbapsh3,
         pbapsh5, pbapsh6,
-        purglk10,k17_2420, k19_2420, k20_2420,
+        purglk10,k17_2420{}, k19_2420{}, k20_2420{},
         s1_7710{}, s2_7710{}, s3_7710{}, s4_7710{},
-        s2_2420, s9_2420, pprap,
-        pvkgen[5], pvkgen2, pvkgen3, pvkgen4, pvkgenvsu,
+        s2_2420{}, s9_2420{}, pprap{},
+        pvkgen[5], pvkgen2{}, pvkgen3{}, pvkgen4{}, pvkgenvsu{},
         pzvg[5], pzvgvsu, pog[4], pchrl, pchrp, k1_2430,
         s1_2420{}, s5_2420{}, s10_2420{}, s13_2420{}, s4_2420{}, s12_2420{}, s8_2420{},
         s3_2420{}, s6_2420{}, s11_2420{}, s14_2420{}, f9_2420{}, f14_2420{}, f24_2420{},
-        f28_2420{}, popg1{}, popg2{}, popg3{}, popg4{},  otkGenPerT1,
-        otkGenPerT2, otkGenPerT3, otkGenPerT4, otkGenPerVsu, otkPadDavlMaslPpo1G, otkPadDavlMaslPpo2G,
-        otkPadDavlMaslPpo3G, otkPadDavlMaslPpo4G, popp01, popp02, popp03, popp04,
-        f92_2420, f142_2420, f242_2420, f282_2420, k25_2420, k26_2420, k27_2420,
-        k28_2420,
-        otk_pereg_gen1, otk_pereg_gen2, otk_pereg_gen3, otk_pereg_gen4,
-        otk_pereg_akk1, otk_pereg_akk2, k4_3650, y1_3650, y2_3650, r865gd,
-        OtkazGen1PostT, OtkazGen2PostT, OtkazGen3PostT, OtkazGen4PostT, OtkazGenVsu,
-        prgvsu27, pa1, pa2,
-        pbg1, pbg2, pbg3, pbg4, pbgvsu27,
+        f28_2420{}, popg1{}, popg2{}, popg3{}, popg4{},  otkGenPerT1{},
+        otkGenPerT2{}, otkGenPerT3{}, otkGenPerT4{}, otkGenPerVsu{}, otkPadDavlMaslPpo1G{},
+        otkPadDavlMaslPpo2G{}, otkPadDavlMaslPpo3G{}, otkPadDavlMaslPpo4G{},
+        popp01{}, popp02{}, popp03{}, popp04{},
+        f92_2420{}, f142_2420{}, f242_2420{}, f282_2420{}, k25_2420{}, k26_2420{}, k27_2420{},
+        k28_2420{},
+        otk_pereg_gen1{}, otk_pereg_gen2{}, otk_pereg_gen3{}, otk_pereg_gen4{},
+        otk_pereg_akk1{}, otk_pereg_akk2{}, k4_3650{}, y1_3650{}, y2_3650{}, r865gd{},
+        OtkazGen1PostT{}, OtkazGen2PostT{}, OtkazGen3PostT{}, OtkazGen4PostT{}, OtkazGenVsu{},
+        prgvsu27{}, pa1{}, pa2{},
+        pbg1{}, pbg2{}, pbg3{}, pbg4{}, pbgvsu27{},
         pvkg1{}, pvkg2{}, pvkg3{}, pvkg4{},
         s1_2430{}, s4_2430{}, s5_2430{}, s8_2430{}, s11_2430{},
         pvkchrl, pvkchrp,
         pprap1, pprap2, pshzvsu,
-        s2_2430{}, s9_2430{},   s7_2430{},  s3_2430{}, s10_2430{},
+        s2_2430{}, s9_2430{}, s7_2430{},  s3_2430{}, s10_2430{},
         glviklvsu{false};
 
     double
@@ -138,14 +140,14 @@ public:
 
 
     bool
-        k1_2420,
-        k2_2420,
-        k7_2420,
-        k8_2420,
-        k21_2420,
-        k22_2420,
-        k23_2420,
-        k24_2420;
+        k1_2420{},
+        k2_2420{},
+        k7_2420{},
+        k8_2420{},
+        k21_2420{},
+        k22_2420{},
+        k23_2420{},
+        k24_2420{};
     double
         fg[5] = {0},
         ng1, ng2, ng3, ng4, ngvsu,

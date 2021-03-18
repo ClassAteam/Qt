@@ -2,12 +2,6 @@
 
 void cabinlighting_int::cabinlighting_1()
 {
-static bool
-    PV_OSN_HV_10,
-    PV_OSN_HV_30,
-    PV_OSN_HV_100,
-    PV_OSN_HV_MIG,
-    PV_DOP;
 static int
     S1_3341;
 

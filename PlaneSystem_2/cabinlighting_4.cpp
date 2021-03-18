@@ -4,14 +4,6 @@
 void cabinlighting_int::cabinlighting_4()
 {
 static bool
-    PBUSTO3_1_1k,
-    PBUSTO3_1_2k,
-    PBUSTO3_2_1k,
-    PBUSTO3_2_2k,
-    PBUSTO3_3_1k,
-    PBUSTO3_3_2k,
-    PBUSTO3_4_1k,
-    PBUSTO3_4_2k,
     F1_3311,
     F2_3311,
     F3_3311,

@@ -6,12 +6,8 @@ void cabinlighting_int::cabinlighting_3()
         S1_2860,
         PVFL,
         PVFP,
-        PFPRLR,
-        PFPRPR,
         PFPRLP,
         PFPRPP,
-        PFSV_01LR,
-        PFSV_01PR,
         PFSV_01LP,
         PFSV_01PP,
         K1_3340,
@@ -32,9 +28,7 @@ void cabinlighting_int::cabinlighting_3()
         F4_3340,
         F14_3340,
         F13_3340,
-        F12_3340,
-        PFSV_02L,
-        PFSV_02P;
+        F12_3340;
 
     static double
         alpha_fsv_ol,

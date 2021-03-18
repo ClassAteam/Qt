@@ -68,11 +68,15 @@ powerdc_int::powerdc_int(QWidget *parent)
     createLabelValue(&divg2, "divg2");
     createLabelValue(&divg3, "divg3");
     createLabelValue(&divg4, "divg4");
-    createLabelValue(&ng1, "ng1");
-    createLabelValue(&ng2, "ng2");
-    createLabelValue(&ng3, "ng3");
-    createLabelValue(&ng4, "ng4");
-    createLabelValue(&ngvsu, "ngvsu");
+    createLabelValue(&hydro_int::nVDfirst2[0], "nvd1");
+    createLabelValue(&hydro_int::nVDfirst2[1], "nvd2");
+    createLabelValue(&hydro_int::nVDsecond2[0], "nvd3");
+    createLabelValue(&hydro_int::nVDsecond2[1], "nvd4");
+    createLabelValue(&ng1_27, "ng1_27");
+    createLabelValue(&ng2_27, "ng2_27");
+    createLabelValue(&ng3_27, "ng3_27");
+    createLabelValue(&ng4_27, "ng4_27");
+    createLabelValue(&ngvsu_27, "ngvsu_27");
     createLabelValue(&iak1, "iak1");
     createLabelValue(&iak2, "iak2");
     createLabelValue(&ea1, "ea1");
@@ -493,6 +497,7 @@ void powerdc_int::updateLogic()
     powerdc_14();
     powerdc_15();
     powerdc_20();
+    powerdc_21();
 }
 double powerdc_int::ea1{25.5};
 double powerdc_int::ea2{25.5};

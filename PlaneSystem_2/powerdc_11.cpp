@@ -44,8 +44,8 @@ allElConsAlt_inst.makeCorresCurr();
 
     bool* s3_pool[] = {&s3_2420, &s6_2420, &s11_2420, &s14_2420};
     int* tick_g1_pool[] = {&tick_g1, &tick_g2, &tick_g3, &tick_g4};
-    double* nvd_pool[] = {&exchange_inst.eng1_spd, &exchange_inst.eng2_spd,
-                          &exchange_inst.eng3_spd, &exchange_inst.eng4_spd, &nvsu};
+    double* nvd_pool[] = {&hydro_int::nVDfirst2[0], &hydro_int::nVDfirst2[1],
+                          &hydro_int::nVDsecond2[0], &hydro_int::nVDsecond2[1], &nvsu};
 
     double* ng_pool[] = {&ng1, &ng2, &ng3, &ng4, &ngvsu};
     double* ugr_pool[] = {&ug1r, &ug2r, &ug3r, &ug4r, &ugvsur};

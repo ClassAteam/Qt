@@ -11,7 +11,6 @@
 extern exchange exchange_inst;
 extern bss bss_inst;
 extern uks uks_inst;
-extern allElConsAlt allElConsAlt_inst;
 
 class hydro_int : public interfacing
 {
@@ -144,8 +143,8 @@ public:
     QVector<double>Qngngs3{0.0, 0.0};
     QVector<double>Qngngs4{0.0, 0.0};
 
-    QVector<double>nVDfirst2{0.0, 0.0};
-    QVector<double>nVDsecond2{0.0, 0.0};
+    static QVector<double>nVDfirst2;
+    static QVector<double>nVDsecond2;
     QVector<double>Kngs1{0.0, 0.0};
     QVector<double>Kngs2{0.0, 0.0};
     QVector<double>Kngs3{0.0, 0.0};

@@ -4,9 +4,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     : interfacing(parent)
 {
     landinggear_int::setWindowTitle("landinggear");
-    createLabelClue(&left_released, "left_released");
-    createLabelClue(&right_released, "right_released");
-    createLabelClue(&nose_released, "nose_released");
     createLabelClue(&left_intaken, "left_intaken");
     createLabelClue(&right_intaken, "right_intaken");
     createLabelClue(&nose_intaken, "nose_intaken");
@@ -198,9 +195,8 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&K6_3250, "K6_3250");
     createLabelClue(&K7_3250, "K7_3250");
     createLabelClue(&K8_3250, "K8_3250");
-    createLabelClue(&K24_3250, "K24_3250");
-    createLabelClue(&S1_3250, "S1_3250");
-    createLabelClue(&S4_3250, "S4_3250");
+    createRedButton(&S1_3250, "S1_3250");
+    createRedButton(&S4_3250, "S4_3250");
     createLabelClue(&PPBU_1, "PPBU_1");
     createLabelClue(&PPBU_2, "PPBU_2");
     createLabelClue(&PR_R1, "PR_R1");
@@ -249,4 +245,82 @@ void landinggear_int::updateLogic()
     landinggear_8();
     landinggear_9();
 }
+
+void landinggear_int::releasing_loop_cur(double* delta, double* D_delta,
+                                         int* tick, int* sec_tick)
+{
+    if (*delta < 1)
+    {
+        if(((*tick) * TICK) >= 1000)
+        {
+            (*sec_tick)++;
+            *tick = 0;
+        }
+
+        if((*sec_tick) >= 1)
+        {
+            *delta = (*delta + ((*D_delta / (1000 / TICK))));
+        }
+
+        if(*delta >= 1)
+        {
+            *delta = 1;
+            *tick = 0;
+        }
+    }
+}
+void landinggear_int::intake_loop_cur(double* delta, double* Ddelta_racks, int* tick, int* sec_tick)
+{
+    if (*delta > 0)
+    {
+        if(((*tick) * TICK) >= 1000)
+        {
+            (*sec_tick)++;
+            *tick = 0;
+        }
+
+        if((*sec_tick) >= 1)
+        {
+            *delta = (*delta - ((*Ddelta_racks / (1000 / TICK))));
+        }
+
+        if(*delta <= 0)
+        {
+            *delta = 0;
+            *tick = 0;
+        }
+    }
+}
+
+void landinggear_int::balloon_presure( double* P_bal)
+{
+    double delta_V_bal;
+    double V_bal;
+    V_bal = 0;
+    if((*P_bal) == P_bal_l)
+    {
+        V_bal = V_bal_l;
+        delta_V_bal = (Ksho * (*P_bal));
+        V_bal = V_bal + delta_V_bal;
+        V_bal_l = V_bal;
+        *P_bal = 6615000 / V_bal;
+    }
+    if((*P_bal) == P_bal_p)
+    {
+        V_bal = V_bal_p;
+        delta_V_bal = (Ksho * (*P_bal));
+        V_bal = V_bal + delta_V_bal;
+        V_bal_p = V_bal;
+        *P_bal = 6615000 / V_bal;
+    }
+    if((*P_bal) == P_bal_per)
+    {
+        V_bal = V_bal_n;
+        delta_V_bal = (Ksho * (*P_bal));
+        V_bal = V_bal + delta_V_bal;
+        V_bal_n = V_bal;
+        *P_bal = 5550000 / V_bal;
+    }
+}
+
 

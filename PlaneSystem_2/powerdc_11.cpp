@@ -99,6 +99,11 @@ allElConsAlt_inst.makeCorresCurr();
                         *k21_pool[i] = false;
                     }
                 }
+                if(*otk_pad_pool[i])
+                {
+                    *popp01_pool[i] = true;
+                    *k21_pool[i] = true;
+                }
             }
             else
             {
@@ -188,7 +193,7 @@ allElConsAlt_inst.makeCorresCurr();
     {
         if(*popg1_pool[y])
         {
-            *bss838_pool[y] = false;
+            *bss838_pool[y] = true;
             *ng_pool[y] = *ng_pool[y] + (0 - *ng_pool[y]) / kn1;
         }
         else

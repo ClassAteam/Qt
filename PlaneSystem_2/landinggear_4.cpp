@@ -3,11 +3,6 @@
 
 void landinggear_int::landinggear_4()
 {
-    static double
-        Ddelta_racks_rel,
-        Ddelta_racks_rel_l,
-        Ddelta_racks_rel_p,
-        Ddelta_racks_rel_n;
 
     static int
         racks_rel_left_tick,
@@ -30,32 +25,28 @@ void landinggear_int::landinggear_4()
         if (gk_oovsh == false)
         {
 
-
             // release loop
             if (gk_vsh == true && gk_ush == false)
             {
-                if(delta_sh_l != 1 &&
-                        delta_stv_l == 90)
+                if(delta_sh_l != 1 && delta_stv_l == 90)
                 {
                     racks_rel_left_tick++;
                     //releasing left
-                    releasing_loop2(&delta_sh_l, &Ddelta_racks_rel, &racks_rel_left_tick,
+                    releasing_loop_cur(&delta_sh_l, &Ddelta_racks_rel, &racks_rel_left_tick,
                                    &racks_rel_left_tick_sec);
                 }
-                if(delta_sh_p != 1 &&
-                        delta_stv_p == 90)
+                if(delta_sh_p != 1 && delta_stv_p == 90)
                 {
                     racks_rel_right_tick++;
                     //releasing right
-                    releasing_loop2(&delta_sh_p, &Ddelta_racks_rel, &racks_rel_right_tick,
+                    releasing_loop_cur(&delta_sh_p, &Ddelta_racks_rel, &racks_rel_right_tick,
                                    &racks_rel_right_tick_sec);
                 }
-                if(delta_sh_n != 1 &&
-                        delta_stv_n == 90)
+                if(delta_sh_n != 1 && delta_stv_n == 90)
                 {
                     racks_rel_nose_tick++;
                     //releasing nose
-                    releasing_loop2(&delta_sh_n, &Ddelta_racks_rel, &racks_rel_nose_tick,
+                    releasing_loop_cur(&delta_sh_n, &Ddelta_racks_rel, &racks_rel_nose_tick,
                                    &racks_rel_nose_tick_sec);
                 }
 
@@ -72,7 +63,7 @@ void landinggear_int::landinggear_4()
                 {
                     racks_rel_left_tick++;
                     //intake left
-                    intake_loop2(&delta_sh_l, &racks_rel_left_tick,
+                    intake_loop_cur(&delta_sh_l, &Ddelta_racks_l, &racks_rel_left_tick,
                                 &racks_rel_left_tick_sec);
                 }
                 if(delta_sh_p != 0 &&
@@ -81,7 +72,7 @@ void landinggear_int::landinggear_4()
                 {
                     racks_rel_right_tick++;
                     //intake right
-                    intake_loop2(&delta_sh_p, &racks_rel_right_tick,
+                    intake_loop_cur(&delta_sh_p, &Ddelta_racks_p, &racks_rel_right_tick,
                                 &racks_rel_right_tick_sec);
                 }
                 if(delta_sh_n != 0 && otkaz_nepoln_ubor_n == false)
@@ -89,7 +80,7 @@ void landinggear_int::landinggear_4()
                     racks_rel_nose_tick++;
                 }
                 //intake nose
-                intake_loop2(&delta_sh_n, &racks_rel_nose_tick,
+                intake_loop_cur(&delta_sh_n, &Ddelta_racks, &racks_rel_nose_tick,
                             &racks_rel_nose_tick_sec);
             }
             else
@@ -133,15 +124,15 @@ void landinggear_int::landinggear_4()
                 }
 
                 //releasing left
-               releasing_loop2(&delta_sh_l, &Ddelta_racks_rel_l,
+               releasing_loop_cur(&delta_sh_l, &Ddelta_racks_rel_l,
                               &racks_rel_left_tick, &racks_rel_left_tick_sec);
 
                //releasing right
-               releasing_loop2(&delta_sh_p, &Ddelta_racks_rel_p,
+               releasing_loop_cur(&delta_sh_p, &Ddelta_racks_rel_p,
                               &racks_rel_right_tick, &racks_rel_right_tick_sec);
 
                //releasing nose
-               releasing_loop2(&delta_sh_n, &Ddelta_racks_rel_n,
+               releasing_loop_cur(&delta_sh_n, &Ddelta_racks_rel_n,
                               &racks_rel_nose_tick, &racks_rel_nose_tick_sec);
         }
         if(gk_oovsh == false && gk_vsh == false && gk_ush == false)

@@ -68,6 +68,10 @@ hydro_int::hydro_int(QWidget *parent)
     createSlider(&nVDsecond2[0], 0, 100);
     createLabelValue(&nVDsecond2[1], "ENG_4");
     createSlider(&nVDsecond2[1], 0, 100);
+    createLabelValue(&pgs1, "pgs1");
+    createLabelValue(&pgs2, "pgs2");
+    createLabelValue(&pgs3, "pgs3");
+    createLabelValue(&pgs4, "pgs4");
     createLabelValue(&Kngs1[0], "Kngs1_1");
     createLabelValue(&Kngs1[1], "Kngs1_2");
     createLabelValue(&Kngs2[0], "Kngs2_1");

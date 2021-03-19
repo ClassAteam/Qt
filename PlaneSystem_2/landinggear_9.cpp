@@ -3,57 +3,12 @@
 
 void landinggear_int::landinggear_9()
 {
-    static bool
-        otkaz_1_kanala,
-        otkaz_2_kanala,
-        K3_3250,
-        K4_3250,
-        K5_3250,
-        K6_3250,
-        K7_3250,
-        K8_3250,
-        S1_3250,
-        S4_3250,
-        PPBU_1,
-        PPBU_2,
-        PR_R1,
-        PR_R2,
-        PR_R,
-        PR_VP1,
-        PR_VP2,
-        PR_VP,
-        PR_S_1,
-        PR_S_2,
-        PR_S,
-        GK_nk1,
-        GK_nk2,
-        A1X111_3250,
-        A1X112_3250,
-        A1X119_3250,
-        A1X166_3250,
-        A2X111_3250,
-        A2X112_3250,
-        A2X119_3250,
-        A2X166_3250,
-        SUS_14A_1_isp,
-        SUS_14A_2_isp,
-        SUS_14A_1_rul,
-        SUS_14A_2_rul,
-        SUS_14A_1_vzl,
-        SUS_14A_2_vzl;
-    static double
-        fi_zad1,
-        fi_zad2,
-        fi_zad,
-        fi_nk,
-        V_nk,
-        Xped;
 
     double m_pedals_to_fi(double Xped, double interval_Y1, double interval_Y2);
 
     if(exchange_inst.ush1dpl >= 19.0)
     {
-        PPBU_1 = 1;
+        PPBU_1 = true;
     }
     A1X111_3250 = false;
     A1X112_3250 = false;
@@ -200,7 +155,7 @@ void landinggear_int::landinggear_9()
 
     if(exchange_inst.ush1dpl >= 19.0)
     {
-        if(otkaz_1_kanala == true)
+        if(otkaz_1_kanala)
         {
             GK_nk1 = false;
             fi_zad1 = 0;
@@ -388,11 +343,7 @@ void landinggear_int::landinggear_9()
             fi_nk = -60;
         }
 
-        if(PPBU_1 == true
-            && A1X119_3250 == true
-            && A1X166_3250 == true
-            && otkaz_1_kanala == false
-            )
+        if(PPBU_1 && A1X119_3250 && A1X166_3250 && !otkaz_1_kanala)
         {
             SUS_14A_1_isp = true;
         }
@@ -420,7 +371,7 @@ void landinggear_int::landinggear_9()
 
     }
 
-//    qDebug() << timing.elapsed();
+    //    qDebug() << timing.elapsed();
 }
 
 double m_pedals_to_fi(double Xped, double interval_Y1, double interval_Y2)

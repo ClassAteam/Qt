@@ -31,11 +31,14 @@ void powerdc_int::powerdc_21()
     uks_inst.UKS3X253_54 = powerdc_int::ingrap;
     uks_inst.UKS1X3105_106 = exchange_inst.fshg[0];
     uks_inst.UKS1X3107_108 = exchange_inst.fshg[1];
-    uks_inst.UKS1X3109_110 = exchange_inst.fshav[0];
+    uks_inst.UKS1X3109_110 = exchange_inst.fshav[2];
     uks_inst.UKS2X385 = exchange_inst.ushpos[0];
-    uks_inst.UKS2X386 = exchange_inst.ushpts[0];
+    uks_inst.UKS2X386 = exchange_inst.upts; //exist another one with phases mb should used this one
     uks_inst.UKS2X3105_106 = exchange_inst.fshpts;
     uks_inst.UKS2X3107_108 = exchange_inst.fshpos[0];
+    uks_inst.UKS3X3105_106 = exchange_inst.fshg[2];
+    uks_inst.UKS3X3107_108 = exchange_inst.fshg[3];
+    uks_inst.UKS3X3109_110 = exchange_inst.fshav[3];
     uks_inst.UKS4X385 = exchange_inst.ushpos[1];
     uks_inst.UKS4X3105_106 = exchange_inst.fshpos[1];
     uks_inst.UKS4X387 = exchange_inst.upos;
@@ -65,12 +68,12 @@ void powerdc_int::powerdc_21()
     else
         uks_inst.UKS1X35 = false;
 
-    if(bss_inst.BSS838X5A)
+    if(bss_inst.BSS838X5C)
         uks_inst.UKS2X31 = true;
     else
         uks_inst.UKS2X31 = false;
 
-    if(bss_inst.BSS838X5J)
+    if(bss_inst.BSS838X5L)
         uks_inst.UKS2X32 = true;
     else
         uks_inst.UKS2X32 = false;
@@ -81,9 +84,9 @@ void powerdc_int::powerdc_21()
         uks_inst.UKS2X33 = false;
 
     if(bss_inst.BSS926X3N)
-        uks_inst.UKS2X32 = true;
+        uks_inst.UKS2X34 = true;
     else
-        uks_inst.UKS2X32 = false;
+        uks_inst.UKS2X34 = false;
 
     if(bss_inst.BSS837X3G)
         uks_inst.UKS3X320 = true;
@@ -105,12 +108,12 @@ void powerdc_int::powerdc_21()
     else
         uks_inst.UKS3X323 = false;
 
-    if(bss_inst.BSS837X3J)
+    if(bss_inst.BSS837X3L)
         uks_inst.UKS4X327 = true;
     else
         uks_inst.UKS4X327 = false;
 
-    if(bss_inst.BSS837X1MM)
+    if(bss_inst.BSS837X3A)
         uks_inst.UKS4X328 = true;
     else
         uks_inst.UKS4X328 = false;

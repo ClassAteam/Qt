@@ -23,22 +23,22 @@ void landinggear_int::landinggear_1()
             {
                 left_tick++;
                 //releasing left
-                releasing_loop(&delta_stv_l, &Ddelta_stv, &left_tick,
-                               &left_tick_sec, &left_released);
+                releasing_loop_cur(&delta_stv_l, &Ddelta_stv, &left_tick,
+                               &left_tick_sec);
             }
             if(delta_stv_p != 90)
             {
                 right_tick++;
                 //releasing right
-                releasing_loop(&delta_stv_p, &Ddelta_stv, &right_tick,
-                               &right_tick_sec, &right_released);
+                releasing_loop_cur(&delta_stv_p, &Ddelta_stv, &right_tick,
+                               &right_tick_sec);
             }
             if(delta_stv_n != 90)
             {
                 nose_tick++;
                 //releasing nose
-                releasing_loop(&delta_stv_n, &Ddelta_stv, &nose_tick,
-                               &nose_tick_sec, &nose_released);
+                releasing_loop_cur(&delta_stv_n, &Ddelta_stv, &nose_tick,
+                               &nose_tick_sec);
             }
 
 
@@ -52,22 +52,22 @@ void landinggear_int::landinggear_1()
             {
                 left_tick++;
                 //intake left
-                intake_loop(&delta_stv_l, &left_tick,
-                            &left_tick_sec, &left_intaken);
+                intake_loop_cur(&delta_stv_l, &Ddelta_racks_l,
+                            &left_tick_sec, &left_tick);
             }
             if(delta_stv_p != 0 && delta_sh_p == 0)
             {
                 right_tick++;
                 //intake right
-                intake_loop(&delta_stv_p, &right_tick,
-                            &right_tick_sec, &right_intaken);
+                intake_loop_cur(&delta_stv_p, &Ddelta_racks_p,
+                            &right_tick_sec, &right_tick);
             }
             if(delta_stv_n != 0 && delta_sh_n == 0)
             {
                 nose_tick++;
                 // intake nose
-                intake_loop(&delta_stv_n, &nose_tick,
-                            &nose_tick_sec, &nose_intaken);
+                intake_loop_cur(&delta_stv_n, &Ddelta_racks, &nose_tick,
+                            &nose_tick_sec);
             }
         }
         else
@@ -109,16 +109,16 @@ void landinggear_int::landinggear_1()
         }
 
         //releasing left
-        releasing_loop(&delta_stv_l, &Ddelta_stv_l, &left_tick,
-                       &left_tick_sec, &left_released);
+        releasing_loop_cur(&delta_stv_l, &Ddelta_stv_l, &left_tick,
+                       &left_tick_sec);
 
         //releasing right
-        releasing_loop(&delta_stv_p, &Ddelta_stv_p, &right_tick,
-                       &right_tick_sec, &right_released);
+        releasing_loop_cur(&delta_stv_p, &Ddelta_stv_p, &right_tick,
+                       &right_tick_sec);
 
         //releasing nose
-        releasing_loop(&delta_stv_n, &Ddelta_stv_n, &nose_tick,
-                       &nose_tick_sec, &nose_released);
+        releasing_loop_cur(&delta_stv_n, &Ddelta_stv_n, &nose_tick,
+                       &nose_tick_sec);
     }
     if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
     {
@@ -132,81 +132,3 @@ void landinggear_int::landinggear_1()
 
 }
 
-void landinggear_int::releasing_loop(double* delta, double* D_delta,
-                                        int* tick, int* sec_tick, bool* clue)
-{
-    if (*delta < 90)
-    {
-        if(((*tick) * TICK) >= 1000)
-        {
-            (*sec_tick)++;
-            *tick = 0;
-        }
-
-        if((*sec_tick) >= 1)
-        {
-            *delta = (*delta + ((*D_delta / (1000 / TICK))));
-        }
-
-        if(*delta >= 90)
-        {
-            *delta = 90;
-            *clue = true;
-            *tick = 0;
-        }
-    }
-}
-void landinggear_int::intake_loop(double* delta, int* tick,
-                                     int* sec_tick, bool* clue)
-{
-    if (*delta > 0)
-    {
-        if(((*tick) * TICK) >= 1000)
-        {
-            (*sec_tick)++;
-            *tick = 0;
-        }
-
-        if((*sec_tick) >= 1)
-        {
-            *delta = (*delta - ((Ddelta_stv / (1000 / TICK))));
-        }
-
-        if(*delta <= 0)
-        {
-            *delta = 0;
-            *clue = false;
-            *tick = 0;
-        }
-    }
-}
-void landinggear_int::balloon_presure( double* P_bal)
-{
-    double delta_V_bal;
-    double V_bal;
-    V_bal = 0;
-    if((*P_bal) == P_bal_l)
-    {
-        V_bal = V_bal_l;
-        delta_V_bal = (Ksho * (*P_bal));
-        V_bal = V_bal + delta_V_bal;
-        V_bal_l = V_bal;
-        *P_bal = 6615000 / V_bal;
-    }
-    if((*P_bal) == P_bal_p)
-    {
-        V_bal = V_bal_p;
-        delta_V_bal = (Ksho * (*P_bal));
-        V_bal = V_bal + delta_V_bal;
-        V_bal_p = V_bal;
-        *P_bal = 6615000 / V_bal;
-    }
-    if((*P_bal) == P_bal_per)
-    {
-        V_bal = V_bal_n;
-        delta_V_bal = (Ksho * (*P_bal));
-        V_bal = V_bal + delta_V_bal;
-        V_bal_n = V_bal;
-        *P_bal = 5550000 / V_bal;
-    }
-}

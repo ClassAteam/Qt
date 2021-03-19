@@ -101,7 +101,7 @@ void powerdc_int::powerdc_2_3() //2 //3
     if(purg27lk4)
     {
         tick_rap1++;
-        if((tick_rap1 * TICK) >= 3000)
+        if((tick_rap1 * TICK) >= 3000)//too long timer for 2 ms
         {
             purg27lk5 = false;
         }

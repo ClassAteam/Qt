@@ -99,10 +99,10 @@ struct exchange
         pnu;
 
     double
-        pgs1{280},//presure in hydrosystem1
-        pgs2{280},//presure in hydrosystem2
-        pgs3{280},//presure in hydrosystem3
-        pgs4{280};//presure in hydrosystem4
+        pgs1{},//presure in hydrosystem1
+        pgs2{},//presure in hydrosystem2
+        pgs3{},//presure in hydrosystem3
+        pgs4{};//presure in hydrosystem4
 
     double
         ush1dpl,//voltage at extra power bus1 left one

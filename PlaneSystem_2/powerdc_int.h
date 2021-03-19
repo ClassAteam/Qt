@@ -77,7 +77,7 @@ public:
         purgpk7,
         purgpk8,
         purgpk9,
-        prgen[5],
+        prgen[5],//sign of working gener (1,2,3,4 and vsu)
         pp400[2],
         purgk31,
         purgk41,

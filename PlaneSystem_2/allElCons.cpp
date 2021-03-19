@@ -211,6 +211,7 @@ void allElConsAlt::makeCorresCurr()
             {
                 powerdc_int::ingvsu = sumB;
             }
+            bss_inst.BSS837X1FF = true;
         }
         else
         {

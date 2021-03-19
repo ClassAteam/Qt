@@ -192,6 +192,10 @@ powerdc_int::powerdc_int(QWidget *parent)
     createLabelValue(&kg4_27, "kg4_27");
     createLabelValue(&urap1, "urap1");
     createLabelValue(&urap2, "urap2");
+    createRedButton(&exchange_inst.otk_overload_gen1, "overloard gen1");
+    createRedButton(&exchange_inst.otk_overload_gen2, "overloard gen2");
+    createRedButton(&exchange_inst.otk_overload_gen3, "overloard gen3");
+    createRedButton(&exchange_inst.otk_overload_gen4, "overloard gen4");
     createRedButton(&exchange_inst.s1_11028, "s1_11028");
     createRedButton(&exchange_inst.s1_4940, "s1_4940");
     createRedButton(&exchange_inst.k1_11038, "k1_11038");

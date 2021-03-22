@@ -130,6 +130,7 @@ struct uks
         UKS2X337,
         UKS2X338,
         UKS2X339,
+        UKS2X340,
         UKS2X353,
         UKS2X354,
         UKS2X355,

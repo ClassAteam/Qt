@@ -118,10 +118,12 @@ void hydro_int::hydro_7()
         if(s == false)
         {
             bss_inst.BSS824X1HH = false;
+            uks_inst.UKS2X340 = false;
         }
         else
         {
             bss_inst.BSS824X1HH = true;
+            uks_inst.UKS2X340 = true;
         }
     }
 
@@ -177,7 +179,7 @@ void hydro_int::hydro_7()
             {
                 if(PKL1 == true)
                 {
-                    *uks_pool2[i] = 1;
+                    *uks_pool2[i] = 0;
                     *bss812_pool[i] = true;
                 }
             }

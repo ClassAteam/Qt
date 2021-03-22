@@ -108,11 +108,11 @@ void landinggear_int::landinggear_3() //actually 4
         {
             racks_right_tick++;
         }
-//        //releasing left
+        //        //releasing left
         releasing_loop_cur(&delta_racks_l, &Ddelta_racks_l, &racks_left_tick,
                            &racks_left_tick_sec);
 
-//        //releasing right
+        //        //releasing right
         releasing_loop_cur(&delta_racks_p, &Ddelta_racks_p, &racks_right_tick,
                            &racks_right_tick_sec);
     }

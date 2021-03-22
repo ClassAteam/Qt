@@ -1,7 +1,7 @@
 #include "landinggear_1.h"
 #include "algorithms.h"
 
-void landinggear_int::landinggear_1()
+void landinggear_int::landinggear_1()	//sashes
 {
     if (gk_oovsh == false)
     {

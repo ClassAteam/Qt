@@ -13,6 +13,8 @@ class landinggear_int : public interfacing
     Q_OBJECT
 
 public:
+    static bool
+        S38_3230;
     bool
         otkaz_1_kanala{},
         otkaz_2_kanala{},
@@ -165,7 +167,6 @@ public:
         S33_3230{},
         S35_3230{},
         S37_3230{},
-        S38_3230{},
         S39_3230{},
         S40_3230{},
         S41_3230{},

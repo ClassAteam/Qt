@@ -1,4 +1,4 @@
-#include "hydro_2.h"
+#include "hydro_2.h"	//actually 3rd
 
 void hydro_int::hydro_2()
 {
@@ -51,7 +51,7 @@ void hydro_int::hydro_2()
         {
             if(RVkTNUGS[i] == true)
             {
-                if(Sthird4_2920[i] == 2)
+                if(Sthird4_2920[i] == 1)
                 {
                     RVkTNUGS[i] = false;
                     RVikTNUGS[i] = true;
@@ -60,7 +60,7 @@ void hydro_int::hydro_2()
             }
             else
             {
-                if(Sthird4_2920[i] == 1)
+                if(Sthird4_2920[i] == 0)
                 {
                     RVkTNUGS[i] = true;
                     RVikTNUGS[i] = false;

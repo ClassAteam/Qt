@@ -6,8 +6,8 @@ void hydro_int::hydro_8() //actually 9th sheet
     //start logic
     air_temr_C = air_tempr_K - 273;
 
-    //    double* qgs_pool[] = {&qgs1, &qgs2, &qgs3, &qgs4,};
-    //    double* dqgp_pool[] = {&dqg1p, &dqg2p, &dqg3p, &dqg4p,};
+//        double* qgs_pool[] = {&qgs1, &qgs2, &qgs3, &qgs4,};
+    double* dqgp_pool[] = {&dqg1p, &dqg2p, &dqg3p, &dqg4p,};
     double* dqgt_pool[] = {&dqg1t, &dqg2t, &dqg3t, &dqg4t,};
     double* dqutg_pool[] = {&dqutg1, &dqutg2, &dqutg3, &dqutg4};
     double* tb_pool[] = {&tb1, &tb2, &tb3, &tb4};
@@ -58,39 +58,39 @@ void hydro_int::hydro_8() //actually 9th sheet
         }
 
         *dqgt_pool[i] = ((*tb_pool[i] - 25) * 0.1);
-        //        *dqgp_pool[i] = 3 - (0.02 * (*pgs_pool[i]));
+        *dqgp_pool[i] = 3 - (0.02 * (*pgs_pool[i]));
     }
 
-    //    qg1_z = q0g1 + dqg1t - dqg1p;
+    qg1_z = q0g1 + dqg1t - dqg1p;
     qg1_z = q0g1;
-    //    qgs1 = qgs1 + ((qg1_z - qgs1) * 0.2);
+    qgs1 = qgs1 + ((qg1_z - qgs1) * 0.2);
 
-    if(qgs1 <= 0)
+    if(qgs1 <= 0.1)
     {
         qgs1 = 0;
     }
 
-    //    qg2_z = q0g2 + dqg2t - dqg2p;
+    qg2_z = q0g2 + dqg2t - dqg2p;
     qg2_z = q0g2;
-    //    qgs2 = qgs2 + ((qg2_z - qgs2) * 0.2);
+    qgs2 = qgs2 + ((qg2_z - qgs2) * 0.2);
 
     if(qgs2 <= 0)
     {
         qgs2 = 0;
     }
-    //    dqgzat = 2 - (0.007 * (Pgs3 * (TICK / 1000)));
-    //    qg3_z = q0g3 + dqg3t - dqg3p - dqgzat;
+    dqgzat = 2 - (0.007 * (pgs3 * (TICK / 1000)));
+    qg3_z = q0g3 + dqg3t - dqg3p - dqgzat;
     qg3_z = q0g3;
-    //    qgs3 = qgs3 + ((qg3_z - qgs3) * 0.2);
+    qgs3 = qgs3 + ((qg3_z - qgs3) * 0.2);
 
     if(qgs3 <= 0)
     {
         qgs3 = 0;
     }
 
-    //    qg4_z = q0g4 + dqg4t - dqg4p;
+    qg4_z = q0g4 + dqg4t - dqg4p;
     qg4_z = q0g4;
-    //    qgs4 = qgs4 + (qg4_z - qgs4) * 0.2;
+    qgs4 = qgs4 + (qg4_z - qgs4) * 0.2;
 
     if(qgs4 <= 0)
     {
@@ -137,7 +137,7 @@ void hydro_int::hydro_8() //actually 9th sheet
     uks_inst.UKS4X298 = tb3;
     uks_inst.UKS4X2100 = tb4;
 
-    if(exchange_inst.S38_3230 == true && exchange_inst.ushgP[3][0] >= 100.0)
+    if(landinggear_int::S38_3230 == true && exchange_inst.ushgP[3][0] >= 100.0)
     {
         uks_inst.UKS2UBGS1 = qgs1;
         uks_inst.UKS2UBGS2 = qgs2;

@@ -323,4 +323,6 @@ void landinggear_int::balloon_presure( double* P_bal)
     }
 }
 
+bool landinggear_int::S38_3230{};
+
 

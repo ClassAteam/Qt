@@ -43,8 +43,8 @@ public:
         pntnugs3{},
         pntnugs4{},
         PK{},
-        F14_2930{},
-        F15_2930{},
+        F14_2930{true},
+        F15_2930{true},
         F1_2930{true},
         H10_2930{},
         H11_2930{},
@@ -82,10 +82,10 @@ public:
         F429_2845{true},
         F124_2845{true};
     double
-        qpgs3, p0_gs3, pgs3_z, Pv_vsu, delta_wpgs3, kgs, qngat, qngs1,
+        qpgs3, p0_gs3{115.0}, pgs3_z{0}, Pv_vsu{0.0}, delta_wpgs3, kgs{0.05}, qngat, qngs1,
         qngs2, qngs3, qngs4, qntnugs1, qntnugs2, qntnugs3, qntnugs4,
         qtnugs1, qtnugs2, qtnugs3, qtnugs4, qutgs3, wpgs3, d_wpgat, d_wpgs1,
-        d_wpgs2, d_wpgs3, d_wpgs4, dxst_dt, kgat, ksur, ktnu, p0gat,
+        d_wpgs2, d_wpgs3, d_wpgs4, dxst_dt, kgat{1.0}, ksur{0.02}, ktnu{0.02}, p0gat,
         p0gs1{115},
         p0gs2{115},
         p0gs3{115},
@@ -108,18 +108,19 @@ public:
         air_tempr_K{288},//tempretaure of air int the sky in K
         dqg1p, dqg1t, dqg2p, dqg2t, dqgzat, dqg3p,
         dqg3t, dqg4p, dqg4t, dqutg1, dqutg2, dqutg3, dqutg4, q0g1, q0g2,
-        q0g3, q0g4, qg1_z, qg2_z, qg3_z, qg4_z, qgs1, qgs2, qgs3, qgs4 ;
+        q0g3, q0g4, qg1_z, qg2_z, qg3_z, qg4_z, qgs1{0.0}, qgs2{0.0}, qgs3{0.0},
+        qgs4{0.0} ;
 
     QVector<bool> PTNUGS{false, false, false, false};
     QVector<bool> RVkTNUGS{false, false, false, false};
     QVector<bool> RVikTNUGS{false, false, false, false};
     QVector<bool> KSURGS{false, false, false, false};
     QVector<bool> KKGS{false, false, false, false};
-    QVector<bool> Ffirst4_2920{false, false, false, false};
+    QVector<bool> Ffirst4_2920{true, true, true, true};
     QVector<bool> Fsecond4_2920{false, false, false, false};
     QVector<bool> Sfirst4_2920{false, false, false, false};
     QVector<bool> Ssecond4_2920{false, false, false, false};
-    QVector<int> Sthird4_2920{0, 0, 0, 0};
+    QVector<int> Sthird4_2920{0, 0, 0, 0}; //S9_2920, S10_2920, S11_2920, S12_2920
 
     bool
         K5_2910,
@@ -216,7 +217,7 @@ public:
     QVector<double>l_gs3{0.0, 0.0};
     QVector<double>l_gs4{0.0, 0.0};
 
-    double pgs1{}, pgs2{}, pgs3{}, pgs4{};
+    double pgs1{0.0}, pgs2{0.0}, pgs3{0.0}, pgs4{0.0};
 
 
 public:
@@ -228,6 +229,7 @@ public:
     void hydro_3();
     void hydro_4();
     void hydro_5();
+    void hydro_6();
     void hydro_7();
     void hydro_8();
     void hydro_9();

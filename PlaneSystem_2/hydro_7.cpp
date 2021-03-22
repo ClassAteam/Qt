@@ -56,12 +56,12 @@ void hydro_int::hydro_7()
         *uks_pool1[i] = *puks_pool[i];
     }
 
-    if(exchange_inst.usho1l >= 18.0 && F14_2930 == true)
+    if(exchange_inst.usho1l >= 18.0 && F14_2930)
     {
         PK = true;
     }
 
-    if(S18_2920 == true)
+    if(landinggear_int::S18_2930 == true)
     {
         PKL = true;
     }
@@ -115,15 +115,16 @@ void hydro_int::hydro_7()
 
     for(auto& s : KKGS)
     {
-        if(s == false)
-        {
-            bss_inst.BSS824X1HH = false;
-            uks_inst.UKS2X340 = false;
-        }
-        else
+        if(s)
         {
             bss_inst.BSS824X1HH = true;
             uks_inst.UKS2X340 = true;
+            break;
+        }
+        else
+        {
+            bss_inst.BSS824X1HH = false;
+            uks_inst.UKS2X340 = false;
         }
     }
 

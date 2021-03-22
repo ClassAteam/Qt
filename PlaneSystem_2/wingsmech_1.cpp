@@ -7,13 +7,14 @@ void wingsmech_int::wingsmech_1()
     exchange_inst.prr1kz = false;
     exchange_inst.psr1kz = false;
     exchange_inst.por1kz = false;
-    delta_z_zad = m_3_L_intervals(delta_zr_vh, 0, 0.3, 0.6, 1.0, 0, 15, 25, 40);
+    delta_zr_vh_bf = delta_zr_vh / 100;
+    delta_z_zad = m_3_L_intervals(delta_zr_vh_bf, 0, 0.3, 0.6, 1.0, 0, 15, 25, 40);
 
-    if(exchange_inst.pgs1 >= 130)
+    if(hydro_int::pgs1 >= 130)
     {
         if(exchange_inst.ushal >= 18.0)
         {
-            if(exchange_inst.S1_2750 == true)
+            if(S1_2750)
             {
                 exchange_inst.prr1kz = true;
             }
@@ -21,7 +22,7 @@ void wingsmech_int::wingsmech_1()
             {
                 if(otkaz_1k_zakr == false)
                 {
-                    if(exchange_inst.S13_2750 == true)
+                    if(S13_2750)
                     {
                         exchange_inst.psr1kz = true;
                     }
@@ -45,11 +46,11 @@ void wingsmech_int::wingsmech_1()
     exchange_inst.psr2kz = false;
     exchange_inst.por2kz = false;
 
-    if(exchange_inst.pgs4 >= 130)
+    if(hydro_int::pgs4 >= 130)
     {
         if(exchange_inst.ushap >= 18.0)
         {
-            if(exchange_inst.S1_2750 == true)
+            if(S1_2750)
             {
                 exchange_inst.prr2kz = true;
             }
@@ -57,7 +58,7 @@ void wingsmech_int::wingsmech_1()
             {
                 if(otkaz_2k_zakr == false)
                 {
-                    if(exchange_inst.S13_2750 == true)
+                    if(S13_2750)
                     {
                         exchange_inst.psr2kz = true;
                     }
@@ -80,7 +81,7 @@ void wingsmech_int::wingsmech_1()
     {
         if(delta_z_l < delta_z_zad)
         {
-            if((delta_pr_l >= 21) && (X_L >= 20  && X_L <= 30))
+            if((delta_pr_l >= 20.5) && (X_L >= 20  && X_L <= 30))
             {
                 Ddelta_z_l = 2.2;
             }
@@ -103,7 +104,7 @@ void wingsmech_int::wingsmech_1()
     {
         if(delta_z_p < delta_z_zad)
         {
-            if((delta_pr_p >= 21) && (X_P >= 20  && X_P <= 30))
+            if((delta_pr_p >= 20.5) && (X_P >= 20  && X_P <= 30))
             {
                 Ddelta_z_p = 2.2;
             }
@@ -140,7 +141,7 @@ void wingsmech_int::wingsmech_1()
 
     if(exchange_inst.prr1kz == true)
     {
-        if(S2_2750 == 1)
+        if(S2_2750 == 2)
         {
             if(delta_pr_l >= 21)
             {
@@ -161,7 +162,7 @@ void wingsmech_int::wingsmech_1()
         }
         else
         {
-            if(S2_2750 == 2)
+            if(S2_2750 == 1)
             {
                 Ddelta_z_l = -2.2;
             }
@@ -174,7 +175,7 @@ void wingsmech_int::wingsmech_1()
 
     if(exchange_inst.prr2kz == true)
     {
-        if(S2_2750 == 1)
+        if(S2_2750 == 2)
         {
             if(delta_pr_p >= 21)
             {
@@ -194,7 +195,7 @@ void wingsmech_int::wingsmech_1()
         }
         else
         {
-            if(S2_2750 == 2)
+            if(S2_2750 == 1)
             {
                 Ddelta_z_p = -2.2;
             }

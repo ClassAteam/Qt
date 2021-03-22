@@ -60,7 +60,7 @@ void hydro_int::hydro_9()
         K5_2935 = false;
     }
 
-    m_DoubleTrue(&exchange_inst.S18_2930, &K5_2935, &H1_2935);
+    m_DoubleTrue(&landinggear_int::S18_2930, &K5_2935, &H1_2935);
 
     if(exchange_inst.ush2l >= 18.0)
     {

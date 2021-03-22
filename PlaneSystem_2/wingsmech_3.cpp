@@ -8,11 +8,6 @@ void wingsmech_int::wingsmech_3()
     exchange_inst.por1kpchk = false;
     exchange_inst.por2kpchk = false;
 
-    Kgs1 = 0;
-    Kgs2 = 0;
-    Kgs3 = 0;
-    Kgs4 = 0;
-
     X_zad = m_4_L_intervals(delta_ruk_vh, 0, 0.22, 0.33, 0.44, 1.0,
                                           20, 30, 35, 40, 65);
     if(X_zad > 32 && X_zad < 40)
@@ -20,27 +15,27 @@ void wingsmech_int::wingsmech_3()
         X_zad = 35;
     }
 
-    if(exchange_inst.pgs1 >= 130)
+    if(hydro_int::pgs1 >= 130)
     {
-        exchange_inst.pgs1 = true;
-        Kgs1 = 0.25;
+        PGS1 = true;
+        Kpchk1 = 0.25;
     }
-    if(exchange_inst.pgs2 >= 130)
+    if(hydro_int::pgs2 >= 130)
     {
-        exchange_inst.pgs2 = true;
-        Kgs2 = 0.25;
+        PGS2 = true;
+        Kpchk2 = 0.25;
     }
-    if(exchange_inst.pgs3 >= 130)
+    if(hydro_int::pgs3 >= 130)
     {
-        exchange_inst.pgs3 = true;
-        Kgs3 = 0.25;
+        PGS3 = true;
+        Kpchk3 = 0.25;
     }
-    if(exchange_inst.pgs4 >= 130)
+    if(hydro_int::pgs4 >= 130)
     {
-        exchange_inst.pgs4 = true;
-        Kgs4 = 0.25;
+        PGS4 = true;
+        Kpchk4 = 0.25;
     }
-    if(exchange_inst.pgs1 == true || exchange_inst.pgs2 == true)
+    if(PGS1 || PGS2)
     {
         if(exchange_inst.ushal >= 18)
         {
@@ -62,7 +57,7 @@ void wingsmech_int::wingsmech_3()
         }
     }
 
-    if(exchange_inst.pgs3 == true || exchange_inst.pgs4 == true)
+    if(PGS3 == true || PGS4 == true)
     {
         if(exchange_inst.ushap >= 18)
         {
@@ -174,7 +169,7 @@ void wingsmech_int::wingsmech_3()
 
     if(exchange_inst.prr1kpchk == true)
     {
-        if(s2_2790 == 1)
+        if(s2_2790 == 2) //bolshe
         {
             if(delta_z_l > 0)
             {
@@ -202,7 +197,7 @@ void wingsmech_int::wingsmech_3()
         }
         else
         {
-            if(s2_2790 == 2)
+            if(s2_2790 == 1) //menshe
             {
                 D_X_l = -0.6;
 
@@ -219,7 +214,7 @@ void wingsmech_int::wingsmech_3()
 
     if(exchange_inst.prr2kpchk == true)
     {
-        if(s2_2790 == 1)
+        if(s2_2790 == 2) //bolshe
         {
             if(delta_z_p > 0)
             {
@@ -247,7 +242,7 @@ void wingsmech_int::wingsmech_3()
         }
         else
         {
-            if(s2_2790 == 2)
+            if(s2_2790 == 1) //menshe
             {
                 D_X_p = -0.6;
 
@@ -262,10 +257,10 @@ void wingsmech_int::wingsmech_3()
         }
     }
 
-    Kgs = Kgs1 + Kgs2 + Kgs3 + Kgs4;
+    Kpchk = Kpchk1 + Kpchk2 + Kpchk3 + Kpchk4;
 
-    D_X_l = D_X_l * Kgs;
-    D_X_p = D_X_p * Kgs;
+    D_X_l = D_X_l * Kpchk;
+    D_X_p = D_X_p * Kpchk;
 
     if(abs(X_L - X_P) < 1)
     {
@@ -334,5 +329,4 @@ void wingsmech_int::wingsmech_3()
         bss_inst.BSS913X3A = false;
         bss_inst.BSS913X3C = false;
     }
-
 }

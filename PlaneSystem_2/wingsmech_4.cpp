@@ -69,8 +69,8 @@ void wingsmech_int::wingsmech_4()
         XTR_122 = m_3_L_intervals(X_PCHK, 20, 30, 35, 65, 1, 54, 80, 208);
         delta_ruk_123 = 60 * delta_ruk_vh;
 
-        uks_inst.P_140_11 = exchange_inst.pgs1;
-        uks_inst.P_140_12 = exchange_inst.pgs2;
+        uks_inst.P_140_11 = hydro_int::pgs1;
+        uks_inst.P_140_12 = hydro_int::pgs2;
         uks_inst.P_140_13 = false;
         uks_inst.P_140_14 = false;
         if(D_X_l != 0)
@@ -126,8 +126,8 @@ void wingsmech_int::wingsmech_4()
     }
     if(exchange_inst.ush1dpp > 18)
     {
-        uks_inst.P_142_11 = exchange_inst.pgs3;
-        uks_inst.P_142_12 = exchange_inst.pgs4;
+        uks_inst.P_142_11 = hydro_int::pgs3;
+        uks_inst.P_142_12 = hydro_int::pgs4;
 
         uks_inst.P_142_13 = false;
 
@@ -250,7 +250,7 @@ void wingsmech_int::wingsmech_4()
 
     if(exchange_inst.ush1dpl >= 18)
     {
-        uks_inst.P_130_11 = exchange_inst.pgs1;
+        uks_inst.P_130_11 = hydro_int::pgs1;
         uks_inst.P_130_12 = exchange_inst.psr1kz;
 
         if(exchange_inst.delta_z >= 28.1)
@@ -376,7 +376,7 @@ void wingsmech_int::wingsmech_4()
 
     if(exchange_inst.ush1dpp >= 18)
     {
-        uks_inst.P_132_11 = exchange_inst.pgs4;
+        uks_inst.P_132_11 = hydro_int::pgs4;
         uks_inst.P_132_12 = exchange_inst.psr2kz;
 
         if(exchange_inst.delta_z >= 28.1)

@@ -19,7 +19,6 @@ struct exchange
         por1kz,
         por2kz,
         S1_2750,
-        S13_2750,
         por1kpr,
         por2kpr,
         s1_2780,

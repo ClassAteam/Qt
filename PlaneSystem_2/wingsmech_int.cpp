@@ -9,15 +9,16 @@ wingsmech_int::wingsmech_int(QWidget *parent)
     createRedButton(&otkaz_1k_zakr, "OTKAZ_1K_ZAKR");
     createRedButton(&otkaz_2k_zakr, "OTKAZ_2K_ZAKR");
     createRedButton(&otkaz_rassgl_zakr, "OTKAZ_RASSGL_ZAKR");
-    createRedButton(&exchange_inst.S1_2750, "S1_2750");
-    createRedButton(&exchange_inst.S13_2750, "S1_2750");
+    createRedButton(&S1_2750, "S1_2750");
+    createRedButton(&S13_2750, "S13_2750");
     createRadioButton(&S2_2750, "ZAKR_NEYTR", false);
     createRadioButton(&S2_2750, "ZAKR_UBR", false);
     createRadioButton(&S2_2750, "ZAKR_Vip", true);
     createLabelValue(&delta_z_l, "delta_z_l");
     createLabelValue(&delta_z_p, "delta_z_p");
     createLabelValue(&delta_z_zad, "delta_z_zad");
-    createLabelValue(&delta_zr_vh, "delta_zr_vh");
+    createLabelValue(&delta_zr_vh_bf, "delta_zr_vh");
+    createSlider(&delta_zr_vh, 0, 100);
     createLabelValue(&Ddelta_z_l, "Ddelta_z_l");
     createLabelValue(&Ddelta_z_p, "Ddelta_z_p");
     createLabelValue(&delta_pr_l, "delta_pr_l");
@@ -64,6 +65,7 @@ wingsmech_int::wingsmech_int(QWidget *parent)
     createLabelClue(&exchange_inst.por2kpchk, "por2kpchk");
     createRedButton(&exchange_inst.s1_2790, "s1_2790");
 
+    createRadioButton(&s2_2790, "s2_2790_neytr", false);
     createRadioButton(&s2_2790, "s2_2790_menshe", false);
     createRadioButton(&s2_2790, "s2_2790_bolshe", true);
 
@@ -102,3 +104,4 @@ void wingsmech_int::updateLogic()
     wingsmech_3();
     wingsmech_4();
 }
+bool wingsmech_int::S1_2750{};

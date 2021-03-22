@@ -179,7 +179,6 @@ hydro_int::hydro_int(QWidget *parent)
     createLabelClue(&H13_2930, "H13_2930");
     createLabelClue(&H1_2910, "H1_2910");
     createLabelClue(&H2_2910, "H2_2910");
-    createLabelClue(&H3_2910, "H3_2910");
     createLabelClue(&H4_2910, "H4_2910");
     createLabelClue(&H5_2910, "H5_2910");
     createLabelClue(&PKL, "PKL");
@@ -272,3 +271,7 @@ void hydro_int::updateLogic()
 }
 QVector<double> hydro_int::nVDfirst2{0.0, 0.0};
 QVector<double> hydro_int::nVDsecond2{0.0, 0.0};
+double hydro_int::pgs1{};
+double hydro_int::pgs2{};
+double hydro_int::pgs3{};
+double hydro_int::pgs4{};

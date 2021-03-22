@@ -157,7 +157,7 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&K14_3230, "K14_3230");
     createLabelClue(&S30_3230, "S30_3230");
 
-    createLabelClue(&S18_2930, "S18_2930");
+    createRedButton(&S18_2930, "S18_2930");
     createLabelClue(&H2_3230, "H2_3230");
     createLabelClue(&K18_3230, "K18_3230");
     createLabelClue(&K20_3230, "K20_3230");
@@ -323,6 +323,7 @@ void landinggear_int::balloon_presure( double* P_bal)
     }
 }
 
+bool landinggear_int::S18_2930{};
 bool landinggear_int::S38_3230{};
 
 

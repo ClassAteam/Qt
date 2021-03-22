@@ -7,9 +7,9 @@ void wingsmech_int::wingsmech_2()
     prr1kpr = false;
     psr1kpr = false;
     exchange_inst.por1kpr = false;
-    delta_pr_zad = m_2_L_intervals(delta_zr_vh, 0, 0.6, 1.0, 0, 21, 21);
+    delta_pr_zad = m_2_L_intervals(delta_zr_vh_bf, 0, 0.6, 1.0, 0, 21, 21);
 
-    if(exchange_inst.pgs2 >= 130)
+    if(hydro_int::pgs2 >= 130)
     {
         if(exchange_inst.ushal >= 18.0)
         {
@@ -21,7 +21,7 @@ void wingsmech_int::wingsmech_2()
             {
                 if(otkaz_1k_prekr == false)
                 {
-                    if(exchange_inst.S13_2750 == true)
+                    if(S13_2750 == true)
                     {
                         psr1kpr = true;
                     }
@@ -45,7 +45,7 @@ void wingsmech_int::wingsmech_2()
     psr2kpr = false;
     exchange_inst.por2kpr = false;
 
-    if(exchange_inst.pgs3 >= 130)
+    if(hydro_int::pgs3 >= 130)
     {
         if(exchange_inst.ushap >= 18.0)
         {
@@ -57,7 +57,7 @@ void wingsmech_int::wingsmech_2()
             {
                 if(otkaz_2k_prekr == false)
                 {
-                    if(exchange_inst.S13_2750 == true)
+                    if(S13_2750 == true)
                     {
                         psr2kpr = true;
                     }
@@ -141,7 +141,7 @@ void wingsmech_int::wingsmech_2()
 
     if(prr1kpr == true)
     {
-        if(s2_2780 == 1)
+        if(s2_2780 == 2)
         {
             if(delta_pr_l >= 21)
             {
@@ -154,7 +154,7 @@ void wingsmech_int::wingsmech_2()
         }
         else
         {
-            if(s2_2780 == 2)
+            if(s2_2780 == 1)
             {
                 if(delta_pr_l > 0)
                 {
@@ -174,7 +174,7 @@ void wingsmech_int::wingsmech_2()
 
     if(prr2kpr == true)
     {
-        if(s2_2780 == 1)
+        if(s2_2780 == 2)
         {
             if(delta_pr_p >= 21)
             {
@@ -187,7 +187,7 @@ void wingsmech_int::wingsmech_2()
         }
         else
         {
-            if(s2_2780 == 2)
+            if(s2_2780 == 1)
             {
                 if(delta_pr_p > 0)
                 {

@@ -14,6 +14,7 @@ class landinggear_int : public interfacing
 
 public:
     static bool
+        S18_2930,
         S38_3230;
     bool
         otkaz_1_kanala{},
@@ -171,8 +172,7 @@ public:
         S40_3230{},
         S41_3230{},
         S48_3230{},
-        S49_3230{},
-        S18_2930{};
+        S49_3230{};
     int
         S31_3230{};
     double

@@ -24,7 +24,7 @@ void emergencyalarm_int::emergencyalarm_7()
 static int
     X1t_blink;
 
-    if (exchange_inst.ush2dpl >= 18.0 && exchange_inst.ush2dpp >= 18.0)
+    if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0)
     {
         PRBSS926 = true;
     }
@@ -33,7 +33,7 @@ static int
         PRBSS926 = false;
     }
 
-    if (exchange_inst.ush1dpl >= 18.0 && exchange_inst.ush1dpp >= 18.0)
+    if (exchange::ush1dpl >= 18.0 && exchange::ush1dpp >= 18.0)
     {
         PRBSS837 = true;
     }
@@ -42,7 +42,7 @@ static int
         PRBSS837 = false;
     }
 
-    if ((exchange_inst.ush2dpl >= 18.0) && (exchange_inst.ush2dpp >= 18.0) && S7_3364)
+    if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && S7_3364)
     {
         PKLSHO = true;
     }
@@ -51,7 +51,7 @@ static int
         PKLSHO = false;
     }
 
-    if ((exchange_inst.ush1dpl >= 18.0) && (exchange_inst.ush1dpp >= 18.0))
+    if ((exchange::ush1dpl >= 18.0) && (exchange::ush1dpp >= 18.0))
     {
         USASSHO = two_points_to_Y(alpha_rra7sho, 0, 1, 0.75, 1);
     }

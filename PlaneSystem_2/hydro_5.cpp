@@ -4,7 +4,7 @@
 
 void hydro_int::hydro_5()
 {
-    if(pgs3 >= exchange_inst.pgat)
+    if(pgs3 >= exchange::pgat)
     {
         qngat = qngs3;
     }
@@ -13,7 +13,7 @@ void hydro_int::hydro_5()
         qngat = 0;
     }
 
-    if(exchange_inst.ptstoyan == true)
+    if(exchange::ptstoyan == true)
     {
         qpts = qpts + 0.0015;
     }
@@ -27,7 +27,7 @@ void hydro_int::hydro_5()
 
     if(KKGS[2] == true)
     {
-        if(exchange_inst.pgat >= 262)
+        if(exchange::pgat >= 262)
         {
             if(wpgat <= -600)
             {
@@ -65,7 +65,7 @@ void hydro_int::hydro_5()
         }
     }
     pgat_z = (p0gat * w0gat) / (w0gat - wpgat);
-    exchange_inst.pgat = exchange_inst.pgat + ((pgat_z - exchange_inst.pgat) * (kgat));
+    exchange::pgat = exchange::pgat + ((pgat_z - exchange::pgat) * (kgat));
 
     QVector<bool> pnn1gs_pool = {pnngs1[0], pnngs2[0], pnngs3[0], pnngs4[0]};
     QVector<bool> pnn2gs_pool = {pnngs1[1], pnngs2[1], pnngs3[1], pnngs4[1]};

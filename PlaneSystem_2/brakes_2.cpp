@@ -7,7 +7,7 @@ static double
     tick_block_rt;
 
     //start logic
-    if(exchange_inst.ushap >= 18.0 && exchange_inst.ushal >= 18.0 && exchange_inst.ush1dpp >= 18.0)
+    if(exchange::ushap >= 18.0 && exchange::ushal >= 18.0 && exchange::ush1dpp >= 18.0)
     {
         if(S1_3241 == false)
         {
@@ -105,7 +105,7 @@ static double
 
                         if(POSH2 == true)
                         {
-                            if(exchange_inst.delta_z >= 23.0 && exchange_inst.delta_z <= 28.0)
+                            if(exchange::delta_z >= 23.0 && exchange::delta_z <= 28.0)
                             {
                                 if(paft == true || PRR == true)
                                 {
@@ -171,7 +171,7 @@ static double
 
                 if(POSH2 == true)
                 {
-                    if(exchange_inst.delta_z >= 23.0 && exchange_inst.delta_z <= 28.0)
+                    if(exchange::delta_z >= 23.0 && exchange::delta_z <= 28.0)
                     {
                         if(paft == true || PRR == true)
                         {

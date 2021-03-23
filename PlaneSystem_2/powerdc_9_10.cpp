@@ -190,11 +190,11 @@ void powerdc_int::powerdc_9_10()
     uks_inst.UKS1X3105 = ingvsu_27;
     uks_inst.UKS1X3106 = ingvsu_27;
 
-    uks_inst.UKS1X394 = exchange_inst.ush1l;
-    uks_inst.UKS1X395 = exchange_inst.ush2l;
+    uks_inst.UKS1X394 = exchange::ush1l;
+    uks_inst.UKS1X395 = exchange::ush2l;
 
-    uks_inst.UKS3X394 = exchange_inst.ush1p;
-    uks_inst.UKS3X395 = exchange_inst.ush2p;
+    uks_inst.UKS3X394 = exchange::ush1p;
+    uks_inst.UKS3X395 = exchange::ush2p;
 
     if(purg27lk5)
     {
@@ -235,6 +235,6 @@ void powerdc_int::powerdc_9_10()
 
     uks_inst.UKS2X394 = uak1;
     uks_inst.UKS4X394 = uak2;
-    uks_inst.UKS2X395 = exchange_inst.ushal;
-    uks_inst.UKS4X395 = exchange_inst.ushap;
+    uks_inst.UKS2X395 = exchange::ushal;
+    uks_inst.UKS4X395 = exchange::ushap;
 }

@@ -6,7 +6,7 @@ void antifire_int::antifire_1()
     if (S9_2610)
     {
         // Voltage check
-        if ((exchange_inst.ush1dpl >= 16.0) && F8_2610)
+        if ((exchange::ush1dpl >= 16.0) && F8_2610)
         {
             F82_2610 = 1;
         }
@@ -15,7 +15,7 @@ void antifire_int::antifire_1()
             F82_2610 = 0;
         }
 
-        if ((exchange_inst.ush1dpp >= 16.0) && (F7_2610 == true))
+        if ((exchange::ush1dpp >= 16.0) && (F7_2610 == true))
         {
             F72_2610 = true;
         }
@@ -34,7 +34,7 @@ void antifire_int::antifire_1()
     if ((F82_2610 == 1) || (F72_2610 == 1))					//009
     {
 
-        if (exchange_inst.ushal >= 16.0)
+        if (exchange::ushal >= 16.0)
         {
             F132_2610 = true;
             F142_2610 = true;

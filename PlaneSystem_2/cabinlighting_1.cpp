@@ -13,7 +13,7 @@ static int
     PV_OSN_HV_MIG = false;
 
 
-    if (exchange_inst.ush2p >= 18.0)
+    if (exchange::ush2p >= 18.0)
     {
         if (S1_3341 == 1)
         {
@@ -32,7 +32,7 @@ static int
             PV_OSN_HV_MIG = true;
         }
 
-        if (exchange_inst.P1OBPOP == false)
+        if (exchange::P1OBPOP == false)
         {
             PV_DOP = true;
         }

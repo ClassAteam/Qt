@@ -35,7 +35,7 @@ static int
 
     K2_3020 = false;
 
-    if (exchange_inst.ushap >= 18.0)
+    if (exchange::ushap >= 18.0)
     {
 
         if (!K51_3020)

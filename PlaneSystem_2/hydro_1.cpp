@@ -2,17 +2,22 @@
 
 void hydro_int::hydro_1()
 {
+//    nVDfirst2[0] = exchange::eng1_spd;
+//    nVDfirst2[1] = exchange::eng2_spd;
+//    nVDsecond2[0] = exchange::eng3_spd;
+//    nVDsecond2[1] = exchange::eng4_spd;
+
     //logic start
     K9_2910 = false;
     K5_2910 = false;
     K23_2910 = false;
 
-    if(exchange_inst.ush1p >= 18.0 && F9_2910)
+    if(exchange::ush1p >= 18.0 && F9_2910)
         F91_2910 = true;
     else
         F91_2910 = false;
 
-    if(exchange_inst.ush2dpl >= 18.0 && F3_2910 == true)
+    if(exchange::ush2dpl >= 18.0 && F3_2910 == true)
     {
         F31_2910 = true;
         if(s1_2910 == true)
@@ -45,9 +50,9 @@ void hydro_int::hydro_1()
             }
         }
 
-        if(exchange_inst.ushal >= 18.0)
+        if(exchange::ushal >= 18.0)
         {
-            if(exchange_inst.S35_3230 == true)
+            if(exchange::S35_3230 == true)
             {
                 K23_2910 = true;
             }
@@ -58,9 +63,9 @@ void hydro_int::hydro_1()
         F31_2910 = false;
         F32_2910 = false;
     }
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
-        if(exchange_inst.S39_3230 == true)
+        if(exchange::S39_3230 == true)
         {
             K22_2910 = true;
         }
@@ -139,11 +144,11 @@ void hydro_int::hydro_1()
     {
         K25_2910 = true;
     }
-    if(exchange_inst.K26_3230 == true)
+    if(exchange::K26_3230 == true)
     {
         K27_2910 = true;
     }
-    if(exchange_inst.K24_3230 == true)
+    if(exchange::K24_3230 == true)
     {
         K26_2910 = true;
     }
@@ -196,7 +201,7 @@ void hydro_int::hydro_1()
     uks_inst.UKS2X326 = false;
     uks_inst.UKS2X327 = false;
 
-    if(exchange_inst.ushal >= 18.0)
+    if(exchange::ushal >= 18.0)
     {
         if(pn2gs2 <= 80)
         {
@@ -230,7 +235,7 @@ void hydro_int::hydro_1()
     uks_inst.UKS2X330 = false;
     uks_inst.UKS2X331 = false;
 
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
         if(pn1gs3 <= 80)
         {
@@ -267,7 +272,7 @@ void hydro_int::hydro_1()
     {
         if(K27_2910 == true)
         {
-            if(exchange_inst.alpha_rud_1dv < 45 &&
+            if(exchange::alpha_rud_1dv < 45 &&
                 S6_2910 == true &&
                 F91_2910 == true)
             {
@@ -276,7 +281,7 @@ void hydro_int::hydro_1()
         }
         else
         {
-            if(exchange_inst.ushal >= 18.0 &&
+            if(exchange::ushal >= 18.0 &&
                 K4_2910 == false &&
                 K12_2910 == false &&
                 K25_2910 == false)
@@ -294,7 +299,7 @@ void hydro_int::hydro_1()
     {
         if(K26_2910 == true)
         {
-            if(exchange_inst.alpha_rud_4dv < 45 &&
+            if(exchange::alpha_rud_4dv < 45 &&
                 S6_2910 == true &&
                 F91_2910 == true)
             {
@@ -303,7 +308,7 @@ void hydro_int::hydro_1()
         }
         else
         {
-            if(exchange_inst.ushap >= 18.0 &&
+            if(exchange::ushap >= 18.0 &&
                 K4_2910 == false &&
                 K12_2910 == false &&
                 K2_2910 == false)
@@ -320,7 +325,7 @@ void hydro_int::hydro_1()
     {
         if(K27_2910 == true)
         {
-            if(exchange_inst.alpha_rud_2dv < 45 && F91_2910 == true)
+            if(exchange::alpha_rud_2dv < 45 && F91_2910 == true)
             {
                 if(S7_2910 == true || S5_2910 == true)
                 {
@@ -330,7 +335,7 @@ void hydro_int::hydro_1()
         }
         else
         {
-            if(exchange_inst.ushap >= 18 &&
+            if(exchange::ushap >= 18 &&
                 K2_2910 == false &&
                 K12_2910 == false &&
                 K25_2910 == false)
@@ -348,7 +353,7 @@ void hydro_int::hydro_1()
     {
         if(K26_2910 == true)
         {
-            if(exchange_inst.alpha_rud_3dv < 45 &&
+            if(exchange::alpha_rud_3dv < 45 &&
                 S5_2910 == true &&
                 F91_2910 == true)
             {
@@ -357,7 +362,7 @@ void hydro_int::hydro_1()
         }
         else
         {
-            if(exchange_inst.ushap >= 18 &&
+            if(exchange::ushap >= 18 &&
                 K4_2910 == false &&
                 K2_2910 == false &&
                 K25_2910 == false)
@@ -431,7 +436,7 @@ void hydro_int::hydro_1()
         K18_2910 = true;
     }
 
-    if(exchange_inst.ushal >= 18.0)
+    if(exchange::ushal >= 18.0)
     {
         if(K2_2910 == true || K1_2910 == true)
         {
@@ -441,7 +446,7 @@ void hydro_int::hydro_1()
         }
     }
 
-    if(exchange_inst.ushal >= 18.0)
+    if(exchange::ushal >= 18.0)
     {
         if(K2_2910 == true || K3_2910 == true)
         {
@@ -451,7 +456,7 @@ void hydro_int::hydro_1()
         }
     }
 
-    if(exchange_inst.ushal >= 18.0)
+    if(exchange::ushal >= 18.0)
     {
         if(K4_2910 == true || K3_2910 == true)
         {
@@ -461,7 +466,7 @@ void hydro_int::hydro_1()
         }
     }
 
-    if(exchange_inst.ushal >= 18.0)
+    if(exchange::ushal >= 18.0)
     {
         if(K4_2910 == true || K1_2910 == true)
         {
@@ -470,7 +475,7 @@ void hydro_int::hydro_1()
             uks_inst.UKS2X335 = true;
         }
     }
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
         if(K12_2910 == true || K21_2910 == true)
         {
@@ -479,7 +484,7 @@ void hydro_int::hydro_1()
             uks_inst.UKS2X336 = true;
         }
     }
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
         if(K12_2910 == true || K19_2910 == true)
         {
@@ -488,7 +493,7 @@ void hydro_int::hydro_1()
             uks_inst.UKS2X337 = true;
         }
     }
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
         if(K25_2910 == true || K19_2910 == true)
         {
@@ -497,7 +502,7 @@ void hydro_int::hydro_1()
             uks_inst.UKS2X338 = true;
         }
     }
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
         if(K25_2910 == true || K19_2910 == true)
         {

@@ -11,7 +11,6 @@ extern const double TICK;
 extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern uks uks_inst;
-extern exchange exchange_inst;
 
 extern double a1;
 extern double a2;

@@ -7,11 +7,11 @@ void landinggear_int::landinggear_1()	//sashes
     {
 
         //Ddelta_stv toggling
-        if (exchange_inst.pgs2 >= 130.0 && exchange_inst.pgs2 < 280.0)
+        if (exchange::pgs2 >= 130.0 && exchange::pgs2 < 280.0)
         {
-            Ddelta_stv = two_points_to_Y(exchange_inst.pgs2, 130.0, 280.0, 0.0, 45.0);
+            Ddelta_stv = two_points_to_Y(exchange::pgs2, 130.0, 280.0, 0.0, 45.0);
         }
-        if (exchange_inst.pgs2 >= 280.0)
+        if (exchange::pgs2 >= 280.0)
         {
             Ddelta_stv = 45.0;
         }

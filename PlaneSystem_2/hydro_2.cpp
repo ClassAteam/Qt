@@ -9,15 +9,15 @@ void hydro_int::hydro_2()
         PAPD_31;
 
     QVector<double> Ush_pool(4, false);
-    Ush_pool[0] = exchange_inst.ush1l;
-    Ush_pool[1] = exchange_inst.ush2l;
-    Ush_pool[2] = exchange_inst.ush1p;
-    Ush_pool[3] = exchange_inst.ush2p;
+    Ush_pool[0] = exchange::ush1l;
+    Ush_pool[1] = exchange::ush2l;
+    Ush_pool[2] = exchange::ush1p;
+    Ush_pool[3] = exchange::ush2p;
     QVector<double> Ushdp_pool(4, false);
-    Ushdp_pool[0] = exchange_inst.ush1dpl;
-    Ushdp_pool[1] = exchange_inst.ush2dpl;
-    Ushdp_pool[2] = exchange_inst.ush1dpp;
-    Ushdp_pool[3] = exchange_inst.ush2dpp;
+    Ushdp_pool[0] = exchange::ush1dpl;
+    Ushdp_pool[1] = exchange::ush2dpl;
+    Ushdp_pool[2] = exchange::ush1dpp;
+    Ushdp_pool[3] = exchange::ush2dpp;
     QVector<bool> PAPD_pool(4, false);
     PAPD_pool[0] = PAPD_26;
     PAPD_pool[1] = PAPD_27;
@@ -86,14 +86,14 @@ void hydro_int::hydro_2()
             UKS_pool[i] = false;
         }
 
-        exchange_inst.ush1l = Ush_pool[0];
-        exchange_inst.ush2l = Ush_pool[1];
-        exchange_inst.ush1p = Ush_pool[2];
-        exchange_inst.ush2p = Ush_pool[3];
-        exchange_inst.ush1dpl = Ushdp_pool[0];
-        exchange_inst.ush2dpl = Ushdp_pool[1];
-        exchange_inst.ush1dpp = Ushdp_pool[2];
-        exchange_inst.ush2dpp = Ushdp_pool[3];
+        exchange::ush1l = Ush_pool[0];
+        exchange::ush2l = Ush_pool[1];
+        exchange::ush1p = Ush_pool[2];
+        exchange::ush2p = Ush_pool[3];
+        exchange::ush1dpl = Ushdp_pool[0];
+        exchange::ush2dpl = Ushdp_pool[1];
+        exchange::ush1dpp = Ushdp_pool[2];
+        exchange::ush2dpp = Ushdp_pool[3];
         PAPD_26 = PAPD_pool[0];
         PAPD_27 = PAPD_pool[1];
         PAPD_30 = PAPD_pool[2];

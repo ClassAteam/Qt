@@ -14,11 +14,11 @@ void landinggear_int::landinggear_3() //actually 4
     {
 
         //Ddelta_stv toggling
-        if (exchange_inst.pgs2 >= 130.0 && exchange_inst.pgs2 < 280.0)
+        if (exchange::pgs2 >= 130.0 && exchange::pgs2 < 280.0)
         {
-            Ddelta_racks = two_points_to_Y(exchange_inst.pgs2, 130.0, 280.0, 0.0, 0.25);
+            Ddelta_racks = two_points_to_Y(exchange::pgs2, 130.0, 280.0, 0.0, 0.25);
         }
-        if (exchange_inst.pgs2 >= 280.0)
+        if (exchange::pgs2 >= 280.0)
         {
             Ddelta_racks = 0.25;
         }

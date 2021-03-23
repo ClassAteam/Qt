@@ -5,7 +5,7 @@ void brakes_int::brakes_6()
     //start logic
     K5_3650 = false;
 
-    if(exchange_inst.ush1dpp >= 18.0)
+    if(exchange::ush1dpp >= 18.0)
     {
         if(S1_9921 == true || S2_9921 == true)
         {
@@ -30,7 +30,7 @@ void brakes_int::brakes_6()
                 }
                 else
                 {
-                    if(exchange_inst.S34_3230 && exchange_inst.S36_3230)
+                    if(exchange::S34_3230 && exchange::S36_3230)
                     {
 
                     }
@@ -62,13 +62,13 @@ void brakes_int::brakes_6()
     bss_inst.BSS824X1f = false;
     uks_inst.UKS3X311 = false;
 
-    if(exchange_inst.ush1dpp >= 18.0 && Patp < 60)
+    if(exchange::ush1dpp >= 18.0 && Patp < 60)
     {
         bss_inst.BSS824X1f = true;
         uks_inst.UKS3X311 = true;
     }
 
-    if(exchange_inst.ushal >= 18.0 && K1_9921 == true && Patp >= 60.0)
+    if(exchange::ushal >= 18.0 && K1_9921 == true && Patp >= 60.0)
     {
         PVTP = true;
         if(K2_9921 == true)
@@ -101,7 +101,7 @@ void brakes_int::brakes_6()
     uks_inst.UKS3X310 = false;
     bss_inst.BSS824X1R = false;
 
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
         if(S6_9921 == true)
         {

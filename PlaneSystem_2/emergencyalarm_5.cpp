@@ -97,7 +97,7 @@ void emergencyalarm_int::emergencyalarm_5()
         X1MM_blink,
         X3C_blink;
 
-    if (exchange_inst.ush1dpl >= 18.0 && exchange_inst.ush1dpp >= 18.0)
+    if (exchange::ush1dpl >= 18.0 && exchange::ush1dpp >= 18.0)
     {
         PRBSS824 = true;
     }
@@ -106,7 +106,7 @@ void emergencyalarm_int::emergencyalarm_5()
         PRBSS824 = false;
     }
 
-    if (exchange_inst.ush2dpl >= 18.0 && exchange_inst.ush2dpp >= 18.0)
+    if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0)
     {
         PRBSS825 = true;
     }
@@ -115,7 +115,7 @@ void emergencyalarm_int::emergencyalarm_5()
         PRBSS825 = false;
     }
 
-    if ((exchange_inst.ush2dpl >= 18.0) && (exchange_inst.ush2dpp >= 18.0) && (S6_3364 == true))
+    if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && (S6_3364 == true))
     {
         PKLPL = true;
     }
@@ -124,7 +124,7 @@ void emergencyalarm_int::emergencyalarm_5()
         PKLPL = false;
     }
 
-    if ((exchange_inst.ush1dpl >= 18.0) && (exchange_inst.ush1dpp >= 18.0))
+    if ((exchange::ush1dpl >= 18.0) && (exchange::ush1dpp >= 18.0))
     {
         USASPL = two_points_to_Y(alpha_rra7pl, 0, 1, 0.75, 1);
     }

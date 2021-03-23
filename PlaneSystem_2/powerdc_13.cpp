@@ -2,24 +2,24 @@
 
 void powerdc_int::powerdc_13()
 {
-    if(exchange_inst.pvrap && exchange_inst.speed < 0.1)
+    if(exchange::pvrap && exchange::speed < 0.1)
     {
         pprap = true;
-        exchange_inst.urapP[0] = 117.0;
-        exchange_inst.urapP[1] = 115.0;
-        exchange_inst.urapP[2] = 116.0;
-        exchange_inst.frap = 401.0;
+        exchange::urapP[0] = 117.0;
+        exchange::urapP[1] = 115.0;
+        exchange::urapP[2] = 116.0;
+        exchange::frap = 401.0;
     }
     else
     {
         pprap = false;
-        exchange_inst.urapP[0] = 0;
-        exchange_inst.urapP[1] = 0;
-        exchange_inst.urapP[2] = 0;
-        exchange_inst.frap = 0;
+        exchange::urapP[0] = 0;
+        exchange::urapP[1] = 0;
+        exchange::urapP[2] = 0;
+        exchange::frap = 0;
     }
 
-    if(exchange_inst.ushap >= 18.0 && pprap && s9_2420)
+    if(exchange::ushap >= 18.0 && pprap && s9_2420)
         purgpk3 = true;
     else
         purgpk3 = false;

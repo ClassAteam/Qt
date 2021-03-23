@@ -2,11 +2,11 @@
 
 void wingsmech_int::wingsmech_4()
 {
-    exchange_inst.delta_z = ((delta_z_l + delta_z_p) / 2);
+    exchange::delta_z = ((delta_z_l + delta_z_p) / 2);
 
-    if(exchange_inst.ushap >= 18 && exchange_inst.delta_z > 0)
+    if(exchange::ushap >= 18 && exchange::delta_z > 0)
     {
-        if(exchange_inst.delta_z > 22)
+        if(exchange::delta_z > 22)
         {
             bss_inst.BSS824X1KK = true;
             bss_inst.BSS824X1MM = false;
@@ -16,12 +16,12 @@ void wingsmech_int::wingsmech_4()
             bss_inst.BSS824X1KK = false;
             bss_inst.BSS824X1MM = true;
         }
-        if(exchange_inst.delta_z > 28)
+        if(exchange::delta_z > 28)
         {
             bss_inst.BSS824X3C = true;
             bss_inst.BSS824X1KK = false;
         }
-        if(exchange_inst.delta_z > 38)
+        if(exchange::delta_z > 38)
         {
             bss_inst.BSS824X1A = true;
             bss_inst.BSS824X3C = false;
@@ -43,7 +43,7 @@ void wingsmech_int::wingsmech_4()
     bss_inst.BSS825X7A = false;
     bss_inst.BSS825X5J = false;
 
-    if(exchange_inst.ush1dpl > 18)
+    if(exchange::ush1dpl > 18)
     {
         delta_pr = ((delta_pr_l + delta_pr_p) / 2);
 
@@ -62,7 +62,7 @@ void wingsmech_int::wingsmech_4()
     X_1_pk = X_L;
     X_3_pk = X_P;
 
-    if(exchange_inst.ush1dpl >= 18)
+    if(exchange::ush1dpl >= 18)
     {
         XL_120 = X_L;
         XP_121 = X_P;
@@ -84,7 +84,7 @@ void wingsmech_int::wingsmech_4()
                 uks_inst.P_140_14 = true;
             }
         }
-        if(exchange_inst.prr1kpchk == true)
+        if(exchange::prr1kpchk == true)
         {
             if(D_X_l != 0)
             {
@@ -107,7 +107,7 @@ void wingsmech_int::wingsmech_4()
         uks_inst.P_141_16 = false;
         uks_inst.P_141_17 = false;
 
-        uks_inst.P_140_15 = exchange_inst.prr1kpchk;
+        uks_inst.P_140_15 = exchange::prr1kpchk;
 
         if((abs(X_L - X_P)) >= 1)
         {
@@ -124,7 +124,7 @@ void wingsmech_int::wingsmech_4()
             uks_inst.P_141_13 = true;
         }
     }
-    if(exchange_inst.ush1dpp > 18)
+    if(exchange::ush1dpp > 18)
     {
         uks_inst.P_142_11 = hydro_int::pgs3;
         uks_inst.P_142_12 = hydro_int::pgs4;
@@ -149,7 +149,7 @@ void wingsmech_int::wingsmech_4()
 
         uks_inst.P_142_17 = false;
 
-        if(exchange_inst.prr2kpchk == true)
+        if(exchange::prr2kpchk == true)
         {
             if(D_X_p != 0)
             {
@@ -173,7 +173,7 @@ void wingsmech_int::wingsmech_4()
     uks_inst.P_143_16 = false;
     uks_inst.P_143_17 = false;
 
-    uks_inst.P_142_15 = exchange_inst.prr2kpchk;
+    uks_inst.P_142_15 = exchange::prr2kpchk;
 
     uks_inst.P_143_16 = false;
     uks_inst.P_143_17 = false;
@@ -193,7 +193,7 @@ void wingsmech_int::wingsmech_4()
         uks_inst.P_143_13 = true;
     }
 
-    if(exchange_inst.ush1dpl >= 18)
+    if(exchange::ush1dpl >= 18)
     {
         delta_z_l_110 = delta_z_l;
         delta_pr_l_114 = delta_pr_l;
@@ -204,7 +204,7 @@ void wingsmech_int::wingsmech_4()
         delta_pr_l_114 = 0;
     }
 
-    if(exchange_inst.ush1dpp >= 18)
+    if(exchange::ush1dpp >= 18)
     {
         delta_z_p_111 = delta_z_l;
         delta_pr_p_115 = delta_pr_l;
@@ -217,10 +217,10 @@ void wingsmech_int::wingsmech_4()
         delta_pr_p_115 = 0;
         delta_pr_116 = 0;
     }
-    if(exchange_inst.ushap >= 18)
+    if(exchange::ushap >= 18)
     {
-        exchange_inst.delta_z = ((delta_z_l + delta_z_p) / 2);
-        delta_z_112 = 0.35 + (5.266 * exchange_inst.delta_z);
+        exchange::delta_z = ((delta_z_l + delta_z_p) / 2);
+        delta_z_112 = 0.35 + (5.266 * exchange::delta_z);
         delta_ruz_113 = 60 * delta_zr_vh;
     }
 
@@ -248,12 +248,12 @@ void wingsmech_int::wingsmech_4()
 
     uks_inst.P_130_25 = false;
 
-    if(exchange_inst.ush1dpl >= 18)
+    if(exchange::ush1dpl >= 18)
     {
         uks_inst.P_130_11 = hydro_int::pgs1;
-        uks_inst.P_130_12 = exchange_inst.psr1kz;
+        uks_inst.P_130_12 = exchange::psr1kz;
 
-        if(exchange_inst.delta_z >= 28.1)
+        if(exchange::delta_z >= 28.1)
         {
             uks_inst.P_130_13 = true;
         }
@@ -287,9 +287,9 @@ void wingsmech_int::wingsmech_4()
             }
         }
 
-        uks_inst.P_130_19 = exchange_inst.prr1kz;
+        uks_inst.P_130_19 = exchange::prr1kz;
 
-        if(exchange_inst.prr1kz == true)
+        if(exchange::prr1kz == true)
         {
             if(Ddelta_z_l != 0)
             {
@@ -342,7 +342,7 @@ void wingsmech_int::wingsmech_4()
     uks_inst.P_131_21 = false;
     uks_inst.P_131_22 = false;
 
-    if(exchange_inst.ush1dpl >= 18)
+    if(exchange::ush1dpl >= 18)
     {
         if(otkaz_1k_zakr == true)
         {
@@ -374,12 +374,12 @@ void wingsmech_int::wingsmech_4()
     uks_inst.P_132_24 = false;
     uks_inst.P_132_25 = false;
 
-    if(exchange_inst.ush1dpp >= 18)
+    if(exchange::ush1dpp >= 18)
     {
         uks_inst.P_132_11 = hydro_int::pgs4;
-        uks_inst.P_132_12 = exchange_inst.psr2kz;
+        uks_inst.P_132_12 = exchange::psr2kz;
 
-        if(exchange_inst.delta_z >= 28.1)
+        if(exchange::delta_z >= 28.1)
         {
             uks_inst.P_132_13 = true;
         }
@@ -411,9 +411,9 @@ void wingsmech_int::wingsmech_4()
             }
         }
 
-        uks_inst.P_132_19 = exchange_inst.prr2kz;
+        uks_inst.P_132_19 = exchange::prr2kz;
 
-        if(exchange_inst.prr2kz == true)
+        if(exchange::prr2kz == true)
         {
             if(Ddelta_z_l != 0)
             {
@@ -462,7 +462,7 @@ void wingsmech_int::wingsmech_4()
     uks_inst.P_133_21 = false;
     uks_inst.P_133_22 = false;
 
-    if(exchange_inst.ush1dpp >= 18)
+    if(exchange::ush1dpp >= 18)
     {
         if(otkaz_2k_zakr == true)
         {

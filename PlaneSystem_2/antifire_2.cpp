@@ -4,7 +4,7 @@
 void antifire_int::antifire_2()
 {
     //				   F91 toggle
-    if(exchange_inst.ush1dpl >= 16.0)
+    if(exchange::ush1dpl >= 16.0)
     {
         if (F9_2610 == true)
         {
@@ -20,7 +20,7 @@ void antifire_int::antifire_2()
         F91_2610 = false;
     }
     //				   F101 toggle
-    if (exchange_inst.ush1dpp >= 16.0)
+    if (exchange::ush1dpp >= 16.0)
     {
         if (F10_2610 == true)
         {
@@ -32,7 +32,7 @@ void antifire_int::antifire_2()
         }
     }
     //					F181 toggle
-    if (exchange_inst.ush1dpl >= 16.0)
+    if (exchange::ush1dpl >= 16.0)
     {
         if (F18_2610 == true)
         {
@@ -44,7 +44,7 @@ void antifire_int::antifire_2()
         }
     }
     //					F111 toggle
-    if (exchange_inst.ush2dpl >= 16.0)
+    if (exchange::ush2dpl >= 16.0)
     {
         if (F11_2610 == true)
         {
@@ -56,7 +56,7 @@ void antifire_int::antifire_2()
         }
     }
     //					F121 toggle
-    if (exchange_inst.ush2dpl >= 16.0)
+    if (exchange::ush2dpl >= 16.0)
     {
         if (F12_2610 == true)
         {
@@ -202,7 +202,7 @@ void antifire_int::antifire_2()
     //					PPBI toggle
     if (F82_2610 == true)
     {
-        if (F45_2610 == true || exchange_inst.P2OBLOP == true || PAPDvh6 == true)
+        if (F45_2610 == true || exchange::P2OBLOP == true || PAPDvh6 == true)
         {
             PPBI = true;
         }

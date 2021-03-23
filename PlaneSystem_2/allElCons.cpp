@@ -276,82 +276,82 @@ void allElConsAlt::makeCorresCurr()
 /////////////////////////////////////////////////////////////direct current
 allElConsDir::allElConsDir()
 {
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por1kz", &exchange_inst.por1kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr1kz", &exchange_inst.prr1kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "psr1kz", &exchange_inst.psr1kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por1kpr", &exchange_inst.por1kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr1kpr", &exchange_inst.prr1kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "psr1kpr", &exchange_inst.psr1kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por1kpchk", &exchange_inst.por1kpchk));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr1kpchk", &exchange_inst.prr1kpchk));
-    consumers.append(sngElConsDir(30.0, sngElConsDir::shal, "k4_4940", &exchange_inst.k4_4940));
-    consumers.append(sngElConsDir(30.0, sngElConsDir::shal, "s1_4940", &exchange_inst.s1_4940));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn1gs1", &exchange_inst.prn1gs1));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn2gs1", &exchange_inst.prn2gs1));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn1gs2", &exchange_inst.prn1gs2));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn2gs2", &exchange_inst.prn2gs2));
-    consumers.append(sngElConsDir(8.0, sngElConsDir::shal, "pbutzo", &exchange_inst.pbutzo));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::sh1dpl, "poppd1", &exchange_inst.poppd1));
-    consumers.append(sngElConsDir(8.0, sngElConsDir::sh1dpl, "gk_avn", &exchange_inst.gk_avn));
-    consumers.append(sngElConsDir(20.0, sngElConsDir::sh1dpl, "k1_17723", &exchange_inst.k1_17723));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1dpl, "s1_11028", &exchange_inst.s1_11028));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1dpl, "s1_11313", &exchange_inst.s1_11313));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2dpl, "k1_2250", &exchange_inst.k1_2250));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpl, "s1_11052", &exchange_inst.s1_11052));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpl, "k14_2420", &exchange_inst.k14_2420));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpl, "k15_2420", &exchange_inst.k15_2420));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1l, "k2_7322", &exchange_inst.k2_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1l, "k9_7322", &exchange_inst.k9_7322));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1l, "k1_11038", &exchange_inst.k1_11038));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::sh1l, "s1_11081", &exchange_inst.s1_11081));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2l, "k3_2250", &exchange_inst.k3_2250));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2l, "poppd3", &exchange_inst.poppd3));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::sh2l, "k3_3650", &exchange_inst.k3_3650));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "k4_7322", &exchange_inst.k4_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "k11_7322", &exchange_inst.k11_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "r865gd", &exchange_inst.r865gd));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::sho1l, "k5_2250", &exchange_inst.k5_2250));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::sho1l, "y1_3650", &exchange_inst.y1_3650));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::sho1l, "y2_3650", &exchange_inst.y2_3650));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::sho2l, "k1_17723", &exchange_inst.k1_17723));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shap, "k7_2420", &exchange_inst.k7_2420));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::shap, "k8_2420", &exchange_inst.k8_2420));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kz", &exchange_inst.por2kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kz", &exchange_inst.prr2kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "psr2kz", &exchange_inst.psr2kz));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kpr", &exchange_inst.por2kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kpr", &exchange_inst.prr2kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "psr2kpr", &exchange_inst.psr2kpr));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kpchk", &exchange_inst.por2kpchk));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kpchk", &exchange_inst.prr2kpchk));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn1gs3", &exchange_inst.prn1gs3));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn2gs3", &exchange_inst.prn2gs3));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn1gs4", &exchange_inst.prn1gs4));
-    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn2gs4", &exchange_inst.prn2gs4));
-    consumers.append(sngElConsDir(12.0, sngElConsDir::shap, "gk_avl", &exchange_inst.gk_avl));
-    consumers.append(sngElConsDir(12.0, sngElConsDir::shap, "gk_avp", &exchange_inst.gk_avp));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "k18_7322", &exchange_inst.k18_7322));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::sh1dpp, "k11_2250", &exchange_inst.k11_2250));
-    consumers.append(sngElConsDir(9.0, sngElConsDir::sh1dpp, "poppd2", &exchange_inst.poppd2));
-    consumers.append(sngElConsDir(8.0, sngElConsDir::sh1dpp, "pbutzr", &exchange_inst.pbutzr));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpp, "s1_11028", &exchange_inst.s1_11028));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::sh2dpp, "s1_11081", &exchange_inst.s1_11081));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpp, "s2_11052", &exchange_inst.s2_11052));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k30_2420", &exchange_inst.k30_2420));
-    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k31_2420", &exchange_inst.k31_2420));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1p, "k3_7322", &exchange_inst.k3_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1p, "k8_7322", &exchange_inst.k8_7322));
-    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1p, "k2_11038", &exchange_inst.k2_11038));
-    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2p, "k8_2250", &exchange_inst.k8_2250));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "prsop", &exchange_inst.prsop));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "k5_7322", &exchange_inst.k5_7322));
-    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "k10_7322", &exchange_inst.k10_7322));
-    consumers.append(sngElConsDir(20.0, sngElConsDir::sh2p, "k2_17723", &exchange_inst.k2_17723));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f32_3020", &exchange_inst.f32_3020));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f319_3020", &exchange_inst.f319_3020));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f356_3020", &exchange_inst.f356_3020));
-    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f353_3020", &exchange_inst.f353_3020));
-    consumers.append(sngElConsDir(7.0, sngElConsDir::sho2p, "k1_17723", &exchange_inst.k1_17723));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por1kz", &exchange::por1kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr1kz", &exchange::prr1kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "psr1kz", &exchange::psr1kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por1kpr", &exchange::por1kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr1kpr", &exchange::prr1kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "psr1kpr", &exchange::psr1kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "por1kpchk", &exchange::por1kpchk));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shal, "prr1kpchk", &exchange::prr1kpchk));
+    consumers.append(sngElConsDir(30.0, sngElConsDir::shal, "k4_4940", &exchange::k4_4940));
+    consumers.append(sngElConsDir(30.0, sngElConsDir::shal, "s1_4940", &exchange::s1_4940));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn1gs1", &exchange::prn1gs1));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn2gs1", &exchange::prn2gs1));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn1gs2", &exchange::prn1gs2));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shal, "prn2gs2", &exchange::prn2gs2));
+    consumers.append(sngElConsDir(8.0, sngElConsDir::shal, "pbutzo", &exchange::pbutzo));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh1dpl, "poppd1", &exchange::poppd1));
+    consumers.append(sngElConsDir(8.0, sngElConsDir::sh1dpl, "gk_avn", &exchange::gk_avn));
+    consumers.append(sngElConsDir(20.0, sngElConsDir::sh1dpl, "k1_17723", &exchange::k1_17723));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1dpl, "s1_11028", &exchange::s1_11028));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1dpl, "s1_11313", &exchange::s1_11313));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2dpl, "k1_2250", &exchange::k1_2250));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpl, "s1_11052", &exchange::s1_11052));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpl, "k14_2420", &exchange::k14_2420));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpl, "k15_2420", &exchange::k15_2420));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1l, "k2_7322", &exchange::k2_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1l, "k9_7322", &exchange::k9_7322));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1l, "k1_11038", &exchange::k1_11038));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sh1l, "s1_11081", &exchange::s1_11081));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2l, "k3_2250", &exchange::k3_2250));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2l, "poppd3", &exchange::poppd3));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sh2l, "k3_3650", &exchange::k3_3650));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "k4_7322", &exchange::k4_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "k11_7322", &exchange::k11_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2l, "r865gd", &exchange::r865gd));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sho1l, "k5_2250", &exchange::k5_2250));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho1l, "y1_3650", &exchange::y1_3650));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho1l, "y2_3650", &exchange::y2_3650));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho2l, "k1_17723", &exchange::k1_17723));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::shap, "k7_2420", &exchange::k7_2420));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::shap, "k8_2420", &exchange::k8_2420));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kz", &exchange::por2kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kz", &exchange::prr2kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "psr2kz", &exchange::psr2kz));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kpr", &exchange::por2kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kpr", &exchange::prr2kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "psr2kpr", &exchange::psr2kpr));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "por2kpchk", &exchange::por2kpchk));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "prr2kpchk", &exchange::prr2kpchk));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn1gs3", &exchange::prn1gs3));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn2gs3", &exchange::prn2gs3));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn1gs4", &exchange::prn1gs4));
+    consumers.append(sngElConsDir(3.0, sngElConsDir::shap, "prn2gs4", &exchange::prn2gs4));
+    consumers.append(sngElConsDir(12.0, sngElConsDir::shap, "gk_avl", &exchange::gk_avl));
+    consumers.append(sngElConsDir(12.0, sngElConsDir::shap, "gk_avp", &exchange::gk_avp));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::shap, "k18_7322", &exchange::k18_7322));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh1dpp, "k11_2250", &exchange::k11_2250));
+    consumers.append(sngElConsDir(9.0, sngElConsDir::sh1dpp, "poppd2", &exchange::poppd2));
+    consumers.append(sngElConsDir(8.0, sngElConsDir::sh1dpp, "pbutzr", &exchange::pbutzr));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpp, "s1_11028", &exchange::s1_11028));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sh2dpp, "s1_11081", &exchange::s1_11081));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh2dpp, "s2_11052", &exchange::s2_11052));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k30_2420", &exchange::k30_2420));
+    consumers.append(sngElConsDir(35.0, sngElConsDir::sh2dpp, "k31_2420", &exchange::k31_2420));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1p, "k3_7322", &exchange::k3_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh1p, "k8_7322", &exchange::k8_7322));
+    consumers.append(sngElConsDir(5.0, sngElConsDir::sh1p, "k2_11038", &exchange::k2_11038));
+    consumers.append(sngElConsDir(10.0, sngElConsDir::sh2p, "k8_2250", &exchange::k8_2250));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "prsop", &exchange::prsop));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "k5_7322", &exchange::k5_7322));
+    consumers.append(sngElConsDir(15.0, sngElConsDir::sh2p, "k10_7322", &exchange::k10_7322));
+    consumers.append(sngElConsDir(20.0, sngElConsDir::sh2p, "k2_17723", &exchange::k2_17723));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f32_3020", &exchange::f32_3020));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f319_3020", &exchange::f319_3020));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f356_3020", &exchange::f356_3020));
+    consumers.append(sngElConsDir(2.0, sngElConsDir::sho1p, "f353_3020", &exchange::f353_3020));
+    consumers.append(sngElConsDir(7.0, sngElConsDir::sho2p, "k1_17723", &exchange::k1_17723));
 }
 
 QVector<double> allElConsDir::getIvg_pool()
@@ -431,7 +431,7 @@ void allElConsDir::makeCorresCurr()
     powerdc_int::insho1p = buses[sho1p];
     powerdc_int::insho2p = buses[sho2p];
 
-    if(exchange_inst.ushzvsu >= 18.0)
+    if(exchange::ushzvsu >= 18.0)
     {
         if(powerdc_int::apdvsu_35)
         {
@@ -475,7 +475,7 @@ void allElConsDir::makeCorresCurr()
         {
             if(powerdc_int::pvkgvsu27)
             {
-                powerdc_int::iak1 = 0.013 * (powerdc_int::ea1 - exchange_inst.ushal) /
+                powerdc_int::iak1 = 0.013 * (powerdc_int::ea1 - exchange::ushal) /
                                     powerdc_int::ra1;
             }
             else
@@ -486,7 +486,7 @@ void allElConsDir::makeCorresCurr()
                 {
                     if(powerdc_int::plp27)
                     {
-                        powerdc_int::iak1 = 0.013 * (powerdc_int::ea1 - exchange_inst.ushal) /
+                        powerdc_int::iak1 = 0.013 * (powerdc_int::ea1 - exchange::ushal) /
                                             powerdc_int::ra1; //what is the order
                     }
                     else
@@ -494,7 +494,7 @@ void allElConsDir::makeCorresCurr()
                         if(powerdc_int::ppp27)
                         {
                             if(powerdc_int::pss27)
-                                powerdc_int::iak1 = 0.013 * (powerdc_int::ea1 - exchange_inst.ushal) /
+                                powerdc_int::iak1 = 0.013 * (powerdc_int::ea1 - exchange::ushal) /
                                                     powerdc_int::ra1;
                             else
                             {
@@ -525,7 +525,7 @@ void allElConsDir::makeCorresCurr()
     {
         if(powerdc_int::pvkgvsu27 && powerdc_int::purg27pk3)
         {
-            powerdc_int::iak2 = 0.013 * (powerdc_int::ea2 - exchange_inst.ushap) /
+            powerdc_int::iak2 = 0.013 * (powerdc_int::ea2 - exchange::ushap) /
                                 powerdc_int::ra2;
         }
         else
@@ -535,14 +535,14 @@ void allElConsDir::makeCorresCurr()
             else
             {
                 if(powerdc_int::ppp27)
-                    powerdc_int::iak2 = 0.013 * (powerdc_int::ea2 - exchange_inst.ushap) /
+                    powerdc_int::iak2 = 0.013 * (powerdc_int::ea2 - exchange::ushap) /
                                         powerdc_int::ra2;
                 else
                 {
                     if(powerdc_int::plp27)
                     {
                         if(powerdc_int::pss27)
-                            powerdc_int::iak2 = 0.013 * (powerdc_int::ea2 - exchange_inst.ushap) /
+                            powerdc_int::iak2 = 0.013 * (powerdc_int::ea2 - exchange::ushap) /
                                                 powerdc_int::ra2;
                         else
                         {

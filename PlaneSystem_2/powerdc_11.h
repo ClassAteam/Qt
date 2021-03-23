@@ -3,5 +3,6 @@
 #include <math.h>
 #include "powerdc_int.h"
 #include "allElCons.h"
+#include "exchange.h"
 
 extern allElConsAlt allElConsAlt_inst;

@@ -12,6 +12,7 @@
 #include "presure_int.h"
 #include "antifire_int.h"
 #include "landinggear_int.h"
+#include "pneumatic_int.h"
 
 
 const double TICK = 2;
@@ -39,6 +40,8 @@ int main(int argc, char *argv[])
     antiicing.show();
     landinggear_int landinggear;
     landinggear.show();
+    pneumatic_int pneumatic;
+    pneumatic.show();
 
 
 

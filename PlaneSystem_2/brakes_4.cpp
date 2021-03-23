@@ -67,7 +67,7 @@ void brakes_int::brakes_4()
             brakes_DPt[i] = (brakes_Ptr[i] - brakes_Pt[i]) ;
             if(abs(brakes_DPt[i]) >= (delta_Ptr * 0.3))
             {
-                if(brakes_DPt[i] >= 0 && (exchange_inst.pgs2 >= 130.0 || exchange_inst.pgs3 >= 130.0))
+                if(brakes_DPt[i] >= 0 && (exchange::pgs2 >= 130.0 || exchange::pgs3 >= 130.0))
                 {
                     brakes_Pt[i] = brakes_Pt[i] + delta_Ptr * (TICK / 1000);
                 }

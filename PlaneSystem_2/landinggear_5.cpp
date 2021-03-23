@@ -12,7 +12,7 @@ void landinggear_int::landinggear_5()
     if(tick_vu1 * TICK >= 1000)
         relay_tick_sec_vu++;
 
-    if (exchange_inst.pgs2 >= 130.0)
+    if (exchange::pgs2 >= 130.0)
     {
         if(gk_oovsh == true)
         {
@@ -23,7 +23,7 @@ void landinggear_int::landinggear_5()
         {
             if(gk_vsh == true)
             {
-                Plv= exchange_inst.pgs2;
+                Plv= exchange::pgs2;
                 Plu= 30;
             }
             else
@@ -31,7 +31,7 @@ void landinggear_int::landinggear_5()
                 if(gk_ush == true)
                 {
                     Plv = 30;
-                    Plu = exchange_inst.pgs2;
+                    Plu = exchange::pgs2;
                 }
                 else
                 {
@@ -75,7 +75,7 @@ void landinggear_int::landinggear_5()
         }
     }
 
-    if (exchange_inst.ush2dpl >= 19.0)
+    if (exchange::ush2dpl >= 19.0)
     {
         F16_3230 = true;
         F13_3230 = true;
@@ -144,7 +144,7 @@ void landinggear_int::landinggear_5()
         }
 
         // landing common managing if off
-        if (exchange_inst.S1_3230 == false)
+        if (exchange::S1_3230 == false)
         {
             //release = true
             if (S2_3230 == s2_3230::release)

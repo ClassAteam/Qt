@@ -7,7 +7,7 @@ static int
     S2_1_tick,
     S2_2_tick,
     S2_3341;
-    if (exchange_inst.ush1p >= 18.0)
+    if (exchange::ush1p >= 18.0)
     {
 
         // S2 100% mode
@@ -43,10 +43,10 @@ static int
         // S2 low mode
         if (S2_3341 == 2)
         {
-            if (exchange_inst.P2OBLOP &&
-                (exchange_inst.PRD1dv &&
-                 exchange_inst.PRD4dv &&
-                 exchange_inst.F32_3250))
+            if (exchange::P2OBLOP &&
+                (exchange::PRD1dv &&
+                 exchange::PRD4dv &&
+                 exchange::F32_3250))
             {
 
                 S2_2_tick++;

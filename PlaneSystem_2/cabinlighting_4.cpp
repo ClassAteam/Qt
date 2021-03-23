@@ -33,7 +33,7 @@ static bool
 //    alpha_ra_a14;
     // A1
 
-    if (exchange_inst.ush1l >= 18.0 &&
+    if (exchange::ush1l >= 18.0 &&
         F1_3311 == true &&
         otkaz_vstrosv_busto3_1_k1_lev == false)
     {
@@ -46,7 +46,7 @@ static bool
 
     // A2
 
-    if (exchange_inst.ush2p >= 18.0 &&
+    if (exchange::ush2p >= 18.0 &&
         F2_3311 == true &&
         otkaz_vstrosv_busto3_1_k1_prav == false)
     {
@@ -59,7 +59,7 @@ static bool
 
     // A3
 
-    if (exchange_inst.ush1dpl >= 18.0 &&
+    if (exchange::ush1dpl >= 18.0 &&
         F3_3311 == true &&
         otkaz_vstrosv_busto3_2_k1_lev == false)
     {
@@ -72,7 +72,7 @@ static bool
 
     // A4
 
-    if (exchange_inst.ush2dpp >= 18.0 &&
+    if (exchange::ush2dpp >= 18.0 &&
         F4_3311 == true &&
         otkaz_vstrosv_busto3_2_k2_prav == false)
     {
@@ -135,7 +135,7 @@ static bool
     //////////////////////////////////////////////////////////////////////////////
     // A5
 
-    if (exchange_inst.ush1l >= 18.0 &&
+    if (exchange::ush1l >= 18.0 &&
         F5_3311 == true &&
         otkaz_vstrosv_busto3_1_k1_shto == false)
     {
@@ -148,7 +148,7 @@ static bool
 
     // A6
 
-    if (exchange_inst.ush2p >= 18.0 &&
+    if (exchange::ush2p >= 18.0 &&
         F6_3311 == true &&
         otkaz_vstrosv_busto3_1_k2_shto == false)
     {
@@ -161,7 +161,7 @@ static bool
 
     // A7
 
-    if (exchange_inst.ush1dpl >= 18.0 &&
+    if (exchange::ush1dpl >= 18.0 &&
         F7_3311 == true &&
         otkaz_vstrosv_busto3_1_k1_shtn == false)
     {
@@ -174,7 +174,7 @@ static bool
 
     // A8
 
-    if (exchange_inst.ush2dpp >= 18.0 &&
+    if (exchange::ush2dpp >= 18.0 &&
         F8_3311 == true &&
         otkaz_vstrosv_busto3_1_k2_shtn == false)
     {

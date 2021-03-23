@@ -44,7 +44,7 @@ void brakes_int::brakes_5()
         }
         balarm_SS2 = false;
 
-        if(pbutzr == true && exchange_inst.pgs3 >= 220 && POSH == true)
+        if(pbutzr == true && exchange::pgs3 >= 220 && POSH == true)
         {
             balarm_SS2 = true;
         }
@@ -172,7 +172,7 @@ void brakes_int::brakes_5()
         bss_inst.BSS812X5r = false;
     }
 
-    if(exchange_inst.ushap >= 18.0)
+    if(exchange::ushap >= 18.0)
     {
         if(PstoyanT == true && pgat >= 80.0)
         {

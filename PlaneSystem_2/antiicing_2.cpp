@@ -73,7 +73,7 @@ static int
 
     // F34_3020, F320_3020, F330_3020, F340_3020 toggle
     //1
-    if (f32_3020 == true && K52_3020 == false && (!OTKAZ_vtsepiob_pos1dv) && exchange_inst.ushpP[0][0] >= 104.0)
+    if (f32_3020 == true && K52_3020 == false && (!OTKAZ_vtsepiob_pos1dv) && exchange::ushpP[0][0] >= 104.0)
     {
         f34_3020 = true;
     }
@@ -86,7 +86,7 @@ static int
     if (f319_3020 == true
         && K53_3020 == false
         && (!OTKAZ_vtsepiob_pos2dv)
-        && exchange_inst.ushpP[0][0] >= 104.0)
+        && exchange::ushpP[0][0] >= 104.0)
     {
         f320_3020 = true;
     }
@@ -99,7 +99,7 @@ static int
     if (f356_3020 == true
         && K54_3020 == false
         && (!OTKAZ_vtsepiob_pos3dv)
-        && exchange_inst.ushpP[1][0] >= 104.0)
+        && exchange::ushpP[1][0] >= 104.0)
     {
         f330_3020 = true;
     }
@@ -112,7 +112,7 @@ static int
     if (f353_3020 == true
         && K55_3020 == false
         && OTKAZ_vtsepiob_pos4dv == false
-        && exchange_inst.ushpP[1][0] >= 104.0)
+        && exchange::ushpP[1][0] >= 104.0)
     {
         f340_3020 = true;
     }

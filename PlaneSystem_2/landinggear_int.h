@@ -4,7 +4,6 @@
 #include "bss.h"
 #include "allElCons.h"
 
-extern exchange exchange_inst;
 extern bss bss_inst;
 extern allElConsAlt allElConsAlt_inst;
 

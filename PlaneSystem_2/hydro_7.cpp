@@ -5,10 +5,10 @@
 
 void hydro_int::hydro_7()
 {
-    double* U1_pool[] = {&exchange_inst.ush1dpl, &exchange_inst.ush1dpl,
-                         &exchange_inst.ush1dpp, &exchange_inst.ush1dpp};
-    double* U2_pool[] = {&exchange_inst.ushavP[2][0], &exchange_inst.ushavP[2][0],
-                         &exchange_inst.ushavP[2][0], &exchange_inst.ushavP[2][0]};
+    double* U1_pool[] = {&exchange::ush1dpl, &exchange::ush1dpl,
+                         &exchange::ush1dpp, &exchange::ush1dpp};
+    double* U2_pool[] = {&exchange::ushavP[2][0], &exchange::ushavP[2][0],
+                         &exchange::ushavP[2][0], &exchange::ushavP[2][0]};
     bool* F_pool[] = {&F1_2930, &F1_2930, &F15_2930, &F15_2930};
     double* ppr_pool[] = {&pprgs1, &pprgs2, &pprgs3, &pprgs4};
     double* ptnugs_pool[] = {&ptnugs1, &ptnugs2, &ptnugs3, &ptnugs4};
@@ -25,8 +25,8 @@ void hydro_int::hydro_7()
     double* uks_pool3[] = {&uks_inst.UKS2X316, &uks_inst.UKS2X317,
                            &uks_inst.UKS2X318, &uks_inst.UKS2X319};
 
-    double* Ushal_pool[] = {&exchange_inst.ushal, &exchange_inst.ushal,
-                            &exchange_inst.ushap, &exchange_inst.ushap};
+    double* Ushal_pool[] = {&exchange::ushal, &exchange::ushal,
+                            &exchange::ushap, &exchange::ushap};
 
     bool* H_pool[] = {&H2_2910, &H1_2910, &H4_2910, &H5_2910};
     bool* K1_pool[] = {&K1_2930, &K2_2930, &K3_2930, &K4_2930};
@@ -56,7 +56,7 @@ void hydro_int::hydro_7()
         *uks_pool1[i] = *puks_pool[i];
     }
 
-    if(exchange_inst.usho1l >= 18.0 && F14_2930)
+    if(exchange::usho1l >= 18.0 && F14_2930)
     {
         PK = true;
     }
@@ -70,7 +70,7 @@ void hydro_int::hydro_7()
         PKL = false;
     }
 
-    if(exchange_inst.ushal >= 18.0 &&
+    if(exchange::ushal >= 18.0 &&
         K7_2910 == false &&
         K8_2910 == false &&
         K15_2910 == false &&
@@ -103,7 +103,7 @@ void hydro_int::hydro_7()
         }
     }
 
-    if(exchange_inst.usho1l >= 18.0 && F14_2930 == true && S13_2920 == true)
+    if(exchange::usho1l >= 18.0 && F14_2930 == true && S13_2920 == true)
     {
         PKL1 = true;
     }

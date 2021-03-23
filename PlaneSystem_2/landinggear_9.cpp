@@ -6,7 +6,7 @@ void landinggear_int::landinggear_9()
 
     double m_pedals_to_fi(double Xped, double interval_Y1, double interval_Y2);
 
-    if(exchange_inst.ush1dpl >= 19.0)
+    if(exchange::ush1dpl >= 19.0)
     {
         PPBU_1 = true;
     }
@@ -18,9 +18,9 @@ void landinggear_int::landinggear_9()
     K7_3250 = false;
     K3_3250 = false;
 
-    if(exchange_inst.ush1dpl >= 19.0)
+    if(exchange::ush1dpl >= 19.0)
     {
-        if(exchange_inst.delta_z == 0)
+        if(exchange::delta_z == 0)
         {
             K7_3250 = true;
         }
@@ -30,7 +30,7 @@ void landinggear_int::landinggear_9()
             {
                 A1X166_3250 = true;
             }
-            if(exchange_inst.K25_3230 == true)
+            if(exchange::K25_3230 == true)
             {
                 A1X119_3250 = true;
                 K3_3250 = true;
@@ -69,7 +69,7 @@ void landinggear_int::landinggear_9()
 
     PPBU_2 = false;
 
-    if(exchange_inst.ush1dpp >= 19.0)
+    if(exchange::ush1dpp >= 19.0)
     {
         PPBU_2 = true;
     }
@@ -82,9 +82,9 @@ void landinggear_int::landinggear_9()
     K4_3250 = false;
     K8_3250 = false;
 
-    if(exchange_inst.ush1dpp >= 19.0)
+    if(exchange::ush1dpp >= 19.0)
     {
-        if(exchange_inst.delta_z == 0)
+        if(exchange::delta_z == 0)
         {
             K8_3250 = true;
         }
@@ -101,7 +101,7 @@ void landinggear_int::landinggear_9()
         {
             A2X166_3250 = true;
         }
-        if(exchange_inst.K24_3230 == true)
+        if(exchange::K24_3230 == true)
         {
             A2X119_3250 = true;
             K4_3250 = true;
@@ -153,7 +153,7 @@ void landinggear_int::landinggear_9()
     ///
 
 
-    if(exchange_inst.ush1dpl >= 19.0)
+    if(exchange::ush1dpl >= 19.0)
     {
         if(otkaz_1_kanala)
         {
@@ -192,7 +192,7 @@ void landinggear_int::landinggear_9()
                 }
             }
         }
-        if(exchange_inst.pgs1 >= 130)
+        if(exchange::pgs1 >= 130)
         {
             GK_nk1 = true;
         }
@@ -206,7 +206,7 @@ void landinggear_int::landinggear_9()
         }
     }
 
-    if(exchange_inst.ush1dpp >= 19.0)
+    if(exchange::ush1dpp >= 19.0)
     {
         if(otkaz_2_kanala == true)
         {
@@ -245,7 +245,7 @@ void landinggear_int::landinggear_9()
                 }
             }
         }
-        if(exchange_inst.pgs3 >= 130)
+        if(exchange::pgs3 >= 130)
         {
             GK_nk2 = true;
         }

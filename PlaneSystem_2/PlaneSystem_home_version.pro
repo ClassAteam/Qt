@@ -77,6 +77,8 @@ SOURCES += \
     landinggear_int.cpp \
     main.cpp \
     mainwindow.cpp \
+    pneumatic_1.cpp \
+    pneumatic_int.cpp \
     powerdc_1.cpp \
     powerdc_11.cpp \
     powerdc_12.cpp \
@@ -164,6 +166,8 @@ HEADERS += \
     landinggear_9.h \
     landinggear_int.h \
     mainwindow.h \
+    pneumatic_1.h \
+    pneumatic_int.h \
     powerdc_1.h \
     powerdc_11.h \
     powerdc_12.h \

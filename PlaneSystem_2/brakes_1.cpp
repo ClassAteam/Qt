@@ -48,10 +48,10 @@ void brakes_int::brakes_1()
         P_t_prav = P_ped_22 * 120;
     }
 
-    if(exchange_inst.alpha_rud_1dv < 45 &&
-        exchange_inst.alpha_rud_2dv < 45 &&
-        exchange_inst.alpha_rud_3dv < 45 &&
-        exchange_inst.alpha_rud_4dv < 45)
+    if(exchange::alpha_rud_1dv < 45 &&
+        exchange::alpha_rud_2dv < 45 &&
+        exchange::alpha_rud_3dv < 45 &&
+        exchange::alpha_rud_4dv < 45)
     {
         PRR = false;
     }
@@ -60,10 +60,10 @@ void brakes_int::brakes_1()
         PRR = true;
     }
 
-    if(exchange_inst.ush1dpl >= 18 &&
-        exchange_inst.K35_3230 == true &&
-        exchange_inst.K27_3230 == true &&
-        exchange_inst.K26_3230 == true)
+    if(exchange::ush1dpl >= 18 &&
+        exchange::K35_3230 == true &&
+        exchange::K27_3230 == true &&
+        exchange::K26_3230 == true)
     {
         POSH2 = true;
     }
@@ -83,7 +83,7 @@ void brakes_int::brakes_1()
     PAVT_S = false;
     pavtt = false;
 
-    if(exchange_inst.ushal >= 18 && exchange_inst.ush1dpl >= 18)
+    if(exchange::ushal >= 18 && exchange::ush1dpl >= 18)
     {
         if(otkaz_osn_sis_torm == true)
         {
@@ -147,7 +147,7 @@ void brakes_int::brakes_1()
                     PFT = true;
                 }
 
-                if(exchange_inst.delta_z >= 23 && exchange_inst.delta_z <= 28)
+                if(exchange::delta_z >= 23 && exchange::delta_z <= 28)
                 {
                     if(paft == true || PRR == true)
                     {

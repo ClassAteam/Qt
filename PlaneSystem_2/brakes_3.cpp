@@ -17,9 +17,9 @@ tick_alg_1;
     ptstoyan = false;
     PPDGAKT = false;
 
-    if((exchange_inst.pgs2 >= 200 || exchange_inst.pgs3 >= 220 || pgat >= 130) && vkh <= 260)
+    if((exchange::pgs2 >= 200 || exchange::pgs3 >= 220 || pgat >= 130) && vkh <= 260)
     {
-        if(exchange_inst.K35_3230 && (exchange_inst.K27_3230  || exchange_inst.K26_3230))
+        if(exchange::K35_3230 && (exchange::K27_3230  || exchange::K26_3230))
         {
             if(POSH == true)
             {
@@ -215,9 +215,9 @@ tick_alg_1;
                 Pavart = 0;
                 if(PORST == true &&
                         S2_3240 == true &&
-                        exchange_inst.K35_3230 == true &&
-                        exchange_inst.K27_3230 == true &&
-                        exchange_inst.K26_3230 == true)
+                        exchange::K35_3230 == true &&
+                        exchange::K27_3230 == true &&
+                        exchange::K26_3230 == true)
                 {
                     PstoyanT = true;
                 }
@@ -228,10 +228,10 @@ tick_alg_1;
             P_t_lev = 0;
             P_t_prav = 0;
             if(pbutzo == true &&
-                    exchange_inst.S1_3230 == true &&
+                    exchange::S1_3230 == true &&
                     PRR == true &&
-                    exchange_inst.K27_3230 == false &&
-                    exchange_inst.K26_3230 == false)
+                    exchange::K27_3230 == false &&
+                    exchange::K26_3230 == false)
             {
                 if((tick_alg_3 * TICK) >= 5000)
                 {

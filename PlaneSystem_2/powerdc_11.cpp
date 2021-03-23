@@ -25,8 +25,8 @@ allElConsAlt_inst.makeCorresCurr();
         dummy{false};
 
     bool* popg1_pool[] = {&popg1, &popg2, &popg3, &popg4, &dummy};
-    double* ush1dpl_pool[] = {&exchange_inst.ush1dpl, &exchange_inst.ush2dpl,
-                              &exchange_inst.ush1dpp, &exchange_inst.ush2dpp};
+    double* ush1dpl_pool[] = {&exchange::ush1dpl, &exchange::ush2dpl,
+                              &exchange::ush1dpp, &exchange::ush2dpp};
 //    bool* f9_pool[] = {&f9_2420, &f14_2420, &f24_2420, &f28_2420};
     bool* pvksku_pool[] = {&pvksku[0], &pvksku[1], &pvksku[2], &pvksku[3]};
     bool* otk_pad_pool[] = {&otkPadDavlMaslPpo1G, &otkPadDavlMaslPpo2G,
@@ -54,14 +54,14 @@ allElConsAlt_inst.makeCorresCurr();
     double* ivg_pool[] = {&ivg1, &ivg2, &ivg3, &ivg4, &ivgvsu};
     double* divg_pool[] = {&divg1, &divg2, &divg3, &divg4, &divgvsu};
     double* ing_pool[] = {&ing1, &ing2, &ing3, &ing4, &ingvsu};
-    double* ushap_pool[] = {&exchange_inst.ushap, &exchange_inst.ushap,
-                            &exchange_inst.ushal, &exchange_inst.ushal};
-    double* ushal_pool[] = {&exchange_inst.ushal, &exchange_inst.ushal,
-                            &exchange_inst.ushap, &exchange_inst.ushap};
-    double* ushdpl_pool[] = {&exchange_inst.ush1dpl, &exchange_inst.ush1dpl,
-                             &exchange_inst.ush1dpp, &exchange_inst.ush1dpp};
-    double* ushdpp_pool[] = {&exchange_inst.ush1dpp, &exchange_inst.ush1dpp,
-                             &exchange_inst.ush1dpl, &exchange_inst.ush1dpl};
+    double* ushap_pool[] = {&exchange::ushap, &exchange::ushap,
+                            &exchange::ushal, &exchange::ushal};
+    double* ushal_pool[] = {&exchange::ushal, &exchange::ushal,
+                            &exchange::ushap, &exchange::ushap};
+    double* ushdpl_pool[] = {&exchange::ush1dpl, &exchange::ush1dpl,
+                             &exchange::ush1dpp, &exchange::ush1dpp};
+    double* ushdpp_pool[] = {&exchange::ush1dpp, &exchange::ush1dpp,
+                             &exchange::ush1dpl, &exchange::ush1dpl};
     bool* s1_pool[] = {&s1_7710, &s2_7710, &s3_7710, &s4_7710};
 
     for(int i = 0; i < 4; i++)
@@ -180,11 +180,11 @@ allElConsAlt_inst.makeCorresCurr();
             *k25_pool[i] = false;
         }
 
-        if(exchange_inst.pnu)
+        if(exchange::pnu)
             *popp01_pool[i] = false;
         else
         {
-            if(*k1_pool[i] && exchange_inst.ushal >= 18.0)
+            if(*k1_pool[i] && exchange::ushal >= 18.0)
                 *popg1_pool[i] = true;
         }
     }

@@ -102,7 +102,7 @@ void hydro_int::hydro_8() //actually 9th sheet
     uks_inst.UKS2X322 = 0;
     uks_inst.UKS2X323 = 0;
 
-    if(exchange_inst.ushgP[3][0])
+    if(exchange::ushgP[3][0])
     {
         if(qgs1 <= 10.0)
         {
@@ -122,7 +122,7 @@ void hydro_int::hydro_8() //actually 9th sheet
         }
     }
 
-    if(exchange_inst.ush2l >= 18.0)
+    if(exchange::ush2l >= 18.0)
     {
         uks_inst.UKS4X248_49 = 152;
         uks_inst.UKS4X251_52 = 151;
@@ -137,7 +137,7 @@ void hydro_int::hydro_8() //actually 9th sheet
     uks_inst.UKS4X298 = tb3;
     uks_inst.UKS4X2100 = tb4;
 
-    if(landinggear_int::S38_3230 == true && exchange_inst.ushgP[3][0] >= 100.0)
+    if(landinggear_int::S38_3230 == true && exchange::ushgP[3][0] >= 100.0)
     {
         uks_inst.UKS2UBGS1 = qgs1;
         uks_inst.UKS2UBGS2 = qgs2;

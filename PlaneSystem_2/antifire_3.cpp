@@ -3,7 +3,7 @@
 void antifire_int::antifire_3()
 {
     ///////////////////////////////1st engine check
-    if (exchange_inst.ushal >= 18.0)
+    if (exchange::ushal >= 18.0)
     {
 
         if (K50_2610 || K51_2610 || lzh_srab_pereg_1_dv == true)
@@ -17,7 +17,7 @@ void antifire_int::antifire_3()
 
     }
 
-    if ((exchange_inst.ushal >= 18.0) && (K50_2610 == true) && (K51_2610 == true))
+    if ((exchange::ushal >= 18.0) && (K50_2610 == true) && (K51_2610 == true))
     {
         bss_inst.BSS811X1n = true;
     }
@@ -26,7 +26,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS811X1n = false;
     }
 
-    if (exchange_inst.ushap >= 18)
+    if (exchange::ushap >= 18)
     {
         if(K50_2610 == true || K51_2610 == true)
         {
@@ -44,7 +44,7 @@ void antifire_int::antifire_3()
         PSA10_1 = false;
     }
 
-    if (exchange_inst.ushap >= 18 && F25_2610 == true)
+    if (exchange::ushap >= 18 && F25_2610 == true)
     {
         bss_inst.BSS811X1x = true;
     }
@@ -53,7 +53,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS811X1x = false;
     }
     //////////////////////////////2nd engine check
-    if (exchange_inst.ushal >= 18.0)
+    if (exchange::ushal >= 18.0)
     {
 
         if (K53_2610 || K54_2610 || lzh_srab_pereg_2_dv == true)
@@ -67,7 +67,7 @@ void antifire_int::antifire_3()
 
     }
 
-    if ((exchange_inst.ushal >= 18.0) && (K53_2610 == true) && (K54_2610 == true))
+    if ((exchange::ushal >= 18.0) && (K53_2610 == true) && (K54_2610 == true))
     {
         bss_inst.BSS811X1r = true;
     }
@@ -76,7 +76,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS811X1r = false;
     }
 
-    if (exchange_inst.ushap >= 18)
+    if (exchange::ushap >= 18)
     {
         if(K53_2610 == true || K54_2610 == true)
         {
@@ -94,7 +94,7 @@ void antifire_int::antifire_3()
         PSA10_2 = false;
     }
 
-    if (exchange_inst.ushap >= 18 && F35_2610 == true)
+    if (exchange::ushap >= 18 && F35_2610 == true)
     {
         bss_inst.BSS811X1z = true;
     }
@@ -103,7 +103,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS811X1z = false;
     }
     //////////////////////////////3rd engine check
-    if (exchange_inst.ushap >= 18.0)
+    if (exchange::ushap >= 18.0)
     {
 
         if (K57_2610 || K58_2610 || lzh_srab_pereg_3_dv == true)
@@ -117,7 +117,7 @@ void antifire_int::antifire_3()
 
     }
 
-    if ((exchange_inst.ushap >= 18.0) && (K57_2610 == true) && (K58_2610 == true))
+    if ((exchange::ushap >= 18.0) && (K57_2610 == true) && (K58_2610 == true))
     {
         bss_inst.BSS812X5h = true;
     }
@@ -126,7 +126,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS812X5h = false;
     }
 
-    if (exchange_inst.ushal >= 18)
+    if (exchange::ushal >= 18)
     {
         if(K57_2610 == true || K58_2610 == true)
         {
@@ -144,7 +144,7 @@ void antifire_int::antifire_3()
         PSA19_1 = false;
     }
 
-    if (exchange_inst.ushal >= 18 && F55_2610 == true)
+    if (exchange::ushal >= 18 && F55_2610 == true)
     {
         bss_inst.BSS913X3E = true;
     }
@@ -153,7 +153,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS913X3E = false;
     }
     //////////////////////////////4th engine check
-    if (exchange_inst.ushap >= 18.0)
+    if (exchange::ushap >= 18.0)
     {
 
         if (K60_2610 || K61_2610 || lzh_srab_pereg_4_dv == true)
@@ -167,7 +167,7 @@ void antifire_int::antifire_3()
 
     }
 
-    if ((exchange_inst.ushap >= 18.0) && (K60_2610 == true) && (K61_2610 == true))
+    if ((exchange::ushap >= 18.0) && (K60_2610 == true) && (K61_2610 == true))
     {
         bss_inst.BSS812X5n = true;
     }
@@ -176,7 +176,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS812X5n = false;
     }
 
-    if (exchange_inst.ushal >= 18)
+    if (exchange::ushal >= 18)
     {
         if(K60_2610 == true || K61_2610 == true)
         {
@@ -194,7 +194,7 @@ void antifire_int::antifire_3()
         PSA19_2 = false;
     }
 
-    if (exchange_inst.ushal >= 18 && F65_2610 == true)
+    if (exchange::ushal >= 18 && F65_2610 == true)
     {
         bss_inst.BSS913X3G = true;
     }
@@ -212,7 +212,7 @@ void antifire_int::antifire_3()
         PKO = false;
     }
 
-    if (exchange_inst.ushal >= 18.0 && K24_2610 == true)
+    if (exchange::ushal >= 18.0 && K24_2610 == true)
     {
         bss_inst.BSS811X1B = true;
     }
@@ -221,7 +221,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS811X1B = false;
     }
 
-    if ((exchange_inst.ushal >= 18) && F45_2610 == true)
+    if ((exchange::ushal >= 18) && F45_2610 == true)
     {
         bss_inst.BSS811X1VV = true;
         bss_inst.BSS838X7C = true;
@@ -408,7 +408,7 @@ void antifire_int::antifire_3()
         bss_inst.BSS926X1j = false;
     }
     ///////////////////////////////////// K80 toggle
-    if (F72_2610 == true && exchange_inst.P2OBLOP == true)
+    if (F72_2610 == true && exchange::P2OBLOP == true)
     {
         K80_2610 = true;
     }

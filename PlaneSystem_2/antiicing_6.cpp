@@ -10,11 +10,11 @@ static int
     PSOBLP_tick;
 
     //PRSOL toggle
-    if (exchange_inst.ush1dpl >= 18.0 &&
+    if (exchange::ush1dpl >= 18.0 &&
         S1_3080 == true &&
         M < 1.25 &&
         otkaz_l_so121 == false &&
-        exchange_inst.ush1l >= 18.0)
+        exchange::ush1l >= 18.0)
     {
         PRSOL = true;
     }
@@ -24,11 +24,11 @@ static int
     }
 
     //PRSOP toggle
-    if (exchange_inst.ush2dpp >= 18.0 &&
+    if (exchange::ush2dpp >= 18.0 &&
         S2_3080 == true &&
         M < 1.25 &&
         otkaz_p_so121 == false &&
-        exchange_inst.ush2p >= 18.0)
+        exchange::ush2p >= 18.0)
     {
         prsop = true;
     }

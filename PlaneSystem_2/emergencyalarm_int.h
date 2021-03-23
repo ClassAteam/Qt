@@ -8,7 +8,6 @@
 
 extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
-extern exchange exchange_inst;
 extern bss bss_inst;
 
 

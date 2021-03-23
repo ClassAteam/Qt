@@ -18,7 +18,7 @@ void presure_int::presure()
 
 
 
-    if (exchange_inst.ush2dpl >= 18.0)
+    if (exchange::ush2dpl >= 18.0)
     {
         if ((Pkab - Ph_msa) >= 0.7)
             K1_2131 = true;

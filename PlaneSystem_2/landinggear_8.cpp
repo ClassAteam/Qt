@@ -3,26 +3,26 @@
 
 void landinggear_int::landinggear_8()
 {
-    exchange_inst.K25_3230 = false;
+    exchange::K25_3230 = false;
     uks_inst.UKS4X313 = false;
 
-    exchange_inst.K32_3230 = false;
+    exchange::K32_3230 = false;
     uks_inst.UKS4X316 = false;
 
     K45_3230 = false;
     uks_inst.UKS4X317 = false;
 
-    if(exchange_inst.ushap >= 19.0)
+    if(exchange::ushap >= 19.0)
     {
         if(S32_3230 == true && S55_3230 == false)
         {
-            exchange_inst.K25_3230 = true;
+            exchange::K25_3230 = true;
             uks_inst.UKS4X313 = true;
         }
 
         if(S35_3230 == true)
         {
-            exchange_inst.K32_3230 = true;
+            exchange::K32_3230 = true;
             uks_inst.UKS4X316 = true;
         }
 
@@ -37,7 +37,7 @@ void landinggear_int::landinggear_8()
     uks_inst.UKS4X314 = false;
     uks_inst.UKS4X315 = false;
 
-    if(exchange_inst.ushal >= 19.0)
+    if(exchange::ushal >= 19.0)
     {
         if(S49_3230 == true)
         {
@@ -50,24 +50,24 @@ void landinggear_int::landinggear_8()
         }
     }
 
-    exchange_inst.K26_3230 = false;
+    exchange::K26_3230 = false;
     uks_inst.UKS4X322 = false;
 
-    if(exchange_inst.ushal >= 19.0)
+    if(exchange::ushal >= 19.0)
     {
-        if(exchange_inst.S34_3230 == true && S57_3230 == false)
+        if(exchange::S34_3230 == true && S57_3230 == false)
         {
-            exchange_inst.K26_3230 = true;
+            exchange::K26_3230 = true;
             uks_inst.UKS4X322 = true;
         }
     }
-    exchange_inst.K24_3230 = false;
+    exchange::K24_3230 = false;
     uks_inst.UKS4X38 = false;
 
     K33_3230 = false;
     uks_inst.UKS4X39 = false;
 
-    exchange_inst.K34_3230 = false;
+    exchange::K34_3230 = false;
     uks_inst.UKS4X311 = false;
 
     K44_3230 = false;
@@ -75,11 +75,11 @@ void landinggear_int::landinggear_8()
 
     uks_inst.UKS4X310 = false;
 
-    if(exchange_inst.ushap >= 19.0)
+    if(exchange::ushap >= 19.0)
     {
         if(S38_3230 == true && S56_3230 == false)
         {
-            exchange_inst.K24_3230 = true;
+            exchange::K24_3230 = true;
             uks_inst.UKS4X38  = true;
         }
 
@@ -102,7 +102,7 @@ void landinggear_int::landinggear_8()
             uks_inst.UKS4X311 = true;
         }
 
-        if(exchange_inst.S36_3230 == true  && S58_3230 == false)
+        if(exchange::S36_3230 == true  && S58_3230 == false)
         {
             uks_inst.UKS4X321 = true;
         }
@@ -111,13 +111,13 @@ void landinggear_int::landinggear_8()
             uks_inst.UKS4X321 = false;
         }
 
-        exchange_inst.K35_3230 = false;
+        exchange::K35_3230 = false;
         uks_inst.UKS4X320 = false;
         uks_inst.UKS4X319 = false;
 
         if(S40_3230 == true)
         {
-            exchange_inst.K35_3230 = true;
+            exchange::K35_3230 = true;
             uks_inst.UKS4X318 = true;
         }
 
@@ -138,9 +138,9 @@ void landinggear_int::landinggear_8()
 
     bss_inst.BSS824X1v = false;
 
-    if(exchange_inst.ush2dpp >= 19.0)
+    if(exchange::ush2dpp >= 19.0)
     {
-        if(exchange_inst.delta_z > 0)
+        if(exchange::delta_z > 0)
         {
             K21_3230 = true;
         }
@@ -154,7 +154,7 @@ void landinggear_int::landinggear_8()
 
         }
     }
-    if(exchange_inst.ush1dpl >= 19.0)
+    if(exchange::ush1dpl >= 19.0)
     {
         if(S17_3230 == true)
         {
@@ -196,7 +196,7 @@ void landinggear_int::landinggear_8()
     K39_3230 = false;
     K40_3230 = false;
 
-    if(exchange_inst.ush1dpl >= 19.0)
+    if(exchange::ush1dpl >= 19.0)
     {
         if(S17_3230 == true)
         {
@@ -217,7 +217,7 @@ void landinggear_int::landinggear_8()
             }
         }
     }
-    if(exchange_inst.ush1dpl >= 19.0)
+    if(exchange::ush1dpl >= 19.0)
     {
         if(S17_3230 == true)
         {
@@ -315,7 +315,7 @@ void landinggear_int::landinggear_8()
     uks_inst.UKS4X323 = false;
     uks_inst.UKS4X326 = false;
 
-    if(exchange_inst.ush2dpl >= 19.0)
+    if(exchange::ush2dpl >= 19.0)
     {
         m_switch(&K1_3230, &bss_inst.BSS824X1t);
         if(S18_2930 == true)

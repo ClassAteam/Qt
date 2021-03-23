@@ -49,14 +49,14 @@ brakes_int::brakes_int(QWidget *parent)
     createRadioButton(&S1_3240, "PONIZH", false);
     createRadioButton(&S1_3240, "NORM", true);
 
-    createLabelValue(&exchange_inst.alpha_rud_1dv, "RUD_1ENG");
-    createSlider(&exchange_inst.alpha_rud_1dv, 0, 65);
-    createLabelValue(&exchange_inst.alpha_rud_2dv, "RUD_2ENG");
-    createSlider(&exchange_inst.alpha_rud_2dv, 0, 65);
-    createLabelValue(&exchange_inst.alpha_rud_3dv, "RUD_3ENG");
-    createSlider(&exchange_inst.alpha_rud_2dv, 0, 65);
-    createLabelValue(&exchange_inst.alpha_rud_4dv, "RUD_4ENG");
-    createSlider(&exchange_inst.alpha_rud_2dv, 0, 65);
+    createLabelValue(&exchange::alpha_rud_1dv, "RUD_1ENG");
+    createSlider(&exchange::alpha_rud_1dv, 0, 65);
+    createLabelValue(&exchange::alpha_rud_2dv, "RUD_2ENG");
+    createSlider(&exchange::alpha_rud_2dv, 0, 65);
+    createLabelValue(&exchange::alpha_rud_3dv, "RUD_3ENG");
+    createSlider(&exchange::alpha_rud_2dv, 0, 65);
+    createLabelValue(&exchange::alpha_rud_4dv, "RUD_4ENG");
+    createSlider(&exchange::alpha_rud_2dv, 0, 65);
 
 
     createLabelClue(&PvklR, "PvklR");

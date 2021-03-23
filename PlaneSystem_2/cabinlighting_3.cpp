@@ -48,7 +48,7 @@ void cabinlighting_int::cabinlighting_3()
         S6_3340;
 
     // A left side toggling
-    if (exchange_inst.ush1l >= 18.0 && F1_3340 == true)
+    if (exchange::ush1l >= 18.0 && F1_3340 == true)
     {
 
         if (F4_3340 == true)
@@ -200,7 +200,7 @@ void cabinlighting_int::cabinlighting_3()
     }
 
     // B right side toggling
-    if (exchange_inst.ush1p >= 18.0 && F14_3340 == true)
+    if (exchange::ush1p >= 18.0 && F14_3340 == true)
     {
 
         if (F12_3340 == true)
@@ -353,12 +353,12 @@ void cabinlighting_int::cabinlighting_3()
     K3_3340 = K8_3340 = false;
     // K3, K8 toggle
 
-    if (exchange_inst.ushal >= 18.0 && K32_3230 == true)
+    if (exchange::ushal >= 18.0 && K32_3230 == true)
     {
         K3_3340 = true;
     }
 
-    if (exchange_inst.ushap >= 18.0 && exchange_inst.K34_3230 == true)
+    if (exchange::ushap >= 18.0 && exchange::K34_3230 == true)
     {
         K8_3340 = true;
     }
@@ -366,7 +366,7 @@ void cabinlighting_int::cabinlighting_3()
     ///////////////////////////////////////////////////////////////////////////
     bss_inst.BSS825X5V = false;
 
-    if(exchange_inst.usho2p >= 18.0 && S1_2860 == true)
+    if(exchange::usho2p >= 18.0 && S1_2860 == true)
     {
         K15_3340 = true;
     }
@@ -375,7 +375,7 @@ void cabinlighting_int::cabinlighting_3()
         K15_3340 = false;
     }
     // C
-    if (exchange_inst.usho1p >= 18.0)
+    if (exchange::usho1p >= 18.0)
     {
 
         //default insert left
@@ -452,7 +452,7 @@ void cabinlighting_int::cabinlighting_3()
     }
 
     // D
-    if (exchange_inst.usho2p >= 18.0)
+    if (exchange::usho2p >= 18.0)
     {
 
         //default insert right
@@ -525,7 +525,7 @@ void cabinlighting_int::cabinlighting_3()
 
     // E1
     // BSS824X1E toggle
-    if (exchange_inst.ush1l >= 18.0 && alpha_fsv_ol == true)
+    if (exchange::ush1l >= 18.0 && alpha_fsv_ol == true)
     {
         bss_inst.BSS824X1E = true;
     }
@@ -536,7 +536,7 @@ void cabinlighting_int::cabinlighting_3()
 
     // E2
     // BSS824X1E toggle
-    if (exchange_inst.ush1p >= 18.0 && alpha_fsv_op == true)
+    if (exchange::ush1p >= 18.0 && alpha_fsv_op == true)
     {
         bss_inst.BSS824X1E = true;
     }
@@ -547,7 +547,7 @@ void cabinlighting_int::cabinlighting_3()
 
     // F1
     // BSS824X1A toggle 1
-    if(exchange_inst.ush1l >= 18.0)
+    if(exchange::ush1l >= 18.0)
     {
         if(PFPRLP == true)
         {
@@ -555,7 +555,7 @@ void cabinlighting_int::cabinlighting_3()
         }
         else
         {
-            if(exchange_inst.ush1p >= 18.0)
+            if(exchange::ush1p >= 18.0)
             {
                 if(PFPRPP == true)
                 {
@@ -582,9 +582,9 @@ void cabinlighting_int::cabinlighting_3()
 
 
 
-    if((exchange_inst.usho1p >= 18.0 && alpha_fazl == 125.0)
+    if((exchange::usho1p >= 18.0 && alpha_fazl == 125.0)
         ||
-        (exchange_inst.usho2p >= 18.0 && alpha_fazp == 125.0))
+        (exchange::usho2p >= 18.0 && alpha_fazp == 125.0))
     {
         bss_inst.BSS825X5V = true;
     }

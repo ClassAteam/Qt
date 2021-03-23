@@ -207,32 +207,32 @@ void landinggear_int::landinggear_6()
         S39_3230 = false;
     }
 
-    exchange_inst.P1OBLOP = false;
+    exchange::P1OBLOP = false;
     S32_3230 = false;
     K9_3230 = false;
-    exchange_inst.K25_3230 = false;
+    exchange::K25_3230 = false;
 
-    exchange_inst.P2OBLOP = false;
-    exchange_inst.S34_3230 = false;
-    exchange_inst.K26_3230 = false;
+    exchange::P2OBLOP = false;
+    exchange::S34_3230 = false;
+    exchange::K26_3230 = false;
 
     PUPLOP = false;
     PVPLOP = false;
 
-    if (exchange_inst.ushal >= 19.0)
+    if (exchange::ushal >= 19.0)
     {
         if (Sl >= 0.1)
         {
-            exchange_inst.P1OBLOP = true;
+            exchange::P1OBLOP = true;
             S32_3230 = true;
             K9_3230 = true;
-            exchange_inst.K25_3230 = true;
+            exchange::K25_3230 = true;
         }
         if (Sl >= 0.15)
         {
-            exchange_inst.P2OBLOP = true;
-            exchange_inst.S34_3230 = true;
-            exchange_inst.K26_3230 = true;
+            exchange::P2OBLOP = true;
+            exchange::S34_3230 = true;
+            exchange::K26_3230 = true;
         }
 
         if(S33_3230)
@@ -248,44 +248,44 @@ void landinggear_int::landinggear_6()
     }
     else
     {
-        exchange_inst.P1OBLOP = false;
+        exchange::P1OBLOP = false;
         S32_3230 = 0.0;
         K9_3230 = 0.0;
-        exchange_inst.K25_3230 = 0.0;
+        exchange::K25_3230 = 0.0;
 
-        exchange_inst.P2OBLOP = 0.0;
-        exchange_inst.S34_3230 = 0.0;
-        exchange_inst.K26_3230 = 0.0;
+        exchange::P2OBLOP = 0.0;
+        exchange::S34_3230 = 0.0;
+        exchange::K26_3230 = 0.0;
 
     }
 
-    exchange_inst.P2OBPOP = false;
-    exchange_inst.S36_3230 = false;
-    exchange_inst.K27_3230 = false;
+    exchange::P2OBPOP = false;
+    exchange::S36_3230 = false;
+    exchange::K27_3230 = false;
 
-    exchange_inst.P1OBPOP = false;
+    exchange::P1OBPOP = false;
     S38_3230 = false;
     K10_3230 = false;
-    exchange_inst.K24_3230 = false;
+    exchange::K24_3230 = false;
 
     PUPPOP = false;
     PVPPOP = false;
 
-    if (exchange_inst.ushap >= 19.0)
+    if (exchange::ushap >= 19.0)
     {
         if (Sp >= 0.1)
         {
-            exchange_inst.P1OBPOP = true;
+            exchange::P1OBPOP = true;
             S38_3230 = true;
             K10_3230 = true;
-            exchange_inst.K24_3230 = true;
+            exchange::K24_3230 = true;
         }
 
         if (Sp >= 0.15)
         {
-            exchange_inst.P2OBPOP = true;
-            exchange_inst.S36_3230 = true;
-            exchange_inst.K27_3230 = true;
+            exchange::P2OBPOP = true;
+            exchange::S36_3230 = true;
+            exchange::K27_3230 = true;
         }
 
         if (S37_3230 == true)
@@ -299,7 +299,7 @@ void landinggear_int::landinggear_6()
         }
     }
 
-    if (exchange_inst.ush1dpp >= 19.0 && delta_sh_n == 1.0)
+    if (exchange::ush1dpp >= 19.0 && delta_sh_n == 1.0)
     {
         PVPPEROP = true;
         K6_3230 = true;

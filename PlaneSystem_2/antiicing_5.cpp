@@ -6,9 +6,9 @@ void antiicing_int::antiicing_5()
     //K1_3040 toggle
     K1_3040 = false;
 
-    if (exchange_inst.ush1l >= 18.0 && S2_3040 == 1)
+    if (exchange::ush1l >= 18.0 && S2_3040 == 1)
     {
-        if (exchange_inst.PRD1dv == true &&  exchange_inst.PRD4dv == true && exchange_inst.F32_3250 == true)
+        if (exchange::PRD1dv == true &&  exchange::PRD4dv == true && exchange::F32_3250 == true)
         {
             K1_3040 = true;
         }
@@ -24,7 +24,7 @@ void antiicing_int::antiicing_5()
         }
 
     }
-    if (exchange_inst.ushavP[2][0] >= 106.0 && K1_3040 == true)
+    if (exchange::ushavP[2][0] >= 106.0 && K1_3040 == true)
     {
         POLST = true;
     }
@@ -37,7 +37,7 @@ void antiicing_int::antiicing_5()
 
     if (usho1p >= 18.0 && S4_3040 == 1)
     {
-        if (exchange_inst.PRD2dv == true &&  exchange_inst.PRD3dv == true && F42_3250 == true)
+        if (exchange::PRD2dv == true &&  exchange::PRD3dv == true && F42_3250 == true)
         {
             K2_3040 = true;
         }
@@ -53,7 +53,7 @@ void antiicing_int::antiicing_5()
         }
 
     }
-    if (exchange_inst.ushgP[2][0] >= 106.0 && K2_3040 == true)
+    if (exchange::ushgP[2][0] >= 106.0 && K2_3040 == true)
     {
         POLOBST = true;
     }
@@ -64,9 +64,9 @@ void antiicing_int::antiicing_5()
     //K3_3040 toggle
     K3_3040 = false;
 
-    if (exchange_inst.usho2p >= 18.0 && S6_3040 == 1)
+    if (exchange::usho2p >= 18.0 && S6_3040 == 1)
     {
-        if (exchange_inst.PRD2dv == true &&  exchange_inst.PRD3dv == true && F42_3250 == true)
+        if (exchange::PRD2dv == true &&  exchange::PRD3dv == true && F42_3250 == true)
         {
             K3_3040 = true;
         }
@@ -82,7 +82,7 @@ void antiicing_int::antiicing_5()
         }
 
     }
-    if (exchange_inst.ushgP[3][0] >= 106.0 && K3_3040 == true)
+    if (exchange::ushgP[3][0] >= 106.0 && K3_3040 == true)
     {
         POPST = true;
     }
@@ -97,10 +97,10 @@ void antiicing_int::antiicing_5()
 
     if (usho1p >= 18.0 && S8_3040 == 1)
     {
-        if (exchange_inst.PRD1dv == false &&
-            exchange_inst.PRD2dv == false &&
-            exchange_inst.PRD3dv == false &&
-            exchange_inst.PRD4dv == false)
+        if (exchange::PRD1dv == false &&
+            exchange::PRD2dv == false &&
+            exchange::PRD3dv == false &&
+            exchange::PRD4dv == false)
         {
             if(S7_3040 == 1)
             {

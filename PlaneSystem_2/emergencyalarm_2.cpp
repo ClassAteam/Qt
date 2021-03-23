@@ -98,7 +98,7 @@ static bool
     PB_neytral_kren_b,
     PB_neytral_kurs_b;
 
-    if (exchange_inst.ush1dpl >= 18.0 && exchange_inst.ush1dpp >= 18.0)
+    if (exchange::ush1dpl >= 18.0 && exchange::ush1dpp >= 18.0)
     {
         PRBSS_811 = true;
     }
@@ -107,7 +107,7 @@ static bool
         PRBSS_811 = false;
     }
 
-    if (exchange_inst.ush2dpl >= 18.0 && exchange_inst.ush2dpp >= 18.0)
+    if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0)
     {
         PRBSS_812 = true;
     }
@@ -116,7 +116,7 @@ static bool
         PRBSS_812 = false;
     }
 
-    if ((exchange_inst.ush2dpl >= 18.0) && (exchange_inst.ush2dpp >= 18.0) && (S5_3364 == true))
+    if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && (S5_3364 == true))
     {
         PKLLL = true;
     }
@@ -125,12 +125,12 @@ static bool
         PKLLL = false;
     }
 
-    if ((exchange_inst.ush1dpl >= 18.0) && (exchange_inst.ush1dpp >= 18.0))
+    if ((exchange::ush1dpl >= 18.0) && (exchange::ush1dpp >= 18.0))
     {
         USASLL = two_points_to_Y(alpha_rra7ll, 0, 1, 0.75, 1);
     }
 
-    if (exchange_inst.ush2dpl >= 18.0 && exchange_inst.ush2dpp >= 18.0)
+    if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0)
     {
         PRBSS_913 = true;
     }

@@ -4,7 +4,7 @@
 void antiicing_int::antiicing_4()
 {
     //K16_3030 toggle
-    if (exchange_inst.ush1dpl >= 18.0)
+    if (exchange::ush1dpl >= 18.0)
     {
 
         if (alpha_rud_1dv >= 65.0)
@@ -90,7 +90,7 @@ void antiicing_int::antiicing_4()
     }
 
     //K18_3030 toggle
-    if (exchange_inst.ush1dpp >= 18.0)
+    if (exchange::ush1dpp >= 18.0)
     {
 
         if (alpha_rud_2dv >= 65.0)
@@ -174,7 +174,7 @@ void antiicing_int::antiicing_4()
     {
         K18_3030 = false;
     }
-    if (exchange_inst.ushap >= 18.0 && K24_3230 && exchange_inst.usho1p >= 18.0 && S1_3030 == true)
+    if (exchange::ushap >= 18.0 && K24_3230 && exchange::usho1p >= 18.0 && S1_3030 == true)
     {
         PKPPD = true;
     }
@@ -190,7 +190,7 @@ void antiicing_int::antiicing_4()
     }
     else
     {
-        if (exchange_inst.ush2p < 18.0 || M < 1.25)
+        if (exchange::ush2p < 18.0 || M < 1.25)
         {
             K2_3030 = false;
         }
@@ -202,7 +202,7 @@ void antiicing_int::antiicing_4()
     }
     else
     {
-        if (exchange_inst.ush2p < 18.0 || M < 1.25)
+        if (exchange::ush2p < 18.0 || M < 1.25)
         {
             K5_3030 = false;
         }
@@ -215,7 +215,7 @@ void antiicing_int::antiicing_4()
     }
     else
     {
-        if (exchange_inst.ush2p < 18.0 || M < 1.25)
+        if (exchange::ush2p < 18.0 || M < 1.25)
         {
             K8_3030 = false;
         }
@@ -248,7 +248,7 @@ void antiicing_int::antiicing_4()
         K7_3030 = false;
     }
     // POPPD2 toggle
-    if (exchange_inst.ush2p > 18.0 && K1_3030 == true)
+    if (exchange::ush2p > 18.0 && K1_3030 == true)
     {
         poppd2 = true;
     }
@@ -257,7 +257,7 @@ void antiicing_int::antiicing_4()
         poppd2 = false;
     }
     // POPPD1 toggle
-    if (exchange_inst.ush1dpl  > 18.0 && K4_3030 == true)
+    if (exchange::ush1dpl  > 18.0 && K4_3030 == true)
     {
         poppd1 = true;
     }
@@ -267,7 +267,7 @@ void antiicing_int::antiicing_4()
     }
 
     // POPPD3 toggle
-    if (exchange_inst.ush2l > 18.0 && K7_3030 == true)
+    if (exchange::ush2l > 18.0 && K7_3030 == true)
     {
         poppd3 = true;
     }
@@ -289,7 +289,7 @@ void antiicing_int::antiicing_4()
         obogrev_ppd3_ispr = false;
     }
 
-    if(exchange_inst.ush1dpp >= 18)
+    if(exchange::ush1dpp >= 18)
     {
         if (K1_3030 && K4_3030 && K7_3030)
         {

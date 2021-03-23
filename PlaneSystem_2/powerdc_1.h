@@ -8,6 +8,5 @@
 
 extern allElConsDir allElConsDir_inst;
 extern bss bss_inst;
-extern exchange  exchange_inst;
 
 

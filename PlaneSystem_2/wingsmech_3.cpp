@@ -2,11 +2,11 @@
 
 void wingsmech_int::wingsmech_3()
 {
-    exchange_inst.prrkpchk = false;
-    exchange_inst.prr1kpchk = false;
-    exchange_inst.prr2kpchk = false;
-    exchange_inst.por1kpchk = false;
-    exchange_inst.por2kpchk = false;
+    exchange::prrkpchk = false;
+    exchange::prr1kpchk = false;
+    exchange::prr2kpchk = false;
+    exchange::por1kpchk = false;
+    exchange::por2kpchk = false;
 
     X_zad = m_4_L_intervals(delta_ruk_vh, 0, 0.22, 0.33, 0.44, 1.0,
                             20, 30, 35, 40, 65);
@@ -37,20 +37,20 @@ void wingsmech_int::wingsmech_3()
     }
     if(PGS1 || PGS2)
     {
-        if(exchange_inst.ushal >= 18)
+        if(exchange::ushal >= 18)
         {
-            if(exchange_inst.s1_2790 == true)
+            if(exchange::s1_2790 == true)
             {
-                exchange_inst.prrkpchk = true;
-                exchange_inst.prr1kpchk = true;
+                exchange::prrkpchk = true;
+                exchange::prr1kpchk = true;
             }
             else
             {
                 if(otkaz_osn_1k_PCHK == false)
                 {
-                    if(exchange_inst.ush1dpl >= 18)
+                    if(exchange::ush1dpl >= 18)
                     {
-                        exchange_inst.por1kpchk = true;
+                        exchange::por1kpchk = true;
                     }
                 }
             }
@@ -59,26 +59,26 @@ void wingsmech_int::wingsmech_3()
 
     if(PGS3 == true || PGS4 == true)
     {
-        if(exchange_inst.ushap >= 18)
+        if(exchange::ushap >= 18)
         {
-            if(exchange_inst.s1_2790 == true)
+            if(exchange::s1_2790 == true)
             {
-                exchange_inst.prrkpchk = true;
-                exchange_inst.prr2kpchk = true;
+                exchange::prrkpchk = true;
+                exchange::prr2kpchk = true;
             }
             else
             {
                 if(otkaz_osn_2k_PCHK == false)
                 {
-                    if(exchange_inst.ush1dpp >= 18)
+                    if(exchange::ush1dpp >= 18)
                     {
-                        exchange_inst.por2kpchk = true;
+                        exchange::por2kpchk = true;
                     }
                 }
             }
         }
     }
-    if(exchange_inst.por1kpchk == true)
+    if(exchange::por1kpchk == true)
     {
         if((X_zad - X_L) >= 0)
         {
@@ -88,7 +88,7 @@ void wingsmech_int::wingsmech_3()
             }
             else
             {
-                if(exchange_inst.P2OBLOP == true)
+                if(exchange::P2OBLOP == true)
                 {
                     if(X_L >= 35)
                     {
@@ -121,7 +121,7 @@ void wingsmech_int::wingsmech_3()
         D_X_l = 0;
     }
 
-    if(exchange_inst.por2kpchk == true)
+    if(exchange::por2kpchk == true)
     {
         if((X_zad - X_P) >= 0)
         {
@@ -131,7 +131,7 @@ void wingsmech_int::wingsmech_3()
             }
             else
             {
-                if(exchange_inst.P2OBPOP == true)
+                if(exchange::P2OBPOP == true)
                 {
                     if(X_P >= 35)
                     {
@@ -167,7 +167,7 @@ void wingsmech_int::wingsmech_3()
     ///////////////////////////////////////2nd list
     ///
 
-    if(exchange_inst.prr1kpchk == true)
+    if(exchange::prr1kpchk == true)
     {
         switch(s2_2790)
         {
@@ -179,7 +179,7 @@ void wingsmech_int::wingsmech_3()
             }
             else
             {
-                if(exchange_inst.P2OBLOP)
+                if(exchange::P2OBLOP)
                 {
                     if(X_L > 35)
                     {
@@ -214,7 +214,7 @@ void wingsmech_int::wingsmech_3()
         }
     }
 
-    if(exchange_inst.prr2kpchk == true)
+    if(exchange::prr2kpchk == true)
     {
         switch(s2_2790)
         {
@@ -226,7 +226,7 @@ void wingsmech_int::wingsmech_3()
             }
             else
             {
-                if(exchange_inst.P2OBPOP)
+                if(exchange::P2OBPOP)
                 {
                     if(X_P > 35)
                     {
@@ -268,7 +268,7 @@ void wingsmech_int::wingsmech_3()
 
     if(abs(X_L - X_P) < 1)
     {
-        if(exchange_inst.prrkpchk == true)
+        if(exchange::prrkpchk == true)
         {
             X_L = X_L + (D_X_l * (TICK / 1000));
 
@@ -306,7 +306,7 @@ void wingsmech_int::wingsmech_3()
     {
         X_P = 65;
     }
-    if(exchange_inst.ushap >= 18)
+    if(exchange::ushap >= 18)
     {
         X_PCHK = ((X_L + X_P) / 2);
 

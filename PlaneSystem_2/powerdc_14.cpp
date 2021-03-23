@@ -11,52 +11,52 @@ void powerdc_int::powerdc_14()
     else
         k17_2420 = true;
 
-    if(exchange_inst.ush2dpl >= 18.0 && f46_2420 && s15_2420)
-        exchange_inst.k15_2420 = true;
+    if(exchange::ush2dpl >= 18.0 && f46_2420 && s15_2420)
+        exchange::k15_2420 = true;
     else
-        exchange_inst.k15_2420 = false;
+        exchange::k15_2420 = false;
 
-    if(exchange_inst.k15_2420 && !otk_preobr_pts1)
+    if(exchange::k15_2420 && !otk_preobr_pts1)
     {
-        exchange_inst.upts = exchange_inst.upts + (117 - exchange_inst.upts) / kpts;
-        exchange_inst.fpts = exchange_inst.fpts + (400 - exchange_inst.fpts) / kpts;
+        exchange::upts = exchange::upts + (117 - exchange::upts) / kpts;
+        exchange::fpts = exchange::fpts + (400 - exchange::fpts) / kpts;
     }
     else
     {
-        if(exchange_inst.upts > 1.0)
+        if(exchange::upts > 1.0)
         {
-            exchange_inst.upts = exchange_inst.upts + (0 - exchange_inst.upts) / kpts;
+            exchange::upts = exchange::upts + (0 - exchange::upts) / kpts;
         }
         else
-            exchange_inst.upts = 0.0;
+            exchange::upts = 0.0;
 
-        if(exchange_inst.fpts > 1.0)
+        if(exchange::fpts > 1.0)
         {
-            exchange_inst.fpts = exchange_inst.fpts + (0 - exchange_inst.fpts) / kpts;
+            exchange::fpts = exchange::fpts + (0 - exchange::fpts) / kpts;
         }
         else
-            exchange_inst.fpts = 0.0;
+            exchange::fpts = 0.0;
     }
 
 
-    if(exchange_inst.k15_2420 && !k17_2420)
+    if(exchange::k15_2420 && !k17_2420)
     {
-        exchange_inst.k14_2420 = true;
+        exchange::k14_2420 = true;
         purglk10 = true;
     }
     else
     {
-        exchange_inst.k14_2420 = false;
+        exchange::k14_2420 = false;
         purglk10 = false;
     }
 
     if(k17_2420)
     {
-        if(exchange_inst.ushpts[0] >= 65.0 && exchange_inst.ushpts[1] >= 65.0 && exchange_inst.ushpts[2] >= 65.0)
+        if(exchange::ushpts[0] >= 65.0 && exchange::ushpts[1] >= 65.0 && exchange::ushpts[2] >= 65.0)
         {
             if(pbapsh3)
             {
-                exchange_inst.k14_2420 = true;
+                exchange::k14_2420 = true;
                 purglk10 = true;
             }
         }
@@ -65,7 +65,7 @@ void powerdc_int::powerdc_14()
             if(tick3 * TICK >= 800)
             {
                 pbapsh3 = true;
-                exchange_inst.k14_2420 = true;
+                exchange::k14_2420 = true;
                 purglk10 = true;
             }
             else
@@ -85,7 +85,7 @@ void powerdc_int::powerdc_14()
     k13_2420 = false;
     purglk9 = false;
 
-    if(exchange_inst.ush2dpl >= 18.0 && !k19_2420)
+    if(exchange::ush2dpl >= 18.0 && !k19_2420)
     {
         k13_2420 = true;
         purglk9 = true;
@@ -93,8 +93,8 @@ void powerdc_int::powerdc_14()
 
     if(k19_2420)
     {
-        if(exchange_inst.ushavP[0][0] >= 65.0 && exchange_inst.ushavP[0][1] >= 65.0 &&
-            exchange_inst.ushavP[0][2] >= 65.0)
+        if(exchange::ushavP[0][0] >= 65.0 && exchange::ushavP[0][1] >= 65.0 &&
+            exchange::ushavP[0][2] >= 65.0)
         {
             if(pbapsh1)
             {
@@ -125,15 +125,15 @@ void powerdc_int::powerdc_14()
     k16_2420 = false;
     purgpk9 = false;
 
-    if(exchange_inst.ush2dpp >= 18.0 && !k20_2420)
+    if(exchange::ush2dpp >= 18.0 && !k20_2420)
     {
         k16_2420 = true;
         purgpk9 = true;
     }
     if(k20_2420)
     {
-        if(exchange_inst.ushavP[1][0] >= 65.0 && exchange_inst.ushavP[1][1] >= 65.0
-            && exchange_inst.ushavP[1][2] >= 65.0)
+        if(exchange::ushavP[1][0] >= 65.0 && exchange::ushavP[1][1] >= 65.0
+            && exchange::ushavP[1][2] >= 65.0)
         {
             if(pbapsh2)
             {
@@ -156,7 +156,7 @@ void powerdc_int::powerdc_14()
     else
         pbapsh2 = false;
 
-    exchange_inst.uptsP[0] = exchange_inst.upts;
-    exchange_inst.uptsP[1] = exchange_inst.upts - 1;
-    exchange_inst.uptsP[2] = exchange_inst.upts - 2;
+    exchange::uptsP[0] = exchange::upts;
+    exchange::uptsP[1] = exchange::upts - 1;
+    exchange::uptsP[2] = exchange::upts - 2;
 }

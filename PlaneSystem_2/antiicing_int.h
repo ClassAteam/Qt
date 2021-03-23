@@ -5,7 +5,6 @@
 #include "uks.h"
 #include "allElCons.h"
 
-extern exchange exchange_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 extern allElConsAlt allElConsAlt_inst;

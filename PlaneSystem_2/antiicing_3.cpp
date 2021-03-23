@@ -214,7 +214,7 @@ static int
     }
 
     //PONdv1, POB1dv1, POB2dv1, POB3dv1 toggle
-    if (exchange_inst.ushpP[0][0] >= 106.0)
+    if (exchange::ushpP[0][0] >= 106.0)
     {
         if (K14_3020 == true)
         {
@@ -260,7 +260,7 @@ static int
         POB3dv1 = false;
     }
     //2 PONdv2, POB1dv2, POB2dv2, POB3dv2 toggle
-    if (exchange_inst.ushpP[0][0] >= 106.0)
+    if (exchange::ushpP[0][0] >= 106.0)
     {
         if (K21_3020 == true)
         {
@@ -306,7 +306,7 @@ static int
         POB3dv2 = false;
     }
     //3 PONdv3, POB1dv3, POB2dv3, POB3dv3 toggle
-    if (exchange_inst.ushpP[1][0] >= 106.0)
+    if (exchange::ushpP[1][0] >= 106.0)
     {
         if (K30_3020 == true)
         {
@@ -352,7 +352,7 @@ static int
         POB3dv3 = false;
     }
     //4 PONdv4, POB1dv4, POB2dv4, POB3dv4 toggle
-    if (exchange_inst.ushpP[1][0] >= 106.0)
+    if (exchange::ushpP[1][0] >= 106.0)
     {
         if (K37_3020 == true)
         {
@@ -398,7 +398,7 @@ static int
         POB3dv4 = false;
 
     }
-    if (exchange_inst.ush1p >= 18.0 && S5_3080 == true)
+    if (exchange::ush1p >= 18.0 && S5_3080 == true)
     {
         PVOVNA3 = true;
     }
@@ -406,7 +406,7 @@ static int
     {
         PVOVNA3 = false;
     }
-    if (exchange_inst.ush2l >= 18.0 && S4_3080 == true)
+    if (exchange::ush2l >= 18.0 && S4_3080 == true)
     {
         PVOVNA2 = true;
     }
@@ -414,7 +414,7 @@ static int
     {
         PVOVNA2 = false;
     }
-    if (exchange_inst.ush1l >= 18.0 && S3_3080 == true)
+    if (exchange::ush1l >= 18.0 && S3_3080 == true)
     {
         PVOVNA1 = true;
     }
@@ -423,7 +423,7 @@ static int
         PVOVNA1 = false;
     }
 
-    if (exchange_inst.ush2p >= 18.0 && S6_3080 == true)
+    if (exchange::ush2p >= 18.0 && S6_3080 == true)
     {
         PVOVNA4 = true;
     }
@@ -432,7 +432,7 @@ static int
         PVOVNA4 = false;
     }
 
-    if (exchange_inst.usho1p >= 18.0 && F110_3020 == true)
+    if (exchange::usho1p >= 18.0 && F110_3020 == true)
     {
         bss_inst.BSS825PR = true;
     }

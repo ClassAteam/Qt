@@ -7,8 +7,8 @@ void powerdc_int::powerdc_12()
     static int
         tickG[5]{0};
     double* ug_pool[] = {&ug1, &ug2, &ug3, &ug4, &ugvsu};
-    double* ushal_pool[] = {&exchange_inst.ushal, &exchange_inst.ushal,
-                            &exchange_inst.ushap, &exchange_inst.ushap};
+    double* ushal_pool[] = {&exchange::ushal, &exchange::ushal,
+                            &exchange::ushap, &exchange::ushap};
     bool* s1_pool[] = { &s1_2420, &s5_2420, &s10_2420, &s13_2420};
     bool* otk_pool[] = {&otkGenPerT1, &otkGenPerT2, &otkGenPerT3, &otkGenPerT4};
 
@@ -57,7 +57,7 @@ void powerdc_int::powerdc_12()
         }
     }
 
-    if(exchange_inst.ushal >= 18.0)
+    if(exchange::ushal >= 18.0)
     {
         if(s8_2420)
         {

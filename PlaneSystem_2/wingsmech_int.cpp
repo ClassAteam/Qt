@@ -65,9 +65,9 @@ wingsmech_int::wingsmech_int(QWidget *parent)
     createLabelClue(&exchange_inst.por2kpchk, "por2kpchk");
     createRedButton(&exchange_inst.s1_2790, "s1_2790");
 
-    createRadioButton(&s2_2790, "s2_2790_neytr", false);
-    createRadioButton(&s2_2790, "s2_2790_menshe", false);
-    createRadioButton(&s2_2790, "s2_2790_bolshe", true);
+    createRadioButton(&s2_2790, "s2_2790_off", false);
+    createRadioButton(&s2_2790, "s2_2790_bolshe", false);
+    createRadioButton(&s2_2790, "s2_2790_menshe", true);
 
     createLabelValue(&X_PCHK, "X_PCHK");
     createLabelValue(&X_zad, "X_zad");

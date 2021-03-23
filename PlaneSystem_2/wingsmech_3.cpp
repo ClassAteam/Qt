@@ -9,7 +9,7 @@ void wingsmech_int::wingsmech_3()
     exchange_inst.por2kpchk = false;
 
     X_zad = m_4_L_intervals(delta_ruk_vh, 0, 0.22, 0.33, 0.44, 1.0,
-                                          20, 30, 35, 40, 65);
+                            20, 30, 35, 40, 65);
     if(X_zad > 32 && X_zad < 40)
     {
         X_zad = 35;
@@ -169,7 +169,9 @@ void wingsmech_int::wingsmech_3()
 
     if(exchange_inst.prr1kpchk == true)
     {
-        if(s2_2790 == 2) //bolshe
+        switch(s2_2790)
+        {
+        case(s2_2790_pos::bolshe):
         {
             if(delta_z_l > 0)
             {
@@ -195,26 +197,28 @@ void wingsmech_int::wingsmech_3()
                 }
             }
         }
-        else
+        break;
+        case(s2_2790_pos::menshe):
         {
-            if(s2_2790 == 1) //menshe
-            {
-                D_X_l = -0.6;
+            D_X_l = -0.6;
 
-                if(delta_z_l > 0)
+            if(delta_z_l > 0)
+            {
+                if((X_L < 20 || X_L > 35))
                 {
-                    if((X_L < 20 || X_L > 35))
-                    {
-                        D_X_l = 0;
-                    }
+                    D_X_l = 0;
                 }
             }
+        }
+        break;
         }
     }
 
     if(exchange_inst.prr2kpchk == true)
     {
-        if(s2_2790 == 2) //bolshe
+        switch(s2_2790)
+        {
+        case(s2_2790_pos::bolshe): //bolshe
         {
             if(delta_z_p > 0)
             {
@@ -240,20 +244,20 @@ void wingsmech_int::wingsmech_3()
                 }
             }
         }
-        else
+        break;
+        case(s2_2790_pos::menshe): //menshe
         {
-            if(s2_2790 == 1) //menshe
-            {
-                D_X_p = -0.6;
+            D_X_p = -0.6;
 
-                if(delta_z_p > 0)
+            if(delta_z_p > 0)
+            {
+                if((X_P < 20 || X_P > 35))
                 {
-                    if((X_P < 20 || X_P > 35))
-                    {
-                        D_X_p = 0;
-                    }
+                    D_X_p = 0;
                 }
             }
+        }
+        break;
         }
     }
 

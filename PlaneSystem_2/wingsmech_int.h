@@ -43,6 +43,7 @@ public:
     double
         X_L{20},
         X_P{20};
+    enum s2_2790_pos{off, bolshe, menshe};
 
 public:
     wingsmech_int(QWidget *parent = nullptr);

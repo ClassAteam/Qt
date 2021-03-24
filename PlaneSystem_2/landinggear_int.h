@@ -193,19 +193,13 @@ public:
         fi_nk{},
         V_nk{},
         Xped{},
-        Ddelta_racks_rel{},
-        Ddelta_racks_rel_l{},
-        Ddelta_racks_rel_p{},
-        Ddelta_racks_rel_n{},
-        Ddelta_racks_l{},
-        Ddelta_racks_p{},
         delta_sh_l{1},//main rack position left from 0 to 1
         delta_sh_p{1},//main rack position right from 0 to 1
         delta_sh_n{1},//main rack position nose from 0 to 1
         delta_stv_l{90},//left sashes position from 0 to 90
         delta_stv_p{90},//right sashes position from 0 to 90
         delta_stv_n{90},//nose sashes position from 0 to 90
-        V_bal_l{44100},
+        V_bal_l{44100},//
         V_bal_p{44100},
         V_bal_n{37000},
         P_bal_l{150},
@@ -215,25 +209,21 @@ public:
         Plu{},//intake line hydropresure
         Sl{},//left presure check against the ground
         Sp{},//right presure check against the ground
-        fi_nks{};
+        delta_shift_l{1.0},//main racks shifting left one
+        delta_shift_p{1.0};//main racks shifting right one
 
     double
         Ksho{0.2};
 
     double
         delta_tel_l{1.0},//current position left cart
-        delta_tel_p{1.0},//current position right cart
-        Ddelta_tel{};//speed of changing carts positions
+        delta_tel_p{1.0};//current position right cart
 
     int
         s2_3230{};
     bool
         GK_dvl{},
         GK_dvp{};
-    double
-        Ddelta_racks{},
-        delta_shift_l{1.0},//main racks shifting left
-        delta_shift_p{1.0};//main racks shifting right
 
     enum s2_3230{release, intake};
 
@@ -250,7 +240,4 @@ public:
     void landinggear_8();
     void landinggear_9();
     void balloon_presure(double* P_bal);
-    void releasing_loop_cur(double* delta, double* D_delta, int* tick, int* sec_tick);
-    void intake_loop_cur(double* delta, double* Ddelta_racks, int* tick, int* sec_tick);
-
 };

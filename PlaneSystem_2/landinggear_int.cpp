@@ -28,7 +28,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&P_bal_per, "P_bal_per");
     createLabelValue(&delta_tel_l, "delta_tel_l");
     createLabelValue(&delta_tel_p, "delta_tel_p");
-    createLabelValue(&Ddelta_tel, "Ddelta_tel");
 
     createRedButton(&nedovip_osn_op_l, "nedovip_osn_op_l");
     createRedButton(&nedovip_osn_op_p, "nedovip_osn_op_p");
@@ -225,7 +224,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&fi_zad1, "fi_zad1");
     createLabelValue(&fi_zad2, "fi_zad2");
     createLabelValue(&fi_zad, "fi_zad");
-    createLabelValue(&fi_nks, "fi_nks");
     createLabelValue(&fi_nk, "fi_nk");
     createLabelValue(&V_nk, "V_nk");
     createLabelValue(&Xped, "Xped");
@@ -242,53 +240,6 @@ void landinggear_int::updateLogic()
     landinggear_7();
     landinggear_8();
     landinggear_9();
-}
-
-void landinggear_int::releasing_loop_cur(double* delta, double* D_delta,
-                                         int* tick, int* sec_tick)
-{
-    if (*delta < 1)
-    {
-        if(((*tick) * TICK) >= 1000)
-        {
-            (*sec_tick)++;
-            *tick = 0;
-        }
-
-        if((*sec_tick) >= 1)
-        {
-            *delta = (*delta + ((*D_delta / (1000 / TICK))));
-        }
-
-        if(*delta >= 1)
-        {
-            *delta = 1;
-            *tick = 0;
-        }
-    }
-}
-void landinggear_int::intake_loop_cur(double* delta, double* Ddelta_racks,
-                                      int* tick, int* sec_tick)
-{
-    if (*delta > 0)
-    {
-        if(((*tick) * TICK) >= 1000)
-        {
-            (*sec_tick)++;
-            *tick = 0;
-        }
-
-        if((*sec_tick) >= 1)
-        {
-            *delta = (*delta - ((*Ddelta_racks / (1000 / TICK))));
-        }
-
-        if(*delta <= 0)
-        {
-            *delta = 0;
-            *tick = 0;
-        }
-    }
 }
 
 void landinggear_int::balloon_presure( double* P_bal)

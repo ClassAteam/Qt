@@ -16,7 +16,7 @@ void landinggear_int::landinggear_2() //actually 3
     //    {
     //        Ddelta_tel = 0.25;
     //    }
-    Ddelta_tel = 0.25;
+    static double Ddelta_tel{0.25};
 
     if(!gk_oovsh)
     {

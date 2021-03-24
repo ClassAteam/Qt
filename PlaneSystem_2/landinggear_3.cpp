@@ -9,6 +9,10 @@ void landinggear_int::landinggear_3() //actually 2
     static int
         shift_left_tick{},
         shift_right_tick{};
+    static double
+        Ddelta_racks{},
+        Ddelta_racks_l{},
+        Ddelta_racks_p{};
 
     if (!gk_oovsh)
     {

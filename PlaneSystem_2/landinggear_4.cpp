@@ -12,6 +12,9 @@ void landinggear_int::landinggear_4() //actually 4th
         right_tick{},
         nose_tick{};
     static double
+        Ddelta_racks_rel_l,
+        Ddelta_racks_rel_p,
+        Ddelta_racks_rel_n,
         Ddelta_racks{};
 
 

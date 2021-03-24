@@ -2,7 +2,7 @@
 #include "algorithms.h"
 
 
-void landinggear_int::landinggear_6()
+void landinggear_int::landinggear_6() //actually 6th
 {
     // Left card are open
     if (delta_tel_l == 1.0)
@@ -92,7 +92,7 @@ void landinggear_int::landinggear_6()
     }
 
     // left rack is shifted
-    if (delta_racks_l == 1.0)
+    if (delta_shift_l == 1.0)
     {
         S8_3230 = true;
         S18_3230 = true;
@@ -106,7 +106,7 @@ void landinggear_int::landinggear_6()
     }
 
     // right rack is shifted
-    if (delta_racks_p == 1.0)
+    if (delta_shift_p == 1.0)
     {
         S9_3230 = true;
         S26_3230 = true;
@@ -235,16 +235,9 @@ void landinggear_int::landinggear_6()
             exchange::K26_3230 = true;
         }
 
-        if(S33_3230)
-        {
-            PVPLOP = true;
-        }
+        if(S33_3230) PVPLOP = true;
 
-        if(S35_3230)
-        {
-            PUPLOP = true;
-        }
-
+        if(S35_3230) PUPLOP = true;
     }
     else
     {

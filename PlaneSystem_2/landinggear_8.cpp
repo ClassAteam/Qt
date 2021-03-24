@@ -1,7 +1,7 @@
 #include "landinggear_8.h"
 #include "algorithms.h"
 
-void landinggear_int::landinggear_8()
+void landinggear_int::landinggear_8() //actually 9 - 10th
 {
     exchange::K25_3230 = false;
     uks_inst.UKS4X313 = false;
@@ -183,7 +183,7 @@ void landinggear_int::landinggear_8()
         }
 
     }
-    //////////////////////////////////////////2nd list
+    //////////////////////////////////////////2nd list //actually 10th
 
     K41_3230 = false;
     K42_3230 = false;

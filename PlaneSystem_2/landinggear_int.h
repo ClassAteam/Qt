@@ -98,8 +98,8 @@ public:
         right_intaken{},
         nose_intaken{},
         gk_oovsh{},
-        gk_vsh{},
-        gk_ush{},
+        gk_vsh{},//releasing hydro valve
+        gk_ush{},//intaking hydro valve
         gk_avl{},
         gk_avp{},
         gk_avn{},
@@ -199,9 +199,9 @@ public:
         Ddelta_racks_rel_n{},
         Ddelta_racks_l{},
         Ddelta_racks_p{},
-        delta_sh_l{1},//main rack left from 0 to 1
-        delta_sh_p{1},//main rack right from 0 to 1
-        delta_sh_n{1},//main rack nose from 0 to 1
+        delta_sh_l{1},//main rack position left from 0 to 1
+        delta_sh_p{1},//main rack position right from 0 to 1
+        delta_sh_n{1},//main rack position nose from 0 to 1
         delta_stv_l{90},//left sashes position from 0 to 90
         delta_stv_p{90},//right sashes position from 0 to 90
         delta_stv_n{90},//nose sashes position from 0 to 90
@@ -213,45 +213,27 @@ public:
         P_bal_per{150},
         Plv{},//release line hydropresure
         Plu{},//intake line hydropresure
-        Sl{},//left presure check from ground
-        Sp{},//right presure check from ground
+        Sl{},//left presure check against the ground
+        Sp{},//right presure check against the ground
         fi_nks{};
 
-    int
-        left_tick{},
-        right_tick{},
-        nose_tick{},
-        left_tick_sec{},
-        right_tick_sec{},
-        nose_tick_sec{};
+    double
+        Ksho{0.2};
 
     double
-        Ksho{0.2},
-        Ddelta_stv{}, //changing state by seconds
-        Ddelta_stv_l{},//speed of changing left sashe
-        Ddelta_stv_p{},//speed of changing righ sashe
-        Ddelta_stv_n{};//speed of changing nose sashe
-
-    double
-        delta_tel_l{},//current position left cart
-        delta_tel_p{},//current position right cart
-        fi_delta_sh_l{1},//main left rack shifting
-        fi_delta_sh_p{1},//main right rack shifting
+        delta_tel_l{1.0},//current position left cart
+        delta_tel_p{1.0},//current position right cart
         Ddelta_tel{};//speed of changing carts positions
 
     int
-        s2_3230{},
-        carts_left_tick{},
-        carts_right_tick{},
-        carts_left_tick_sec{},
-        carts_right_tick_sec{};
+        s2_3230{};
     bool
         GK_dvl{},
         GK_dvp{};
     double
         Ddelta_racks{},
-        delta_racks_l{},
-        delta_racks_p{};
+        delta_shift_l{1.0},//main racks shifting left
+        delta_shift_p{1.0};//main racks shifting right
 
     enum s2_3230{release, intake};
 

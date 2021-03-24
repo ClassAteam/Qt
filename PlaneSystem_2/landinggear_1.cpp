@@ -1,9 +1,23 @@
 #include "landinggear_1.h"
 #include "algorithms.h"
 
+static void releasing_loop(double* delta, double* Ddelta, int* tick);
+static void intake_loop(double* delta, double* Ddelta, int* tick);
+
 void landinggear_int::landinggear_1()	//sashes
 {
-    if (gk_oovsh == false)
+    static int
+        left_tick{},
+        right_tick{},
+        nose_tick{};
+
+    static double
+        Ddelta_stv{}, //changing state by seconds
+        Ddelta_stv_l{},//speed of changing left sashe
+        Ddelta_stv_p{},//speed of changing righ sashe
+        Ddelta_stv_n{};//speed of changing nose sashe
+
+    if (!gk_oovsh)
     {
 
         //Ddelta_stv toggling
@@ -17,57 +31,49 @@ void landinggear_int::landinggear_1()	//sashes
         }
 
         // release loop
-        if (gk_vsh == true && gk_ush == false)
+        if (gk_vsh && !gk_ush)
         {
-            if(delta_stv_l != 90)
+            if(delta_stv_l != 90.0)
             {
                 left_tick++;
                 //releasing left
-                releasing_loop_cur(&delta_stv_l, &Ddelta_stv, &left_tick,
-                               &left_tick_sec);
+                releasing_loop(&delta_stv_l, &Ddelta_stv, &left_tick);
             }
-            if(delta_stv_p != 90)
+            if(delta_stv_p != 90.0)
             {
                 right_tick++;
                 //releasing right
-                releasing_loop_cur(&delta_stv_p, &Ddelta_stv, &right_tick,
-                               &right_tick_sec);
+                releasing_loop(&delta_stv_p, &Ddelta_stv, &right_tick);
             }
-            if(delta_stv_n != 90)
+            if(delta_stv_n != 90.0)
             {
                 nose_tick++;
                 //releasing nose
-                releasing_loop_cur(&delta_stv_n, &Ddelta_stv, &nose_tick,
-                               &nose_tick_sec);
+                releasing_loop(&delta_stv_n, &Ddelta_stv, &nose_tick);
             }
-
-
 
         }
 
         // intake loop
-        if (gk_ush == true && gk_vsh == false)
+        if (gk_ush && !gk_vsh)
         {
-            if(delta_stv_l != 0 && delta_sh_l == 0)
+            if(delta_stv_l != 0.0 && delta_sh_l == 0.0)
             {
                 left_tick++;
                 //intake left
-                intake_loop_cur(&delta_stv_l, &Ddelta_racks_l,
-                            &left_tick_sec, &left_tick);
+                intake_loop(&delta_stv_l, &Ddelta_stv, &left_tick);
             }
-            if(delta_stv_p != 0 && delta_sh_p == 0)
+            if(delta_stv_p != 0.0 && delta_sh_p == 0.0)
             {
                 right_tick++;
                 //intake right
-                intake_loop_cur(&delta_stv_p, &Ddelta_racks_p,
-                            &right_tick_sec, &right_tick);
+                intake_loop(&delta_stv_p, &Ddelta_stv, &right_tick);
             }
-            if(delta_stv_n != 0 && delta_sh_n == 0)
+            if(delta_stv_n != 0.0 && delta_sh_n == 0.0)
             {
                 nose_tick++;
                 // intake nose
-                intake_loop_cur(&delta_stv_n, &Ddelta_racks, &nose_tick,
-                            &nose_tick_sec);
+                intake_loop(&delta_stv_n, &Ddelta_stv, &nose_tick);
             }
         }
         else
@@ -90,45 +96,67 @@ void landinggear_int::landinggear_1()	//sashes
 
         if (P_bal_per >= 60.0)
         {
-            Ddelta_stv_n =
-                two_points_to_Y(P_bal_per, 60.0, 150.0, 0.0, 30.0);
+            Ddelta_stv_n = two_points_to_Y(P_bal_per, 60.0, 150.0, 0.0, 30.0);
         }
 
         // emergency left release
-        if(delta_stv_l != 90 && gk_avl == true)
+        if(delta_stv_l != 90.0 && gk_avl)
         {
             left_tick++;
         }
-        if(delta_stv_p != 90 && gk_avp == true)
+        if(delta_stv_p != 90.0 && gk_avp)
         {
             right_tick++;
         }
-        if(delta_stv_n != 90 && gk_avn == true)
+        if(delta_stv_n != 90 && gk_avn)
         {
             nose_tick++;
         }
 
         //releasing left
-        releasing_loop_cur(&delta_stv_l, &Ddelta_stv_l, &left_tick,
-                       &left_tick_sec);
+        releasing_loop(&delta_stv_l, &Ddelta_stv_l, &left_tick);
 
         //releasing right
-        releasing_loop_cur(&delta_stv_p, &Ddelta_stv_p, &right_tick,
-                       &right_tick_sec);
+        releasing_loop(&delta_stv_p, &Ddelta_stv_p, &right_tick);
 
         //releasing nose
-        releasing_loop_cur(&delta_stv_n, &Ddelta_stv_n, &nose_tick,
-                       &nose_tick_sec);
-    }
-    if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
-    {
-        left_tick_sec = 0;
-        right_tick_sec = 0;
-        nose_tick_sec = 0;
+        releasing_loop(&delta_stv_n, &Ddelta_stv_n, &nose_tick);
     }
 
+    if(!gk_oovsh && !gk_vsh && !gk_ush)
+    {
+        left_tick = 0;
+        right_tick = 0;
+        nose_tick = 0;
+    }
 
     //end logic
 
+}
+static void releasing_loop(double* delta, double* Ddelta, int* tick)
+{
+    if (*delta < 1)
+    {
+        *delta = (*delta + ((*Ddelta / (1000 / TICK))));
+
+        if(*delta >= 1)
+        {
+            *delta = 1;
+            *tick = 0;
+        }
+    }
+}
+static void intake_loop(double* delta, double* Ddelta, int* tick)
+{
+    if (*delta > 0)
+    {
+        *delta = (*delta - ((*Ddelta / (1000 / TICK))));
+
+        if(*delta <= 0)
+        {
+            *delta = 0;
+            *tick = 0;
+        }
+    }
 }
 

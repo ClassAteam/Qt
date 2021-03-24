@@ -1,14 +1,14 @@
 #include "landinggear_3.h"
 #include "algorithms.h"
 
-void landinggear_int::landinggear_3() //actually 4
+static void releasing_loop(double* delta, double* D_delta, int* tick);
+static void intake_loop(double* delta, double* Ddelta_racks, int* tick);
+
+void landinggear_int::landinggear_3() //actually 2
 {
     static int
-        racks_left_tick{},
-        racks_right_tick{},
-        racks_left_tick_sec{},
-        racks_right_tick_sec{};
-
+        shift_left_tick{},
+        shift_right_tick{};
 
     if (!gk_oovsh)
     {
@@ -26,48 +26,36 @@ void landinggear_int::landinggear_3() //actually 4
         // release loop
         if (gk_vsh && !gk_ush)
         {
-            if(delta_racks_l != 1 &&
-                delta_stv_l == 90 &&
-                delta_tel_l == 1 &&
-                delta_sh_l == 1 &&
-                GK_dvl == true &&
-                nedovip_osn_op_l == false)
+            if(delta_shift_l != 1.0 && delta_stv_l == 90.0 && delta_tel_l == 1.0 &&
+                delta_sh_l == 1.0 && GK_dvl && !nedovip_osn_op_l)
             {
-                racks_left_tick++;
+                shift_left_tick++;
                 //releasing left
-                releasing_loop_cur(&delta_racks_l, &Ddelta_racks, &racks_left_tick,
-                                   &racks_left_tick_sec);
+                releasing_loop(&delta_shift_l, &Ddelta_racks, &shift_left_tick);
             }
-            if(delta_racks_p != 1 &&
-                delta_stv_p == 90 &&
-                delta_tel_p == 1 &&
-                delta_sh_p == 1 &&
-                GK_dvp == true &&
-                nedovip_osn_op_p == false)
+            if(delta_shift_p != 1 && delta_stv_p == 90 && delta_tel_p == 1 &&
+                delta_sh_p == 1 && GK_dvp && !nedovip_osn_op_p)
             {
-                racks_right_tick++;
+                shift_right_tick++;
                 //releasing right
-                releasing_loop_cur(&delta_racks_p, &Ddelta_racks, &racks_right_tick,
-                                   &racks_right_tick_sec);
+                releasing_loop(&delta_shift_p, &Ddelta_racks, &shift_right_tick);
             }
         }
 
         // intake loop
-        if (gk_ush == true && gk_vsh == false)
+        if (gk_ush && !gk_vsh)
         {
-            if(delta_racks_l != 0 && delta_sh_l == 1)
+            if(delta_shift_l != 0 && delta_sh_l == 1)
             {
-                racks_left_tick++;
+                shift_left_tick++;
                 //intake left
-                intake_loop_cur(&delta_racks_l, &Ddelta_racks,
-                                &racks_left_tick, &racks_left_tick_sec);
+                intake_loop(&delta_shift_l, &Ddelta_racks, &shift_left_tick);
             }
-            if(delta_racks_p != 0 && delta_sh_p == 1)
+            if(delta_shift_p != 0 && delta_sh_p == 1)
             {
-                racks_right_tick++;
+                shift_right_tick++;
                 //intake right
-                intake_loop_cur(&delta_racks_p, &Ddelta_racks,
-                                &racks_right_tick_sec, &racks_right_tick_sec);
+                intake_loop(&delta_shift_p, &Ddelta_racks, &shift_right_tick);
             }
         }
         else
@@ -92,35 +80,57 @@ void landinggear_int::landinggear_3() //actually 4
 
 
         // emergency left release
-        if(delta_racks_l != 1 &&
-            delta_stv_l == 90 &&
-            delta_tel_l == 1 &&
-            delta_sh_l == 1 &&
-            gk_avl == true)
+        if(delta_shift_l != 1.0 && delta_stv_l == 90.0 && delta_tel_l == 1.0 &&
+            delta_sh_l == 1.0 && gk_avl)
         {
-            racks_left_tick++;
+            shift_left_tick++;
         }
-        if(delta_racks_p != 1 &&
-            delta_stv_p == 90 &&
-            delta_tel_p == 1 &&
-            delta_sh_p == 1 &&
-            gk_avp == true)
+        if(delta_shift_p != 1.0 &&
+            delta_stv_p == 90.0 &&
+            delta_tel_p == 1.0 &&
+            delta_sh_p == 1.0 &&
+            gk_avp)
         {
-            racks_right_tick++;
+            shift_right_tick++;
         }
         //        //releasing left
-        releasing_loop_cur(&delta_racks_l, &Ddelta_racks_l, &racks_left_tick,
-                           &racks_left_tick_sec);
+        releasing_loop(&delta_shift_l, &Ddelta_racks_l, &shift_left_tick);
 
         //        //releasing right
-        releasing_loop_cur(&delta_racks_p, &Ddelta_racks_p, &racks_right_tick,
-                           &racks_right_tick_sec);
+        releasing_loop(&delta_shift_p, &Ddelta_racks_p, &shift_right_tick);
     }
-    if(gk_oovsh == false && gk_vsh == false && gk_ush == false)
+    if(!gk_oovsh && !gk_vsh && !gk_ush)
     {
-        racks_left_tick_sec = 0;
-        racks_right_tick_sec = 0;
+        shift_left_tick = 0;
+        shift_right_tick = 0;
     }
 
     //end logic
+}
+
+static void releasing_loop(double* delta, double* D_delta, int* tick)
+{
+    if (*delta < 1)
+    {
+        *delta = (*delta + ((*D_delta / (1000 / TICK))));
+
+        if(*delta >= 1)
+        {
+            *delta = 1;
+            *tick = 0;
+        }
+    }
+}
+static void intake_loop(double* delta, double* Ddelta_racks, int* tick)
+{
+    if (*delta > 0)
+    {
+        *delta = (*delta - ((*Ddelta_racks / (1000 / TICK))));
+
+        if(*delta <= 0)
+        {
+            *delta = 0;
+            *tick = 0;
+        }
+    }
 }

@@ -2,7 +2,7 @@
 #include "algorithms.h"
 
 
-void landinggear_int::landinggear_7()
+void landinggear_int::landinggear_7() //actually 5th
 {
 
     GK_dvl = false;
@@ -10,22 +10,16 @@ void landinggear_int::landinggear_7()
 
     // Force release left rack hydrovalve
     if ((exchange::ushal >= 19.0 && K2_3230) || K3_3230)
-    {
             GK_dvl = true;
-    }
     else
-    {
             GK_dvl = false;
-    }
 
     // Force intake racks hydrovalve
     if (K11_3230 == true || K12_3230 == true)
-    {
         GK_duoop = true;
-    }
 
     //	Release and intake racks hydrovalves
-    if (!K22_3230)
+    if(!K22_3230)
     {
         if (K23_3230 == false)
         {
@@ -38,7 +32,6 @@ void landinggear_int::landinggear_7()
             gk_ush = true;
         }
     }
-
     else
     {
             gk_vsh = true;
@@ -48,17 +41,13 @@ void landinggear_int::landinggear_7()
     GK_dvp = false;
 
     // Force release right rack hydrovalve
-    if ((exchange::ushap >= 19.0 && K28_3230 == true) || K29_3230 == true)
-    {
+    if ((exchange::ushap >= 19.0 && K28_3230) || K29_3230)
             GK_dvp = true;
-    }
     else
-    {
             GK_dvp = false;
-    }
 
     // Common release disabling hydrovalve
-    if (exchange::ush1dpp >= 19.0 && S30_3230 == true)
+    if (exchange::ush1dpp >= 19.0 && S30_3230)
     {
         gk_oovsh = true;
         K13_3230 = true;
@@ -72,17 +61,13 @@ void landinggear_int::landinggear_7()
     }
 
     // Emergency nose release hydrovalve
-    if (exchange::ush1dpp >= 19.0 && K13_3230 == true)
-    {
+    if (exchange::ush1dpp >= 19.0 && K13_3230)
         gk_avn = true;
-    }
     else
-    {
         gk_avn = false;
-    }
 
     // Emergency left and right racks release hydrovalve
-    if (exchange::ush1dpp >= 19.0 && K14_3230 == true)
+    if (exchange::ush1dpp >= 19.0 && K14_3230)
     {
         gk_avl = true;
         gk_avp = true;

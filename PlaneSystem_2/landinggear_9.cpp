@@ -1,7 +1,7 @@
 #include "landinggear_9.h"
 #include "algorithms.h"
 
-void landinggear_int::landinggear_9()
+void landinggear_int::landinggear_9() //actually 11th and 12th
 {
 
     double m_pedals_to_fi(double Xped, double interval_Y1, double interval_Y2);
@@ -149,7 +149,7 @@ void landinggear_int::landinggear_9()
         }
     }
 
-    ///////////////////////////////////////////2nd page
+    ///////////////////////////////////////////2nd page //11th end
     ///
 
 

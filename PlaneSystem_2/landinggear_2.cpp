@@ -15,16 +15,14 @@ void landinggear_int::landinggear_2()
     //    }
     Ddelta_tel = 0.25;
 
-    if (gk_oovsh == false)
+    if(!gk_oovsh)
     {
 
 
         // release loop
-        if (gk_vsh == true && gk_ush == false)
+        if(gk_vsh && !gk_ush)
         {
-            if(delta_tel_l != 1 &&
-                delta_stv_l == 90 &&
-                delta_sh_l > 0.4)
+            if(delta_tel_l != 1 && delta_stv_l == 90 && delta_sh_l > 0.4)
             {
                 carts_left_tick++;
                 //releasing left

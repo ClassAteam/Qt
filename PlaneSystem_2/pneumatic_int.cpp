@@ -22,7 +22,8 @@ pneumatic_int::pneumatic_int(QWidget *parent)
     createLabelClue(&y2_3650, "y2_3650");
     createLabelClue(&k26_3230, "k26_3230");
 
-    createLabelValue(&Kslt, "Kslt");
+    createLabelValue(&Kslt1, "Kslt1");
+    createLabelValue(&Kslt2, "Kslt2");
     createLabelValue(&Kger, "Kger");
     createLabelValue(&DVzm, "DVzm");
     createLabelValue(&Vnpb, "Vnpb");
@@ -33,7 +34,8 @@ pneumatic_int::pneumatic_int(QWidget *parent)
     createLabelValue(&Pnpb, "Pnpb");
     createLabelValue(&Pnzb, "Pnzb");
     createLabelValue(&Vzm, "Vzm");
-    createLabelValue(&DVslt, "DVslt");
+    createLabelValue(&DVslt1, "DVslt1");
+    createLabelValue(&DVslt2, "DVslt2");
     createLabelValue(&Vslt, "Vslt");
     createLabelValue(&Vger, "Vger");
 

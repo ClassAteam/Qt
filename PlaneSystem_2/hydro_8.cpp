@@ -144,6 +144,11 @@ void hydro_int::hydro_8() //actually 9th sheet
         uks_inst.UKS2UBGS3 = qgs3;
         uks_inst.UKS2UBGS4 = qgs4;
     }
-}
 
+    //hydro exchange
+    exchange::pgs1 = pgs1;
+    exchange::pgs2 = pgs2;
+    exchange::pgs3 = pgs3;
+    exchange::pgs4 = pgs4;
+}
 //end logic

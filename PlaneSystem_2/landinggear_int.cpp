@@ -7,12 +7,12 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&left_intaken, "left_intaken");
     createLabelClue(&right_intaken, "right_intaken");
     createLabelClue(&nose_intaken, "nose_intaken");
-    createRedButton(&gk_oovsh, "gk_oovsh");
-    createRedButton(&gk_vsh, "gk_vsh");
-    createRedButton(&gk_ush, "gk_ush");
-    createRedButton(&gk_avl, "gk_avl");
-    createRedButton(&gk_avp, "gk_avp");
-    createRedButton(&gk_avn, "gk_avn");
+    createLabelClue(&gk_oovsh, "gk_oovsh");
+    createLabelClue(&gk_vsh, "gk_vsh");
+    createLabelClue(&gk_ush, "gk_ush");
+    createLabelClue(&gk_avl, "gk_avl");
+    createLabelClue(&gk_avp, "gk_avp");
+    createLabelClue(&gk_avn, "gk_avn");
 
     createLabelValue(&delta_sh_l, "delta_sh_l");
     createLabelValue(&delta_sh_p, "delta_sh_p");
@@ -26,8 +26,6 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&P_bal_l, "P_bal_l");
     createLabelValue(&P_bal_p, "P_bal_p");
     createLabelValue(&P_bal_per, "P_bal_per");
-    createLabelValue(&fi_sh_l, "fi_sh_l");
-    createLabelValue(&fi_sh_p, "fi_sh_p");
     createLabelValue(&delta_tel_l, "delta_tel_l");
     createLabelValue(&delta_tel_p, "delta_tel_p");
     createLabelValue(&fi_delta_sh_l, "fi_delta_sh_l");
@@ -36,13 +34,13 @@ landinggear_int::landinggear_int(QWidget *parent)
 
     createRedButton(&nedovip_osn_op_l, "nedovip_osn_op_l");
     createRedButton(&nedovip_osn_op_p, "nedovip_osn_op_p");
-    createRedButton(&GK_dvl, "GK_dvl");
-    createRedButton(&GK_dvp, "GK_dvp");
+    createLabelClue(&GK_dvl, "GK_dvl");
+    createLabelClue(&GK_dvp, "GK_dvp");
 
     createLabelValue(&delta_racks_l, "delta_racks_l");
     createLabelValue(&delta_racks_p, "delta_racks_p");
 
-    createRedButton(&GK_duoop, "GK_duoop");
+    createLabelClue(&GK_duoop, "GK_duoop");
     createRedButton(&otkaz_nepoln_ubor_l, "otkaz_nepoln_ubor_l");
     createRedButton(&otkaz_nepoln_ubor_p, "otkaz_nepoln_ubor_p");
     createRedButton(&otkaz_nepoln_ubor_n, "otkaz_nepoln_ubor_n");
@@ -84,6 +82,8 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&F114_3230, "F114_3230");
     createLabelClue(&F115_3230, "F115_3230");
     createRedButton(&exchange::S1_3230, "S1_3230");
+    createRadioButton(&s2_3230, "release", false);
+    createRadioButton(&s2_3230, "intake", true);
     createRedButton(&S3_3230, "S3_3230");
     createLabelClue(&S4_3230, "S4_3230");
     createLabelClue(&S5_3230, "S5_3230");
@@ -155,7 +155,7 @@ landinggear_int::landinggear_int(QWidget *parent)
 
     createLabelClue(&K13_3230, "K13_3230");
     createLabelClue(&K14_3230, "K14_3230");
-    createLabelClue(&S30_3230, "S30_3230");
+    createRedButton(&S30_3230, "S30_3230");
 
     createRedButton(&S18_2930, "S18_2930");
     createLabelClue(&H2_3230, "H2_3230");
@@ -269,7 +269,8 @@ void landinggear_int::releasing_loop_cur(double* delta, double* D_delta,
         }
     }
 }
-void landinggear_int::intake_loop_cur(double* delta, double* Ddelta_racks, int* tick, int* sec_tick)
+void landinggear_int::intake_loop_cur(double* delta, double* Ddelta_racks,
+                                      int* tick, int* sec_tick)
 {
     if (*delta > 0)
     {

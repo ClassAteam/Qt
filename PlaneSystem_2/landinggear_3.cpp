@@ -24,7 +24,7 @@ void landinggear_int::landinggear_3() //actually 4
         }
 
         // release loop
-        if (gk_vsh == true && gk_ush == false)
+        if (gk_vsh && !gk_ush)
         {
             if(delta_racks_l != 1 &&
                 delta_stv_l == 90 &&

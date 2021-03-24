@@ -9,7 +9,7 @@ void landinggear_int::landinggear_7()
     GK_duoop = false;
 
     // Force release left rack hydrovalve
-    if ((exchange::ushal >= 19.0 && K2_3230 == true) || K3_3230 == true)
+    if ((exchange::ushal >= 19.0 && K2_3230) || K3_3230)
     {
             GK_dvl = true;
     }
@@ -25,7 +25,7 @@ void landinggear_int::landinggear_7()
     }
 
     //	Release and intake racks hydrovalves
-    if (K22_3230 == false)
+    if (!K22_3230)
     {
         if (K23_3230 == false)
         {

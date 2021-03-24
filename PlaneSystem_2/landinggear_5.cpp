@@ -14,21 +14,21 @@ void landinggear_int::landinggear_5()
 
     if (exchange::pgs2 >= 130.0)
     {
-        if(gk_oovsh == true)
+        if(gk_oovsh)
         {
             Plv = 30;
             Plu = 30;
         }
         else
         {
-            if(gk_vsh == true)
+            if(gk_vsh)
             {
                 Plv= exchange::pgs2;
                 Plu= 30;
             }
             else
             {
-                if(gk_ush == true)
+                if(gk_ush)
                 {
                     Plv = 30;
                     Plu = exchange::pgs2;
@@ -49,29 +49,29 @@ void landinggear_int::landinggear_5()
 
     // Presure signals
     PSDVV = false;
-    S46_3230 = 0;
+    S46_3230 = false;
     PSDVU = false;
     S47_3230 = false;
     S28_3230 = false;
     S29_3230 = false;
 
     // Presure signal intake
-    if (gk_vsh == true)
+    if (gk_vsh)
     {
         if (Plv >= 130.0)
         {
             PSDVV = true;
-            S46_3230 = 1;
+            S46_3230 = true;
         }
     }
 
     // Presure signal release
-    if (gk_ush == true)
+    if (gk_ush)
     {
         if (Plu >= 130.0)
         {
             PSDVU = true;
-            S47_3230 = 1;
+            S47_3230 = true;
         }
     }
 
@@ -87,7 +87,9 @@ void landinggear_int::landinggear_5()
 
         // clocks definition
 
-        if (S2_3230 == s2_3230::release)
+        switch(s2_3230)
+        {
+        case s2_3230::release:
         {
             if ((PSDVV == false && S3_3230 == false))
             {
@@ -110,7 +112,8 @@ void landinggear_int::landinggear_5()
                 }
             }
         }
-        else
+        break;
+        case s2_3230::intake:
         {
             if (PSDVU || S3_3230)
             {
@@ -132,6 +135,8 @@ void landinggear_int::landinggear_5()
                 K1_3230 = false;
             }
         }
+        break;
+        }
 
         // Landing is on
         if (relay_tick_sec_vu >= 60.0)
@@ -147,7 +152,7 @@ void landinggear_int::landinggear_5()
         if (exchange::S1_3230 == false)
         {
             //release = true
-            if (S2_3230 == s2_3230::release)
+            if (s2_3230 == s2_3230::release)
             {
                 F113_3230 = false;
                 F13_3230 = true;
@@ -160,34 +165,34 @@ void landinggear_int::landinggear_5()
             }
 
             //toggling release clue
-            if (F13_3230 == true)
+            if(F13_3230)
             {
-                if (K4_3230_1211 == true || otkaz_ne_vikl_avt_pos_vip_shas == true)
+                if (K4_3230_1211 || otkaz_ne_vikl_avt_pos_vip_shas)
                 {
                     K22_3230 = true;
                 }
             }
 
             // additional release clues on each rack
-            if (K22_3230 == true)
+            if (K22_3230)
             {
                 //left
-                if (S42_3230 == true && S51_3230 == true)
+                if (S42_3230 && S51_3230)
                 {
                     K2_3230 = true;
                 }
                 //left
-                if (S43_3230 == 1 && S52_3230 == 1)
+                if (S43_3230 && S52_3230)
                 {
                     K3_3230 = true;
                 }
                 //right
-                if (S44_3230 == 1 && S53_3230 == 1)
+                if (S44_3230 && S53_3230)
                 {
                     K28_3230 = true;
                 }
                 //right
-                if (S45_3230 == 1 && S54_3230 == 1)
+                if (S45_3230 && S54_3230)
                 {
                     K29_3230 = true;
                 }
@@ -196,7 +201,7 @@ void landinggear_int::landinggear_5()
         }
 
         //voltage check 1
-        if (K22_3230 == true && K5_3230 == true)
+        if (K22_3230 && K5_3230)
         {
             F115_3230 = true;
         }
@@ -206,7 +211,7 @@ void landinggear_int::landinggear_5()
         }
 
         //voltage check 2
-        if (F113_3230 == true && K4_3230_2223 == true)
+        if (F113_3230 && K4_3230_2223)
         {
             F114_3230 = true;
         }
@@ -216,7 +221,7 @@ void landinggear_int::landinggear_5()
         }
 
         //resolving forward voltage clues by 1st result
-        if (F115_3230 == true)
+        if (F115_3230)
         {
             K4_3230_VG = true;
             K4_3230_1213 = true;
@@ -228,7 +233,7 @@ void landinggear_int::landinggear_5()
         }
 
         //resolving forward voltage clues by 2st result
-        if (F114_3230 == true)
+        if (F114_3230)
         {
             K4_3230_VG = false;
             K4_3230_1213 = false;
@@ -240,12 +245,7 @@ void landinggear_int::landinggear_5()
         }
 
         //release mode are on or not
-        if (K22_3230 == true &&
-            K6_3230 == true &&
-            S9_3230 == true &&
-            S7_3230 == true &&
-            S5_3230 ==  true &&
-            S8_3230 == true)
+        if (K22_3230 && K6_3230 && S9_3230 && S7_3230 && S5_3230 && S8_3230)
         {
             if(relay_tick_sec_vu1 <= 15)
             {
@@ -272,12 +272,9 @@ void landinggear_int::landinggear_5()
     }
 
     // the locking resolving
-    if (F113_3230 == true &&
-        K9_3230 == false &&
-        K10_3230 == false &&
-        K8_3230_1112 == true)
+    if (F113_3230 && !K9_3230 && !K10_3230 && K8_3230_1112)
     {
-        if (K30_3230 == true || (S4_3230 == 1 && S6_3230 == 1))
+        if (K30_3230 || (S4_3230 && S6_3230))
         {
             K30_3230 = true;
             K23_3230 = true;
@@ -298,23 +295,23 @@ void landinggear_int::landinggear_5()
     K12_3230 = false;
 
     //resolving clue of additional intake
-    if (K23_3230 == true)
+    if (K23_3230)
     {
-        if (S13_3230 == 1 && S15_3230 == 1)
+        if (S13_3230 && S15_3230 )
         {
             K11_3230 = true;
         }
 
-        if (S14_3230 == 1 && S16_3230 == 1)
+        if (S14_3230 && S16_3230 )
         {
             K12_3230 = true;
         }
     }
     else
     {
-        if(F13_3230 == true)
+        if(F13_3230)
         {
-            if(K8_3230_2223 == true)
+            if(K8_3230_2223)
             {
                 K8_3230_VG = true;
                 K8_3230_1112 = true;
@@ -324,9 +321,7 @@ void landinggear_int::landinggear_5()
 
     }
     //clocking
-    if (K44_3230 == true &&
-        K45_3230 == true &&
-        K46_3230 == true)
+    if (K44_3230 && K45_3230 && K46_3230  )
     {
         if(relay_tick_sec_vu1 <= 15)
         {
@@ -355,7 +350,7 @@ void landinggear_int::landinggear_5()
     }
 
     //voltage clues by intake mode
-    if (K7_3230 == true)
+    if (K7_3230)
     {
         K8_3230_AB = true;
         K8_3230_1112 = false;
@@ -364,7 +359,7 @@ void landinggear_int::landinggear_5()
 
 
     //voltage clues by other conditions
-    if (F13_3230 == true && K8_3230_2223 == true)
+    if (F13_3230 && K8_3230_2223)
     {
         K8_3230_VG = true;
         K8_3230_1112 = true;

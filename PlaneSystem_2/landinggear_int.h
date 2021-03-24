@@ -91,28 +91,40 @@ public:
         PSDVV{},
         PSDVU{},
         K34_3230{},
-        left_released, right_released, nose_released, left_intaken,
-        right_intaken, nose_intaken,
-        gk_oovsh,
-        gk_vsh,
-        gk_ush,
-        gk_avl,
-        gk_avp,
-        gk_avn,
-        GK_duoop, otkaz_nepoln_ubor_l, otkaz_nepoln_ubor_p, otkaz_nepoln_ubor_n,
-        otkaz_ne_vikl_avt_pos_vip_shas, K1_3230, K2_3230, K3_3230,
-         K7_3230, K8_3230,
+        left_released{},
+        right_released{},
+        nose_released{},
+        left_intaken{},
+        right_intaken{},
+        nose_intaken{},
+        gk_oovsh{},
+        gk_vsh{},
+        gk_ush{},
+        gk_avl{},
+        gk_avp{},
+        gk_avn{},
+        GK_duoop{},
+        otkaz_nepoln_ubor_l{},
+        otkaz_nepoln_ubor_p{},
+        otkaz_nepoln_ubor_n{},
+        otkaz_ne_vikl_avt_pos_vip_shas{},
+        K1_3230{},
+        K2_3230{},
+        K3_3230{},
+        K7_3230{},
+        K8_3230{},
         K8_3230_1112{true},//sign of preparing
         K8_3230_2223{true},//sign of preparing
-        K8_3230_AB, K8_3230_VG,
+        K8_3230_AB{},
+        K8_3230_VG{},
         K4_3230_1211{true},
         K4_3230_1213{true},
-        K4_3230_2221,
-        K4_3230_2223,
-        K4_3230_AB,
-        K4_3230_VG,
-        K5_3230,
-        K6_3230,
+        K4_3230_2221{},
+        K4_3230_2223{},
+        K4_3230_AB{},
+        K4_3230_VG{},
+        K5_3230{},
+        K6_3230{},
 //        K8_3230,
         K9_3230{},
         K10_3230{},
@@ -175,18 +187,18 @@ public:
     int
         S31_3230{};
     double
-        fi_zad1,
-        fi_zad2,
-        fi_zad,
-        fi_nk,
-        V_nk,
-        Xped,
-        Ddelta_racks_rel,
-        Ddelta_racks_rel_l,
-        Ddelta_racks_rel_p,
-        Ddelta_racks_rel_n,
-        Ddelta_racks_l,
-        Ddelta_racks_p,
+        fi_zad1{},
+        fi_zad2{},
+        fi_zad{},
+        fi_nk{},
+        V_nk{},
+        Xped{},
+        Ddelta_racks_rel{},
+        Ddelta_racks_rel_l{},
+        Ddelta_racks_rel_p{},
+        Ddelta_racks_rel_n{},
+        Ddelta_racks_l{},
+        Ddelta_racks_p{},
         delta_sh_l{1},//main rack left from 0 to 1
         delta_sh_p{1},//main rack right from 0 to 1
         delta_sh_n{1},//main rack nose from 0 to 1
@@ -199,50 +211,49 @@ public:
         P_bal_l{150},
         P_bal_p{150},
         P_bal_per{150},
-        Plv{},
-        Plu{},
-        Sl{},
-        Sp{},
+        Plv{},//release line hydropresure
+        Plu{},//intake line hydropresure
+        Sl{},//left presure check from ground
+        Sp{},//right presure check from ground
         fi_nks{};
 
     int
-        left_tick,
-        right_tick,
-        nose_tick,
-        left_tick_sec,
-        right_tick_sec,
-        nose_tick_sec;
+        left_tick{},
+        right_tick{},
+        nose_tick{},
+        left_tick_sec{},
+        right_tick_sec{},
+        nose_tick_sec{};
 
     double
         Ksho{0.2},
-        Ddelta_stv, //changing state by seconds
-        Ddelta_stv_l,
-        Ddelta_stv_p,
-        Ddelta_stv_n;
+        Ddelta_stv{}, //changing state by seconds
+        Ddelta_stv_l{},//speed of changing left sashe
+        Ddelta_stv_p{},//speed of changing righ sashe
+        Ddelta_stv_n{};//speed of changing nose sashe
+
     double
-        fi_sh_l,
-        fi_sh_p,
-        delta_tel_l,
-        delta_tel_p,
-        fi_delta_sh_l{1},
-        fi_delta_sh_p{1},
-        Ddelta_tel;
+        delta_tel_l{},//current position left cart
+        delta_tel_p{},//current position right cart
+        fi_delta_sh_l{1},//main left rack shifting
+        fi_delta_sh_p{1},//main right rack shifting
+        Ddelta_tel{};//speed of changing carts positions
 
     int
-        carts_left_tick,
-        carts_right_tick,
-        carts_left_tick_sec,
-        carts_right_tick_sec;
+        s2_3230{},
+        carts_left_tick{},
+        carts_right_tick{},
+        carts_left_tick_sec{},
+        carts_right_tick_sec{};
     bool
-        GK_dvl,
-        GK_dvp;
+        GK_dvl{},
+        GK_dvp{};
     double
         Ddelta_racks{},
         delta_racks_l{},
         delta_racks_p{};
 
-    enum class s2_3230{release, intake};
-    s2_3230 S2_3230;
+    enum s2_3230{release, intake};
 
 public:
     landinggear_int(QWidget *parent = nullptr);

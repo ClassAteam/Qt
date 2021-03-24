@@ -36,7 +36,8 @@ public:
         du_r8{};
 
     double
-        Kslt{},
+        Kslt1{},
+        Kslt2{},
         Kger{},
         DVzm{},
         Vnpb{},
@@ -47,7 +48,8 @@ public:
         Pnpb{},
         Pnzb{},
         Vzm{},
-        DVslt{},
+        DVslt1{},
+        DVslt2{},
         Vslt{},
         Vger{};
 

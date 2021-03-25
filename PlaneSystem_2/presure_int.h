@@ -8,7 +8,6 @@
 #include "math.h"
 
 extern const double TICK;
-extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 
@@ -17,7 +16,7 @@ extern double a2;
 extern double b1;
 extern double b2;
 
-    
+
 class presure_int : public interfacing
 {
     Q_OBJECT

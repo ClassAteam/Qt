@@ -180,7 +180,7 @@ allElConsAlt_inst.makeCorresCurr();
             *k25_pool[i] = false;
         }
 
-        if(exchange::pnu)
+        if(pnu)
             *popp01_pool[i] = false;
         else
         {

@@ -84,7 +84,7 @@ void wingsmech_int::wingsmech_4()
                 uks_inst.P_140_14 = true;
             }
         }
-        if(exchange::prr1kpchk == true)
+        if(prr1kpchk == true)
         {
             if(D_X_l != 0)
             {
@@ -107,7 +107,7 @@ void wingsmech_int::wingsmech_4()
         uks_inst.P_141_16 = false;
         uks_inst.P_141_17 = false;
 
-        uks_inst.P_140_15 = exchange::prr1kpchk;
+        uks_inst.P_140_15 = prr1kpchk;
 
         if((abs(X_L - X_P)) >= 1)
         {
@@ -149,7 +149,7 @@ void wingsmech_int::wingsmech_4()
 
         uks_inst.P_142_17 = false;
 
-        if(exchange::prr2kpchk == true)
+        if(prr2kpchk == true)
         {
             if(D_X_p != 0)
             {
@@ -173,7 +173,7 @@ void wingsmech_int::wingsmech_4()
     uks_inst.P_143_16 = false;
     uks_inst.P_143_17 = false;
 
-    uks_inst.P_142_15 = exchange::prr2kpchk;
+    uks_inst.P_142_15 = prr2kpchk;
 
     uks_inst.P_143_16 = false;
     uks_inst.P_143_17 = false;
@@ -251,7 +251,7 @@ void wingsmech_int::wingsmech_4()
     if(exchange::ush1dpl >= 18)
     {
         uks_inst.P_130_11 = hydro_int::pgs1;
-        uks_inst.P_130_12 = exchange::psr1kz;
+        uks_inst.P_130_12 = psr1kz;
 
         if(exchange::delta_z >= 28.1)
         {
@@ -287,9 +287,9 @@ void wingsmech_int::wingsmech_4()
             }
         }
 
-        uks_inst.P_130_19 = exchange::prr1kz;
+        uks_inst.P_130_19 = prr1kz;
 
-        if(exchange::prr1kz == true)
+        if(prr1kz == true)
         {
             if(Ddelta_z_l != 0)
             {
@@ -377,7 +377,7 @@ void wingsmech_int::wingsmech_4()
     if(exchange::ush1dpp >= 18)
     {
         uks_inst.P_132_11 = hydro_int::pgs4;
-        uks_inst.P_132_12 = exchange::psr2kz;
+        uks_inst.P_132_12 = psr2kz;
 
         if(exchange::delta_z >= 28.1)
         {
@@ -411,9 +411,9 @@ void wingsmech_int::wingsmech_4()
             }
         }
 
-        uks_inst.P_132_19 = exchange::prr2kz;
+        uks_inst.P_132_19 = prr2kz;
 
-        if(exchange::prr2kz == true)
+        if(prr2kz == true)
         {
             if(Ddelta_z_l != 0)
             {

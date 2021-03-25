@@ -2,7 +2,7 @@
 
 void powerdc_int::powerdc_13()
 {
-    if(exchange::pvrap && exchange::speed < 0.1)
+    if(pvrap && exchange::speed < 0.1)
     {
         pprap = true;
         exchange::urapP[0] = 117.0;

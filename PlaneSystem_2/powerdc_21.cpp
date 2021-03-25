@@ -123,22 +123,22 @@ void powerdc_int::powerdc_21()
     else
         uks_inst.UKS4X329 = false;
 
-    if(exchange::k15_2420)
+    if(k15_2420)
         uks_inst.UKS2X36 = true;
     else
         uks_inst.UKS2X36 = false;
 
-    if(exchange::k14_2420)
+    if(k14_2420)
         uks_inst.UKS2X37 = true;
     else
         uks_inst.UKS2X37 = false;
 
-    if(exchange::k31_2420)
+    if(k31_2420)
         uks_inst.UKS2X38 = true;
     else
         uks_inst.UKS2X38 = false;
 
-    if(exchange::k30_2420)
+    if(k30_2420)
         uks_inst.UKS4X331 = true;
     else
         uks_inst.UKS4X331 = false;

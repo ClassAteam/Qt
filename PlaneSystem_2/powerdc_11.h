@@ -5,4 +5,3 @@
 #include "allElCons.h"
 #include "exchange.h"
 
-extern allElConsAlt allElConsAlt_inst;

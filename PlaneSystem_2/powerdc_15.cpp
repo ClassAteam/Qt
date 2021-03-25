@@ -8,11 +8,11 @@ void powerdc_int::powerdc_15()
     double kpos{2.5};
 
     if(exchange::ush2dpp >= 18.0 && s21_2420)
-        exchange::k30_2420 = true;
+        k30_2420 = true;
     else
-        exchange::k30_2420 = false;
+        k30_2420 = false;
 
-    if(exchange::k30_2420 && !otk_pos1000)
+    if(k30_2420 && !otk_pos1000)
     {
         exchange::upos = exchange::upos + (118 - exchange::upos) / kpos;
         exchange::fpos = exchange::fpos + (401 - exchange::fpos) / kpos;
@@ -33,18 +33,18 @@ void powerdc_int::powerdc_15()
     else
         k12_2420 = true;
 
-    if(exchange::k30_2420 && !k18_2420)
+    if(k30_2420 && !k18_2420)
     {
-        exchange::k31_2420 = true;
+        k31_2420 = true;
         purglk11 = true;
     }
     else
     {
-        exchange::k31_2420 = false;
+        k31_2420 = false;
         purglk11 = false;
     }
 
-    if(exchange::k30_2420 && !k12_2420)
+    if(k30_2420 && !k12_2420)
     {
         k34_2420 = true;
         purgpk11 = true;
@@ -61,7 +61,7 @@ void powerdc_int::powerdc_15()
         {
             if(pbapsh5)
             {
-                exchange::k31_2420 = true;
+                k31_2420 = true;
                 purglk11 = true;
             }
         }
@@ -70,7 +70,7 @@ void powerdc_int::powerdc_15()
             if(tick_apsh5 * TICK >= 800)
             {
                 pbapsh5 = true;
-                exchange::k31_2420 = true;
+                k31_2420 = true;
                 purglk11 = true;
             }
             else
@@ -114,10 +114,10 @@ void powerdc_int::powerdc_15()
         apsh_switch(exchange::ushavP[1][0], k16_2420, pbapsh2, purgpk9);
         break;
     case s20_2430_pos::apsh3:
-        apsh_switch(exchange::ushpts[0], exchange::k14_2420, pbapsh3, purglk10);
+        apsh_switch(exchange::ushpts[0], k14_2420, pbapsh3, purglk10);
         break;
     case s20_2430_pos::apsh5:
-        apsh_switch(exchange::ushpos[0], exchange::k31_2420, pbapsh5, purglk11);
+        apsh_switch(exchange::ushpos[0], k31_2420, pbapsh5, purglk11);
         break;
     case s20_2430_pos::apsh6:
         apsh_switch(exchange::ushpos[1], k34_2420, pbapsh6, purgpk11);

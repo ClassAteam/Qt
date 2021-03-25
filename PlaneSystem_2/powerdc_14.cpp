@@ -12,11 +12,11 @@ void powerdc_int::powerdc_14()
         k17_2420 = true;
 
     if(exchange::ush2dpl >= 18.0 && f46_2420 && s15_2420)
-        exchange::k15_2420 = true;
+        k15_2420 = true;
     else
-        exchange::k15_2420 = false;
+        k15_2420 = false;
 
-    if(exchange::k15_2420 && !otk_preobr_pts1)
+    if(k15_2420 && !otk_preobr_pts1)
     {
         exchange::upts = exchange::upts + (117 - exchange::upts) / kpts;
         exchange::fpts = exchange::fpts + (400 - exchange::fpts) / kpts;
@@ -39,14 +39,14 @@ void powerdc_int::powerdc_14()
     }
 
 
-    if(exchange::k15_2420 && !k17_2420)
+    if(k15_2420 && !k17_2420)
     {
-        exchange::k14_2420 = true;
+        k14_2420 = true;
         purglk10 = true;
     }
     else
     {
-        exchange::k14_2420 = false;
+        k14_2420 = false;
         purglk10 = false;
     }
 
@@ -56,7 +56,7 @@ void powerdc_int::powerdc_14()
         {
             if(pbapsh3)
             {
-                exchange::k14_2420 = true;
+                k14_2420 = true;
                 purglk10 = true;
             }
         }
@@ -65,7 +65,7 @@ void powerdc_int::powerdc_14()
             if(tick3 * TICK >= 800)
             {
                 pbapsh3 = true;
-                exchange::k14_2420 = true;
+                k14_2420 = true;
                 purglk10 = true;
             }
             else

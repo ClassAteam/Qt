@@ -2,7 +2,6 @@
 #include "interfacing.h"
 #include "bss.h"
 #include "allElCons.h"
-#include "input_feed.h"
 #include "exchange.h"
 #include "uks.h"
 #include "hydro_int.h"
@@ -17,6 +16,9 @@ class powerdc_int : public interfacing
     Q_OBJECT
 
 public:
+    static allElConsAlt allElConsAlt_inst;
+    static allElConsDir allElConsDir_inst;
+
     static bool
         prg1, prg2, prg3, prg4, prgvsu,
         ppgvsu27,
@@ -84,10 +86,43 @@ public:
         purgk1,
         purgk21;
     bool
-        otk_pos1000, k12_2420{}, k13_2420{}, k16_2420{}, k18_2420{},
+s1_11028,
+s1_4940,
+k1_11038,
+k2_11038,
+s1_11052,
+s2_11052,
+s1_11081,
+s1_11313,
+k1_17723,
+k2_17723,
+k11_2250,
+k1_2250,
+k30_2420,
+k31_2420,
+k3_2250,
+k5_2250,
+k8_2250,
+k3_3650,
+k2_7322,
+k3_7322,
+k4_7322,
+k5_7322,
+k8_7322,
+k9_7322,
+k10_7322,
+k11_7322,
+k18_7322,
+k4_4940,
+    pvrap,
+    pvrap1,
+    pvrap2,
+    pnu,
+    otk_pos1000{}, k12_2420{}, k13_2420{},k14_2420{}, k15_2420{}, k16_2420{}, k18_2420{},
         k34_2420{}, s7_2420{}, s17_2420{}, s18_2420{},
         s19_2420{}, s21_2420{}, pbapsh[5]{},
-        otk_preobr_pts1, s15_2420, pbapsh1, pbapsh2, pbapsh3,
+        otk_preobr_pts1, overload_gen1{}, overload_gen2{}, overload_gen3{},
+        overload_gen4{}, s15_2420, pbapsh1, pbapsh2, pbapsh3,
         pbapsh5, pbapsh6,
         purglk10,k17_2420{}, k19_2420{}, k20_2420{},
         s1_7710{}, s2_7710{}, s3_7710{}, s4_7710{},

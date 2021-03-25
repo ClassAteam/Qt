@@ -7,7 +7,6 @@
 
 extern bss bss_inst;
 extern uks uks_inst;
-extern allElConsAlt allElConsAlt_inst;
 
 class antiicing_int : public interfacing
 {

@@ -12,7 +12,7 @@ void powerdc_int::powerdc_2_3() //2 //3
     //start logic
     if(abs(exchange::speed) < 0.1)
     {
-        if(exchange::pvrap1 == true)
+        if(pvrap1 == true)
         {
             pprap1 = true;
             urap1 = 28.5;
@@ -23,7 +23,7 @@ void powerdc_int::powerdc_2_3() //2 //3
             urap1 = 0;
         }
 
-        if(exchange::pvrap2 == true)
+        if(pvrap2 == true)
         {
             pprap2 = true;
             urap2 = 28.5;

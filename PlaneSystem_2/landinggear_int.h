@@ -5,7 +5,6 @@
 #include "allElCons.h"
 
 extern bss bss_inst;
-extern allElConsAlt allElConsAlt_inst;
 
 class landinggear_int : public interfacing
 {

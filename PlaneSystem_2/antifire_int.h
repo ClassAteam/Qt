@@ -6,7 +6,6 @@
 #include "uks.h"
 #include "algorithms.h"
 
-extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 

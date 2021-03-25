@@ -25,13 +25,13 @@ wingsmech_int::wingsmech_int(QWidget *parent)
     createLabelValue(&delta_pr_p, "delta_pr_p");
     createLabelValue(&X_L, "X_L20");
     createLabelValue(&X_P, "X_P20");
-    createLabelClue(&exchange::prrkz, "prrkz");
-    createLabelClue(&exchange::prr1kz, "prr1kz");
-    createLabelClue(&exchange::prr2kz, "prr2kz");
-    createLabelClue(&exchange::psr1kz, "psr1kz");
-    createLabelClue(&exchange::psr2kz, "psr2kz");
-    createLabelClue(&exchange::por1kz, "por1kz");
-    createLabelClue(&exchange::por2kz, "por2kz");
+    createLabelClue(&prrkz, "prrkz");
+    createLabelClue(&prr1kz, "prr1kz");
+    createLabelClue(&prr2kz, "prr2kz");
+    createLabelClue(&psr1kz, "psr1kz");
+    createLabelClue(&psr2kz, "psr2kz");
+    createLabelClue(&por1kz, "por1kz");
+    createLabelClue(&por2kz, "por2kz");
     createRedButton(&otkaz_osn_1k_prekr, "otkaz_osn_1k_prekr");
     createRedButton(&otkaz_osn_2k_prekr, "otkaz_osn_2k_prekr");
     createRedButton(&otkaz_1k_prekr, "otkaz_1k_prekr");
@@ -42,9 +42,9 @@ wingsmech_int::wingsmech_int(QWidget *parent)
     createRedButton(&prr2kpr, "prr2kpr");
     createRedButton(&psr1kpr, "psr1kpr");
     createRedButton(&psr2kpr, "psr2kpr");
-    createRedButton(&exchange::por1kpr, "por1kpr");
-    createRedButton(&exchange::por2kpr, "por2kpr");
-    createRedButton(&exchange::s1_2780, "s1_2780");
+    createRedButton(&por1kpr, "por1kpr");
+    createRedButton(&por2kpr, "por2kpr");
+    createRedButton(&s1_2780, "s1_2780");
 
     createRadioButton(&s2_2780, "PREDKR NEYT", false);
     createRadioButton(&s2_2780, "PREDKR UBRY", false);
@@ -58,12 +58,12 @@ wingsmech_int::wingsmech_int(QWidget *parent)
     createRedButton(&otkaz_osn_1k_PCHK, "otkaz_osn_1k_PCHK");
     createRedButton(&otkaz_osn_2k_PCHK, "otkaz_osn_2k_PCHK");
     createRedButton(&otkaz_RASSINHR_PCHK, "otkaz_RASSINHR_PCHK");
-    createLabelClue(&exchange::prrkpchk, "prrkpchk");
-    createLabelClue(&exchange::prr1kpchk, "prr1kpchk");
-    createLabelClue(&exchange::prr2kpchk, "prr2kpchk");
-    createLabelClue(&exchange::por1kpchk, "por1kpchk");
-    createLabelClue(&exchange::por2kpchk, "por2kpchk");
-    createRedButton(&exchange::s1_2790, "s1_2790");
+    createLabelClue(&prrkpchk, "prrkpchk");
+    createLabelClue(&prr1kpchk, "prr1kpchk");
+    createLabelClue(&prr2kpchk, "prr2kpchk");
+    createLabelClue(&por1kpchk, "por1kpchk");
+    createLabelClue(&por2kpchk, "por2kpchk");
+    createRedButton(&s1_2790, "s1_2790");
 
     createRadioButton(&s2_2790, "s2_2790_off", false);
     createRadioButton(&s2_2790, "s2_2790_bolshe", false);

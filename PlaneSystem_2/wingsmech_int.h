@@ -6,7 +6,6 @@
 #include "exchange.h"
 #include "algorithms.h"
 
-extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern uks uks_inst;
 
@@ -20,6 +19,22 @@ public:
     static bool S1_2750;
 
     bool
+    prrkz{},
+    prr1kz{},
+    prr2kz{},
+    psr1kz{},
+    por1kz{},
+    por2kz{},
+    psr2kz{},
+    por1kpr{},
+    por2kpr{},
+    prrkpchk{},
+    prr1kpchk{},
+    prr2kpchk{},
+    por1kpchk{},
+    por2kpchk{},
+    s1_2790{},
+    s1_2780{},
         S13_2750{},PGS1{},PGS2{}, PGS3{}, PGS4{},
         otkaz_osn_1k_zakr{}, otkaz_osn_2k_zakr{}, otkaz_1k_zakr{}, otkaz_2k_zakr{},
         otkaz_rassgl_zakr{}, otkaz_osn_1k_prekr{}, otkaz_osn_2k_prekr{}, otkaz_1k_prekr{},

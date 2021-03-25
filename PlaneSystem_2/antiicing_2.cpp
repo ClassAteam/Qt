@@ -21,6 +21,7 @@ static int
         f32_3020 = false;
 
     f319_3020 = f353_3020 = f356_3020 = f32_3020;
+    f319_3020 = allElConsDir::f319_3020;
 
     //K52, K54, K55 toggle
     //1

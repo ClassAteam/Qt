@@ -5,7 +5,7 @@ void powerdc_int::powerdc_16()
     static int
         tick[4]{};
     bool* k13_pool[] = {&k13_2420, &k16_2420};
-    bool* k31_pool[] = {&exchange::k31_2420, &k34_2420};
+    bool* k31_pool[] = {&k31_2420, &k34_2420};
     bool* purgk1_pool[] = {&purgk1, &purgk21};
     bool* purgk21_pool[] = {&purgk21, &purgk1};
     bool* purgk41_pool[] = {&purgk41, &purgk31};
@@ -300,7 +300,7 @@ void powerdc_int::powerdc_16()
                 }
             }
 
-            if(exchange::k14_2420)
+            if(k14_2420)
             {
                 exchange::ushpts[y] = exchange::uptsP[y];
                 exchange::fshpts = exchange::fpts ;

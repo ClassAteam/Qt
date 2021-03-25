@@ -4,9 +4,9 @@
 void wingsmech_int::wingsmech_1()
 {
     //start logic
-    exchange::prr1kz = false;
-    exchange::psr1kz = false;
-    exchange::por1kz = false;
+    prr1kz = false;
+    psr1kz = false;
+    por1kz = false;
     delta_zr_vh_bf = delta_zr_vh / 100;
     delta_z_zad = m_3_L_intervals(delta_zr_vh_bf, 0, 0.3, 0.6, 1.0, 0, 15, 25, 40);
 
@@ -16,7 +16,7 @@ void wingsmech_int::wingsmech_1()
         {
             if(S1_2750)
             {
-                exchange::prr1kz = true;
+                prr1kz = true;
             }
             else
             {
@@ -24,13 +24,13 @@ void wingsmech_int::wingsmech_1()
                 {
                     if(S13_2750)
                     {
-                        exchange::psr1kz = true;
+                        psr1kz = true;
                     }
                     else
                     {
                         if(otkaz_osn_1k_zakr == false)
                         {
-                            exchange::por1kz = true;
+                            por1kz = true;
                             if(exchange::P2OBLOP == false)
                             {
                                 delta_z_zad = delta_z_zad * Kz;
@@ -41,10 +41,10 @@ void wingsmech_int::wingsmech_1()
             }
         }
     }
-    exchange::prrkz = false;
-    exchange::prr2kz = false;
-    exchange::psr2kz = false;
-    exchange::por2kz = false;
+    prrkz = false;
+    prr2kz = false;
+    psr2kz = false;
+    por2kz = false;
 
     if(hydro_int::pgs4 >= 130)
     {
@@ -52,7 +52,7 @@ void wingsmech_int::wingsmech_1()
         {
             if(S1_2750)
             {
-                exchange::prr2kz = true;
+                prr2kz = true;
             }
             else
             {
@@ -60,13 +60,13 @@ void wingsmech_int::wingsmech_1()
                 {
                     if(S13_2750)
                     {
-                        exchange::psr2kz = true;
+                        psr2kz = true;
                     }
                     else
                     {
                         if(otkaz_osn_2k_zakr == false)
                         {
-                            exchange::por2kz = true;
+                            por2kz = true;
                             if(exchange::P2OBPOP == false)
                             {
                                 delta_z_zad = delta_z_zad * Kz;
@@ -77,7 +77,7 @@ void wingsmech_int::wingsmech_1()
             }
         }
     }
-    if(exchange::por1kz == true || exchange::psr1kz == true)
+    if(por1kz == true || psr1kz == true)
     {
         if(delta_z_l < delta_z_zad)
         {
@@ -100,7 +100,7 @@ void wingsmech_int::wingsmech_1()
         Ddelta_z_l = 0;
     }
 
-    if(exchange::por2kz == true || exchange::psr2kz == true)
+    if(por2kz == true || psr2kz == true)
     {
         if(delta_z_p < delta_z_zad)
         {
@@ -122,9 +122,9 @@ void wingsmech_int::wingsmech_1()
     {
         Ddelta_z_p = 0;
     }
-    if(exchange::por1kz == true)
+    if(por1kz == true)
     {
-        if(exchange::por2kz == false)
+        if(por2kz == false)
         {
             Ddelta_z_p = 0.5 * Ddelta_z_p;
             Ddelta_z_l = 0.5 * Ddelta_z_l;
@@ -132,14 +132,14 @@ void wingsmech_int::wingsmech_1()
     }
     else
     {
-        if(exchange::por2kz == true)
+        if(por2kz == true)
         {
             Ddelta_z_p = 0.5 * Ddelta_z_p;
             Ddelta_z_l = 0.5 * Ddelta_z_l;
         }
     }
 
-    if(exchange::prr1kz == true)
+    if(prr1kz == true)
     {
         if(S2_2750 == 2)
         {
@@ -173,7 +173,7 @@ void wingsmech_int::wingsmech_1()
         }
     }
 
-    if(exchange::prr2kz == true)
+    if(prr2kz == true)
     {
         if(S2_2750 == 2)
         {
@@ -205,9 +205,9 @@ void wingsmech_int::wingsmech_1()
             }
         }
 
-        exchange::prrkz = true;
+        prrkz = true;
 
-        if(exchange::prr1kz == false)
+        if(prr1kz == false)
         {
             Ddelta_z_l = 0.5 * Ddelta_z_l;
             Ddelta_z_p = 0.5 * Ddelta_z_p;
@@ -215,16 +215,16 @@ void wingsmech_int::wingsmech_1()
     }
     else
     {
-        if(exchange::prr1kz == true)
+        if(prr1kz == true)
         {
-            exchange::prrkz = true;
+            prrkz = true;
             Ddelta_z_l = 0.5 * Ddelta_z_l;
             Ddelta_z_p = 0.5 * Ddelta_z_p;
         }
     }
     if(abs(delta_z_l - delta_z_p) < 2.5)
     {
-        if(exchange::prrkz == true)
+        if(prrkz == true)
         {
             delta_z_l = delta_z_l + (Ddelta_z_l * (TICK / 1000));
             delta_z_p = delta_z_p + (Ddelta_z_p * (TICK / 1000));

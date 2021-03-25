@@ -6,7 +6,6 @@
 #include "input_feed.h"
 #include "exchange.h"
 
-extern allElConsAlt allElConsAlt_inst;
 extern bss bss_inst;
 extern bss bss_inst;
 

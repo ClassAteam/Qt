@@ -6,6 +6,9 @@ static void intake_loop(double* delta, double* Ddelta, int* tick);
 
 void landinggear_int::landinggear_1()	//sashes
 {
+    static QDeadlineTimer tsash(500);
+    static bool firsttime_emerg{true};
+
     static int
         left_tick{},
         right_tick{},
@@ -19,16 +22,13 @@ void landinggear_int::landinggear_1()	//sashes
 
     if (!gk_oovsh)
     {
-
+        firsttime_emerg = true;
         //Ddelta_stv toggling
         if (exchange::pgs2 >= 130.0 && exchange::pgs2 < 280.0)
-        {
             Ddelta_stv = two_points_to_Y(exchange::pgs2, 130.0, 280.0, 0.0, 45.0);
-        }
+
         if (exchange::pgs2 >= 280.0)
-        {
             Ddelta_stv = 45.0;
-        }
 
         // release loop
         if (gk_vsh && !gk_ush)
@@ -84,43 +84,44 @@ void landinggear_int::landinggear_1()	//sashes
     else
     // Emergency release
     {
-        if (P_bal_l >= 60.0)
+        if(firsttime_emerg)
         {
-            Ddelta_stv_l = two_points_to_Y(P_bal_l, 60.0, 150.0, 0.0, 30.0);
+            tsash.setRemainingTime(500);
+            firsttime_emerg = false;
+        }
+        if(tsash.hasExpired()){
+            if (P_bal_l >= 60.0)
+                Ddelta_stv_l = two_points_to_Y(P_bal_l, 60.0, 150.0, 0.0, 30.0);
+
+            if (P_bal_p >= 60.0)
+                Ddelta_stv_p = two_points_to_Y(P_bal_p, 60.0, 150.0, 0.0, 30.0);
+
+            if (P_bal_per >= 60.0)
+                Ddelta_stv_n = two_points_to_Y(P_bal_per, 60.0, 150.0, 0.0, 30.0);
+
+            // emergency left release
+            if(delta_stv_l != 90.0 && gk_avl)
+            {
+                left_tick++;
+                //releasing left
+                releasing_loop(&delta_stv_l, &Ddelta_stv_l, &left_tick);
+            }
+
+            if(delta_stv_p != 90.0 && gk_avp)
+            {
+                right_tick++;
+                //releasing right
+                releasing_loop(&delta_stv_p, &Ddelta_stv_p, &right_tick);
+            }
+
+            if(delta_stv_n != 90 && gk_avn)
+            {
+                nose_tick++;
+                //releasing nose
+                releasing_loop(&delta_stv_n, &Ddelta_stv_n, &nose_tick);
+            }
         }
 
-        if (P_bal_p >= 60.0)
-        {
-            Ddelta_stv_p = two_points_to_Y(P_bal_p, 60.0, 150.0, 0.0, 30.0);
-        }
-
-        if (P_bal_per >= 60.0)
-        {
-            Ddelta_stv_n = two_points_to_Y(P_bal_per, 60.0, 150.0, 0.0, 30.0);
-        }
-
-        // emergency left release
-        if(delta_stv_l != 90.0 && gk_avl)
-        {
-            left_tick++;
-        }
-        if(delta_stv_p != 90.0 && gk_avp)
-        {
-            right_tick++;
-        }
-        if(delta_stv_n != 90 && gk_avn)
-        {
-            nose_tick++;
-        }
-
-        //releasing left
-        releasing_loop(&delta_stv_l, &Ddelta_stv_l, &left_tick);
-
-        //releasing right
-        releasing_loop(&delta_stv_p, &Ddelta_stv_p, &right_tick);
-
-        //releasing nose
-        releasing_loop(&delta_stv_n, &Ddelta_stv_n, &nose_tick);
     }
 
     if(!gk_oovsh && !gk_vsh && !gk_ush)
@@ -135,20 +136,20 @@ void landinggear_int::landinggear_1()	//sashes
 }
 static void releasing_loop(double* delta, double* Ddelta, int* tick)
 {
-    if (*delta < 1)
+    if(*delta < 90)
     {
         *delta = (*delta + ((*Ddelta / (1000 / TICK))));
 
-        if(*delta >= 1)
+        if(*delta >= 90)
         {
-            *delta = 1;
+            *delta = 90;
             *tick = 0;
         }
     }
 }
 static void intake_loop(double* delta, double* Ddelta, int* tick)
 {
-    if (*delta > 0)
+    if(*delta > 0)
     {
         *delta = (*delta - ((*Ddelta / (1000 / TICK))));
 

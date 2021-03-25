@@ -6,167 +6,105 @@ void antifire_int::antifire_2()
     //				   F91 toggle
     if(exchange::ush1dpl >= 16.0)
     {
-        if (F9_2610 == true)
-        {
+        if (F9_2610)
             F91_2610 = true;
-        }
         else
-        {
             F91_2610 = false;
-        }
     }
     else
-    {
         F91_2610 = false;
-    }
     //				   F101 toggle
     if (exchange::ush1dpp >= 16.0)
     {
-        if (F10_2610 == true)
-        {
+        if (F10_2610)
             F101_2610 = true;
-        }
         else
-        {
             F101_2610 = false;
-        }
     }
     //					F181 toggle
-    if (exchange::ush1dpl >= 16.0)
+    if(exchange::ush1dpl >= 16.0)
     {
-        if (F18_2610 == true)
-        {
+        if(F18_2610)
             F181_2610 = true;
-        }
         else
-        {
             F181_2610 = false;
-        }
     }
     //					F111 toggle
-    if (exchange::ush2dpl >= 16.0)
+    if(exchange::ush2dpl >= 16.0)
     {
-        if (F11_2610 == true)
-        {
+        if(F11_2610)
             F111_2610 = true;
-        }
         else
-        {
             F111_2610 = false;
-        }
     }
     //					F121 toggle
     if (exchange::ush2dpl >= 16.0)
     {
-        if (F12_2610 == true)
-        {
+        if (F12_2610)
             F121_2610 = true;
-        }
         else
-        {
             F121_2610 = false;
-        }
     }
     //					F92 toggle
-    if (F91_2610 == true)
+    if(F91_2610)
     {
-        if (F101_2610 == true)
+        if(F101_2610)
         {
             F92_2610 = false;
         }
         else
         {
-            if (F181_2610 == true)
-            {
+            if(F181_2610)
                 F92_2610 = false;
-            }
             else
-            {
                 F92_2610 = true;
-            }
         }
     }
     else
-    {
         F92_2610 = false;
-    }
     //					K1 toggle
-    if (F92_2610 == true && S1_2610 == 1)
-    {
+    if(F92_2610 && S1_2610)
         K1_2610 = true;
-    }
     else
-    {
         K1_2610 = false;
-    }
     //					K3 toggle
-    if (F92_2610 == true && S1_2610 == 2)
-    {
+    if(F92_2610 && S1_2610)
         K3_2610 = true;
-    }
     else
-    {
         K3_2610 = false;
-    }
     //					K6 toggle
-    if (F92_2610 == true && S1_2610 == 3)
-    {
+    if(F92_2610 && S1_2610)
         K6_2610 = true;
-    }
     else
-    {
         K6_2610 = false;
-    }
     //					K9 toggle
-    if (F92_2610 == true && S1_2610 == 4)
-    {
+    if(F92_2610 && S1_2610)
         K9_2610 = true;
-    }
     else
-    {
         K9_2610 = false;
-    }
     //					K12 toggle
-    if (F92_2610 == true && S1_2610 == 5)
-    {
+    if(F92_2610 && S1_2610)
         K12_2610 = true;
-    }
     else
-    {
         K12_2610 = false;
-    }
     //						F911 toggle
-    if (F92_2610 == true && S2_2610 == 1)
-    {
+    if (F92_2610 && S2_2610)
         F911_2610 = true;
-    }
     else
-    {
         F911_2610 = false;
-    }
     //					F912 toggle
-    if (F92_2610 == true && S2_2610 == 2)
-    {
+    if(F92_2610 && S2_2610)
         F912_2610 = true;
-    }
     else
-    {
         F912_2610 = false;
-    }
     //					F913 toggle
-    if (F92_2610 == true && S2_2610 == 3)
-    {
+    if (F92_2610 && S2_2610)
         F913_2610 = true;
-    }
     else
-    {
         F913_2610 = false;
-    }
     //					F914 toggle
-    if (F92_2610 == true && S2_2610 == 4)
-    {
+    if (F92_2610 && S2_2610)
         F914_2610 = true;
-    }
     else
     {
         F914_2610 = false;

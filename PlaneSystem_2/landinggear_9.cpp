@@ -4,6 +4,8 @@
 void landinggear_int::landinggear_9() //actually 11th and 12th
 {
 
+    Xped = Xped_buf /100;
+
     double m_pedals_to_fi(double Xped, double interval_Y1, double interval_Y2);
 
     if(exchange::ush1dpl >= 19.0)
@@ -314,9 +316,9 @@ void landinggear_int::landinggear_9() //actually 11th and 12th
             fi_zad = fi_zad2;
         }
 
-        if(abs(fi_nk - fi_zad) >= 2) //Recheck !!!
+        if(abs(fi_nk - fi_zad) >= 0.1) //Recheck !!!
         {
-            if(PR_R == true)
+            if(PR_R)
             {
                 V_nk = 8;
             }

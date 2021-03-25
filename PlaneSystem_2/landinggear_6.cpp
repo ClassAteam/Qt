@@ -244,7 +244,7 @@ void landinggear_int::landinggear_6() //actually 6th
         exchange::P1OBLOP = false;
         S32_3230 = 0.0;
         K9_3230 = 0.0;
-        exchange::K25_3230 = 0.0;
+        exchange::K25_3230 = false;
 
         exchange::P2OBLOP = 0.0;
         exchange::S34_3230 = 0.0;

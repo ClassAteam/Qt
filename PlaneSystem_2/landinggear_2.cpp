@@ -42,13 +42,13 @@ void landinggear_int::landinggear_2() //actually 3
         // intake loop
         if (gk_ush && !gk_vsh)
         {
-            if(delta_tel_l != 0.0 && delta_shift_l < 0.65)
+            if(delta_tel_l != 0.0 && delta_sh_l < 0.65)
             {
                 carts_left_tick++;
                 //intake left
                 intake_loop(&delta_tel_l, &Ddelta_tel, &carts_left_tick);
             }
-            if(delta_tel_p != 0.0 && delta_shift_p < 0.65)
+            if(delta_tel_p != 0.0 && delta_sh_p < 0.65)
             {
                 carts_right_tick++;
                 //intake right
@@ -63,22 +63,20 @@ void landinggear_int::landinggear_2() //actually 3
     else
     // Emergency release
     {
-
         // emergency left release
-        if(delta_tel_l != 1  && delta_shift_l >= 0.4)
+        if(delta_tel_l != 1  && delta_sh_l >= 0.4)
         {
             carts_left_tick++;
+            //releasing left
+            releasing_loop(&delta_tel_l, &Ddelta_tel, &carts_left_tick);
         }
-        if(delta_tel_p != 1  && delta_shift_p >= 0.4)
+
+        if(delta_tel_p != 1  && delta_sh_p >= 0.4)
         {
             carts_right_tick++;
+            //releasing right
+            releasing_loop(&delta_tel_p, &Ddelta_tel, &carts_right_tick);
         }
-
-        //releasing left
-        releasing_loop(&delta_tel_l, &Ddelta_tel, &carts_left_tick);
-
-        //releasing right
-        releasing_loop(&delta_tel_p, &Ddelta_tel, &carts_right_tick);
     }
 
     //end logic

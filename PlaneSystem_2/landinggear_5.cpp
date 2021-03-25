@@ -56,7 +56,7 @@ void landinggear_int::landinggear_5() //actually 7th and 8th
     S29_3230 = false;
 
     // Presure signal intake
-    if (gk_vsh)
+    if(gk_vsh)
     {
         if (Plv >= 130.0)
         {
@@ -66,16 +66,16 @@ void landinggear_int::landinggear_5() //actually 7th and 8th
     }
 
     // Presure signal release
-    if (gk_ush)
+    if(gk_ush)
     {
-        if (Plu >= 130.0)
+        if(Plu >= 130.0)
         {
             PSDVU = true;
             S47_3230 = true;
         }
     }
 
-    if (exchange::ush2dpl >= 19.0)
+    if(exchange::ush2dpl >= 19.0)
     {
         F16_3230 = true;
         F13_3230 = true;
@@ -163,12 +163,12 @@ void landinggear_int::landinggear_5() //actually 7th and 8th
             //toggling release clue
             if(F13_3230)
             {
-                if (K4_3230_1211 || otkaz_ne_vikl_avt_pos_vip_shas)
+                if(K4_3230_1211 || otkaz_ne_vikl_avt_pos_vip_shas)
                     K22_3230 = true;
             }
 
             // additional release clues on each rack
-            if (K22_3230)
+            if(K22_3230)
             {
                 //left
                 if (S42_3230 && S51_3230) K2_3230 = true;

@@ -192,7 +192,8 @@ public:
         fi_zad{},
         fi_nk{},
         V_nk{},
-        Xped{},
+        Xped{0.5},
+        Xped_buf{50},
         delta_sh_l{1},//main rack position left from 0 to 1
         delta_sh_p{1},//main rack position right from 0 to 1
         delta_sh_n{1},//main rack position nose from 0 to 1

@@ -184,8 +184,8 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&exchange::delta_z, "delta_z");
     createSlider(&exchange::delta_z, 0, 100);
 
-    createLabelClue(&otkaz_1_kanala, "otkaz_1_kanala");
-    createLabelClue(&otkaz_2_kanala, "otkaz_2_kanala");
+    createRedButton(&otkaz_1_kanala, "otkaz_1_kanala");
+    createRedButton(&otkaz_2_kanala, "otkaz_2_kanala");
     createLabelClue(&K3_3250, "K3_3250");
     createLabelClue(&K4_3250, "K4_3250");
     createLabelClue(&K5_3250, "K5_3250");
@@ -226,6 +226,7 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelValue(&fi_zad, "fi_zad");
     createLabelValue(&fi_nk, "fi_nk");
     createLabelValue(&V_nk, "V_nk");
+    createSlider(&Xped_buf,0, 100);
     createLabelValue(&Xped, "Xped");
 
 }

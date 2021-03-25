@@ -4,7 +4,6 @@
 
 void landinggear_int::landinggear_7() //actually 5th
 {
-
     GK_dvl = false;
     GK_duoop = false;
 

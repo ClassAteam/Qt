@@ -14,18 +14,15 @@ void landinggear_int::landinggear_3() //actually 2
         Ddelta_racks_l{},
         Ddelta_racks_p{};
 
-    if (!gk_oovsh)
+    if(!gk_oovsh)
     {
 
         //Ddelta_stv toggling
         if (exchange::pgs2 >= 130.0 && exchange::pgs2 < 280.0)
-        {
             Ddelta_racks = two_points_to_Y(exchange::pgs2, 130.0, 280.0, 0.0, 0.25);
-        }
+
         if (exchange::pgs2 >= 280.0)
-        {
             Ddelta_racks = 0.25;
-        }
 
         // release loop
         if (gk_vsh && !gk_ush)
@@ -73,14 +70,10 @@ void landinggear_int::landinggear_3() //actually 2
 
         // emergency left release
         if (P_bal_l >= 60.0)
-        {
             Ddelta_racks_l = two_points_to_Y(P_bal_l, 60.0, 150.0, 0.0, 0.3);
-        }
 
         if (P_bal_p >= 60.0)
-        {
             Ddelta_racks_p = two_points_to_Y(P_bal_p, 60.0, 150.0, 0.0, 0.3);
-        }
 
 
         // emergency left release
@@ -88,20 +81,19 @@ void landinggear_int::landinggear_3() //actually 2
             delta_sh_l == 1.0 && gk_avl)
         {
             shift_left_tick++;
+            //releasing left
+            releasing_loop(&delta_shift_l, &Ddelta_racks_l, &shift_left_tick);
         }
-        if(delta_shift_p != 1.0 &&
-            delta_stv_p == 90.0 &&
-            delta_tel_p == 1.0 &&
-            delta_sh_p == 1.0 &&
-            gk_avp)
+
+        if(delta_shift_p != 1.0 && delta_stv_p == 90.0 &&
+            delta_tel_p == 1.0 && delta_sh_p == 1.0 && gk_avp)
         {
             shift_right_tick++;
+            //releasing right
+            releasing_loop(&delta_shift_p, &Ddelta_racks_p, &shift_right_tick);
         }
-        //        //releasing left
-        releasing_loop(&delta_shift_l, &Ddelta_racks_l, &shift_left_tick);
 
-        //        //releasing right
-        releasing_loop(&delta_shift_p, &Ddelta_racks_p, &shift_right_tick);
+
     }
     if(!gk_oovsh && !gk_vsh && !gk_ush)
     {

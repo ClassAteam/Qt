@@ -3,23 +3,6 @@
 
 void cabinlighting_int::cabinlighting_5()
 {
-    static bool
-        otkaz_zaliv_osvesh_ll_1,
-        otkaz_zaliv_osvesh_ll_2,
-        otkaz_zaliv_osvesh_pl_1,
-        otkaz_zaliv_osvesh_pl_2,
-        otkaz_zaliv_osvesh_sho_1,
-        otkaz_zaliv_osvesh_sho_2,
-        otkaz_zaliv_osvesh_shn_1,
-        otkaz_zaliv_osvesh_shn_2,
-        PBUSTO4_1_1k,
-        PBUSTO4_1_2k,
-        PBUSTO4_2_1k,
-        PBUSTO4_2_2k,
-        PBUSTO4_3_1k,
-        PBUSTO4_3_2k,
-        PBUSTO4_4_1k,
-        PBUSTO4_4_2k;
     static double
         alpha_ra2a3,
         alpha_ra2a4,
@@ -35,60 +18,35 @@ void cabinlighting_int::cabinlighting_5()
 
     // PBUSTO4 toggle
     //A1
-    if (exchange::ush1l >= 18.0 &&
-        F1_3310 == true &&
-        otkaz_zaliv_osvesh_ll_1 == false)
-    {
+    if(exchange::ush1l >= 18.0 && F1_3310 && !otkaz_zaliv_osvesh_ll_1)
         PBUSTO4_1_1k = true;
-    }
     else
-    {
         PBUSTO4_1_1k = false;
-    }
 
     // PBUSTO4 toggle
     //A2
-    if (exchange::ush2p >= 18.0 &&
-        F2_3310 == true &&
-        otkaz_zaliv_osvesh_pl_1 == false)
-    {
+    if(exchange::ush2p >= 18.0 && F2_3310 && !otkaz_zaliv_osvesh_pl_1)
         PBUSTO4_1_2k = true;
-    }
     else
-    {
         PBUSTO4_1_2k = false;
-    }
 
     // PBUSTO4 toggle
     //A3
-    if (exchange::ush1dpl >= 18.0 &&
-        F3_3310 == true &&
-        otkaz_zaliv_osvesh_ll_2 == false)
-    {
+    if(exchange::ush1dpl >= 18.0 && F3_3310 && !otkaz_zaliv_osvesh_ll_2)
         PBUSTO4_2_1k = true;
-    }
     else
-    {
         PBUSTO4_2_1k = false;
-    }
 
     // PBUSTO4 toggle
     //A4
-    if (exchange::ush2dpp >= 18.0 &&
-        F4_3310 == true &&
-        otkaz_zaliv_osvesh_pl_2 == false)
-    {
+    if(exchange::ush2dpp >= 18.0 && F4_3310 && !otkaz_zaliv_osvesh_pl_2)
         PBUSTO4_2_2k = true;
-    }
     else
-    {
         PBUSTO4_2_2k = false;
-    }
 
     // PK21PBLL30, PK11PBLL30 toggle
     //B1
-    if (exchange::ush1l >= 18.0 &&
-        PBUSTO4_2_1k == true)
+    if (exchange::ush1l >= 18.0 && PBUSTO4_2_1k)
     {
         UZOPBLL2 = two_points_to_Y(alpha_ra2a3, 0, 1, 0.75, 1);
         PK12PBLLZO = true;
@@ -101,7 +59,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK21PBLL30, PK11PBLL30 toggle
     //B2
-    if (exchange::ush1dpl >= 18.0 && PBUSTO4_1_1k == true)
+    if (exchange::ush1dpl >= 18.0 && PBUSTO4_1_1k)
     {
         UZOPBLL1 = two_points_to_Y(alpha_ra2a3, 0, 1, 0.75, 1);
         PK11PBLLZO = true;
@@ -114,7 +72,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK12PBPL30, PK22PBPL30
     //C1
-    if (PBUSTO4_1_2k == true)
+    if (PBUSTO4_1_2k)
     {
         UZOPBPL1 = two_points_to_Y(alpha_ra2a7, 0, 1, 0.75, 1);
         PK12PBPLZO = true;
@@ -126,7 +84,7 @@ void cabinlighting_int::cabinlighting_5()
     }
 
     //C2
-    if (PBUSTO4_2_2k == true)
+    if (PBUSTO4_2_2k)
     {
         UZOPBPL2 = two_points_to_Y(alpha_ra2a7, 0, 1, 0.75, 1);
         PK22PBPLZO = true;
@@ -139,7 +97,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1LSPD30, PK2LSPD30
     //D1
-    if (exchange::ush1dpl >= 18.0 && PBUSTO4_1_1k == true)
+    if (exchange::ush1dpl >= 18.0 && PBUSTO4_1_1k)
     {
         UZOLSPD1 = two_points_to_Y(alpha_ra2a4, 0 , 1, 0.75, 1);
         PK1LSPDZO = true;
@@ -151,7 +109,7 @@ void cabinlighting_int::cabinlighting_5()
     }
 
     //D2
-    if (exchange::ush1l >= 18.0 && PBUSTO4_2_1k == true)
+    if (exchange::ush1l >= 18.0 && PBUSTO4_2_1k)
     {
         UZOLSPD2 = two_points_to_Y(alpha_ra2a4, 0, 1, 0.75, 1);
         PK2LSPDZO = true;
@@ -164,7 +122,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1PPDZO, PK2PPDZO, PK1SPLS1ZO, PK1SPSSZO toggle
     //E1
-    if (PBUSTO4_1_2k)
+    if(PBUSTO4_1_2k)
     {
         UZOPPD1 = two_points_to_Y(alpha_ra2a6, 0, 1, 0.75, 1 );
         PK1PPDZO = true;
@@ -216,59 +174,54 @@ void cabinlighting_int::cabinlighting_5()
 
     // PBUSTO4 toggle
     //A1
-    if (exchange::ush1l >= 18.0 &&
-        F5_3310 == true &&
-        otkaz_zaliv_osvesh_sho_1 == false)
-    {
+    if (exchange::ush1l >= 18.0 && F5_3310 && !otkaz_zaliv_osvesh_sho_1)
         PBUSTO4_3_1k = true;
-    }
     else
-    {
         PBUSTO4_3_1k = false;
-    }
 
     // PBUSTO4 toggle
-    //A2
-    if (exchange::ush2p >= 18.0 &&
-        F6_3310 == true &&
-        otkaz_zaliv_osvesh_shn_1 == false)
+
+    if(powerdc_int::purg27lk4)
     {
-        PBUSTO4_3_2k = true;
+        PSSD37RKL = false;
+        PSSD37RKSH = false;
+        PSSD37RKL_D = true;
+        PSSD37RKSH_D = true;
     }
     else
     {
-        PBUSTO4_3_2k = false;
+        if(exchange::ush2l >= 18.0 && F1_3312)
+        {
+            PSSD37RKL = true;
+            PSSD37RKSH = true;
+            PSSD37RKL_D = false;
+            PSSD37RKSH_D = false;
+        }
+        else
+        {
+            PSSD37RKL = false;
+            PSSD37RKSH = false;
+            PSSD37RKL_D = false;
+            PSSD37RKSH_D = false;
+        }
     }
-
     // PBUSTO4 toggle
     //A3
-    if (exchange::ush1dpl >= 18.0 &&
-        F7_3310 == true &&
-        otkaz_zaliv_osvesh_sho_2 == false)
-    {
+    if(exchange::ush1dpl >= 18.0 && F7_3310 && !otkaz_zaliv_osvesh_sho_2)
         PBUSTO4_4_1k = true;
-    }
     else
-    {
         PBUSTO4_4_1k = false;
-    }
 
     // PBUSTO4 toggle
     //A4
-    if (exchange::ush2dpp >= 18.0 &&
-        F8_3310 == true &&
-        otkaz_zaliv_osvesh_shn_2 == false)
-    {
+    if(exchange::ush2dpp >= 18.0 && F8_3310 && !otkaz_zaliv_osvesh_shn_2)
         PBUSTO4_4_2k = true;
-    }
     else
-    {
         PBUSTO4_4_2k = false;
-    }
 
     // PK1PDSHOZO, PK2PDSHOZO toggle
     //B1
-    if (exchange::ush1l >= 18.0 && PBUSTO4_4_1k == true)
+    if (exchange::ush1l >= 18.0 && PBUSTO4_4_1k)
     {
         UZOPDSHO1 = two_points_to_Y(alpha_ra2a11,0, 1, 0.75, 1 );
         PK1PDSHOZO = true;
@@ -281,7 +234,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1PDSHOZO, PK2PDSHOZO toggle
     //B2
-    if (exchange::ush1dpl >= 18.0 && PBUSTO4_3_1k == true)
+    if (exchange::ush1dpl >= 18.0 && PBUSTO4_3_1k)
     {
         UZOPDSHO2 = two_points_to_Y(alpha_ra2a11, 0, 1, 0.75, 1);
         PK2PDSHOZO = true;
@@ -294,7 +247,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1LBSHOZO, PK2LBSHOZO
     //C1
-    if (PBUSTO4_3_1k == true)
+    if (PBUSTO4_3_1k)
     {
         UZOLBSHO1 = two_points_to_Y(alpha_ra2a12, 0, 1, 0.75, 1);
         PK1LBSHOZO = true;
@@ -307,7 +260,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1LBSHOZO, PK2LBSHOZO
     //C2
-    if (PBUSTO4_4_1k == true)
+    if (PBUSTO4_4_1k)
     {
         UZOLBSHO2 = two_points_to_Y(alpha_ra2a12, 0 , 1, 0.75, 1);
         PK2LBSHOZO = true;
@@ -320,7 +273,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1PDSHNZO, PK2PDSHNZO
     //D1
-    if (exchange::ush1dpp >= 18.0 && PBUSTO4_3_2k == true)
+    if (exchange::ush1dpp >= 18.0 && PBUSTO4_3_2k)
     {
         UZOPDSHN1 = two_points_to_Y(alpha_ra2a14, 0, 1, 0.75, 1);
         PK1PDSHNZO = true;
@@ -332,7 +285,7 @@ void cabinlighting_int::cabinlighting_5()
     }
 
     //D2
-    if (exchange::ush2p >= 18.0 && PBUSTO4_4_2k == true)
+    if (exchange::ush2p >= 18.0 && PBUSTO4_4_2k)
     {
         UZOPDSHN2 = two_points_to_Y(alpha_ra2a14, 0 , 1, 0.75, 1);
         PK2PDSHNZO = true;
@@ -345,7 +298,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1PBSHNZO, PK2LBSHOZO
     //E1
-    if (PBUSTO4_4_2k == true)
+    if (PBUSTO4_4_2k)
     {
         UZOPBSHN1 = two_points_to_Y(alpha_ra2a13, 0 , 1, 0.75, 1);
         PK1PBSHNZO = true;
@@ -358,7 +311,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PK1PBSHNZO, PK2PBSHNZO
     //E2
-    if (PBUSTO4_3_2k == true)
+    if (PBUSTO4_3_2k)
     {
         UZOPBSHN2 = two_points_to_Y(alpha_ra2a13, 0 , 1, 0.75, 1);
         PK2PBSHNZO = true;
@@ -371,7 +324,7 @@ void cabinlighting_int::cabinlighting_5()
 
     // PSSD37RKL, PSSD37RKSH
     //F1
-    if (exchange::ush2l >= 18.0 && F1_3312 == true)
+    if (exchange::ush2l >= 18.0 && F1_3312)
     {
         USOOKL = two_points_to_Y(alpha_ra50a1, 0, 1, 0.75, 1);
         PSSD37RKL = true;
@@ -388,23 +341,15 @@ void cabinlighting_int::cabinlighting_5()
 
     // PSSD42L
     //G1
-    if (exchange::ush1dpl >= 18.0 && F2_3312 == true)
-    {
+    if (exchange::ush1dpl >= 18.0 && F2_3312)
         PSSD42L = true;
-    }
     else
-    {
         PSSD42L = false;
-    }
 
     // PSSD42P
     //G2
-    if (exchange::ush2dpp >= 18.0 && F3_3312 == true)
-    {
+    if(exchange::ush2dpp >= 18.0 && F3_3312)
         PSSD42P = true;
-    }
     else
-    {
         PSSD42P = false;
-    }
 }

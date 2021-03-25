@@ -238,9 +238,9 @@ void landinggear_int::updateLogic()
     landinggear_4();
     landinggear_5();
     landinggear_6();
-    landinggear_7();
-    landinggear_8();
-    landinggear_9();
+    landinggear_7_8();
+    landinggear_9_10();
+    landinggear_11_12();
 }
 
 void landinggear_int::balloon_presure( double* P_bal)

@@ -186,6 +186,9 @@ public:
         S49_3230{};
     int
         S31_3230{};
+
+    enum s31_3230_pos{opora_pered, opora_lev, opora_prav};
+
     double
         fi_zad1{},
         fi_zad2{},
@@ -237,8 +240,8 @@ public:
     void landinggear_4();
     void landinggear_5();
     void landinggear_6();
-    void landinggear_7();
-    void landinggear_8();
-    void landinggear_9();
+    void landinggear_7_8();
+    void landinggear_9_10();
+    void landinggear_11_12();
     void balloon_presure(double* P_bal);
 };

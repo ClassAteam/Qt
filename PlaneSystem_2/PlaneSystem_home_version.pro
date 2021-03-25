@@ -66,14 +66,14 @@ SOURCES += \
     hydro_int.cpp \
     interfacing.cpp \
     landinggear_1.cpp \
+    landinggear_11_12.cpp \
     landinggear_2.cpp \
     landinggear_3.cpp \
     landinggear_4.cpp \
     landinggear_5.cpp \
     landinggear_6.cpp \
-    landinggear_7.cpp \
-    landinggear_8.cpp \
-    landinggear_9.cpp \
+    landinggear_7_8.cpp \
+    landinggear_9_10.cpp \
     landinggear_int.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -156,14 +156,14 @@ HEADERS += \
     hydro_int.h \
     interfacing.h \
     landinggear_1.h \
+    landinggear_11_12.h \
     landinggear_2.h \
     landinggear_3.h \
     landinggear_4.h \
     landinggear_5.h \
     landinggear_6.h \
-    landinggear_7.h \
-    landinggear_8.h \
-    landinggear_9.h \
+    landinggear_7_8.h \
+    landinggear_9_10.h \
     landinggear_int.h \
     mainwindow.h \
     pneumatic_1.h \

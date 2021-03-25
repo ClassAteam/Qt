@@ -15,26 +15,11 @@ static int
 
     if (exchange::ush2p >= 18.0)
     {
-        if (S1_3341 == 1)
-        {
-            PV_OSN_HV_10 = true;
-        }
-        if (S1_3341 == 2)
-        {
-            PV_OSN_HV_30 = true;
-        }
-        if (S1_3341 == 3)
-        {
-            PV_OSN_HV_100 = true;
-        }
-        if (S1_3341 == 4)
-        {
-            PV_OSN_HV_MIG = true;
-        }
+        if (S1_3341 == 1) PV_OSN_HV_10 = true;
+        if (S1_3341 == 2) PV_OSN_HV_30 = true;
+        if (S1_3341 == 3) PV_OSN_HV_100 = true;
+        if (S1_3341 == 4) PV_OSN_HV_MIG = true;
 
-        if (exchange::P1OBPOP == false)
-        {
-            PV_DOP = true;
-        }
+        if (exchange::P1OBPOP) PV_DOP = true;
     }
 }

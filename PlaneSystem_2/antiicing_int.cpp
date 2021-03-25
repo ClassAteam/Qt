@@ -4,9 +4,6 @@ antiicing_int::antiicing_int(QWidget *parent)
     : interfacing(parent)
 {
     antiicing_int::setWindowTitle("antiicing");
-    createLabelClue(&PZ1, "PZ1");
-    createLabelClue(&PZ2, "PZ2");
-    createLabelClue(&PZ3, "PZ3");
     createLabelClue(&K2_3020, "K2_3020");
     createLabelClue(&K51_3020, "K51_3020");
     createLabelClue(&F12_3020, "F12_3020");
@@ -17,10 +14,10 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K26_3230, "K26_3230");
     createLabelClue(&K27_3230, "K27_3230");
     createRedButton(&otkaz_vozduhozabor, "otkaz_vozduhozabor");
-    createRadioButton(&S1_3020, "NEYTR", false);
     createRadioButton(&S1_3020, "-6 -15", false);
+    createRadioButton(&S1_3020, "0 -6", false);
     createRadioButton(&S1_3020, "-15", false);
-    createRadioButton(&S1_3020, "0 -6", true);
+    createRadioButton(&S1_3020, "NEYTR", true);
     createLabelValue(&usho1p, "usho1p");
     createLabelValue(&M, "M");
     createRedButton(&OTKAZ_vtsepiob_pos1dv, "OTKAZ_vtsepiob_pos1dv");

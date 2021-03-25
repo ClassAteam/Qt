@@ -10,43 +10,27 @@ static int
     PSOBLP_tick;
 
     //PRSOL toggle
-    if (exchange::ush1dpl >= 18.0 &&
-        S1_3080 == true &&
-        M < 1.25 &&
-        otkaz_l_so121 == false &&
+    if(exchange::ush1dpl >= 18.0 && S1_3080 && M < 1.25 && !otkaz_l_so121 &&
         exchange::ush1l >= 18.0)
-    {
         PRSOL = true;
-    }
     else
-    {
         PRSOL = false;
-    }
 
     //PRSOP toggle
-    if (exchange::ush2dpp >= 18.0 &&
-        S2_3080 == true &&
-        M < 1.25 &&
-        otkaz_p_so121 == false &&
+    if(exchange::ush2dpp >= 18.0 && S2_3080 && M < 1.25 && !otkaz_p_so121 &&
         exchange::ush2p >= 18.0)
-    {
         prsop = true;
-    }
     else
-    {
         prsop = false;
-    }
 
     K2_3080 = false;
     PSOLD = false;
     PSOPD = false;
 
     //K2_3080 toggle by left channel
-    if (PRSOL == true)
+    if(PRSOL)
     {
-        if (signal_obled == true ||
-            PSOBLL == true ||
-            otkaz_lozhn_srab_lev_so121 == true)
+        if(signal_obled || PSOBLL || otkaz_lozhn_srab_lev_so121)
         {
             K2_3080 = true;
             PSOLD = true;
@@ -54,28 +38,22 @@ static int
     }
 
     //K2_3080 toggle by right channel
-    if (prsop == true)
+    if (prsop)
     {
-
-        if (signal_obled == true ||
-            PSOBLP == true ||
-            otkaz_lozhn_srab_prav_so121 == true)
+        if (signal_obled || PSOBLP || otkaz_lozhn_srab_prav_so121)
         {
             K2_3080 = true;
             PSOPD = true;
         }
-
     }
 
     //Block check left channel
-    if (PRSOL == true)
+    if(PRSOL)
     {
-        if (S3_3080 == true && PSOBLL_sec == 0)
-        {
+        if(S3_3080 && PSOBLL_sec == 0)
             PBSO1 = true;
-        }
 
-        if(PBSO1 == true)
+        if(PBSO1)
         {
             PSOBLL_tick++;
 
@@ -84,14 +62,9 @@ static int
                 PSOBLL_sec++;
                 PSOBLL_tick = 0;
             }
-            if (PSOBLL_sec < 8)
-            {
-                PSOBLL = true;
-            }
-            else
-            {
-                PSOBLL = false;
-            }
+
+            if(PSOBLL_sec < 8) PSOBLL = true;
+            else PSOBLL = false;
 
             if (PSOBLL_sec > 41 && PSOBLL_sec < 77)
             {
@@ -99,13 +72,12 @@ static int
                 bss_inst.BSS825X5KK = true;
             }
 
-            if (PSOBLL_sec >= 77)
+            if(PSOBLL_sec >= 77)
             {
                 bss_inst.BSS825X5KK = false;
                 PBSO1 = false;
                 PSOBLL_sec = 0;
             }
-
         }
     }
     else
@@ -116,15 +88,13 @@ static int
         PSOBLL = 0;
         PSOBLL_sec = 0;
     }
-    //Block check right channel
-    if (prsop == true)
-    {
-        if (S3_3080 == true && PSOBLP_sec == 0)
-        {
-            PBSO2 = true;
-        }
 
-        if(PBSO2 == true)
+    //Block check right channel
+    if(prsop)
+    {
+        if(S3_3080 && PSOBLP_sec == 0) PBSO2 = true;
+
+        if(PBSO2)
         {
             PSOBLP_tick++;
 
@@ -133,14 +103,9 @@ static int
                 PSOBLP_sec++;
                 PSOBLP_tick = 0;
             }
-            if (PSOBLP_sec < 8)
-            {
-                PSOBLP = true;
-            }
-            else
-            {
-                PSOBLP = false;
-            }
+
+            if (PSOBLP_sec < 8) PSOBLP = true;
+            else PSOBLP = false;
 
             if (PSOBLP_sec > 41 && PSOBLP_sec < 77)
             {
@@ -148,13 +113,12 @@ static int
                 bss_inst.BSS825X5MM = true;
             }
 
-            if (PSOBLP_sec >= 77)
+            if(PSOBLP_sec >= 77)
             {
                 bss_inst.BSS825X5MM = false;
                 PBSO2 = false;
                 PSOBLP_sec = 0;
             }
-
         }
     }
     else

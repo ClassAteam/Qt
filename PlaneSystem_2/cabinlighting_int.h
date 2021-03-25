@@ -16,8 +16,23 @@ class cabinlighting_int : public interfacing
     Q_OBJECT
 
 public:
-
     bool
+        otkaz_zaliv_osvesh_ll_1,
+        otkaz_zaliv_osvesh_ll_2,
+        otkaz_zaliv_osvesh_pl_1,
+        otkaz_zaliv_osvesh_pl_2,
+        otkaz_zaliv_osvesh_sho_1,
+        otkaz_zaliv_osvesh_sho_2,
+        otkaz_zaliv_osvesh_shn_1,
+        otkaz_zaliv_osvesh_shn_2,
+        PBUSTO4_1_1k,
+        PBUSTO4_1_2k,
+        PBUSTO4_2_1k,
+        PBUSTO4_2_2k,
+        PBUSTO4_3_1k,
+        PBUSTO4_3_2k,
+        PBUSTO4_4_1k,
+        PBUSTO4_4_2k,
         F1_3310,
         F2_3310,
         F3_3310,
@@ -49,6 +64,8 @@ public:
         PK2PBSHNZO,
         PSSD37RKL,
         PSSD37RKSH,
+        PSSD37RKSH_D,
+        PSSD37RKL_D,
         PSSD42P,
         PSSD42L,
         PBUSTO3_1_1k,
@@ -106,5 +123,4 @@ public:
     void cabinlighting_3();
     void cabinlighting_4();
     void cabinlighting_5();
-
 };

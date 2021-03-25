@@ -1,7 +1,7 @@
-#include "landinggear_8.h"
+#include "landinggear_9_10.h"
 #include "algorithms.h"
 
-void landinggear_int::landinggear_8() //actually 9 - 10th
+void landinggear_int::landinggear_9_10() //actually 9 - 10th
 {
     exchange::K25_3230 = false;
     uks_inst.UKS4X313 = false;
@@ -269,47 +269,40 @@ void landinggear_int::landinggear_8() //actually 9 - 10th
             H2_3230 = true;
         else
         {
-            if(S31_3230 == 1)
+            switch(S31_3230)
+            {
+            case(s31_3230_pos::opora_pered): //opora pered
             {
                 if(P_bal_per <= 70)
-                {
                     H2_3230 = true;
-                }
             }
-            if(S31_3230 == 2)
+            break;
+            case(s31_3230_pos::opora_lev):// opora lev
             {
                 if(P_bal_l <= 70)
-                {
                     H2_3230 = true;
-                }
             }
-            if(S31_3230 == 3)
+            break;
+            case(s31_3230_pos::opora_prav): //opora prav
             {
                 if(P_bal_p <= 70)
-                {
                     H2_3230 = true;
-                }
+            }
+            break;
             }
         }
 
         if(P_bal_l <= 70)
-        {
             uks_inst.UKS4X325 = true;
-        }
 
         if(P_bal_p <= 70)
-        {
             uks_inst.UKS4X324 = true;
-        }
+
         if(P_bal_per <= 70)
-        {
             uks_inst.UKS4X323 = true;
-        }
 
         if(P_bal_l <= 70 || P_bal_p <= 70 || P_bal_per <= 70.0)
-        {
             bss_inst.BSS824X1j = true;
-        }
     }
 
     //end logic

@@ -15,86 +15,83 @@ class emergencyalarm_int : public interfacing
 {
     Q_OBJECT
 public:
-double
-    USASSHN, alpha_rra7shn, USASLL, alpha_rra7ll, alpha_rra7pl, USASPL;
-bool
-    PZH_svs_otkaz,
-    PZH_svs_net_rezerva,
-    PZH_ins_otkaz,
-    PZH_ins_net_rezerva,
-    PZH939_X1B_b,
-    PZH939_X1D_b,
-    PZH939_X1E_b,
-    PZH926_X1J_b,
-    PZH926_X1L_b,
-    PZH_svs_otkaz_b,
-    PZH_svs_net_rezerva_b,
-    PZH_ins_otkaz_b,
-    PZH_ins_net_rezerva_b,
-    svs_otkaz,
-    svs_net_rezerva,
-    ins_otkaz,
-    ins_net_rezerva,
-    PRBSS_939,
-    PVkCSOZHSHNx2,
-    PBVkCSOZHSHNx2,
-    PCSOZHSHN,
-    PVkCSOKSHNy2,
-    PBVkCSOKSHNy2,
-    PCSOKSHN,
-    PKLSHN,
-    S4_3364,
-    S8_3364;
-bool
-    PCSOZHLL,
-    PCSOKLL,
-    PCSOZHLL_1,
-    PCSOKLL_1,
-    PKLLL,
-    S5_3364,
-    S1_3364,
-    PRBSS_811,
-    PRBSS_812,
-    PRBSS_913,
-    PCSOZHLL_2,
-    PCSOKLL_2;
+    bool
+        PCSOKLL,//priznak centralnogo signalnogo ognya(CSO) krasnogo levogo letchika
+        PCSOKPL,//priznak centralnogo signalnogo ognya(CSO) krasnogo pravogo letchika
+        PCSOKSHN,//priznak centralnogo signalnogo ognya(CSO) krasnogo shturmana navigatora
+        PCSOKSHO,//priznak centralnogo signalnogo ognya(CSO) krasnogo shturmana operatora
+        PCSOZHLL,//priznak centralnogo signalnogo ognya(CSO) zheltogo levogo letchika
+        PCSOZHPL,//priznak centralnogo signalnogo ognya(CSO) zheltogo pravogo letchika
+        PCSOZHSHN,//priznak centralnogo signalnogo ognya(CSO) zheltogo shturmana navigatora
+        PCSOZHSHO,//priznak centralnogo signalnogo ognya(CSO) zheltogo shturmana operatora
+        S1_3364,//knopka-tablo ZSO levogo letchika
+        S2_3364,//knopka-tablo ZSO pravogo letchika
+        S3_3364,//knopka-tablo ZSO shturmana-operatora
+        S4_3364,//knopka-tablo ZSO shturmana-navigatora
+        S5_3364,//knopka KONTR SIGNAL lev letchika
+        S6_3364,//knopka KONTR SIGNAL prav letchika
+        S7_3364,//knopka KONTR SIGNAL shturmana-operatora
+        S8_3364;//knopka KONTR SIGNAL shturmana-navigatora
 
-bool
-    PRBSS913{1},
-    PCSOZHLL_3,
-    PCSOKLL_3;
+    double
+        USASLL,
+        USASPL,
+        USASSHN,
+        USASSHO,
+        alpha_rra7ll,
+        alpha_rra7pl,
+        alpha_rra7shn,
+        alpha_rra7sho;
+    bool
+        PBVkCSOKSHNy2,
+        PBVkCSOZHSHNx2,
+        PCSOKLL_1,
+        PCSOKLL_2,
+        PCSOKLL_3,
+        PCSOKPL_1,
+        PCSOKPL_2,
+        PCSOKSHO_2,
+        PCSOZHLL_1,
+        PCSOZHLL_2,
+        PCSOZHLL_3,
+        PCSOZHPL_1,
+        PCSOZHPL_2,
+        PCSOZHSHO_1,
+        PCSOZHSHO_2,
+        PKLLL,
+        PKLPL,
+        PKLSHN,
+        PKLSHO,
+        PRBSS824,
+        PRBSS825,
+        PRBSS837,
+        PRBSS838,
+        PRBSS913{1},
+        PRBSS926,
+        PRBSS_811,
+        PRBSS_812,
+        PRBSS_913,
+        PRBSS_939,
+        PVkCSOKSHNy2,
+        PVkCSOZHSHNx2,
+        PZH926_X1J_b,
+        PZH926_X1L_b,
+        PZH939_X1B_b,
+        PZH939_X1D_b,
+        PZH939_X1E_b,
+        PZH_ins_net_rezerva,
+        PZH_ins_net_rezerva_b,
+        PZH_ins_otkaz,
+        PZH_ins_otkaz_b,
+        PZH_svs_net_rezerva,
+        PZH_svs_net_rezerva_b,
+        PZH_svs_otkaz,
+        PZH_svs_otkaz_b,
+        ins_net_rezerva,
+        ins_otkaz,
+        svs_net_rezerva,
+        svs_otkaz;
 
-bool
-    S2_3364,
-    S6_3364,
-    PRBSS825,
-    PRBSS824,
-    PCSOZHPL_1,
-    PCSOKPL_1,
-    PCSOKPL,
-    PCSOZHPL,
-    PKLPL;
-bool
-    PCSOZHPL_2,
-    PCSOKPL_2;
-
-bool
-    PCSOZHSHO_1,
-    PRBSS926,
-    PRBSS837,
-    PKLSHO,
-    S7_3364,
-    S3_3364;
-double
-    alpha_rra7sho,
-    USASSHO;
-
-bool
-    PRBSS838,
-    PCSOZHSHO,
-    PCSOKSHO,
-    PCSOZHSHO_2,
-    PCSOKSHO_2;
 
 public:
     emergencyalarm_int(QWidget *parent = nullptr);

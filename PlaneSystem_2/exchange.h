@@ -61,7 +61,7 @@ struct exchange
         ushak2,//accumulator2 bus voltage
         ushp5pl,
         ugvsuP[3],//vsu generator voltage by phases
-        urapP[3],//rap bus voltahe by phases
+        urapP[3],//rap bus voltage by phases
         ushpos[2],// voltage of converter3's buses
         ushpts[3],// voltage of converter1's bus by phases
         fshg[5],//frequency of 4 generators and vsu bases
@@ -93,10 +93,10 @@ struct exchange
 
     static bool
         F32_3250,
-        P1OBLOP,
-        P2OBLOP,
-        P1OBPOP,
-        P2OBPOP,
+        P1OBLOP,//priznak 1 obzhatiya levoy opori shassi
+        P2OBLOP,//priznak 2 obzhatiya levoy opori shassi
+        P1OBPOP,//priznak 1 obzhatiya pravoy opori shassi
+        P2OBPOP,//priznak 2 obzhatiya pravoy opori shassi
         PRD1dv,//engine1 work sign
         PRD2dv,//engine2 work sign
         PRD3dv,//engine3 work sign

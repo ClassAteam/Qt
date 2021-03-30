@@ -36,7 +36,7 @@ public:
     void makeCorresCurr();
 
 public:
-    QVector<sngElConsAlt> consumers;
+    QVector<sngElConsAlt*> consumers;
     QVector<double> busesLoad;
 };
 ////////////////////////////////////////////////////////////direct current
@@ -74,7 +74,7 @@ public:
     void makeCorresCurr();
 
 public:
-    QVector<sngElConsDir> consumers;
+    QVector<sngElConsDir*> consumers;
     QVector<double> busesLoad;
 
     static bool

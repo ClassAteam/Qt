@@ -16,26 +16,26 @@ class hydro_int : public interfacing
 
 public:
     bool
-        s1_2910{},
-        s2_2910{},
-        s3_2910{},
-        s4_2910{},
-        S5_2910{},
-        S6_2910{},
-        S7_2910{},
-        EZR1_34{},
-        EZR2_34{},
-        EZR3_34{},
-        EZR4_34{},
+        s1_2910{},//perekluchatel' PRINUD PODKL G/NASOSOV
+        s2_2910{},//knopka KONTROL' RAZGRUZKI
+        s3_2910{},//perekluchateli VIBOR NASOSA GS1,2
+        s4_2910{},//perekluchateli VIBOR NASOSA GS3,4
+        S5_2910{},//perekluchatel' EKSTRENNOE OTKL G/NASOSOV DV2 i 3
+        S6_2910{},//perekluchatel' EKSTRENNOE OTKL G/NASOSOV DV1 i 4
+        S7_2910{},//perekluchatel' OTKL G/NASOSOV DV2
+        EZR1_34{},//priznak zapuska 1 dvigatelya
+        EZR2_34{},//priznak zapuska 2 dvigatelya
+        EZR3_34{},//priznak zapuska 3 dvigatelya
+        EZR4_34{},//priznak zapuska 4 dvigatelya
         PBI4M_1{},
         PAPD_26{},
         PAPD_27{},
         PAPD_30{},
         PAPD_31{},
-        otkaz_gs1{},
-        otkaz_gs2{},
-        otkaz_gs3{},
-        otkaz_gs4{},
+        otkaz_gs1{},//otkaz gs1
+        otkaz_gs2{},//otkaz gs2
+        otkaz_gs3{},//otkaz gs3
+        otkaz_gs4{},//otkaz gs4
         pntnugs1{},
         pntnugs2{},
         pntnugs3{},
@@ -44,19 +44,21 @@ public:
         F14_2930{true},
         F15_2930{true},
         F1_2930{true},
-        H10_2930{},
-        H11_2930{},
-        H12_2930{},
-        H13_2930{},
-        H1_2910{},
-        H2_2910{},
-        H4_2910{},
-        H5_2910{},
+        H10_2930{},//priznak vhodnogo signala dlya signalizatora REZERVNIY NADDUV GS1
+        H11_2930{},//priznak vhodnogo signala dlya signalizatora REZERVNIY NADDUV GS2
+        H12_2930{},//priznak vhodnogo signala dlya signalizatora REZERVNIY NADDUV GS3
+        H13_2930{},//priznak vhodnogo signala dlya signalizatora REZERVNIY NADDUV GS4
+
+        H1_2910{},//priznak vhodnogo signala na svetodiod GIDRONASOSI PODKLUCHENI GS2
+        H2_2910{},//priznak vhodnogo signala na svetodiod GIDRONASOSI PODKLUCHENI GS1
+        H4_2910{},//priznak vhodnogo signala na svetodiod GIDRONASOSI PODKLUCHENI GS3
+        H5_2910{},//priznak vhodnogo signala na svetodiod GIDRONASOSI PODKLUCHENI GS4
+
         PKL{},
         PKL1{},
-        S13_2920,
-        S18_2920{},
-        H1_2935{},
+        S13_2920{},//knopka kontrolya signalizatsii TNU SIGNAL
+        S18_2920{},//knopka proverki lamp na shitke nazemnoy proverki
+        H1_2935{},//priznak vihodnogo signala dlya svetodioda NASOS TZHT
         K1_2935{},
         K2_2935{},
         K3_2935{},
@@ -79,15 +81,20 @@ public:
         F429_2845{true},
         F124_2845{true};
     double
-        qpgs3, p0_gs3{115.0}, pgs3_z{0}, Pv_vsu{0.0}, delta_wpgs3{}, kgs{0.05},
+        qpgs3, p0_gs3{115.0}, pgs3_z{0},
+        Pv_vsu{0.0},//davlenie vozduha, otbiraemoe ot vspomogatelnoy ustanovki
+        delta_wpgs3{}, kgs{0.05},
         qngat{}, qngs1{}, qngs2{}, qngs3{}, qngs4{}, qntnugs1{}, qntnugs2{},
         qntnugs3{}, qntnugs4{}, qtnugs1{}, qtnugs2{}, qtnugs3{}, qtnugs4{},
         qutgs3{}, wpgs3{}, d_wpgat{}, d_wpgs1{}, d_wpgs2{}, d_wpgs3{}, d_wpgs4{},
-        dxst_dt{}, kgat{1.0}, ksur{0.02}, ktnu{0.02}, p0gat{},
-        p0gs1{115},
-        p0gs2{115},
-        p0gs3{115},
-        p0gs4{115},
+        dxst_dt{}, kgat{1.0}, ksur{0.02}, ktnu{0.02},
+
+        p0gat{},//davlenie zaryadki gazom gidroakkum tormozov
+        p0gs1{115},//davlenie zaryadki gidro/akkum gazom v GS1
+        p0gs2{115},//davlenie zaryadki gidro/akkum gazom v GS2
+        p0gs3{115},//davlenie zaryadki gidro/akkum gazom v GS3
+        p0gs4{115},//davlenie zaryadki gidro/akkum gazom v GS4
+
         pgat_z, pgs1_z, pgs2_z, pgs4_z, psurgs1, psurgs2,
         psurgs3, psurgs4, ptnugs1, ptnugs2, ptnugs3, ptnugs4, qp1sum, qp2sum,
         qp3sum, qp4sum, qpgs1, qpgs2, qpgs4, qpts, qutgs1, qutgs2, qutgs4,
@@ -114,11 +121,26 @@ public:
     QVector<bool> RVikTNUGS{false, false, false, false};
     QVector<bool> KSURGS{false, false, false, false};
     QVector<bool> KKGS{false, false, false, false};
+
     QVector<bool> Ffirst4_2920{true, true, true, true};
+    //s1_2920 perekluchatel GIDROPITANIE SUR GS1,
+    //s2_2920 perekluchatel GIDROPITANIE SUR GS2,
+    //s3_2920 perekluchatel GIDROPITANIE SUR GS3,
+    //s4_2920 perekluchatel GIDROPITANIE SUR GS4,
+
     QVector<bool> Fsecond4_2920{false, false, false, false};
+    //s5_2920 perekluchatel KRANI KOLCEVANIYA GS1
+    //s6_2920 perekluchatel KRANI KOLCEVANIYA GS2
+    //s7_2920 perekluchatel KRANI KOLCEVANIYA GS3
+    //s8_2920 perekluchatel KRANI KOLCEVANIYA GS4
+
     QVector<bool> Sfirst4_2920{false, false, false, false};
     QVector<bool> Ssecond4_2920{false, false, false, false};
-    QVector<int> Sthird4_2920{0, 0, 0, 0}; //S9_2920, S10_2920, S11_2920, S12_2920
+    QVector<int> Sthird4_2920{0, 0, 0, 0};
+    //S9_2920 perekluchatel TNU GS1
+    //S10_2920 perekluchatel TNU GS2
+    //S11_2920 perekluchatel TNU GS3
+    //S12_2920 perekluchatel TNU GS4
 
     bool
         K5_2910,
@@ -205,7 +227,12 @@ public:
     QVector<double>Qngngs4{0.0, 0.0};
 
     static QVector<double>nVDfirst2;
+    //nvd1 chastota vrasheniya rotora visokogo davleniya 1 dvigatelya
+    //nvd2 chastota vrasheniya rotora visokogo davleniya 2 dvigatelya
     static QVector<double>nVDsecond2;
+    //nvd3 chastota vrasheniya rotora visokogo davleniya 3 dvigatelya
+    //nvd4 chastota vrasheniya rotora visokogo davleniya 4 dvigatelya
+
     QVector<double>Kngs1{0.0, 0.0};
     QVector<double>Kngs2{0.0, 0.0};
     QVector<double>Kngs3{0.0, 0.0};
@@ -215,7 +242,11 @@ public:
     QVector<double>l_gs3{0.0, 0.0};
     QVector<double>l_gs4{0.0, 0.0};
 
-    static double pgs1, pgs2, pgs3, pgs4;
+    static double
+        pgs1,//davlenie gidrozhidkosti v GS1
+        pgs2,//davlenie gidrozhidkosti v GS2
+        pgs3,//davlenie gidrozhidkosti v GS3
+        pgs4;//davlenie gidrozhidkosti v GS4
 
 
 public:

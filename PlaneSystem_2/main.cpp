@@ -32,8 +32,6 @@ int main(int argc, char *argv[])
     cabinlighting.show();
     presure_int presure;
     presure.show();
-    powerdc_int powerdc;
-    powerdc.show();
     hydro_int hydro;
     hydro.show();
     antiicing_int antiicing;
@@ -42,8 +40,8 @@ int main(int argc, char *argv[])
     landinggear.show();
     pneumatic_int pneumatic;
     pneumatic.show();
-
-
+    powerdc_int powerdc;
+    powerdc.show();
 
     return a.exec();
 }

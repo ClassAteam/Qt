@@ -11,12 +11,62 @@ class landinggear_int : public interfacing
     Q_OBJECT
 
 public:
+    bool
+        PUPLOP{},//priznak ubrannogo polozheniya levoy opori shassi
+        PUPPEROP{},//priznak ubrannogo polozheniya peredney opori shassi
+        PUPPOP{},//priznak ubrannogo polozheniya pravoy opori shassi
+        PVPLOP{},//priznak vipushennogo polozheniya levoy opori shassi
+        PVPPEROP{},//priznak vipushennogo polozheniya peredney opori shassi
+        PVPPOP{},//priznak vipushennogo polozheniya pravoy opori shassi
+        S30_3230{},//viklyuchatel' "AVARIYNIY VIPUSK SHASSI"
+        S3_3230{},//pereklyuchatel' "OTKLYUCHENIE OSNOVN UPRAVLENIYA SHASSI"
+        S4_3250{},//viklyuchatel' "POVOROT KOLES RULENIE"
+        S55_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA LEVAYA 1"
+        S56_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA PRAVAYA 1"
+        S57_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA LEVAYA 2"
+        S58_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA PRAVAYA 2"
+        gk_ush{},//intaking hydro valve
+        gk_vsh{},//releasing hydro valve
+        nedovip_osn_op_l{},//otkaz nedovipusk osnovnoy opori levoy
+        nedovip_osn_op_p{},//otkaz nedovipusk osnovnoy opori pravoy
+        otkaz_1_kanala{},//otkaz 1 kanala sistemi povorota peredney opori
+        otkaz_2_kanala{},//otkaz 2 kanala sistemi povorota peredney opori
+        otkaz_ne_vikl_avt_pos_vip_shas{},//neviklyuchenie avtomatiki posle vipuska shassi
+        otkaz_nepoln_ubor_l{},//nepolnaya uborka levoy opori shassi
+        otkaz_nepoln_ubor_n{},//nepolnaya uborka peredney opori shassi
+        otkaz_nepoln_ubor_p{};//nepolnaya uborka pravoy opori shassi
+
+    double
+        fi_nk{},//tekushee znachenie ugla povorota nosovogo kolesa, grad
+        delta_sh_l{1},//main rack position left from 0 to 1
+        delta_sh_p{1},//main rack position right from 0 to 1
+        delta_sh_n{1},//main rack position nose from 0 to 1
+        delta_stv_l{90},//left sashes position from 0 to 90
+        delta_stv_p{90},//right sashes position from 0 to 90
+        delta_stv_n{90},//nose sashes position from 0 to 90
+        V_bal_l{44100},//
+        V_bal_p{44100},
+        V_bal_n{37000},
+        P_bal_l{150},//davlenie v levih ballonah avariynogo vipuska, kgs/sm^2
+        P_bal_p{150},//davlenie v pravih ballonah avariynogo vipuska, kgs/sm^2
+        P_bal_per{150},//davlenie v perednih ballonah avariynogo vipuska, kgs/sm^2
+        Plv{},//release line hydropresure
+        Plu{},//intake line hydropresure
+        Sl{},//left presure check against the ground
+        Sp{},//right presure check against the ground
+        delta_shift_l{1.0},//main racks shifting left one
+        delta_shift_p{1.0};//main racks shifting right one
+    int
+        S31_3230{};
+    enum s31_3230_pos{opora_pered, opora_lev, opora_prav};
+    int
+        s2_3230{};//pereklyuchatel' "SHASSI" "VIPUSK - UBORKA"
+    enum s2_3230{release, intake};
+
     static bool
         S18_2930,
         S38_3230;
     bool
-        otkaz_1_kanala{},
-        otkaz_2_kanala{},
         K3_3250{},
         K4_3250{},
         K5_3250{},
@@ -24,7 +74,6 @@ public:
         K7_3250{},
         K8_3250{},
         S1_3250{},
-        S4_3250{},
         PPBU_1{},
         PPBU_2{},
         PR_R1{},
@@ -67,21 +116,8 @@ public:
         K42_3230{},
         K43_3230{},
         S25_3230{},
-        S55_3230{},
-        S56_3230{},
-        S57_3230{},
-        S58_3230{},
         K13_3230{},
         K14_3230{},
-        S30_3230{},
-        nedovip_osn_op_l{},
-        nedovip_osn_op_p{},
-        PVPLOP{},
-        PUPLOP{},
-        PUPPOP{},
-        PVPPOP{},
-        PUPPEROP{},
-        PVPPEROP{},
         F16_3230{},
         F13_3230{},
         F113_3230{},
@@ -97,16 +133,10 @@ public:
         right_intaken{},
         nose_intaken{},
         gk_oovsh{},
-        gk_vsh{},//releasing hydro valve
-        gk_ush{},//intaking hydro valve
         gk_avl{},
         gk_avp{},
         gk_avn{},
         GK_duoop{},
-        otkaz_nepoln_ubor_l{},
-        otkaz_nepoln_ubor_p{},
-        otkaz_nepoln_ubor_n{},
-        otkaz_ne_vikl_avt_pos_vip_shas{},
         K1_3230{},
         K2_3230{},
         K3_3230{},
@@ -137,7 +167,6 @@ public:
         K44_3230{},
         K45_3230{},
         K46_3230{},
-        S3_3230{},
         S4_3230{},
         S5_3230{},
         S6_3230{},
@@ -183,52 +212,22 @@ public:
         S41_3230{},
         S48_3230{},
         S49_3230{};
-    int
-        S31_3230{};
-
-    enum s31_3230_pos{opora_pered, opora_lev, opora_prav};
-
-    double
-        fi_zad1{},
-        fi_zad2{},
-        fi_zad{},
-        fi_nk{},
-        V_nk{},
-        Xped{0.5},
-        Xped_buf{50},
-        delta_sh_l{1},//main rack position left from 0 to 1
-        delta_sh_p{1},//main rack position right from 0 to 1
-        delta_sh_n{1},//main rack position nose from 0 to 1
-        delta_stv_l{90},//left sashes position from 0 to 90
-        delta_stv_p{90},//right sashes position from 0 to 90
-        delta_stv_n{90},//nose sashes position from 0 to 90
-        V_bal_l{44100},//
-        V_bal_p{44100},
-        V_bal_n{37000},
-        P_bal_l{150},
-        P_bal_p{150},
-        P_bal_per{150},
-        Plv{},//release line hydropresure
-        Plu{},//intake line hydropresure
-        Sl{},//left presure check against the ground
-        Sp{},//right presure check against the ground
-        delta_shift_l{1.0},//main racks shifting left one
-        delta_shift_p{1.0};//main racks shifting right one
 
     double
         Ksho{0.2};
 
     double
+        fi_zad1{},
+        fi_zad2{},
+        fi_zad{},
+        V_nk{},
+        Xped{0.5},
+        Xped_buf{50},
         delta_tel_l{1.0},//current position left cart
         delta_tel_p{1.0};//current position right cart
-
-    int
-        s2_3230{};
     bool
         GK_dvl{},
         GK_dvp{};
-
-    enum s2_3230{release, intake};
 
 public:
     landinggear_int(QWidget *parent = nullptr);

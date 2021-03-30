@@ -67,30 +67,30 @@ void emergencyalarm_int::emergencyalarm_5()
         PK824_X1Z_b,
         PK824_X1d_b,
         PK824_X3G_b,
-        PK824_X3J_b,
+        PK824_X3J_b;
 
         //white input clue
-        PB824_X1R,
-        PB824_X1E,
-        PB824X_1KK,
-        PB824X_1MM,
-        PB824_X3A,
-        PB824_X3C,
-        PB824_X3N,
-        PB824_X3R,
-        PB824_X3E,
+//        PB824_X1R,
+//        PB824_X1E,
+//        PB824X_1KK,
+//        PB824X_1MM,
+//        PB824_X3A,
+//        PB824_X3C,
+//        PB824_X3N,
+//        PB824_X3R,
+//        PB824_X3E,
 
 
-        //white block clue
-        PB824_X1R_b,
-        PB824_X1E_b,
-        PB824X_1KK_b,
-        PB824X_1MM_b,
-        PB824_X3A_b,
-        PB824_X3C_b,
-        PB824_X3N_b,
-        PB824_X3R_b,
-        PB824_X3E_b;
+//        //white block clue
+//        PB824_X1R_b,
+//        PB824_X1E_b,
+//        PB824X_1KK_b,
+//        PB824X_1MM_b,
+//        PB824_X3A_b,
+//        PB824_X3C_b,
+//        PB824_X3N_b,
+//        PB824_X3R_b,
+//        PB824_X3E_b;
 
     static int
         X1d_blink,
@@ -1233,26 +1233,26 @@ void emergencyalarm_int::emergencyalarm_5()
         PK824_X3J_b = false;
 
         //white input clue
-        PB824_X1R = false;
-        PB824_X1E = false;
-        PB824X_1KK = false;
-        PB824X_1MM = false;
-        PB824_X3A = false;
-        PB824_X3C = false;
-        PB824_X3N = false;
-        PB824_X3R = false;
-        PB824_X3E = false;
+//        PB824_X1R = false;
+//        PB824_X1E = false;
+//        PB824X_1KK = false;
+//        PB824X_1MM = false;
+//        PB824_X3A = false;
+//        PB824_X3C = false;
+//        PB824_X3N = false;
+//        PB824_X3R = false;
+//        PB824_X3E = false;
 
 
-        //white block clue
-        PB824_X1R_b = false;
-        PB824_X1E_b = false;
-        PB824X_1KK_b = false;
-        PB824X_1MM_b = false;
-        PB824_X3A_b = false;
-        PB824_X3C_b = false;
-        PB824_X3N_b = false;
-        PB824_X3R_b = false;
-        PB824_X3E_b = false;
+//        //white block clue
+//        PB824_X1R_b = false;
+//        PB824_X1E_b = false;
+//        PB824X_1KK_b = false;
+//        PB824X_1MM_b = false;
+//        PB824_X3A_b = false;
+//        PB824_X3C_b = false;
+//        PB824_X3N_b = false;
+//        PB824_X3R_b = false;
+//        PB824_X3E_b = false;
     }
 }

@@ -2,8 +2,6 @@
 
 void cabinlighting_int::cabinlighting_1()
 {
-static int
-    S1_3341;
 
     PV_DOP = false;
 

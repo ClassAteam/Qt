@@ -1,9 +1,7 @@
 #pragma once
 #include "interfacing.h"
 #include <QVector>
-
 #include "bss.h"
-#include "allElCons.h"
 #include "exchange.h"
 #include "uks.h"
 #include "algorithms.h"
@@ -16,31 +14,32 @@ class brakes_int : public interfacing
     Q_OBJECT
 public:
     bool
-        otkaz_osn_sis_torm, paft, pavtt, PAVT_N, PAVT_P, PAVT_S, PBAVTT, pbutzo,
-        PstartT, PstoyanT, PvkFT, PFT, PRR, POOST, POSH2, X1_45_7620, X2_45_7620,
-        X3_45_7620, X4_45_7620, S2_3240, S3_3240,
-        otkaz_avt_per_na_rt, otkaz_rt, otkaz_gs3, S1_3241, PvklR,
-        pbutzr, PAVART, PORST, PBRRT,
-        POSH, PPDGAKT, PTavtN, PTavtP, PTavtS, PTstart, ptstoyan, PTfors,
-        otkaz_ots_dav_v1k_levt, otkaz_ots_dav_v1k_pravt,
-        balarm_6F01,
-        balarm_6F10, balarm_AA11, balarm_AA12, balarm_AA13, balarm_AA21,
-        balarm_AA22, balarm_AA23, balarm_AV1, balarm_AV2, balarm_AV3, balarm_AV0,
-        balarm_SA1, balarm_SA2, balarm_SA3, balarm_SAT, balarm_SDA, balarm_SF,
-        balarm_SOR, balarm_SR, balarm_SS1, balarm_SS2, balarm_ST, balarm_SUF,
-        balarm_SUR, balarm_SVR1, balarm_SVR2,
-        PVTP, PSTP, K5_3650, K1_9921, K2_9921,
-        K5_9921, K6_9921, S1_9921, S2_9921, S3_9921, S4_9921, S7_9921, S5_9921,
-        S6_9921 ;
+        otkaz_osn_sis_torm,//otkaz osnovnoy sistemi tormozheniya
+        X1_45_7620,//priznak signala stop-kran otkrit 1 dvigatelya
+        X2_45_7620,//priznak signala stop-kran otkrit 2 dvigatelya
+        X3_45_7620,//priznak signala stop-kran otkrit 3 dvigatelya
+        X4_45_7620,//priznak signala stop-kran otkrit 4 dvigatelya
+        S2_3240,//pereklyuchatel' "TORMOZA STOYAN-START"
+        S3_3240,//pereklyuchatel "TORMOZA FORSIR"
+        otkaz_avt_per_na_rt,//otkaz avtomaticheskogo perehoda na rezervnuyu sistemu tormozheniya
+        otkaz_rt,//otkaz rezervnoy sistemi tormozheniya
+        otkaz_ots_dav_v1k_levt,//otsutstvie davlenie v peroy pare koles levoy telezhki
+        otkaz_ots_dav_v1k_pravt,//otsutstvie davlenie v peroy pare koles pravoy telezhki
+        S1_9921,//knopka "VIPUSK PARASHYUTA" levogo letchika
+        S2_9921,//knopka "VIPUSK PARASHYUTA" pravogo letchika
+        S3_9921;//knopka "SBROS PARASHYUTA"
     int
-        S1_3240;
+        S1_3240;//pereklyuchatel' "TORMOZA AVT NORM-PONIZH-SLABO"
     double
-        X_ped11, X_ped12, X_ped21, X_ped22, X_tp_lev, X_tp_prav, P_ped_11, P_ped_12,
-        P_ped_21, P_ped_22, P_tp_lev, P_tp_prav,
-        vkh, Pavart, ax_ts, pgat, P_t_lev, P_t_prav,
-        delta_Ptr, S_ogr1, S_ogr3, K2, K3,
-        balarm_BD11, balarm_BD12, balarm_BD13,
-        balarm_BD21, balarm_BD22, balarm_BD23, P_az_gat;
+        X_ped11,//otklonenie levoy pedali levogo letchika
+        X_ped12,//otklonenie pravoy pedali levogo letchika
+        X_ped21,//otklonenie levoy pedali pravogo letchika
+        X_ped22,//otklonenie pravoy pedali pravogo letchika
+        vkh;//skorost' dvizheniya po VPP(putevaya skorost'), m/s
+
+    QVector<double> brakes_Pt{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+    //davlenie v pervoy - shestoy para koles
+
     //Ptp
     QVector<double> brakes_K1{0.01, 0.01, 0.01, 0.01, 0.01, 0.01};
     QVector<bool> brakes_PK1{false, false, false, false, false, false, false};
@@ -59,14 +58,106 @@ public:
     QVector<double> brakes_DPt{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     QVector<double> brakes_DPavt{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     QVector<double> brakes_Ptr{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-    QVector<double> brakes_Pt{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     QVector<double> brakes_Pkv{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     QVector<double> brakes_DVsvk{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     QVector<double> brakes_Vsvk{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
     QVector<double> brakes_Vsvk_p{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 
     double
-        Patp{150};
+        K2, K3,
+        P_az_gat,
+        P_ped_11,
+        P_ped_12,
+        P_ped_21,
+        P_ped_22,
+        P_t_lev,
+        P_t_prav,
+        P_tp_lev,
+        P_tp_prav,
+        Patp{150},
+        Pavart,
+        S_ogr1,
+        S_ogr3,
+        X_tp_lev,
+        X_tp_prav,
+        ax_ts,
+        balarm_BD11,
+        balarm_BD12,
+        balarm_BD13,
+        balarm_BD21,
+        balarm_BD22,
+        balarm_BD23,
+        delta_Ptr,
+        pgat;
+
+    bool
+        K1_9921,
+        K2_9921,
+        K5_3650,
+        K5_9921,
+        K6_9921,
+        PAVART,
+        PAVT_N,
+        PAVT_P,
+        PAVT_S,
+        PBAVTT,
+        PBRRT,
+        PFT,
+        POOST,
+        PORST,
+        POSH,
+        POSH2,
+        PPDGAKT,
+        PRR,
+        PSTP,
+        PTavtN,
+        PTavtP,
+        PTavtS,
+        PTfors,
+        PTstart,
+        PVTP,
+        PstartT,
+        PstoyanT,
+        PvkFT,
+        PvklR,
+        S1_3241,
+        S4_9921,
+        S5_9921,
+        S6_9921,
+        S7_9921,
+        balarm_6F01,
+        balarm_6F10,
+        balarm_AA11,
+        balarm_AA12,
+        balarm_AA13,
+        balarm_AA21,
+        balarm_AA22,
+        balarm_AA23,
+        balarm_AV0,
+        balarm_AV1,
+        balarm_AV2,
+        balarm_AV3,
+        balarm_SA1,
+        balarm_SA2,
+        balarm_SA3,
+        balarm_SAT,
+        balarm_SDA,
+        balarm_SF,
+        balarm_SOR,
+        balarm_SR,
+        balarm_SS1,
+        balarm_SS2,
+        balarm_ST,
+        balarm_SUF,
+        balarm_SUR,
+        balarm_SVR1,
+        balarm_SVR2,
+        otkaz_gs3,
+        paft,
+        pavtt,
+        pbutzo,
+        pbutzr,
+        ptstoyan;
 
 
 

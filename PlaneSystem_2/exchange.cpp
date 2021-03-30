@@ -6,7 +6,7 @@ double
     exchange::eng2_spd{},//engine2 speed
     exchange::eng3_spd{},//engine3 speed
     exchange::eng4_spd{},//engine4 speed
-    exchange::pgat{},
+    exchange::pgat{},//davlenie gidroakkumulyatora tormozov
     exchange::alpha_rud_1dv{},//RUD position 1st engine
     exchange::alpha_rud_2dv{},//RUD position 2nd engine
     exchange::alpha_rud_3dv{},//RUD position 3rd engine
@@ -89,9 +89,9 @@ bool
 bool
     exchange::F32_3250{},
     exchange::P1OBLOP{},
-    exchange::P2OBLOP{},
+    exchange::P2OBLOP{},//priznak 2 obzhatiya levoy opori shassi
     exchange::P1OBPOP{},
-    exchange::P2OBPOP{},
+    exchange::P2OBPOP{},//priznak 2 obzhatiya pravoy opori shassi
     exchange::PRD1dv{},//engine1 work sign
     exchange::PRD2dv{},//engine2 work sign
     exchange::PRD3dv{},//engine3 work sign

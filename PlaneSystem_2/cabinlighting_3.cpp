@@ -3,7 +3,6 @@
 void cabinlighting_int::cabinlighting_3()
 {
     static bool
-        S1_2860,
         PVFL,
         PVFP,
         PFPRLP,
@@ -30,22 +29,10 @@ void cabinlighting_int::cabinlighting_3()
         F13_3340,
         F12_3340;
 
-    static double
-        alpha_fsv_ol,
-        alpha_fsv_op,
-        Vpr,
-        alpha_fazl,
-        alpha_fazp;
 
     static int
         fazl_counter,
-        fazp_counter,
-        S1_3340,
-        S2_3340,
-        S3_3340,
-        S4_3340,
-        S5_3340,
-        S6_3340;
+        fazp_counter;
 
     // A left side toggling
     if (exchange::ush1l >= 18.0 && F1_3340 == true)
@@ -366,7 +353,7 @@ void cabinlighting_int::cabinlighting_3()
     ///////////////////////////////////////////////////////////////////////////
     bss_inst.BSS825X5V = false;
 
-    if(exchange::usho2p >= 18.0 && S1_2860 == true)
+    if(exchange::usho2p >= 18.0 && S1_3860 == true)
     {
         K15_3340 = true;
     }

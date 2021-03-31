@@ -20,6 +20,7 @@ antiicing_int::antiicing_int(QWidget *parent)
     createRadioButton(&S1_3020, "NEYTR", true);
     createLabelValue(&usho1p, "usho1p");
     createLabelValue(&M, "M");
+    createSlider(&M_buf, 0, 150);
     createRedButton(&OTKAZ_vtsepiob_pos1dv, "OTKAZ_vtsepiob_pos1dv");
     createRedButton(&OTKAZ_vtsepiob_pos2dv, "OTKAZ_vtsepiob_pos2dv");
     createRedButton(&OTKAZ_vtsepiob_pos3dv, "OTKAZ_vtsepiob_pos3dv");

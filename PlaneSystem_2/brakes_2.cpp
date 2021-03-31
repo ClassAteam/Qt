@@ -3,52 +3,45 @@
 
 void brakes_int::brakes_2()
 {
-static double
+static int
     tick_block_rt;
 
     //start logic
     if(exchange::ushap >= 18.0 && exchange::ushal >= 18.0 && exchange::ush1dpp >= 18.0)
     {
-        if(S1_3241 == false)
-        {
+        if(!S1_3241)
             PvklR = false;
-        }
         else
-        {
             PvklR = true;
-        }
 
-        if(pbutzo == true)
+        if(pbutzo)
         {
             PBRRT = false;
             pbutzr = false;
             PvklR = false;
-            tick_block_rt = false;
+            tick_block_rt = 0;
         }
         else
         {
-            if(PvklR == true)
+            if(PvklR)
             {
                 PBRRT = true;
                 tick_block_rt = 0;
             }
             else
             {
-                if(PBRRT == true)
+                if(PBRRT)
                 {
                     if(X_tp_lev <= 0.12 || X_tp_prav <= 0.12)
                     {
                         if(tick_block_rt * TICK <= 2000)
-                        {
                             tick_block_rt++;
-                        }
                         else
-                        {
                             PBRRT = false;
-                        }
                     }
                 }
             }
+
             PstoyanT = false;
             PAVART = false;
             PORST = false;
@@ -58,11 +51,11 @@ static double
             pavtt = false;
             pbutzr = false;
 
-            if(otkaz_avt_per_na_rt == true)
+            if(otkaz_avt_per_na_rt)
             {
-                if(S1_3241 == true)
+                if(S1_3241)
                 {
-                    if(otkaz_rt == true)
+                    if(otkaz_rt)
                     {
                         pbutzr = false;
                         PORST = true;
@@ -103,11 +96,11 @@ static double
                             pavtt = false;
                         }
 
-                        if(POSH2 == true)
+                        if(POSH2)
                         {
                             if(exchange::delta_z >= 23.0 && exchange::delta_z <= 28.0)
                             {
-                                if(paft == true || PRR == true)
+                                if(paft || PRR)
                                 {
                                     if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
                                     {
@@ -117,17 +110,14 @@ static double
                                 }
                             }
                             else
-                            {
                                 paft = false;
-                            }
                         }
                     }
-
                 }
             }
             else
             {
-                if(otkaz_rt == true)
+                if(otkaz_rt)
                 {
                     pbutzr = false;
                     PORST = true;
@@ -169,11 +159,11 @@ static double
                     pavtt = false;
                 }
 
-                if(POSH2 == true)
+                if(exchange::P2OBLOP)
                 {
                     if(exchange::delta_z >= 23.0 && exchange::delta_z <= 28.0)
                     {
-                        if(paft == true || PRR == true)
+                        if(paft || PRR)
                         {
                             if(X_tp_lev >= 0.12 && X_tp_prav >= 0.12)
                             {
@@ -183,9 +173,7 @@ static double
                         }
                     }
                     else
-                    {
                         paft = false;
-                    }
                 }
             }
         }
@@ -197,19 +185,15 @@ static double
         PBRRT = false;
     }
 
-    if(otkaz_gs3 == true)
-    {
+    if(otkaz_gs3)
         PAVART = true;
-    }
     else
     {
-        if(S2_3240 == true)
-        {
+        if(S2_3240)
             PstoyanT = true;
-        }
     }
 
-    if(pavtt == false)
+    if(!pavtt)
     {
         PAVT_N = false;
         PAVT_P = false;

@@ -21,12 +21,12 @@ public:
         delta_zr_vh{},//vhodnoe polozhenie ruchki upravleniya zakrilkami
         delta_z_l{},//tekushee polozhenie zakrilkov levih, grad
         delta_z_p{},//tekushee polozhenie zakrilkov pravih, grad
-        delta_pr_l,//polozhenie predkrilkov levih
-        delta_pr_p,//polozhenie predkrilkov pravih
-        X_1_pk,//znachenie signala s datchika polozheniya PCHK1 podkanala levogo(dlya ABSU)
-        X_3_pk,//znachenie signala s datchika polozheniya PCHK1 podkanala pravogo(dlya ABSU)
-        delta_z_1_pk,//znachenie signala s datchika polozheniya zakrilkov 1 podkanala levogo(dlya ABSU)
-        delta_z_3_pk;//znachenie signala s datchika polozheniya zakrilkov 3 podkanala levogo(dlya ABSU)
+        delta_pr_l{},//polozhenie predkrilkov levih
+        delta_pr_p{},//polozhenie predkrilkov pravih
+        X_1_pk{},//znachenie signala s datchika polozheniya PCHK1 podkanala levogo(dlya ABSU)
+        X_3_pk{},//znachenie signala s datchika polozheniya PCHK1 podkanala pravogo(dlya ABSU)
+        delta_z_1_pk{},//znachenie signala s datchika polozheniya zakrilkov 1 podkanala levogo(dlya ABSU)
+        delta_z_3_pk{};//znachenie signala s datchika polozheniya zakrilkov 3 podkanala levogo(dlya ABSU)
     int
         S2_2750{},//vikluchatel "REZERVNOE UPRAVLENIE ZAKRILKI
         s2_2780{},//vikluchatel "REZERVNOE UPRAVLENIE PREDKRILKI"

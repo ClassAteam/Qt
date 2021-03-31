@@ -7,24 +7,19 @@ void brakes_int::brakes_6()
 
     if(exchange::ush1dpp >= 18.0)
     {
-        if(S1_9921 == true || S2_9921 == true)
-        {
+        if(S1_9921 || S2_9921)
             K1_9921 = true;
-        }
 
-        if(K2_9921 == true)
-        {
+        if(K2_9921)
             K1_9921 = false;
-        }
-        if(S4_9921 == true)
+
+        if(S4_9921)
         {
-            if(S3_9921 == true)
-            {
+            if(S3_9921)
                 K2_9921 = true;
-            }
             else
             {
-                if(K1_9921 == true)
+                if(K1_9921)
                 {
 
                 }
@@ -35,23 +30,15 @@ void brakes_int::brakes_6()
 
                     }
                     else
-                    {
                         K2_9921 = true;
-                    }
                 }
             }
-
         }
         else
-        {
             K2_9921 = false;
-        }
 
         if(Patp >= 60.0)
-        {
             K5_3650 = true;
-        }
-
     }
     else
     {
@@ -68,31 +55,27 @@ void brakes_int::brakes_6()
         uks_inst.UKS3X311 = true;
     }
 
-    if(exchange::ushal >= 18.0 && K1_9921 == true && Patp >= 60.0)
+    if(exchange::ushal >= 18.0 && K1_9921 && Patp >= 60.0)
     {
         PVTP = true;
-        if(K2_9921 == true)
+        if(K2_9921)
         {
             PSTP = true;
             PVTP = false;
         }
     }
 
-    if(PVTP == true)
+    if(PVTP)
     {
         S4_9921 = true;
         S5_9921 = true;
         S7_9921 = true;
     }
 
-    if(PSTP == true)
-    {
+    if(PSTP)
         S6_9921 = true;
-    }
     else
-    {
         S6_9921 = false;
-    }
 
     K5_9921 = false;
     K6_9921 = false;
@@ -103,9 +86,9 @@ void brakes_int::brakes_6()
 
     if(exchange::ushap >= 18.0)
     {
-        if(S6_9921 == true)
+        if(S6_9921)
         {
-            if(S7_9921 == true)
+            if(S7_9921)
             {
                 K5_9921 = true;
                 bss_inst.BSS824X1N = true;
@@ -114,7 +97,7 @@ void brakes_int::brakes_6()
         }
         else
         {
-            if(S5_9921 == true)
+            if(S5_9921)
             {
                 K6_9921 = true;
                 bss_inst.BSS824X1R = true;

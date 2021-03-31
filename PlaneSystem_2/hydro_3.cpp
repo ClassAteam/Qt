@@ -1,8 +1,6 @@
 #include "algorithms.h"
 #include "hydro_3.h"
 
-
-
 void hydro_int::hydro_3()
 {
     bool PRNgs1_pool[] = {prn1gs1, prn2gs1};
@@ -21,15 +19,11 @@ void hydro_int::hydro_3()
     {
         //1
         if(pgs1 >= 90)
-        {
             Kngs1[i] = 1;
-        }
         else
-        {
             Kngs1[i] = 0.16;
-        }
 
-        if(otkaz_gs1 == false && PRNgs1_pool[i] == false && nVDfirst2[i] >= 7)
+        if(!otkaz_gs1 && !PRNgs1_pool[i] && nVDfirst2[i] >= 7)
         {
             pnngs1[i] = true;
             l_gs1[i] = m_2_L_intervals(pgs1, 0, 200, 285, 1, 0.7, 0);
@@ -48,15 +42,11 @@ void hydro_int::hydro_3()
 
         //2
         if(pgs2 >= 90)
-        {
             Kngs2[i] = 1;
-        }
         else
-        {
             Kngs2[i] = 0.16;
-        }
 
-        if(otkaz_gs2 == false && PRNgs2_pool[i] == false && nVDfirst2[1 - i] >= 7)
+        if(!otkaz_gs2 && !PRNgs2_pool[i] && nVDfirst2[1 - i] >= 7)
         {
             pnngs2[i] = true;
             l_gs2[i] = m_2_L_intervals(pgs2, 0, 200, 285, 1, 0.7, 0);
@@ -73,15 +63,11 @@ void hydro_int::hydro_3()
 
         //3
         if(pgs3 >= 90)
-        {
             Kngs3[i] = 1;
-        }
         else
-        {
             Kngs3[i] = 0.16;
-        }
 
-        if(otkaz_gs3 == false && PRNgs3_pool[i] == false && nVDsecond2[i] >= 7)
+        if(!otkaz_gs3 && !PRNgs3_pool[i] && nVDsecond2[i] >= 7)
         {
             pnngs3[i] = true;
             l_gs3[i] = m_2_L_intervals(pgs3, 0, 200, 285, 1, 0.7, 0);
@@ -98,15 +84,11 @@ void hydro_int::hydro_3()
 
         //4
         if(pgs4 >= 90)
-        {
             Kngs4[i] = 1;
-        }
         else
-        {
             Kngs4[i] = 0.16;
-        }
 
-        if(otkaz_gs4 == false && PRNgs4_pool[i] == false && nVDsecond2[1 - i] >= 7)
+        if(!otkaz_gs4 && !PRNgs4_pool[i] && nVDsecond2[1 - i] >= 7)
         {
             pnngs4[i] = true;
             l_gs4[i] = m_2_L_intervals(pgs4, 0, 200, 285, 1, 0.7, 0);

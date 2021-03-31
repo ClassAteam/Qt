@@ -30,26 +30,19 @@ void hydro_int::hydro_2()
     UKS_pool[3] = uks_inst.UKS1X332;
     for(int i = 0; i < 4; i++)
     {
-        if(Ushdp_pool[i] >= 18.0 && Ffirst4_2920[i] == true && Sfirst4_2920[i] == true )
-        {
+        if(Ushdp_pool[i] >= 18.0 && Ffirst4_2920[i] && Sfirst4_2920[i])
             KSURGS[i] = true;
-        }
         else
-        {
             KSURGS[i] = false;
-        }
-        if(Ush_pool[i] >= 18.0 && Ssecond4_2920[i] == true)
-        {
+
+        if(Ush_pool[i] >= 18.0 && Ssecond4_2920[i])
             KKGS[i] = true;
-        }
         else
-        {
             KKGS[i] = false;
-        }
 
         if(Ushdp_pool[i] >= 18.0)
         {
-            if(RVkTNUGS[i] == true)
+            if(RVkTNUGS[i])
             {
                 if(Sthird4_2920[i] == 1)
                 {
@@ -75,7 +68,7 @@ void hydro_int::hydro_2()
             }
         }
 
-        if(RVkTNUGS[i] == true)
+        if(RVkTNUGS[i])
         {
             PTNUGS[i] = true;
             UKS_pool[i] = true;

@@ -4,7 +4,7 @@
 void brakes_int::brakes_5()
 {
     //start logic
-    if(pbutzo == true || pbutzr == true)
+    if(pbutzo || pbutzr)
     {
         balarm_BD11 = brakes_Pt[0];
         balarm_BD12 = brakes_Pt[1];
@@ -33,21 +33,18 @@ void brakes_int::brakes_5()
         balarm_SVR1 = POOST;
         balarm_SS1 = false;
 
-        if(pbutzo == true && (P_t_lev >= 30 || P_t_prav >= 30))
+        if(pbutzo && (P_t_lev >= 30 || P_t_prav >= 30))
         {
-            if(POSH == true)
+            if(POSH1)
             {
                 balarm_SS1 = true;
                 balarm_ST = PstartT;
             }
-
         }
         balarm_SS2 = false;
 
-        if(pbutzr == true && exchange::pgs3 >= 220 && POSH == true)
-        {
+        if(pbutzr && exchange::pgs3 >= 220 && POSH1)
             balarm_SS2 = true;
-        }
 
         balarm_SOR = PORST;
         balarm_SVR2 = pbutzr;
@@ -56,10 +53,7 @@ void brakes_int::brakes_5()
         balarm_SAT = PAVART;
         bss_inst.BSS812_vkl_ft = false;
 
-        if(PFT == true)
-        {
-            bss_inst.BSS812_vkl_ft = true;
-        }
+        if(PFT) bss_inst.BSS812_vkl_ft = true;
 
         bss_inst.BSS812_nazhm_rt = false;
         bss_inst.BSS812_vkl_rt = false;
@@ -108,57 +102,39 @@ void brakes_int::brakes_5()
         P_az_gat = 0;
     }
 
-    if(POOST == true)
+    if(POOST)
     {
         if(otkaz_avt_per_na_rt)
         {
             if(S1_3241)
-            {
                 bss_inst.BSS812_vkl_rt = true;
-            }
             else
-            {
                 bss_inst.BSS812_vkl_rt = false;
-            }
         }
         else
         {
-            if(PORST == true)
+            if(PORST)
             {
                 if(S1_3241)
-                {
                     bss_inst.BSS812_vkl_rt = true;
-                }
                 else
-                {
                     bss_inst.BSS812_vkl_rt = false;
-                }
             }
             else
-            {
                 bss_inst.BSS812_vkl_rt = true;
-            }
         }
     }
 
     if(pgat >= 130)
-    {
         pgat = pgat - (Pavart * (TICK / 1000));
-    }
 
     P_az_gat = 115 + (0.59 * pgat);
 
-    if(X1_45_7620 == true &&
-        X2_45_7620 == true &&
-        X3_45_7620 == true &&
-        X4_45_7620 == true)
-    {
+    if(X1_45_7620 && X2_45_7620 && X3_45_7620 && X4_45_7620)
         uks_inst.UKS2X234 = P_az_gat;
-    }
     else
-    {
         uks_inst.UKS2X234 = 0;
-    }
+
     uks_inst.UKS2X212 = pgat;
 
     if(PstoyanT)
@@ -174,7 +150,7 @@ void brakes_int::brakes_5()
 
     if(exchange::ushap >= 18.0)
     {
-        if(PstoyanT == true && pgat >= 80.0)
+        if(PstoyanT && pgat >= 80.0)
         {
             uks_inst.UKS1X18 = true;
             bss_inst.BSS812X5r = true;

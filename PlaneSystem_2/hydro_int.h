@@ -89,31 +89,66 @@ public:
         qutgs3{}, wpgs3{}, d_wpgat{}, d_wpgs1{}, d_wpgs2{}, d_wpgs3{}, d_wpgs4{},
         dxst_dt{}, kgat{1.0}, ksur{0.02}, ktnu{0.02},
 
-        p0gat{},//davlenie zaryadki gazom gidroakkum tormozov
+        p0gat{115},//davlenie zaryadki gazom gidroakkum tormozov
         p0gs1{115},//davlenie zaryadki gidro/akkum gazom v GS1
         p0gs2{115},//davlenie zaryadki gidro/akkum gazom v GS2
         p0gs3{115},//davlenie zaryadki gidro/akkum gazom v GS3
         p0gs4{115},//davlenie zaryadki gidro/akkum gazom v GS4
 
-        pgat_z, pgs1_z, pgs2_z, pgs4_z, psurgs1, psurgs2,
-        psurgs3, psurgs4, ptnugs1, ptnugs2, ptnugs3, ptnugs4, qp1sum, qp2sum,
-        qp3sum, qp4sum, qpgs1, qpgs2, qpgs4, qpts, qutgs1, qutgs2, qutgs4,
-        s_st, w0gat,
+        pgat_z{},
+        pgs1_z{},
+        pgs2_z{},
+        pgs4_z{},
+        psurgs1{},
+        psurgs2{},
+        psurgs3{},
+        psurgs4{},
+        ptnugs1{},
+        ptnugs2{},
+        ptnugs3{},
+        ptnugs4{},
+        qp1sum{},
+        qp2sum{},
+        qp3sum{},
+        qp4sum{},
+        qpgs1{},
+        qpgs2{},
+        qpgs4{},
+        qpts{},
+        qutgs1{},
+        qutgs2{},
+        qutgs4{},
+        s_st{},
+        w0gat{4.07},
         w0gs1{2.36},
         w0gs2{2.36},
         w0gs3{2.36},
-        w0gs4{2.36}, wpgat, wpgs1, wpgs2, wpgs4,
-        pa1gak, pa2gak,
-        pa3gak, pa4gak, pprgs1, pprgs2, pprgs3, pprgs4, pprgat, puksgs1,
-        puksgs2, puksgs3, puksgs4,
-        tb1, tb2, tb3, tb4, //tempreture in the tank
-        tb1_z, tb2_z,//
-        tb3_z, tb4_z,
-        air_temr_C,//air tempreature in C
+        w0gs4{2.36},
+        wpgat{},
+        wpgs1{},
+        wpgs2{},
+        wpgs4{},
+        pa1gak{},
+        pa2gak{},
+        pa3gak{},
+        pa4gak{},
+        pprgs1{},
+        pprgs2{},
+        pprgs3{},
+        pprgs4{},
+        pprgat{},
+        puksgs1{},
+        puksgs2{},
+        puksgs3{},
+        puksgs4{},
+        tb1{}, tb2{}, tb3{}, tb4{}, //tempreture in the tank
+        tb1_z{}, tb2_z{},//
+        tb3_z{}, tb4_z{},
+        air_temr_C{},//air tempreature in C
         air_tempr_K{288},//tempretaure of air int the sky in K
-        dqg1p, dqg1t, dqg2p, dqg2t, dqgzat, dqg3p,
-        dqg3t, dqg4p, dqg4t, dqutg1, dqutg2, dqutg3, dqutg4, q0g1, q0g2,
-        q0g3, q0g4, qg1_z, qg2_z, qg3_z, qg4_z, qgs1{0.0}, qgs2{0.0}, qgs3{0.0},
+        dqg1p{}, dqg1t{}, dqg2p{}, dqg2t{}, dqgzat{}, dqg3p{},
+        dqg3t{}, dqg4p{}, dqg4t{}, dqutg1{}, dqutg2{}, dqutg3{}, dqutg4{}, q0g1{}, q0g2{},
+        q0g3{}, q0g4{}, qg1_z{}, qg2_z{}, qg3_z{}, qg4_z{}, qgs1{0.0}, qgs2{0.0}, qgs3{0.0},
         qgs4{0.0} ;
 
     QVector<bool> PTNUGS{false, false, false, false};

@@ -57,60 +57,35 @@ void hydro_int::hydro_7()
     }
 
     if(exchange::usho1l >= 18.0 && F14_2930)
-    {
         PK = true;
-    }
 
     if(landinggear_int::S18_2930 == true)
-    {
         PKL = true;
-    }
     else
-    {
         PKL = false;
-    }
 
-    if(exchange::ushal >= 18.0 &&
-        K7_2910 == false &&
-        K8_2910 == false &&
-        K15_2910 == false &&
-        K18_2910 == false)
-    {
+    if(exchange::ushal >= 18.0 && !K7_2910 && !K8_2910 && !K15_2910 && !K18_2910)
         bss_inst.BSS812X5N = true;
-    }
     else
-    {
         bss_inst.BSS812X5N = false;
-    }
-
 
     for(int i = 0; i < 4; i++)
     {
-        if(PKL == true)
-        {
+        if(PKL)
             *H_pool[i] = true;
-        }
         else
         {
             if(*K2_pool[i] == false && *Ushal_pool[i] >= 18.0)
-            {
                 *H_pool[i] = true;
-            }
             else
-            {
                 *H_pool[i] = false;
-            }
         }
     }
 
-    if(exchange::usho1l >= 18.0 && F14_2930 == true && S13_2920 == true)
-    {
+    if(exchange::usho1l >= 18.0 && F14_2930 && S13_2920)
         PKL1 = true;
-    }
     else
-    {
         PKL1 = false;
-    }
 
 
     for(auto& s : KKGS)
@@ -178,7 +153,7 @@ void hydro_int::hydro_7()
             }
             else
             {
-                if(PKL1 == true)
+                if(PKL1)
                 {
                     *uks_pool2[i] = 0;
                     *bss812_pool[i] = true;
@@ -198,7 +173,7 @@ void hydro_int::hydro_7()
             *bss811_pool1[i] = true;
         }
     }
-    if(PKL == true)
+    if(PKL)
     {
         H10_2930 = true;
         H11_2930 = true;

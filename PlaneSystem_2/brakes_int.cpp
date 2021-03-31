@@ -18,7 +18,6 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelClue(&PFT, "PFT");
     createLabelClue(&PRR, "PRR");
     createLabelClue(&POOST, "POOST");
-    createLabelClue(&POSH2, "POSH2");
 
     createLabelValue(&X_ped11, "X_ped11");
     createSlider(&X_ped11, 0, 100);
@@ -34,8 +33,8 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelValue(&P_ped_12, "P_ped_12");
     createLabelValue(&P_ped_21, "P_ped_21");
     createLabelValue(&P_ped_22, "P_ped_22");
-    createLabelValue(&P_tp_lev, "P_tp_lev");
-    createLabelValue(&P_tp_prav, "P_tp_prav");
+    createLabelValue(&P_t_lev, "P_t_lev");
+    createLabelValue(&P_t_prav, "P_t_prav");
 
     createRedButton(&X1_45_7620, "X1_45_7620");
     createRedButton(&X2_45_7620, "X2_45_7620");
@@ -66,14 +65,17 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelClue(&PBRRT, "PBRRT");
 
     createRedButton(&otkaz_avt_per_na_rt, "otkaz_avt_per_na_rt");
+    createRedButton(&otkaz_osn_sis_torm, "otkaz_osn_sis_torm");
     createRedButton(&otkaz_rt, "otkaz_rt");
     createRedButton(&otkaz_gs3, "otkaz_gs3");
+    createRedButton(&otkaz_ots_dav_v1k_levt, "otka_1p_lev");
+    createRedButton(&otkaz_ots_dav_v1k_pravt, "otka_1p_prav");
+
     createRedButton(&S1_3241, "S1_3241");
 
     createLabelValue(&vkh, "vkh");
     createSlider(&vkh, 0, 80);
 
-    createLabelClue(&POSH, "POSH");
     createLabelClue(&PPDGAKT, "PPDGAKT");
     createLabelClue(&PTavtN, "PTavtN");
     createLabelClue(&PTavtP, "PTavtP");
@@ -85,9 +87,14 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelValue(&Pavart, "Pavart");
     createLabelValue(&ax_ts, "ax_ts");
     createLabelValue(&pgat, "pgat");
-    createLabelValue(&P_t_lev, "P_t_lev");
     createLabelValue(&P_t_prav, "P_t_prav");
 
+    createLabelValue(&brakes_Pt[0], "Pt_1");
+    createLabelValue(&brakes_Pt[1], "Pt_2");
+    createLabelValue(&brakes_Pt[2], "Pt_3");
+    createLabelValue(&brakes_Pt[3], "Pt_4");
+    createLabelValue(&brakes_Pt[4], "Pt_5");
+    createLabelValue(&brakes_Pt[5], "Pt_6");
     createLabelClue(&brakes_PK1[0], "PK1_1");
     createLabelClue(&brakes_PK1[1], "PK1_2");
     createLabelClue(&brakes_PK1[2], "PK1_3");

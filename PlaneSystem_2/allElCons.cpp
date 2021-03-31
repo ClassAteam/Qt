@@ -217,6 +217,7 @@ void allElConsAlt::makeCorresCurr()
                 powerdc_int::ingvsu = sumB;
             }
             bss_inst.BSS837X1FF = true;
+            uks_inst.UKS2X35 = true;
         }
         else
         {
@@ -224,11 +225,13 @@ void allElConsAlt::makeCorresCurr()
             {
                 powerdc_int::ingvsu = sumC;
                 bss_inst.BSS837X1FF = true;
+                uks_inst.UKS2X35 = true;
             }
             else
             {
                 powerdc_int::ingvsu = 0;
                 bss_inst.BSS837X1FF = false;
+                uks_inst.UKS2X35 = false;
             }
         }
     }
@@ -246,11 +249,13 @@ void allElConsAlt::makeCorresCurr()
             {
                 powerdc_int::ingrap = sumA;
                 bss_inst.BSS926X3R = true;
+                uks_inst.UKS3X324 = true;
             }
             else
             {
                 powerdc_int::ingrap = sumC;
                 bss_inst.BSS926X3R = true;
+                uks_inst.UKS3X324 = true;
             }
         }
         else
@@ -259,11 +264,13 @@ void allElConsAlt::makeCorresCurr()
             {
                 powerdc_int::ingrap = sumB;
                 bss_inst.BSS926X3R = true;
+                uks_inst.UKS3X324 = true;
             }
             else
             {
                 powerdc_int::ingrap = 0;
                 bss_inst.BSS926X3R = false;
+                uks_inst.UKS3X324 = false;
             }
         }
     }

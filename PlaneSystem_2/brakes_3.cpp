@@ -3,10 +3,10 @@
 
 void brakes_int::brakes_3()
 {
-static int
-tick_alg_3,
-tick_alg_2,
-tick_alg_1;
+    static int
+        tick_alg_3,
+        tick_alg_2,
+        tick_alg_1;
 
 
     PTavtN = false;
@@ -17,11 +17,11 @@ tick_alg_1;
     ptstoyan = false;
     PPDGAKT = false;
 
-    if((exchange::pgs2 >= 200 || exchange::pgs3 >= 220 || pgat >= 130) && vkh <= 260)
+    if((exchange::pgs2 >= 200 || exchange::pgs3 >= 220 || pgat >= 130) && vkh <= 72.0)
     {
         if(exchange::K35_3230 && (exchange::K27_3230  || exchange::K26_3230))
         {
-            if(POSH == true)
+            if(POSH1)
             {
 
             }
@@ -33,21 +33,20 @@ tick_alg_1;
                 }
                 else
                 {
-                    POSH = true;
+                    POSH1 = true;
                     tick_alg_1 = 0;
                 }
-
             }
         }
         else
         {
-            POSH = false;
+            POSH1 = false;
             tick_alg_1 = 0;
         }
 
-        if(POSH == true)
+        if(POSH1)
         {
-            if(PstartT == true)
+            if(PstartT)
             {
                 PTstart = true;
                 if(vkh <= 8.1)
@@ -61,7 +60,8 @@ tick_alg_1;
                     P_t_prav = 0;
                 }
             }
-            if(PstoyanT == true)
+
+            if(PstoyanT)
             {
                 P_t_lev = 120;
                 P_t_prav = 120;
@@ -70,7 +70,7 @@ tick_alg_1;
 
             if(vkh <= 8.1)
             {
-                if(PAVT_N == true)
+                if(PAVT_N)
                 {
                     P_t_lev = 100;
                     P_t_prav = 100;
@@ -79,7 +79,7 @@ tick_alg_1;
                 }
                 else
                 {
-                    if(PAVT_P == true)
+                    if(PAVT_P)
                     {
                         P_t_lev = 80;
                         P_t_prav = 80;
@@ -88,7 +88,7 @@ tick_alg_1;
                     }
                     else
                     {
-                        if(PAVT_S == true)
+                        if(PAVT_S)
                         {
                             P_t_lev = 60;
                             P_t_prav = 60;
@@ -97,7 +97,7 @@ tick_alg_1;
                         }
                         else
                         {
-                            if(PFT == true)
+                            if(PFT)
                             {
                                 P_t_lev = 150;
                                 P_t_prav = 150;
@@ -105,13 +105,12 @@ tick_alg_1;
                                 PTfors = true;
                             }
                         }
-
                     }
                 }
             }
             else
             {
-                if(PAVT_N == true)
+                if(PAVT_N)
                 {
                     P_t_lev = 120;
                     P_t_prav = 120;
@@ -120,7 +119,7 @@ tick_alg_1;
                 }
                 else
                 {
-                    if(PAVT_P == true)
+                    if(PAVT_P)
                     {
                         P_t_lev = 100;
                         P_t_prav = 100;
@@ -129,7 +128,7 @@ tick_alg_1;
                     }
                     else
                     {
-                        if(PAVT_S == true)
+                        if(PAVT_S)
                         {
                             P_t_lev = 70;
                             P_t_prav = 70;
@@ -138,7 +137,7 @@ tick_alg_1;
                         }
                         else
                         {
-                            if(PFT == true)
+                            if(PFT)
                             {
                                 P_t_lev = 150;
                                 P_t_prav = 150;
@@ -146,30 +145,24 @@ tick_alg_1;
                                 PTfors = true;
                             }
                             else
-                            {
                                 ax_ts = (3 * ((P_tp_prav + P_tp_lev)/ (2 * 120)));
-                            }
                         }
-
                     }
                 }
-
             }
 
-            if(pavtt == true && PFT == true)
+            if(pavtt && PFT)
             {
                 P_t_lev = P_t_lev + 25.0;
                 P_t_prav = P_t_prav + 25.0;
             }
 
-            if(PAVART == true)
+            if(PAVART)
             {
-                if(pavtt == true)
+                if(pavtt)
                 {
-                    if(PRR == true)
-                    {
+                    if(PRR)
                         tick_alg_2 = 0;
-                    }
                     else
                     {
                         if(pgat < 130 || vkh <= 13.5)
@@ -213,25 +206,18 @@ tick_alg_1;
             else
             {
                 Pavart = 0;
-                if(PORST == true &&
-                        S2_3240 == true &&
-                        exchange::K35_3230 == true &&
-                        exchange::K27_3230 == true &&
-                        exchange::K26_3230 == true)
-                {
+
+                if(PORST && S2_3240 && exchange::K35_3230 &&
+                    exchange::K27_3230 && exchange::K26_3230)
                     PstoyanT = true;
-                }
             }
         }
         else
         {
             P_t_lev = 0;
             P_t_prav = 0;
-            if(pbutzo == true &&
-                    exchange::S1_3230 == true &&
-                    PRR == true &&
-                    exchange::K27_3230 == false &&
-                    exchange::K26_3230 == false)
+            if(pbutzo && exchange::S1_3230 && PRR &&
+                !exchange::K27_3230 && !exchange::K26_3230)
             {
                 if((tick_alg_3 * TICK) >= 5000)
                 {
@@ -258,7 +244,7 @@ tick_alg_1;
         tick_alg_3 = 0;
     }
 
-    if(PstoyanT == true)
+    if(PstoyanT)
     {
         if(pgat >= 130.0)
         {

@@ -5,27 +5,19 @@
 void hydro_int::hydro_5()
 {
     if(pgs3 >= exchange::pgat)
-    {
         qngat = qngs3;
-    }
     else
-    {
         qngat = 0;
-    }
 
     if(exchange::ptstoyan == true)
-    {
         qpts = qpts + 0.0015;
-    }
     else
-    {
         qpts = 0;
-    }
 
     d_wpgat = qngat - qpts;
     wpgat = (wpgat + d_wpgat);
 
-    if(KKGS[2] == true)
+    if(KKGS[2]) //mb (*) ?
     {
         if(exchange::pgat >= 262)
         {

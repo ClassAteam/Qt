@@ -20,7 +20,7 @@ void hydro_int::hydro_1()
     if(exchange::ush2dpl >= 18.0 && F3_2910 == true)
     {
         F31_2910 = true;
-        if(s1_2910 == true)
+        if(s1_2910)
         {
             K9_2910 = true;
             K5_2910 = true;
@@ -30,14 +30,14 @@ void hydro_int::hydro_1()
         }
         else
         {
-            if(K11_2910 == true)
+            if(K11_2910)
             {
                 F318_2910 = false;
                 F32_2910 = false;
             }
             else
             {
-                if(K10_2910 == true)
+                if(K10_2910)
                 {
                     F318_2910 = false;
                     F32_2910 = false;
@@ -52,7 +52,7 @@ void hydro_int::hydro_1()
 
         if(exchange::ushal >= 18.0)
         {
-            if(exchange::S35_3230 == true)
+            if(exchange::S35_3230)
             {
                 K23_2910 = true;
             }
@@ -65,40 +65,25 @@ void hydro_int::hydro_1()
     }
     if(exchange::ushap >= 18.0)
     {
-        if(exchange::S39_3230 == true)
-        {
+        if(exchange::S39_3230)
             K22_2910 = true;
-        }
         else
-        {
             K22_2910 = false;
-        }
     }
     else
-    {
         K22_2910 = false;
-    }
 
-    if(F32_2910 == true &&
-        PBI4M_1 == true &&
-        K22_2910 == true &&
-        K23_2910 == true)
-    {
+    if(F32_2910 && PBI4M_1 && K22_2910 && K23_2910)
         F323_2910 = true;
-    }
     else
-    {
         F323_2910 = false;
-    }
 
-    if(F32_2910 == true && s2_2910 == true)
-    {
+    if(F32_2910 && s2_2910)
         F323_2910 = true;
-    }
 
-    if(F323_2910 == true && F32_2910 == true)
+    if(F323_2910 && F32_2910)
     {
-        if(s3_2910 == true)
+        if(s3_2910)
         {
             K1_2910 = true;
             K3_2910 = false;
@@ -109,7 +94,7 @@ void hydro_int::hydro_1()
             K3_2910 = true;
         }
 
-        if(s4_2910 == true)
+        if(s4_2910)
         {
             K19_2910 = false;
             K21_2910 = true;
@@ -128,69 +113,37 @@ void hydro_int::hydro_1()
     K26_2910 = false;
     K27_2910 = false;
 
-    if(EZR1_34 == true)
-    {
-        K2_2910 = true;
-    }
-    if(EZR2_34 == true)
-    {
-        K4_2910 = true;
-    }
-    if(EZR3_34 == true)
-    {
-        K12_2910 = true;
-    }
-    if(EZR4_34 == true)
-    {
-        K25_2910 = true;
-    }
-    if(exchange::K26_3230 == true)
-    {
-        K27_2910 = true;
-    }
-    if(exchange::K24_3230 == true)
-    {
-        K26_2910 = true;
-    }
+    if(EZR1_34) K2_2910 = true;
+    if(EZR2_34) K4_2910 = true;
+    if(EZR3_34) K12_2910 = true;
+    if(EZR4_34) K25_2910 = true;
+
+    if(exchange::K26_3230) K27_2910 = true;
+
+    if(exchange::K24_3230) K26_2910 = true;
 
     K10_2910 = false;
 
-    if(F31_2910 == true)
+    if(F31_2910)
     {
-        if(K2_2910 == true ||
-            K4_2910 == true ||
-            K12_2910 == true ||
-            K25_2910 == true)
-        {
+        if(K2_2910 || K4_2910 || K12_2910 || K25_2910)
             K10_2910 = true;
-        }
 
-        if(s1_2910 == true)
-        {
+        if(s1_2910)
             K11_2910 = false;
-        }
         else
         {
-            if(K1_2930 == true ||
-                K2_2930 == true ||
-                K3_2930 == true ||
-                K4_2930 == true)
-            {
+            if(K1_2930 || K2_2930 || K3_2930 || K4_2930)
                 K11_2910 = true;
-            }
             else
             {
-                if(K11_2910 == true && K27_2910 == true)
-                {
+                if(K11_2910 && K27_2910)
                     K11_2910 = false;
-                }
             }
         }
     }
     else
-    {
         K11_2910 = false;
-    }
 
     K28_2910 = false;
     K29_2910 = false;
@@ -212,7 +165,6 @@ void hydro_int::hydro_1()
         {
             K28_2910 = true;
             uks_inst.UKS2X325 = true;
-
         }
         if(pn1gs2 <= 80)
         {
@@ -264,111 +216,78 @@ void hydro_int::hydro_1()
     F78_2910 = false;
     F88_2910 = false;
 
-    if(K9_2910 == true)
+    if(K9_2910)
     {
 
     }
     else
     {
-        if(K27_2910 == true)
+        if(K27_2910)
         {
-            if(exchange::alpha_rud_1dv < 45 &&
-                S6_2910 == true &&
-                F91_2910 == true)
-            {
+            if(exchange::alpha_rud_1dv < 45 && S6_2910 && F91_2910)
                 F18_2910 = true;
-            }
         }
         else
         {
-            if(exchange::ushal >= 18.0 &&
-                K4_2910 == false &&
-                K12_2910 == false &&
-                K25_2910 == false)
-            {
+            if(exchange::ushal >= 18.0 && !K4_2910 && !K12_2910 && !K25_2910)
                 F18_2910 = true;
-            }
         }
     }
 
-    if(K5_2910 == true)
+    if(K5_2910)
     {
 
     }
     else
     {
-        if(K26_2910 == true)
+        if(K26_2910)
         {
-            if(exchange::alpha_rud_4dv < 45 &&
-                S6_2910 == true &&
-                F91_2910 == true)
-            {
+            if(exchange::alpha_rud_4dv < 45 && S6_2910 && F91_2910)
                 F88_2910 = true;
-            }
         }
         else
         {
-            if(exchange::ushap >= 18.0 &&
-                K4_2910 == false &&
-                K12_2910 == false &&
-                K2_2910 == false)
-            {
+            if(exchange::ushap >= 18.0 && !K4_2910 && !K12_2910 && !K2_2910)
                 F88_2910 = true;
-            }
         }
     }
-    if(K9_2910 == true)
+
+    if(K9_2910)
     {
 
     }
     else
     {
-        if(K27_2910 == true)
+        if(K27_2910)
         {
-            if(exchange::alpha_rud_2dv < 45 && F91_2910 == true)
+            if(exchange::alpha_rud_2dv < 45 && F91_2910)
             {
-                if(S7_2910 == true || S5_2910 == true)
-                {
+                if(S7_2910 || S5_2910)
                     F78_2910 = true;
-                }
             }
         }
         else
         {
-            if(exchange::ushap >= 18 &&
-                K2_2910 == false &&
-                K12_2910 == false &&
-                K25_2910 == false)
-            {
+            if(exchange::ushap >= 18 && !K2_2910 && !K12_2910 && !K25_2910)
                 F78_2910 = true;
-            }
         }
     }
 
-    if(K5_2910 == true)
+    if(K5_2910)
     {
 
     }
     else
     {
-        if(K26_2910 == true)
+        if(K26_2910)
         {
-            if(exchange::alpha_rud_3dv < 45 &&
-                S5_2910 == true &&
-                F91_2910 == true)
-            {
+            if(exchange::alpha_rud_3dv < 45 && S5_2910 && F91_2910)
                 F58_2910 = true;
-            }
         }
         else
         {
-            if(exchange::ushap >= 18 &&
-                K4_2910 == false &&
-                K2_2910 == false &&
-                K25_2910 == false)
-            {
+            if(exchange::ushap >= 18 && !K4_2910 && !K2_2910 && !K25_2910)
                 F58_2910 = true;
-            }
         }
     }
 
@@ -416,29 +335,17 @@ void hydro_int::hydro_1()
     K37_2910 = false;
     uks_inst.UKS2X339 = false;
 
-    if(K28_2910 == true || K31_2910 == true)
-    {
-        K7_2910 = true;
-    }
+    if(K28_2910 || K31_2910) K7_2910 = true;
 
-    if(K29_2910 == true || K30_2910 == true)
-    {
-        K8_2910 = true;
-    }
+    if(K29_2910 || K30_2910) K8_2910 = true;
 
-    if(K32_2910 == true || K35_2910 == true)
-    {
-        K15_2910 = true;
-    }
+    if(K32_2910 || K35_2910) K15_2910 = true;
 
-    if(K34_2910 == true || K38_2910 == true)
-    {
-        K18_2910 = true;
-    }
+    if(K34_2910 || K38_2910) K18_2910 = true;
 
     if(exchange::ushal >= 18.0)
     {
-        if(K2_2910 == true || K1_2910 == true)
+        if(K2_2910 || K1_2910)
         {
             prn2gs2 = true;
             K13_2910 = true;
@@ -448,7 +355,7 @@ void hydro_int::hydro_1()
 
     if(exchange::ushal >= 18.0)
     {
-        if(K2_2910 == true || K3_2910 == true)
+        if(K2_2910 || K3_2910)
         {
             prn1gs1 = true;
             K14_2910 = true;
@@ -458,7 +365,7 @@ void hydro_int::hydro_1()
 
     if(exchange::ushal >= 18.0)
     {
-        if(K4_2910 == true || K3_2910 == true)
+        if(K4_2910 || K3_2910)
         {
             prn1gs2 = true;
             K16_2910 = true;
@@ -468,7 +375,7 @@ void hydro_int::hydro_1()
 
     if(exchange::ushal >= 18.0)
     {
-        if(K4_2910 == true || K1_2910 == true)
+        if(K4_2910 || K1_2910)
         {
             prn2gs1 = true;
             K17_2910 = true;
@@ -477,7 +384,7 @@ void hydro_int::hydro_1()
     }
     if(exchange::ushap >= 18.0)
     {
-        if(K12_2910 == true || K21_2910 == true)
+        if(K12_2910 || K21_2910)
         {
             prn2gs4 = true;
             K20_2910 = true;
@@ -486,7 +393,7 @@ void hydro_int::hydro_1()
     }
     if(exchange::ushap >= 18.0)
     {
-        if(K12_2910 == true || K19_2910 == true)
+        if(K12_2910 || K19_2910)
         {
             prn1gs3 = true;
             K33_2910 = true;
@@ -495,7 +402,7 @@ void hydro_int::hydro_1()
     }
     if(exchange::ushap >= 18.0)
     {
-        if(K25_2910 == true || K19_2910 == true)
+        if(K25_2910 || K19_2910)
         {
             prn1gs4 = true;
             K36_2910 = true;
@@ -504,7 +411,7 @@ void hydro_int::hydro_1()
     }
     if(exchange::ushap >= 18.0)
     {
-        if(K25_2910 == true || K19_2910 == true)
+        if(K25_2910 || K19_2910)
         {
             prn2gs3 = true;
             K37_2910 = true;

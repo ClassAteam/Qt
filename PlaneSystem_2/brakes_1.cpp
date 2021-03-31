@@ -5,72 +5,51 @@
 
 void brakes_int::brakes_1()
 {
-    timing.start();
+//    timing.start();
+pgat = exchange::pgat;
     //start logic
-    if(X_ped11 >= X_ped21)
-    {
-        X_tp_lev = X_ped11;
-    }
-    else
-    {
-        X_tp_lev = X_ped21;
-    }
+    double
+        X_ped11_buf{X_ped11 / 100},
+        X_ped12_buf{X_ped12 / 100},
+        X_ped21_buf{X_ped21 / 100},
+        X_ped22_buf{X_ped22 / 100};
 
-    if(X_ped12 >= X_ped22)
-    {
-        X_tp_prav = X_ped12;
-    }
+    if(X_ped11_buf >= X_ped21_buf)
+        X_tp_lev = X_ped11_buf;
     else
-    {
-        X_tp_prav = X_ped22;
-    }
+        X_tp_lev = X_ped21_buf;
 
-    P_ped_11 = m_3_L_intervals(X_ped11, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
-    P_ped_12 = m_3_L_intervals(X_ped12, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
-    P_ped_21 = m_3_L_intervals(X_ped21, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
-    P_ped_22 = m_3_L_intervals(X_ped22, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
+    if(X_ped12_buf >= X_ped22_buf)
+        X_tp_prav = X_ped12_buf;
+    else
+        X_tp_prav = X_ped22_buf;
+
+    P_ped_11 = m_3_L_intervals(X_ped11_buf, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
+    P_ped_12 = m_3_L_intervals(X_ped12_buf, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
+    P_ped_21 = m_3_L_intervals(X_ped21_buf, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
+    P_ped_22 = m_3_L_intervals(X_ped22_buf, 0, 0.1, 0.1, 1.0, 0, 0, 0.25, 1.0);
 
     if(P_ped_11 >= P_ped_21)
-    {
         P_t_lev = P_ped_11 * 120;
-    }
     else
-    {
         P_t_lev = P_ped_21 * 120;
-    }
 
     if(P_ped_12 >= P_ped_22)
-    {
         P_t_prav = P_ped_12 * 120;
-    }
     else
-    {
         P_t_prav = P_ped_22 * 120;
-    }
 
-    if(exchange::alpha_rud_1dv < 45 &&
-        exchange::alpha_rud_2dv < 45 &&
-        exchange::alpha_rud_3dv < 45 &&
-        exchange::alpha_rud_4dv < 45)
-    {
+    if(exchange::alpha_rud_1dv < 45 && exchange::alpha_rud_2dv < 45 &&
+        exchange::alpha_rud_3dv < 45 && exchange::alpha_rud_4dv < 45)
         PRR = false;
-    }
     else
-    {
         PRR = true;
-    }
 
-    if(exchange::ush1dpl >= 18 &&
-        exchange::K35_3230 == true &&
-        exchange::K27_3230 == true &&
-        exchange::K26_3230 == true)
-    {
+    if(exchange::ush1dpl >= 18 && exchange::K35_3230 &&
+        exchange::K27_3230 && exchange::K26_3230 )
         POSH2 = true;
-    }
     else
-    {
         POSH2 = false;
-    }
 
     PstartT = false;
     PstoyanT = false;
@@ -85,7 +64,7 @@ void brakes_int::brakes_1()
 
     if(exchange::ushal >= 18 && exchange::ush1dpl >= 18)
     {
-        if(otkaz_osn_sis_torm == true)
+        if(otkaz_osn_sis_torm)
         {
             pbutzo = false;
             POOST = true;
@@ -127,21 +106,19 @@ void brakes_int::brakes_1()
                 pavtt = false;
             }
 
-            if(S2_3240 == true)
+            if(S2_3240)
             {
                 PstoyanT = true;
 
-                if(X1_45_7620 == false &&
-                    X2_45_7620 == false &&
-                    X3_45_7620 == false &&
-                    X4_45_7620 == false)
+                if(!X1_45_7620 && !X2_45_7620 && !X3_45_7620 && !X4_45_7620)
                 {
                     PstartT = true;
                 }
             }
-            if(POSH2 == true)
+
+            if(POSH2)
             {
-                if(S3_3240 == true)
+                if(S3_3240)
                 {
                     PvkFT = true;
                     PFT = true;
@@ -149,7 +126,7 @@ void brakes_int::brakes_1()
 
                 if(exchange::delta_z >= 23 && exchange::delta_z <= 28)
                 {
-                    if(paft == true || PRR == true)
+                    if(paft || PRR)
                     {
                         if(X_tp_lev >= 0.12 || X_tp_prav >= 0.12)
                         {
@@ -159,16 +136,11 @@ void brakes_int::brakes_1()
                     }
                 }
                 else
-                {
-                    paft = 0;
-                }
+                    paft = false;
             }
             else
-            {
                 paft = false;
-            }
         }
-
     }
     else
     {
@@ -178,8 +150,7 @@ void brakes_int::brakes_1()
 
     }
 
-
-    if(pavtt == false)
+    if(!pavtt)
     {
         PAVT_N = false;
         PAVT_P = false;

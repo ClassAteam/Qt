@@ -14,11 +14,13 @@ presure_int::presure_int(QWidget *parent)
     createLabelClue(&SKD_D300, "SKD_D300");
     createLabelClue(&SKD_D301, "SKD_D301");
     createLabelClue(&otkaz_razgermetizatsiya, "otkaz_razgermetizatsiya");
-    createLabelClue(&lyukizagermetizirovany, "lyukizagermetizirovany");
+    createRedButton(&lyukizagermetizirovany, "lyukizagermetizirovany");
     createLabelClue(&S2_2131, "S2_2131");
     createRedButton(&otkaz_perenadduv, "otkaz_perenadduv");
     createLabelValue(&H, "H");
+    createSlider(&H, 0, 20000);
     createLabelValue(&H_k, "H_k");
+    createSlider(&Ph, 100, 800);
     createLabelValue(&Ph, "Ph");
     createLabelValue(&Ph_msa, "Ph_msa");
     createLabelValue(&Ph_, "Ph_");

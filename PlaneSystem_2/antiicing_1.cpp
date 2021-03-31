@@ -2,6 +2,14 @@
 
 void antiicing_int::antiicing_1()
 {
+
+    M = M_buf / 100;
+    usho1p = exchange::usho1p;
+    alpha_rud_1dv = exchange::alpha_rud_1dv;
+    alpha_rud_2dv = exchange::alpha_rud_2dv;
+    alpha_rud_3dv = exchange::alpha_rud_3dv;
+    alpha_rud_4dv = exchange::alpha_rud_4dv;
+
     static bool PZ1, PZ2, PZ3;
 
 static int

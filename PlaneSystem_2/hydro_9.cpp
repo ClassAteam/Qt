@@ -17,25 +17,19 @@ void hydro_int::hydro_9()
     {
         m_switch(prd_pool[i], K1_pool[i]);
         m_DoubleTrueAnd(F17_pool[i], F122_pool[i], K4_pool[i]);
-        if(*Ush2l_pool[i] >= 18.0 && *K4_pool[i] == true)
-        {
-            *K3_pool[i] = true;
-        }
-        else
-        {
-            *K3_pool[i] = false;
-        }
 
+        if(*Ush2l_pool[i] >= 18.0 && *K4_pool[i] == true)
+            *K3_pool[i] = true;
+        else
+            *K3_pool[i] = false;
     }
 
     if(exchange::ush2l >= 18.0)
     {
-        if(exchange::K26_3230 == true)
+        if(exchange::K26_3230)
         {
-            if(K5_2935 == true)
-            {
+            if(K5_2935)
                 K5_2935 = true;
-            }
         }
         else
         {
@@ -48,7 +42,7 @@ void hydro_int::hydro_9()
             }
             else
             {
-                if(K5_2935 == true)
+                if(K5_2935)
                 {
                     K5_2935 = true;
                 }
@@ -64,11 +58,9 @@ void hydro_int::hydro_9()
 
     if(exchange::ush2l >= 18.0)
     {
-        if(K6_2935 || K3_2935 || (K1_2935 == false && K2_2935 == false))
+        if(K6_2935 || K3_2935 || (!K1_2935 && !K2_2935))
         {
-            if(K8_2935 == true ||
-                    K12_2935 == true ||
-                    (K10_2935 == false && K12_2935 == false))
+            if(K8_2935 || K12_2935 || (!K10_2935 && !K12_2935))
             {
                 bss_inst.BSS811X1N = false;
                 bss_inst.BSS824X1b = false;
@@ -81,9 +73,9 @@ void hydro_int::hydro_9()
         }
         else
         {
-            if(K3_2935 == false)
+            if(!K3_2935)
             {
-                if(K1_2935 == true || K2_2935 == true)
+                if(K1_2935 || K2_2935)
                 {
                     bss_inst.BSS811X1N = true;
                     bss_inst.BSS824X1b = true;

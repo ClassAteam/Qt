@@ -49,9 +49,9 @@ void powerdc_int::powerdc_9_10()
         uks_inst.UKS1X311 = false;
 
     if(bss_inst.BSS926X3J)
-        uks_inst.UKS3X324 = true;
+        uks_inst.UKS3X329 = true;
     else
-        uks_inst.UKS3X324 = false;
+        uks_inst.UKS3X329 = false;
 
     if(bss_inst.BSS926X3C)
         uks_inst.UKS1X310 = true;
@@ -232,6 +232,19 @@ void powerdc_int::powerdc_9_10()
             uks_inst.UKS4X2106 = 0;
         }
     }
+
+    if(OtkazGen1PostT) uks_inst.UKS2X359 = true;
+    else uks_inst.UKS2X359 = false;
+
+    if(OtkazGen2PostT) uks_inst.UKS2X360 = true;
+    else uks_inst.UKS2X360 = false;
+
+    if(OtkazGen3PostT) uks_inst.UKS2X355 = true;
+    else uks_inst.UKS2X355 = false;
+
+    if(OtkazGen4PostT) uks_inst.UKS2X356 = true;
+    else uks_inst.UKS2X356 = false;
+
 
     uks_inst.UKS2X394 = uak1;
     uks_inst.UKS4X394 = uak2;

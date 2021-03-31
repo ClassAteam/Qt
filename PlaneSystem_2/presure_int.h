@@ -21,38 +21,38 @@ class presure_int : public interfacing
 
 public:
     double
-        H,//visota poleta
-        Ph,//atmosfernoe davlenie na dannoy visote, mm rt st
-        Pkab_ind_delta;//perepad davleniy v germokabine, indikatornoe znachenie, kgs/sm^2
+        H{},//visota poleta
+        Ph{},//atmosfernoe davlenie na dannoy visote, mm rt st
+        Pkab_ind_delta{};//perepad davleniy v germokabine, indikatornoe znachenie, kgs/sm^2
 
     bool
-        K1_2131,
-        K2_2131,
-        K4_2131,
-        PAVARR,
-        PRTHU1,
-        PPP,
-        PGK,
-        SKD_D300,
-        SKD_D301,
-        otkaz_razgermetizatsiya,
-        lyukizagermetizirovany,
-        otkaz_perenadduv,
-        S2_2131;
+        K1_2131{},
+        K2_2131{},
+        K4_2131{},
+        PAVARR{},
+        PRTHU1{},
+        PPP{},
+        PGK{},
+        SKD_D300{},
+        SKD_D301{},
+        otkaz_razgermetizatsiya{},
+        lyukizagermetizirovany{},
+        otkaz_perenadduv{},
+        S2_2131{};
     int
-        S1_2131 ;
+        S1_2131{};
 
     double
-        H_k,
-        Ph_msa,
-        Ph_,
-        Pk_h,
-        Pkab,
-        Pkab_delta,
-        Hkab,
-        Hkab_ind,
-        Vkab,
-        Pkab_zad;
+        H_k{},
+        Ph_msa{},
+        Ph_{},
+        Pk_h{},
+        Pkab{},
+        Pkab_delta{},
+        Hkab{},
+        Hkab_ind{},
+        Vkab{},
+        Pkab_zad{};
 
 public:
     presure_int(QWidget *parent = nullptr);

@@ -5,12 +5,12 @@ void antifire_int::antifire_1()
     if(S9_2610)
     {
         // Voltage check
-        if ((exchange::ush1dpl >= 16.0) && F8_2610)
+        if((exchange::ush1dpl >= 16.0) && F8_2610)
             F82_2610 = true;
         else
             F82_2610 = false;
 
-        if (exchange::ush1dpp >= 16.0 && F7_2610)
+        if(exchange::ush1dpp >= 16.0 && F7_2610)
             F72_2610 = true;
         else
             F72_2610 = false;
@@ -23,7 +23,7 @@ void antifire_int::antifire_1()
 
     if(F82_2610 || F72_2610)					//009
     {
-        if (exchange::ushal >= 16.0)
+        if(exchange::ushal >= 16.0)
         {
             F132_2610 = true;
             F142_2610 = true;
@@ -41,14 +41,10 @@ void antifire_int::antifire_1()
     }
 
     // Motogandol's rele flag 1nd engine
-    if ((K50_2610 && F82_2610 ) || (K51_2610 && F72_2610 ))
-    {
+    if((K50_2610 && F82_2610 ) || (K51_2610 && F72_2610 ))
         K16_2610 = true;
-    }
     else
-    {
         K16_2610 = false;
-    }
 
     // Motogandol's rele flag 2nd engine
     if((K53_2610 && F82_2610) || (K54_2610 && F72_2610))
@@ -111,7 +107,6 @@ void antifire_int::antifire_1()
             K27_2610 = false;
         else
             K27_2610 = true;
-
     }
     else
         K27_2610 = false;
@@ -143,7 +138,6 @@ void antifire_int::antifire_1()
                     F25_2610 = true;
                 else
                     F25_2610 = false;
-
             }
             else
                 F25_2610 = false;
@@ -156,13 +150,12 @@ void antifire_int::antifire_1()
             F35_2610 = true;
         else
         {
-            if (F142_2610)
+            if(F142_2610)
             {
                 if (K19_2610)
                     F35_2610 = true;
                 else
                     F35_2610 = false;
-
             }
         }
 
@@ -221,7 +214,7 @@ void antifire_int::antifire_1()
     }
     else
     {
-        if (F132_2610)
+        if(F132_2610)
         {
             if(K25_2610)
                 F55_2610 = true;

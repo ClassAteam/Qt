@@ -4,6 +4,13 @@ antiicing_int::antiicing_int(QWidget *parent)
     : interfacing(parent)
 {
     antiicing_int::setWindowTitle("antiicing");
+    createRedButton(&exchange::PRD1dv, "PRD1dv");
+    createRedButton(&exchange::PRD2dv, "PRD2dv");
+    createRedButton(&exchange::PRD3dv, "PRD3dv");
+    createRedButton(&exchange::PRD4dv, "PRD4dv");
+    createLabelClue(&PZ1, "PZ1");
+    createLabelClue(&PZ2, "PZ2");
+    createLabelClue(&PZ3, "PZ3");
     createLabelClue(&K2_3020, "K2_3020");
     createLabelClue(&K51_3020, "K51_3020");
     createLabelClue(&F12_3020, "F12_3020");
@@ -14,10 +21,11 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K26_3230, "K26_3230");
     createLabelClue(&K27_3230, "K27_3230");
     createRedButton(&otkaz_vozduhozabor, "otkaz_vozduhozabor");
+    createRadioButton(&S1_3020, "NEYTR", false);
     createRadioButton(&S1_3020, "-6 -15", false);
     createRadioButton(&S1_3020, "0 -6", false);
-    createRadioButton(&S1_3020, "-15", false);
-    createRadioButton(&S1_3020, "NEYTR", true);
+    createRadioButton(&S1_3020, "-15", true);
+    createRedButton(&S6_3020, "s6_3020");
     createLabelValue(&usho1p, "usho1p");
     createLabelValue(&M, "M");
     createSlider(&M_buf, 0, 150);
@@ -85,10 +93,10 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&PVOVNA2, "PVOVNA2");
     createLabelClue(&PVOVNA3, "PVOVNA3");
     createLabelClue(&PVOVNA4, "PVOVNA4");
-    createLabelClue(&S3_3080, "S3_3080");
-    createLabelClue(&S4_3080, "S4_3080");
-    createLabelClue(&S5_3080, "S5_3080");
-    createLabelClue(&S6_3080, "S6_3080");
+    createRedButton(&S3_3080, "S3_3080");
+    createRedButton(&S4_3080, "S4_3080");
+    createRedButton(&S5_3080, "S5_3080");
+    createRedButton(&S6_3080, "S6_3080");
     createLabelClue(&obogrev_ppd1_ispr, "obogrev_ppd1_ispr");
     createLabelClue(&obogrev_ppd2_ispr, "obogrev_ppd2_ispr");
     createLabelClue(&obogrev_ppd3_ispr, "obogrev_ppd3_ispr");
@@ -106,8 +114,6 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K18_3030, "K18_3030");
     createLabelClue(&K24_3230, "K24_3230");
     createLabelClue(&K25_3230, "K25_3230");
-    createLabelClue(&S1_3030, "S1_3030");
-    createLabelClue(&S2_3030, "S2_3030");
     createLabelValue(&alpha_rud_1dv, "alpha_rud_1dv");
     createLabelValue(&alpha_rud_2dv, "alpha_rud_2dv");
     createLabelValue(&alpha_rud_3dv, "alpha_rud_3dv");
@@ -153,6 +159,7 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K2_3080, "K2_3080");
     createRedButton(&S1_3080, "S1_3080");
     createRedButton(&S2_3080, "S2_3080");
+    createRedButton(&S1_3030, "S1_3030");
     createRedButton(&S2_3030, "S2_3030");
 }
 

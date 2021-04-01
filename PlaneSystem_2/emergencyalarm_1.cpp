@@ -35,14 +35,6 @@ void emergencyalarm_int::emergencyalarm_1()
         PKLSHN = false;
     }
 
-    if (exchange::ush1dpl >= 18.0 && exchange::ush1dpp >= 18.0)
-    {
-        USASSHN = two_points_to_Y(alpha_rra7shn, 0, 1, 0.75, 1);
-    }
-    else
-    {
-        USASSHN = false;
-    }
 
     if (PRBSS_939 == true)
     {

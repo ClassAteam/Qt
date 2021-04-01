@@ -20,8 +20,8 @@ public:
     static allElConsDir allElConsDir_inst;
 
     bool
-        k4_4940,//priznak rele otkritogo polozheniya stvorki vozduhozabornika VSU
-        pvrap,// priznak vkl RAP
+        k4_4940{},//priznak rele otkritogo polozheniya stvorki vozduhozabornika VSU
+        pvrap{},// priznak vkl RAP
         s7_2420{},//knopka RAZBLOKIROVKA
         s17_2420{},//knopka FAZI A
         s18_2420{},//knopka FAZI B
@@ -208,7 +208,7 @@ public:
         urap1,
         urap2;
     int
-        s20_2420;//perekl konrolya APSH
+        s20_2420{};//perekl kontrolya APSH
     static bool
         pvksku[4],
         purglk1,
@@ -236,36 +236,36 @@ public:
         purgk1,
         purgk21;
     bool
-        s1_11028,
-        s1_4940,
-        k1_11038,
-        k2_11038,
-        s1_11052,
-        s2_11052,
-        s1_11081,
-        s1_11313,
-        k1_17723,
-        k2_17723,
-        k11_2250,
-        k1_2250,
-        k30_2420,
-        k31_2420,
-        k3_2250,
-        k5_2250,
-        k8_2250,
-        k3_3650,
-        k2_7322,
-        k3_7322,
-        k4_7322,
-        k5_7322,
-        k8_7322,
-        k9_7322,
-        k10_7322,
-        k11_7322,
-        k18_7322,
-        pvrap1,
-        pvrap2,
-        pnu,
+        s1_11028{},
+        s1_4940{},
+        k1_11038{},
+        k2_11038{},
+        s1_11052{},
+        s2_11052{},
+        s1_11081{},
+        s1_11313{},
+        k1_17723{},
+        k2_17723{},
+        k11_2250{},
+        k1_2250{},
+        k30_2420{},
+        k31_2420{},
+        k3_2250{},
+        k5_2250{},
+        k8_2250{},
+        k3_3650{},
+        k2_7322{},
+        k3_7322{},
+        k4_7322{},
+        k5_7322{},
+        k8_7322{},
+        k9_7322{},
+        k10_7322{},
+        k11_7322{},
+        k18_7322{},
+        pvrap1{},
+        pvrap2{},
+        pnu{},
         otk_pos1000{},
         k12_2420{},
         k13_2420{},
@@ -290,17 +290,17 @@ public:
         k19_2420{},
         k20_2420{},
         pprap{},
-        pvkgen[5],
+        pvkgen[5]{},
         pvkgen2{},
         pvkgen3{},
         pvkgen4{},
         pvkgenvsu{},
-        pzvg[5],
-        pzvgvsu,
-        pog[4],
-        pchrl,
-        pchrp,
-        k1_2430,
+        pzvg[5]{},
+        pzvgvsu{},
+        pog[4]{},
+        pchrl{},
+        pchrp{},
+        k1_2430{},
         s3_2420{},
         s6_2420{},
         s11_2420{},
@@ -386,11 +386,11 @@ public:
         k24_2420{};
     double
         fg[5] = {0},
-        ng1, ng2, ng3, ng4, ngvsu,
-        ivg1, ivg2, ivg3, ivg4, ivgvsu,
-        divg1, divg2, divg3, divg4, divgvsu,
-        ug1, ug2, ug3, ug4, ugvsu,
-        ug1r, ug2r, ug3r, ug4r, ugvsur,
+        ng1{}, ng2{}, ng3{}, ng4{}, ngvsu{},
+        ivg1{}, ivg2{}, ivg3{}, ivg4{}, ivgvsu{},
+        divg1{}, divg2{}, divg3{}, divg4{}, divgvsu{},
+        ug1{}, ug2{}, ug3{}, ug4{}, ugvsu{},
+        ug1r{}, ug2r{}, ug3r{}, ug4r{}, ugvsur{},
         ug1z{118}, ug2z{117}, ug3z{115}, ug4z{116}, ugvsuz{117},
         ugP[5][3]; //generator's phases
 

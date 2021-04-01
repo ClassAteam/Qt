@@ -91,7 +91,7 @@ void antifire_int::antifire_1()
     // motogandol's manual switching 3
     if(F82_2610)
     {
-        if (!S7_2610 && K25_2610)
+        if (!S7_2610 && !K25_2610)
             K25_2610 = false;
         else
             K25_2610 = true;
@@ -131,7 +131,6 @@ void antifire_int::antifire_1()
         }
         else
         {
-
             if(F142_2610)
             {
                 if(K15_2610)
@@ -158,7 +157,6 @@ void antifire_int::antifire_1()
                     F35_2610 = false;
             }
         }
-
     }
     else
     {

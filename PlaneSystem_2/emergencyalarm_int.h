@@ -33,15 +33,6 @@ public:
         S7_3364,//knopka KONTR SIGNAL shturmana-operatora
         S8_3364;//knopka KONTR SIGNAL shturmana-navigatora
 
-    double
-        USASLL,
-        USASPL,
-        USASSHN,
-        USASSHO,
-        alpha_rra7ll,
-        alpha_rra7pl,
-        alpha_rra7shn,
-        alpha_rra7sho;
     bool
         PBVkCSOKSHNy2,
         PBVkCSOZHSHNx2,

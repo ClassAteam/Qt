@@ -38,7 +38,7 @@ static int
     }
 
     //K2_3080 toggle by right channel
-    if (prsop)
+    if(prsop)
     {
         if (signal_obled || PSOBLP || otkaz_lozhn_srab_prav_so121)
         {
@@ -133,19 +133,19 @@ static int
     //UKS1X212, UKS1X112 toggle
     uks_inst.UKS1X212 = false;
     uks_inst.UKS1X112 = false;
-    if (K2_3080 == true)
+    if(K2_3080)
     {
 
         obled_svs = true;
         bss_inst.BSS824X1T = false;
         bss_inst.BSS824X1V = false;
 
-        if (PSOLD == true)
+        if(PSOLD)
         {
             uks_inst.UKS1X112 = true;
             bss_inst.BSS824X1T = true;
         }
-        if (PSOPD == true)
+        if(PSOPD)
         {
             uks_inst.UKS1X212 = true;
             bss_inst.BSS824X1V = true;
@@ -156,5 +156,4 @@ static int
         obled_svs = false;
         bss_inst.BSS824X1T = false;
     }
-
 }

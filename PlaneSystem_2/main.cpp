@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     antifire_int antifire;
+    antifire.show();
     brakes_int brakes;
     brakes.show();
     wingsmech_int wingsmech;

@@ -51,10 +51,6 @@ static int
         PKLSHO = false;
     }
 
-    if ((exchange::ush1dpl >= 18.0) && (exchange::ush1dpp >= 18.0))
-    {
-        USASSHO = two_points_to_Y(alpha_rra7sho, 0, 1, 0.75, 1);
-    }
 
     if (PRBSS926 == true)
     {

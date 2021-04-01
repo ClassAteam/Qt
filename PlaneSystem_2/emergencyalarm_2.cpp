@@ -99,60 +99,39 @@ static bool
     PB_neytral_kurs_b;
 
     if (exchange::ush1dpl >= 18.0 && exchange::ush1dpp >= 18.0)
-    {
         PRBSS_811 = true;
-    }
     else
-    {
         PRBSS_811 = false;
-    }
 
     if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0)
-    {
         PRBSS_812 = true;
-    }
     else
-    {
         PRBSS_812 = false;
-    }
 
     if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && (S5_3364 == true))
-    {
         PKLLL = true;
-    }
     else
-    {
         PKLLL = false;
-    }
 
-    if ((exchange::ush1dpl >= 18.0) && (exchange::ush1dpp >= 18.0))
-    {
-        USASLL = two_points_to_Y(alpha_rra7ll, 0, 1, 0.75, 1);
-    }
+//    if ((exchange::ush1dpl >= 18.0) && (exchange::ush1dpp >= 18.0))
+//        USASLL = two_points_to_Y(alpha_rra7ll, 0, 1, 0.75, 1);
 
     if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0)
-    {
         PRBSS_913 = true;
-    }
     else
-    {
         PRBSS_913 = false;
-    }
+
     if (PRBSS_811)
     {
         ///////////////Yellow lights
         //////////////1
-        if (bss_inst.BSS811X1B == true)
+        if(bss_inst.BSS811X1B)
         {
             bss_inst.BSS811X2A = true;
             if(PZH811_X1B_b == true)
-            {
                 PZH811_X1B = false;
-            }
             else
-            {
                 PZH811_X1B = true;
-            }
         }
         else
         {
@@ -162,24 +141,18 @@ static bool
         }
 
 
-        if(S1_3364 == true)
-        {
+        if(S1_3364)
             PZH811_X1B_b = true;
-        }
 
         ///////////////Yellow lights
         //////////////2
-        if (bss_inst.BSS811X1D == true)
+        if (bss_inst.BSS811X1D)
         {
             bss_inst.BSS811X2B = true;
-            if(PZH811_X1D_b == true)
-            {
+            if(PZH811_X1D_b)
                 PZH811_X1D = false;
-            }
             else
-            {
                 PZH811_X1D = true;
-            }
         }
         else
         {

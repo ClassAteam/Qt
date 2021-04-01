@@ -53,9 +53,9 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelValue(&exchange::alpha_rud_2dv, "RUD_2ENG");
     createSlider(&exchange::alpha_rud_2dv, 0, 65);
     createLabelValue(&exchange::alpha_rud_3dv, "RUD_3ENG");
-    createSlider(&exchange::alpha_rud_2dv, 0, 65);
+    createSlider(&exchange::alpha_rud_3dv, 0, 65);
     createLabelValue(&exchange::alpha_rud_4dv, "RUD_4ENG");
-    createSlider(&exchange::alpha_rud_2dv, 0, 65);
+    createSlider(&exchange::alpha_rud_4dv, 0, 65);
 
 
     createLabelClue(&PvklR, "PvklR");

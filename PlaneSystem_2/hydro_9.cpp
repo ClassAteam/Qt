@@ -33,26 +33,17 @@ void hydro_int::hydro_9()
         }
         else
         {
-            if((K1_2935 == true && K4_2935 == false) ||
-                    (K2_2935 == true && K7_2935 == false) ||
-                    (K10_2935 == true && K9_2935 == false) ||
-                    (K11_2935 == true && K13_2935 == false))
-            {
+            if((K1_2935 && !K4_2935) || (K2_2935 && !K7_2935) ||
+                    (K10_2935 && !K9_2935) || (K11_2935 && !K13_2935))
                 K5_2935 = true;
-            }
             else
             {
-                if(K5_2935)
-                {
-                    K5_2935 = true;
-                }
+                if(K5_2935) K5_2935 = true;
             }
         }
     }
     else
-    {
         K5_2935 = false;
-    }
 
     m_DoubleTrue(&landinggear_int::S18_2930, &K5_2935, &H1_2935);
 
@@ -92,7 +83,6 @@ void hydro_int::hydro_9()
                 bss_inst.BSS824X1b = false;
             }
         }
-
     }
 }
     //end logic

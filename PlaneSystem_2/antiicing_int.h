@@ -14,10 +14,10 @@ class antiicing_int : public interfacing
 public:
 
     bool
-        OTKAZ_vtsepiob_pos1dv,//otkaz v tsepi obograva POS 1 dvigatelya
-        OTKAZ_vtsepiob_pos2dv,//otkaz v tsepi obograva POS 2 dvigatelya
-        OTKAZ_vtsepiob_pos3dv,//otkaz v tsepi obograva POS 3 dvigatelya
-        OTKAZ_vtsepiob_pos4dv,//otkaz v tsepi obograva POS 4 dvigatelya
+        OTKAZ_vtsepiob_pos1dv{},//otkaz v tsepi obograva POS 1 dvigatelya
+        OTKAZ_vtsepiob_pos2dv{},//otkaz v tsepi obograva POS 2 dvigatelya
+        OTKAZ_vtsepiob_pos3dv{},//otkaz v tsepi obograva POS 3 dvigatelya
+        OTKAZ_vtsepiob_pos4dv{},//otkaz v tsepi obograva POS 4 dvigatelya
         POLOBST{},//priznak obogreva lobovogo stekla
         POLST{},//priznak obogreva levogo stekla
         POPST{},//priznak obogreva pravogo stekla
@@ -35,11 +35,11 @@ public:
         S6_3020{},//viklyuchatel' OBOGREV V/3 PODKLYUCHENIE NA ZEMLE
         S6_3040{},//viklyuchatel' OBOGREV STEKL PRAVOE
         S8_3040{},//knopka OBOGREV STEKOL KONTROL'
-        otkaz_l_so121,//otkaz levogo kanala CO-121
-        otkaz_lozhn_srab_lev_so121,//oozhnoe stabativanie levogo kanala CO_121
-        otkaz_lozhn_srab_prav_so121,//oozhnoe stabativanie pravogo kanala CO_121
-        otkaz_p_so121,//otkaz pravogo kanala CO-121
-        otkaz_vozduhozabor,//otkaz POS vozduhozabornikov
+        otkaz_l_so121{},//otkaz levogo kanala CO-121
+        otkaz_lozhn_srab_lev_so121{},//oozhnoe stabativanie levogo kanala CO_121
+        otkaz_lozhn_srab_prav_so121{},//oozhnoe stabativanie pravogo kanala CO_121
+        otkaz_p_so121{},//otkaz pravogo kanala CO-121
+        otkaz_vozduhozabor{},//otkaz POS vozduhozabornikov
         poppd1{},//priznak obogreva PPD #1
         poppd2{},//priznak obogreva PPD #2
         poppd3{},//priznak obogreva PPD #3
@@ -48,10 +48,10 @@ public:
         s4_3020{},//vikluchateli OTKLUCHENIE OBOGREVA VOZUHOZABORNIKOV 3
         s5_3020{};//vikluchateli OTKLUCHENIE OBOGREVA VOZUHOZABORNIKOV 4
 
-    int S7_3040;//pereklyuchatel OTKL-LEV-BOL-PRAV
+    int S7_3040{};//pereklyuchatel OTKL-LEV-BOL-PRAV
     enum s7_3040_pos{otkl, lev, lob, prav};
 
-    int S1_3020;//perekluchatel T NARUZH VOZDUH
+    int S1_3020{};//perekluchatel T NARUZH VOZDUH
     enum s1_3020_pos{neytr, minus6minus15, zerominus6, minus15};
 
     double
@@ -64,6 +64,9 @@ public:
         alpha_rud_4dv{};//polozhenie richaga upravleniya dvigatelem 4, grad
 
     bool
+        PZ1{},
+        PZ2{},
+        PZ3{},
         F110_3020{},
         F11_3040{},
         F125_3020{},

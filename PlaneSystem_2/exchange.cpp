@@ -1,5 +1,26 @@
 #include "exchange.h"
 
+bool
+    exchange::s1_2120{},//pereklyuchatel' "MAGISTRAL'1"
+    exchange::s3_2120{},//pereklyuchatel' otkaz "MAGISTRAL'1"
+    exchange::s6_2120{},//pereklyuchatel' :KOLTSEVANIE MAGISTRALI"
+    exchange::s1_2110{},//pereklyuchatel' "OTBOR DV1"
+    exchange::s2_2110{},//pereklyuchatel' "OTBOR DV2"
+    exchange::s3_2110{},//pereklyuchatel' "OTBOR DV3"
+    exchange::s4_2110{},//pereklyuchatel' "OTBOR DV4"
+    exchange::s7_7322{},//Vikl. GLAVNIY VIKLYUCHATEL' DVIGATEL'1
+    exchange::s8_7322{},//Vikl. GLAVNIY VIKLYUCHATEL' DVIGATEL'2
+    exchange::s9_7322{},//Vikl. GLAVNIY VIKLYUCHATEL' DVIGATEL'3
+    exchange::s10_7322{},//Vikl. GLAVNIY VIKLYUCHATEL' DVIGATEL'4
+    exchange::s9_2920{},//pereklyuchatel' TNU GS1
+    exchange::s10_2920{},//pereklyuchatel' TNU GS2
+    exchange::s11_2920{},//pereklyuchatel' TNU GS3
+    exchange::s12_2920{},//pereklyuchatel' TNU GS4
+    exchange::s5_2110{},//pereklyuchatel' "KOL'TSEVANIE OTBOROV"
+    exchange::POSK1dv{},//priznak otkritiya stop-krana 1 dvigatelya
+    exchange::POSK2dv{},//priznak otkritiya stop-krana 1 dvigatelya
+    exchange::POSK3dv{},//priznak otkritiya stop-krana 1 dvigatelya
+    exchange::POSK4dv{};//priznak otkritiya stop-krana 1 dvigatelya
 double
     exchange::speed{},
     exchange::eng1_spd{},//engine1 speed
@@ -13,6 +34,13 @@ double
     exchange::alpha_rud_4dv{};//RUD position 4th engine
 
 //////////////////////////////////////////////////////////Output
+bool
+    exchange::K34_3230{},
+    exchange::K32_3230{},
+    exchange::K24_3230{},
+    exchange::K27_3230{},
+    exchange::K26_3230{},
+    exchange::K25_3230{};
 double
     exchange::pgs1{},//presure in hydrosystem1
     exchange::pgs2{},//presure in hydrosystem2
@@ -41,13 +69,6 @@ double
     exchange::usho1l{};//switching off bus1 left
 
 
-bool
-    exchange::K34_3230{},
-    exchange::K32_3230{},
-    exchange::K24_3230{},
-    exchange::K27_3230{},
-    exchange::K26_3230{},
-    exchange::K25_3230{};
 
 double
     exchange::ushzvsu{}, //vsu starting bus

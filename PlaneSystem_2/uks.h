@@ -249,6 +249,8 @@ struct uks
         UKS3X17,
         UKS3X18,
         UKS3X31,
+        UKS3X312,
+        UKS3X313,
         UKS3X320,
         UKS3X321,
         UKS3X322,

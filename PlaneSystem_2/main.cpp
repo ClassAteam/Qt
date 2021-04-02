@@ -13,6 +13,7 @@
 #include "antifire_int.h"
 #include "landinggear_int.h"
 #include "pneumatic_int.h"
+#include "bailout_int.h"
 
 
 const double TICK = 2;
@@ -43,6 +44,8 @@ int main(int argc, char *argv[])
     pneumatic.show();
     powerdc_int powerdc;
     powerdc.show();
+    bailout_int bailout;
+    bailout.show();
 
     return a.exec();
 }

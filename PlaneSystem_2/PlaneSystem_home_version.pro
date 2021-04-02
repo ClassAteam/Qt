@@ -29,6 +29,8 @@ SOURCES += \
     antiicing_5.cpp \
     antiicing_6.cpp \
     antiicing_int.cpp \
+    bailout_1_2.cpp \
+    bailout_int.cpp \
     brakes_1.cpp \
     brakes_2.cpp \
     brakes_3.cpp \
@@ -119,6 +121,8 @@ HEADERS += \
     antiicing_5.h \
     antiicing_6.h \
     antiicing_int.h \
+    bailout_1_2.h \
+    bailout_int.h \
     brakes_1.h \
     brakes_2.h \
     brakes_3.h \

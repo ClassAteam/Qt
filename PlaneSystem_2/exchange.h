@@ -4,8 +4,13 @@ struct exchange
 {
     /////////////////////////////////////////////////////Input
     static bool
+        prvsu,
+        puvzl,
+        puvzp,
+        s7_pp73,//pereklyuchatel' ZASLONKA OTBORA PP-73
         s1_2142,//pereklyuchatel' "ZASHITNOE SNARYAZHENIE"
         s1_2158,//pereeklyuchatel' "TO PEREDNIY I NOSOVOY"
+        s2_2158,//pereeklyuchatel' "GO ZADNIY"
         s1_2151,//pereklyuchatel' "REGULIR T KABINI EKIPAZHA"
         s2_2151,//pereklyuchatel' :KABINA EKIPAZHA"
         s3_2151,//vikluichatel' "VENITILYATOR" levogo letchika

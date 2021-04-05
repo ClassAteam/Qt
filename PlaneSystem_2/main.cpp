@@ -14,6 +14,7 @@
 #include "landinggear_int.h"
 #include "pneumatic_int.h"
 #include "bailout_int.h"
+#include "aircondition_int.h"
 
 
 const double TICK = 2;
@@ -46,6 +47,8 @@ int main(int argc, char *argv[])
     powerdc.show();
     bailout_int bailout;
     bailout.show();
+    aircondition_int aircondition;
+    aircondition.show();
 
     return a.exec();
 }

@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    aircondition_1_2_3.cpp \
     aircondition_int.cpp \
     algorithms.cpp \
     allElCons.cpp \
@@ -109,6 +110,7 @@ SOURCES += \
     wingsmech_int.cpp
 
 HEADERS += \
+    aircondition_1_2_3.h \
     aircondition_int.h \
     algorithms.h \
     allElCons.h \

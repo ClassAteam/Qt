@@ -1,6 +1,7 @@
 #include "exchange.h"
 
 bool
+    exchange::s7_pp73{},//pereklyuchatel' ZASLONKA OTBORA PP-73
     exchange::s1_2120{},//pereklyuchatel' "MAGISTRAL'1"
     exchange::s3_2120{},//pereklyuchatel' otkaz "MAGISTRAL'1"
     exchange::s6_2120{},//pereklyuchatel' :KOLTSEVANIE MAGISTRALI"
@@ -97,6 +98,7 @@ double
     exchange::uptsP[3];
 
 bool
+    exchange::prvsu{},
     exchange::K35_3230{},
     exchange::S18_2930{},
     exchange::S1_3230{},
@@ -104,10 +106,9 @@ bool
     exchange::S35_3230{},
     exchange::S36_3230{},
     exchange::S38_3230{},
-    exchange::S39_3230{};
-
-
-bool
+    exchange::S39_3230{},
+    exchange::puvzl{},
+    exchange::puvzp{},
     exchange::F32_3250{},
     exchange::P1OBLOP{},
     exchange::P2OBLOP{},//priznak 2 obzhatiya levoy opori shassi

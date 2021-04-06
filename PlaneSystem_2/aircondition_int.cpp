@@ -10,6 +10,16 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&otkaz_RID_2dv, "otkaz_RID_2dv");
     createRedButton(&otkaz_RID_3dv, "otkaz_RID_3dv");
     createRedButton(&otkaz_RID_4dv, "otkaz_RID_4dv");
+    createRedButton(&otkaz_povishDavlVozMag1, "otkaz_povishDavlVozMag1");
+    createRedButton(&otkaz_povishDavlVozMag2, "otkaz_povishDavlVozMag2");
+    createRedButton(&otkaz_povishTemprVozd, "otkaz_povishTemprVodzd");
+    createRedButton(&exchange::s1_2120, "s1_2120");
+    createRedButton(&exchange::s2_2120, "s2_2120");
+    createRedButton(&exchange::s3_2120, "s3_2120");
+    createRedButton(&exchange::s4_2120, "s4_2120");
+    createRedButton(&exchange::s5_2120, "s5_2920");
+    createRedButton(&exchange::s6_2120, "s6_2920");
+    createRedButton(&exchange::s3_2120, "s3_2120");
     createRedButton(&exchange::s1_2110, "s1_2110");
     createRedButton(&exchange::s2_2110, "s2_2110");
     createRedButton(&exchange::s3_2110, "s3_2110");
@@ -30,6 +40,16 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&exchange::s10_2920, "s10_2920");
     createRedButton(&exchange::s11_2920, "s11_2920");
     createRedButton(&exchange::s12_2920, "s12_2920");
+    createRedButton(&exchange::s1_2120, "s1_2920");
+    createRedButton(&exchange::s4_2120, "s4_2920");
+    createRadioButton(&exchange::s1_2151, "neytr", false);
+    createRadioButton(&exchange::s1_2151, "hol", false);
+    createRadioButton(&exchange::s1_2151, "gor", false);
+    createRadioButton(&exchange::s1_2151, "avtoman", true);
+    createLabelValue(&deltaPotb1, "deltaPotb1");
+    createLabelValue(&deltaPotb2, "deltaPotb2");
+    createLabelValue(&deltaPotb3, "deltaPotb3");
+    createLabelValue(&deltaPotb4, "deltaPotb4");
     createLabelValue(&Potb1, "Potb1");
     createLabelValue(&Potb2, "Potb2");
     createLabelValue(&Potb3, "Potb3");
@@ -157,7 +177,9 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelValue(&alphazkop, "alphazkop");
     createLabelValue(&alphazktvt12, "alphazktvt12");//polozhenie zaslonki kol'tsevaniya TVT1 i TVT2
     createLabelValue(&alphazm1, "alphazm1");//polozhenie zaslonki podachi vozduha v magistral'1
+    createLabelValue(&alphazm2, "alphazm2");//polozhenie zaslonki podachi vozduha v magistral'2
     createLabelValue(&alphazpe1, "alphazpe1");//polozhenie zaslonki podachi v ejektor produvki VVT magistrali1
+    createLabelValue(&alphazpe2, "alphazpe2");//polozhenie zaslonki podachi v ejektor produvki VVT magistrali2
     createLabelValue(&alphazpvvt1, "alphazpvvt1");//polozhenie zaslonki produvki VVt iz kanala dvigatelya magistrali1
     createLabelValue(&alphaztvt1, "alphaztvt1");//polozhenie zaslonki perekrivnoy za TVT1
     createLabelValue(&alphaztvt2, "alphaztvt2");//polozhenie zaslonki perekrivnoy za TVT2
@@ -188,4 +210,6 @@ aircondition_int::aircondition_int(QWidget *parent)
 void aircondition_int::updateLogic()
 {
     aircondition_1_2_3();
+    aircondition_4_5();
+    aircondition_6_7();
 }

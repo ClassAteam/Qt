@@ -11,7 +11,6 @@ struct exchange
         s1_2142,//pereklyuchatel' "ZASHITNOE SNARYAZHENIE"
         s1_2158,//pereeklyuchatel' "TO PEREDNIY I NOSOVOY"
         s2_2158,//pereeklyuchatel' "GO ZADNIY"
-        s1_2151,//pereklyuchatel' "REGULIR T KABINI EKIPAZHA"
         s2_2151,//pereklyuchatel' :KABINA EKIPAZHA"
         s3_2151,//vikluichatel' "VENITILYATOR" levogo letchika
         s4_2151,//vikluichatel' "VENITILYATOR" pravogo letchika
@@ -40,8 +39,11 @@ struct exchange
         POSK2dv,//priznak otkritiya stop-krana 1 dvigatelya
         POSK3dv,//priznak otkritiya stop-krana 1 dvigatelya
         POSK4dv;//priznak otkritiya stop-krana 1 dvigatelya
+
+    static int
+        s1_2151;//pereklyuchatel' "REGULIR T KABINI EKIPAZHA"
+    enum s1_2151{neytr, hol, gor, avtomat};
     static double
-        tke_vh,//polozhenie zadatchika temperaturi v kabine ekipazha
         speed,
         eng1_spd,//engine1 speed
         eng2_spd,//engine2 speed
@@ -88,6 +90,7 @@ struct exchange
 
     static double
         tke,//temperatura v kabine ekipazha
+        tke_vh,//polozhenie zadatchika temperaturi v kabine ekipazha
         pgs1,//presure in hydrosystem1
         pgs2,//presure in hydrosystem2
         pgs3,//presure in hydrosystem3

@@ -4,6 +4,9 @@ bool
     exchange::s7_pp73{},//pereklyuchatel' ZASLONKA OTBORA PP-73
     exchange::s1_2120{},//pereklyuchatel' "MAGISTRAL'1"
     exchange::s3_2120{},//pereklyuchatel' otkaz "MAGISTRAL'1"
+    exchange::s2_2120{},//pereklyuchatel' "MAGISTRAL'21"
+    exchange::s4_2120{},//pereklyuchatel "OTKAZ MAGISTRAL'2:
+    exchange::s5_2120{},//pereklyuchatel' "KONTROL' FILTRA"
     exchange::s6_2120{},//pereklyuchatel' :KOLTSEVANIE MAGISTRALI"
     exchange::s1_2110{},//pereklyuchatel' "OTBOR DV1"
     exchange::s2_2110{},//pereklyuchatel' "OTBOR DV2"
@@ -72,6 +75,8 @@ double
 
 
 double
+    exchange::tke{},
+    exchange::tke_vh{},
     exchange::ushzvsu{}, //vsu starting bus
     exchange::ushpp{},//switching bus right voltage
     exchange::ushak1{},//accumulator1 bus voltage
@@ -98,6 +103,11 @@ double
     exchange::uptsP[3];
 
 bool
+    exchange::s2_2151,//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s3_2151,//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s4_2151,//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s5_2151,//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s6_2151,//pereklyuchatel' :KABINA EKIPAZHA"
     exchange::prvsu{},
     exchange::K35_3230{},
     exchange::S18_2930{},
@@ -119,6 +129,9 @@ bool
     exchange::PRD3dv{},//engine3 work sign
     exchange::PRD4dv{},//engine4 work sign
     exchange::ptstoyan{};
+
+int
+    exchange::s1_2151{};
 
 double
     exchange::delta_z{};//flaps position

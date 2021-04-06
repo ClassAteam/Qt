@@ -11,6 +11,8 @@
 extern const double
     TICK;
 
+const double tS{TICK / 1000};
+
 extern QElapsedTimer timing;
 
 class interfacing : public QWidget

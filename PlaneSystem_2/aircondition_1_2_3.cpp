@@ -1,5 +1,7 @@
 #include "aircondition_1_2_3.h"
 
+void X(bool& prid_dv, double& deltaPotb, double& Potb_zad, double& Potbx, double& eng, bool& otk);
+
 void aircondition_int::aircondition_1_2_3()
 {
     if(Potb1 >= Potb2) Potb1_2 = Potb1;
@@ -141,14 +143,20 @@ void aircondition_int::aircondition_1_2_3()
     {
         bss_inst.BSS838X5v = false;
 
-        if(k21_2110) prid_dv1 = false;
+        if(k21_2110)
+        {
+            prid_dv1 = false;
+            pbrid1 = false;
+            Potb1_zad = 0.0;
+        }
         else
         {
             if(exchange::ush1dpl >= 18.0)
             {
-                if(Potb1 >= 7.5)
+                if(Potb1 >= 7.5 || pbrid1)
                 {
                     prid_dv1 = false;
+                    pbrid1 = true;
                     bss_inst.BSS838X5v = true;
                 }
                 else
@@ -157,14 +165,20 @@ void aircondition_int::aircondition_1_2_3()
         }
 
 
-        if(k22_2110) prid_dv2 = false;
+        if(k22_2110)
+        {
+            prid_dv2 = false;
+            pbrid2 = false;
+            Potb2_zad = 0.0;
+        }
         else
         {
             if(exchange::ush1dpl >= 18.0)
             {
-                if(Potb2 >= 7.5)
+                if(Potb2 >= 7.5 || pbrid2)
                 {
                     prid_dv2 = false;
+                    pbrid2 = true;
                     bss_inst.BSS838X5z = true;
                 }
                 else
@@ -205,9 +219,10 @@ void aircondition_int::aircondition_1_2_3()
         {
             if(exchange::ush1dpp >= 18.0)
             {
-                if(Potb3 >= 7.5)
+                if(Potb3 >= 7.5 || pbrid3)
                 {
                     prid_dv3 = false;
+                    pbrid3 = true;
                     bss_inst.BSS838X5DD = true;
                 }
                 else
@@ -215,15 +230,20 @@ void aircondition_int::aircondition_1_2_3()
             }
         }
         else
+        {
             prid_dv3 = false;
+            pbrid3 = false;
+            Potb3_zad = 0.0;
+        }
 
         if(!k26_2110)
         {
             if(exchange::ush1dpp >= 18.0)
             {
-                if(Potb4 >= 7.5)
+                if(Potb4 >= 7.5 || pbrid4)
                 {
                     prid_dv4 = false;
+                    pbrid4 = true;
                     bss_inst.BSS838X5HH = true;
                 }
                 else
@@ -231,7 +251,11 @@ void aircondition_int::aircondition_1_2_3()
             }
         }
         else
+        {
             prid_dv4 = false;
+            pbrid4 = false;
+            Potb4_zad = 0.0;
+        }
     }
 
     if(bss_inst.BSS838X5DD)
@@ -239,21 +263,27 @@ void aircondition_int::aircondition_1_2_3()
         if(bss_inst.BSS838X5HH) bss_inst.BSS838X7T = true;
     }
 
-    if(prid_dv1) Potb1 = 0.1 * exchange::eng1_spd;
-    else Potb1 = 0.0;
-    if(Potb1 >= 5.0) Potb1 = 5.0;
+//    if(prid_dv1) Potb1 = 0.1 * exchange::eng1_spd;
+//    else Potb1 = 0.0;
+//    if(Potb1 >= 5.0) Potb1 = 5.0;
 
-    if(prid_dv2) Potb2 = 0.1 * exchange::eng2_spd;
-    else Potb2 = 0.0;
-    if(Potb2 >= 5.0) Potb2 = 5.0;
+//    if(prid_dv2) Potb2 = 0.1 * exchange::eng2_spd;
+//    else Potb2 = 0.0;
+//    if(Potb2 >= 5.0) Potb2 = 5.0;
 
-    if(prid_dv3) Potb3 = 0.1 * exchange::eng3_spd;
-    else Potb3 = 0.0;
-    if(Potb3 >= 5.0) Potb3 = 5.0;
+//    if(prid_dv3) Potb3 = 0.1 * exchange::eng3_spd;
+//    else Potb3 = 0.0;
+//    if(Potb3 >= 5.0) Potb3 = 5.0;
 
-    if(prid_dv4) Potb4 = 0.1 * exchange::eng4_spd;
-    else Potb4 = 0.0;
-    if(Potb4 >= 5.0) Potb4 = 5.0;
+//    if(prid_dv4) Potb4 = 0.1 * exchange::eng4_spd;
+//    else Potb4 = 0.0;
+//    if(Potb4 >= 5.0) Potb4 = 5.0;
+
+    X(prid_dv1, deltaPotb1, Potb1_zad, Potb1, exchange::eng1_spd, otkaz_RID_1dv);
+    X(prid_dv2, deltaPotb2, Potb2_zad, Potb2, exchange::eng2_spd, otkaz_RID_2dv);
+    X(prid_dv3, deltaPotb3, Potb3_zad, Potb3, exchange::eng3_spd, otkaz_RID_3dv);
+    X(prid_dv4, deltaPotb4, Potb4_zad, Potb4, exchange::eng4_spd, otkaz_RID_4dv);
+
 
     ////////////////////////////////////////////////
     /////////////////////////////////////////////3rd list
@@ -389,4 +419,33 @@ void aircondition_int::aircondition_1_2_3()
         bss_inst.BSS926X1b = true;
     else
         bss_inst.BSS926X1b = false;
+}
+
+void X(bool& prid_dv, double& deltaPotb, double& Potb_zad, double& Potbx, double& eng, bool& otk)
+{
+    if(prid_dv)
+    {
+//        deltaPotb = 0.0;
+    }
+    else
+    {
+        Potb_zad = 0.0;
+//        deltaPotb = 1.0;
+    }
+
+    if(abs(Potbx - Potb_zad) >= 0.1)
+    {
+        if(Potbx >= Potb_zad)
+        {
+            if(prid_dv) Potbx = 0.1 * eng;
+            else Potbx = Potbx - 2 * tS;
+        }
+        else
+        {
+            if(otk) Potbx = Potbx + 2 * tS;
+            else  Potbx = 0.1 * eng;
+        }
+    }
+
+    if(Potbx < 0.0) Potbx = 0.0;
 }

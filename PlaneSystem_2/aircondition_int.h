@@ -15,6 +15,7 @@ public:
     bool
         //input
         otkaz_povishTemprVozd{},//otkaz povishenie tempereturi vozduha za VVT2
+        otkaz_povishDavlVozMag1{},//otkaz povishenie davleniya vozduha v magistrali2
         otkaz_povishDavlVozMag2{},//otkaz povishenie davleniya vozduha v magistrali2
         otkaz_lev_mag{},//otkaz levoy magistrali
         otkaz_prav_mag{},//otkaz pravoy magistrali
@@ -22,6 +23,8 @@ public:
         otkaz_RID_2dv{},//otkaz rehulyatora izbitochnogo davleniya dbigatelya2
         otkaz_RID_3dv{},//otkaz rehulyatora izbitochnogo davleniya dbigatelya3
         otkaz_RID_4dv{},//otkaz rehulyatora izbitochnogo davleniya dbigatelya4
+        otkaz_thu1{},//otkaz thu1
+        otkaz_thu2{},//otkaz thu1
         pubzl{},//priznak podklyucheniya ustroystva vozdushnogo zapuska levogo
         pubzp{},//priznak podklyucheniya ustroystva vozdushnogo zapuskshturmana navigatora
         y6_2152{},//priznak upravleniya zaslonkoy podachi vozduha v ZS
@@ -39,10 +42,19 @@ public:
         k2_2131{},//priznak rele vklyucheniya signalizatsii "P kavin malo"(razgermetizatsiya kavini)
         k1_2158{},//priznak rele signalizatsii otkaza THU2(erednego tehnicheskogo otseka)
         k2_2158{},//priznak rele signalizatsii otkaza THU1(SKV KE)
-
+        pbrid1{},//priznak blokirovki RID1
+        pbrid2{},//priznak blokirovki RID2
+        pbrid3{},//priznak blokirovki RID3
+        pbrid4{},//priznak blokirovki RID4
+        sd_sm_fltL{},//svetodiod smenifiltr
+        sd_sm_fltP{},//svetodiod smenifiltr
         k9_3230{},
-        pzpe1{},//priznak aslonki podachi v ejektor produvki VVT magistrali1
-        pzpe2{},//priznak aslonki podachi v ejektor produvki VVT magistrali2
+        pzpe1{},//priznak zaslonki podachi v ejektor produvki VVT magistrali1
+        pzpe2{},//priznak zaslonki podachi v ejektor produvki VVT magistrali2
+        pvvll{},
+        pvvlp{},
+        pvvsho{},
+        pvvshn{},
         pzpvvt1{},//priznak zaslonki produvki VVT is kanala dvigatelya magistrali1
         pzpvvt2{},//priznak zaslonki produvki VVT is kanala dvigatelya magistrali2
         pom1{},//priznak otkaza magistrali1
@@ -110,6 +122,8 @@ public:
         k26_2110{};//priznak rele zakritiya otborov ot dvigatelya 4
 
     double
+        Pke{},//davlenie vozduha v kabine ekipazha
+        tke_reg{},
         ttnv{},
         tpgo{},
         tpgo_zad{},
@@ -130,12 +144,17 @@ public:
         Ptvt34{},//davlenie vozduha za sistemoy predvaritelnoy podgotovki vozduha #2(pravoy), kgs/sm^2
         tvvt1{},//temperatura vozduha za VVt1
         tvvt2{},//temperatura vozduha za VVt2
+        alphazkm{},
         alphazkol{},
         alphazkop{},
         alphazktvt12{},//polozhenie zaslonki kol'tsevaniya TVT1 i TVT2
         alphazm1{},//polozhenie zaslonki podachi vozduha v magistral'1
+        alphazm2{},//polozhenie zaslonki podachi vozduha v magistral'2
+        alphazkm12{},
         alphazpe1{},//polozhenie zaslonki podachi v ejektor produvki VVT magistrali1
+        alphazpe2{},//polozhenie zaslonki podachi v ejektor produvki VVT magistrali1
         alphazpvvt1{},//polozhenie zaslonki produvki VVt iz kanala dvigatelya magistrali1
+        alphazpvvt2{},//polozhenie zaslonki produvki VVt iz kanala dvigatelya magistrali1
         alphaztvt1{},//polozhenie zaslonki perekrivnoy za TVT1
         alphaztvt2{},//polozhenie zaslonki perekrivnoy za TVT2
         alphaztvt3{},//polozhenie zaslonki perekrivnoy za TVT3
@@ -146,6 +165,7 @@ public:
         alpha351y4gk{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu goryachego vozduha
         alpha351y4hk{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu holodnogo vozduha
         alpha351y5{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
+        alpha351y6{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
         Ptnu{},//davlenie vozduha v magistrali TNU, kgs/sm^2
         Puvzl{},//davlenie vozduha, otbiraemogo ot UVZ levogo, kgs/sm^2
         Puvzp{},//davlenie vozduha, otbiraemogo ot UVZ pravogo, kgs/sm^2
@@ -156,6 +176,10 @@ public:
         Potb3{},//davlenie otbiraemogo vozduha ot 3 dvig, kgs/sm^2
         Potb4{},//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
         Potb_vsu{},//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
+        deltaPotb1{},
+        deltaPotb2{},
+        deltaPotb3{},
+        deltaPotb4{},
         Potb1_zad{},//davlenie otbiraemogo vozduha ot 1 dvigatelya, zadannoe, kgs/sm^2
         Potb2_zad{},//davlenie otbiraemogo vozduha ot 2 dvigatelya, zadannoe, kgs/sm^2
         Potb3_zad{},//davlenie otbiraemogo vozduha ot 3 dvigatelya, zadannoe, kgs/sm^2
@@ -164,4 +188,6 @@ public:
     aircondition_int(QWidget *parent = nullptr);
     virtual void updateLogic();
     void aircondition_1_2_3();
+    void aircondition_4_5();
+    void aircondition_6_7();
 };

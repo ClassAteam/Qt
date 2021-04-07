@@ -19,6 +19,7 @@ SOURCES += \
     aircondition_1_2_3.cpp \
     aircondition_4_5.cpp \
     aircondition_6_7.cpp \
+    aircondition_8.cpp \
     aircondition_int.cpp \
     algorithms.cpp \
     allElCons.cpp \
@@ -115,6 +116,7 @@ HEADERS += \
     aircondition_1_2_3.h \
     aircondition_4_5.h \
     aircondition_6_7.h \
+    aircondition_8.h \
     aircondition_int.h \
     algorithms.h \
     allElCons.h \

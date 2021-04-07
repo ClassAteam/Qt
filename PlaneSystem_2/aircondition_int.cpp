@@ -13,6 +13,8 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&otkaz_povishDavlVozMag1, "otkaz_povishDavlVozMag1");
     createRedButton(&otkaz_povishDavlVozMag2, "otkaz_povishDavlVozMag2");
     createRedButton(&otkaz_povishTemprVozd, "otkaz_povishTemprVodzd");
+    createRedButton(&otkaz_thu1, "otkaz_thu1");
+    createRedButton(&otkaz_thu2, "otkaz_thu2");
     createRedButton(&exchange::s1_2120, "s1_2120");
     createRedButton(&exchange::s2_2120, "s2_2120");
     createRedButton(&exchange::s3_2120, "s3_2120");
@@ -46,6 +48,11 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRadioButton(&exchange::s1_2151, "hol", false);
     createRadioButton(&exchange::s1_2151, "gor", false);
     createRadioButton(&exchange::s1_2151, "avtoman", true);
+    createRedButton(&exchange::s2_2151, "s2_2151");
+    createRedButton(&exchange::s3_2151, "s3_2151");
+    createRedButton(&exchange::s4_2151, "s4_2151");
+    createRedButton(&exchange::s5_2151, "s5_2151");
+    createRedButton(&exchange::s6_2151, "s6_2151");
     createLabelValue(&deltaPotb1, "deltaPotb1");
     createLabelValue(&deltaPotb2, "deltaPotb2");
     createLabelValue(&deltaPotb3, "deltaPotb3");
@@ -73,7 +80,7 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelClue(&y7gk_2152, "y7gk_2152");
     createLabelClue(&y7hk_2152, "y7hk_2152");
     createLabelClue(&y8_2152, "y8_2152");
-    createLabelClue(&y1_2757, "y1_2757");
+    createLabelClue(&y1_2157, "y1_2157");
     createLabelClue(&y2_2157, "y2_2157");
     createLabelClue(&y5_2158, "y5_2158");
     createLabelClue(&y4_2158, "y4_2158");
@@ -153,7 +160,7 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelClue(&k25_2110, "k25_2110");
     createLabelClue(&k26_2110, "k26_2110");
 
-    createLabelValue(&ttnv, "ttnv");
+    createLabelValue(&exchange::tnv, "tnv");
     createLabelValue(&tpgo, "tpgo");
     createLabelValue(&tpgo_zad, "tpgo_zad");
     createLabelValue(&Dtpgo1, "Dtpgo1");//skorost' izmeneniya temperaturi vozduha v PGO ot levoy magistrali
@@ -191,6 +198,7 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelValue(&alpha351y4gk, "alpha351y4gk");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu goryachego vozduha
     createLabelValue(&alpha351y4hk, "alpha351y4hk");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu holodnogo vozduha
     createLabelValue(&alpha351y5, "alpha351y5");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
+    createLabelValue(&alpha351y6, "alpha351y6");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
     createLabelValue(&Ptnu, "Ptnu");//davlenie vozduha v magistrali TNU, kgs/sm^2
     createLabelValue(&Puvzl, "Puvzl");//davlenie vozduha, otbiraemogo ot UVZ levogo, kgs/sm^2
     createLabelValue(&Puvzp, "Puvzp");//davlenie vozduha, otbiraemogo ot UVZ pravogo, kgs/sm^2
@@ -205,6 +213,18 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelValue(&Potb2_zad, "Potb2_zad");//davlenie otbiraemogo vozduha ot 2 dvigatelya, zadannoe, kgs/sm^2
     createLabelValue(&Potb3_zad, "Potb3_zad");//davlenie otbiraemogo vozduha ot 3 dvigatelya, zadannoe, kgs/sm^2
     createLabelValue(&Potb4_zad, "Potb4_zad");//davlenie otbiraemogo vozduha ot 4 dvigatelya, zadannoe, kgs/sm^2
+    createLabelValue(&Kotb1, "Kotb1");
+    createLabelValue(&Kotb2, "Kotb2");
+    createLabelValue(&Kotb3, "Kotb3");
+    createLabelValue(&Kotb4, "Kotb4");
+    createLabelClue(&pvvll, "pvvll");
+    createLabelClue(&pvvlp, "pvvlp");
+    createLabelClue(&pvvsho, "pvvsho");
+    createLabelClue(&pvvshn, "pvvshn");
+    createLabelValue(&Pke, "Pke");
+    createLabelValue(&tke, "tke");
+    createLabelValue(&tke_reg, "tke_reg");
+    createSlider(&exchange::tke_vh, 0, 100);
 }
 
 void aircondition_int::updateLogic()
@@ -212,4 +232,5 @@ void aircondition_int::updateLogic()
     aircondition_1_2_3();
     aircondition_4_5();
     aircondition_6_7();
+    aircondition_8();
 }

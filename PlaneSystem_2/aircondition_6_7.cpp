@@ -1,10 +1,10 @@
 #include "aircondition_6_7.h"
 
-void alpha_toggle(bool& Y, double& alpha);
+void alpha_toggle(bool& Y, double& alpha, double& Kskzsl);
 
 void aircondition_int::aircondition_6_7()
 {
-    tke_reg = 50.0 * exchange::tke_vh;
+    tke_reg = 50.0 * (exchange::tke_vh / 100);
 
     pvvll = false;
     pvvlp = false;
@@ -39,7 +39,9 @@ void aircondition_int::aircondition_6_7()
                 k4_2151 = true;
             }
         }
+        else k1_2151 = true;
     }
+    puuke = false;
 
     bss_inst.BSS926X1E = false;
     bss_inst.BSS926X1C = false;
@@ -51,7 +53,9 @@ void aircondition_int::aircondition_6_7()
     pothu1 = false;
     k2_2158 = false;
 
-    if(pruukl)
+    if(exchange::ushal > 18.0) puuke = true;
+
+    if(puuke)
     {
         if(!exchange::s2_2151)
         {
@@ -67,9 +71,9 @@ void aircondition_int::aircondition_6_7()
         }
         else
         {
-            if(Pke >= 1.2)
+            if(Potb1_2 >= 1.2)
             {
-                if(k2_2131) y6_2151 = true;
+                if(k2_2151) y6_2151 = true;
 
                 if(otkaz_thu1)
                 {
@@ -85,22 +89,22 @@ void aircondition_int::aircondition_6_7()
 
                 if(k1_2151)
                 {
-                    if(abs(exchange::tke - tke_reg) > 0.2)
+                    if(abs(tke - tke_reg) > 0.2)
                     {
-                        if(exchange::tke > tke_reg)
+                        if(tke > tke_reg)
                         {
                             if(alpha351y2 > 0.05)
                             {
-                                alpha351y2 = alpha351y2 - 0.2 * tS;
+                                alpha351y2 = alpha351y2 - Kskzsl * tS;
                             }
                             else
                             {
                                 alpha351y2 = 0.0;
                                 if(alpha351y1 > 0.95) alpha351y2 = 1.0;
-                                else alpha351y1 = alpha351y1 + 0.2 * tS;
+                                else alpha351y1 = alpha351y1 + Kskzsl * tS;
                             }
 
-                            exchange::tke = exchange::tke - 0.008 * tS;
+                            tke = tke - 0.5 * tS;
                         }
                         else
                         {
@@ -109,14 +113,14 @@ void aircondition_int::aircondition_6_7()
                                 alpha351y1 = 0.0;
 
                                 if(alpha351y2 > 0.95) alpha351y2 = 1.0;
-                                else alpha351y2 = alpha351y2 + 0.2 * tS;
+                                else alpha351y2 = alpha351y2 + Kskzsl * tS;
                             }
-                            else alpha351y1 = alpha351y1 - 0.2 * tS;
+                            else alpha351y1 = alpha351y1 - Kskzsl * tS;
 
-                            exchange::tke = exchange::tke + 0.008 * tS;
+                            tke = tke + 0.5 * tS;
                         }
                     }
-                    else exchange::tke = tke_reg;
+                    else tke = tke_reg;
                 }
             }
         }
@@ -128,13 +132,17 @@ void aircondition_int::aircondition_6_7()
         {
             y1_2151 = true;
             y2_2151 = false;
-            exchange::tke = exchange::tke - 0.016 * tS;
+            tke = tke - 1.0 * tS;
+            alpha_toggle(y1_2151, alpha351y1, Kskzsl);
+            alpha_toggle(y2_2151, alpha351y2, Kskzsl);
         }
         else
         {
             y1_2151 = false;
             y2_2151 = true;
-            exchange::tke = exchange::tke + 0.016 * tS;
+            tke = tke + 1.0 * tS;
+            alpha_toggle(y1_2151, alpha351y1, Kskzsl);
+            alpha_toggle(y2_2151, alpha351y2, Kskzsl);
         }
     }
     else if(!k1_2151)
@@ -143,32 +151,35 @@ void aircondition_int::aircondition_6_7()
         {
             y1_2151 = true;
             y2_2151 = false;
-            exchange::tke = exchange::tke - 0.016 * tS;
+//            if(abs(tke = tnv))
+            tke = tke - 1.0 * tS;
+            alpha_toggle(y1_2151, alpha351y1, Kskzsl);
+            alpha_toggle(y2_2151, alpha351y2, Kskzsl);
         }
+        alpha_toggle(y1_2151, alpha351y1, Kskzsl);
+        alpha_toggle(y2_2151, alpha351y2, Kskzsl);
     }
 
-    if(exchange::tke >= 70.0) exchange::tke = 70.0;
-    if(exchange::tke <= -60.0) exchange::tke = -60.0;
 
-    alpha_toggle(y1_2151, alpha351y1);
-    alpha_toggle(y2_2151, alpha351y2);
-    alpha_toggle(y6_2151, alpha351y6);
-    alpha_toggle(y5_2151, alpha351y5);
-    alpha_toggle(y4gk_2151, alpha351y4gk);
-    alpha_toggle(y4xk_2151, alpha351y4hk);
+    if(tke >= 70.0) tke = 70.0;
+    if(tke <= -60.0) tke = -60.0;
+    alpha_toggle(y6_2151, alpha351y6, Kskzsl);
+    alpha_toggle(y5_2151, alpha351y5, Kskzsl);
+    alpha_toggle(y4gk_2151, alpha351y4gk, Kskzsl);
+    alpha_toggle(y4xk_2151, alpha351y4hk, Kskzsl);
 }
 
-void alpha_toggle(bool& Y, double& alpha)
+void alpha_toggle(bool& Y, double& alpha, double& Kskzsl)
 {
-    if(Y)
+    if(!Y)
     {
-        if(alpha > 0.05) alpha = alpha - 0.2 * tS;
+        if(alpha > 0.05) alpha = alpha - Kskzsl * tS;
         else alpha = 0.0;
     }
 
     if(Y)
     {
         if(alpha > 0.95) alpha = 1.0;
-        else alpha = alpha + 0.2 * tS;
+        else alpha = alpha + Kskzsl * tS;
     }
 }

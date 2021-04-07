@@ -1,6 +1,6 @@
 #include "aircondition_1_2_3.h"
 
-void X(bool& prid_dv, double& deltaPotb, double& Potb_zad, double& Potbx, double& eng, bool& otk);
+void X(bool& prid_dv, double& Kotbx, double& Potb_zad, double& Potbx, double& eng, double& Kotk);
 
 void aircondition_int::aircondition_1_2_3()
 {
@@ -31,7 +31,7 @@ void aircondition_int::aircondition_1_2_3()
     {
         if(exchange::s7_pp73)
         {
-            alpha_zot_vsu = alpha_zot_vsu + 0.5 * TICK;
+            alpha_zot_vsu = alpha_zot_vsu + 0.5 * tS;
 
             if(alpha_zot_vsu >= 1.0) alpha_zot_vsu = 1.0;
 
@@ -40,7 +40,7 @@ void aircondition_int::aircondition_1_2_3()
         }
         else
         {
-            alpha_zot_vsu = alpha_zot_vsu - 0.5 * TICK;
+            alpha_zot_vsu = alpha_zot_vsu - 0.5 * tS;
 
             if(alpha_zot_vsu <= 0.0)
             {
@@ -95,11 +95,17 @@ void aircondition_int::aircondition_1_2_3()
     Potb2_zad = 5.0;
     Potb3_zad = 5.0;
     Potb4_zad = 5.0;
+    Kotk1 = 0.0;
+    Kotk2 = 0.0;
+    Kotk3 = 0.0;
+    Kotk4 = 0.0;
 
     if(otkaz_lev_mag)
     {
         Potb1_zad = 8.6;
         Potb2_zad = 8.6;
+        Kotk1 = 1.0;
+        Kotk2 = 1.0;
     }
     else
     {
@@ -107,13 +113,31 @@ void aircondition_int::aircondition_1_2_3()
         {
             Potb3_zad = 8.6;
             Potb4_zad = 8.6;
+            Kotk3 = 1.0;
+            Kotk4 = 1.0;
         }
         else
         {
-            if(otkaz_RID_1dv) Potb1_zad = 7.6;
-            if(otkaz_RID_2dv) Potb2_zad = 7.6;
-            if(otkaz_RID_3dv) Potb3_zad = 7.6;
-            if(otkaz_RID_4dv) Potb4_zad = 7.6;
+            if(otkaz_RID_1dv)
+            {
+                Potb1_zad = 7.6;
+                Kotk1 = 1.0;
+            }
+            if(otkaz_RID_2dv)
+            {
+                Potb2_zad = 7.6;
+                Kotk2 = 1.0;
+            }
+            if(otkaz_RID_3dv)
+            {
+                Potb3_zad = 7.6;
+                Kotk3 = 1.0;
+            }
+            if(otkaz_RID_4dv)
+            {
+                Potb4_zad = 7.6;
+                Kotk4 = 1.0;
+            }
         }
     }
     k21_2110 = false;
@@ -279,10 +303,10 @@ void aircondition_int::aircondition_1_2_3()
 //    else Potb4 = 0.0;
 //    if(Potb4 >= 5.0) Potb4 = 5.0;
 
-    X(prid_dv1, deltaPotb1, Potb1_zad, Potb1, exchange::eng1_spd, otkaz_RID_1dv);
-    X(prid_dv2, deltaPotb2, Potb2_zad, Potb2, exchange::eng2_spd, otkaz_RID_2dv);
-    X(prid_dv3, deltaPotb3, Potb3_zad, Potb3, exchange::eng3_spd, otkaz_RID_3dv);
-    X(prid_dv4, deltaPotb4, Potb4_zad, Potb4, exchange::eng4_spd, otkaz_RID_4dv);
+    X(prid_dv1, Kotb1, Potb1_zad, Potb1, exchange::eng1_spd, Kotk1);
+    X(prid_dv2, Kotb2, Potb2_zad, Potb2, exchange::eng2_spd, Kotk2);
+    X(prid_dv3, Kotb3, Potb3_zad, Potb3, exchange::eng3_spd, Kotk3);
+    X(prid_dv4, Kotb4, Potb4_zad, Potb4, exchange::eng4_spd, Kotk4);
 
 
     ////////////////////////////////////////////////
@@ -362,7 +386,7 @@ void aircondition_int::aircondition_1_2_3()
 
         if(pzkol)
         {
-            alphazkol = alphazkol + 0.25 * TICK;
+            alphazkol = alphazkol + 0.25 * tS;
             if(alphazkol >= 0.95)
             {
                 alphazkol = 1.0;
@@ -372,7 +396,7 @@ void aircondition_int::aircondition_1_2_3()
         }
         else
         {
-            if(alphazkol > 0.05) alphazkol = alphazkol - 0.25 * TICK;
+            if(alphazkol > 0.05) alphazkol = alphazkol - 0.25 * tS;
             else alphazkol = 0.0;
         }
     }
@@ -400,7 +424,7 @@ void aircondition_int::aircondition_1_2_3()
 
         if(pzkop)
         {
-            alphazkop = alphazkop + 0.25 * TICK;
+            alphazkop = alphazkop + 0.25 * tS;
             if(alphazkop >= 0.95)
             {
                 alphazkop = 1.0;
@@ -410,7 +434,7 @@ void aircondition_int::aircondition_1_2_3()
         }
         else
         {
-            if(alphazkop > 0.05) alphazkop = alphazkop - 0.25 * TICK;
+            if(alphazkop > 0.05) alphazkop = alphazkop - 0.25 * tS;
             else alphazkop = 0.0;
         }
     }
@@ -421,30 +445,19 @@ void aircondition_int::aircondition_1_2_3()
         bss_inst.BSS926X1b = false;
 }
 
-void X(bool& prid_dv, double& deltaPotb, double& Potb_zad, double& Potbx, double& eng, bool& otk)
+void X(bool& prid_dv, double& Kotbx, double& Potb_zad, double& Potbx, double& eng, double& Kotk)
 {
     if(prid_dv)
     {
-//        deltaPotb = 0.0;
+        Kotbx = (Kotbx + 1 * tS) * Kotk;
+        if(Potbx >= Potb_zad) Potbx = 0.1 * eng;
+        else Potbx = 0.1 * eng + Kotbx;
+        if(!Kotk && Potbx > 5.0) Potbx = 5.0;
     }
     else
     {
-        Potb_zad = 0.0;
-//        deltaPotb = 1.0;
-    }
-
-    if(abs(Potbx - Potb_zad) >= 0.1)
-    {
-        if(Potbx >= Potb_zad)
-        {
-            if(prid_dv) Potbx = 0.1 * eng;
-            else Potbx = Potbx - 2 * tS;
-        }
-        else
-        {
-            if(otk) Potbx = Potbx + 2 * tS;
-            else  Potbx = 0.1 * eng;
-        }
+        Potbx = Potbx - 3.0 * tS;
+        Kotbx = 0.0;
     }
 
     if(Potbx < 0.0) Potbx = 0.0;

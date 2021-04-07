@@ -89,7 +89,7 @@ struct exchange
         ptstoyan;
 
     static double
-        tke,//temperatura v kabine ekipazha
+        tnv,//temperatura naruzhnogo vozduha v C
         tke_vh,//polozhenie zadatchika temperaturi v kabine ekipazha
         pgs1,//presure in hydrosystem1
         pgs2,//presure in hydrosystem2

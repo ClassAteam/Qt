@@ -75,8 +75,8 @@ double
 
 
 double
-    exchange::tke{},
-    exchange::tke_vh{},
+    exchange::tnv{},
+    exchange::tke_vh{},//regulyator temperaturi v kabine ekipazha
     exchange::ushzvsu{}, //vsu starting bus
     exchange::ushpp{},//switching bus right voltage
     exchange::ushak1{},//accumulator1 bus voltage
@@ -103,11 +103,12 @@ double
     exchange::uptsP[3];
 
 bool
-    exchange::s2_2151,//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s3_2151,//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s4_2151,//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s5_2151,//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s6_2151,//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s2_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s3_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s4_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s5_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s6_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s1_2158{},//pereklyuchatel' :KABINA EKIPAZHA"
     exchange::prvsu{},
     exchange::K35_3230{},
     exchange::S18_2930{},

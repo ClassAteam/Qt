@@ -31,7 +31,7 @@ public:
         y7gk_2152{},//priznak uprgavleniya zaslonkoy, reguliruyushey podachu goryachego vozduha dvuhkanalnogo bloka zaslonok(izd. 3326)
         y7hk_2152{},//priznak uprgavleniya zaslonkoy, reguliruyushey podachu holodnogo vozduha dvuhkanalnogo bloka zaslonok(izd. 3326)
         y8_2152{},//priznak upravleniya zaslonkoy ohlazhdeniya vozduha na vhode v SKV ZS
-        y1_2757{},//priznak upravleniya zaslonkoy, reguliruyusgey podachu holodnogo vozduha v nosovoy tehnicheskiy otsek (izd. 3307)
+        y1_2157{},//priznak upravleniya zaslonkoy, reguliruyusgey podachu holodnogo vozduha v nosovoy tehnicheskiy otsek (izd. 3307)
         y2_2157{},//priznak upravleniya zaslonkoy kol'tsevaniya (podacha ohlazhdayushego vozduha v nosovoy tehnichekiy otsek ot SKV KE(izd.3197)
         y5_2158{},//priznak upravleniya zaslonkoy regulirovaniya podachi goryachego vozduha v peredniy tehnicheski otsek(izd. 1919T)
         y4_2158{},//priznak upravleniya reguliruyushey zaslonkoy(izd.3197)
@@ -59,6 +59,7 @@ public:
         pzpvvt2{},//priznak zaslonki produvki VVT is kanala dvigatelya magistrali2
         pom1{},//priznak otkaza magistrali1
         pom2{},//priznak otkaza magistrali2
+        puuke{},//
         pruukl{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS levogo
         pruukp{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS pravogo
         prthu1{},//priznak raboti THU #1
@@ -122,9 +123,18 @@ public:
         k26_2110{};//priznak rele zakritiya otborov ot dvigatelya 4
 
     double
+        tke{},//temperatura v kabine ekipazha
+        Kskzsl{1},//koef skorosti zaslonok
+        Kotk1{},//
+        Kotk2{},//
+        Kotk3{},//
+        Kotk4{},//
+        Kotb1{},//
+        Kotb2{},//
+        Kotb3{},//
+        Kotb4{},//
         Pke{},//davlenie vozduha v kabine ekipazha
         tke_reg{},
-        ttnv{},
         tpgo{},
         tpgo_zad{},
         Dtpgo1{},//skorost' izmeneniya temperaturi vozduha v PGO ot levoy magistrali
@@ -190,4 +200,5 @@ public:
     void aircondition_1_2_3();
     void aircondition_4_5();
     void aircondition_6_7();
+    void aircondition_8();
 };

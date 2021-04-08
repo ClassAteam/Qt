@@ -14,7 +14,9 @@ void aircondition_int::aircondition_8()
     k1_2158 = false;
     prthu2 = false;
 
-    if(pruukp)
+    if(exchange::ushap >= 18.0) pruuk58 = true;
+
+    if(pruuk58)
     {
         if(exchange::s1_2158)
         {

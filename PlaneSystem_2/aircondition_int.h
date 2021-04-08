@@ -14,6 +14,7 @@ class aircondition_int : public interfacing
 public:
     bool
         //input
+        pnu{},//priznak nachalnih usloviy
         otkaz_povishTemprVozd{},//otkaz povishenie tempereturi vozduha za VVT2
         otkaz_povishDavlVozMag1{},//otkaz povishenie davleniya vozduha v magistrali2
         otkaz_povishDavlVozMag2{},//otkaz povishenie davleniya vozduha v magistrali2
@@ -24,7 +25,10 @@ public:
         otkaz_RID_3dv{},//otkaz rehulyatora izbitochnogo davleniya dbigatelya3
         otkaz_RID_4dv{},//otkaz rehulyatora izbitochnogo davleniya dbigatelya4
         otkaz_thu1{},//otkaz thu1
-        otkaz_thu2{},//otkaz thu1
+        otkaz_thu2{},//otkaz thu2
+        otkaz_thu3{},//otkaz thu3
+        otkaz_thu4{},//otkaz thu4
+        otkaz_per_to_zad{},//otkaz peregrev to zadniy
         pubzl{},//priznak podklyucheniya ustroystva vozdushnogo zapuska levogo
         pubzp{},//priznak podklyucheniya ustroystva vozdushnogo zapuskshturmana navigatora
         y6_2152{},//priznak upravleniya zaslonkoy podachi vozduha v ZS
@@ -39,13 +43,17 @@ public:
         y4_2159{},//
         y5_2159{},//
         y6_2159{},//
+        y7_2159{},//
         k2_2131{},//priznak rele vklyucheniya signalizatsii "P kavin malo"(razgermetizatsiya kavini)
         k1_2158{},//priznak rele signalizatsii otkaza THU2(erednego tehnicheskogo otseka)
         k2_2158{},//priznak rele signalizatsii otkaza THU1(SKV KE)
+        k2_2159{},//priznak rele upravleniya zaslonkoy kotsevaniya ot THU4
+        k3_2159{},//priznak rele otkaza THU4
         pbrid1{},//priznak blokirovki RID1
         pbrid2{},//priznak blokirovki RID2
         pbrid3{},//priznak blokirovki RID3
         pbrid4{},//priznak blokirovki RID4
+        pb_ptoz{},//priznak blokirovki pri peregreve v tehnicheskom otseke zadnem
         sd_sm_fltL{},//svetodiod smenifiltr
         sd_sm_fltP{},//svetodiod smenifiltr
         k9_3230{},
@@ -61,11 +69,17 @@ public:
         pom2{},//priznak otkaza magistrali2
         puuke{},//
         pruukl{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS levogo
-        pruukp{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS pravogo
+        pruuk58{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS pravogo
+        pruuk59{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS levogo
+        pruuk592{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS levogo
         prthu1{},//priznak raboti THU #1
         prthu2{},//priznak raboti THU #2
+        prthu3{},//priznak raboti THU #3
+        prthu4{},//priznak raboti THU #4
         pothu1{},//priznak otkaza THU#1
         pothu2{},//priznak otkaza THU#2
+        pothu3{},//priznak otkaza THU#3
+        pothu4{},//priznak otkaza THU#4
         prusppv1{},//priznak raboti ustroystva sistemi predvaritelnoy podgotovki vozduha magistrali1
         prusppv2{},//priznak raboti ustroystva sistemi predvaritelnoy podgotovki vozduha magistrali2
         k1_2151{},//priznak rele pereklyucheniya na avtomaticheskiy rezhim regulirovaniya temperaturi v KE
@@ -123,44 +137,62 @@ public:
         k26_2110{};//priznak rele zakritiya otborov ot dvigatelya 4
 
     double
-        tke{},//temperatura v kabine ekipazha
-        Kskzsl{1},//koef skorosti zaslonok
-        Kotk1{},//
-        Kotk2{},//
-        Kotk3{},//
-        Kotk4{},//
+        Dtpgo1{},//skorost' izmeneniya temperaturi vozduha v PGO ot levoy magistrali
+        Dtpgo2{},//skorost' izmeneniya temperaturi vozduha v PGO ot pravoy magistrali
+        Dtzgo1{},//skorost' izmeneniya temperaturi vozduha v ZGO ot levoy magistrali
+        Dtzgo2{},//skorost' izmeneniya temperaturi vozduha v ZGO ot pravoy magistrali
         Kotb1{},//
         Kotb2{},//
         Kotb3{},//
         Kotb4{},//
+        Kotk1{},//
+        Kotk2{},//
+        Kotk3{},//
+        Kotk4{},//
+        Kskzsl{1},//koef skorosti zaslonok
         Pke{},//davlenie vozduha v kabine ekipazha
-        tke_reg{},
-        tpgo{},
-        tpgo_zad{},
-        Dtpgo1{},//skorost' izmeneniya temperaturi vozduha v PGO ot levoy magistrali
-        Dtpgo2{},//skorost' izmeneniya temperaturi vozduha v PGO ot pravoy magistrali
+        Potb1_2{},//davleniye vozduha v magistrali otbora vozduha levoy, kgs/sm^2
+        Potb1_zad{},//davlenie otbiraemogo vozduha ot 1 dvigatelya, zadannoe, kgs/sm^2
+        Potb1{},//davlenie otbiraemogo vozduha ot 1 dvig, kgs/sm^2
+        Potb2_zad{},//davlenie otbiraemogo vozduha ot 2 dvigatelya, zadannoe, kgs/sm^2
+        Potb2{},//davlenie otbiraemogo vozduha ot 2 dvig, kgs/sm^2
+        Potb3_4{},//davleniye vozduha v magistrali otbora vozduha pravoy, kgs/sm^2
+        Potb3_zad{},//davlenie otbiraemogo vozduha ot 3 dvigatelya, zadannoe, kgs/sm^2
+        Potb3{},//davlenie otbiraemogo vozduha ot 3 dvig, kgs/sm^2
+        Potb4_zad{},//davlenie otbiraemogo vozduha ot 4 dvigatelya, zadannoe, kgs/sm^2
+        Potb4{},//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
+        Potb_vsu{},//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
+        Ptnu{},//davlenie vozduha v magistrali TNU, kgs/sm^2
+        Ptvt34{},//davlenie vozduha za sistemoy predvaritelnoy podgotovki vozduha #2(pravoy), kgs/sm^2
+        Puvzl{},//davlenie vozduha, otbiraemogo ot UVZ levogo, kgs/sm^2
+        Puvzp{},//davlenie vozduha, otbiraemogo ot UVZ pravogo, kgs/sm^2
+        alpha351y1{},//polozhenie zaslonki, reguliruyushey podachu holodnogo vozduha v KE
+        alpha351y2{},//polozhenie zaslonki, reguliruyushey podachu goryachego vozduha v KE
+        alpha351y4gk{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu goryachego vozduha
+        alpha351y4hk{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu holodnogo vozduha
+        alpha351y5{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
+        alpha351y6{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
         alpha352y6{},// polozhenie zaslonki podachi vozduha v ZS
         alpha357y1{},//polozhenie zaslonki, reguliruyushey podachu holodnogo vozduha v nosovoy tehnicheskiy otsek (izd. 3307)
         alpha357y2{},//polozhenie zaslonki kol'tsevaniya (podacha ohlazhdayushego vozduha v nosovoy tehnicheskiy otsek ot SKV KE (izd. 3197)
         alpha358y4{},//polozhenie reguliruyushey zaslonki (izd.3197)
         alpha358y5{},//polozhenie reguliruyushey podachu goryachego vozduha v peredniy tehnicheski otsek (izd. 1919T);
+        alpha359y14{},
         alpha359y1{},
         alpha359y2{},
         alpha359y3{},
         alpha359y4{},
         alpha359y5{},
         alpha359y6{},
-        alpha359y14{},
-        Ptvt34{},//davlenie vozduha za sistemoy predvaritelnoy podgotovki vozduha #2(pravoy), kgs/sm^2
-        tvvt1{},//temperatura vozduha za VVt1
-        tvvt2{},//temperatura vozduha za VVt2
+        alpha359y7{},
+        alpha_zot_vsu{},//polozhenie zaslonki otbora vozduha ot VSU
+        alphazkm12{},
         alphazkm{},
         alphazkol{},
         alphazkop{},
         alphazktvt12{},//polozhenie zaslonki kol'tsevaniya TVT1 i TVT2
         alphazm1{},//polozhenie zaslonki podachi vozduha v magistral'1
         alphazm2{},//polozhenie zaslonki podachi vozduha v magistral'2
-        alphazkm12{},
         alphazpe1{},//polozhenie zaslonki podachi v ejektor produvki VVT magistrali1
         alphazpe2{},//polozhenie zaslonki podachi v ejektor produvki VVT magistrali1
         alphazpvvt1{},//polozhenie zaslonki produvki VVt iz kanala dvigatelya magistrali1
@@ -169,31 +201,28 @@ public:
         alphaztvt2{},//polozhenie zaslonki perekrivnoy za TVT2
         alphaztvt3{},//polozhenie zaslonki perekrivnoy za TVT3
         alphaztvt4{},//polozhenie zaslonki perekrivnoy za TVT4
-        alpha_zot_vsu{},//polozhenie zaslonki otbora vozduha ot VSU
-        alpha351y1{},//polozhenie zaslonki, reguliruyushey podachu holodnogo vozduha v KE
-        alpha351y2{},//polozhenie zaslonki, reguliruyushey podachu goryachego vozduha v KE
-        alpha351y4gk{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu goryachego vozduha
-        alpha351y4hk{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu holodnogo vozduha
-        alpha351y5{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
-        alpha351y6{},//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
-        Ptnu{},//davlenie vozduha v magistrali TNU, kgs/sm^2
-        Puvzl{},//davlenie vozduha, otbiraemogo ot UVZ levogo, kgs/sm^2
-        Puvzp{},//davlenie vozduha, otbiraemogo ot UVZ pravogo, kgs/sm^2
-        Potb1_2{},//davleniye vozduha v magistrali otbora vozduha levoy, kgs/sm^2
-        Potb3_4{},//davleniye vozduha v magistrali otbora vozduha pravoy, kgs/sm^2
-        Potb1{},//davlenie otbiraemogo vozduha ot 1 dvig, kgs/sm^2
-        Potb2{},//davlenie otbiraemogo vozduha ot 2 dvig, kgs/sm^2
-        Potb3{},//davlenie otbiraemogo vozduha ot 3 dvig, kgs/sm^2
-        Potb4{},//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
-        Potb_vsu{},//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
         deltaPotb1{},
         deltaPotb2{},
         deltaPotb3{},
         deltaPotb4{},
-        Potb1_zad{},//davlenie otbiraemogo vozduha ot 1 dvigatelya, zadannoe, kgs/sm^2
-        Potb2_zad{},//davlenie otbiraemogo vozduha ot 2 dvigatelya, zadannoe, kgs/sm^2
-        Potb3_zad{},//davlenie otbiraemogo vozduha ot 3 dvigatelya, zadannoe, kgs/sm^2
-        Potb4_zad{};//davlenie otbiraemogo vozduha ot 4 dvigatelya, zadannoe, kgs/sm^2
+        tke_reg{},
+        tthu1{},//temperatura vozduha za THU1
+        tthu2{},//temperatura vozduha za THU2
+        tthu3{},//temperatura vozduha za THU3
+        tthu4{},//temperatura vozduha za THU4
+        tthu1_zad{},//
+        tthu2_zad{},//
+        tthu3_zad{},//
+        tthu4_zad{},//
+        tke{},//temperatura v kabine ekipazha
+        tpgo_zad{},//temperatura perednego gruzovogo otseka zadannaya
+        tpgo{},//temperatura v perednem gruzovom otseke
+        tvvt1{},//temperatura vozduha za VVt1
+        tvvt2{},//temperatura vozduha za VVt2
+        tzgo_zad{},//temperatura zadnego gruzovogo otseka zadannaya
+        tzgo{},//temperatura v zadnem gruzovom otseke
+        tzto_zad{},//temperatura zadnego tehnicheskogo otseka zadannaya
+        tzto{};//temperatura v zadnem tehnicheskom otseke
 
     aircondition_int(QWidget *parent = nullptr);
     virtual void updateLogic();
@@ -201,4 +230,8 @@ public:
     void aircondition_4_5();
     void aircondition_6_7();
     void aircondition_8();
+    void aircondition_9();
+    void aircondition_10();
+    void aircondition_11();
+    void aircondition_12();
 };

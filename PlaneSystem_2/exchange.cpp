@@ -103,12 +103,16 @@ double
     exchange::uptsP[3];
 
 bool
-    exchange::s2_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s3_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s4_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s5_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s6_2151{},//pereklyuchatel' :KABINA EKIPAZHA"
-    exchange::s1_2158{},//pereklyuchatel' :KABINA EKIPAZHA"
+    exchange::s2_2151{},//
+    exchange::s3_2151{},//
+    exchange::s4_2151{},//
+    exchange::s5_2151{},//
+    exchange::s6_2151{},//
+    exchange::s1_2152{},//
+    exchange::s1_2153{},//
+    exchange::s2_2153{},//
+    exchange::s1_2158{},//
+    exchange::s2_2159{},//
     exchange::prvsu{},
     exchange::K35_3230{},
     exchange::S18_2930{},

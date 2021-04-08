@@ -47,12 +47,17 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRadioButton(&exchange::s1_2151, "neytr", false);
     createRadioButton(&exchange::s1_2151, "hol", false);
     createRadioButton(&exchange::s1_2151, "gor", false);
-    createRadioButton(&exchange::s1_2151, "avtoman", true);
+    createRadioButton(&exchange::s1_2151, "avtomat", true);
     createRedButton(&exchange::s2_2151, "s2_2151");
     createRedButton(&exchange::s3_2151, "s3_2151");
     createRedButton(&exchange::s4_2151, "s4_2151");
     createRedButton(&exchange::s5_2151, "s5_2151");
     createRedButton(&exchange::s6_2151, "s6_2151");
+    createRedButton(&exchange::s1_2152, "s1_2152");
+    createRedButton(&exchange::s1_2153, "s1_2153");
+    createRedButton(&exchange::s2_2153, "s2_2153");
+    createRedButton(&exchange::s1_2158, "s1_2158");
+    createRedButton(&pnu, "pnu");
     createLabelValue(&deltaPotb1, "deltaPotb1");
     createLabelValue(&deltaPotb2, "deltaPotb2");
     createLabelValue(&deltaPotb3, "deltaPotb3");
@@ -99,7 +104,8 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelClue(&pom1, "pom1");
     createLabelClue(&pom2, "pom2");
     createLabelClue(&pruukl, "pruukl");
-    createLabelClue(&pruukp, "pruukp");
+    createLabelClue(&pruuk58, "pruuk58");
+    createLabelClue(&pruuk59, "pruuk59");
     createLabelClue(&prthu1, "prthu1");
     createLabelClue(&prthu2, "prthu2");
     createLabelClue(&pothu1, "pothu1");
@@ -161,15 +167,20 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelClue(&k26_2110, "k26_2110");
 
     createLabelValue(&exchange::tnv, "tnv");
+    createSlider(&exchange::tnv, -60, 70);//- 60 + 70
     createLabelValue(&tpgo, "tpgo");
     createLabelValue(&tpgo_zad, "tpgo_zad");
-    createLabelValue(&Dtpgo1, "Dtpgo1");//skorost' izmeneniya temperaturi vozduha v PGO ot levoy magistrali
-    createLabelValue(&Dtpgo2, "Dtpgo2");//skorost' izmeneniya temperaturi vozduha v PGO ot pravoy magistrali
-    createLabelValue(&alpha352y6, "alpha352y6");// polozhenie zaslonki podachi vozduha v ZS
-    createLabelValue(&alpha357y1, "alpha357y1");//polozhenie zaslonki, reguliruyushey podachu holodnogo vozduha v nosovoy tehnicheskiy otsek (izd. 3307)
-    createLabelValue(&alpha357y2, "alpha357y2");//polozhenie zaslonki kol'tsevaniya (podacha ohlazhdayushego vozduha v nosovoy tehnicheskiy otsek ot SKV KE (izd. 3197)
-    createLabelValue(&alpha358y4, "alpha358y4");//polozhenie reguliruyushey zaslonki (izd.3197)
-    createLabelValue(&alpha358y5, "alpha358y5");//polozhenie reguliruyushey podachu goryachego vozduha v peredniy tehnicheski otsek (izd. 1919T);
+    createLabelValue(&Dtpgo1, "Dtpgo1");
+    createLabelValue(&Dtpgo2, "Dtpgo2");
+    createLabelValue(&tzgo, "tzgo");
+    createLabelValue(&tzgo_zad, "tpzo_zad");
+    createLabelValue(&Dtzgo1, "Dtzgo1");
+    createLabelValue(&Dtzgo2, "Dtzgo2");
+    createLabelValue(&alpha352y6, "alpha352y6");
+    createLabelValue(&alpha357y1, "alpha357y1");
+    createLabelValue(&alpha357y2, "alpha357y2");
+    createLabelValue(&alpha358y4, "alpha358y4");
+    createLabelValue(&alpha358y5, "alpha358y5");
     createLabelValue(&alpha359y1, "alpha359y1");
     createLabelValue(&alpha359y2, "alpha359y2");
     createLabelValue(&alpha359y3, "alpha359y3");
@@ -177,9 +188,11 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelValue(&alpha359y5, "alpha359y5");
     createLabelValue(&alpha359y6, "alpha359y6");
     createLabelValue(&alpha359y14, "alpha359y14");
-    createLabelValue(&Ptvt34, "Ptvt34");//davlenie vozduha za sistemoy predvaritelnoy podgotovki vozduha #2(pravoy), kgs/sm^2
-    createLabelValue(&tvvt1, "tvvt1");//temperatura vozduha za VVt1
-    createLabelValue(&tvvt2, "tvvt2");//temperatura vozduha za VVt2
+    createSlider(&alpha359y14, 0, 1);
+    createLabelValue(&Ptvt34, "Ptvt34");
+    createSlider(&Ptvt34, 0, 2);
+    createLabelValue(&tvvt1, "tvvt1");
+    createLabelValue(&tvvt2, "tvvt2");
     createLabelValue(&alphazkol, "alphazkol");
     createLabelValue(&alphazkop, "alphazkop");
     createLabelValue(&alphazktvt12, "alphazktvt12");//polozhenie zaslonki kol'tsevaniya TVT1 i TVT2
@@ -233,4 +246,8 @@ void aircondition_int::updateLogic()
     aircondition_4_5();
     aircondition_6_7();
     aircondition_8();
+    aircondition_9();
+    aircondition_10();
+    aircondition_11();
+    aircondition_12();
 }

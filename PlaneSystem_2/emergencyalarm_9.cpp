@@ -188,7 +188,7 @@ void emergencyalarm_int::emergencyalarm_9()
         /// 8
         white(&bss_inst.BSS838X5f, &bss_inst.BSS838X6R);
         /// 9
-        white(&bss_inst.BSS838X5i, &bss_inst.BSS838X6T);
+        white(&bss_inst.BSS838X5j, &bss_inst.BSS838X6T);
         /// 10
         white(&bss_inst.BSS838X5x, &bss_inst.BSS838X6Z);
         /// 11

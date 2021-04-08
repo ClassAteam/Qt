@@ -151,8 +151,11 @@ void aircondition_int::aircondition_6_7()
         {
             y1_2151 = true;
             y2_2151 = false;
-//            if(abs(tke = tnv))
-            tke = tke - 1.0 * tS;
+            if(abs(tke - exchange::tnv) > 0.1 && tke > exchange::tnv)
+                tke = tke - 0.5 * tS;
+            else
+                tke = tke + 0.5 * tS;
+
             alpha_toggle(y1_2151, alpha351y1, Kskzsl);
             alpha_toggle(y2_2151, alpha351y2, Kskzsl);
         }

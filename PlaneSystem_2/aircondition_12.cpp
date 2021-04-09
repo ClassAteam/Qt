@@ -7,6 +7,7 @@ void aircondition_int::aircondition_12()
 
     y5_2159 = false;
     y7_2159 = false;
+    k3_2159 = false;
     prthu4 = false;
     pothu4 = false;
     k2_2159 = false;
@@ -16,9 +17,11 @@ void aircondition_int::aircondition_12()
     if(pruuk592)
     {
         tzto_zad = 40.0;
-        if(exchange::s2_2159 || Ptvt34 < 1.2)
+        if(!exchange::s2_2159 || Ptvt34 < 1.2)
         {
             bss_inst.BSS838X5j = true;
+            tzto_zad = exchange::tnv;
+            k3_2159 = true;
 
             if(alpha359y7 > 0.05) alpha359y7 = alpha359y7 - 0.2 * tS;
             else alpha359y7 = 0.0;
@@ -36,7 +39,7 @@ void aircondition_int::aircondition_12()
                 tzto_zad = 55.0;
                 bss_inst.BSS838X5h = true;
                 y5_2159 = false;
-                k3_2159 = false;
+                k3_2159 = true;
             }
             else
             {
@@ -59,7 +62,7 @@ void aircondition_int::aircondition_12()
                         }
                         else
                         {
-                            if(alpha359y7 < 0.95) alpha359y7 = 1.0;
+                            if(alpha359y7 > 0.95) alpha359y7 = 1.0;
                             else alpha359y7 = alpha359y7 + 0.2 * tS;
 
                             tthu4 = tthu4 + 1.0 * tS;
@@ -68,23 +71,27 @@ void aircondition_int::aircondition_12()
                     else tthu4 = tthu4_zad;
                 }
             }
+        }
 
-            if(abs(tzto - tzto_zad) <= 0.2) tzto = tzto_zad;
-            else
-            {
-                if(tzto > tzto_zad) tzto = tzto - 1.0 * tS;
-                else tzto = tzto + 1.0 * tS;
-            }
+        if(abs(tzto - tzto_zad) <= 0.2) tzto = tzto_zad;
+        else
+        {
+            if(tzto > tzto_zad) tzto = tzto - 1.0 * tS;
+            else tzto = tzto + 1.0 * tS;
+        }
 
-            if(tzto > 70.0) pb_ptoz = true;
-            else
+        if(tzto > 70.0)
+        {
+            pb_ptoz = true;
+            bss_inst.BSS838X5p = true;
+        }
+        else
+        {
+            if(tzto > 67.0)
             {
-                if(tzto > 67.0)
-                {
-                    if(pb_ptoz) bss_inst.BSS838X5p = true;
-                }
-                else pb_ptoz = false;
+                if(pb_ptoz) bss_inst.BSS838X5p = true;
             }
+            else pb_ptoz = false;
         }
     }
 }

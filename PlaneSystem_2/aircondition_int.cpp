@@ -15,6 +15,9 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&otkaz_povishTemprVozd, "otkaz_povishTemprVodzd");
     createRedButton(&otkaz_thu1, "otkaz_thu1");
     createRedButton(&otkaz_thu2, "otkaz_thu2");
+    createRedButton(&otkaz_thu3, "otkaz_thu3");
+    createRedButton(&otkaz_thu4, "otkaz_thu4");
+    createRedButton(&otkaz_per_to_zad, "otkaz_per_to_zad");
     createRedButton(&exchange::s1_2120, "s1_2120");
     createRedButton(&exchange::s2_2120, "s2_2120");
     createRedButton(&exchange::s3_2120, "s3_2120");
@@ -57,96 +60,11 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&exchange::s1_2153, "s1_2153");
     createRedButton(&exchange::s2_2153, "s2_2153");
     createRedButton(&exchange::s1_2158, "s1_2158");
-    createRedButton(&pnu, "pnu");
-    createLabelValue(&deltaPotb1, "deltaPotb1");
-    createLabelValue(&deltaPotb2, "deltaPotb2");
-    createLabelValue(&deltaPotb3, "deltaPotb3");
-    createLabelValue(&deltaPotb4, "deltaPotb4");
-    createLabelValue(&Potb1, "Potb1");
-    createLabelValue(&Potb2, "Potb2");
-    createLabelValue(&Potb3, "Potb3");
-    createLabelValue(&Potb4, "Potb4");
-    createLabelClue(&k21_2110, "k21_2110");
-    createLabelClue(&k22_2110, "k22_2110");
-    createLabelClue(&k25_2110, "k25_2110");
-    createLabelClue(&k26_2110, "k26_2110");
-    createRedButton(&exchange::prvsu, "prvsu");
-    createLabelClue(&otkaz_povishTemprVozd, "otkaz_povishTemprVozd");
-    createLabelClue(&otkaz_povishDavlVozMag2, "otkaz_povishDavlVozMag2");
-    createLabelClue(&otkaz_lev_mag, "otkaz_lev_mag");
-    createLabelClue(&otkaz_prav_mag, "otkaz_prav_mag");
-    createLabelClue(&otkaz_RID_1dv, "otkaz_RID_1dv");
-    createLabelClue(&otkaz_RID_2dv, "otkaz_RID_2dv");
-    createLabelClue(&otkaz_RID_3dv, "otkaz_RID_3dv");
-    createLabelClue(&otkaz_RID_4dv, "otkaz_RID_4dv");
-    createLabelClue(&pubzl, "pubzl");
-    createLabelClue(&pubzp, "pubzp");
-    createLabelClue(&y6_2152, "y6_2152");
-    createLabelClue(&y7gk_2152, "y7gk_2152");
-    createLabelClue(&y7hk_2152, "y7hk_2152");
-    createLabelClue(&y8_2152, "y8_2152");
-    createLabelClue(&y1_2157, "y1_2157");
-    createLabelClue(&y2_2157, "y2_2157");
-    createLabelClue(&y5_2158, "y5_2158");
-    createLabelClue(&y4_2158, "y4_2158");
-    createLabelClue(&y6_2158, "y6_2158");
-    createLabelClue(&y4_2159, "y4_2159");
-    createLabelClue(&y5_2159, "y5_2159");
-    createLabelClue(&y6_2159, "y6_2159");
-    createLabelClue(&k2_2131, "k2_2131");
-    createLabelClue(&k1_2158, "k1_2158");
-    createLabelClue(&k2_2158, "k2_2158");
-    createLabelClue(&k9_3230, "k9_3230");
-    createLabelClue(&pzpe1, "pzpe1");
-    createLabelClue(&pzpe2, "pzpe2");
-    createLabelClue(&pzpvvt1, "pzpvvt1");
-    createLabelClue(&pzpvvt2, "pzpvvt2");
-    createLabelClue(&pom1, "pom1");
-    createLabelClue(&pom2, "pom2");
-    createLabelClue(&pruukl, "pruukl");
-    createLabelClue(&pruuk58, "pruuk58");
-    createLabelClue(&pruuk59, "pruuk59");
-    createLabelClue(&prthu1, "prthu1");
-    createLabelClue(&prthu2, "prthu2");
-    createLabelClue(&pothu1, "pothu1");
-    createLabelClue(&pothu2, "pothu2");
-    createLabelClue(&prusppv1, "prusppv1");
-    createLabelClue(&prusppv2, "prusppv2");
-    createLabelClue(&k1_2151, "k1_2151");
-    createLabelClue(&k2_2151, "k2_2151");
-    createLabelClue(&k3_2151, "k3_2151");
-    createLabelClue(&k4_2151, "k4_2151");
-    createLabelClue(&y1_2151, "y1_2151");
-    createLabelClue(&y1_2159, "y1_2159");
-    createLabelClue(&y2_2159, "y2_2159");
-    createLabelClue(&y3_2159, "y3_2159");
-    createLabelClue(&y2_2151, "y2_2151");
-    createLabelClue(&y4gk_2151, "y4gk_2151");
-    createLabelClue(&y4xk_2151, "y4xk_2151");
-    createLabelClue(&y5_2151, "y5_2151");
-    createLabelClue(&y6_2151, "y6_2151");
-    createLabelClue(&y7_2151, "y7_2151");
-    createLabelClue(&y8_2151, "y8_2151");
-    createLabelClue(&k1_2110, "k1_2110");
-    createLabelClue(&k2_2120, "k2_2120");
-    createLabelClue(&k4_2120, "k4_2120");
-    createLabelClue(&k8_2120, "k8_2120");
-    createLabelClue(&k9_2120, "k9_2120");
-    createLabelClue(&k10_2120, "k10_2120");
-    createLabelClue(&k1_2120, "k1_2120");
-    createLabelClue(&k3_2120, "k3_2120");
-    createLabelClue(&k5_2120, "k5_2120");
-    createLabelClue(&k6_2120, "k6_2120");
-    createLabelClue(&k7_2120, "k7_2120");
-    createLabelClue(&pvkltnu, "pvkltnu");
-    createLabelClue(&pvklgvdv, "pvklgvdv");
-    createLabelClue(&pzokl, "pzokl");
-    createLabelClue(&k5_2110, "k5_2110");
-    createLabelClue(&k6_2110, "k6_2110");
-    createLabelClue(&k7_2110, "k7_2110");
-    createLabelClue(&k8_2110, "k8_2110");
-    createLabelClue(&k9_2110, "k9_2110");
+    createRedButton(&exchange::s1_2159, "s1_2159");
+    createRedButton(&exchange::s2_2159, "s2_2159");
+
     createLabelClue(&k10_2110, "k10_2110");
+    createLabelClue(&k10_2120, "k10_2120");
     createLabelClue(&k12_2110, "k12_2110");
     createLabelClue(&k13_2110, "k13_2110");
     createLabelClue(&k15_2110, "k15_2110");
@@ -154,90 +72,207 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelClue(&k17_2110, "k17_2110");
     createLabelClue(&k18_2110, "k18_2110");
     createLabelClue(&k19_2110, "k19_2110");
+    createLabelClue(&k1_2110, "k1_2110");
+    createLabelClue(&k1_2120, "k1_2120");
+    createLabelClue(&k1_2151, "k1_2151");
+    createLabelClue(&k1_2158, "k1_2158");
+    createLabelClue(&k1_2159, "k1_2159");
     createLabelClue(&k20_2110, "k20_2110");
-    createLabelClue(&pzkol, "pzkol");
-    createLabelClue(&pzkop, "pzkop");
+    createLabelClue(&k21_2110, "k21_2110");
+    createLabelClue(&k21_2110, "k21_2110");
+    createLabelClue(&k22_2110, "k22_2110");
+    createLabelClue(&k22_2110, "k22_2110");
+    createLabelClue(&k25_2110, "k25_2110");
+    createLabelClue(&k25_2110, "k25_2110");
+    createLabelClue(&k26_2110, "k26_2110");
+    createLabelClue(&k26_2110, "k26_2110");
+    createLabelClue(&k2_2120, "k2_2120");
+    createLabelClue(&k2_2131, "k2_2131");
+    createLabelClue(&k2_2151, "k2_2151");
+    createLabelClue(&k2_2158, "k2_2158");
+    createLabelClue(&k2_2159, "k2_2159");
+    createLabelClue(&k3_2120, "k3_2120");
+    createLabelClue(&k3_2151, "k3_2151");
+    createLabelClue(&k3_2159, "k4_2159");
+    createLabelClue(&k4_2120, "k4_2120");
+    createLabelClue(&k4_2151, "k4_2151");
+    createLabelClue(&k4_2159, "k4_2159");
+    createLabelClue(&k5_2110, "k5_2110");
+    createLabelClue(&k5_2120, "k5_2120");
+    createLabelClue(&k6_2110, "k6_2110");
+    createLabelClue(&k6_2120, "k6_2120");
+    createLabelClue(&k7_2110, "k7_2110");
+    createLabelClue(&k7_2120, "k7_2120");
+    createLabelClue(&k8_2110, "k8_2110");
+    createLabelClue(&k8_2120, "k8_2120");
+    createLabelClue(&k9_2110, "k9_2110");
+    createLabelClue(&k9_2120, "k9_2120");
+    createLabelClue(&k9_3230, "k9_3230");
+    createLabelClue(&otkaz_RID_1dv, "otkaz_RID_1dv");
+    createLabelClue(&otkaz_RID_2dv, "otkaz_RID_2dv");
+    createLabelClue(&otkaz_RID_3dv, "otkaz_RID_3dv");
+    createLabelClue(&otkaz_RID_4dv, "otkaz_RID_4dv");
+    createLabelClue(&otkaz_lev_mag, "otkaz_lev_mag");
+    createLabelClue(&otkaz_povishDavlVozMag2, "otkaz_povishDavlVozMag2");
+    createLabelClue(&otkaz_povishTemprVozd, "otkaz_povishTemprVozd");
+    createLabelClue(&otkaz_prav_mag, "otkaz_prav_mag");
+    createLabelClue(&pb_ptoz, "pb_ptoz");
+    createLabelClue(&pom1, "pom1");
+    createLabelClue(&pom2, "pom2");
+    createLabelClue(&pothu1, "pothu1");
+    createLabelClue(&pothu2, "pothu2");
+    createLabelClue(&pothu3, "pothu3");
+    createLabelClue(&pothu4, "pothu4");
     createLabelClue(&prid_dv1, "prid_dv1");
     createLabelClue(&prid_dv2, "prid_dv2");
     createLabelClue(&prid_dv3, "prid_dv3");
     createLabelClue(&prid_dv4, "prid_dv4");
-    createLabelClue(&k21_2110, "k21_2110");
-    createLabelClue(&k22_2110, "k22_2110");
-    createLabelClue(&k25_2110, "k25_2110");
-    createLabelClue(&k26_2110, "k26_2110");
-
-    createLabelValue(&exchange::tnv, "tnv");
-    createSlider(&exchange::tnv, -60, 70);//- 60 + 70
-    createLabelValue(&tpgo, "tpgo");
-    createLabelValue(&tpgo_zad, "tpgo_zad");
+    createLabelClue(&prthu1, "prthu1");
+    createLabelClue(&prthu2, "prthu2");
+    createLabelClue(&prthu3, "prthu3");
+    createLabelClue(&prthu4, "prthu4");
+    createLabelClue(&prusppv1, "prusppv1");
+    createLabelClue(&prusppv2, "prusppv2");
+    createLabelClue(&pruuk58, "pruuk58");
+    createLabelClue(&pruuk59, "pruuk59");
+    createLabelClue(&pruuk591, "pruuk591");
+    createLabelClue(&pruuk592, "pruuk592");
+    createLabelClue(&pruukl, "pruukl");
+    createLabelClue(&pubzl, "pubzl");
+    createLabelClue(&pubzp, "pubzp");
+    createLabelClue(&pvklgvdv, "pvklgvdv");
+    createLabelClue(&pvkltnu, "pvkltnu");
+    createLabelClue(&pvvll, "pvvll");
+    createLabelClue(&pvvlp, "pvvlp");
+    createLabelClue(&pvvshn, "pvvshn");
+    createLabelClue(&pvvsho, "pvvsho");
+    createLabelClue(&pzkol, "pzkol");
+    createLabelClue(&pzkop, "pzkop");
+    createLabelClue(&pzokl, "pzokl");
+    createLabelClue(&pzpe1, "pzpe1");
+    createLabelClue(&pzpe2, "pzpe2");
+    createLabelClue(&pzpvvt1, "pzpvvt1");
+    createLabelClue(&pzpvvt2, "pzpvvt2");
+    createLabelClue(&y11_2159, "y11_2159");
+    createLabelClue(&y13_2159, "y13_2159");
+    createLabelClue(&y14_2159, "y14_2159");
+    createLabelClue(&y1_2151, "y1_2151");
+    createLabelClue(&y1_2157, "y1_2157");
+    createLabelClue(&y1_2159, "y1_2159");
+    createLabelClue(&y2_2151, "y2_2151");
+    createLabelClue(&y2_2157, "y2_2157");
+    createLabelClue(&y2_2159, "y2_2159");
+    createLabelClue(&y3_2159, "y3_2159");
+    createLabelClue(&y4_2158, "y4_2158");
+    createLabelClue(&y4_2159, "y4_2159");
+    createLabelClue(&y4gk_2151, "y4gk_2151");
+    createLabelClue(&y4xk_2151, "y4xk_2151");
+    createLabelClue(&y5_2151, "y5_2151");
+    createLabelClue(&y5_2158, "y5_2158");
+    createLabelClue(&y5_2159, "y5_2159");
+    createLabelClue(&y6_2151, "y6_2151");
+    createLabelClue(&y6_2152, "y6_2152");
+    createLabelClue(&y6_2158, "y6_2158");
+    createLabelClue(&y6_2159, "y6_2159");
+    createLabelClue(&y7_2151, "y7_2151");
+    createLabelClue(&y7gk_2152, "y7gk_2152");
+    createLabelClue(&y7hk_2152, "y7hk_2152");
+    createLabelClue(&y8_2151, "y8_2151");
+    createLabelClue(&y8_2152, "y8_2152");
     createLabelValue(&Dtpgo1, "Dtpgo1");
     createLabelValue(&Dtpgo2, "Dtpgo2");
-    createLabelValue(&tzgo, "tzgo");
-    createLabelValue(&tzgo_zad, "tpzo_zad");
     createLabelValue(&Dtzgo1, "Dtzgo1");
     createLabelValue(&Dtzgo2, "Dtzgo2");
+    createLabelValue(&Kotb1, "Kotb1");
+    createLabelValue(&Kotb2, "Kotb2");
+    createLabelValue(&Kotb3, "Kotb3");
+    createLabelValue(&Kotb4, "Kotb4");
+    createLabelValue(&Pke, "Pke");
+    createLabelValue(&Potb1, "Potb1");
+    createLabelValue(&Potb1, "Potb1");
+    createLabelValue(&Potb1_2, "Potb1_2");
+    createLabelValue(&Potb1_zad, "Potb1_zad");
+    createLabelValue(&Potb2, "Potb2");
+    createLabelValue(&Potb2, "Potb2");
+    createLabelValue(&Potb2_zad, "Potb2_zad");
+    createLabelValue(&Potb3, "Potb3");
+    createLabelValue(&Potb3, "Potb3");
+    createLabelValue(&Potb3_4, "Potb3_4");
+    createLabelValue(&Potb3_zad, "Potb3_zad");
+    createLabelValue(&Potb4, "Potb4");
+    createLabelValue(&Potb4, "Potb4");
+    createLabelValue(&Potb4_zad, "Potb4_zad");
+    createLabelValue(&Potb_vsu, "Potb_vsu");
+    createLabelValue(&Ptnu, "Ptnu");
+    createLabelValue(&Puvzl, "Puvzl");
+    createLabelValue(&Puvzp, "Puvzp");
+    createLabelValue(&alpha351y1, "alpha351y1");
+    createLabelValue(&alpha351y2, "alpha351y2");
+    createLabelValue(&alpha351y4gk, "alpha351y4gk");
+    createLabelValue(&alpha351y4hk, "alpha351y4hk");
+    createLabelValue(&alpha351y5, "alpha351y5");
+    createLabelValue(&alpha351y6, "alpha351y6");
     createLabelValue(&alpha352y6, "alpha352y6");
     createLabelValue(&alpha357y1, "alpha357y1");
     createLabelValue(&alpha357y2, "alpha357y2");
     createLabelValue(&alpha358y4, "alpha358y4");
     createLabelValue(&alpha358y5, "alpha358y5");
     createLabelValue(&alpha359y1, "alpha359y1");
+    createLabelValue(&alpha359y13, "alpha359y13");
+    createLabelValue(&alpha359y14, "alpha359y14");
     createLabelValue(&alpha359y2, "alpha359y2");
     createLabelValue(&alpha359y3, "alpha359y3");
     createLabelValue(&alpha359y4, "alpha359y4");
     createLabelValue(&alpha359y5, "alpha359y5");
     createLabelValue(&alpha359y6, "alpha359y6");
-    createLabelValue(&alpha359y14, "alpha359y14");
-    createSlider(&alpha359y14, 0, 1);
-    createLabelValue(&Ptvt34, "Ptvt34");
-    createSlider(&Ptvt34, 0, 2);
-    createLabelValue(&tvvt1, "tvvt1");
-    createLabelValue(&tvvt2, "tvvt2");
+    createLabelValue(&alpha359y7, "alpha359y7");
+    createLabelValue(&alpha_zot_vsu, "alpha_zot_vsu");
     createLabelValue(&alphazkol, "alphazkol");
     createLabelValue(&alphazkop, "alphazkop");
-    createLabelValue(&alphazktvt12, "alphazktvt12");//polozhenie zaslonki kol'tsevaniya TVT1 i TVT2
-    createLabelValue(&alphazm1, "alphazm1");//polozhenie zaslonki podachi vozduha v magistral'1
-    createLabelValue(&alphazm2, "alphazm2");//polozhenie zaslonki podachi vozduha v magistral'2
-    createLabelValue(&alphazpe1, "alphazpe1");//polozhenie zaslonki podachi v ejektor produvki VVT magistrali1
-    createLabelValue(&alphazpe2, "alphazpe2");//polozhenie zaslonki podachi v ejektor produvki VVT magistrali2
-    createLabelValue(&alphazpvvt1, "alphazpvvt1");//polozhenie zaslonki produvki VVt iz kanala dvigatelya magistrali1
-    createLabelValue(&alphaztvt1, "alphaztvt1");//polozhenie zaslonki perekrivnoy za TVT1
-    createLabelValue(&alphaztvt2, "alphaztvt2");//polozhenie zaslonki perekrivnoy za TVT2
-    createLabelValue(&alphaztvt3, "alphaztvt3");//polozhenie zaslonki perekrivnoy za TVT3
-    createLabelValue(&alphaztvt4, "alphaztvt4");//polozhenie zaslonki perekrivnoy za TVT4
-    createLabelValue(&alpha_zot_vsu, "alpha_zot_vsu");//polozhenie zaslonki otbora vozduha ot VSU
-    createLabelValue(&alpha351y1, "alpha351y1");//polozhenie zaslonki, reguliruyushey podachu holodnogo vozduha v KE
-    createLabelValue(&alpha351y2, "alpha351y2");//polozhenie zaslonki, reguliruyushey podachu goryachego vozduha v KE
-    createLabelValue(&alpha351y4gk, "alpha351y4gk");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu goryachego vozduha
-    createLabelValue(&alpha351y4hk, "alpha351y4hk");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok(izd.3326), reguliruyushey podachu holodnogo vozduha
-    createLabelValue(&alpha351y5, "alpha351y5");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
-    createLabelValue(&alpha351y6, "alpha351y6");//polozhenie zaslonki dvuhkanalnogo bloka zaslonok (izd.3326)
-    createLabelValue(&Ptnu, "Ptnu");//davlenie vozduha v magistrali TNU, kgs/sm^2
-    createLabelValue(&Puvzl, "Puvzl");//davlenie vozduha, otbiraemogo ot UVZ levogo, kgs/sm^2
-    createLabelValue(&Puvzp, "Puvzp");//davlenie vozduha, otbiraemogo ot UVZ pravogo, kgs/sm^2
-    createLabelValue(&Potb1_2, "Potb1_2");//davleniye vozduha v magistrali otbora vozduha levoy, kgs/sm^2
-    createLabelValue(&Potb3_4, "Potb3_4");//davleniye vozduha v magistrali otbora vozduha pravoy, kgs/sm^2
-    createLabelValue(&Potb1, "Potb1");//davlenie otbiraemogo vozduha ot 1 dvig, kgs/sm^2
-    createLabelValue(&Potb2, "Potb2");//davlenie otbiraemogo vozduha ot 2 dvig, kgs/sm^2
-    createLabelValue(&Potb3, "Potb3");//davlenie otbiraemogo vozduha ot 3 dvig, kgs/sm^2
-    createLabelValue(&Potb4, "Potb4");//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
-    createLabelValue(&Potb_vsu, "Potb_vsu");//davlenie otbiraemogo vozduha ot 4 dvig, kgs/sm^2
-    createLabelValue(&Potb1_zad, "Potb1_zad");//davlenie otbiraemogo vozduha ot 1 dvigatelya, zadannoe, kgs/sm^2
-    createLabelValue(&Potb2_zad, "Potb2_zad");//davlenie otbiraemogo vozduha ot 2 dvigatelya, zadannoe, kgs/sm^2
-    createLabelValue(&Potb3_zad, "Potb3_zad");//davlenie otbiraemogo vozduha ot 3 dvigatelya, zadannoe, kgs/sm^2
-    createLabelValue(&Potb4_zad, "Potb4_zad");//davlenie otbiraemogo vozduha ot 4 dvigatelya, zadannoe, kgs/sm^2
-    createLabelValue(&Kotb1, "Kotb1");
-    createLabelValue(&Kotb2, "Kotb2");
-    createLabelValue(&Kotb3, "Kotb3");
-    createLabelValue(&Kotb4, "Kotb4");
-    createLabelClue(&pvvll, "pvvll");
-    createLabelClue(&pvvlp, "pvvlp");
-    createLabelClue(&pvvsho, "pvvsho");
-    createLabelClue(&pvvshn, "pvvshn");
-    createLabelValue(&Pke, "Pke");
+    createLabelValue(&alphazktvt12, "alphazktvt12");
+    createLabelValue(&alphazm1, "alphazm1");
+    createLabelValue(&alphazm2, "alphazm2");
+    createLabelValue(&alphazpe1, "alphazpe1");
+    createLabelValue(&alphazpe2, "alphazpe2");
+    createLabelValue(&alphazpvvt1, "alphazpvvt1");
+    createLabelValue(&alphaztvt1, "alphaztvt1");
+    createLabelValue(&alphaztvt2, "alphaztvt2");
+    createLabelValue(&alphaztvt3, "alphaztvt3");
+    createLabelValue(&alphaztvt4, "alphaztvt4");
+    createLabelValue(&deltaPotb1, "deltaPotb1");
+    createLabelValue(&deltaPotb2, "deltaPotb2");
+    createLabelValue(&deltaPotb3, "deltaPotb3");
+    createLabelValue(&deltaPotb4, "deltaPotb4");
+    createLabelValue(&tpgo, "tpgo");
+    createLabelValue(&tpgo_zad, "tpgo_zad");
+    createLabelValue(&tsto, "tsto");
+    createLabelValue(&tsto_zad, "tsto_zad");
+    createLabelValue(&tthu1, "tthu1");
+    createLabelValue(&tthu1_zad, "tthu1_zad");
+    createLabelValue(&tthu2, "tthu2");
+    createLabelValue(&tthu2_zad, "tthu2_zad");
+    createLabelValue(&tthu3, "tthu3");
+    createLabelValue(&tthu3_zad, "tthu3_zad");
+    createLabelValue(&tthu4, "tthu4");
+    createLabelValue(&tthu4_zad, "tthu4_zad");
+    createLabelValue(&tvvt1, "tvvt1");
+    createLabelValue(&tvvt2, "tvvt2");
+    createLabelValue(&tzgo, "tzgo");
+    createLabelValue(&tzgo_zad, "tpzo_zad");
+    createLabelValue(&tzto, "tzto");
+    createLabelValue(&tzto_zad, "tzto_zad");
+    createRedButton(&exchange::prvsu, "prvsu");
+    createRedButton(&pnu, "pnu");
+
+    createLabelValue(&Ptvt12, "Ptvt12");
+    createSlider(&Ptvt12, 0, 2);
+    createLabelValue(&Ptvt34, "Ptvt34");
+    createSlider(&Ptvt34, 0, 2);
     createLabelValue(&tke, "tke");
     createLabelValue(&tke_reg, "tke_reg");
     createSlider(&exchange::tke_vh, 0, 100);
+    createLabelValue(&exchange::tnv, "tnv");
+    createSlider(&exchange::tnv, -60, 70);//- 60 + 70
 }
 
 void aircondition_int::updateLogic()
@@ -250,4 +285,5 @@ void aircondition_int::updateLogic()
     aircondition_10();
     aircondition_11();
     aircondition_12();
+    aircondition_13();
 }

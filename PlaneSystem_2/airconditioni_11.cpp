@@ -9,6 +9,7 @@ void aircondition_int::aircondition_11()
     y5_2159 = false;
     y6_2159 = false;
     bss_inst.BSS926X1N = false;
+    pruuk592 = false;
 
     tzgo_zad = exchange::tnv;
 

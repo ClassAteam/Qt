@@ -32,8 +32,8 @@ void aircondition_int::aircondition_4_5()
         }
     }
 
-    if(otkaz_povishTemprVozd) tvvt1 = 335.0;
-    else tvvt1 = 120.0;
+    if(otkaz_povishTemprVozd) tvvt1 = 355.0;
+    else tvvt1 = 70.0;
 
     if(otkaz_povishDavlVozMag1) Potb1_2 = 8.2;
 
@@ -48,7 +48,9 @@ void aircondition_int::aircondition_4_5()
         }
 
         if(exchange::PRD1dv) k5_2120 = true;
+        else k5_2110 = false;
         if(exchange::PRD2dv) k6_2120 = true;
+        else k6_2120 = false;
 
         if(!k5_2120)
         {
@@ -72,9 +74,11 @@ void aircondition_int::aircondition_4_5()
     }
     else
     {
-        k5_2120 = false;
-        k6_2120 = false;
-        k7_2120 = false;
+            pzpe1 = true;
+            pzpvvt1 = false;
+            k5_2120 = true;
+            k6_2120 = true;
+            k7_2120 = false;
     }
 
     if(!k7_2120 && exchange::ush1dpp >= 18.0 && exchange::s6_2120)
@@ -174,7 +178,7 @@ void aircondition_int::aircondition_4_5()
         k2_2120 = true;
     }
 
-    pruuk58 = false;
+    pruukp = false;
     k4_2120 = false;
     k10_2120 = false;
 
@@ -182,7 +186,7 @@ void aircondition_int::aircondition_4_5()
     {
         if(exchange::s2_2120)
         {
-            pruuk58 = true;
+            pruukp = true;
 
             if(!k3_2120 && !k2_2120) k4_2120 = true;
         }
@@ -195,14 +199,14 @@ void aircondition_int::aircondition_4_5()
             k10_2120 = false;
         }
     }
-    if(otkaz_povishTemprVozd) tvvt2 = 335.0;
-    else tvvt2 = 120.0;
+    if(otkaz_povishTemprVozd) tvvt2 = 355.0;
+    else tvvt2 = 70.0;
 
     if(otkaz_povishDavlVozMag2) Potb3_4 = 8.2;
 
     pom2 = false;
 
-    if(pruuk58)
+    if(pruukp)
     {
         if(tvvt2 >= 350.0 || Potb3_4 >= 8.0)
         {
@@ -211,7 +215,9 @@ void aircondition_int::aircondition_4_5()
         }
 
         if(exchange::PRD3dv) k8_2120 = true;
+        else k8_2120 = false;
         if(exchange::PRD4dv) k9_2120 = true;
+        else k9_2120 = false;
 
         if(!k8_2120)
         {
@@ -235,8 +241,10 @@ void aircondition_int::aircondition_4_5()
     }
     else
     {
-        k8_2120 = false;
-        k9_2120 = false;
+        pzpe2 = true;
+        pzpvvt2 = false;
+        k8_2120 = true;
+        k9_2120 = true;
         k10_2120 = false;
     }
 
@@ -335,7 +343,7 @@ void aircondition_int::aircondition_4_5()
     if(exchange::usho1p >= 18.0 && exchange::s5_2120)
     {
         if(pruukl) sd_sm_fltL = true;
-        if(pruuk58) sd_sm_fltP = true;
+        if(pruukp) sd_sm_fltP = true;
     }
 
 }

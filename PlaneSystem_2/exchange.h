@@ -14,6 +14,7 @@ struct exchange
         s2_2153,//pereeklyuchatel' "GO ZADNIY"
         s1_2158,//pereeklyuchatel' "TO PEREDNIY I NOSOVOY"
         s2_2158,//pereeklyuchatel' "GO ZADNIY"
+        s1_2159,//pereeklyuchatel' vklyucheniya THU3
         s2_2159,//pereeklyuchatel' vklyucheniya THU4
         s2_2151,//pereklyuchatel' :KABINA EKIPAZHA"
         s3_2151,//vikluichatel' "VENITILYATOR" levogo letchika

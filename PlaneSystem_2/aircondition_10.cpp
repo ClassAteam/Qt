@@ -9,6 +9,7 @@ void aircondition_int::aircondition_10()
     y2_2159 = false;
     y3_2159 = false;
     bss_inst.BSS926X1L = false;
+    pruuk591 = false;
 
     tpgo_zad = exchange::tnv;
 
@@ -19,10 +20,10 @@ void aircondition_int::aircondition_10()
         Dtpgo2 = 0.0;
     }
 
-    if(exchange::ushal >= 18.0) pruuk59 = true;
+    if(exchange::ushal >= 18.0) pruuk591 = true;
 
 
-    if(pruuk59)
+    if(pruuk591)
     {
         if(exchange::s1_2153)
         {

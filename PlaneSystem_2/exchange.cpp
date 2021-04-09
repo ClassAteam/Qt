@@ -20,6 +20,9 @@ bool
     exchange::s10_2920{},//pereklyuchatel' TNU GS2
     exchange::s11_2920{},//pereklyuchatel' TNU GS3
     exchange::s12_2920{},//pereklyuchatel' TNU GS4
+    exchange::s1_12360{},//
+    exchange::s2_12360{},//
+    exchange::s3_12360{},//
     exchange::s5_2110{},//pereklyuchatel' "KOL'TSEVANIE OTBOROV"
     exchange::POSK1dv{},//priznak otkritiya stop-krana 1 dvigatelya
     exchange::POSK2dv{},//priznak otkritiya stop-krana 1 dvigatelya
@@ -125,6 +128,10 @@ bool
     exchange::S39_3230{},
     exchange::puvzl{},
     exchange::puvzp{},
+    exchange::pk70_kontrt{},
+    exchange::pk70_pgo{},
+    exchange::pk70_zgo{},
+    exchange::pk70_vkl{},
     exchange::F32_3250{},
     exchange::P1OBLOP{},
     exchange::P2OBLOP{},//priznak 2 obzhatiya levoy opori shassi

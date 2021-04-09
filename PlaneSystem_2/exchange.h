@@ -7,6 +7,10 @@ struct exchange
         prvsu,
         puvzl,
         puvzp,
+        pk70_vkl,//priznak vklyucheniya apparaturi K-70M
+        pk70_pgo,//priznak ispravnosti BUVK #2(zadniy gruzovoy otsek)
+        pk70_zgo,//priznak ispravnosti BUVK #2(zadniy gruzovoy otsek)
+        pk70_kontrt,//priznak signala "Kontrol' T"
         s7_pp73,//pereklyuchatel' ZASLONKA OTBORA PP-73
         s1_2142,//pereklyuchatel' "ZASHITNOE SNARYAZHENIE"
         s1_2152,//pereeklyuchatel' "ZASHITNOE SNARYAZHENIE"
@@ -39,6 +43,9 @@ struct exchange
         s10_2920,//pereklyuchatel' TNU GS2
         s11_2920,//pereklyuchatel' TNU GS3
         s12_2920,//pereklyuchatel' TNU GS4
+        s1_12360,//pereklyuchatel' "MPU #1 RUCHNOY"
+        s2_12360,//pereklyuchatel' "MPU #2 RUCHNOY"
+        s3_12360,//pereklyuchatel' "MPU #3 RUCHNOY"
         s5_2110,//pereklyuchatel' "KOL'TSEVANIE OTBOROV"
         POSK1dv,//priznak otkritiya stop-krana 1 dvigatelya
         POSK2dv,//priznak otkritiya stop-krana 1 dvigatelya

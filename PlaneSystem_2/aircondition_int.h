@@ -54,6 +54,12 @@ public:
         k2_2159{},//priznak rele upravleniya zaslonkoy kotsevaniya ot THU4
         k3_2159{},//priznak rele otkaza THU4
         k4_2159{},//priznak rele otkaza THU4
+        k1_12360{},//priznak rele ispravnosti BUKV #1
+        k2_12360{},//priznak rele ispravnosti BUKV #2
+        k3_12360{},//priznak rele upravleniya zaslonkoy regulirovaniya podachi holodnogo vozduha v peredniy gruzovoy otsek
+        k4_12360{},//priznak rele upravleniya zaslonkoy regulirovaniya podachi holodnogo vozduha v zadniy gruzovoy otsek
+        a3_12360{},//priznak upravleniya zaslonkoy regulirovaniya podachi holodnogo vozduha v peredniy gruzovoy otsek
+        a6_12360{},//priznak upravleniya zaslonkoy regulirovaniya podachi holodnogo vozduha v zadniy gruzovoy otsek
         pbrid1{},//priznak blokirovki RID1
         pbrid2{},//priznak blokirovki RID2
         pbrid3{},//priznak blokirovki RID3
@@ -210,6 +216,8 @@ public:
         alphaztvt2{},//polozhenie zaslonki perekrivnoy za TVT2
         alphaztvt3{},//polozhenie zaslonki perekrivnoy za TVT3
         alphaztvt4{},//polozhenie zaslonki perekrivnoy za TVT4
+        alpha312a3{},//polozhenie zaslonki regulirovaniya podachi holodnogo vozduha v peredniy gruzovoy otsek
+        alpha312a6{},//polozhenie zaslonki regulirovaniya podachi holodnogo vozduha v zadniy gruzovoy otsek
         deltaPotb1{},
         deltaPotb2{},
         deltaPotb3{},
@@ -248,4 +256,5 @@ public:
     void aircondition_11();
     void aircondition_12();
     void aircondition_13();
+    void aircondition_14();
 };

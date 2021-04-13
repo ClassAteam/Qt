@@ -4,14 +4,20 @@ struct exchange
 {
     /////////////////////////////////////////////////////Input
     static bool
-        prvsu,
-        puvzl,
-        puvzp,
+        S55_3230,//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA LEVAYA 1"
+        S56_3230,//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA PRAVAYA 1"
+        S57_3230,//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA LEVAYA 2"
+        S58_3230,//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA PRAVAYA 2"
+        prvsu,//priznak raboti VSU
+        puvzl,//priznak podklyucheniya ustraoystva vozdushnogo zapuska levogo
+        puvzp,//priznak podklyucheniya ustraoystva vozdushnogo zapuska pravogo
         pk70_vkl,//priznak vklyucheniya apparaturi K-70M
         pk70_pgo,//priznak ispravnosti BUVK #2(zadniy gruzovoy otsek)
         pk70_zgo,//priznak ispravnosti BUVK #2(zadniy gruzovoy otsek)
         pk70_kontrt,//priznak signala "Kontrol' T"
         s7_pp73,//pereklyuchatel' ZASLONKA OTBORA PP-73
+        s1_3250,//viklyuchatel' "POVOROT KOLES PITANIE"
+        s4_3250,//viklyuchatel' "POVOROT KOLES RULENIE"
         s1_2142,//pereklyuchatel' "ZASHITNOE SNARYAZHENIE"
         s1_2152,//pereeklyuchatel' "ZASHITNOE SNARYAZHENIE"
         s1_2153,//pereeklyuchatel' "GO PEREDN"
@@ -53,15 +59,17 @@ struct exchange
         POSK4dv;//priznak otkritiya stop-krana 1 dvigatelya
 
     static int
-        s1_2151;//pereklyuchatel' "REGULIR T KABINI EKIPAZHA"
+        s1_2151,//pereklyuchatel' "REGULIR T KABINI EKIPAZHA"
+        s1_3240;//pereklyuchatel' "TORMOZA AVT NORM-PONIZH-SLABO"
     enum s1_2151{neytr, hol, gor, avtomat};
+    enum s1_3240{otkl, slabo, ponizh, norm};
     static double
         speed,
         eng1_spd,//engine1 speed
         eng2_spd,//engine2 speed
         eng3_spd,//engine3 speed
         eng4_spd,//engine4 speed
-        pgat,
+        pgat,//davlenie v gidroakkumulyatore tormoznoy sistemi
         alpha_rud_1dv,//RUD position 1st engine
         alpha_rud_2dv,//RUD position 2nd engine
         alpha_rud_3dv,//RUD position 3rd engine
@@ -75,20 +83,20 @@ struct exchange
         pvvshn,//priznak vklyucheniya ventilyatora shturmana navigatora
         zakr_m1,//priznak vklyucheniya tablo "ZAKR"(magistral'1)
         zakr_om1,//priznak vklyucheniya tablo "ZAKR"(otkaz magistrali1)
-        K34_3230,
-        K32_3230,
-        K24_3230,
-        K27_3230,
-        K26_3230,
-        K25_3230,
-        K35_3230,
-        S18_2930,
-        S1_3230,
-        S34_3230,
-        S35_3230,
-        S36_3230,
-        S38_3230,
-        S39_3230,
+        K34_3230,//priznak rele signalizatsii ubrannogo polozheniya pravoy opori shassi
+        K32_3230,//priznak rele signalizatsii ubrannogo polozheniya levoy opori shassi
+        K24_3230,//priznak rele obzhatogo polozheniya pravoy stoyki shassi
+        K27_3230,//priznak rele obzhatiya stoyki shassi pravogo
+        K26_3230,//priznak rele signalizatsii obzhatogo polozheniya levoy opori shassi kanal 2
+        K25_3230,//priznak rele signalizatsii obzhatogo polozheniya levoy opori shassi kanal 2
+        K35_3230,//priznak rele signalizattsii vipushennogo polozheniya peredney opori shassi
+        S18_2930,//knopka proverki lamp na shitke nazemnoy proverki
+        S1_3230,//viklyuchatel' "OTKLYUCHENIE OSNOVN UPRAVLENIYA SHASSI"
+        S34_3230,//priznak konzevogo viklyuchatelya obzhatgo polozheniya levoy opori shassi kanal2
+        S35_3230,//priznak koncevogo vilklyuchatelya ubrannogo polozheniya levoy opori shassi
+        S36_3230,//priznak konzevogo viklyuchatelya obzhatogo polozheniya pravoy opori shassi kanal2
+        S38_3230,//priznak koncevogo viklyuchatelya obzhatogo polozheniya pravoy opori shassi kanal 1
+        S39_3230,//priznak konzevogo viklyuchatelya ubrannogo polozheniya pravoy opori shassi
         F32_3250,
         P1OBLOP,//priznak 1 obzhatiya levoy opori shassi
         P2OBLOP,//priznak 2 obzhatiya levoy opori shassi
@@ -111,8 +119,8 @@ struct exchange
         ush2dpl,//voltage at extra power bus2 left one
         ush1dpp,//voltage at extra power bus1 right one
         ush2dpp,//voltage at extra power bus2 right one
-        ushap,
-        ushal,
+        ushap,//napryazhenie na shine avariynoy pravloy
+        ushal,//napryazhenie na shine avariynoy levoy
         ush1l,//bus1 left voltage
         ush2l,//bus2 left voltage
         ush1p,//bus1 right voltage
@@ -125,26 +133,25 @@ struct exchange
         ushpp,//switching bus right voltage
         ushak1,//accumulator1 bus voltage
         ushak2,//accumulator2 bus voltage
-        ushp5pl,
         ugvsuP[3],//vsu generator voltage by phases
         urapP[3],//rap bus voltage by phases
         ushpos[2],// voltage of converter3's buses
         ushpts[3],// voltage of converter1's bus by phases
-        fshg[5],//frequency of 4 generators and vsu bases
+        fshg[5],//frequency of 4 generators and vsu buses
         fshp[2],//frequency of switching buses
         fshpos[2],//frequency of convreter3's buses
-        fshpts,
+        fshpts,//chastota na shine pts
         fshav[4],//frequency of emergency buses
         ushgP[4][3],//a generator bus voltages by phases
         ushavP[4][3],//emergency buses voltages by phases
         ushpP[2][3],//switching bus voltages by phases
         upts,//pts own voltage
-        fpos,
-        fpts,
-        urap,
-        upos,
-        frap,
-        uptsP[3],
+        fpos,//chastota POS
+        fpts,//chastota PTS
+        urap,//chastota RAP
+        upos,//napryazhenie POS
+        frap,//chastota RAP
+        uptsP[3],//napryazhenie na PTS po fazam
         delta_z;//flaps position
 
 };

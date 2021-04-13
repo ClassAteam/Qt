@@ -171,10 +171,10 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&K42_3230, "K42_3230");
     createLabelClue(&K43_3230, "K43_3230");
     createLabelClue(&S25_3230, "S25_3230");
-    createLabelClue(&S55_3230, "S55_3230");
-    createLabelClue(&S56_3230, "S56_3230");
-    createLabelClue(&S57_3230, "S57_3230");
-    createLabelClue(&S58_3230, "S58_3230");
+    createLabelClue(&exchange::S55_3230, "S55_3230");
+    createLabelClue(&exchange::S56_3230, "S56_3230");
+    createLabelClue(&exchange::S57_3230, "S57_3230");
+    createLabelClue(&exchange::S58_3230, "S58_3230");
 
     createRadioButton(&S31_3230, "OTKL", false);
     createRadioButton(&S31_3230, "OPORA_PERED", false);
@@ -192,8 +192,8 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&K6_3250, "K6_3250");
     createLabelClue(&K7_3250, "K7_3250");
     createLabelClue(&K8_3250, "K8_3250");
-    createRedButton(&S1_3250, "S1_3250");
-    createRedButton(&S4_3250, "S4_3250");
+    createRedButton(&exchange::s1_3250, "S1_3250");
+    createRedButton(&exchange::s4_3250, "S4_3250");
     createLabelClue(&PPBU_1, "PPBU_1");
     createLabelClue(&PPBU_2, "PPBU_2");
     createLabelClue(&PR_R1, "PR_R1");

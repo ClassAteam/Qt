@@ -43,10 +43,10 @@ brakes_int::brakes_int(QWidget *parent)
     createRedButton(&S2_3240, "S2_3240");
     createRedButton(&S3_3240, "S3_3240");
 
-    createRadioButton(&S1_3240, "OTKL", false);
-    createRadioButton(&S1_3240, "SLABO", false);
-    createRadioButton(&S1_3240, "PONIZH", false);
-    createRadioButton(&S1_3240, "NORM", true);
+    createRadioButton(&exchange::s1_3240, "OTKL", false);
+    createRadioButton(&exchange::s1_3240, "SLABO", false);
+    createRadioButton(&exchange::s1_3240, "PONIZH", false);
+    createRadioButton(&exchange::s1_3240, "NORM", true);
 
     createLabelValue(&exchange::alpha_rud_1dv, "RUD_1ENG");
     createSlider(&exchange::alpha_rud_1dv, 0, 65);

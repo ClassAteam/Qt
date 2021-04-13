@@ -20,11 +20,6 @@ public:
         PVPPOP{},//priznak vipushennogo polozheniya pravoy opori shassi
         S30_3230{},//viklyuchatel' "AVARIYNIY VIPUSK SHASSI"
         S3_3230{},//pereklyuchatel' "OTKLYUCHENIE OSNOVN UPRAVLENIYA SHASSI"
-        S4_3250{},//viklyuchatel' "POVOROT KOLES RULENIE"
-        S55_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA LEVAYA 1"
-        S56_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA PRAVAYA 1"
-        S57_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA LEVAYA 2"
-        S58_3230{},//pereklyuchatel' "IMITAZIYA" "SHASSI NE OBZHATO OPORA PRAVAYA 2"
         gk_ush{},//intaking hydro valve
         gk_vsh{},//releasing hydro valve
         nedovip_osn_op_l{},//otkaz nedovipusk osnovnoy opori levoy
@@ -74,7 +69,6 @@ public:
         K4_3250{},
         K7_3250{},
         K8_3250{},
-        S1_3250{},
         PPBU_1{},
         PPBU_2{},
         PR_R1{},

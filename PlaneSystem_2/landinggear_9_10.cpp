@@ -14,7 +14,7 @@ void landinggear_int::landinggear_9_10() //actually 9 - 10th
 
     if(exchange::ushap >= 19.0)
     {
-        if(S32_3230 && !S55_3230)
+        if(S32_3230 && !exchange::S55_3230)
         {
             exchange::K25_3230 = true;
             uks_inst.UKS4X313 = true;
@@ -54,7 +54,7 @@ void landinggear_int::landinggear_9_10() //actually 9 - 10th
 
     if(exchange::ushal >= 19.0)
     {
-        if(exchange::S34_3230 && !S57_3230)
+        if(exchange::S34_3230 && !exchange::S57_3230)
         {
             exchange::K26_3230 = true;
             uks_inst.UKS4X322 = true;
@@ -76,7 +76,7 @@ void landinggear_int::landinggear_9_10() //actually 9 - 10th
 
     if(exchange::ushap >= 19.0)
     {
-        if(S38_3230 && !S56_3230)
+        if(S38_3230 && !exchange::S56_3230)
         {
             exchange::K24_3230 = true;
             uks_inst.UKS4X38  = true;
@@ -97,7 +97,7 @@ void landinggear_int::landinggear_9_10() //actually 9 - 10th
         if(S39_3230)
             uks_inst.UKS4X311 = true;
 
-        if(exchange::S36_3230 && !S58_3230)
+        if(exchange::S36_3230 && !exchange::S58_3230)
             uks_inst.UKS4X321 = true;
         else
             uks_inst.UKS4X321 = false;

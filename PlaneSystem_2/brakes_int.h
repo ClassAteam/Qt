@@ -28,8 +28,6 @@ public:
         S1_9921{},//knopka "VIPUSK PARASHYUTA" levogo letchika
         S2_9921{},//knopka "VIPUSK PARASHYUTA" pravogo letchika
         S3_9921{};//knopka "SBROS PARASHYUTA"
-    int
-        S1_3240{};//pereklyuchatel' "TORMOZA AVT NORM-PONIZH-SLABO"
     double
         X_ped11{},//otklonenie levoy pedali levogo letchika
         X_ped12{},//otklonenie pravoy pedali levogo letchika

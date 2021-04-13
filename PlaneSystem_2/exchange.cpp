@@ -84,7 +84,6 @@ double
     exchange::ushpp{},//switching bus right voltage
     exchange::ushak1{},//accumulator1 bus voltage
     exchange::ushak2{},//accumulator2 bus voltage
-    exchange::ushp5pl{},
     exchange::ugvsuP[3]{},//vsu generator voltage by phases
     exchange::urapP[3]{},//rap bus voltahe by phases
     exchange::ushpos[2]{},// voltage of converter3's buses
@@ -112,12 +111,18 @@ bool
     exchange::s5_2151{},//
     exchange::s6_2151{},//
     exchange::s1_2152{},//
+    exchange::s1_3250{},//
+    exchange::s4_3250{},//
     exchange::s1_2153{},//
     exchange::s2_2153{},//
     exchange::s1_2158{},//
     exchange::s1_2159{},//
     exchange::s2_2159{},//
     exchange::prvsu{},
+    exchange::S55_3230{},
+    exchange::S56_3230{},
+    exchange::S57_3230{},
+    exchange::S58_3230{},
     exchange::K35_3230{},
     exchange::S18_2930{},
     exchange::S1_3230{},
@@ -144,6 +149,7 @@ bool
     exchange::ptstoyan{};
 
 int
+    exchange::s1_3240{},
     exchange::s1_2151{};
 
 double

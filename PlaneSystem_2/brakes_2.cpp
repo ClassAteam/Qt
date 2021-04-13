@@ -63,21 +63,21 @@ static int
                     else
                     {
                         pbutzr = true;
-                        if(S1_3240 == 1)
+                        if(exchange::s1_3240 == 1)
                         {
                             pavtt = true;
                             PAVT_N = true;
                         }
                         else
                         {
-                            if(S1_3240 == 2)
+                            if(exchange::s1_3240 == 2)
                             {
                                 pavtt = true;
                                 PAVT_P = true;
                             }
                             else
                             {
-                                if(S1_3240 == 3)
+                                if(exchange::s1_3240 == 3)
                                 {
                                     pavtt = true;
                                     PAVT_S = true;
@@ -126,21 +126,21 @@ static int
                 {
                     pbutzr = true;
                 }
-                if(S1_3240 == 1)
+                if(exchange::s1_3240 == 1)
                 {
                     pavtt = true;
                     PAVT_N = true;
                 }
                 else
                 {
-                    if(S1_3240 == 2)
+                    if(exchange::s1_3240 == 2)
                     {
                         pavtt = true;
                         PAVT_P = true;
                     }
                     else
                     {
-                        if(S1_3240 == 3)
+                        if(exchange::s1_3240 == 3)
                         {
                             pavtt = true;
                             PAVT_S = true;

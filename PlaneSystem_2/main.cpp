@@ -16,10 +16,6 @@
 #include "bailout_int.h"
 #include "aircondition_int.h"
 
-
-const double TICK = 2;
-QElapsedTimer timing;
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

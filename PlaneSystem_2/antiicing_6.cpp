@@ -10,14 +10,14 @@ static int
     PSOBLP_tick;
 
     //PRSOL toggle
-    if(exchange::ush1dpl >= 18.0 && S1_3080 && M < 1.25 && !otkaz_l_so121 &&
+    if(exchange::ush1dpl >= 18.0 && exchange::s1_3080 && M < 1.25 && !otkaz_l_so121 &&
         exchange::ush1l >= 18.0)
         PRSOL = true;
     else
         PRSOL = false;
 
     //PRSOP toggle
-    if(exchange::ush2dpp >= 18.0 && S2_3080 && M < 1.25 && !otkaz_p_so121 &&
+    if(exchange::ush2dpp >= 18.0 && exchange::s2_3080 && M < 1.25 && !otkaz_p_so121 &&
         exchange::ush2p >= 18.0)
         prsop = true;
     else
@@ -50,7 +50,7 @@ static int
     //Block check left channel
     if(PRSOL)
     {
-        if(S3_3080 && PSOBLL_sec == 0)
+        if(exchange::s3_3080 && PSOBLL_sec == 0)
             PBSO1 = true;
 
         if(PBSO1)
@@ -92,7 +92,7 @@ static int
     //Block check right channel
     if(prsop)
     {
-        if(S3_3080 && PSOBLP_sec == 0) PBSO2 = true;
+        if(exchange::s3_3080 && PSOBLP_sec == 0) PBSO2 = true;
 
         if(PBSO2)
         {

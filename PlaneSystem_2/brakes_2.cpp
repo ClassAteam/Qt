@@ -9,7 +9,7 @@ static int
     //start logic
     if(exchange::ushap >= 18.0 && exchange::ushal >= 18.0 && exchange::ush1dpp >= 18.0)
     {
-        if(!S1_3241)
+        if(!exchange::s1_3241)
             PvklR = false;
         else
             PvklR = true;
@@ -53,7 +53,7 @@ static int
 
             if(otkaz_avt_per_na_rt)
             {
-                if(S1_3241)
+                if(exchange::s1_3241)
                 {
                     if(otkaz_rt)
                     {
@@ -189,7 +189,7 @@ static int
         PAVART = true;
     else
     {
-        if(S2_3240)
+        if(exchange::s2_3240)
             PstoyanT = true;
     }
 

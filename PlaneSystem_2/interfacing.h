@@ -8,12 +8,10 @@
 #include <QTimer>
 
 
-extern const double
-    TICK;
+const double TICK = 2.0;
 
 const double tS{TICK / 1000};
 
-extern QElapsedTimer timing;
 
 class interfacing : public QWidget
 {

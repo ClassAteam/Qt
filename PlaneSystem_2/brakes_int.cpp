@@ -19,14 +19,14 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelClue(&PRR, "PRR");
     createLabelClue(&POOST, "POOST");
 
-    createLabelValue(&X_ped11, "X_ped11");
-    createSlider(&X_ped11, 0, 100);
-    createLabelValue(&X_ped12, "X_ped12");
-    createSlider(&X_ped12, 0, 100);
-    createLabelValue(&X_ped21, "X_ped21");
-    createSlider(&X_ped21, 0, 100);
-    createLabelValue(&X_ped22, "X_ped22");
-    createSlider(&X_ped22, 0, 100);
+    createLabelValue(&exchange::X_ped11, "X_ped11");
+    createSlider(&exchange::X_ped11, 0, 100);
+    createLabelValue(&exchange::X_ped12, "X_ped12");
+    createSlider(&exchange::X_ped12, 0, 100);
+    createLabelValue(&exchange::X_ped21, "X_ped21");
+    createSlider(&exchange::X_ped21, 0, 100);
+    createLabelValue(&exchange::X_ped22, "X_ped22");
+    createSlider(&exchange::X_ped22, 0, 100);
     createLabelValue(&X_tp_lev, "X_tp_lev");
     createLabelValue(&X_tp_prav, "X_tp_prav");
     createLabelValue(&P_ped_11, "P_ped_11");
@@ -40,8 +40,8 @@ brakes_int::brakes_int(QWidget *parent)
     createRedButton(&X2_45_7620, "X2_45_7620");
     createRedButton(&X3_45_7620, "X3_45_7620");
     createRedButton(&X4_45_7620, "X4_45_7620");
-    createRedButton(&S2_3240, "S2_3240");
-    createRedButton(&S3_3240, "S3_3240");
+    createRedButton(&exchange::s2_3240, "s2_3240");
+    createRedButton(&exchange::s3_3240, "S3_3240");
 
     createRadioButton(&exchange::s1_3240, "OTKL", false);
     createRadioButton(&exchange::s1_3240, "SLABO", false);
@@ -71,7 +71,7 @@ brakes_int::brakes_int(QWidget *parent)
     createRedButton(&otkaz_ots_dav_v1k_levt, "otka_1p_lev");
     createRedButton(&otkaz_ots_dav_v1k_pravt, "otka_1p_prav");
 
-    createRedButton(&S1_3241, "S1_3241");
+    createRedButton(&exchange::s1_3241, "S1_3241");
 
     createLabelValue(&vkh, "vkh");
     createSlider(&vkh, 0, 80);
@@ -179,9 +179,9 @@ brakes_int::brakes_int(QWidget *parent)
     createLabelValue(&balarm_BD23, "balarm_BD23");
     createLabelValue(&P_az_gat, "P_az_gat");
 
-    createRedButton(&S1_9921, "S1_9921");
-    createRedButton(&S2_9921, "S2_9921");
-    createRedButton(&S3_9921, "S3_9921");
+    createRedButton(&exchange::s1_9921, "S1_9921");
+    createRedButton(&exchange::s2_9921, "S2_9921");
+    createRedButton(&exchange::s3_9921, "S3_9921");
 
     createLabelClue(&PVTP, "PVTP");
     createLabelClue(&PSTP, "PSTP");

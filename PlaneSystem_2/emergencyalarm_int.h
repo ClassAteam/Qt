@@ -24,16 +24,6 @@ public:
         PCSOZHPL,//priznak centralnogo signalnogo ognya(CSO) zheltogo pravogo letchika
         PCSOZHSHN,//priznak centralnogo signalnogo ognya(CSO) zheltogo shturmana navigatora
         PCSOZHSHO,//priznak centralnogo signalnogo ognya(CSO) zheltogo shturmana operatora
-        S1_3364,//knopka-tablo ZSO levogo letchika
-        S2_3364,//knopka-tablo ZSO pravogo letchika
-        S3_3364,//knopka-tablo ZSO shturmana-operatora
-        S4_3364,//knopka-tablo ZSO shturmana-navigatora
-        S5_3364,//knopka KONTR SIGNAL lev letchika
-        S6_3364,//knopka KONTR SIGNAL prav letchika
-        S7_3364,//knopka KONTR SIGNAL shturmana-operatora
-        S8_3364;//knopka KONTR SIGNAL shturmana-navigatora
-
-    bool
         PBVkCSOKSHNy2,
         PBVkCSOZHSHNx2,
         PCSOKLL_1,

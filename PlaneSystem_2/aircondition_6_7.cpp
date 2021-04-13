@@ -29,10 +29,10 @@ void aircondition_int::aircondition_6_7()
 
     if(exchange::ush2dpl >= 18.0)
     {
-        if(!(exchange::s1_2151 == exchange::s1_2151::avtomat))
+        if(!(exchange::s1_2151 == static_cast<int>(exchange::s1_2151::avtomat)))
         {
-            if(exchange::s1_2151 == exchange::s1_2151::hol ||
-                exchange::s1_2151 == exchange::s1_2151::gor)
+            if(exchange::s1_2151 == static_cast<int>(exchange::s1_2151::hol) ||
+                exchange::s1_2151 == static_cast<int>(exchange::s1_2151::gor))
             {
                 k2_2151 = true;
                 k3_2151 = true;
@@ -128,7 +128,7 @@ void aircondition_int::aircondition_6_7()
 
     if(k2_2151)
     {
-        if(exchange::s1_2151 == exchange::s1_2151::hol)
+        if(exchange::s1_2151 == static_cast<int>(exchange::s1_2151::hol))
         {
             y1_2151 = true;
             y2_2151 = false;

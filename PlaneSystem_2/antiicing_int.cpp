@@ -21,11 +21,11 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&K26_3230, "K26_3230");
     createLabelClue(&K27_3230, "K27_3230");
     createRedButton(&otkaz_vozduhozabor, "otkaz_vozduhozabor");
-    createRadioButton(&S1_3020, "NEYTR", false);
-    createRadioButton(&S1_3020, "-6 -15", false);
-    createRadioButton(&S1_3020, "0 -6", false);
-    createRadioButton(&S1_3020, "-15", true);
-    createRedButton(&S6_3020, "s6_3020");
+    createRadioButton(&exchange::s1_3020, "NEYTR", false);
+    createRadioButton(&exchange::s1_3020, "-6 -15", false);
+    createRadioButton(&exchange::s1_3020, "0 -6", false);
+    createRadioButton(&exchange::s1_3020, "-15", true);
+    createRedButton(&exchange::s6_3020, "s6_3020");
     createLabelValue(&usho1p, "usho1p");
     createLabelValue(&M, "M");
     createSlider(&M_buf, 0, 150);
@@ -61,10 +61,10 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&f320_3020, "f320_3020");
     createLabelClue(&f330_3020, "f330_3020");
     createLabelClue(&f340_3020, "f340_3020");
-    createRedButton(&s2_3020, "s2_3020");
-    createRedButton(&s3_3020, "s3_3020");
-    createRedButton(&s4_3020, "s4_3020");
-    createRedButton(&s5_3020, "s5_3020");
+    createRedButton(&exchange::s2_3020, "s2_3020");
+    createRedButton(&exchange::s3_3020, "s3_3020");
+    createRedButton(&exchange::s4_3020, "s4_3020");
+    createRedButton(&exchange::s5_3020, "s5_3020");
     createLabelClue(&K22_3020, "K22_3020");
     createLabelClue(&K29_3020, "K29_3020");
     createLabelClue(&K40_3020, "K40_3020");
@@ -93,7 +93,7 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&PVOVNA2, "PVOVNA2");
     createLabelClue(&PVOVNA3, "PVOVNA3");
     createLabelClue(&PVOVNA4, "PVOVNA4");
-    createRedButton(&S3_3080, "S3_3080");
+    createRedButton(&exchange::s3_3080, "S3_3080");
     createRedButton(&S4_3080, "S4_3080");
     createRedButton(&S5_3080, "S5_3080");
     createRedButton(&S6_3080, "S6_3080");
@@ -134,14 +134,14 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&F11_3040, "F11_3040");
     createLabelClue(&F12_3040, "F12_3040");
     createLabelClue(&F13_3040, "F13_3040");
-    createRedButton(&S2_3040, "S2_3040");
-    createRedButton(&S4_3040, "S4_3040");
-    createRedButton(&S6_3040, "S6_3040");
-    createRedButton(&S8_3040, "S8_3040");
-    createRadioButton(&S7_3040, "OTKL", false);
-    createRadioButton(&S7_3040, "LEV", false);
-    createRadioButton(&S7_3040, "LOB", false);
-    createRadioButton(&S7_3040, "PRAV", true);
+    createRedButton(&exchange::s2_3040, "S2_3040");
+    createRedButton(&exchange::s4_3040, "S4_3040");
+    createRedButton(&exchange::s6_3040, "S6_3040");
+    createRedButton(&exchange::s8_3040, "S8_3040");
+    createRadioButton(&exchange::s7_3040, "OTKL", false);
+    createRadioButton(&exchange::s7_3040, "LEV", false);
+    createRadioButton(&exchange::s7_3040, "LOB", false);
+    createRadioButton(&exchange::s7_3040, "PRAV", true);
     createLabelClue(&obled_svs, "obled_svs");
     createLabelClue(&otkaz_l_so121, "otkaz_l_so121");
     createLabelClue(&otkaz_p_so121, "otkaz_p_so121");
@@ -157,10 +157,10 @@ antiicing_int::antiicing_int(QWidget *parent)
     createLabelClue(&PBSO1, "PBSO1");
     createLabelClue(&PBSO2, "PBSO2");
     createLabelClue(&K2_3080, "K2_3080");
-    createRedButton(&S1_3080, "S1_3080");
-    createRedButton(&S2_3080, "S2_3080");
-    createRedButton(&S1_3030, "S1_3030");
-    createRedButton(&S2_3030, "S2_3030");
+    createRedButton(&exchange::s1_3080, "S1_3080");
+    createRedButton(&exchange::s2_3080, "S2_3080");
+    createRedButton(&exchange::s1_3030, "S1_3030");
+    createRedButton(&exchange::s2_3030, "S2_3030");
 }
 
 void antiicing_int::updateLogic()

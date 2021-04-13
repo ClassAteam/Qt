@@ -13,7 +13,7 @@ void antiicing_int::antiicing_4()
             {
                 if(exchange::K25_3230)
                 {
-                    if(S2_3030) K16_3030 = true;
+                    if(exchange::s2_3030) K16_3030 = true;
                     else K16_3030 = false;
                 }
                 else
@@ -22,7 +22,7 @@ void antiicing_int::antiicing_4()
                         K16_3030 = true;
                     else
                     {
-                        if(S2_3030)
+                        if(exchange::s2_3030)
                             K16_3030 = true;
                         else
                             K16_3030 = false;
@@ -34,7 +34,7 @@ void antiicing_int::antiicing_4()
         {
             if(exchange::K25_3230)
             {
-                if(S2_3030)
+                if(exchange::s2_3030)
                     K16_3030 = true;
                 else
                     K16_3030 = false;
@@ -45,7 +45,7 @@ void antiicing_int::antiicing_4()
                     K16_3030 = true;
                 else
                 {
-                    if(S2_3030)
+                    if(exchange::s2_3030)
                         K16_3030 = true;
                     else
                         K16_3030 = false;
@@ -67,7 +67,7 @@ void antiicing_int::antiicing_4()
             {
                 if(exchange::K24_3230)
                 {
-                    if(S2_3030)
+                    if(exchange::s2_3030)
                         K18_3030 = true;
                     else
                         K18_3030 = false;
@@ -78,7 +78,7 @@ void antiicing_int::antiicing_4()
                         K18_3030 = true;
                     else
                     {
-                        if(S2_3030)
+                        if(exchange::s2_3030)
                             K18_3030 = true;
                         else
                             K18_3030 = false;
@@ -90,7 +90,7 @@ void antiicing_int::antiicing_4()
         {
             if(exchange::K24_3230)
             {
-                if(S2_3030)
+                if(exchange::s2_3030)
                     K18_3030 = true;
                 else
                     K18_3030 = false;
@@ -101,7 +101,7 @@ void antiicing_int::antiicing_4()
                     K18_3030 = true;
                 else
                 {
-                    if(S2_3030)
+                    if(exchange::s2_3030)
                         K18_3030 = true;
                     else
                         K18_3030 = false;
@@ -112,7 +112,7 @@ void antiicing_int::antiicing_4()
     else
         K18_3030 = false;
 
-    if (exchange::ushap >= 18.0 && exchange::K24_3230 && exchange::usho1p >= 18.0 && S1_3030)
+    if (exchange::ushap >= 18.0 && exchange::K24_3230 && exchange::usho1p >= 18.0 && exchange::s1_3030)
         PKPPD = true;
     else
         PKPPD = false;

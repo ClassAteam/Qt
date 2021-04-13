@@ -51,12 +51,6 @@ public:
         Sp{},//right presure check against the ground
         delta_shift_l{1.0},//main racks shifting left one
         delta_shift_p{1.0};//main racks shifting right one
-    int
-        S31_3230{};
-    enum s31_3230_pos{opora_pered, opora_lev, opora_prav};
-    int
-        s2_3230{};//pereklyuchatel' "SHASSI" "VIPUSK - UBORKA"
-    enum s2_3230{release, intake};
 
     static bool
         K9_3230,

@@ -79,8 +79,8 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&F114_3230, "F114_3230");
     createLabelClue(&F115_3230, "F115_3230");
     createRedButton(&exchange::S1_3230, "S1_3230");
-    createRadioButton(&s2_3230, "release", false);
-    createRadioButton(&s2_3230, "intake", true);
+    createRadioButton(&exchange::s2_3230, "release", false);
+    createRadioButton(&exchange::s2_3230, "intake", true);
     createRedButton(&S3_3230, "S3_3230");
     createLabelClue(&S4_3230, "S4_3230");
     createLabelClue(&S5_3230, "S5_3230");
@@ -176,10 +176,10 @@ landinggear_int::landinggear_int(QWidget *parent)
     createLabelClue(&exchange::S57_3230, "S57_3230");
     createLabelClue(&exchange::S58_3230, "S58_3230");
 
-    createRadioButton(&S31_3230, "OTKL", false);
-    createRadioButton(&S31_3230, "OPORA_PERED", false);
-    createRadioButton(&S31_3230, "OPORA_LEV", false);
-    createRadioButton(&S31_3230, "OPORA_PRAV", true);
+    createRadioButton(&exchange::S31_3230, "OTKL", false);
+    createRadioButton(&exchange::S31_3230, "OPORA_PERED", false);
+    createRadioButton(&exchange::S31_3230, "OPORA_LEV", false);
+    createRadioButton(&exchange::S31_3230, "OPORA_PRAV", true);
 
     createLabelValue(&exchange::delta_z, "delta_z");
     createSlider(&exchange::delta_z, 0, 100);

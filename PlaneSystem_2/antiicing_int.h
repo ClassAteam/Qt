@@ -25,16 +25,6 @@ public:
         POV3dv2{},//priznak obograeva vozduhozabornika 2 dvigatelya
         POV3dv3{},//priznak obograeva vozduhozabornika 3 dvigatelya
         POV3dv4{},//priznak obograeva vozduhozabornika 4 dvigatelya
-        S1_3030{},//knopka KONTROL' PPD
-        S1_3080{},//viklyuchatel' SIGNAL OBLED LEVIY
-        S2_3030{},//viklyuchatel' OBOGREV PPD
-        S2_3040{},//viklyuchatel' OBOGREV STEKL LEVOE
-        S2_3080{},//viklyuchatel' SIGNAL OBLED PRAVIY
-        S3_3080{},//knopka CO-121VM KONTR
-        S4_3040{},//viklyuchatel' OBOGREV STEKL LOBOVOE
-        S6_3020{},//viklyuchatel' OBOGREV V/3 PODKLYUCHENIE NA ZEMLE
-        S6_3040{},//viklyuchatel' OBOGREV STEKL PRAVOE
-        S8_3040{},//knopka OBOGREV STEKOL KONTROL'
         otkaz_l_so121{},//otkaz levogo kanala CO-121
         otkaz_lozhn_srab_lev_so121{},//oozhnoe stabativanie levogo kanala CO_121
         otkaz_lozhn_srab_prav_so121{},//oozhnoe stabativanie pravogo kanala CO_121
@@ -42,17 +32,7 @@ public:
         otkaz_vozduhozabor{},//otkaz POS vozduhozabornikov
         poppd1{},//priznak obogreva PPD #1
         poppd2{},//priznak obogreva PPD #2
-        poppd3{},//priznak obogreva PPD #3
-        s2_3020{},//vikluchateli OTKLUCHENIE OBOGREVA VOZUHOZABORNIKOV 1
-        s3_3020{},//vikluchateli OTKLUCHENIE OBOGREVA VOZUHOZABORNIKOV 2
-        s4_3020{},//vikluchateli OTKLUCHENIE OBOGREVA VOZUHOZABORNIKOV 3
-        s5_3020{};//vikluchateli OTKLUCHENIE OBOGREVA VOZUHOZABORNIKOV 4
-
-    int S7_3040{};//pereklyuchatel OTKL-LEV-BOL-PRAV
-    enum s7_3040_pos{otkl, lev, lob, prav};
-
-    int S1_3020{};//perekluchatel T NARUZH VOZDUH
-    enum s1_3020_pos{neytr, minus6minus15, zerominus6, minus15};
+        poppd3{};//priznak obogreva PPD #3
 
     double
         usho1p{},

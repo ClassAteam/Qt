@@ -269,21 +269,21 @@ void landinggear_int::landinggear_9_10() //actually 9 - 10th
             H2_3230 = true;
         else
         {
-            switch(S31_3230)
+            switch(exchange::S31_3230)
             {
-            case(s31_3230_pos::opora_pered): //opora pered
+            case(static_cast<int>(exchange::s31_3230::opora_pered)): //opora pered
             {
                 if(P_bal_per <= 70)
                     H2_3230 = true;
             }
             break;
-            case(s31_3230_pos::opora_lev):// opora lev
+            case(static_cast<int>(exchange::s31_3230::opora_lev)):// opora lev
             {
                 if(P_bal_l <= 70)
                     H2_3230 = true;
             }
             break;
-            case(s31_3230_pos::opora_prav): //opora prav
+            case(static_cast<int>(exchange::s31_3230::opora_prav)): //opora prav
             {
                 if(P_bal_p <= 70)
                     H2_3230 = true;

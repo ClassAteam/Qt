@@ -23,24 +23,6 @@ public:
         k4_4940{},//priznak rele otkritogo polozheniya stvorki vozduhozabornika VSU
         pvrap{},// priznak vkl RAP
         s7_2420{},//knopka RAZBLOKIROVKA
-        s17_2420{},//knopka FAZI A
-        s18_2420{},//knopka FAZI B
-        s19_2420{},//knopka FAZI C
-        s21_2420{},//vikl preobrazovatelya #3(POS1000)
-        s15_2420{},//vikluch PTS PREOBR 1
-        s1_7710{},//vikluchatel ESUD SKU1
-        s2_7710{},//vikluchatel ESUD SKU2
-        s3_7710{},//vikluchatel ESUD SKU3
-        s4_7710{},//vikluchatel ESUD SKU4
-        s2_2420{},//perekluch SET' 115/200V SOED SETEY
-        s9_2420{},//perekl SET' 115/200 RAP
-        s1_2420{},//perekl vkluch generatora peremnnogo toka GEN1
-        s5_2420{},//perekl vkluch generatora peremnnogo toka GEN2
-        s10_2420{},//perekl vkluch generatora peremnnogo toka GEN3
-        s13_2420{},//perekl vkluch generatora peremnnogo toka GEN4
-        s4_2420{},//perekluch vkluch chastichnogo rezhima levoy seti perem toka CHASTICHNIY REZHIM SET LEVAYA
-        s12_2420{},//perekl vkl chastichn rezhima pravoy seti perem toka CHASTICHNIY REZHIM SET PRAVAYA
-        s8_2420{},//knopochniy perekl vkluch gener perem toka VSU GEN VSU
         otkGenPerT1{},//otkaz generatora peremennogo toka#1
         otkGenPerT2{},//otkaz generatora peremennogo toka#2
         otkGenPerT3{},//otkaz generatora peremennogo toka#3
@@ -61,20 +43,8 @@ public:
         OtkazGen3PostT{},//otkaz generatora 3 postoyannogo toka
         OtkazGen4PostT{},//otkaz generatora 4 postoyannogo toka
         OtkazGenVsu{},//otkaz generatora VSU postoyannogo toka
-        s1_2430{},//perekl gen vsu(27)
-        s4_2430{},//perekl g1 (27)
-        s5_2430{},//perekl g2(27)
-        s8_2430{},//perekl g3(27)
-        s11_2430{},//perekl g4(27)
-        s2_2430{},//perekl knopochn vkluch rap1
-        s9_2430{},//perekl knopochn vkluch rap2
-        s7_2430{},//perekl knopochn SOED SETEY
-        s3_2430{},//perekl knopochn vklucheniya CHASTICHNIY REZHIM(27 LEV)
-        s10_2430{},//perekl knopochn vklucheniya CHASTICHNIY REZHIM(27 PRAV)
         glviklvsu{false};//signal s pulta PP73(pult zapuska i upravl VSU)
     static bool
-        s14_2430,//perekl knopochn vkluch AKK1
-        s15_2430,//perekl knopochn vkluch AKK2
         prgen[5],//sign of working gener (1,2,3,4 and vsu)
         apdvsu_35,//priznaki signalov vklucheniya puskovogo soprotivleniya
         apdvsu_49;//priznaki signalov shuntirovaniya puskovogo soprotivleniya
@@ -364,16 +334,6 @@ public:
     static double
         ra1,
         ra2;
-
-    enum s13_2430_pos{ground, air};
-    int s13_2430;//perekl ZEMLYA-VOZDUH
-    enum s16_2430_pos{akk1, akk2, avar1, avar2, sh1lev, sh2lev, sh1prav, sh2prav};
-    int s16_2430;//perekl voltmetra
-    enum s17_2430_pos{akk1_rap1, akk2_rap2, vsu};
-    int s17_2430;//perekl amppermetra
-    enum s20_2430_pos{apsh1, apsh2, apsh3, apsh5, apsh6};
-    int s20_2430;
-
 
     bool
         k1_2420{},

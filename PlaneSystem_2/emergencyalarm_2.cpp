@@ -108,7 +108,7 @@ static bool
     else
         PRBSS_812 = false;
 
-    if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && (S5_3364 == true))
+    if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && (exchange::s5_3364 == true))
         PKLLL = true;
     else
         PKLLL = false;
@@ -141,7 +141,7 @@ static bool
         }
 
 
-        if(S1_3364)
+        if(exchange::s1_3364)
             PZH811_X1B_b = true;
 
         ///////////////Yellow lights
@@ -162,7 +162,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1D_b = true;
         }
@@ -188,7 +188,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1N_b = true;
         }
@@ -215,7 +215,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1R_b = true;
         }
@@ -242,7 +242,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1T_b = true;
         }
@@ -269,7 +269,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1V_b = true;
         }
@@ -296,7 +296,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1Z_b = true;
         }
@@ -323,7 +323,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1b_b = true;
         }
@@ -350,7 +350,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1d_b = true;
         }
@@ -377,7 +377,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1f_b = true;
         }
@@ -403,7 +403,7 @@ static bool
             PZH811_X1DD = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1DD_b = true;
         }
@@ -430,7 +430,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH_upor_dz_tang_lev_l_b = true;
         }
@@ -457,7 +457,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH_zakrilk_pariruy_b = true;
         }
@@ -483,7 +483,7 @@ static bool
             PZH811_X1Y = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1Y_b = true;
         }
@@ -509,7 +509,7 @@ static bool
             PZH_dz_otkl = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH_dz_otkl_b = true;
         }
@@ -535,7 +535,7 @@ static bool
             PZH811_X1h = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1h_b = true;
         }
@@ -561,7 +561,7 @@ static bool
             PZH811_X1j = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1j_b = true;
         }
@@ -587,7 +587,7 @@ static bool
             PZH811_X1p = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1p_b = true;
         }
@@ -613,7 +613,7 @@ static bool
             PZH811_X1t = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1t_b = true;
         }
@@ -639,7 +639,7 @@ static bool
             PZH811_X1v = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1v_b = true;
         }
@@ -665,7 +665,7 @@ static bool
             PZH811_X1x = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1x_b = true;
         }
@@ -691,7 +691,7 @@ static bool
             PZH811_X1z = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH811_X1z_b = true;
         }
@@ -717,7 +717,7 @@ static bool
             PZH_sur_gs1_otkl = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH_sur_gs1_otkl_b = true;
         }
@@ -743,7 +743,7 @@ static bool
             PZH_sur_gs2_otkl = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH_sur_gs2_otkl_b = true;
         }
@@ -769,7 +769,7 @@ static bool
             PZH_sur_gs3_otkl = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH_sur_gs3_otkl_b = true;
         }
@@ -795,7 +795,7 @@ static bool
             PZH_sur_gs4_otkl = false;
         }
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PZH_sur_gs4_otkl_b = true;
         }
@@ -858,7 +858,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PK811_X1E_b = true;
         }
@@ -885,7 +885,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PK811_X1G_b = true;
         }
@@ -912,7 +912,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PK811_X1J_b = true;
         }
@@ -939,7 +939,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PK811_X1L_b = true;
         }
@@ -966,7 +966,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PK811_X1n_b = true;
         }
@@ -993,7 +993,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PK811_X1r_b = true;
         }
@@ -1020,7 +1020,7 @@ static bool
         }
 
 
-        if(S1_3364 == true)
+        if(exchange::s1_3364 == true)
         {
             PK811_X1BB_b = true;
         }

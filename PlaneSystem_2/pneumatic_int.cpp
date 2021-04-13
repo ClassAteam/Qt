@@ -10,10 +10,10 @@ pneumatic_int::pneumatic_int(QWidget *parent)
     createLabelClue(&psdzh_duo, "psdzh_duo");
     createLabelClue(&psdz_duo, "psdz_duo");
     createRedButton(&du_o, "du_o");
-    createRedButton(&s1_2830, "s1_2830");
-    createRedButton(&s2_2830, "s2_2830");
-    createRedButton(&s1_3650, "s1_3650");
-    createRedButton(&s2_3650, "s2_3650");
+    createRedButton(&exchange::s1_2830, "s1_2830");
+    createRedButton(&exchange::s2_2830, "s2_2830");
+    createRedButton(&exchange::s1_3650, "s1_3650");
+    createRedButton(&exchange::s2_3650, "s2_3650");
     createLabelClue(&pzsnpb, "pzsnpb");
     createLabelClue(&pzsnzb, "pzsnzb");
     createLabelClue(&y1_2830, "y1_2830");

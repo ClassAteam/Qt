@@ -26,7 +26,7 @@ void emergencyalarm_int::emergencyalarm_1()
         PRBSS_939 = false;
     }
 
-    if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0 && S8_3364 == 1)
+    if (exchange::ush2dpl >= 18.0 && exchange::ush2dpp >= 18.0 && exchange::s8_3364 == 1)
     {
         PKLSHN = true;
     }
@@ -60,7 +60,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH939_X1B_b = true;
         }
@@ -88,7 +88,7 @@ void emergencyalarm_int::emergencyalarm_1()
 
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH939_X1D_b = true;
         }
@@ -115,7 +115,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH939_X1E_b = true;
         }
@@ -142,7 +142,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH926_X1J_b = true;
         }
@@ -169,7 +169,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH926_X1L_b = true;
         }
@@ -196,7 +196,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH_svs_otkaz_b = true;
         }
@@ -224,7 +224,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH_svs_net_rezerva_b = true;
         }
@@ -251,7 +251,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH_ins_otkaz_b = true;
         }
@@ -278,7 +278,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PZH_ins_net_rezerva_b = true;
         }
@@ -321,7 +321,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PK939_X1G_b = true;
         }
@@ -358,7 +358,7 @@ void emergencyalarm_int::emergencyalarm_1()
         }
 
 
-        if(S4_3364 == true)
+        if(exchange::s4_3364 == true)
         {
             PK939_X1N_b = true;
         }

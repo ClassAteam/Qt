@@ -42,7 +42,7 @@ static int
         PRBSS837 = false;
     }
 
-    if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && S7_3364)
+    if ((exchange::ush2dpl >= 18.0) && (exchange::ush2dpp >= 18.0) && exchange::s7_3364)
     {
         PKLSHO = true;
     }
@@ -76,7 +76,7 @@ static int
         }
 
 
-        if(S3_3364 == true)
+        if(exchange::s3_3364 == true)
         {
             PZH926_X1C_b = true;
         }
@@ -103,7 +103,7 @@ static int
         }
 
 
-        if(S3_3364 == true)
+        if(exchange::s3_3364 == true)
         {
             PZH926_X1G_b = true;
         }
@@ -130,7 +130,7 @@ static int
         }
 
 
-        if(S3_3364 == true)
+        if(exchange::s3_3364 == true)
         {
             PZH926_X1d_b = true;
         }
@@ -157,7 +157,7 @@ static int
         }
 
 
-        if(S3_3364 == true)
+        if(exchange::s3_3364 == true)
         {
             PZH926_X3V_b = true;
         }
@@ -184,7 +184,7 @@ static int
         }
 
 
-        if(S3_3364 == true)
+        if(exchange::s3_3364 == true)
         {
             PZH926_X1x_b = true;
         }
@@ -211,7 +211,7 @@ static int
         }
 
 
-        if(S3_3364 == true)
+        if(exchange::s3_3364 == true)
         {
             PZH926_X1BB_b = true;
         }
@@ -238,7 +238,7 @@ static int
         }
 
 
-        if(S3_3364 == true)
+        if(exchange::s3_3364 == true)
         {
             PZH926_X1FF_b = true;
         }

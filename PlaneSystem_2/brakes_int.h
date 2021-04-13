@@ -19,20 +19,12 @@ public:
         X2_45_7620{},//priznak signala stop-kran otkrit 2 dvigatelya
         X3_45_7620{},//priznak signala stop-kran otkrit 3 dvigatelya
         X4_45_7620{},//priznak signala stop-kran otkrit 4 dvigatelya
-        S2_3240{},//pereklyuchatel' "TORMOZA STOYAN-START"
-        S3_3240{},//pereklyuchatel "TORMOZA FORSIR"
         otkaz_avt_per_na_rt{},//otkaz avtomaticheskogo perehoda na rezervnuyu sistemu tormozheniya
         otkaz_rt{},//otkaz rezervnoy sistemi tormozheniya
         otkaz_ots_dav_v1k_levt{},//otsutstvie davlenie v peroy pare koles levoy telezhki
-        otkaz_ots_dav_v1k_pravt{},//otsutstvie davlenie v peroy pare koles pravoy telezhki
-        S1_9921{},//knopka "VIPUSK PARASHYUTA" levogo letchika
-        S2_9921{},//knopka "VIPUSK PARASHYUTA" pravogo letchika
-        S3_9921{};//knopka "SBROS PARASHYUTA"
+        otkaz_ots_dav_v1k_pravt{};//otsutstvie davlenie v peroy pare koles pravoy telezhki
+
     double
-        X_ped11{},//otklonenie levoy pedali levogo letchika
-        X_ped12{},//otklonenie pravoy pedali levogo letchika
-        X_ped21{},//otklonenie levoy pedali pravogo letchika
-        X_ped22{},//otklonenie pravoy pedali pravogo letchika
         vkh{};//skorost' dvizheniya po VPP(putevaya skorost'), m/s
 
     QVector<double> brakes_Pt{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
@@ -139,7 +131,6 @@ public:
         PstoyanT{},
         PvkFT{},
         PvklR{},
-        S1_3241{},
         S4_9921{},
         S5_9921{},
         S6_9921{},

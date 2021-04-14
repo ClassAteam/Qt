@@ -31,20 +31,20 @@ int main(int argc, char *argv[])
     cabinlighting.show();
     presure_int presure;
     presure.show();
-    hydro_int hydro;
-    hydro.show();
     antiicing_int antiicing;
     antiicing.show();
-    landinggear_int landinggear;
-    landinggear.show();
     pneumatic_int pneumatic;
     pneumatic.show();
-    powerdc_int powerdc;
-    powerdc.show();
     bailout_int bailout;
     bailout.show();
     aircondition_int aircondition;
     aircondition.show();
+    landinggear_int landinggear;
+    landinggear.show();
+    hydro_int hydro;
+    hydro.show();
+    powerdc_int powerdc;
+    powerdc.show();
 
     return a.exec();
 }

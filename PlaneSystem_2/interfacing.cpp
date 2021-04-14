@@ -186,7 +186,6 @@ void interfacing::setLbl()
             }
         }
 
-
         label->setText(str + " = " + QString::number(*lblValues[i]));
 
         if(*lblValues[i] != 0)
@@ -223,9 +222,7 @@ void interfacing::setRB(const QString str)
 void interfacing::posOcupied()
 {
     if(row < 45)
-    {
         row++;
-    }
     else
     {
         row = 0;

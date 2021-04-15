@@ -1,5 +1,3 @@
-#include <QApplication>
-#include <QtWidgets>
 #include <presure.h>
 #include "antiicing_int.h"
 #include "powerdc_int.h"

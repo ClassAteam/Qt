@@ -105,6 +105,8 @@ double exchange::speed{};
 ///
 
 bool exchange::F32_3250{};
+bool exchange::s1_2112{};
+bool exchange::s4_2112{};
 bool exchange::s1_2830{};//vikluchatel AVAR SLIV TOPLIVA BAKI PEREDNIE
 bool exchange::s2_2830{};//vikluchatel AVAR SLIV TOPLIVA BAKI ZADNIE
 bool exchange::s1_3650{};//vikluchatel' NADDUV BLOKOV PEREDN

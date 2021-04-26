@@ -22,8 +22,8 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&exchange::s2_2120, "s2_2120");
     createRedButton(&exchange::s3_2120, "s3_2120");
     createRedButton(&exchange::s4_2120, "s4_2120");
-    createRedButton(&exchange::s5_2120, "s5_2920");
-    createRedButton(&exchange::s6_2120, "s6_2920");
+    createRedButton(&exchange::s5_2120, "s5_2120");
+    createRedButton(&exchange::s6_2120, "s6_2120");
     createRedButton(&exchange::s3_2120, "s3_2120");
     createRedButton(&exchange::s1_2110, "s1_2110");
     createRedButton(&exchange::s2_2110, "s2_2110");
@@ -45,8 +45,8 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&exchange::s10_2920, "s10_2920");
     createRedButton(&exchange::s11_2920, "s11_2920");
     createRedButton(&exchange::s12_2920, "s12_2920");
-    createRedButton(&exchange::s1_2120, "s1_2920");
-    createRedButton(&exchange::s4_2120, "s4_2920");
+    createRedButton(&exchange::s1_2120, "s1_2120");
+    createRedButton(&exchange::s4_2120, "s4_2120");
     createRadioButton(&exchange::s1_2151, "neytr", false);
     createRadioButton(&exchange::s1_2151, "hol", false);
     createRadioButton(&exchange::s1_2151, "gor", false);
@@ -71,6 +71,43 @@ aircondition_int::aircondition_int(QWidget *parent)
     createRedButton(&exchange::s3_12360, "s3_12360");
 
 
+    createLabelClue(&skv_d001, "skv_d001");
+    createLabelClue(&skv_d002, "skv_d002");
+    createLabelClue(&skv_d003, "skv_d003");
+    createLabelClue(&skv_d004, "skv_d004");
+    createLabelClue(&skv_d005, "skv_d005");
+    createLabelClue(&skv_d006, "skv_d006");
+    createLabelClue(&skv_d007, "skv_d007");
+    createLabelClue(&skv_d008, "skv_d008");
+    createLabelClue(&skv_d009, "skv_d009");
+    createLabelClue(&skv_d010, "skv_d010");
+    createLabelClue(&skv_d011, "skv_d011");
+    createLabelClue(&skv_d012, "skv_d012");
+    createLabelClue(&skv_d013, "skv_d013");
+    createLabelClue(&skv_d014, "skv_d014");
+    createLabelClue(&skv_d015, "skv_d015");
+    createLabelClue(&skv_d016, "skv_d016");
+    createLabelClue(&skv_d017, "skv_d017");
+    createLabelClue(&skv_d018, "skv_d018");
+    createLabelClue(&skv_d019, "skv_d019");
+    createLabelClue(&skv_d020, "skv_d020");
+    createLabelClue(&skv_d021, "skv_d021");
+    createLabelClue(&skv_d022, "skv_d022");
+    createLabelClue(&skv_d023, "skv_d023");
+    createLabelClue(&skv_d024, "skv_d024");
+    createLabelClue(&skv_d025, "skv_d025");
+    createLabelClue(&skv_d026, "skv_d026");
+    createLabelClue(&skv_d027, "skv_d027");
+    createLabelClue(&skv_d028, "skv_d028");
+    createLabelClue(&skv_d029, "skv_d029");
+    createLabelClue(&skv_d030, "skv_d030");
+    createLabelClue(&skv_d031, "skv_d031");
+    createLabelClue(&skv_d032, "skv_d032");
+    createLabelClue(&skv_d033, "skv_d033");
+    createLabelClue(&skv_d034, "skv_d034");
+    createLabelClue(&skv_d035, "skv_d035");
+    createLabelClue(&skv_d036, "skv_d036");
+    createLabelClue(&skv_d037, "skv_d037");
     createLabelClue(&a3_12360, "a3_12360");
     createLabelClue(&a6_12360, "a6_12360");
     createLabelClue(&k10_2110, "k10_2110");
@@ -193,6 +230,10 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelClue(&y7hk_2152, "y7hk_2152");
     createLabelClue(&y8_2151, "y8_2151");
     createLabelClue(&y8_2152, "y8_2152");
+    createLabelValue(&skv_a001, "skv_a001");
+    createLabelValue(&skv_a002, "skv_a002");
+    createLabelValue(&skv_a003, "skv_a003");
+    createLabelValue(&skv_a004, "skv_a004");
     createLabelValue(&Dtpgo1, "Dtpgo1");
     createLabelValue(&Dtpgo2, "Dtpgo2");
     createLabelValue(&Dtzgo1, "Dtzgo1");
@@ -248,6 +289,7 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelValue(&alphazktvt12, "alphazktvt12");
     createLabelValue(&alphazm1, "alphazm1");
     createLabelValue(&alphazm2, "alphazm2");
+    createLabelValue(&alphazkm12, "alphazkm12");
     createLabelValue(&alphazpe1, "alphazpe1");
     createLabelValue(&alphazpe2, "alphazpe2");
     createLabelValue(&alphazpvvt1, "alphazpvvt1");
@@ -277,6 +319,17 @@ aircondition_int::aircondition_int(QWidget *parent)
     createLabelValue(&tzgo_zad, "tpzo_zad");
     createLabelValue(&tzto, "tzto");
     createLabelValue(&tzto_zad, "tzto_zad");
+    createLabelValue(&Ptvt1, "Ptvt1");
+    createLabelValue(&Ptvt2, "Ptvt2");
+    createLabelValue(&Ptvt3, "Ptvt3");
+    createLabelValue(&Ptvt4, "Ptvt4");
+    createLabelValue(&Pm1, "Pm1");
+    createLabelValue(&Pm2, "Pm2");
+    createLabelValue(&Pthu1, "Pthu1");
+    createLabelValue(&Pthu2, "Pthu2");
+    createLabelValue(&Pthu3, "Pthu3");
+    createLabelValue(&Pthu4, "Pthu4");
+
     createRedButton(&exchange::prvsu, "prvsu");
     createRedButton(&pnu, "pnu");
     createLabelValue(&Ptvt12, "Ptvt12");
@@ -302,4 +355,7 @@ void aircondition_int::updateLogic()
     aircondition_12();
     aircondition_13();
     aircondition_14();
+    aircondition_15();
+    aircondition_16();
+    aircondition_17();
 }

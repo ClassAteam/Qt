@@ -330,7 +330,7 @@ static int
 
         ///////////////White lights_1
         //////////////7
-        if (bss_inst.BSS926X1T == true)
+        if (bss_inst.zakr_om1 == true)
         {
             bss_inst.BSS926X2J = true;
         }
@@ -341,7 +341,7 @@ static int
 
         ///////////////White lights_1
         //////////////8
-        if (bss_inst.BSS926X1V == true)
+        if (bss_inst.zakr_m1 == true)
         {
             bss_inst.BSS926X2K = true;
         }

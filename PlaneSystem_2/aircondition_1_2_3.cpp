@@ -366,13 +366,13 @@ void aircondition_int::aircondition_1_2_3()
     k5_2110 = false;
     k6_2110 = false;
     pzkol = false;
-    bss_inst.BSS812X5B = false;
+    bss_inst.BSS926X1X = false;
 
     if(exchange::ushal >= 18.0)
     {
         if(!k12_2110 && !k9_2110)
         {
-            if(!k7_2110 && exchange::ush2l >= 18.0 && exchange::s5_2110)
+            if(!k7_2110 && exchange::ush2l >= 18.0 && exchange::s5_2120)
             {
                 k5_2110 = true;
                 pzkol = true;
@@ -390,7 +390,7 @@ void aircondition_int::aircondition_1_2_3()
             if(alphazkol >= 0.95)
             {
                 alphazkol = 1.0;
-                bss_inst.BSS812X5B = true;
+                bss_inst.BSS926X1X = true;
                 k6_2110 = true;
             }
         }
@@ -404,13 +404,13 @@ void aircondition_int::aircondition_1_2_3()
     k19_2110 = false;
     k20_2110 = false;
     pzkop = false;
-    bss_inst.BSS825X5X = false;
+    bss_inst.BSS926X1Z = false;
 
     if(exchange::ushap >= 18.0)
     {
         if(!k18_2110 && !k13_2110)
         {
-            if(!k15_2110 && exchange::ush2l >= 18.0 && exchange::s5_2110)
+            if(!k15_2110 && exchange::ush2l >= 18.0 && exchange::s5_2120)
             {
                 k20_2110 = true;
                 pzkop = true;
@@ -428,7 +428,7 @@ void aircondition_int::aircondition_1_2_3()
             if(alphazkop >= 0.95)
             {
                 alphazkop = 1.0;
-                bss_inst.BSS825X5X = true;
+                bss_inst.BSS926X1Z = true;
                 k19_2110 = true;
             }
         }

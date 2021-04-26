@@ -525,8 +525,8 @@ emergencyalarm_int::emergencyalarm_int(QWidget *parent)
         createLabelClue(&bss_inst.BSS926X1MM, "BSS926X1MM");
         createLabelClue(&bss_inst.BSS926X1N, "BSS926X1N");
         createLabelClue(&bss_inst.BSS926X1R, "BSS926X1R");
-        createLabelClue(&bss_inst.BSS926X1T, "BSS926X1T");
-        createLabelClue(&bss_inst.BSS926X1V, "BSS926X1V");
+        createLabelClue(&bss_inst.zakr_om1, "BSS926X1T");
+        createLabelClue(&bss_inst.zakr_m1, "BSS926X1V");
         createLabelClue(&bss_inst.BSS926X1X, "BSS926X1X");
         createLabelClue(&bss_inst.BSS926X1Z, "BSS926X1Z");
         createLabelClue(&bss_inst.BSS926X1b, "BSS926X1b");
@@ -625,6 +625,10 @@ emergencyalarm_int::emergencyalarm_int(QWidget *parent)
         createLabelClue(&bss_inst.razrezh_veliko, "razrezh_veliko");
         createLabelClue(&bss_inst.vkl_forsir_torm, "vkl_forsir_torm");
         createLabelClue(&bss_inst.vkl_rezerv_torm, "vkl_rezerv_torm");
+        createLabelClue(&bss_inst.zakr_om1, "zakr_om1");
+        createLabelClue(&bss_inst.zakr_om2, "zakr_om2");
+        createLabelClue(&bss_inst.zakr_m1, "zakr_m1");
+        createLabelClue(&bss_inst.zakr_m2, "zakr_m2");
 }
 void emergencyalarm_int::updateLogic()
 {

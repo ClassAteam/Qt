@@ -20,6 +20,9 @@ SOURCES += \
     aircondition_12.cpp \
     aircondition_13.cpp \
     aircondition_14.cpp \
+    aircondition_15.cpp \
+    aircondition_16.cpp \
+    aircondition_17.cpp \
     aircondition_1_2_3.cpp \
     aircondition_4_5.cpp \
     aircondition_6_7.cpp \
@@ -123,6 +126,9 @@ HEADERS += \
     aircondition_12.h \
     aircondition_13.h \
     aircondition_14.h \
+    aircondition_15.h \
+    aircondition_16.h \
+    aircondition_17.h \
     aircondition_1_2_3.h \
     aircondition_4_5.h \
     aircondition_6_7.h \

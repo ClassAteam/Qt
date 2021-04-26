@@ -524,8 +524,6 @@ struct bss
         bool BSS926X1MM{};
         bool BSS926X1N{};
         bool BSS926X1R{};
-        bool BSS926X1T{};
-        bool BSS926X1V{};
         bool BSS926X1X{};
         bool BSS926X1Z{};
         bool BSS926X1b{};
@@ -628,5 +626,9 @@ struct bss
         bool surGs4Otkl{};
         bool vkl_forsir_torm{};
         bool vkl_rezerv_torm{};
+        bool zakr_om1{};//otkaz magistral' 1
+        bool zakr_om2{};//otkaz magistral' 2
+        bool zakr_m1{};//magistral'1
+        bool zakr_m2{};//magistral'2
 };
 

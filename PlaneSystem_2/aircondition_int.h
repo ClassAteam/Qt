@@ -14,6 +14,44 @@ class aircondition_int : public interfacing
 public:
     bool
         //input
+        skv_d001{},//priznak signala "Otbor ot DV1 zakrit" v IUS
+        skv_d002{},//priznak signala "Otbor ot DV2 zakrit" v IUS
+        skv_d003{},//priznak signala "Otbor ot DV3 zakrit" v IUS
+        skv_d004{},//priznak signala "Otbor ot DV4 zakrit" v IUS
+        skv_d005{},//priznak signala "Otbor ot DV4 zakrit" v IUS
+        skv_d006{},//priznak signala "Zaslonka koltsevaniya otborov levaya otkrita" v IUS
+        skv_d007{},//priznak signala "Zaslonka koltsevaniya otborov pravaya otkrita" v IUS
+        skv_d008{},//priznak signala "Magistral 1 otkluchena v IUS"
+        skv_d009{},//priznak signala "Magistral 2 otkluchena v IUS"
+        skv_d010{},//priznak signala "Zaslonka koltsevaniya magistraley 1, 2 levaya (TVT1, TVT2) otkrita v IUS
+        skv_d011{},//priznak signala "Zaslonka koltsevaniya magistraley 1, 2 pravaya otkrita v IUS
+        skv_d012{},//priznak signala "THU1 otkluchena (SKV KE)
+        skv_d013{},//priznak signala "THU2 otkluchena (SO PTO)
+        skv_d014{},//priznak signala "THU3 otkluchena (SO STO lev)
+        skv_d015{},//priznak signala "THU4 otkluchena (SO STO prav)
+        skv_d016{},//priznak signala "SKV ZS vklyuchena
+        skv_d017{},//priznak signala "Zaslonka podachi vozduha v nosovoy tehnichekoy otsek ot THU2 zakrita"
+        skv_d018{},//priznak signala "Zaslonka podachi vozduha v nosovoy tehnichekoy otsek ot THU2 zakrita"
+        skv_d019{},//priznak signala "Zaslonka podachi vozduha v nosovoy tehnichekoy otsek ot THU2 zakrita"
+        skv_d020{},//priznak signala "Zaslonka obogreava otseka VSU otkrita"
+        skv_d021{},
+        skv_d022{},
+        skv_d023{},
+        skv_d024{},//priznka signala "Magistral 1 otkaz"
+        skv_d025{},//priznka signala "Magistral 2 otkaz"
+        skv_d026{},//prznak signala "Otbor levogo borta OTKAZ"
+        skv_d027{},//prznak signala "Otbor pravogo borta OTKAZ"
+        skv_d028{},//priznak signala "Otkaz THU1 (SKV KE)"
+        skv_d029{},//priznak signala "Otkaz THU2 (SO PTO)"
+        skv_d030{},//priznak signala "Otkaz THU3 (O TO leviy, GO)"
+        skv_d031{},//priznak signala "Otkaz THU4 (SKV KE)"
+        skv_d032{},
+        skv_d033{},
+        skv_d034{},
+        skv_d035{},
+        skv_d036{},
+        skv_d037{},
+        poovsu{},//???
         pnu{},//priznak nachalnih usloviy
         otkaz_povishTemprVozd{},//otkaz povishenie tempereturi vozduha za VVT2
         otkaz_povishDavlVozMag1{},//otkaz povishenie davleniya vozduha v magistrali2
@@ -78,7 +116,7 @@ public:
         pzpvvt2{},//priznak zaslonki produvki VVT is kanala dvigatelya magistrali2
         pom1{},//priznak otkaza magistrali1
         pom2{},//priznak otkaza magistrali2
-        puuke{},//
+        pruuke{},//
         pruukl{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS levogo
         pruukp{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS pravogo
         pruuk58{},//priznak raboti ustroystva upravleniya i kontrolya 7311MKS pravogo
@@ -124,6 +162,10 @@ public:
         pvkltnu{},//priznak vklyucheniya TNU
         pvklgvdv{},//priznak vklyucheniya "Glavnih viklyuchatele"
         pzokl{},//priznak zaslonki koltsevaniya otbora levoy
+        k1_2143{},//
+        k2_2143{},//
+        k1_2112{},//priznak rele otkritiya krana levogo
+        k20_2112{},//priznak rele otkritiya krana levogo
         k5_2110{},//priznak rele otkritiya krana koltsevaniya otbora levogo
         k6_2110{},//priznak rele otkritiya krana koltsevaniya otbora pravogo
         k7_2110{},//priznak rele zakritiya krana koltsevaniya otbora levogo pri vklyuchenii TNU
@@ -150,6 +192,10 @@ public:
         k26_2110{};//priznak rele zakritiya otborov ot dvigatelya 4
 
     double
+        skv_a001{},//
+        skv_a002{},
+        skv_a003{},
+        skv_a004{},
         Dtpgo1{},//skorost' izmeneniya temperaturi vozduha v PGO ot levoy magistrali
         Dtpgo2{},//skorost' izmeneniya temperaturi vozduha v PGO ot pravoy magistrali
         Dtzgo1{},//skorost' izmeneniya temperaturi vozduha v ZGO ot levoy magistrali
@@ -163,6 +209,16 @@ public:
         Kotk3{},//
         Kotk4{},//
         Kskzsl{1},//koef skorosti zaslonok
+        Pm1{},
+        Pm2{},
+        Ptvt1{},//davlenie vozduha v magistrali 1
+        Ptvt2{},
+        Ptvt3{},
+        Ptvt4{},
+        Pthu1{},
+        Pthu2{},
+        Pthu3{},
+        Pthu4{},
         Pke{},//davlenie vozduha v kabine ekipazha
         Potb1_2{},//davleniye vozduha v magistrali otbora vozduha levoy, kgs/sm^2
         Potb1_zad{},//davlenie otbiraemogo vozduha ot 1 dvigatelya, zadannoe, kgs/sm^2
@@ -218,11 +274,15 @@ public:
         alphaztvt4{},//polozhenie zaslonki perekrivnoy za TVT4
         alpha312a3{},//polozhenie zaslonki regulirovaniya podachi holodnogo vozduha v peredniy gruzovoy otsek
         alpha312a6{},//polozhenie zaslonki regulirovaniya podachi holodnogo vozduha v zadniy gruzovoy otsek
+        alphazszl{},//
+        alphazszp{},//
+        alphazovsu{},//
         deltaPotb1{},
         deltaPotb2{},
         deltaPotb3{},
         deltaPotb4{},
         tke_reg{},
+        totvsu{},//temperatura vozduha v otkese VSU
         tthu1{},//temperatura vozduha za THU1
         tthu2{},//temperatura vozduha za THU2
         tthu3{},//temperatura vozduha za THU3
@@ -257,4 +317,7 @@ public:
     void aircondition_12();
     void aircondition_13();
     void aircondition_14();
+    void aircondition_15();
+    void aircondition_16();
+    void aircondition_17();
 };

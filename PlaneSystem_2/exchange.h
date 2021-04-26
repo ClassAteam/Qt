@@ -3,6 +3,8 @@
 struct exchange
 {
     static bool F32_3250;
+    static bool s1_2112;//vilkuchatel' "STRUYANAYA ZASHITA DVIG LEV"
+    static bool s4_2112;//vilkuchatel' "STRUYANAYA ZASHITA DVIG PRAV"
     static bool s1_2830;//vikluchatel AVAR SLIV TOPLIVA BAKI PEREDNIE
     static bool s2_2830;//vikluchatel AVAR SLIV TOPLIVA BAKI ZADNIE
     static bool s1_3650;//vikluchatel' NADDUV BLOKOV PEREDN

@@ -41,7 +41,7 @@ void aircondition_int::aircondition_6_7()
         }
         else k1_2151 = true;
     }
-    puuke = false;
+    pruuke = false;
 
     bss_inst.BSS926X1E = false;
     bss_inst.BSS926X1C = false;
@@ -53,9 +53,9 @@ void aircondition_int::aircondition_6_7()
     pothu1 = false;
     k2_2158 = false;
 
-    if(exchange::ushal > 18.0) puuke = true;
+    if(exchange::ushal > 18.0) pruuke = true;
 
-    if(puuke)
+    if(pruuke)
     {
         if(!exchange::s2_2151)
         {
@@ -173,6 +173,7 @@ void aircondition_int::aircondition_6_7()
 }
 
 void alpha_toggle(bool& Y, double& alpha, double& Kskzsl)
+// shore's opening/closure function
 {
     if(!Y)
     {

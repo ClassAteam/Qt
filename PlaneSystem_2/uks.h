@@ -138,6 +138,8 @@ struct uks
     bool UKS2X360{};
     bool UKS3X310{};
     bool UKS3X311{};
+    bool UKS3X314{};
+    bool UKS3X318{};
     bool UKS3X324{};
     bool UKS3X325{};
     bool UKS3X326{};
@@ -148,6 +150,7 @@ struct uks
     bool UKS3X343{};
     bool UKS3X344{};
     bool UKS3X39{};
+    bool UKS4X37{};
     bool UKS4X310{};
     bool UKS4X311{};
     bool UKS4X312{};

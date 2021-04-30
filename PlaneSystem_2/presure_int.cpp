@@ -175,6 +175,7 @@ presure_int::presure_int(QWidget *parent)
     createLabelValue(&uks_inst.UKS3X313, "UKS3X313");
     createLabelClue(&uks_inst.UKS3X310, "UKS3X310");
     createLabelClue(&uks_inst.UKS3X311, "UKS3X311");
+    createLabelClue(&uks_inst.UKS3X314, "UKS3X314");
     createLabelClue(&uks_inst.UKS3X324, "UKS3X324");
     createLabelClue(&uks_inst.UKS3X325, "UKS3X325");
     createLabelClue(&uks_inst.UKS3X326, "UKS3X326");
@@ -183,6 +184,7 @@ presure_int::presure_int(QWidget *parent)
     createLabelClue(&uks_inst.UKS3X343, "UKS3X343");
     createLabelClue(&uks_inst.UKS3X344, "UKS3X344");
     createLabelClue(&uks_inst.UKS3X39, "UKS3X39");
+    createLabelClue(&uks_inst.UKS4X37, "UKS4X37");
     createLabelClue(&uks_inst.UKS4X310, "UKS4X310");
     createLabelClue(&uks_inst.UKS4X311, "UKS4X311");
     createLabelClue(&uks_inst.UKS4X312, "UKS4X312");

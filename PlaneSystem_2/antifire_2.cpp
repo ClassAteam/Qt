@@ -524,6 +524,13 @@ void antifire_int::antifire_2()
         PW_1_och_o = true;
         PW_2_och = true;
         PW_3_och = true;
+        uks_inst.UKS3X18 = false;
+        uks_inst.UKS4X37 = false;
+    }
+    else
+    {
+        uks_inst.UKS3X18 = false;
+        uks_inst.UKS4X37 = false;
     }
 
     if(K31_2610  || K32_2610 || K34_2610 || K35_2610 || K33_2610)
@@ -531,7 +538,14 @@ void antifire_int::antifire_2()
         if(F101_2610)
         {
             PW_1_och_l = false;
-            if(F181_2610 == true) PW_1_och_o = false;
+            uks_inst.UKS3X18 = true;
+
+        }
+
+        if(F181_2610)
+        {
+            PW_1_och_o = false;
+            uks_inst.UKS4X37 = true;
         }
     }
 
